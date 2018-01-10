@@ -10,9 +10,8 @@ using System.Windows.Forms;
 
 
 using System.Data.SqlClient;
-
-
-
+using System.Data.OleDb;
+using System.IO;
 
 namespace CCDataImportTool
 {
@@ -28,6 +27,25 @@ namespace CCDataImportTool
                 MessageBox.Show(sr.ReadToEnd());
                 sr.Close();
             }
+        }
+
+        public DataTable ReadCsv(string fileName)
+        {
+            DataTable dt = new DataTable("Data");
+            using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
+                Path.GetDirectoryName(fileName) + "\";Extended Properties='text;HDR=yes;FMT=Delimited(,)';"))
+            {
+
+                using (OleDbCommand cmd = new OleDbCommand(string.Format("select * from [{0}]", new FileInfo(fileName).Name), cn))
+                {
+                    cn.Open();
+                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+            return dt;
         }
         public Form1()
         {
@@ -51,8 +69,26 @@ namespace CCDataImportTool
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "CSV | *.csv", ValidateNames = true, Multiselect = false })
+                {
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                        dataGridView1.DataSource = ReadCsv(ofd.FileName);
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
