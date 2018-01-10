@@ -18,17 +18,6 @@ namespace CCDataImportTool
     public partial class Form1 : Form
     {
 
-        private void button1_Click(object sender, System.EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                System.IO.StreamReader sr = new
-                   System.IO.StreamReader(openFileDialog1.FileName);
-                MessageBox.Show(sr.ReadToEnd());
-                sr.Close();
-            }
-        }
-
         public DataTable ReadCsv(string fileName)
         {
             DataTable dt = new DataTable("Data");
@@ -50,11 +39,6 @@ namespace CCDataImportTool
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -82,6 +66,7 @@ namespace CCDataImportTool
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                         dataGridView1.DataSource = ReadCsv(ofd.FileName);
+                        textBox1.Text = ofd.FileName;
                 }
 
             }
@@ -92,6 +77,16 @@ namespace CCDataImportTool
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
