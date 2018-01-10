@@ -58,6 +58,16 @@ namespace CCDataImportTool
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Filter = "XML|*.xml";
+            if (this.saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                DataTable dt = (DataTable)this.dataGridView1.DataSource;
+                dt.WriteXml(this.saveFileDialog1.FileName, XmlWriteMode.WriteSchema);
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -66,7 +76,7 @@ namespace CCDataImportTool
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                         dataGridView1.DataSource = ReadCsv(ofd.FileName);
-                        textBox1.Text = ofd.FileName;
+                    textBox1.Text = ofd.FileName;
                 }
 
             }
@@ -87,6 +97,43 @@ namespace CCDataImportTool
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_Load(object sender, EventArgs e)
+
+        {
+
+            DataTable datatable = new DataTable();
+
+            datatable.Columns.Add("col1", typeof(DateTime));
+
+            datatable.Columns.Add("col2", typeof(DateTime));
+
+            datatable.Rows.Add(DateTime.Parse("2007/12/31 5:00:11 PM"), DateTime.Parse("2008/01/01 6:00:12 AM"));
+
+
+
+            datatable.Rows.Add(DateTime.Parse("2007/4/4 1:00:13 AM"), DateTime.Parse("2007/8/8 3:00:14 PM"));
+
+
+
+            dataGridView1.DataSource = datatable;
+
+
+
+            dataGridView1.Columns[0].DefaultCellStyle.Format = "dd'/'MM'/'yyyy";
+
+            //Get 13/12/2007
+
+            dataGridView1.Columns[1].DefaultCellStyle.Format = "dd'/'MM'/'yyyy hh:mm:ss tt";
+
+            //Get 13/12/2007 5:00:11 PM
+
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
         }
