@@ -86,6 +86,12 @@ namespace CCDataImportTool
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
+        }
+
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
