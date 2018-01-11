@@ -137,5 +137,61 @@ namespace CCDataImportTool
         {
 
         }
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://hmigexttest2.callidusinsurance.net/ICM");
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://hmigexttest3.callidusinsurance.net/ICM");
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.microsoft.com");
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.microsoft.com");
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.microsoft.com");
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.microsoft.com");
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.microsoft.com");
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.microsoft.com");
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.microsoft.com");
+
+        }
+
     }
 }
