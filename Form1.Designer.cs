@@ -42,6 +42,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xMLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.xMLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -173,13 +173,20 @@
             this.xMLToolStripMenuItem1,
             this.cSVToolStripMenuItem});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.openToolStripMenuItem.Text = "Open...";
+            // 
+            // xMLToolStripMenuItem1
+            // 
+            this.xMLToolStripMenuItem1.Name = "xMLToolStripMenuItem1";
+            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
+            this.xMLToolStripMenuItem1.Text = ".XML";
+            this.xMLToolStripMenuItem1.Click += new System.EventHandler(this.menu_Open_Xml_Click);
             // 
             // cSVToolStripMenuItem
             // 
             this.cSVToolStripMenuItem.Name = "cSVToolStripMenuItem";
-            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.cSVToolStripMenuItem.Text = ".CSV";
             this.cSVToolStripMenuItem.Click += new System.EventHandler(this.menu_Open_Csv_Click);
             // 
@@ -197,7 +204,7 @@
             this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
             this.xMLToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.xMLToolStripMenuItem.Text = ".XML";
-            this.xMLToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
+            this.xMLToolStripMenuItem.Click += new System.EventHandler(this.menu_Save_Xml_Click);
             // 
             // cSVToolStripMenuItem1
             // 
@@ -272,7 +279,7 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.button3_Click);
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.menu_About_Click);
             // 
             // label1
             // 
@@ -311,13 +318,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // xMLToolStripMenuItem1
-            // 
-            this.xMLToolStripMenuItem1.Name = "xMLToolStripMenuItem1";
-            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.xMLToolStripMenuItem1.Text = ".XML";
-            this.xMLToolStripMenuItem1.Click += new System.EventHandler(this.menu_Open_Xml_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,6 +333,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "CallidusCloud Data Import Tool v0.1";

@@ -7,10 +7,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Xml;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-
 using System.Data.SqlClient;
 using System.Data.OleDb;
 using System.IO;
@@ -39,22 +38,24 @@ namespace CCDataImportTool
             return dt;
         }
 
-        public DataTable ReadXml(string fileName)
+        public DataSet ReadXml(string fileName)
         {
-            DataTable dt = new DataTable("Data");
-            using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
-                Path.GetDirectoryName(fileName) + "\";Extended Properties='text;HDR=yes;FMT=Delimited(,)';"))
-            {
 
-                using (OleDbCommand cmd = new OleDbCommand(string.Format("select * from [{0}]", new FileInfo(fileName).Name), cn))
-                {
-                    cn.Open();
-                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
-                    {
-                        adapter.Fill(dt);
-                    }
-                }
+
+            try
+            {
+                XmlReader xmlFile;
+                xmlFile = XmlReader.Create(Path.GetDirectoryName(fileName), new XmlReaderSettings());
+                DataSet ds = new DataSet();
+                ds.ReadXml(xmlFile);
+                dataGridView1.DataSource = ds.Tables[0];
+                return ds;
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            DataSet dt = new DataSet("Data");
             return dt;
         }
         public Form1()
@@ -79,7 +80,7 @@ namespace CCDataImportTool
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void menu_Save_Xml_Click(object sender, EventArgs e)
         {
             saveFileDialog1.Filter = "XML|*.xml";
             if (this.saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -111,12 +112,14 @@ namespace CCDataImportTool
         {
             try
             {
+
                 using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "XML | *.xml", ValidateNames = true, Multiselect = false })
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                         dataGridView1.DataSource = ReadXml(ofd.FileName);
                     textBox1.Text = ofd.FileName;
                 }
+
 
             }
             catch (Exception ex)
@@ -125,7 +128,7 @@ namespace CCDataImportTool
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void menu_About_Click(object sender, EventArgs e)
         {
             About about = new About();
             about.Show();
@@ -144,12 +147,6 @@ namespace CCDataImportTool
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        public void dataGridView1_Load(object sender, EventArgs e)
-
         {
 
         }
@@ -237,8 +234,17 @@ namespace CCDataImportTool
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            DateTime thisDate1 = new DateTime();
-            dataGridView1.Columns["dates"].DefaultCellStyle.Format = thisDate1.ToString("MMMM dd, yyyy");
+            try
+            {
+                DateTime thisDate1 = new DateTime();
+                dataGridView1.Columns["dates"].DefaultCellStyle.Format = thisDate1.ToString("MMMM dd, yyyy");
+            }
+
+
+                        catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
