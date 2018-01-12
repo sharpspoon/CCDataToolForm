@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.ddd = new System.Windows.Forms.Label();
@@ -42,25 +41,30 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cSVToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pageSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.environmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iCMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hMIGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tEST2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tEST3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
-            this.pageSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.xMLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -76,15 +80,6 @@
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "QRdWxA7C.png");
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CCDataImportTool.Properties.Resources.CallidusCloud_Logo_300;
-            this.pictureBox1.Location = new System.Drawing.Point(551, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(297, 110);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // dataGridView1
             // 
@@ -172,6 +167,45 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xMLToolStripMenuItem1,
+            this.cSVToolStripMenuItem});
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Text = "Open...";
+            // 
+            // cSVToolStripMenuItem
+            // 
+            this.cSVToolStripMenuItem.Name = "cSVToolStripMenuItem";
+            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.cSVToolStripMenuItem.Text = ".CSV";
+            this.cSVToolStripMenuItem.Click += new System.EventHandler(this.menu_Open_Csv_Click);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xMLToolStripMenuItem,
+            this.cSVToolStripMenuItem1});
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.saveAsToolStripMenuItem.Text = "Save As...";
+            // 
+            // xMLToolStripMenuItem
+            // 
+            this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
+            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.xMLToolStripMenuItem.Text = ".XML";
+            this.xMLToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cSVToolStripMenuItem1
+            // 
+            this.cSVToolStripMenuItem1.Name = "cSVToolStripMenuItem1";
+            this.cSVToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
+            this.cSVToolStripMenuItem1.Text = ".CSV";
+            this.cSVToolStripMenuItem1.Click += new System.EventHandler(this.cSVToolStripMenuItem1_Click);
+            // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -180,61 +214,11 @@
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
-            // openToolStripMenuItem
+            // pageSetupToolStripMenuItem
             // 
-            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cSVToolStripMenuItem});
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.openToolStripMenuItem.Text = "Open...";
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xMLToolStripMenuItem});
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.saveAsToolStripMenuItem.Text = "Save As...";
-            // 
-            // xMLToolStripMenuItem
-            // 
-            this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.xMLToolStripMenuItem.Text = "XML";
-            this.xMLToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // cSVToolStripMenuItem
-            // 
-            this.cSVToolStripMenuItem.Name = "cSVToolStripMenuItem";
-            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.cSVToolStripMenuItem.Text = ".CSV";
-            this.cSVToolStripMenuItem.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(547, 625);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 20);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Current File:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.button3_Click);
+            this.pageSetupToolStripMenuItem.Name = "pageSetupToolStripMenuItem";
+            this.pageSetupToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.pageSetupToolStripMenuItem.Text = "Page Setup";
             // 
             // environmentsToolStripMenuItem
             // 
@@ -249,7 +233,7 @@
             this.iCMToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hMIGToolStripMenuItem});
             this.iCMToolStripMenuItem.Name = "iCMToolStripMenuItem";
-            this.iCMToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.iCMToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.iCMToolStripMenuItem.Text = "ICM";
             // 
             // hMIGToolStripMenuItem
@@ -258,34 +242,89 @@
             this.tEST2ToolStripMenuItem,
             this.tEST3ToolStripMenuItem});
             this.hMIGToolStripMenuItem.Name = "hMIGToolStripMenuItem";
-            this.hMIGToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hMIGToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.hMIGToolStripMenuItem.Text = "HMIG";
             // 
             // tEST2ToolStripMenuItem
             // 
             this.tEST2ToolStripMenuItem.Name = "tEST2ToolStripMenuItem";
-            this.tEST2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tEST2ToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.tEST2ToolStripMenuItem.Text = "TEST2";
             this.tEST2ToolStripMenuItem.Click += new System.EventHandler(this.label1_Click);
             // 
             // tEST3ToolStripMenuItem
             // 
             this.tEST3ToolStripMenuItem.Name = "tEST3ToolStripMenuItem";
-            this.tEST3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tEST3ToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.tEST3ToolStripMenuItem.Text = "TEST3";
             this.tEST3ToolStripMenuItem.Click += new System.EventHandler(this.label2_Click);
             // 
-            // pageSetupToolStripMenuItem
+            // helpToolStripMenuItem
             // 
-            this.pageSetupToolStripMenuItem.Name = "pageSetupToolStripMenuItem";
-            this.pageSetupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.pageSetupToolStripMenuItem.Text = "Page Setup";
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(547, 625);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 20);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Current File:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CCDataImportTool.Properties.Resources.CallidusCloud_Logo_300;
+            this.pictureBox1.Location = new System.Drawing.Point(1091, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(297, 110);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(302, 103);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(159, 20);
+            this.textBox2.TabIndex = 20;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(496, 101);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // xMLToolStripMenuItem1
+            // 
+            this.xMLToolStripMenuItem1.Name = "xMLToolStripMenuItem1";
+            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.xMLToolStripMenuItem1.Text = ".XML";
+            this.xMLToolStripMenuItem1.Click += new System.EventHandler(this.menu_Open_Xml_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1400, 646);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBox1);
@@ -298,12 +337,12 @@
             this.Name = "Form1";
             this.Text = "CallidusCloud Data Import Tool v0.1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,6 +376,10 @@
         private System.Windows.Forms.ToolStripMenuItem tEST3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pageSetupToolStripMenuItem;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
+        private System.Windows.Forms.ToolStripMenuItem cSVToolStripMenuItem1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem1;
     }
 }
 

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +21,25 @@ namespace CCDataImportTool
     {
 
         public DataTable ReadCsv(string fileName)
+        {
+            DataTable dt = new DataTable("Data");
+            using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
+                Path.GetDirectoryName(fileName) + "\";Extended Properties='text;HDR=yes;FMT=Delimited(,)';"))
+            {
+
+                using (OleDbCommand cmd = new OleDbCommand(string.Format("select * from [{0}]", new FileInfo(fileName).Name), cn))
+                {
+                    cn.Open();
+                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+            return dt;
+        }
+
+        public DataTable ReadXml(string fileName)
         {
             DataTable dt = new DataTable("Data");
             using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
@@ -68,7 +89,7 @@ namespace CCDataImportTool
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void menu_Open_Csv_Click(object sender, EventArgs e)
         {
             try
             {
@@ -86,11 +107,31 @@ namespace CCDataImportTool
             }
         }
 
+        private void menu_Open_Xml_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "XML | *.xml", ValidateNames = true, Multiselect = false })
+                {
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                        dataGridView1.DataSource = ReadXml(ofd.FileName);
+                    textBox1.Text = ofd.FileName;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             About about = new About();
             about.Show();
         }
+
+      
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -107,35 +148,9 @@ namespace CCDataImportTool
 
         }
 
-        private void dataGridView1_Load(object sender, EventArgs e)
+        public void dataGridView1_Load(object sender, EventArgs e)
 
         {
-
-            DataTable datatable = new DataTable();
-
-            datatable.Columns.Add("col1", typeof(DateTime));
-
-            datatable.Columns.Add("col2", typeof(DateTime));
-
-            datatable.Rows.Add(DateTime.Parse("2007/12/31 5:00:11 PM"), DateTime.Parse("2008/01/01 6:00:12 AM"));
-
-
-
-            datatable.Rows.Add(DateTime.Parse("2007/4/4 1:00:13 AM"), DateTime.Parse("2007/8/8 3:00:14 PM"));
-
-
-
-            dataGridView1.DataSource = datatable;
-
-
-
-            dataGridView1.Columns[0].DefaultCellStyle.Format = "dd'/'MM'/'yyyy";
-
-            //Get 13/12/2007
-
-            dataGridView1.Columns[1].DefaultCellStyle.Format = "dd'/'MM'/'yyyy hh:mm:ss tt";
-
-            //Get 13/12/2007 5:00:11 PM
 
         }
 
@@ -199,5 +214,31 @@ namespace CCDataImportTool
 
         }
 
+      //  private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+   //     {
+          //  for (int i = ; i < 3; i++)
+            //{
+           //     comboBox1.Items.Add(dataGridView1.Columns[i].HeaderText);
+
+           // }
+            
+            // var headers = dataGridView1.Columns;
+
+            //  foreach (var header in headers)
+            //  {
+            //     comboBox1.Items.Add(header.ToString());
+            //}
+      //  }
+
+        private void cSVToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            DateTime thisDate1 = new DateTime();
+            dataGridView1.Columns["dates"].DefaultCellStyle.Format = thisDate1.ToString("MMMM dd, yyyy");
+        }
     }
 }
