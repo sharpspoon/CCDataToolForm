@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.OleDb;
 using System.IO;
+using System.DirectoryServices.ActiveDirectory;
+using System.Web;
 
 namespace CCDataImportTool
 {
@@ -85,6 +87,47 @@ namespace CCDataImportTool
             {
                 DataTable dt = (DataTable)this.dataGridView1.DataSource;
                 dt.WriteXml(this.saveFileDialog1.FileName, XmlWriteMode.WriteSchema);
+            }
+        }
+
+        protected void menu_Save_Csv_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Filter = "CSV|*.csv";
+            if (this.saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                // create one file gridview.csv in writing mode using streamwriter
+                StreamWriter sw = new StreamWriter("c:\\gridview.csv");
+                // now add the gridview header in csv file suffix with "," delimeter except last one
+                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                {
+                    sw.Write(dataGridView1.Columns[i].HeaderText);
+                    if (i != dataGridView1.Columns.Count)
+                    {
+                        sw.Write(",");
+                    }
+                }
+                // add new line
+                sw.Write(sw.NewLine);
+                // iterate through all the rows within the gridview
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
+                {
+                    // iterate through all colums of specific row
+                    for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                    {
+                        // write particular cell to csv file
+                        sw.Write(dr.Cells[i]);
+                        if (i != dataGridView1.Columns.Count)
+                        {
+                            sw.Write(",");
+                        }
+                    }
+                    // write new line
+                    sw.Write(sw.NewLine);
+                }
+                // flush from the buffers.
+                sw.Flush();
+                // closes the file
+                sw.Close();
             }
         }
 
@@ -211,7 +254,16 @@ namespace CCDataImportTool
 
         private void cSVToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            var sb = new StringBuilder();
 
+            var headers = dataGridView1.Columns.Cast<DataGridViewColumn>();
+            sb.AppendLine(string.Join(",", headers.Select(column => "\"" + column.HeaderText + "\"").ToArray()));
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                var cells = row.Cells.Cast<DataGridViewCell>();
+                sb.AppendLine(string.Join(",", cells.Select(cell => "\"" + cell.Value + "\"").ToArray()));
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -219,7 +271,7 @@ namespace CCDataImportTool
             try
             {
 
-                string newPattern = "MM,dd,yyyy";
+                string newPattern = "yyyyMMdd";
                 DateTime thisDate1 = new DateTime();
                 dataGridView1.Columns[textBox2.Text].DefaultCellStyle.Format = thisDate1.ToString(newPattern);
             }
@@ -232,6 +284,21 @@ namespace CCDataImportTool
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
