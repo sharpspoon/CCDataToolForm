@@ -67,11 +67,9 @@ namespace CCDataImportTool
         {
 
         }
-
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
+            ((DataGridViewTextBoxColumn)dataGridView1.Columns["dates"]).MaxInputLength = 6;
 
         }
 
@@ -211,22 +209,6 @@ namespace CCDataImportTool
 
         }
 
-      //  private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-   //     {
-          //  for (int i = ; i < 3; i++)
-            //{
-           //     comboBox1.Items.Add(dataGridView1.Columns[i].HeaderText);
-
-           // }
-            
-            // var headers = dataGridView1.Columns;
-
-            //  foreach (var header in headers)
-            //  {
-            //     comboBox1.Items.Add(header.ToString());
-            //}
-      //  }
-
         private void cSVToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
@@ -236,8 +218,10 @@ namespace CCDataImportTool
         {
             try
             {
+
+                string newPattern = "MM,dd,yyyy";
                 DateTime thisDate1 = new DateTime();
-                dataGridView1.Columns["dates"].DefaultCellStyle.Format = thisDate1.ToString("MMMM dd, yyyy");
+                dataGridView1.Columns[textBox2.Text].DefaultCellStyle.Format = thisDate1.ToString(newPattern);
             }
 
 
@@ -245,6 +229,11 @@ namespace CCDataImportTool
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
