@@ -301,6 +301,25 @@ namespace CCDataImportTool
         private void button2_Click(object sender, EventArgs e)
         {
 
+                MessageBox.Show(0 + " must be 10 Digits Long!");
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DataGridViewColumn column = dataGridView1.Columns[textBox3.Text];
+            MessageBox.Show(column.Name + " must be "+textBox4.Text+ " Digit(s) Long!");
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
