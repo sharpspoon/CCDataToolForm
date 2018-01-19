@@ -44,6 +44,7 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xLSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cSVToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,13 +71,18 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.xLSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xLSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -182,8 +188,8 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xMLToolStripMenuItem1,
             this.cSVToolStripMenuItem,
+            this.xMLToolStripMenuItem1,
             this.xLSToolStripMenuItem});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
@@ -203,11 +209,19 @@
             this.cSVToolStripMenuItem.Text = ".CSV";
             this.cSVToolStripMenuItem.Click += new System.EventHandler(this.menu_Open_Csv_Click);
             // 
+            // xLSToolStripMenuItem
+            // 
+            this.xLSToolStripMenuItem.Name = "xLSToolStripMenuItem";
+            this.xLSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xLSToolStripMenuItem.Text = ".XLS";
+            this.xLSToolStripMenuItem.Click += new System.EventHandler(this.menu_Open_Xls_Click);
+            // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cSVToolStripMenuItem1,
             this.xMLToolStripMenuItem,
-            this.cSVToolStripMenuItem1});
+            this.xLSToolStripMenuItem1});
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
@@ -215,14 +229,14 @@
             // xMLToolStripMenuItem
             // 
             this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.xMLToolStripMenuItem.Text = ".XML";
             this.xMLToolStripMenuItem.Click += new System.EventHandler(this.menu_Save_Xml_Click);
             // 
             // cSVToolStripMenuItem1
             // 
             this.cSVToolStripMenuItem1.Name = "cSVToolStripMenuItem1";
-            this.cSVToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
+            this.cSVToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.cSVToolStripMenuItem1.Text = ".CSV";
             this.cSVToolStripMenuItem1.Click += new System.EventHandler(this.menu_Save_Csv_Click);
             // 
@@ -318,15 +332,15 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(6, 35);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(107, 20);
+            this.textBox2.Size = new System.Drawing.Size(74, 20);
             this.textBox2.TabIndex = 20;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(119, 19);
+            this.button1.Location = new System.Drawing.Point(86, 19);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 36);
+            this.button1.Size = new System.Drawing.Size(57, 37);
             this.button1.TabIndex = 21;
             this.button1.Text = "Convert";
             this.button1.UseVisualStyleBackColor = true;
@@ -344,12 +358,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Location = new System.Drawing.Point(12, 75);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 62);
+            this.groupBox2.Size = new System.Drawing.Size(150, 62);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Date converter:";
@@ -365,14 +380,15 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.textBox4);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Location = new System.Drawing.Point(218, 75);
+            this.groupBox3.Location = new System.Drawing.Point(168, 75);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(253, 62);
+            this.groupBox3.Size = new System.Drawing.Size(209, 62);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cell length checker:";
@@ -380,9 +396,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(172, 19);
+            this.button4.Location = new System.Drawing.Point(154, 19);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 39);
+            this.button4.Size = new System.Drawing.Size(48, 40);
             this.button4.TabIndex = 22;
             this.button4.Text = "Check";
             this.button4.UseVisualStyleBackColor = true;
@@ -391,7 +407,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(109, 19);
+            this.label3.Location = new System.Drawing.Point(86, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 24;
@@ -399,7 +415,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(112, 35);
+            this.textBox4.Location = new System.Drawing.Point(100, 36);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(48, 20);
             this.textBox4.TabIndex = 23;
@@ -419,22 +435,61 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(5, 35);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(101, 20);
+            this.textBox3.Size = new System.Drawing.Size(75, 20);
             this.textBox3.TabIndex = 20;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // xLSToolStripMenuItem
+            // xLSToolStripMenuItem1
             // 
-            this.xLSToolStripMenuItem.Name = "xLSToolStripMenuItem";
-            this.xLSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.xLSToolStripMenuItem.Text = ".XLS";
-            this.xLSToolStripMenuItem.Click += new System.EventHandler(this.menu_Open_Xls_Click);
+            this.xLSToolStripMenuItem1.Name = "xLSToolStripMenuItem1";
+            this.xLSToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.xLSToolStripMenuItem1.Text = ".XLS";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.textBox5);
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Location = new System.Drawing.Point(383, 75);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(150, 62);
+            this.groupBox4.TabIndex = 26;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Special character checker:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 13);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Column name:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(6, 35);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(74, 20);
+            this.textBox5.TabIndex = 20;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(86, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(47, 36);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "Check";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1400, 646);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button2);
@@ -461,6 +516,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,6 +565,11 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem xLSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xLSToolStripMenuItem1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button3;
     }
 }
 

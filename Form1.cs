@@ -190,13 +190,6 @@ namespace CCDataImportTool
             about.Show();
         }
 
-      
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -267,20 +260,6 @@ namespace CCDataImportTool
 
         }
 
-        private void cSVToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            var sb = new StringBuilder();
-
-            var headers = dataGridView1.Columns.Cast<DataGridViewColumn>();
-            sb.AppendLine(string.Join(",", headers.Select(column => "\"" + column.HeaderText + "\"").ToArray()));
-
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                var cells = row.Cells.Cast<DataGridViewCell>();
-                sb.AppendLine(string.Join(",", cells.Select(cell => "\"" + cell.Value + "\"").ToArray()));
-            }
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             try
@@ -315,24 +294,7 @@ namespace CCDataImportTool
 
         private void testButton_Click(object sender, EventArgs e)
         {
-            int counter;
-            int WithdrawalTotal=0;
-            for (counter = 0; counter < (dataGridView1.Rows.Count);
-                counter++)
-            {
-                if (dataGridView1.Rows[counter].Cells[textBox3.Text].Value
-                    != null)
-                {
-                    if (dataGridView1.Rows[counter].
-                        Cells[textBox3.Text].Value.ToString().Length != 0)
-                    {
-                        WithdrawalTotal += int.Parse(dataGridView1.Rows[counter].
-                            Cells[textBox3.Text].Value.ToString());
-                        DataGridViewColumn column = dataGridView1.Columns[textBox3.Text];
-                        MessageBox.Show(column.Name + " must be " + textBox4.Text + " Digit(s) Long!");
-                    }
-                }
-            }
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -386,6 +348,31 @@ namespace CCDataImportTool
 
         private void xLSToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+                String searchValue = "hey";
+                string boxFill = textBox5.Text;
+                if (textBox5.Text.Length == 0)
+                {
+                    MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "No Column Name Specified!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    return;
+                }
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells[textBox5.Text].Value.ToString().Contains(searchValue))
+                    {
+                        MessageBox.Show("hey was found", "!!!!!!!!!!!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        return;
+                    }
+                else
+                {
+                    break;
+                }
+                }
+            MessageBox.Show("No more special characters found!", "No more special characters found!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
         }
     }
