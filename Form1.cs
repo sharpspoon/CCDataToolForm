@@ -20,6 +20,24 @@ namespace CCDataImportTool
 {
     public partial class Form1 : Form
     {
+        //------------------OPEN/SAVE CSV START------------------------------------------------------
+        private void menu_Open_Csv_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "CSV | *.csv", ValidateNames = true, Multiselect = false })
+                {
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                        dataGridView1.DataSource = ReadCsv(ofd.FileName);
+                    textBox1.Text = ofd.FileName;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         public DataTable ReadCsv(string fileName)
         {
@@ -38,56 +56,6 @@ namespace CCDataImportTool
                 }
             }
             return dt;
-        }
-
-        public DataSet ReadXml(string fileName)
-        {
-
-
-            try
-            {
-                XmlReader xmlFile;
-                xmlFile = XmlReader.Create(Path.GetDirectoryName(fileName), new XmlReaderSettings());
-                DataSet ds = new DataSet();
-                ds.ReadXml(xmlFile);
-                dataGridView1.DataSource = ds.Tables[0];
-                return ds;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            DataSet dt = new DataSet("Data");
-            return dt;
-        }
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            ((DataGridViewTextBoxColumn)dataGridView1.Columns["dates"]).MaxInputLength = 6;
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void menu_Save_Xml_Click(object sender, EventArgs e)
-        {
-            saveFileDialog1.Filter = "XML|*.xml";
-            if (this.saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                DataTable dt = (DataTable)this.dataGridView1.DataSource;
-                dt.WriteXml(this.saveFileDialog1.FileName, XmlWriteMode.WriteSchema);
-            }
         }
 
         protected void menu_Save_Csv_Click(object sender, EventArgs e)
@@ -131,23 +99,9 @@ namespace CCDataImportTool
             }
         }
 
-        private void menu_Open_Csv_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "CSV | *.csv", ValidateNames = true, Multiselect = false })
-                {
-                    if (ofd.ShowDialog() == DialogResult.OK)
-                        dataGridView1.DataSource = ReadCsv(ofd.FileName);
-                    textBox1.Text = ofd.FileName;
-                }
+        //------------------OPEN/SAVE CSV END------------------------------------------------------
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        //------------------OPEN/SAVE XML START------------------------------------------------------
 
         private void menu_Open_Xml_Click(object sender, EventArgs e)
         {
@@ -167,6 +121,67 @@ namespace CCDataImportTool
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public DataSet ReadXml(string fileName)
+        {
+            try
+            {
+                XmlReader xmlFile;
+                xmlFile = XmlReader.Create(Path.GetDirectoryName(fileName), new XmlReaderSettings());
+                DataSet ds = new DataSet();
+                ds.ReadXml(xmlFile);
+                dataGridView1.DataSource = ds.Tables[0];
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            DataSet dt = new DataSet("Data");
+            return dt;
+        }
+
+        private void menu_Save_Xml_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Filter = "XML|*.xml";
+            if (this.saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                DataTable dt = (DataTable)this.dataGridView1.DataSource;
+                dt.WriteXml(this.saveFileDialog1.FileName, XmlWriteMode.WriteSchema);
+            }
+        }
+
+        //------------------OPEN/SAVE XML END------------------------------------------------------
+
+        //------------------OPEN/SAVE XLS START------------------------------------------------------
+
+        private void menu_Open_Xls_Click(object sender, EventArgs e)
+        {
+
+        }
+        //------------------OPEN/SAVE XLS END------------------------------------------------------
+
+
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            ((DataGridViewTextBoxColumn)dataGridView1.Columns["dates"]).MaxInputLength = 6;
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void menu_About_Click(object sender, EventArgs e)
@@ -298,17 +313,46 @@ namespace CCDataImportTool
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void testButton_Click(object sender, EventArgs e)
         {
-
-                MessageBox.Show(0 + " must be 10 Digits Long!");
-            
+            int counter;
+            int WithdrawalTotal=0;
+            for (counter = 0; counter < (dataGridView1.Rows.Count);
+                counter++)
+            {
+                if (dataGridView1.Rows[counter].Cells[textBox3.Text].Value
+                    != null)
+                {
+                    if (dataGridView1.Rows[counter].
+                        Cells[textBox3.Text].Value.ToString().Length != 0)
+                    {
+                        WithdrawalTotal += int.Parse(dataGridView1.Rows[counter].
+                            Cells[textBox3.Text].Value.ToString());
+                        DataGridViewColumn column = dataGridView1.Columns[textBox3.Text];
+                        MessageBox.Show(column.Name + " must be " + textBox4.Text + " Digit(s) Long!");
+                    }
+                }
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DataGridViewColumn column = dataGridView1.Columns[textBox3.Text];
-            MessageBox.Show(column.Name + " must be "+textBox4.Text+ " Digit(s) Long!");
+
+            {
+                try
+                {
+
+                    DataGridViewColumn column = dataGridView1.Columns[textBox3.Text];
+                    MessageBox.Show(column.Name + " must be " + textBox4.Text + " Digit(s) Long!");
+                }
+
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
 
         }
 
@@ -318,6 +362,29 @@ namespace CCDataImportTool
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellValidating_Click(object sender,
+    DataGridViewCellValidatingEventArgs e)
+        {
+            dataGridView1.Rows[e.RowIndex].ErrorText = "";
+            int newInteger;
+
+            // Don't try to validate the 'new row' until finished 
+            // editing since there
+            // is not any point in validating its initial value.
+            if (dataGridView1.Rows[e.RowIndex].IsNewRow) { return; }
+            if (!int.TryParse(e.FormattedValue.ToString(),
+                out newInteger) || newInteger < 0)
+            {
+                e.Cancel = true;
+                dataGridView1.Rows[e.RowIndex].ErrorText = "the value must be a non-negative integer";
+            }
+        }
+
+        private void xLSToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
