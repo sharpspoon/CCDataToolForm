@@ -162,13 +162,50 @@ namespace CCDataImportTool
         }
         //------------------OPEN/SAVE XLS END------------------------------------------------------
 
+        //------------------PRINT DOCUMENT START------------------------------------------------------
+
+        Bitmap bitmap;
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0 || dataGridView1.Rows == null)
+            {
+                MessageBox.Show("No data to print", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                //Resize DataGridView to full height.
+                int height = dataGridView1.Height;
+                dataGridView1.Height = dataGridView1.RowCount * dataGridView1.RowTemplate.Height;
+
+                //Create a Bitmap and draw the DataGridView on it.
+                bitmap = new Bitmap(this.dataGridView1.Width, this.dataGridView1.Height);
+                dataGridView1.DrawToBitmap(bitmap, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
+
+                //Resize DataGridView back to original height.
+                dataGridView1.Height = height;
+
+                //Show the Print Preview Dialog.
+                printPreviewDialog1.Document = printDocument1;
+                printPreviewDialog1.PrintPreviewControl.Zoom = 1;
+                printPreviewDialog1.ShowDialog();
+            }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            //Print the contents.
+            e.Graphics.DrawImage(bitmap, 0, 0);
+        }
+
+        //------------------PRINT DOCUMENT END------------------------------------------------------
+
         //------------------EXIT APP ACTION START------------------------------------------------------
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                DialogResult result = MessageBox.Show("Do you really want to exit?", "Close CCDataTool", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Do you really want to exit?", "CCDataTool", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     Environment.Exit(0);
@@ -182,6 +219,11 @@ namespace CCDataImportTool
             {
                 e.Cancel = true;
             }
+        }
+
+        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         //------------------EXIT APP ACTION END------------------------------------------------------
@@ -202,8 +244,32 @@ namespace CCDataImportTool
 
         //------------------ENVIRONMENT MENU END------------------------------------------------------
 
+        //------------------DATE CONVERTER START------------------------------------------------------
+
+        private void dateConvert_Click1(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string newPattern = "yyyyMMdd";
+                DateTime thisDate1 = new DateTime();
+                dataGridView1.Columns[textBox2.Text].DefaultCellStyle.Format = thisDate1.ToString(newPattern);
+            }
 
 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //------------------DATE CONVERTER END------------------------------------------------------
+        
         public Form1()
         {
             InitializeComponent();
@@ -241,33 +307,10 @@ namespace CCDataImportTool
         {
 
         }
-
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
         }
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-
-                string newPattern = "yyyyMMdd";
-                DateTime thisDate1 = new DateTime();
-                dataGridView1.Columns[textBox2.Text].DefaultCellStyle.Format = thisDate1.ToString(newPattern);
-            }
-
-
-                        catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
@@ -280,7 +323,6 @@ namespace CCDataImportTool
 
         private void testButton_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -297,7 +339,7 @@ namespace CCDataImportTool
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -343,7 +385,7 @@ namespace CCDataImportTool
                 string boxFill = textBox5.Text;
                 if (textBox5.Text.Length == 0)
                 {
-                    MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "No Column Name Specified!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     return;
                 }
                 foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -361,5 +403,7 @@ namespace CCDataImportTool
             MessageBox.Show("No more special characters found!", "No more special characters found!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
         }
+
+
     }
 }
