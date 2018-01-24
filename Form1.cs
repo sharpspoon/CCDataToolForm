@@ -162,6 +162,46 @@ namespace CCDataImportTool
         }
         //------------------OPEN/SAVE XLS END------------------------------------------------------
 
+        //------------------EXIT APP ACTION START------------------------------------------------------
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Do you really want to exit?", "Close CCDataTool", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        //------------------EXIT APP ACTION END------------------------------------------------------
+
+        //------------------ENVIRONMENT MENU START------------------------------------------------------
+
+        private void env_Click1(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://hmigexttest2.callidusinsurance.net/ICM");
+
+        }
+
+        private void env_Click2(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://hmigexttest3.callidusinsurance.net/ICM");
+
+        }
+
+        //------------------ENVIRONMENT MENU END------------------------------------------------------
+
 
 
         public Form1()
@@ -178,6 +218,8 @@ namespace CCDataImportTool
             ((DataGridViewTextBoxColumn)dataGridView1.Columns["dates"]).MaxInputLength = 6;
 
         }
+
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -204,62 +246,6 @@ namespace CCDataImportTool
         {
 
         }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://hmigexttest2.callidusinsurance.net/ICM");
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://hmigexttest3.callidusinsurance.net/ICM");
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://www.microsoft.com");
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://www.microsoft.com");
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://www.microsoft.com");
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://www.microsoft.com");
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://www.microsoft.com");
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://www.microsoft.com");
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://www.microsoft.com");
-
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             try
@@ -357,7 +343,7 @@ namespace CCDataImportTool
                 string boxFill = textBox5.Text;
                 if (textBox5.Text.Length == 0)
                 {
-                    MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "No Column Name Specified!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "No Column Name Specified!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     return;
                 }
                 foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -372,7 +358,7 @@ namespace CCDataImportTool
                     break;
                 }
                 }
-            MessageBox.Show("No more special characters found!", "No more special characters found!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            MessageBox.Show("No more special characters found!", "No more special characters found!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
         }
     }

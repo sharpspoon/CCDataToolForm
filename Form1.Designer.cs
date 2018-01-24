@@ -42,12 +42,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xMLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xMLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xLSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cSVToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xLSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pageSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.environmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +72,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.xLSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -192,27 +192,27 @@
             this.xMLToolStripMenuItem1,
             this.xLSToolStripMenuItem});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.openToolStripMenuItem.Text = "Open...";
-            // 
-            // xMLToolStripMenuItem1
-            // 
-            this.xMLToolStripMenuItem1.Name = "xMLToolStripMenuItem1";
-            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.xMLToolStripMenuItem1.Text = ".XML";
-            this.xMLToolStripMenuItem1.Click += new System.EventHandler(this.menu_Open_Xml_Click);
             // 
             // cSVToolStripMenuItem
             // 
             this.cSVToolStripMenuItem.Name = "cSVToolStripMenuItem";
-            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.cSVToolStripMenuItem.Text = ".CSV";
             this.cSVToolStripMenuItem.Click += new System.EventHandler(this.menu_Open_Csv_Click);
+            // 
+            // xMLToolStripMenuItem1
+            // 
+            this.xMLToolStripMenuItem1.Name = "xMLToolStripMenuItem1";
+            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
+            this.xMLToolStripMenuItem1.Text = ".XML";
+            this.xMLToolStripMenuItem1.Click += new System.EventHandler(this.menu_Open_Xml_Click);
             // 
             // xLSToolStripMenuItem
             // 
             this.xLSToolStripMenuItem.Name = "xLSToolStripMenuItem";
-            this.xLSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xLSToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.xLSToolStripMenuItem.Text = ".XLS";
             this.xLSToolStripMenuItem.Click += new System.EventHandler(this.menu_Open_Xls_Click);
             // 
@@ -223,22 +223,28 @@
             this.xMLToolStripMenuItem,
             this.xLSToolStripMenuItem1});
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
-            // 
-            // xMLToolStripMenuItem
-            // 
-            this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.xMLToolStripMenuItem.Text = ".XML";
-            this.xMLToolStripMenuItem.Click += new System.EventHandler(this.menu_Save_Xml_Click);
             // 
             // cSVToolStripMenuItem1
             // 
             this.cSVToolStripMenuItem1.Name = "cSVToolStripMenuItem1";
-            this.cSVToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.cSVToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
             this.cSVToolStripMenuItem1.Text = ".CSV";
             this.cSVToolStripMenuItem1.Click += new System.EventHandler(this.menu_Save_Csv_Click);
+            // 
+            // xMLToolStripMenuItem
+            // 
+            this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
+            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.xMLToolStripMenuItem.Text = ".XML";
+            this.xMLToolStripMenuItem.Click += new System.EventHandler(this.menu_Save_Xml_Click);
+            // 
+            // xLSToolStripMenuItem1
+            // 
+            this.xLSToolStripMenuItem1.Name = "xLSToolStripMenuItem1";
+            this.xLSToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
+            this.xLSToolStripMenuItem1.Text = ".XLS";
             // 
             // settingsToolStripMenuItem
             // 
@@ -284,14 +290,14 @@
             this.tEST2ToolStripMenuItem.Name = "tEST2ToolStripMenuItem";
             this.tEST2ToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.tEST2ToolStripMenuItem.Text = "TEST2";
-            this.tEST2ToolStripMenuItem.Click += new System.EventHandler(this.label1_Click);
+            this.tEST2ToolStripMenuItem.Click += new System.EventHandler(this.env_Click1);
             // 
             // tEST3ToolStripMenuItem
             // 
             this.tEST3ToolStripMenuItem.Name = "tEST3ToolStripMenuItem";
             this.tEST3ToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.tEST3ToolStripMenuItem.Text = "TEST3";
-            this.tEST3ToolStripMenuItem.Click += new System.EventHandler(this.label2_Click);
+            this.tEST3ToolStripMenuItem.Click += new System.EventHandler(this.env_Click2);
             // 
             // helpToolStripMenuItem
             // 
@@ -317,7 +323,6 @@
             this.label1.Size = new System.Drawing.Size(95, 20);
             this.label1.TabIndex = 19;
             this.label1.Text = "Current File:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -439,12 +444,6 @@
             this.textBox3.TabIndex = 20;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // xLSToolStripMenuItem1
-            // 
-            this.xLSToolStripMenuItem1.Name = "xLSToolStripMenuItem1";
-            this.xLSToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.xLSToolStripMenuItem1.Text = ".XLS";
-            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -505,6 +504,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "CallidusCloud Data Import Tool v0.1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);

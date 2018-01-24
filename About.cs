@@ -104,7 +104,7 @@ namespace CCDataImportTool
 
         private void labelProductName_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void labelVersion_Click(object sender, EventArgs e)
