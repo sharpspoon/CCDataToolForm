@@ -270,65 +270,40 @@ namespace CCDataImportTool
 
         //------------------DATE CONVERTER END------------------------------------------------------
 
-        //------------------PROGRESS BAR START------------------------------------------------------
-        
+        //------------------NULL CHECKER START------------------------------------------------------
 
-        //------------------PROGRESS BAR END------------------------------------------------------
-
-        public Form1()
+        private void nullChecker_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                try
+                {
+                    var value = dataGridView1.Rows[i].Cells[textBox6.Text].Value.ToString();
+                    if (string.IsNullOrWhiteSpace(value))
+                    {
+                        MessageBox.Show("NULL value found in column " + "'" + textBox6.Text + "'" + " at line " + dataGridView1.Rows[i + 1]);
+                        return;
+                    }
+                }
+
+                catch (Exception)
+                {
+                    // If we have reached this far, then none of the cells were empty.
+                    MessageBox.Show("No NULL values found in column " + "'" + textBox6.Text + "'");
+                    return;
+                }
+
+            }
         }
 
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            ((DataGridViewTextBoxColumn)dataGridView1.Columns["dates"]).MaxInputLength = 6;
-
-        }
-
-
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void menu_About_Click(object sender, EventArgs e)
-        {
-            About about = new About();
-            about.Show();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
+        //------------------NULL CHECKER END------------------------------------------------------
 
-        }
-        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void testButton_Click(object sender, EventArgs e)
-        {
-        }
+        //------------------CELL LENGTH CHECKER END------------------------------------------------------
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -347,20 +322,58 @@ namespace CCDataImportTool
                     MessageBox.Show(ex.Message, "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-
         }
 
+        //------------------CELL LENGTH CHECKER END------------------------------------------------------
+
+        //------------------ABOUT START------------------------------------------------------
+
+        private void menu_About_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
+        }
+
+        //------------------ABOUT END------------------------------------------------------
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            ((DataGridViewTextBoxColumn)dataGridView1.Columns["dates"]).MaxInputLength = 6;
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+        }
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+        }
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+        }
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+        }
+        private void testButton_Click(object sender, EventArgs e)
+        {
+        }
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-
         }
-
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-
         }
-
         private void dataGridView1_CellValidating_Click(object sender,
     DataGridViewCellValidatingEventArgs e)
         {
@@ -381,9 +394,7 @@ namespace CCDataImportTool
 
         private void xLSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
                 String searchValue = "hey";
@@ -406,11 +417,6 @@ namespace CCDataImportTool
                 }
                 }
             MessageBox.Show("No more special characters found!", "No more special characters found!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
 
         }
     }
