@@ -84,6 +84,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -92,6 +97,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -361,6 +367,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(86, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(57, 37);
@@ -390,7 +397,7 @@
             this.groupBox2.Size = new System.Drawing.Size(150, 62);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Date converter:";
+            this.groupBox2.Text = "Date Converter:";
             // 
             // label4
             // 
@@ -414,11 +421,12 @@
             this.groupBox3.Size = new System.Drawing.Size(209, 62);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Cell length checker:";
+            this.groupBox3.Text = "Cell Length Checker:";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // button4
             // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Location = new System.Drawing.Point(154, 19);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(48, 40);
@@ -438,9 +446,9 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(100, 36);
+            this.textBox4.Location = new System.Drawing.Point(89, 36);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(48, 20);
+            this.textBox4.Size = new System.Drawing.Size(59, 20);
             this.textBox4.TabIndex = 23;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -465,15 +473,17 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.comboBox1);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.textBox5);
             this.groupBox4.Controls.Add(this.button3);
             this.groupBox4.Location = new System.Drawing.Point(383, 75);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(150, 62);
+            this.groupBox4.Size = new System.Drawing.Size(215, 62);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Special character checker:";
+            this.groupBox4.Text = "Special Character Checker:";
             // 
             // label5
             // 
@@ -493,7 +503,8 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(86, 19);
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Location = new System.Drawing.Point(161, 20);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(47, 36);
             this.button3.TabIndex = 21;
@@ -526,7 +537,7 @@
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.textBox6);
             this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Location = new System.Drawing.Point(539, 75);
+            this.groupBox5.Location = new System.Drawing.Point(604, 75);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(150, 62);
             this.groupBox5.TabIndex = 27;
@@ -552,6 +563,7 @@
             // 
             // button5
             // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Location = new System.Drawing.Point(86, 19);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(47, 36);
@@ -560,11 +572,60 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.nullChecker_Click);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "CC Data Tool";
+            this.notifyIcon1.Visible = true;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 817);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1553, 22);
+            this.statusStrip1.TabIndex = 28;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "!",
+            "@",
+            "#",
+            "$",
+            "%",
+            "^",
+            "&",
+            "*"});
+            this.comboBox1.Location = new System.Drawing.Point(86, 34);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(66, 21);
+            this.comboBox1.TabIndex = 29;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(86, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 13);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Special char:";
+            // 
+            // form1BindingSource
+            // 
+            this.form1BindingSource.DataSource = typeof(CCDataImportTool.Form1);
+            this.form1BindingSource.CurrentChanged += new System.EventHandler(this.form1BindingSource_CurrentChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1553, 811);
+            this.ClientSize = new System.Drawing.Size(1553, 839);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
@@ -597,6 +658,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -657,6 +719,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource form1BindingSource;
+        private System.Windows.Forms.Label label7;
     }
 }
 

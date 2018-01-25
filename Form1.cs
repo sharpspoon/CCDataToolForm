@@ -31,21 +31,18 @@ namespace CCDataImportTool
                         dataGridView1.DataSource = ReadCsv(ofd.FileName);
                     textBox1.Text = ofd.FileName;
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         public DataTable ReadCsv(string fileName)
         {
             DataTable dt = new DataTable("Data");
             using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
                 Path.GetDirectoryName(fileName) + "\";Extended Properties='text;HDR=yes;FMT=Delimited(,)';"))
             {
-
                 using (OleDbCommand cmd = new OleDbCommand(string.Format("select * from [{0}]", new FileInfo(fileName).Name), cn))
                 {
                     cn.Open();
@@ -57,7 +54,6 @@ namespace CCDataImportTool
             }
             return dt;
         }
-
         protected void menu_Save_Csv_Click(object sender, EventArgs e)
         {
             saveFileDialog1.Filter = "CSV|*.csv";
@@ -107,22 +103,18 @@ namespace CCDataImportTool
         {
             try
             {
-
                 using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "XML | *.xml", ValidateNames = true, Multiselect = false })
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                         dataGridView1.DataSource = ReadXml(ofd.FileName);
                     textBox1.Text = ofd.FileName;
                 }
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         public DataSet ReadXml(string fileName)
         {
             try
@@ -141,7 +133,6 @@ namespace CCDataImportTool
             DataSet dt = new DataSet("Data");
             return dt;
         }
-
         private void menu_Save_Xml_Click(object sender, EventArgs e)
         {
             saveFileDialog1.Filter = "XML|*.xml";
@@ -190,7 +181,6 @@ namespace CCDataImportTool
                 printPreviewDialog1.ShowDialog();
             }
         }
-
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             //Print the contents.
@@ -233,13 +223,11 @@ namespace CCDataImportTool
         private void env_Click1(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://hmigexttest2.callidusinsurance.net/ICM");
-
         }
 
         private void env_Click2(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://hmigexttest3.callidusinsurance.net/ICM");
-
         }
 
         //------------------ENVIRONMENT MENU END------------------------------------------------------
@@ -250,22 +238,17 @@ namespace CCDataImportTool
         {
             try
             {
-
                 string newPattern = "yyyyMMdd";
                 DateTime thisDate1 = new DateTime();
                 dataGridView1.Columns[textBox2.Text].DefaultCellStyle.Format = thisDate1.ToString(newPattern);
             }
-
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         //------------------DATE CONVERTER END------------------------------------------------------
@@ -285,38 +268,63 @@ namespace CCDataImportTool
                         return;
                     }
                 }
-
                 catch (Exception)
                 {
                     // If we have reached this far, then none of the cells were empty.
                     MessageBox.Show("No NULL values found in column " + "'" + textBox6.Text + "'");
                     return;
                 }
-
             }
         }
-
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         //------------------NULL CHECKER END------------------------------------------------------
 
-        //------------------CELL LENGTH CHECKER END------------------------------------------------------
+        //------------------SPECIAL CHARACTER CHECKER START------------------------------------------------------
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            String searchValue = comboBox1.Text;
+            string boxFill = textBox5.Text;
+            if (textBox5.Text.Length == 0)
+            {
+                MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            if (comboBox1.Text.Length == 0)
+            {
+                MessageBox.Show("You did not select a special character!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[textBox5.Text].Value.ToString().Contains(searchValue))
+                {
+                    MessageBox.Show(searchValue+" was found", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    return;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            MessageBox.Show("No more special characters found!", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        }
+
+        //------------------SPECIAL CHARACTER CHECKER END------------------------------------------------------
+
+        //------------------CELL LENGTH CHECKER START------------------------------------------------------
 
         private void button4_Click(object sender, EventArgs e)
         {
-
             {
                 try
                 {
-
                     DataGridViewColumn column = dataGridView1.Columns[textBox3.Text];
                     MessageBox.Show(column.Name + " must be " + textBox4.Text + " Digit(s) Long!");
                 }
-
-
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -395,28 +403,14 @@ namespace CCDataImportTool
         private void xLSToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
-        private void button3_Click(object sender, EventArgs e)
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-                String searchValue = "hey";
-                string boxFill = textBox5.Text;
-                if (textBox5.Text.Length == 0)
-                {
-                    MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                    return;
-                }
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    if (row.Cells[textBox5.Text].Value.ToString().Contains(searchValue))
-                    {
-                        MessageBox.Show("hey was found", "!!!!!!!!!!!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                        return;
-                    }
-                else
-                {
-                    break;
-                }
-                }
-            MessageBox.Show("No more special characters found!", "No more special characters found!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+        }
+
+        private void form1BindingSource_CurrentChanged(object sender, EventArgs e)
+        {
 
         }
     }
