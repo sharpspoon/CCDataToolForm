@@ -269,7 +269,12 @@ namespace CCDataImportTool
         }
 
         //------------------DATE CONVERTER END------------------------------------------------------
+
+        //------------------PROGRESS BAR START------------------------------------------------------
         
+
+        //------------------PROGRESS BAR END------------------------------------------------------
+
         public Form1()
         {
             InitializeComponent();
@@ -404,6 +409,9 @@ namespace CCDataImportTool
 
         }
 
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }
