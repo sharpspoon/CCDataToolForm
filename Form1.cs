@@ -282,7 +282,7 @@ namespace CCDataImportTool
         private void button3_Click(object sender, EventArgs e)
         {
             String searchValue = comboBox1.Text;
-            string boxFill = textBox5.Text;
+            string specialBoxFill = textBox5.Text;
             if (textBox5.Text.Length == 0)
             {
                 MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
@@ -295,17 +295,22 @@ namespace CCDataImportTool
             }
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.Cells[textBox5.Text].Value.ToString().Contains(searchValue))
-                {
-                    MessageBox.Show(searchValue+" was found", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    return;
+                try {
+                    if (row.Cells[textBox5.Text].Value.ToString().Contains(searchValue))
+                    {
+                        MessageBox.Show(searchValue + " was found", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        return;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
-                else
-                {
-                    break;
+                catch { MessageBox.Show("No more special characters found!", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1); }
+                return;
+                
                 }
-            }
-            MessageBox.Show("No more special characters found!", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            
         }
 
         //------------------SPECIAL CHARACTER CHECKER END------------------------------------------------------
@@ -348,6 +353,16 @@ namespace CCDataImportTool
         }
 
         //------------------ABOUT END------------------------------------------------------
+
+        //------------------CC LOGO CLICK START------------------------------------------------------
+        private void ccLogo_Click1(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://calliduscloud.com");
+        }
+
+
+        //------------------CC LOGO CLICK START------------------------------------------------------
+
 
         public Form1()
         {
