@@ -103,10 +103,13 @@ namespace CCDataImportTool
         {
             try
             {
+                DataSet dataSet = new DataSet();
                 using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "XML | *.xml", ValidateNames = true, Multiselect = false })
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
-                        dataGridView1.DataSource = ReadXml(ofd.FileName);
+                        dataSet.ReadXml(ofd.FileName);
+                    dataGridView1.DataSource = dataSet.Tables[0];
+
                     textBox1.Text = ofd.FileName;
                 }
             }
@@ -114,24 +117,6 @@ namespace CCDataImportTool
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        public DataSet ReadXml(string fileName)
-        {
-            try
-            {
-                XmlReader xmlFile;
-                xmlFile = XmlReader.Create(Path.GetDirectoryName(fileName), new XmlReaderSettings());
-                DataSet ds = new DataSet();
-                ds.ReadXml(xmlFile);
-                dataGridView1.DataSource = ds.Tables[0];
-                return ds;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            DataSet dt = new DataSet("Data");
-            return dt;
         }
         private void menu_Save_Xml_Click(object sender, EventArgs e)
         {
@@ -244,6 +229,11 @@ namespace CCDataImportTool
             }
             catch (Exception ex)
             {
+                if (textBox2.Text.Length == 0)
+                {
+                    MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    return;
+                }
                 MessageBox.Show(ex.Message, "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -257,6 +247,11 @@ namespace CCDataImportTool
 
         private void nullChecker_Click(object sender, EventArgs e)
         {
+            if (textBox6.Text.Length == 0)
+            {
+                MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 try
@@ -327,6 +322,16 @@ namespace CCDataImportTool
                 }
                 catch (Exception ex)
                 {
+                    if (textBox3.Text.Length == 0)
+                    {
+                        MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        return;
+                    }
+                    if (textBox4.Text.Length == 0)
+                    {
+                        MessageBox.Show("You did not enter a length!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        return;
+                    }
                     MessageBox.Show(ex.Message, "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
