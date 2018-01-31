@@ -88,7 +88,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -388,6 +387,7 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             // 
             // groupBox2
             // 
@@ -618,13 +618,6 @@
             this.statusStrip1.TabIndex = 28;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(818, 95);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(74, 20);
-            this.textBox7.TabIndex = 26;
-            // 
             // form1BindingSource
             // 
             this.form1BindingSource.DataSource = typeof(CCDataImportTool.Form1);
@@ -635,7 +628,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1553, 839);
-            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.dataGridView1);
@@ -735,7 +727,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource form1BindingSource;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
     }
 }
 
