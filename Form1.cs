@@ -30,6 +30,7 @@ namespace CCDataImportTool
                     if (ofd.ShowDialog() == DialogResult.OK)
                         dataGridView1.DataSource = ReadCsv(ofd.FileName);
                     textBox1.Text = ofd.FileName;
+                    textBox7.Text = dataGridView1.Rows.Count.ToString();
                 }
             }
             catch (Exception ex)
@@ -111,6 +112,7 @@ namespace CCDataImportTool
                     dataGridView1.DataSource = dataSet.Tables[0];
 
                     textBox1.Text = ofd.FileName;
+                    textBox7.Text = dataGridView1[0,dataGridView1.Rows.Count-1].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -365,12 +367,29 @@ namespace CCDataImportTool
         }
 
 
-        //------------------CC LOGO CLICK START------------------------------------------------------
+        //------------------CC LOGO CLICK END------------------------------------------------------
 
 
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView1_CellValidating_Click(object sender, DataGridViewCellValidatingEventArgs e, EventArgs ea)
+        {
+            string headerText =
+                dataGridView1.Columns[e.ColumnIndex].HeaderText;
+
+            // Abort validation if cell is not in the CompanyName column.
+            if (!headerText.Equals("CompanyName")) return;
+
+            // Confirm that the cell is not empty.
+            if (string.IsNullOrEmpty(e.FormattedValue.ToString()))
+            {
+                dataGridView1.Rows[e.RowIndex].ErrorText =
+                    "Company Name must not be empty";
+                e.Cancel = true;
+            }
         }
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
@@ -406,23 +425,6 @@ namespace CCDataImportTool
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
         }
-        private void dataGridView1_CellValidating_Click(object sender,
-    DataGridViewCellValidatingEventArgs e)
-        {
-            dataGridView1.Rows[e.RowIndex].ErrorText = "";
-            int newInteger;
-
-            // Don't try to validate the 'new row' until finished 
-            // editing since there
-            // is not any point in validating its initial value.
-            if (dataGridView1.Rows[e.RowIndex].IsNewRow) { return; }
-            if (!int.TryParse(e.FormattedValue.ToString(),
-                out newInteger) || newInteger < 0)
-            {
-                e.Cancel = true;
-                dataGridView1.Rows[e.RowIndex].ErrorText = "the value must be a non-negative integer";
-            }
-        }
 
         private void xLSToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -440,19 +442,50 @@ namespace CCDataImportTool
 
         private void button2_Click(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            dataGridView1.Rows[e.RowIndex].ErrorText = "sertywsgtr";
-            int newInteger;
+            string headerText =
+                dataGridView1.Columns[e.ColumnIndex].HeaderText;
 
-            // Don't try to validate the 'new row' until finished 
-            // editing since there
-            // is not any point in validating its initial value.
-            if (dataGridView1.Rows[e.RowIndex].IsNewRow) { return; }
-            if (!int.TryParse(e.FormattedValue.ToString(),
-                out newInteger) || newInteger < 0)
+            // Abort validation if cell is not in the CompanyName column.
+            if (!headerText.Equals("CompanyName")) return;
+
+            // Confirm that the cell is not empty.
+            if (string.IsNullOrEmpty(e.FormattedValue.ToString()))
             {
+                dataGridView1.Rows[e.RowIndex].ErrorText =
+                    "Company Name must not be empty";
                 e.Cancel = true;
-                dataGridView1.Rows[e.RowIndex].ErrorText = "the value must be a non-negative integer";
             }
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            textBox7.Text = dataGridView1.Rows.Count.ToString();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            String searchValue = comboBox1.Text;
+            string specialBoxFill = textBox5.Text;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                try
+                {
+                    var value = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                    if (string.IsNullOrWhiteSpace(value))
+                    {
+                        MessageBox.Show("NULL value found in column #1 (CustomerId)  at line " + dataGridView1.Rows[i + 1]+ " This is a required field.");
+                        return;
+                    }
+                }
+                catch (Exception)
+                {
+                    // If we have reached this far, then none of the cells were empty.
+                    MessageBox.Show("No NULL values found in column #1 (CustomerId)");
+                    return;
+                }
+            }
+
+
         }
     }
 }
