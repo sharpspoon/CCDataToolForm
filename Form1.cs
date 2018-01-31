@@ -180,7 +180,7 @@ namespace CCDataImportTool
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                DialogResult result = MessageBox.Show("Do you really want to exit?", "CCDataTool", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Do you really want to exit?", "CCDataTool", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     Environment.Exit(0);
@@ -295,21 +295,25 @@ namespace CCDataImportTool
             }
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                try {
-                    if (row.Cells[textBox5.Text].Value.ToString().Contains(searchValue))
+                try
+                {
+                    if (row.Cells[textBox5.Text].Value.ToString().Contains(comboBox1.Text))
                     {
-                        MessageBox.Show(searchValue + " was found", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("'" + comboBox1.Text + "'" + " WAS found in the column " + "'" + textBox5.Text + "'", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         return;
                     }
-                    else
-                    {
-                        break;
-                    }
                 }
-                catch { MessageBox.Show("No more special characters found!", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1); }
-                return;
+                catch
+                {
+                    MessageBox.Show("'"+comboBox1.Text+"'" + " WAS NOT  found in column "+"'"+textBox5.Text+"'", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    return;
+                }
+
+
+
                 
                 }
+
             
         }
 
@@ -432,6 +436,23 @@ namespace CCDataImportTool
         private void form1BindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            dataGridView1.Rows[e.RowIndex].ErrorText = "sertywsgtr";
+            int newInteger;
+
+            // Don't try to validate the 'new row' until finished 
+            // editing since there
+            // is not any point in validating its initial value.
+            if (dataGridView1.Rows[e.RowIndex].IsNewRow) { return; }
+            if (!int.TryParse(e.FormattedValue.ToString(),
+                out newInteger) || newInteger < 0)
+            {
+                e.Cancel = true;
+                dataGridView1.Rows[e.RowIndex].ErrorText = "the value must be a non-negative integer";
+            }
         }
     }
 }
