@@ -369,6 +369,90 @@ namespace CCDataImportTool
 
         //------------------CC LOGO CLICK END------------------------------------------------------
 
+        //------------------MEDICARE CHECKER START------------------------------------------------------
+
+        private void medicareButton_Click(object sender, EventArgs e)
+        {
+            String searchValue = comboBox1.Text;
+            string specialBoxFill = textBox5.Text;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                try
+                {
+                    if (dataGridView1.ColumnCount != 37)
+                    {
+                        MessageBox.Show("Medicare files need 37 columns. You have " + dataGridView1.ColumnCount + ".", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        return;
+                    }
+                    var value0 = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                    //var value1 = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                    //var value2 = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                    //var value3 = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                    //var value6 = dataGridView1.Rows[i].Cells[6].Value.ToString();
+                    //var value8 = dataGridView1.Rows[i].Cells[8].Value.ToString();
+                    //var value10 = dataGridView1.Rows[i].Cells[10].Value.ToString();
+                    //var value23 = dataGridView1.Rows[i].Cells[23].Value.ToString();
+                    if (string.IsNullOrWhiteSpace(value0))
+                    {
+                        MessageBox.Show("NULL value found in column #1 (CustomerId)  at line " + (i + 1) + " This is a required field.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        return;
+                    }
+
+                    //if (string.IsNullOrWhiteSpace(value1))
+                    //{
+                    //    MessageBox.Show("NULL value found in column #2 (ContractNbr)  at line " + dataGridView1.Rows[i + 1] + " This is a required field.");
+                    //    return;
+                    //}
+
+                    //if (string.IsNullOrWhiteSpace(value2))
+                    //{
+                    //    MessageBox.Show("NULL value found in column #3 (PBP)  at line " + dataGridView1.Rows[i + 1] + " This is a required field.");
+                    //    return;
+                    //}
+
+                    //if (string.IsNullOrWhiteSpace(value3))
+                    //{
+                    //    MessageBox.Show("NULL value found in column #4 (HICN)  at line " + dataGridView1.Rows[i + 1] + " This is a required field.");
+                    //    return;
+                    //}
+
+                    //if (string.IsNullOrWhiteSpace(value6))
+                    //{
+                    //    MessageBox.Show("NULL value found in column #7 (DatEff)  at line " + dataGridView1.Rows[i + 1] + " This is a required field.");
+                    //    return;
+                    //}
+
+                    //if (string.IsNullOrWhiteSpace(value8))
+                    //{
+                    //    MessageBox.Show("NULL value found in column #9 (AppSignedDate)  at line " + dataGridView1.Rows[i + 1] + " This is a required field.");
+                    //    return;
+                    //}
+
+                    //if (string.IsNullOrWhiteSpace(value10))
+                    //{
+                    //    MessageBox.Show("NULL value found in column #11 (Holder)  at line " + dataGridView1.Rows[i + 1] + " This is a required field.");
+                    //    return;
+                    //}
+
+                    //if (string.IsNullOrWhiteSpace(value23))
+                    //{
+                    //    MessageBox.Show("NULL value found in column #24 (PolState)  at line " + dataGridView1.Rows[i + 1] + " This is a required field.");
+                    //    return;
+                    //}
+                }
+                catch (Exception)
+                {
+                    // If we have reached this far, then none of the cells were empty.
+                    MessageBox.Show("Medicare file is OK");
+                    return;
+                }
+            }
+
+
+        }
+
+        //------------------MEDICARE CHECKER END------------------------------------------------------
+
 
         public Form1()
         {
@@ -462,30 +546,6 @@ namespace CCDataImportTool
             textBox7.Text = dataGridView1.Rows.Count.ToString();
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            String searchValue = comboBox1.Text;
-            string specialBoxFill = textBox5.Text;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                try
-                {
-                    var value = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                    if (string.IsNullOrWhiteSpace(value))
-                    {
-                        MessageBox.Show("NULL value found in column #1 (CustomerId)  at line " + dataGridView1.Rows[i + 1]+ " This is a required field.");
-                        return;
-                    }
-                }
-                catch (Exception)
-                {
-                    // If we have reached this far, then none of the cells were empty.
-                    MessageBox.Show("No NULL values found in column #1 (CustomerId)");
-                    return;
-                }
-            }
 
-
-        }
     }
 }
