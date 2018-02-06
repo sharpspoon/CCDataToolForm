@@ -701,40 +701,113 @@ namespace CCDataImportTool
                     return;
                 }
             }
-
-
         }
+        private void medicareButtonCreateFile_Click(object sender, EventArgs e)
+        {
+            string path = @"C:\1\myFile.txt";
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                using (TextWriter tw = new StreamWriter(fs))
+                {
+
+                    tw.WriteLine("CCDataTool - Beginning of Medicare Error File");
+                    tw.WriteLine("Reading file...");
+                    tw.WriteLine(".");
+                    tw.WriteLine(".");
+                    tw.WriteLine(".");
+                    tw.WriteLine(".");
+
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        try {
+
+                            var value0 = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                            var value1 = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                            var value2 = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                            var value3 = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                            var value4 = dataGridView1.Rows[i].Cells[4].Value.ToString();
+                            var value5 = dataGridView1.Rows[i].Cells[5].Value.ToString();
+                            var value6 = dataGridView1.Rows[i].Cells[6].Value.ToString();
+                            var value7 = dataGridView1.Rows[i].Cells[7].Value.ToString();
+                            var value8 = dataGridView1.Rows[i].Cells[8].Value.ToString();
+                            var value9 = dataGridView1.Rows[i].Cells[9].Value.ToString();
+                            var value10 = dataGridView1.Rows[i].Cells[10].Value.ToString();
+                            var value11 = dataGridView1.Rows[i].Cells[11].Value.ToString();
+                            var value12 = dataGridView1.Rows[i].Cells[12].Value.ToString();
+                            var value13 = dataGridView1.Rows[i].Cells[13].Value.ToString();
+                            var value14 = dataGridView1.Rows[i].Cells[14].Value.ToString();
+                            var value15 = dataGridView1.Rows[i].Cells[15].Value.ToString();
+                            var value16 = dataGridView1.Rows[i].Cells[16].Value.ToString();
+                            var value17 = dataGridView1.Rows[i].Cells[17].Value.ToString();
+                            var value18 = dataGridView1.Rows[i].Cells[18].Value.ToString();
+                            var value19 = dataGridView1.Rows[i].Cells[19].Value.ToString();
+                            var value20 = dataGridView1.Rows[i].Cells[20].Value.ToString();
+                            var value21 = dataGridView1.Rows[i].Cells[21].Value.ToString();
+                            var value22 = dataGridView1.Rows[i].Cells[22].Value.ToString();
+                            var value23 = dataGridView1.Rows[i].Cells[23].Value.ToString();
+                            var value24 = dataGridView1.Rows[i].Cells[24].Value.ToString();
+                            var value25 = dataGridView1.Rows[i].Cells[25].Value.ToString();
+                            var value26 = dataGridView1.Rows[i].Cells[26].Value.ToString();
+                            var value27 = dataGridView1.Rows[i].Cells[27].Value.ToString();
+                            var value28 = dataGridView1.Rows[i].Cells[28].Value.ToString();
+                            var value29 = dataGridView1.Rows[i].Cells[29].Value.ToString();
+                            var value30 = dataGridView1.Rows[i].Cells[30].Value.ToString();
+                            var value31 = dataGridView1.Rows[i].Cells[31].Value.ToString();
+                            var value32 = dataGridView1.Rows[i].Cells[32].Value.ToString();
+                            var value33 = dataGridView1.Rows[i].Cells[33].Value.ToString();
+                            var value34 = dataGridView1.Rows[i].Cells[34].Value.ToString();
+                            var value35 = dataGridView1.Rows[i].Cells[35].Value.ToString();
+                            var value36 = dataGridView1.Rows[i].Cells[36].Value.ToString();
+
+                            if (dataGridView1.ColumnCount != 37)
+                            {
+                                tw.WriteLine("Medicare files need 37 columns. You have " + dataGridView1.ColumnCount + ".");
+                            }
+
+                            if (string.IsNullOrWhiteSpace(value0))
+                            {
+                                tw.WriteLine("NULL value found in column #1 (CustomerId)  at line " + (i + 1) + " This is a required field.");
+                            }
+
+                        }
+                        catch (Exception)
+                        {
+                            // If we have reached this far, then none of the cells were empty.
+                            tw.WriteLine("EOF");
+                            return;
+                        }
+                    }
+                }
+            } }
+
 
         //------------------MEDICARE CHECKER END------------------------------------------------------
+
+        //------------------SQL LOADER START------------------------------------------------------
+
+        private void sqlLoader_Click(object sender, EventArgs e)
+        {
+
+            string strCmdLine =
+     "cd c:" + 
+     "-sqlcmd -SIcmTstDb2.cci.caldsaas.local\tst2 -q 'use Acom_Med_Test2 select top 100 from broker' -o c:\\CCDataToolSQLOutput.csv -h-1 -s',' -w 700";
+
+            System.Diagnostics.Process.Start("C:/Windows/System32\runas /user:ACTEKSOFT\roward /netonly CMD.exe", strCmdLine);
+        }
+
+        //------------------SQL LOADER END------------------------------------------------------
 
 
         public Form1()
         {
             InitializeComponent();
         }
-
-        private void dataGridView1_CellValidating_Click(object sender, DataGridViewCellValidatingEventArgs e, EventArgs ea)
-        {
-            string headerText =
-                dataGridView1.Columns[e.ColumnIndex].HeaderText;
-
-            // Abort validation if cell is not in the CompanyName column.
-            if (!headerText.Equals("CompanyName")) return;
-
-            // Confirm that the cell is not empty.
-            if (string.IsNullOrEmpty(e.FormattedValue.ToString()))
-            {
-                dataGridView1.Rows[e.RowIndex].ErrorText =
-                    "Company Name must not be empty";
-                e.Cancel = true;
-            }
-        }
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            ((DataGridViewTextBoxColumn)dataGridView1.Columns["dates"]).MaxInputLength = 6;
+           // ((DataGridViewTextBoxColumn)dataGridView1.Columns["dates"]).MaxInputLength = 6;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -776,23 +849,6 @@ namespace CCDataImportTool
         private void form1BindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void button2_Click(object sender, DataGridViewCellValidatingEventArgs e)
-        {
-            string headerText =
-                dataGridView1.Columns[e.ColumnIndex].HeaderText;
-
-            // Abort validation if cell is not in the CompanyName column.
-            if (!headerText.Equals("CompanyName")) return;
-
-            // Confirm that the cell is not empty.
-            if (string.IsNullOrEmpty(e.FormattedValue.ToString()))
-            {
-                dataGridView1.Rows[e.RowIndex].ErrorText =
-                    "Company Name must not be empty";
-                e.Cancel = true;
-            }
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)

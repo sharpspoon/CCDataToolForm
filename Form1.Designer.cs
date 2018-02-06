@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -59,7 +60,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -86,7 +86,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -96,6 +99,7 @@
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,6 +119,14 @@
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Cross;
             this.dataGridView1.Location = new System.Drawing.Point(12, 143);
@@ -312,7 +324,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.pictureBox1.Image = global::CCDataImportTool.Properties.Resources.CallidusCloud_Logo_300;
             this.pictureBox1.Location = new System.Drawing.Point(1232, 27);
             this.pictureBox1.Name = "pictureBox1";
@@ -331,7 +343,7 @@
             // 
             // button1
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
             this.button1.Location = new System.Drawing.Point(86, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(57, 37);
@@ -339,17 +351,6 @@
             this.button1.Text = "Convert";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.dateConvert_Click1);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1151, 27);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            this.button2.Click += new System.EventHandler(this.testButton_Click);
             // 
             // groupBox2
             // 
@@ -391,7 +392,7 @@
             // 
             // button4
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Default;
             this.button4.Location = new System.Drawing.Point(154, 19);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(48, 40);
@@ -461,7 +462,7 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -497,7 +498,7 @@
             // 
             // button3
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Default;
             this.button3.Location = new System.Drawing.Point(161, 20);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(47, 36);
@@ -557,7 +558,7 @@
             // 
             // button5
             // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Default;
             this.button5.Location = new System.Drawing.Point(86, 19);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(47, 36);
@@ -603,24 +604,58 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Location = new System.Drawing.Point(760, 75);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(150, 62);
+            this.groupBox1.Size = new System.Drawing.Size(156, 62);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Medicare Checker:";
             // 
+            // button7
+            // 
+            this.button7.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button7.Location = new System.Drawing.Point(68, 18);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(82, 36);
+            this.button7.TabIndex = 22;
+            this.button7.Text = "Create Error File";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.medicareButtonCreateFile_Click);
+            // 
             // button6
             // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Location = new System.Drawing.Point(6, 19);
+            this.button6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button6.Location = new System.Drawing.Point(6, 18);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(138, 36);
+            this.button6.Size = new System.Drawing.Size(56, 36);
             this.button6.TabIndex = 21;
             this.button6.Text = "Check";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.medicareButton_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox6.Controls.Add(this.button2);
+            this.groupBox6.Location = new System.Drawing.Point(916, 75);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(150, 62);
+            this.groupBox6.TabIndex = 29;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "SQL Loader:";
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button2.Location = new System.Drawing.Point(6, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(138, 36);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "Connect";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.sqlLoader_Click);
             // 
             // form1BindingSource
             // 
@@ -632,13 +667,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1553, 839);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -647,10 +682,12 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "CallidusCloud Data Import Tool v0.2";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Text = "CallidusCloud Data Import Tool";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -666,6 +703,7 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -698,7 +736,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox3;
@@ -731,6 +768,9 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button7;
     }
 }
 

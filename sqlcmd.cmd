@@ -1,0 +1,1 @@
+C:\Windows\System32\runas.exe /user:ACTEKSOFT\roward /netonly C:\Windows\System32\cmd.exe
