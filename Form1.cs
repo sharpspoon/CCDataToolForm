@@ -704,7 +704,7 @@ namespace CCDataImportTool
         private void medicareButtonCreateFile_Click(object sender, EventArgs e)
         {
             System.IO.Directory.CreateDirectory("C:\\Program Files (x86)\\CCDataTool");
-            string path = @"C:\Program Files (x86)\CCDataTool\MedicareErrorFile.txt";
+            string path = @"C:\Program Files (x86)\CCDataTool\CCDataTool_MEF_"+ DateTime.Now.ToString("MM_dd_yyyy_HHmmss")+".txt";
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                 using (TextWriter tw = new StreamWriter(fs))
@@ -887,11 +887,18 @@ namespace CCDataImportTool
         private void sqlLoader_Click(object sender, EventArgs e)
         {
 
-            string strCmdLine =
-     "cd c:" + 
-     "-sqlcmd -SIcmTstDb2.cci.caldsaas.local\tst2 -q 'use Acom_Med_Test2 select top 100 from broker' -o c:\\CCDataToolSQLOutput.csv -h-1 -s',' -w 700";
 
-            System.Diagnostics.Process.Start("C:/Windows/System32\runas /user:ACTEKSOFT\roward /netonly CMD.exe", strCmdLine);
+            //string connectionString = "Data Source=IcmTstDb2.cci.caldsaas.local\tst2;Initial Catalog=Acom_Cvty_Test2;Integrated Security=True";
+            //string sql = "SELECT top 10 from broker";
+            //SqlConnection connection = new SqlConnection(connectionString);
+            //SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
+            //DataSet ds = new DataSet();
+            //connection.Open();
+            //dataadapter.Fill(ds, "Authors_table");
+            //connection.Close();
+            //dataGridView1.DataSource = ds;
+            //dataGridView1.DataMember = "Authors_table";
+
         }
 
         //------------------SQL LOADER END------------------------------------------------------
@@ -906,7 +913,9 @@ namespace CCDataImportTool
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-           // ((DataGridViewTextBoxColumn)dataGridView1.Columns["dates"]).MaxInputLength = 6;
+            // TODO: This line of code loads data into the 'acom_Cvty_Test2DataSet.QBQuery' table. You can move, or remove it, as needed.
+            this.qBQueryTableAdapter.Fill(this.acom_Cvty_Test2DataSet.QBQuery);
+            // ((DataGridViewTextBoxColumn)dataGridView1.Columns["dates"]).MaxInputLength = 6;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -955,6 +964,9 @@ namespace CCDataImportTool
             textBox7.Text = dataGridView1.Rows.Count.ToString();
         }
 
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }

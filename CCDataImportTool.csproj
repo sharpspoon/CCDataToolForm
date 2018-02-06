@@ -84,6 +84,11 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="Acom_Cvty_Test2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Acom_Cvty_Test2DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +113,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Acom_Cvty_Test2DataSet.xsc">
+      <DependentUpon>Acom_Cvty_Test2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Acom_Cvty_Test2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Acom_Cvty_Test2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Acom_Cvty_Test2DataSet.xss">
+      <DependentUpon>Acom_Cvty_Test2DataSet.xsd</DependentUpon>
+    </None>
     <None Include="CCDataImportTool_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\Form1.datasource" />
     <None Include="Properties\Settings.settings">

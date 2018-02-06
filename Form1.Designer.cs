@@ -90,8 +90,13 @@
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.qBQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.acom_Cvty_Test2DataSet = new CCDataImportTool.Acom_Cvty_Test2DataSet();
+            this.qBQueryTableAdapter = new CCDataImportTool.Acom_Cvty_Test2DataSetTableAdapters.QBQueryTableAdapter();
+            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -101,6 +106,13 @@
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acom_Cvty_Test2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,9 +142,9 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 143);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1529, 633);
+            this.dataGridView1.Size = new System.Drawing.Size(766, 630);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -325,7 +337,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::CCDataImportTool.Properties.Resources.CallidusCloud_Logo_300;
             this.pictureBox1.Location = new System.Drawing.Point(1232, 27);
             this.pictureBox1.Name = "pictureBox1";
@@ -463,7 +475,7 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -658,28 +670,69 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.sqlLoader_Click);
             // 
-            // form1BindingSource
-            // 
-            this.form1BindingSource.DataSource = typeof(CCDataImportTool.Form1);
-            this.form1BindingSource.CurrentChanged += new System.EventHandler(this.form1BindingSource_CurrentChanged);
-            // 
             // notifyIcon2
             // 
             this.notifyIcon2.Text = "notifyIcon2";
             this.notifyIcon2.Visible = true;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Location = new System.Drawing.Point(12, 143);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel1.Cursor = System.Windows.Forms.Cursors.VSplit;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
+            this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
+            this.splitContainer1.Size = new System.Drawing.Size(1529, 633);
+            this.splitContainer1.SplitterDistance = 769;
+            this.splitContainer1.TabIndex = 22;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(750, 627);
+            this.dataGridView2.TabIndex = 31;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // qBQueryBindingSource
+            // 
+            this.qBQueryBindingSource.DataMember = "QBQuery";
+            this.qBQueryBindingSource.DataSource = this.acom_Cvty_Test2DataSet;
+            // 
+            // acom_Cvty_Test2DataSet
+            // 
+            this.acom_Cvty_Test2DataSet.DataSetName = "Acom_Cvty_Test2DataSet";
+            this.acom_Cvty_Test2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // qBQueryTableAdapter
+            // 
+            this.qBQueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // form1BindingSource
+            // 
+            this.form1BindingSource.DataSource = typeof(CCDataImportTool.Form1);
+            this.form1BindingSource.CurrentChanged += new System.EventHandler(this.form1BindingSource_CurrentChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1553, 839);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -710,6 +763,13 @@
             this.groupBox5.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acom_Cvty_Test2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -778,6 +838,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.NotifyIcon notifyIcon2;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private Acom_Cvty_Test2DataSet acom_Cvty_Test2DataSet;
+        private System.Windows.Forms.BindingSource qBQueryBindingSource;
+        private Acom_Cvty_Test2DataSetTableAdapters.QBQueryTableAdapter qBQueryTableAdapter;
     }
 }
 
