@@ -696,7 +696,6 @@ namespace CCDataImportTool
                 }
                 catch (Exception)
                 {
-                    // If we have reached this far, then none of the cells were empty.
                     MessageBox.Show("Medicare file is OK", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     return;
                 }
@@ -704,7 +703,8 @@ namespace CCDataImportTool
         }
         private void medicareButtonCreateFile_Click(object sender, EventArgs e)
         {
-            string path = @"C:\1\myFile.txt";
+            System.IO.Directory.CreateDirectory("C:\\Program Files (x86)\\CCDataTool");
+            string path = @"C:\Program Files (x86)\CCDataTool\MedicareErrorFile.txt";
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                 using (TextWriter tw = new StreamWriter(fs))
@@ -716,69 +716,168 @@ namespace CCDataImportTool
                     tw.WriteLine(".");
                     tw.WriteLine(".");
                     tw.WriteLine(".");
-
-                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                    {
-                        try {
-
-                            var value0 = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                            var value1 = dataGridView1.Rows[i].Cells[1].Value.ToString();
-                            var value2 = dataGridView1.Rows[i].Cells[2].Value.ToString();
-                            var value3 = dataGridView1.Rows[i].Cells[3].Value.ToString();
-                            var value4 = dataGridView1.Rows[i].Cells[4].Value.ToString();
-                            var value5 = dataGridView1.Rows[i].Cells[5].Value.ToString();
-                            var value6 = dataGridView1.Rows[i].Cells[6].Value.ToString();
-                            var value7 = dataGridView1.Rows[i].Cells[7].Value.ToString();
-                            var value8 = dataGridView1.Rows[i].Cells[8].Value.ToString();
-                            var value9 = dataGridView1.Rows[i].Cells[9].Value.ToString();
-                            var value10 = dataGridView1.Rows[i].Cells[10].Value.ToString();
-                            var value11 = dataGridView1.Rows[i].Cells[11].Value.ToString();
-                            var value12 = dataGridView1.Rows[i].Cells[12].Value.ToString();
-                            var value13 = dataGridView1.Rows[i].Cells[13].Value.ToString();
-                            var value14 = dataGridView1.Rows[i].Cells[14].Value.ToString();
-                            var value15 = dataGridView1.Rows[i].Cells[15].Value.ToString();
-                            var value16 = dataGridView1.Rows[i].Cells[16].Value.ToString();
-                            var value17 = dataGridView1.Rows[i].Cells[17].Value.ToString();
-                            var value18 = dataGridView1.Rows[i].Cells[18].Value.ToString();
-                            var value19 = dataGridView1.Rows[i].Cells[19].Value.ToString();
-                            var value20 = dataGridView1.Rows[i].Cells[20].Value.ToString();
-                            var value21 = dataGridView1.Rows[i].Cells[21].Value.ToString();
-                            var value22 = dataGridView1.Rows[i].Cells[22].Value.ToString();
-                            var value23 = dataGridView1.Rows[i].Cells[23].Value.ToString();
-                            var value24 = dataGridView1.Rows[i].Cells[24].Value.ToString();
-                            var value25 = dataGridView1.Rows[i].Cells[25].Value.ToString();
-                            var value26 = dataGridView1.Rows[i].Cells[26].Value.ToString();
-                            var value27 = dataGridView1.Rows[i].Cells[27].Value.ToString();
-                            var value28 = dataGridView1.Rows[i].Cells[28].Value.ToString();
-                            var value29 = dataGridView1.Rows[i].Cells[29].Value.ToString();
-                            var value30 = dataGridView1.Rows[i].Cells[30].Value.ToString();
-                            var value31 = dataGridView1.Rows[i].Cells[31].Value.ToString();
-                            var value32 = dataGridView1.Rows[i].Cells[32].Value.ToString();
-                            var value33 = dataGridView1.Rows[i].Cells[33].Value.ToString();
-                            var value34 = dataGridView1.Rows[i].Cells[34].Value.ToString();
-                            var value35 = dataGridView1.Rows[i].Cells[35].Value.ToString();
-                            var value36 = dataGridView1.Rows[i].Cells[36].Value.ToString();
+                            
+                            //
+                            //
+                            //
+                            //var value4 = dataGridView1.Rows[i].Cells[4].Value.ToString();
+                            //var value5 = dataGridView1.Rows[i].Cells[5].Value.ToString();
+                            //
+                            //var value7 = dataGridView1.Rows[i].Cells[7].Value.ToString();
+                            //
+                            //var value9 = dataGridView1.Rows[i].Cells[9].Value.ToString();
+                            //
+                            //var value11 = dataGridView1.Rows[i].Cells[11].Value.ToString();
+                            //var value12 = dataGridView1.Rows[i].Cells[12].Value.ToString();
+                            //var value13 = dataGridView1.Rows[i].Cells[13].Value.ToString();
+                            //var value14 = dataGridView1.Rows[i].Cells[14].Value.ToString();
+                            //var value15 = dataGridView1.Rows[i].Cells[15].Value.ToString();
+                            //var value16 = dataGridView1.Rows[i].Cells[16].Value.ToString();
+                            //var value17 = dataGridView1.Rows[i].Cells[17].Value.ToString();
+                            //var value18 = dataGridView1.Rows[i].Cells[18].Value.ToString();
+                            //var value19 = dataGridView1.Rows[i].Cells[19].Value.ToString();
+                            //var value20 = dataGridView1.Rows[i].Cells[20].Value.ToString();
+                            //var value21 = dataGridView1.Rows[i].Cells[21].Value.ToString();
+                            //var value22 = dataGridView1.Rows[i].Cells[22].Value.ToString();
+                            //
+                            //var value24 = dataGridView1.Rows[i].Cells[24].Value.ToString();
+                            //var value25 = dataGridView1.Rows[i].Cells[25].Value.ToString();
+                            //var value26 = dataGridView1.Rows[i].Cells[26].Value.ToString();
+                            //var value27 = dataGridView1.Rows[i].Cells[27].Value.ToString();
+                            //var value28 = dataGridView1.Rows[i].Cells[28].Value.ToString();
+                            //var value29 = dataGridView1.Rows[i].Cells[29].Value.ToString();
+                            //var value30 = dataGridView1.Rows[i].Cells[30].Value.ToString();
+                            //var value31 = dataGridView1.Rows[i].Cells[31].Value.ToString();
+                            //var value32 = dataGridView1.Rows[i].Cells[32].Value.ToString();
+                            //var value33 = dataGridView1.Rows[i].Cells[33].Value.ToString();
+                            //var value34 = dataGridView1.Rows[i].Cells[34].Value.ToString();
+                            //var value35 = dataGridView1.Rows[i].Cells[35].Value.ToString();
+                            //var value36 = dataGridView1.Rows[i].Cells[36].Value.ToString();
 
                             if (dataGridView1.ColumnCount != 37)
                             {
                                 tw.WriteLine("Medicare files need 37 columns. You have " + dataGridView1.ColumnCount + ".");
                             }
 
+                    try
+                    {
+
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+                            var value0 = dataGridView1.Rows[i].Cells[0].Value.ToString();
+
                             if (string.IsNullOrWhiteSpace(value0))
                             {
-                                tw.WriteLine("NULL value found in column #1 (CustomerId)  at line " + (i + 1) + " This is a required field.");
+                                tw.WriteLine("NULL value found in column #1 (CustomerId)  at line " + (i + 1) + ". This is a required field.");
                             }
-
-                        }
-                        catch (Exception)
-                        {
-                            // If we have reached this far, then none of the cells were empty.
-                            tw.WriteLine("EOF");
-                            return;
                         }
                     }
+                    catch { tw.WriteLine("column #1 check...done."); }
+
+
+                    try
+                    {
+                        for (int j = 0; j < dataGridView1.Rows.Count; j++)
+                        {
+                            var value1 = dataGridView1.Rows[j].Cells[1].Value.ToString();
+
+                            if (string.IsNullOrWhiteSpace(value1))
+                            {
+                                tw.WriteLine("NULL value found in column #2 (ContractNbr)  at line " + (j + 1) + ". This is a required field.");
+                            }
+                        }
+                    }
+                    catch { tw.WriteLine("column #2 check...done."); }
+
+                    try
+                    {
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+                            var value2 = dataGridView1.Rows[i].Cells[2].Value.ToString();
+
+                            if (string.IsNullOrWhiteSpace(value2))
+                            {
+                                tw.WriteLine("NULL value found in column #3 (PBP)  at line " + (i + 1) + ". This is a required field.");
+                            }
+                        }
+                    }
+                    catch { tw.WriteLine("column #3 check...done."); }
+
+                    try
+                    {
+
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+                            var value3 = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                            if (string.IsNullOrWhiteSpace(value3))
+                            {
+                                tw.WriteLine("NULL value found in column #4 (HICN)  at line " + (i + 1) + ". This is a required field.");
+                            }
+                        }
+                    }
+                    catch { tw.WriteLine("column #4 check...done."); }
+
+                    try
+                    {
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+                            var value6 = dataGridView1.Rows[i].Cells[6].Value.ToString();
+
+                            if (string.IsNullOrWhiteSpace(value6))
+                            {
+                                tw.WriteLine("NULL value found in column #7 (DatEff)  at line " + (i + 1) + ". This is a required field.");
+                            }
+                        }
+                    }
+                    catch { tw.WriteLine("column #7 check...done."); }
+
+                    try
+                    {
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+                            var value8 = dataGridView1.Rows[i].Cells[8].Value.ToString();
+
+                            if (string.IsNullOrWhiteSpace(value8))
+                            {
+                                tw.WriteLine("NULL value found in column #9 (AppSignedDate)  at line " + (i + 1) + ". This is a required field.");
+                            }
+                        }
+                    }
+                    catch { tw.WriteLine("column #9 check...done."); }
+
+                    try
+                    {
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+                            var value10 = dataGridView1.Rows[i].Cells[10].Value.ToString();
+
+                            if (string.IsNullOrWhiteSpace(value10))
+                            {
+                                tw.WriteLine("NULL value found in column #11 (Holder)  at line " + (i + 1) + ". This is a required field.");
+                            }
+                        }
+                    }
+                    catch { tw.WriteLine("column #11 check...done."); }
+
+                    try
+                    {
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+                            var value23 = dataGridView1.Rows[i].Cells[23].Value.ToString();
+
+                            if (string.IsNullOrWhiteSpace(value23))
+                            {
+                                tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                            }
+                        }
+                    }
+                    catch { tw.WriteLine("column #24 check...done."); }
+
                 }
-            } }
+
+                    }
+                }
+
 
 
         //------------------MEDICARE CHECKER END------------------------------------------------------
