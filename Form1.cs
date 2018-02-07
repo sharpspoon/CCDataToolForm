@@ -721,7 +721,7 @@ namespace CCDataImportTool
                             {
                                 tw.WriteLine("Medicare files need 37 columns. You have " + dataGridView1.ColumnCount + ".");
                             }
-                            //column 1
+                            //column 1 -required
                     try
                     {
 
@@ -740,7 +740,7 @@ namespace CCDataImportTool
                         }
                     }
                     catch { tw.WriteLine("column #1 check...done."); }
-                    //column 2
+                    //column 2 -required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -753,13 +753,13 @@ namespace CCDataImportTool
                             }
                             if (value1.Length > 10)
                             {
-                                MessageBox.Show("column #2 (ContractNbr)  needs to be 10 or less characters.  At line " + (i + 1) + " you have a value that is " + value1.Length + " characters long.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                tw.WriteLine("column #2 (ContractNbr)  needs to be 10 or less characters.  At line " + (i + 1) + " you have a value that is " + value1.Length + " characters long.");
                                 return;
                             }
                         }
                     }
                     catch { tw.WriteLine("column #2 check...done."); }
-                    //column 3
+                    //column 3 -required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -771,13 +771,13 @@ namespace CCDataImportTool
                             }
                             if (value2.Length > 10)
                             {
-                                MessageBox.Show("column #3 (PBP)  needs to be 10 or less characters.  At line " + (i + 1) + " you have a value that is " + value2.Length + " characters long.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                tw.WriteLine("column #3 (PBP)  needs to be 10 or less characters.  At line " + (i + 1) + " you have a value that is " + value2.Length + " characters long.");
                                 return;
                             }
                         }
                     }
                     catch { tw.WriteLine("column #3 check...done."); }
-                    //column 4
+                    //column 4 -required
                     try
                     {
 
@@ -797,7 +797,7 @@ namespace CCDataImportTool
                         }
                     }
                     catch { tw.WriteLine("column #4 check...done."); }
-                    //column 5
+                    //column 5 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -812,7 +812,7 @@ namespace CCDataImportTool
                         }
                     }
                     catch { tw.WriteLine("column #5 check...done."); }
-                    //column 6
+                    //column 6 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -826,7 +826,7 @@ namespace CCDataImportTool
                         }
                     }
                     catch { tw.WriteLine("column #6 check...done."); }
-                    //column 7
+                    //column 7 -required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -836,7 +836,7 @@ namespace CCDataImportTool
                             if (string.IsNullOrWhiteSpace(value6))
                             {
                                 
-                                tw.WriteLine("NULL value found in column #7 (HICN)  at line " + (i + 1) + ". This is a required field.");
+                                tw.WriteLine("NULL value found in column #7 (DatEff)  at line " + (i + 1) + ". This is a required field.");
                             }
                             if (value6.Length > 20)
                             {
@@ -845,7 +845,7 @@ namespace CCDataImportTool
                         }
                     }
                     catch { tw.WriteLine("column #7 check...done."); }
-                    //column 8
+                    //column 8 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -859,7 +859,7 @@ namespace CCDataImportTool
                         }
                     }
                     catch { tw.WriteLine("column #8 check...done."); }
-                    //column 9
+                    //column 9 -required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -873,26 +873,26 @@ namespace CCDataImportTool
                             }
                             if (value8.Length > 20)
                             {
-                                tw.WriteLine("column #9 (AppSignedDate)  int");
+                                tw.WriteLine("column #9 (AppSignedDate)  int-length for this?");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #9 check...done."); }
-                    //column 10
+                    //column 10 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value9 = dataGridView1.Rows[i].Cells[9].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value9))
+                            if (value9.Length > 20)
                             {
                                 tw.WriteLine("column #10 (AppRcvDate)  needs to be 30 or less characters.  At line " + (i + 1) + " you have a value that is " + value9.Length + " characters long.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #10 check...done."); }
-                    //column 11
+                    //column 11 -required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -901,180 +901,184 @@ namespace CCDataImportTool
 
                             if (string.IsNullOrWhiteSpace(value10))
                             {
+                                tw.WriteLine("NULL value found in column #11 (Holder)  at line " + (i + 1) + ". This is a required field.");
+                            }
+                            if (value10.Length > 60)
+                            {
                                 tw.WriteLine("column #11 (Holder)  needs to be 60 or less characters.  At line " + (i + 1) + " you have a value that is " + value10.Length + " characters long.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #11 check...done."); }
-                    //column 12
+                    //column 12 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value11 = dataGridView1.Rows[i].Cells[11].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value11))
+                            if (value11.Length > 60)
                             {
                                 tw.WriteLine("column #12 (HolderFirstName)  needs to be 40 or less characters.  At line " + (i + 1) + " you have a value that is " + value11.Length + " characters long.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #12 check...done."); }
-                    //column 13
+                    //column 13 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value12 = dataGridView1.Rows[i].Cells[12].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value12))
+                            if (value12.Length > 60)
                             {
                                 tw.WriteLine("column #13 (HolderMiddleInitial)  needs to be 16 or less characters.  At line " + (i + 1) + " you have a value that is " + value12.Length + " characters long.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #13 check...done."); }
-                    //column 14
+                    //column 14 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value13 = dataGridView1.Rows[i].Cells[13].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value13))
+                            if (value13.Length > 60)
                             {
                                 tw.WriteLine("column #14 (HolderLastName)  needs to be 60 or less characters.  At line " + (i + 1) + " you have a value that is " + value13.Length + " characters long.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #14 check...done."); }
-                    //column 15
+                    //column 15 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value14 = dataGridView1.Rows[i].Cells[14].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value14))
+                            if (value14.Length > 60)
                             {
                                 tw.WriteLine("column #15 (HolderStreet)  needs to be 60 or less characters.  At line " + (i + 1) + " you have a value that is " + value14.Length + " characters long.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #15 check...done."); }
-                    //column 16
+                    //column 16 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value15 = dataGridView1.Rows[i].Cells[15].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value15))
+                            if (value15.Length > 60)
                             {
                                 tw.WriteLine("column #16 (HolderStreet2)  needs to be 30 or less characters.  At line " + (i + 1) + " you have a value that is " + value15.Length + " characters long.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #16 check...done."); }
-                    //column 17
+                    //column 17 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value16 = dataGridView1.Rows[i].Cells[16].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value16))
+                            if (value16.Length > 60)
                             {
                                 tw.WriteLine("column #17 (HolderCity)  needs to be 40 or less characters.  At line " + (i + 1) + " you have a value that is " + value16.Length + " characters long.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #17 check...done."); }
-                    //column 18
+                    //column 18 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value17 = dataGridView1.Rows[i].Cells[17].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value17))
+                            if (value17.Length > 60)
                             {
                                 tw.WriteLine("column #18 (HolderState)  needs to be 6 or less characters.  At line " + (i + 1) + " you have a value that is " + value17.Length + " characters long.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #18 check...done."); }
-                    //column 19
+                    //column 19 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value18 = dataGridView1.Rows[i].Cells[18].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value18))
+                            if (value18.Length > 60)
                             {
                                 tw.WriteLine("column #19 (HolderZip)  needs to be 16 or less characters.  At line " + (i + 1) + " you have a value that is " + value18.Length + " characters long.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #19 check...done."); }
-                    //column 20
+                    //column 20 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value19 = dataGridView1.Rows[i].Cells[19].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value19))
+                            if (value19.Length > 60)
                             {
                                 tw.WriteLine("column #20 (CountyCode)  needs to be 40 or less characters.  At line " + (i + 1) + " you have a value that is " + value19.Length + " characters long.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #20 check...done."); }
-                    //column 21
+                    //column 21 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value20 = dataGridView1.Rows[i].Cells[20].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value20))
+                            if (value20.Length > 60)
                             {
                                 tw.WriteLine("column #21 (HolderPhone)  needs to be 20 or less characters.  At line " + (i + 1) + " you have a value that is " + value20.Length + " characters long.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #21 check...done."); }
-                    //column 22
+                    //column 22 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value21 = dataGridView1.Rows[i].Cells[21].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value21))
+                            if (value21.Length > 60)
                             {
                                 tw.WriteLine("column #22 (HolderDOB)  needs to be 30 or less characters.  At line " + (i + 1) + " you have a value that is " + value21.Length + " characters long.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #22 check...done."); }
-                    //column 23
+                    //column 23 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value22 = dataGridView1.Rows[i].Cells[22].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value22))
+                            if (value22.Length > 60)
                             {
                                 tw.WriteLine("column #23 (HolderSSN)  needs to be 20 or less characters.  At line " + (i + 1) + " you have a value that is " + value22.Length + " characters long.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #23 check...done."); }
-                    //column 24
+                    //column 24 -required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -1088,182 +1092,182 @@ namespace CCDataImportTool
                         }
                     }
                     catch { tw.WriteLine("column #24 check...done."); }
-                    //column 25
+                    //column 25 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value24 = dataGridView1.Rows[i].Cells[24].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value24))
+                            if (value24.Length > 60)
                             {
                                 tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #25 check...done."); }
-                    //column 26
+                    //column 26 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value25 = dataGridView1.Rows[i].Cells[25].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value25))
+                            if (value25.Length > 60)
                             {
                                 tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #26 check...done."); }
-                    //column 27
+                    //column 27 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value26 = dataGridView1.Rows[i].Cells[26].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value26))
+                            if (value26.Length > 60)
                             {
                                 tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #27 check...done."); }
-                    //column 28
+                    //column 28 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value27 = dataGridView1.Rows[i].Cells[27].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value27))
+                            if (value27.Length > 60)
                             {
                                 tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #28 check...done."); }
-                    //column 29
+                    //column 29 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value28 = dataGridView1.Rows[i].Cells[28].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value28))
+                            if (value28.Length > 60)
                             {
                                 tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #29 check...done."); }
-                    //column 30
+                    //column 30 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value29 = dataGridView1.Rows[i].Cells[29].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value29))
+                            if (value29.Length > 60)
                             {
                                 tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #30 check...done."); }
-                    //column 31
+                    //column 31 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value30 = dataGridView1.Rows[i].Cells[30].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value30))
+                            if (value30.Length > 60)
                             {
                                 tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #31 check...done."); }
-                    //column 32
+                    //column 32 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value31 = dataGridView1.Rows[i].Cells[31].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value31))
+                            if (value31.Length > 60)
                             {
                                 tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #32 check...done."); }
-                    //column 33
+                    //column 33 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value32 = dataGridView1.Rows[i].Cells[32].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value32))
+                            if (value32.Length > 60)
                             {
                                 tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #33 check...done."); }
-                    //column 34
+                    //column 34 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value33 = dataGridView1.Rows[i].Cells[33].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value33))
+                            if (value33.Length > 60)
                             {
                                 tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #34 check...done."); }
-                    //column 35
+                    //column 35 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value34 = dataGridView1.Rows[i].Cells[34].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value34))
+                            if (value34.Length > 60)
                             {
                                 tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #35 check...done."); }
-                    //column 36
+                    //column 36 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value35 = dataGridView1.Rows[i].Cells[35].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value35))
+                            if (value35.Length > 60)
                             {
                                 tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
                             }
                         }
                     }
                     catch { tw.WriteLine("column #36 check...done."); }
-                    //column 37
+                    //column 37 -not required
                     try
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             var value36 = dataGridView1.Rows[i].Cells[36].Value.ToString();
 
-                            if (string.IsNullOrWhiteSpace(value36))
+                            if (value36.Length > 60)
                             {
                                 tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
                             }
