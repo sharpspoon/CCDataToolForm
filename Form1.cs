@@ -770,6 +770,10 @@ namespace CCDataImportTool
                             {
                                 tw.WriteLine("NULL value found in column #1 (CustomerId)  at line " + (i + 1) + ". This is a required field.");
                             }
+                            if (value0.Length > 30)
+                            {
+                                tw.WriteLine("column #1 (CustomerId)  needs to be 30 or less characters.  At line " + (i + 1) + " you have a value that is " + value0.Length + " characters long.");
+                            }
                         }
                     }
                     catch { tw.WriteLine("column #1 check...done."); }
@@ -872,10 +876,11 @@ namespace CCDataImportTool
                         }
                     }
                     catch { tw.WriteLine("column #24 check...done."); }
-
+                    tw.WriteLine("EOF.");
                 }
+                
 
-                    }
+            }
                 }
 
 
@@ -913,8 +918,6 @@ namespace CCDataImportTool
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'acom_Cvty_Test2DataSet.QBQuery' table. You can move, or remove it, as needed.
-            this.qBQueryTableAdapter.Fill(this.acom_Cvty_Test2DataSet.QBQuery);
             // ((DataGridViewTextBoxColumn)dataGridView1.Columns["dates"]).MaxInputLength = 6;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
