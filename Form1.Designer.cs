@@ -93,21 +93,16 @@
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.masterDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qBQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.acom_Cvty_Test2DataSet = new CCDataImportTool.Acom_Cvty_Test2DataSet();
-            this.qBQueryTableAdapter = new CCDataImportTool.Acom_Cvty_Test2DataSetTableAdapters.QBQueryTableAdapter();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.spDTAgetdatabasetableidsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.msdbDataSet = new CCDataImportTool.msdbDataSet();
-            this.masterDataSet = new CCDataImportTool.masterDataSet();
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sp_DTA_get_databasetableidsTableAdapter = new CCDataImportTool.msdbDataSetTableAdapters.sp_DTA_get_databasetableidsTableAdapter();
-            this.masterDataSet1 = new CCDataImportTool.masterDataSet1();
-            this.masterDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.masterDataSet2 = new CCDataImportTool.masterDataSet2();
             this.databaseFileSizeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseFileSizeTableAdapter = new CCDataImportTool.masterDataSet2TableAdapters.DatabaseFileSizeTableAdapter();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -122,17 +117,14 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.acom_Cvty_Test2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.msdbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFileSizeBindingSource)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -728,19 +720,19 @@
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // masterDataSet1BindingSource
+            // 
+            this.masterDataSet1BindingSource.Position = 0;
+            // 
+            // masterDataSet1
+            // 
+            // 
             // qBQueryBindingSource
             // 
             this.qBQueryBindingSource.DataMember = "QBQuery";
-            this.qBQueryBindingSource.DataSource = this.acom_Cvty_Test2DataSet;
-            // 
-            // acom_Cvty_Test2DataSet
-            // 
-            this.acom_Cvty_Test2DataSet.DataSetName = "Acom_Cvty_Test2DataSet";
-            this.acom_Cvty_Test2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // qBQueryTableAdapter
             // 
-            this.qBQueryTableAdapter.ClearBeforeFill = true;
             // 
             // comboBox2
             // 
@@ -748,26 +740,21 @@
             this.comboBox2.DataSource = this.spDTAgetdatabasetableidsBindingSource;
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(934, 27);
+            this.comboBox2.Location = new System.Drawing.Point(6, 15);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(292, 21);
+            this.comboBox2.Size = new System.Drawing.Size(175, 21);
             this.comboBox2.TabIndex = 31;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // spDTAgetdatabasetableidsBindingSource
             // 
             this.spDTAgetdatabasetableidsBindingSource.DataMember = "sp_DTA_get_databasetableids";
-            this.spDTAgetdatabasetableidsBindingSource.DataSource = this.msdbDataSet;
             // 
             // msdbDataSet
             // 
-            this.msdbDataSet.DataSetName = "msdbDataSet";
-            this.msdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // masterDataSet
             // 
-            this.masterDataSet.DataSetName = "masterDataSet";
-            this.masterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // form1BindingSource
             // 
@@ -776,43 +763,66 @@
             // 
             // masterDataSetBindingSource
             // 
-            this.masterDataSetBindingSource.DataSource = this.masterDataSet;
             this.masterDataSetBindingSource.Position = 0;
             // 
             // sp_DTA_get_databasetableidsTableAdapter
             // 
-            this.sp_DTA_get_databasetableidsTableAdapter.ClearBeforeFill = true;
-            // 
-            // masterDataSet1
-            // 
-            this.masterDataSet1.DataSetName = "masterDataSet1";
-            this.masterDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // masterDataSet1BindingSource
-            // 
-            this.masterDataSet1BindingSource.DataSource = this.masterDataSet1;
-            this.masterDataSet1BindingSource.Position = 0;
             // 
             // masterDataSet2
             // 
-            this.masterDataSet2.DataSetName = "masterDataSet2";
-            this.masterDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // databaseFileSizeBindingSource
             // 
             this.databaseFileSizeBindingSource.DataMember = "DatabaseFileSize";
-            this.databaseFileSizeBindingSource.DataSource = this.masterDataSet2;
             // 
             // databaseFileSizeTableAdapter
             // 
-            this.databaseFileSizeTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "IcmTstDb1.cci.caldsaas.local\\tst1",
+            "IcmTstDb2.cci.caldsaas.local\\tst2",
+            "IcmTstDb3.cci.caldsaas.local\\tst3",
+            "IcmImpDb1.cci.caldsaas.local\\Imp1"});
+            this.comboBox3.Location = new System.Drawing.Point(6, 15);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(210, 21);
+            this.comboBox3.TabIndex = 32;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox7.Controls.Add(this.comboBox3);
+            this.groupBox7.Location = new System.Drawing.Point(12, 27);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(223, 42);
+            this.groupBox7.TabIndex = 26;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Select Server:";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox8.Controls.Add(this.comboBox2);
+            this.groupBox8.Location = new System.Drawing.Point(241, 27);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(191, 42);
+            this.groupBox8.TabIndex = 33;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Select Database:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1553, 839);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox1);
@@ -855,17 +865,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.acom_Cvty_Test2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.msdbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFileSizeBindingSource)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -935,20 +942,15 @@
         private System.Windows.Forms.NotifyIcon notifyIcon2;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private Acom_Cvty_Test2DataSet acom_Cvty_Test2DataSet;
         private System.Windows.Forms.BindingSource qBQueryBindingSource;
-        private Acom_Cvty_Test2DataSetTableAdapters.QBQueryTableAdapter qBQueryTableAdapter;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.BindingSource masterDataSetBindingSource;
-        private masterDataSet masterDataSet;
         private System.Windows.Forms.BindingSource spDTAgetdatabasetableidsBindingSource;
-        private msdbDataSet msdbDataSet;
-        private msdbDataSetTableAdapters.sp_DTA_get_databasetableidsTableAdapter sp_DTA_get_databasetableidsTableAdapter;
         private System.Windows.Forms.BindingSource masterDataSet1BindingSource;
-        private masterDataSet1 masterDataSet1;
-        private masterDataSet2 masterDataSet2;
         private System.Windows.Forms.BindingSource databaseFileSizeBindingSource;
-        private masterDataSet2TableAdapters.DatabaseFileSizeTableAdapter databaseFileSizeTableAdapter;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox8;
     }
 }
 
