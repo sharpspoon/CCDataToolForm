@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -144,14 +144,14 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Cross;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -665,7 +665,7 @@
             // 
             this.groupBox6.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox6.Controls.Add(this.button2);
-            this.groupBox6.Location = new System.Drawing.Point(431, 27);
+            this.groupBox6.Location = new System.Drawing.Point(509, 27);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(150, 42);
             this.groupBox6.TabIndex = 29;
@@ -770,7 +770,7 @@
             // 
             this.groupBox7.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox7.Controls.Add(this.comboBox3);
-            this.groupBox7.Location = new System.Drawing.Point(12, 27);
+            this.groupBox7.Location = new System.Drawing.Point(83, 27);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(223, 42);
             this.groupBox7.TabIndex = 26;
@@ -781,7 +781,7 @@
             // 
             this.groupBox8.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox8.Controls.Add(this.comboBox2);
-            this.groupBox8.Location = new System.Drawing.Point(234, 27);
+            this.groupBox8.Location = new System.Drawing.Point(312, 27);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(191, 42);
             this.groupBox8.TabIndex = 33;
@@ -791,9 +791,9 @@
             // button8
             // 
             this.button8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button8.Location = new System.Drawing.Point(987, 75);
+            this.button8.Location = new System.Drawing.Point(12, 27);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(162, 40);
+            this.button8.Size = new System.Drawing.Size(65, 42);
             this.button8.TabIndex = 25;
             this.button8.Text = "Login with ACKTEK";
             this.button8.UseVisualStyleBackColor = true;
