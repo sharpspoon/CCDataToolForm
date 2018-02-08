@@ -95,6 +95,26 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="masterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="masterDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>masterDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="masterDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>masterDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="msdbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>msdbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="About.resx">
@@ -125,6 +145,50 @@
       <DependentUpon>Acom_Cvty_Test2DataSet.xsd</DependentUpon>
     </None>
     <None Include="CCDataImportTool_TemporaryKey.pfx" />
+    <None Include="masterDataSet.xsc">
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="masterDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>masterDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="masterDataSet.xss">
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="masterDataSet1.xsc">
+      <DependentUpon>masterDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="masterDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>masterDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="masterDataSet1.xss">
+      <DependentUpon>masterDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="masterDataSet2.xsc">
+      <DependentUpon>masterDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="masterDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>masterDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="masterDataSet2.xss">
+      <DependentUpon>masterDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="msdbDataSet.xsc">
+      <DependentUpon>msdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="msdbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>msdbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="msdbDataSet.xss">
+      <DependentUpon>msdbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\Form1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

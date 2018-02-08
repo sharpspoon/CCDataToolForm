@@ -33,5 +33,27 @@ namespace CCDataImportTool.Properties {
                 return ((string)(this["Acom_Cvty_Test2ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=IcmTstDb2.cci.caldsaas.local\\tst2;Initial Catalog=master;Integrated S" +
+            "ecurity=True")]
+        public string masterConnectionString {
+            get {
+                return ((string)(this["masterConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=IcmTstDb2.cci.caldsaas.local\\tst2;Initial Catalog=msdb;Integrated Sec" +
+            "urity=True")]
+        public string msdbConnectionString {
+            get {
+                return ((string)(this["msdbConnectionString"]));
+            }
+        }
     }
 }

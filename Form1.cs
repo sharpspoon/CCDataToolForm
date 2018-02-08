@@ -1291,16 +1291,7 @@ namespace CCDataImportTool
         {
 
 
-            //string connectionString = "Data Source=IcmTstDb2.cci.caldsaas.local\tst2;Initial Catalog=Acom_Cvty_Test2;Integrated Security=True";
-            //string sql = "SELECT top 10 from broker";
-            //SqlConnection connection = new SqlConnection(connectionString);
-            //SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
-            //DataSet ds = new DataSet();
-            //connection.Open();
-            //dataadapter.Fill(ds, "Authors_table");
-            //connection.Close();
-            //dataGridView1.DataSource = ds;
-            //dataGridView1.DataMember = "Authors_table";
+
 
         }
 
@@ -1310,13 +1301,47 @@ namespace CCDataImportTool
         public Form1()
         {
             InitializeComponent();
+            SqlConnection conn = new SqlConnection(@"Data Source = IcmTstDb2.cci.caldsaas.local\tst2; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+            SqlCommand sc = new SqlCommand("SELECT name FROM [master].[sys].[databases] where database_id > 4 and database_id < 37", conn);
+            SqlDataReader reader;
+
+            reader = sc.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("name", typeof(string));
+            dt.Load(reader);
+
+            //comboBox2.ValueMember = "1";
+            comboBox2.DisplayMember = "name";
+            comboBox2.DataSource = dt;
+
+            conn.Close();
         }
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            // ((DataGridViewTextBoxColumn)dataGridView1.Columns["dates"]).MaxInputLength = 6;
+            // TODO: This line of code loads data into the 'masterDataSet2.DatabaseFileSize' table. You can move, or remove it, as needed.
+            this.databaseFileSizeTableAdapter.Fill(this.masterDataSet2.DatabaseFileSize);
+
+            SqlConnection conn = new SqlConnection(@"Data Source = IcmTstDb2.cci.caldsaas.local\tst2; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+            SqlCommand sc = new SqlCommand("SELECT name FROM [master].[sys].[databases] where database_id > 4 and database_id < 37", conn);
+            SqlDataReader reader;
+
+            reader = sc.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("name", typeof(string));
+            dt.Load(reader);
+
+            //comboBox2.ValueMember = "1";
+            comboBox2.DisplayMember = "name";
+            comboBox2.DataSource = dt;
+
+            conn.Close();
+
+
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1368,6 +1393,11 @@ namespace CCDataImportTool
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string ID = comboBox2.SelectedValue.ToString();
         }
     }
 }
