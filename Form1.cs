@@ -360,6 +360,16 @@ namespace CCDataImportTool
 
         //------------------ABOUT END------------------------------------------------------
 
+        //------------------ACKTEKSOFT LOGIN START------------------------------------------------------
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form2 acktek = new Form2();
+            acktek.Show();
+        }
+
+        //------------------ACKTEKSOFT LOGIN END------------------------------------------------------
+
         //------------------CC LOGO CLICK START------------------------------------------------------
         private void ccLogo_Click1(object sender, EventArgs e)
         {
@@ -1323,9 +1333,6 @@ namespace CCDataImportTool
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
-
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1402,5 +1409,7 @@ namespace CCDataImportTool
 
             conn.Close();
         }
+
+
     }
 }

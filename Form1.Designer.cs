@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -103,6 +103,7 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -143,14 +144,14 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Cross;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -664,9 +665,9 @@
             // 
             this.groupBox6.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox6.Controls.Add(this.button2);
-            this.groupBox6.Location = new System.Drawing.Point(916, 75);
+            this.groupBox6.Location = new System.Drawing.Point(431, 27);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(150, 62);
+            this.groupBox6.Size = new System.Drawing.Size(150, 42);
             this.groupBox6.TabIndex = 29;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "SQL Loader:";
@@ -674,9 +675,9 @@
             // button2
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button2.Location = new System.Drawing.Point(6, 19);
+            this.button2.Location = new System.Drawing.Point(6, 16);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 36);
+            this.button2.Size = new System.Drawing.Size(138, 20);
             this.button2.TabIndex = 21;
             this.button2.Text = "Connect";
             this.button2.UseVisualStyleBackColor = true;
@@ -720,19 +721,9 @@
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // masterDataSet1BindingSource
-            // 
-            this.masterDataSet1BindingSource.Position = 0;
-            // 
-            // masterDataSet1
-            // 
-            // 
             // qBQueryBindingSource
             // 
             this.qBQueryBindingSource.DataMember = "QBQuery";
-            // 
-            // qBQueryTableAdapter
-            // 
             // 
             // comboBox2
             // 
@@ -750,33 +741,14 @@
             // 
             this.spDTAgetdatabasetableidsBindingSource.DataMember = "sp_DTA_get_databasetableids";
             // 
-            // msdbDataSet
-            // 
-            // 
-            // masterDataSet
-            // 
-            // 
             // form1BindingSource
             // 
             this.form1BindingSource.DataSource = typeof(CCDataImportTool.Form1);
             this.form1BindingSource.CurrentChanged += new System.EventHandler(this.form1BindingSource_CurrentChanged);
             // 
-            // masterDataSetBindingSource
-            // 
-            this.masterDataSetBindingSource.Position = 0;
-            // 
-            // sp_DTA_get_databasetableidsTableAdapter
-            // 
-            // 
-            // masterDataSet2
-            // 
-            // 
             // databaseFileSizeBindingSource
             // 
             this.databaseFileSizeBindingSource.DataMember = "DatabaseFileSize";
-            // 
-            // databaseFileSizeTableAdapter
-            // 
             // 
             // comboBox3
             // 
@@ -809,22 +781,34 @@
             // 
             this.groupBox8.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox8.Controls.Add(this.comboBox2);
-            this.groupBox8.Location = new System.Drawing.Point(241, 27);
+            this.groupBox8.Location = new System.Drawing.Point(234, 27);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(191, 42);
             this.groupBox8.TabIndex = 33;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Select Database:";
             // 
+            // button8
+            // 
+            this.button8.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button8.Location = new System.Drawing.Point(987, 75);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(162, 40);
+            this.button8.TabIndex = 25;
+            this.button8.Text = "Login with ACKTEK";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1553, 839);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label8);
@@ -951,6 +935,7 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button button8;
     }
 }
 
