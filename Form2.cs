@@ -18,9 +18,9 @@ using System.Web;
 
 namespace CCDataImportTool
 {
-    public partial class Form2 : Form
+    public partial class acteksoft : Form
     {
-        public Form2()
+        public acteksoft()
         {
             InitializeComponent();
         }

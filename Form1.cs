@@ -18,7 +18,7 @@ using System.Web;
 
 namespace CCDataImportTool
 {
-    public partial class Form1 : Form
+    public partial class main : Form
     {
         //------------------OPEN/SAVE CSV START------------------------------------------------------
         private void menu_Open_Csv_Click(object sender, EventArgs e)
@@ -112,7 +112,7 @@ namespace CCDataImportTool
                     dataGridView1.DataSource = dataSet.Tables[0];
 
                     textBox1.Text = ofd.FileName;
-                    textBox7.Text = dataGridView1[0,dataGridView1.Rows.Count-1].Value.ToString();
+                    textBox7.Text = dataGridView1[0, dataGridView1.Rows.Count - 1].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -307,16 +307,16 @@ namespace CCDataImportTool
                 }
                 catch
                 {
-                    MessageBox.Show("'"+comboBox1.Text+"'" + " WAS NOT  found in column "+"'"+textBox5.Text+"'", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("'" + comboBox1.Text + "'" + " WAS NOT  found in column " + "'" + textBox5.Text + "'", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     return;
                 }
 
 
 
-                
-                }
 
-            
+            }
+
+
         }
 
         //------------------SPECIAL CHARACTER CHECKER END------------------------------------------------------
@@ -364,7 +364,7 @@ namespace CCDataImportTool
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Form2 acktek = new Form2();
+            acteksoft acktek = new acteksoft();
             acktek.Show();
         }
 
@@ -714,7 +714,7 @@ namespace CCDataImportTool
         private void medicareButtonCreateFile_Click(object sender, EventArgs e)
         {
             System.IO.Directory.CreateDirectory("C:\\Program Files (x86)\\CCDataTool\\Medicare Error Files");
-            string path = @"C:\\Program Files (x86)\\CCDataTool\\Medicare Error Files\\CCDataTool_MEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss")+".txt";
+            string path = @"C:\\Program Files (x86)\\CCDataTool\\Medicare Error Files\\CCDataTool_MEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                 using (TextWriter tw = new StreamWriter(fs))
@@ -727,11 +727,11 @@ namespace CCDataImportTool
                     tw.WriteLine(".");
                     tw.WriteLine(".");
 
-                            if (dataGridView1.ColumnCount != 37)
-                            {
-                                tw.WriteLine("Medicare files need 37 columns. You have " + dataGridView1.ColumnCount + ".");
-                            }
-                            //column 1 -required
+                    if (dataGridView1.ColumnCount != 37)
+                    {
+                        tw.WriteLine("Medicare files need 37 columns. You have " + dataGridView1.ColumnCount + ".");
+                    }
+                    //column 1 -required
                     try
                     {
 
@@ -845,7 +845,7 @@ namespace CCDataImportTool
 
                             if (string.IsNullOrWhiteSpace(value6))
                             {
-                                
+
                                 tw.WriteLine("NULL value found in column #7 (DatEff)  at line " + (i + 1) + ". This is a required field.");
                             }
                             if (value6.Length > 20)
@@ -879,7 +879,7 @@ namespace CCDataImportTool
                             if (string.IsNullOrWhiteSpace(value8))
                             {
                                 tw.WriteLine("NULL value found in column #9 (AppSignedDate)  at line " + (i + 1) + ". This is a required field.");
-                                
+
                             }
                             if (value8.Length > 20)
                             {
@@ -1286,10 +1286,10 @@ namespace CCDataImportTool
                     catch { tw.WriteLine("column #37 check...done."); }
                     tw.WriteLine("EOF.");
                 }
-                
+
 
             }
-                }
+        }
 
 
 
@@ -1299,31 +1299,87 @@ namespace CCDataImportTool
 
         private void sqlLoader_Click(object sender, EventArgs e)
         {
+            
+                //string connectionString = @"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True";
+                //string sql = "use "+ databaseSelect.Text+" SELECT top 10 * from "+ tableSelect.Text;
+                //SqlConnection connection = new SqlConnection(connectionString);
+                //SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
+                //DataSet ds = new DataSet();
+                //connection.Open();
+                //dataadapter.Fill(ds, "table");
+                //connection.Close();
+                //dataGridView2.DataSource = ds;
+                //dataGridView2.DataMember = "table";
 
-            //InitializeComponent();
-            //SqlConnection conn = new SqlConnection(@"Data Source = IcmTstDb2.cci.caldsaas.local\tst2; Initial Catalog = master; Integrated Security = True");
-            //conn.Open();
-            //SqlCommand sc = new SqlCommand("SELECT name FROM [master].[sys].[databases] where database_id > 4 and database_id < 37", conn);
-            //SqlDataReader reader;
+        }
+        private void serverSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+            SqlCommand sc = new SqlCommand("SELECT name FROM [master].[sys].[databases] where name <> 'master' and name <> 'tempdb' and name <> 'model' and name <> 'msdb' and name <> 'DBAtools'", conn);
+            SqlDataReader reader;
 
-            //reader = sc.ExecuteReader();
-            //DataTable dt = new DataTable();
-            //dt.Columns.Add("name", typeof(string));
-            //dt.Load(reader);
+            reader = sc.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("name", typeof(string));
+            dt.Load(reader);
 
-            ////comboBox2.ValueMember = "1";
-            //comboBox2.DisplayMember = "name";
-            //comboBox2.DataSource = dt;
+            //comboBox2.ValueMember = "1";
+            databaseSelect.DataSource = dt;
+            databaseSelect.DisplayMember = "name";
+            
 
-            //conn.Close();
+            conn.Close();
+        }
 
+        private void databaseSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+            string ID = databaseSelect.SelectedValue.ToString();
+
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+            SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " SELECT table_name AS name FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' order by TABLE_NAME", conn);
+            SqlDataReader reader;
+
+            try
+            {
+                reader = sc.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                dt.Load(reader);
+
+                //comboBox2.ValueMember = "1";
+                tableSelect.DataSource = dt;
+                tableSelect.DisplayMember = "name";
+            }
+
+            catch { return; }
+
+            conn.Close();
+        }
+
+        private void tableSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                var select = "USE "+ databaseSelect.Text+" SELECT * FROM " + tableSelect.Text;
+                var c = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True"); 
+                var dataAdapter = new SqlDataAdapter(select, c);
+                var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                dataGridView2.ReadOnly = true;
+                dataGridView2.DataSource = ds.Tables[0];
+            }
+            catch { return; }
         }
 
         //------------------SQL LOADER END------------------------------------------------------
 
 
-        public Form1()
+        public main()
         {
             InitializeComponent();
 
@@ -1340,9 +1396,6 @@ namespace CCDataImportTool
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
         }
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-        }
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
         }
@@ -1352,17 +1405,10 @@ namespace CCDataImportTool
         private void label2_Click_1(object sender, EventArgs e)
         {
         }
-        private void testButton_Click(object sender, EventArgs e)
-        {
-        }
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
         }
         private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void xLSToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
 
@@ -1386,28 +1432,11 @@ namespace CCDataImportTool
 
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        private void groupBox9_Enter(object sender, EventArgs e)
         {
-            string ID = comboBox2.SelectedValue.ToString();
-        }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SqlConnection conn = new SqlConnection(@"Data Source = " + comboBox3.Text + "; Initial Catalog = master; Integrated Security = True");
-            conn.Open();
-            SqlCommand sc = new SqlCommand("SELECT name FROM [master].[sys].[databases] where database_id > 4 and database_id < 37", conn);
-            SqlDataReader reader;
-
-            reader = sc.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Columns.Add("name", typeof(string));
-            dt.Load(reader);
-
-            //comboBox2.ValueMember = "1";
-            comboBox2.DisplayMember = "name";
-            comboBox2.DataSource = dt;
-
-            conn.Close();
         }
 
 
