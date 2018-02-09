@@ -48,11 +48,9 @@
             this.xLSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.environmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.iCMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hMIGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tEST2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tEST3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.brokerDetailCheckToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
@@ -103,9 +101,10 @@
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.tableSelect = new System.Windows.Forms.ComboBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerNoCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -159,14 +158,14 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(769, 633);
+            this.dataGridView1.Size = new System.Drawing.Size(909, 778);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(288, 779);
+            this.textBox1.Location = new System.Drawing.Point(294, 927);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(340, 26);
@@ -182,11 +181,11 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.environmentsToolStripMenuItem,
+            this.dataToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1553, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1832, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -276,44 +275,31 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
-            // environmentsToolStripMenuItem
+            // dataToolStripMenuItem
             // 
-            this.environmentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iCMToolStripMenuItem});
-            this.environmentsToolStripMenuItem.Name = "environmentsToolStripMenuItem";
-            this.environmentsToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
-            this.environmentsToolStripMenuItem.Text = "Environments";
+            this.dataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inFileToolStripMenuItem});
+            this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.dataToolStripMenuItem.Text = "Data";
             // 
-            // iCMToolStripMenuItem
+            // inFileToolStripMenuItem
             // 
-            this.iCMToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hMIGToolStripMenuItem});
-            this.iCMToolStripMenuItem.Name = "iCMToolStripMenuItem";
-            this.iCMToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
-            this.iCMToolStripMenuItem.Text = "ICM";
+            this.inFileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.brokerDetailCheckToolStripMenuItem1,
+            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem,
+            this.customerNoCheckToolStripMenuItem});
+            this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inFileToolStripMenuItem.Text = "InFile";
+            this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             // 
-            // hMIGToolStripMenuItem
+            // brokerDetailCheckToolStripMenuItem1
             // 
-            this.hMIGToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tEST2ToolStripMenuItem,
-            this.tEST3ToolStripMenuItem});
-            this.hMIGToolStripMenuItem.Name = "hMIGToolStripMenuItem";
-            this.hMIGToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.hMIGToolStripMenuItem.Text = "HMIG";
-            // 
-            // tEST2ToolStripMenuItem
-            // 
-            this.tEST2ToolStripMenuItem.Name = "tEST2ToolStripMenuItem";
-            this.tEST2ToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-            this.tEST2ToolStripMenuItem.Text = "TEST2";
-            this.tEST2ToolStripMenuItem.Click += new System.EventHandler(this.env_Click1);
-            // 
-            // tEST3ToolStripMenuItem
-            // 
-            this.tEST3ToolStripMenuItem.Name = "tEST3ToolStripMenuItem";
-            this.tEST3ToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-            this.tEST3ToolStripMenuItem.Text = "TEST3";
-            this.tEST3ToolStripMenuItem.Click += new System.EventHandler(this.env_Click2);
+            this.brokerDetailCheckToolStripMenuItem1.Name = "brokerDetailCheckToolStripMenuItem1";
+            this.brokerDetailCheckToolStripMenuItem1.Size = new System.Drawing.Size(283, 22);
+            this.brokerDetailCheckToolStripMenuItem1.Text = "BrokerDetail Check";
+            this.brokerDetailCheckToolStripMenuItem1.ToolTipText = "Example: No BrokerDetail found for Broker# = xyz";
             // 
             // helpToolStripMenuItem
             // 
@@ -334,7 +320,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(187, 782);
+            this.label1.Location = new System.Drawing.Point(193, 927);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 20);
             this.label1.TabIndex = 19;
@@ -344,7 +330,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::CCDataImportTool.Properties.Resources.CallidusCloud_Logo_300;
-            this.pictureBox1.Location = new System.Drawing.Point(1232, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(1511, 17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(309, 120);
             this.pictureBox1.TabIndex = 3;
@@ -593,9 +579,9 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 817);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 953);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1553, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1832, 22);
             this.statusStrip1.TabIndex = 28;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -603,16 +589,17 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(8, 782);
+            this.label8.Location = new System.Drawing.Point(8, 927);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 20);
             this.label8.TabIndex = 29;
             this.label8.Text = "Total Rows:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(106, 779);
+            this.textBox7.Location = new System.Drawing.Point(112, 927);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(75, 26);
@@ -673,8 +660,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
             this.splitContainer1.Panel2MinSize = 50;
-            this.splitContainer1.Size = new System.Drawing.Size(1529, 633);
-            this.splitContainer1.SplitterDistance = 769;
+            this.splitContainer1.Size = new System.Drawing.Size(1808, 778);
+            this.splitContainer1.SplitterDistance = 909;
             this.splitContainer1.SplitterWidth = 10;
             this.splitContainer1.TabIndex = 22;
             // 
@@ -685,7 +672,7 @@
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(750, 633);
+            this.dataGridView2.Size = new System.Drawing.Size(889, 778);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -791,17 +778,10 @@
             this.tableSelect.TabIndex = 31;
             this.tableSelect.SelectedIndexChanged += new System.EventHandler(this.tableSelect_SelectedIndexChanged);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(706, 40);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(210, 23);
-            this.progressBar1.TabIndex = 35;
-            // 
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(885, 782);
+            this.textBox8.Location = new System.Drawing.Point(1745, 927);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(75, 26);
@@ -811,22 +791,36 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(787, 785);
+            this.label9.Location = new System.Drawing.Point(1647, 927);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 20);
             this.label9.TabIndex = 36;
             this.label9.Text = "Total Rows:";
             // 
+            // inMatchRuleInBrokerRoleBrokerToolStripMenuItem
+            // 
+            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Name = "inMatchRuleInBrokerRoleBrokerToolStripMenuItem";
+            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
+            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Text = "InMatchRule/InBrokerRoleBroker Check";
+            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.ToolTipText = "Example: The InMatchRule cannot be posted because its parent InBrokerRoleBroker f" +
+    "ailed to post successfully.";
+            // 
+            // customerNoCheckToolStripMenuItem
+            // 
+            this.customerNoCheckToolStripMenuItem.Name = "customerNoCheckToolStripMenuItem";
+            this.customerNoCheckToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
+            this.customerNoCheckToolStripMenuItem.Text = "CustomerNo Check";
+            this.customerNoCheckToolStripMenuItem.ToolTipText = "Example: Group/CORP (CustomerNo) is invalid.";
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1553, 839);
+            this.ClientSize = new System.Drawing.Size(1832, 975);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.groupBox8);
@@ -845,8 +839,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "main";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CallidusCloud Data Import Tool";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -896,13 +892,8 @@
         private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cSVToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripMenuItem environmentsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem iCMToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hMIGToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tEST2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tEST3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cSVToolStripMenuItem1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
@@ -955,9 +946,13 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.ComboBox tableSelect;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem brokerDetailCheckToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem inMatchRuleInBrokerRoleBrokerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customerNoCheckToolStripMenuItem;
     }
 }
 

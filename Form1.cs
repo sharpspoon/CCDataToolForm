@@ -1364,6 +1364,7 @@ namespace CCDataImportTool
 
             try
             {
+
                 var select = "USE "+ databaseSelect.Text+" SELECT * FROM " + tableSelect.Text;
                 var c = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True"); 
                 var dataAdapter = new SqlDataAdapter(select, c);
@@ -1372,6 +1373,7 @@ namespace CCDataImportTool
                 dataAdapter.Fill(ds);
                 dataGridView2.ReadOnly = true;
                 dataGridView2.DataSource = ds.Tables[0];
+                textBox8.Text = dataGridView2.Rows.Count.ToString();
             }
             catch { return; }
         }
@@ -1439,6 +1441,9 @@ namespace CCDataImportTool
 
         }
 
+        private void label8_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
