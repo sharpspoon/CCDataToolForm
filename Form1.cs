@@ -20,6 +20,8 @@ namespace CCDataImportTool
 {
     public partial class main : Form
     {
+        Medicare c1 = new Medicare();
+
         //------------------OPEN/SAVE CSV START------------------------------------------------------
         private void menu_Open_Csv_Click(object sender, EventArgs e)
         {
@@ -1289,6 +1291,7 @@ namespace CCDataImportTool
 
 
             }
+            MessageBox.Show("Medicare error file has been created. \nLocation: C:\\Program Files (x86)\\CCDataTool\\Medicare Error Files", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
 
 
@@ -1297,39 +1300,30 @@ namespace CCDataImportTool
 
         //------------------SQL LOADER START------------------------------------------------------
 
-        private void sqlLoader_Click(object sender, EventArgs e)
-        {
-            
-                //string connectionString = @"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True";
-                //string sql = "use "+ databaseSelect.Text+" SELECT top 10 * from "+ tableSelect.Text;
-                //SqlConnection connection = new SqlConnection(connectionString);
-                //SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
-                //DataSet ds = new DataSet();
-                //connection.Open();
-                //dataadapter.Fill(ds, "table");
-                //connection.Close();
-                //dataGridView2.DataSource = ds;
-                //dataGridView2.DataMember = "table";
-
-        }
         private void serverSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc = new SqlCommand("SELECT name FROM [master].[sys].[databases] where name <> 'master' and name <> 'tempdb' and name <> 'model' and name <> 'msdb' and name <> 'DBAtools'", conn);
             SqlDataReader reader;
+            try
+            {
+                reader = sc.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                dt.Load(reader);
 
-            reader = sc.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Columns.Add("name", typeof(string));
-            dt.Load(reader);
-
-            //comboBox2.ValueMember = "1";
-            databaseSelect.DataSource = dt;
-            databaseSelect.DisplayMember = "name";
+                //comboBox2.ValueMember = "1";
+                databaseSelect.DataSource = dt;
+                databaseSelect.DisplayMember = "name";
+                conn.Close();
+            }
+            catch {
+                conn.Close();
+                return; }
             
 
-            conn.Close();
+            
         }
 
         private void databaseSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -1352,6 +1346,7 @@ namespace CCDataImportTool
                 //comboBox2.ValueMember = "1";
                 tableSelect.DataSource = dt;
                 tableSelect.DisplayMember = "name";
+                conn.Close();
             }
 
             catch { return; }
@@ -1366,16 +1361,18 @@ namespace CCDataImportTool
             {
 
                 var select = "USE "+ databaseSelect.Text+" SELECT * FROM " + tableSelect.Text;
-                var c = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True"); 
-                var dataAdapter = new SqlDataAdapter(select, c);
+                var conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True"); 
+                var dataAdapter = new SqlDataAdapter(select, conn);
                 var commandBuilder = new SqlCommandBuilder(dataAdapter);
                 var ds = new DataSet();
                 dataAdapter.Fill(ds);
                 dataGridView2.ReadOnly = true;
                 dataGridView2.DataSource = ds.Tables[0];
                 textBox8.Text = dataGridView2.Rows.Count.ToString();
+                conn.Close();
             }
-            catch { return; }
+            catch {
+                return; }
         }
 
         //------------------SQL LOADER END------------------------------------------------------
@@ -1445,5 +1442,11 @@ namespace CCDataImportTool
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            c1.button2_Click();
+        }
+
     }
 }

@@ -51,6 +51,8 @@
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.brokerDetailCheckToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerNoCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
@@ -103,8 +105,7 @@
             this.tableSelect = new System.Windows.Forms.ComboBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerNoCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -290,7 +291,7 @@
             this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem,
             this.customerNoCheckToolStripMenuItem});
             this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             // 
@@ -300,6 +301,21 @@
             this.brokerDetailCheckToolStripMenuItem1.Size = new System.Drawing.Size(283, 22);
             this.brokerDetailCheckToolStripMenuItem1.Text = "BrokerDetail Check";
             this.brokerDetailCheckToolStripMenuItem1.ToolTipText = "Example: No BrokerDetail found for Broker# = xyz";
+            // 
+            // inMatchRuleInBrokerRoleBrokerToolStripMenuItem
+            // 
+            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Name = "inMatchRuleInBrokerRoleBrokerToolStripMenuItem";
+            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
+            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Text = "InMatchRule/InBrokerRoleBroker Check";
+            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.ToolTipText = "Example: The InMatchRule cannot be posted because its parent InBrokerRoleBroker f" +
+    "ailed to post successfully.";
+            // 
+            // customerNoCheckToolStripMenuItem
+            // 
+            this.customerNoCheckToolStripMenuItem.Name = "customerNoCheckToolStripMenuItem";
+            this.customerNoCheckToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
+            this.customerNoCheckToolStripMenuItem.Text = "CustomerNo Check";
+            this.customerNoCheckToolStripMenuItem.ToolTipText = "Example: Group/CORP (CustomerNo) is invalid.";
             // 
             // helpToolStripMenuItem
             // 
@@ -330,9 +346,9 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::CCDataImportTool.Properties.Resources.CallidusCloud_Logo_300;
-            this.pictureBox1.Location = new System.Drawing.Point(1511, 17);
+            this.pictureBox1.Location = new System.Drawing.Point(1513, 17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(309, 120);
+            this.pictureBox1.Size = new System.Drawing.Size(307, 120);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.ccLogo_Click1);
@@ -745,13 +761,15 @@
             // 
             // button8
             // 
+            this.button8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button8.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Location = new System.Drawing.Point(12, 27);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(65, 42);
             this.button8.TabIndex = 25;
             this.button8.Text = "Login with ACTEK";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // groupBox9
@@ -797,26 +815,22 @@
             this.label9.TabIndex = 36;
             this.label9.Text = "Total Rows:";
             // 
-            // inMatchRuleInBrokerRoleBrokerToolStripMenuItem
+            // button2
             // 
-            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Name = "inMatchRuleInBrokerRoleBrokerToolStripMenuItem";
-            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
-            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Text = "InMatchRule/InBrokerRoleBroker Check";
-            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.ToolTipText = "Example: The InMatchRule cannot be posted because its parent InBrokerRoleBroker f" +
-    "ailed to post successfully.";
-            // 
-            // customerNoCheckToolStripMenuItem
-            // 
-            this.customerNoCheckToolStripMenuItem.Name = "customerNoCheckToolStripMenuItem";
-            this.customerNoCheckToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
-            this.customerNoCheckToolStripMenuItem.Text = "CustomerNo Check";
-            this.customerNoCheckToolStripMenuItem.ToolTipText = "Example: Group/CORP (CustomerNo) is invalid.";
+            this.button2.Location = new System.Drawing.Point(1132, 88);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 38;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1832, 975);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -953,6 +967,7 @@
         private System.Windows.Forms.ToolStripMenuItem brokerDetailCheckToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem inMatchRuleInBrokerRoleBrokerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerNoCheckToolStripMenuItem;
+        private System.Windows.Forms.Button button2;
     }
 }
 

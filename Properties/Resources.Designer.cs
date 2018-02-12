@@ -63,6 +63,16 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1200px_SAP_2011_logo_svg {
+            get {
+                object obj = ResourceManager.GetObject("1200px-SAP_2011_logo.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CallidusCloud_Logo_300 {
             get {
                 object obj = ResourceManager.GetObject("CallidusCloud_Logo-300", resourceCulture);
