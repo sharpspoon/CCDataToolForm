@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Globalization;
-using System.Threading;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Xml;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.OleDb;
 using System.IO;
-using System.DirectoryServices.ActiveDirectory;
-using System.Web;
+using System.IO.Compression;
 
 namespace CCDataImportTool
 {
@@ -207,20 +199,6 @@ namespace CCDataImportTool
 
         //------------------EXIT APP ACTION END------------------------------------------------------
 
-        //------------------ENVIRONMENT MENU START------------------------------------------------------
-
-        private void env_Click1(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://hmigexttest2.callidusinsurance.net/ICM");
-        }
-
-        private void env_Click2(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://hmigexttest3.callidusinsurance.net/ICM");
-        }
-
-        //------------------ENVIRONMENT MENU END------------------------------------------------------
-
         //------------------DATE CONVERTER START------------------------------------------------------
 
         private void dateConvert_Click1(object sender, EventArgs e)
@@ -283,7 +261,7 @@ namespace CCDataImportTool
 
         //------------------SPECIAL CHARACTER CHECKER START------------------------------------------------------
 
-        private void button3_Click(object sender, EventArgs e)
+        private void specialCharacter_Click(object sender, EventArgs e)
         {
             String searchValue = comboBox1.Text;
             string specialBoxFill = textBox5.Text;
@@ -325,7 +303,7 @@ namespace CCDataImportTool
 
         //------------------CELL LENGTH CHECKER START------------------------------------------------------
 
-        private void button4_Click(object sender, EventArgs e)
+        private void cellLength_Click(object sender, EventArgs e)
         {
             {
                 try
@@ -364,10 +342,10 @@ namespace CCDataImportTool
 
         //------------------ACKTEKSOFT LOGIN START------------------------------------------------------
 
-        private void button8_Click(object sender, EventArgs e)
+        private void acteksoft_Click(object sender, EventArgs e)
         {
-            acteksoft acktek = new acteksoft();
-            acktek.Show();
+            acteksoft actek = new acteksoft();
+            actek.Show();
         }
 
         //------------------ACKTEKSOFT LOGIN END------------------------------------------------------
@@ -1377,6 +1355,33 @@ namespace CCDataImportTool
 
         //------------------SQL LOADER END------------------------------------------------------
 
+        //------------------IMPORT FORMAT LOAD START------------------------------------------------------
+        
+
+        private void openImportFormatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string zipPath;
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "ZIP | *.zip", ValidateNames = true, Multiselect = false })
+            {
+
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    zipPath = ofd.FileName;
+                    string extractPath = @"C:\Program Files (x86)\CCDataTool\ZIP Extracts\" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss");
+                    ZipFile.ExtractToDirectory(zipPath, extractPath);
+                    MessageBox.Show("Import Format Loaded", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                }
+
+                else
+                {
+                    MessageBox.Show("error", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
+        //------------------IMPORT FORMAT LOAD END------------------------------------------------------
+
 
         public main()
         {
@@ -1447,6 +1452,7 @@ namespace CCDataImportTool
         {
             c1.button2_Click();
         }
+
 
     }
 }

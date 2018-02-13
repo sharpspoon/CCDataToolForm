@@ -53,6 +53,7 @@
             this.brokerDetailCheckToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerNoCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openImportFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
@@ -279,7 +280,8 @@
             // dataToolStripMenuItem
             // 
             this.dataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inFileToolStripMenuItem});
+            this.inFileToolStripMenuItem,
+            this.openImportFormatToolStripMenuItem});
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
             this.dataToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.dataToolStripMenuItem.Text = "Data";
@@ -291,7 +293,7 @@
             this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem,
             this.customerNoCheckToolStripMenuItem});
             this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             // 
@@ -316,6 +318,13 @@
             this.customerNoCheckToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
             this.customerNoCheckToolStripMenuItem.Text = "CustomerNo Check";
             this.customerNoCheckToolStripMenuItem.ToolTipText = "Example: Group/CORP (CustomerNo) is invalid.";
+            // 
+            // openImportFormatToolStripMenuItem
+            // 
+            this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
+            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.openImportFormatToolStripMenuItem.Text = "Open Import Format";
+            this.openImportFormatToolStripMenuItem.Click += new System.EventHandler(this.openImportFormatToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -419,7 +428,7 @@
             this.button4.TabIndex = 22;
             this.button4.Text = "Check";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.cellLength_Click);
             // 
             // label3
             // 
@@ -525,7 +534,7 @@
             this.button3.TabIndex = 21;
             this.button3.Text = "Check";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.specialCharacter_Click);
             // 
             // printDialog1
             // 
@@ -770,7 +779,7 @@
             this.button8.TabIndex = 25;
             this.button8.Text = "Login with ACTEK";
             this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button8.Click += new System.EventHandler(this.acteksoft_Click);
             // 
             // groupBox9
             // 
@@ -817,11 +826,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1132, 88);
+            this.button2.Location = new System.Drawing.Point(1259, 46);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(191, 23);
             this.button2.TabIndex = 38;
-            this.button2.Text = "button2";
+            this.button2.Text = "second class test";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -968,6 +977,7 @@
         private System.Windows.Forms.ToolStripMenuItem inMatchRuleInBrokerRoleBrokerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerNoCheckToolStripMenuItem;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem openImportFormatToolStripMenuItem;
     }
 }
 
