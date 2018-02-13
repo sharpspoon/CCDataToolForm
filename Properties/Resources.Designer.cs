@@ -73,9 +73,9 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CallidusCloud_Logo_300 {
+        internal static System.Drawing.Bitmap CallidusCloud_Company_Logoflip {
             get {
-                object obj = ResourceManager.GetObject("CallidusCloud_Logo-300", resourceCulture);
+                object obj = ResourceManager.GetObject("CallidusCloud_Company_Logoflip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap QRdWxA7C {
+        internal static System.Drawing.Bitmap CallidusCloud_Logo_300 {
             get {
-                object obj = ResourceManager.GetObject("QRdWxA7C", resourceCulture);
+                object obj = ResourceManager.GetObject("CallidusCloud_Logo-300", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

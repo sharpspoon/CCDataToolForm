@@ -121,10 +121,10 @@
   <data name="CallidusCloud_Logo-300" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CallidusCloud_Logo-300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="QRdWxA7C" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\QRdWxA7C.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="1200px-SAP_2011_logo.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1200px-SAP_2011_logo.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CallidusCloud_Company_Logoflip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CallidusCloud_Company_Logoflip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

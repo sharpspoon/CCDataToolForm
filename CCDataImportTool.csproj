@@ -31,7 +31,7 @@
     <SuiteName>CallidusCloud</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -73,7 +73,7 @@
     <ApplicationIcon>download_BmO_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>CCDataImportTool_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
@@ -196,6 +196,7 @@
   <ItemGroup>
     <Content Include="download_BmO_icon.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\CallidusCloud_Company_Logoflip.png" />
     <None Include="Resources\1200px-SAP_2011_logo.svg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

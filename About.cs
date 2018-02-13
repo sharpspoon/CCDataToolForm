@@ -14,7 +14,12 @@ namespace CCDataImportTool
         public About()
         {
             InitializeComponent();
-
+            this.Text = String.Format("About {0}", AssemblyTitle);
+            this.labelProductName.Text = AssemblyProduct;
+            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            this.labelCopyright.Text = AssemblyCopyright;
+            this.labelCompanyName.Text = AssemblyCompany;
+            this.textBoxDescription.Text = AssemblyDescription;
         }
 
         #region Assembly Attribute Accessors
@@ -99,22 +104,12 @@ namespace CCDataImportTool
 
         private void labelProductName_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        private void textBoxDescription_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
-        private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
+        private void okButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            this.Close(); 
         }
     }
 }
