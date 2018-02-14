@@ -199,6 +199,7 @@ namespace CCDataImportTool
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            textBox9.Text = Environment.UserName;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

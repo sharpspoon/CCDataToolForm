@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Diagnostics;
 using System.Text;
 using System.Xml;
 using System.Threading.Tasks;
@@ -27,14 +28,18 @@ namespace CCDataImportTool
 
         private void button8_Click(object sender, EventArgs e)
         {
+            var processdir = Environment.CurrentDirectory; 
+            //string fullPath = process.;
             System.IO.Directory.CreateDirectory("C:\\Program Files (x86)\\CCDataTool\\ACTEKSOFT");
             string path = @"C:\\Program Files (x86)\\CCDataTool\\ACTEKSOFT\\LaunchWithACTEKSOFT.cmd";
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                 using (TextWriter tw = new StreamWriter(fs))
                 {
+                    tw.WriteLine(@"md C:\Program Files(x86)\CCDataTool\Data");
+                    tw.WriteLine("robocopy "+processdir+" "+@"""C:\Program Files (x86)\CCDataTool\Data"""+@" /MIR");
                     tw.WriteLine("taskkill /IM CCDataImportTool.exe /F");
-                    tw.WriteLine("C:\\Windows\\System32\\runas.exe /user:ACTEKSOFT\\"+textBox7.Text+" /netonly CCDataImportTool.exe");
+                    tw.WriteLine("C:\\Windows\\System32\\runas.exe /user:ACTEKSOFT\\"+textBox7.Text+ @" /netonly ""C:\Program Files (x86)\CCDataTool\Data\CCDataImportTool.exe""");  //Environment.UserName
                 }
                 System.Diagnostics.Process.Start("C:\\Program Files (x86)\\CCDataTool\\ACTEKSOFT\\LaunchWithACTEKSOFT.cmd");
 
