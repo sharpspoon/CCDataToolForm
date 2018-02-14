@@ -18,32 +18,31 @@ using System.Web;
 
 namespace CCDataImportTool
 {
-    public partial class acteksoft : Form
+    public partial class Ssms : Form
     {
-        public acteksoft()
+        public Ssms()
         {
             InitializeComponent();
         }
 
+        private void Ssms_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void button8_Click(object sender, EventArgs e)
         {
-            System.IO.Directory.CreateDirectory("C:\\Program Files (x86)\\CCDataTool\\ACTEKSOFT");
-            string path = @"C:\\Program Files (x86)\\CCDataTool\\ACTEKSOFT\\LaunchWithACTEKSOFT.cmd";
+            System.IO.Directory.CreateDirectory("C:\\Program Files (x86)\\CCDataTool\\SSMS");
+            string path = @"C:\\Program Files (x86)\\CCDataTool\\SSMS\\LaunchWithACTEKSOFT.cmd";
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                 using (TextWriter tw = new StreamWriter(fs))
                 {
-                    tw.WriteLine("taskkill /IM CCDataImportTool.exe /F");
-                    tw.WriteLine("C:\\Windows\\System32\\runas.exe /user:ACTEKSOFT\\"+textBox7.Text+" /netonly CCDataImportTool.exe");
+                    tw.WriteLine("C:\\Windows\\System32\\runas.exe /user:ACTEKSOFT\\" + textBox7.Text + " /netonly "+ @"""C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\Ssms.exe""");
                 }
-                System.Diagnostics.Process.Start("C:\\Program Files (x86)\\CCDataTool\\ACTEKSOFT\\LaunchWithACTEKSOFT.cmd");
+                System.Diagnostics.Process.Start("C:\\Program Files (x86)\\CCDataTool\\SSMS\\LaunchWithACTEKSOFT.cmd");
 
             }
-        }
-
-        private void acteksoft_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

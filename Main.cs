@@ -240,5 +240,11 @@ namespace CCDataImportTool
         private void label8_Click(object sender, EventArgs e)
         {
         }
+
+        private void ssms_Click(object sender, EventArgs e)
+        {
+            Ssms ssms = new Ssms();
+            ssms.Show();
+        }
     }
 }

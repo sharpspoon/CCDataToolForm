@@ -124,6 +124,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "acteksoft";
             this.Text = "Login with ACTEKSOFT";
+            this.Load += new System.EventHandler(this.acteksoft_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

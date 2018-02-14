@@ -106,6 +106,7 @@
             this.tableSelect = new System.Windows.Forms.ComboBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -159,7 +160,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(909, 778);
+            this.dataGridView1.Size = new System.Drawing.Size(909, 826);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -353,10 +354,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::CCDataImportTool.Properties.Resources.CallidusCloud_Logo_300;
-            this.pictureBox1.Location = new System.Drawing.Point(1513, 17);
+            this.pictureBox1.Image = global::CCDataImportTool.Properties.Resources.CallidusCloud_Logo_62;
+            this.pictureBox1.Location = new System.Drawing.Point(1650, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(307, 120);
+            this.pictureBox1.Size = new System.Drawing.Size(170, 62);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.ccLogo_Click1);
@@ -386,7 +387,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 75);
+            this.groupBox2.Location = new System.Drawing.Point(764, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(150, 62);
             this.groupBox2.TabIndex = 23;
@@ -410,7 +411,7 @@
             this.groupBox3.Controls.Add(this.textBox4);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Location = new System.Drawing.Point(168, 75);
+            this.groupBox3.Location = new System.Drawing.Point(914, 27);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(209, 62);
             this.groupBox3.TabIndex = 24;
@@ -472,7 +473,7 @@
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.textBox5);
             this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Location = new System.Drawing.Point(383, 75);
+            this.groupBox4.Location = new System.Drawing.Point(1123, 27);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(215, 62);
             this.groupBox4.TabIndex = 26;
@@ -560,7 +561,7 @@
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.textBox6);
             this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Location = new System.Drawing.Point(604, 75);
+            this.groupBox5.Location = new System.Drawing.Point(1338, 27);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(150, 62);
             this.groupBox5.TabIndex = 27;
@@ -635,7 +636,7 @@
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Location = new System.Drawing.Point(760, 75);
+            this.groupBox1.Location = new System.Drawing.Point(1488, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(156, 62);
             this.groupBox1.TabIndex = 28;
@@ -671,7 +672,7 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(12, 143);
+            this.splitContainer1.Location = new System.Drawing.Point(12, 95);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -684,7 +685,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
             this.splitContainer1.Panel2MinSize = 50;
-            this.splitContainer1.Size = new System.Drawing.Size(1808, 778);
+            this.splitContainer1.Size = new System.Drawing.Size(1808, 826);
             this.splitContainer1.SplitterDistance = 909;
             this.splitContainer1.SplitterWidth = 10;
             this.splitContainer1.TabIndex = 22;
@@ -696,7 +697,7 @@
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(889, 778);
+            this.dataGridView2.Size = new System.Drawing.Size(889, 826);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -749,9 +750,9 @@
             // 
             this.groupBox7.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox7.Controls.Add(this.serverSelect);
-            this.groupBox7.Location = new System.Drawing.Point(83, 27);
+            this.groupBox7.Location = new System.Drawing.Point(159, 27);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(223, 42);
+            this.groupBox7.Size = new System.Drawing.Size(223, 62);
             this.groupBox7.TabIndex = 26;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Select Server:";
@@ -760,9 +761,9 @@
             // 
             this.groupBox8.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox8.Controls.Add(this.databaseSelect);
-            this.groupBox8.Location = new System.Drawing.Point(312, 27);
+            this.groupBox8.Location = new System.Drawing.Point(382, 27);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(191, 42);
+            this.groupBox8.Size = new System.Drawing.Size(191, 62);
             this.groupBox8.TabIndex = 33;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Select Database:";
@@ -772,9 +773,9 @@
             this.button8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button8.Cursor = System.Windows.Forms.Cursors.Default;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(12, 27);
+            this.button8.Location = new System.Drawing.Point(88, 27);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(65, 42);
+            this.button8.Size = new System.Drawing.Size(65, 62);
             this.button8.TabIndex = 25;
             this.button8.Text = "Login with ACTEK";
             this.button8.UseVisualStyleBackColor = false;
@@ -784,9 +785,9 @@
             // 
             this.groupBox9.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox9.Controls.Add(this.tableSelect);
-            this.groupBox9.Location = new System.Drawing.Point(509, 27);
+            this.groupBox9.Location = new System.Drawing.Point(573, 27);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(191, 42);
+            this.groupBox9.Size = new System.Drawing.Size(191, 62);
             this.groupBox9.TabIndex = 34;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Select Table:";
@@ -823,11 +824,26 @@
             this.label9.TabIndex = 36;
             this.label9.Text = "Total Rows:";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(12, 27);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(65, 62);
+            this.button2.TabIndex = 38;
+            this.button2.Text = "Launch SSMS";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.ssms_Click);
+            // 
             // CCDataTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1832, 975);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -965,6 +981,7 @@
         private System.Windows.Forms.ToolStripMenuItem inMatchRuleInBrokerRoleBrokerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerNoCheckToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openImportFormatToolStripMenuItem;
+        private System.Windows.Forms.Button button2;
     }
 }
 

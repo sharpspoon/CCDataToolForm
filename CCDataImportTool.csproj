@@ -137,6 +137,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings1.settings</DependentUpon>
     </Compile>
+    <Compile Include="Ssms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ssms.Designer.cs">
+      <DependentUpon>Ssms.cs</DependentUpon>
+    </Compile>
     <Compile Include="System\IO\Compression\ZipFile.cs" />
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
@@ -157,6 +163,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Ssms.resx">
+      <DependentUpon>Ssms.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="CCDataImportTool_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\Form1.datasource" />
@@ -198,6 +207,8 @@
   <ItemGroup>
     <Content Include="download_BmO_icon.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\CallidusCloud_Logo-62.png" />
+    <None Include="Resources\CallidusCloud_Logo-3001.png" />
     <None Include="Resources\CallidusCloud_Company_Logoflip.png" />
     <None Include="Resources\1200px-SAP_2011_logo.svg.png" />
   </ItemGroup>
