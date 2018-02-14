@@ -41,6 +41,7 @@ namespace CCDataImportTool
                     tw.WriteLine("C:\\Windows\\System32\\runas.exe /user:ACTEKSOFT\\" + textBox7.Text + " /netonly "+ @"""C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\Ssms.exe""");
                 }
                 System.Diagnostics.Process.Start("C:\\Program Files (x86)\\CCDataTool\\SSMS\\LaunchWithACTEKSOFT.cmd");
+                this.Close();
 
             }
         }
