@@ -54,6 +54,8 @@
             this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerNoCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openImportFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectFromDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFromZIPExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
@@ -296,7 +298,7 @@
             this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem,
             this.customerNoCheckToolStripMenuItem});
             this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             // 
@@ -324,10 +326,26 @@
             // 
             // openImportFormatToolStripMenuItem
             // 
+            this.openImportFormatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.selectFromDatabaseToolStripMenuItem,
+            this.openFromZIPExportToolStripMenuItem});
             this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
-            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.openImportFormatToolStripMenuItem.Text = "Open Import Format";
+            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openImportFormatToolStripMenuItem.Text = "Import Format";
             this.openImportFormatToolStripMenuItem.Click += new System.EventHandler(this.openImportFormatToolStripMenuItem_Click);
+            // 
+            // selectFromDatabaseToolStripMenuItem
+            // 
+            this.selectFromDatabaseToolStripMenuItem.Name = "selectFromDatabaseToolStripMenuItem";
+            this.selectFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.selectFromDatabaseToolStripMenuItem.Text = "Select From Database";
+            // 
+            // openFromZIPExportToolStripMenuItem
+            // 
+            this.openFromZIPExportToolStripMenuItem.Name = "openFromZIPExportToolStripMenuItem";
+            this.openFromZIPExportToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.openFromZIPExportToolStripMenuItem.Text = "Open From .ZIP Export";
+            this.openFromZIPExportToolStripMenuItem.Click += new System.EventHandler(this.openFromZIPExportToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -847,7 +865,7 @@
             this.textBox9.Location = new System.Drawing.Point(931, 927);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(75, 26);
+            this.textBox9.Size = new System.Drawing.Size(322, 26);
             this.textBox9.TabIndex = 39;
             // 
             // CCDataTool
@@ -997,6 +1015,8 @@
         private System.Windows.Forms.ToolStripMenuItem openImportFormatToolStripMenuItem;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.ToolStripMenuItem selectFromDatabaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openFromZIPExportToolStripMenuItem;
     }
 }
 

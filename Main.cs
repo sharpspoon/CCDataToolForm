@@ -170,6 +170,11 @@ namespace CCDataImportTool
 
         private void openImportFormatToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void openFromZIPExportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             string zipPath;
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "ZIP | *.zip", ValidateNames = true, Multiselect = false })
             {
@@ -199,7 +204,7 @@ namespace CCDataImportTool
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            textBox9.Text = Environment.UserName;
+            textBox9.Text = @"TALLYCENTRAL\"+Environment.UserName;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -255,5 +260,7 @@ namespace CCDataImportTool
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
             }
         }
+
+
     }
 }
