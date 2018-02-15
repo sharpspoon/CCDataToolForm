@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Deployment.Application;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -45,7 +46,14 @@ namespace CCDataImportTool
         {
             get
             {
-                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                if (ApplicationDeployment.IsNetworkDeployed)
+                {
+                    return Assembly.GetExecutingAssembly().GetName().Version.ToString() + " Publish: "+(ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4));
+                }
+                else
+                {
+                    return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                }
             }
         }
 
@@ -58,7 +66,7 @@ namespace CCDataImportTool
                 {
                     return "";
                 }
-                return ((AssemblyDescriptionAttribute)attributes[0]).Description;
+                return ((AssemblyDescriptionAttribute)attributes[0]).Description+"For enhancement requests, please email roward@calliduscloud.com";
             }
         }
 

@@ -30,18 +30,20 @@ namespace CCDataImportTool
         {
             var processdir = Environment.CurrentDirectory; 
             //string fullPath = process.;
-            System.IO.Directory.CreateDirectory("C:\\Program Files (x86)\\CCDataTool\\ACTEKSOFT");
-            string path = @"C:\\Program Files (x86)\\CCDataTool\\ACTEKSOFT\\LaunchWithACTEKSOFT.cmd";
+            System.IO.Directory.CreateDirectory(processdir + @"\ACTEKSOFT");
+            string path = processdir + @"\ACTEKSOFT\LaunchWithACTEKSOFT.cmd";
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                 using (TextWriter tw = new StreamWriter(fs))
                 {
-                    tw.WriteLine(@"md C:\Program Files(x86)\CCDataTool\Data");
-                    tw.WriteLine("robocopy "+processdir+" "+@"""C:\Program Files (x86)\CCDataTool\Data"""+@" /MIR");
+                    //tw.WriteLine(@"md C:\Program Files(x86)\CCDataTool\Data");
+                    //tw.WriteLine("robocopy "+processdir+" "+@"""C:\Program Files (x86)\CCDataTool\Data"""+@" /MIR");
                     tw.WriteLine("taskkill /IM CCDataImportTool.exe /F");
-                    tw.WriteLine("C:\\Windows\\System32\\runas.exe /user:ACTEKSOFT\\"+textBox7.Text+ @" /netonly ""C:\Program Files (x86)\CCDataTool\Data\CCDataImportTool.exe""");  //Environment.UserName
+                    tw.WriteLine("cls");
+                    tw.WriteLine("C:\\Windows\\System32\\runas.exe /user:ACTEKSOFT\\"+textBox7.Text+ @" /netonly " +@""""+processdir+@"\CCDataImportTool.exe""");  //Environment.UserName
+                    tw.WriteLine("exit");
                 }
-                System.Diagnostics.Process.Start("C:\\Program Files (x86)\\CCDataTool\\ACTEKSOFT\\LaunchWithACTEKSOFT.cmd");
+                System.Diagnostics.Process.Start(path);
 
             }
         }
