@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CCDataTool));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -48,6 +48,8 @@
             this.xLSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.brokerDetailCheckToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +58,9 @@
             this.openImportFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectFromDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFromZIPExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.medicareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createErrorFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inProgramCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
@@ -87,9 +92,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -110,6 +112,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
+            this.ifSelect = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -117,7 +120,6 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -150,14 +152,14 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Cross;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -188,6 +190,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.viewToolStripMenuItem,
             this.dataToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -282,11 +286,24 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
             // dataToolStripMenuItem
             // 
             this.dataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inFileToolStripMenuItem,
-            this.openImportFormatToolStripMenuItem});
+            this.openImportFormatToolStripMenuItem,
+            this.medicareToolStripMenuItem});
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
             this.dataToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.dataToolStripMenuItem.Text = "Data";
@@ -339,6 +356,7 @@
             this.selectFromDatabaseToolStripMenuItem.Name = "selectFromDatabaseToolStripMenuItem";
             this.selectFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.selectFromDatabaseToolStripMenuItem.Text = "Select From Database";
+            this.selectFromDatabaseToolStripMenuItem.Click += new System.EventHandler(this.selectFromDatabaseToolStripMenuItem_Click);
             // 
             // openFromZIPExportToolStripMenuItem
             // 
@@ -346,6 +364,30 @@
             this.openFromZIPExportToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.openFromZIPExportToolStripMenuItem.Text = "Open From .ZIP Export";
             this.openFromZIPExportToolStripMenuItem.Click += new System.EventHandler(this.openFromZIPExportToolStripMenuItem_Click);
+            // 
+            // medicareToolStripMenuItem
+            // 
+            this.medicareToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createErrorFileToolStripMenuItem,
+            this.inProgramCheckToolStripMenuItem});
+            this.medicareToolStripMenuItem.Name = "medicareToolStripMenuItem";
+            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medicareToolStripMenuItem.Text = "Medicare";
+            this.medicareToolStripMenuItem.Click += new System.EventHandler(this.medicareToolStripMenuItem_Click);
+            // 
+            // createErrorFileToolStripMenuItem
+            // 
+            this.createErrorFileToolStripMenuItem.Name = "createErrorFileToolStripMenuItem";
+            this.createErrorFileToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.createErrorFileToolStripMenuItem.Text = "Create Error File";
+            this.createErrorFileToolStripMenuItem.Click += new System.EventHandler(this.createErrorFileToolStripMenuItem_Click);
+            // 
+            // inProgramCheckToolStripMenuItem
+            // 
+            this.inProgramCheckToolStripMenuItem.Name = "inProgramCheckToolStripMenuItem";
+            this.inProgramCheckToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.inProgramCheckToolStripMenuItem.Text = "In Program Check";
+            this.inProgramCheckToolStripMenuItem.Click += new System.EventHandler(this.inProgramCheckToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -408,7 +450,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(764, 27);
+            this.groupBox2.Location = new System.Drawing.Point(919, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(150, 62);
             this.groupBox2.TabIndex = 23;
@@ -432,7 +474,7 @@
             this.groupBox3.Controls.Add(this.textBox4);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Location = new System.Drawing.Point(914, 27);
+            this.groupBox3.Location = new System.Drawing.Point(1069, 27);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(209, 62);
             this.groupBox3.TabIndex = 24;
@@ -494,7 +536,7 @@
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.textBox5);
             this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Location = new System.Drawing.Point(1123, 27);
+            this.groupBox4.Location = new System.Drawing.Point(1278, 27);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(215, 62);
             this.groupBox4.TabIndex = 26;
@@ -582,7 +624,7 @@
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.textBox6);
             this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Location = new System.Drawing.Point(1338, 27);
+            this.groupBox5.Location = new System.Drawing.Point(1493, 27);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(150, 62);
             this.groupBox5.TabIndex = 27;
@@ -651,40 +693,6 @@
             this.textBox7.Size = new System.Drawing.Size(75, 26);
             this.textBox7.TabIndex = 30;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Location = new System.Drawing.Point(1488, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(156, 62);
-            this.groupBox1.TabIndex = 28;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Medicare Checker:";
-            // 
-            // button7
-            // 
-            this.button7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button7.Location = new System.Drawing.Point(68, 18);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(82, 36);
-            this.button7.TabIndex = 22;
-            this.button7.Text = "Create Error File";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.medicareButtonCreateFile_Click);
-            // 
-            // button6
-            // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button6.Location = new System.Drawing.Point(6, 18);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(56, 36);
-            this.button6.TabIndex = 21;
-            this.button6.Text = "Check";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.medicareButton_Click);
             // 
             // notifyIcon2
             // 
@@ -868,12 +876,25 @@
             this.textBox9.Size = new System.Drawing.Size(322, 26);
             this.textBox9.TabIndex = 39;
             // 
+            // ifSelect
+            // 
+            this.ifSelect.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ifSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
+            this.ifSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ifSelect.FormattingEnabled = true;
+            this.ifSelect.Location = new System.Drawing.Point(786, 45);
+            this.ifSelect.Name = "ifSelect";
+            this.ifSelect.Size = new System.Drawing.Size(111, 21);
+            this.ifSelect.TabIndex = 32;
+            this.ifSelect.SelectedIndexChanged += new System.EventHandler(this.ifSelect_SelectedIndexChanged);
+            // 
             // CCDataTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1832, 975);
+            this.Controls.Add(this.ifSelect);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox8);
@@ -885,7 +906,6 @@
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.statusStrip1);
@@ -917,7 +937,6 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -987,9 +1006,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.NotifyIcon notifyIcon2;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -1017,6 +1033,12 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.ToolStripMenuItem selectFromDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openFromZIPExportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem medicareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createErrorFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inProgramCheckToolStripMenuItem;
+        private System.Windows.Forms.ComboBox ifSelect;
     }
 }
 

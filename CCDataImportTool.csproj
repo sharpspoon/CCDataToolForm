@@ -35,7 +35,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>23</ApplicationRevision>
+    <ApplicationRevision>29</ApplicationRevision>
     <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -113,6 +113,12 @@
     <Compile Include="CellChecker.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Importformat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Importformat.Designer.cs">
+      <DependentUpon>Importformat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings1.settings</DependentUpon>
     </Compile>
+    <Compile Include="Sql.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ssms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +157,9 @@
     <Compile Include="System\IO\Compression\ZipFile.cs" />
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Importformat.resx">
+      <DependentUpon>Importformat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

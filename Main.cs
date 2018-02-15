@@ -95,78 +95,15 @@ namespace CCDataImportTool
 
 
 
-        //------------------SQL LOADER START------------------------------------------------------
 
-        private void serverSelect_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
-            conn.Open();
-            SqlCommand sc = new SqlCommand("SELECT name FROM [master].[sys].[databases] where name <> 'master' and name <> 'tempdb' and name <> 'model' and name <> 'msdb' and name <> 'DBAtools'", conn);
-            SqlDataReader reader;
-            try
-            {
-                reader = sc.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Columns.Add("name", typeof(string));
-                dt.Load(reader);
-
-                //comboBox2.ValueMember = "1";
-                databaseSelect.DataSource = dt;
-                databaseSelect.DisplayMember = "name";
-                conn.Close();
-            }
-            catch {
-                conn.Close();
-                return; }
-        }
-
-        private void databaseSelect_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string ID = databaseSelect.SelectedValue.ToString();
-            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
-            conn.Open();
-            SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " SELECT table_name AS name FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' order by TABLE_NAME", conn);
-            SqlDataReader reader;
-            try
-            {
-                reader = sc.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Columns.Add("name", typeof(string));
-                dt.Load(reader);
-
-                //comboBox2.ValueMember = "1";
-                tableSelect.DataSource = dt;
-                tableSelect.DisplayMember = "name";
-                conn.Close();
-            }
-            catch { return; }
-
-            conn.Close();
-        }
-
-        private void tableSelect_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                var select = "USE "+ databaseSelect.Text+" SELECT * FROM " + tableSelect.Text;
-                var conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True"); 
-                var dataAdapter = new SqlDataAdapter(select, conn);
-                var commandBuilder = new SqlCommandBuilder(dataAdapter);
-                var ds = new DataSet();
-                dataAdapter.Fill(ds);
-                dataGridView2.ReadOnly = true;
-                dataGridView2.DataSource = ds.Tables[0];
-                textBox8.Text = dataGridView2.Rows.Count.ToString();
-                conn.Close();
-            }
-            catch {
-                return; }
-        }
-
-        //------------------SQL LOADER END------------------------------------------------------
 
         //------------------IMPORT FORMAT LOAD START------------------------------------------------------
-        
+
+        private void selectFromDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Importformat importformat = new Importformat();
+            importformat.Show();
+        }
 
         private void openImportFormatToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -261,6 +198,24 @@ namespace CCDataImportTool
             }
         }
 
+        private void medicareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void medicareButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ifSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
