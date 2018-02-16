@@ -96,7 +96,7 @@ namespace CCDataImportTool
 
         private void ifSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string ID = databaseSelect.SelectedValue.ToString();
+            //string ID = databaseSelect.SelectedValue.ToString();
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
@@ -104,7 +104,7 @@ namespace CCDataImportTool
             try
             {
 
-                var select = "USE " + databaseSelect.Text + " select * from ImportFormat where ImportFormatId = "+ifSelect.Text;
+                var select = "USE " + databaseSelect.Text + " select iff.ImportFormatFieldId from ImportFormat i inner join importformatfield iff on i.importformatno=iff.importformatno where ImportFormatId = " + @"'" + ifSelect.Text + @"'" + " order by iff.FieldSeq";
                 var conn2 = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
                 var dataAdapter = new SqlDataAdapter(select, conn2);
                 var commandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -116,10 +116,10 @@ namespace CCDataImportTool
 
                 reader = sc.ExecuteReader();
                 DataTable dt = new DataTable();
-                dt.Columns.Add("name", typeof(string));
-                dt.Load(reader);
-                ifSelect.DataSource = dt;
-                ifSelect.DisplayMember = "name";
+                //dt.Columns.Add("name", typeof(string));
+                //dt.Load(reader);
+                //ifSelect.DataSource = dt;
+                //ifSelect.DisplayMember = "name";
                 conn.Close();
             }
             catch { return; }
