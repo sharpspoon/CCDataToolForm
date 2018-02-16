@@ -103,9 +103,9 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.serverSelect = new System.Windows.Forms.ComboBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.tableSelect = new System.Windows.Forms.ComboBox();
             this.databaseSelect = new System.Windows.Forms.ComboBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.tableSelect = new System.Windows.Forms.ComboBox();
             this.button8 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.masterDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -115,6 +115,7 @@
             this.databaseFileSizeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -787,9 +788,9 @@
             this.ifSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
             this.ifSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ifSelect.FormattingEnabled = true;
-            this.ifSelect.Location = new System.Drawing.Point(770, 48);
+            this.ifSelect.Location = new System.Drawing.Point(6, 15);
             this.ifSelect.Name = "ifSelect";
-            this.ifSelect.Size = new System.Drawing.Size(111, 21);
+            this.ifSelect.Size = new System.Drawing.Size(179, 21);
             this.ifSelect.TabIndex = 32;
             this.ifSelect.SelectedIndexChanged += new System.EventHandler(this.ifSelect_SelectedIndexChanged);
             // 
@@ -800,6 +801,7 @@
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox7.Controls.Add(this.progressBar1);
             this.groupBox7.Controls.Add(this.serverSelect);
             this.groupBox7.Location = new System.Drawing.Point(159, 27);
             this.groupBox7.Name = "groupBox7";
@@ -827,13 +829,26 @@
             // groupBox8
             // 
             this.groupBox8.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox8.Controls.Add(this.tableSelect);
             this.groupBox8.Controls.Add(this.databaseSelect);
             this.groupBox8.Location = new System.Drawing.Point(382, 27);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(191, 62);
             this.groupBox8.TabIndex = 33;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Select Database:";
+            this.groupBox8.Text = "Select Database and Table:";
+            // 
+            // tableSelect
+            // 
+            this.tableSelect.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tableSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
+            this.tableSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tableSelect.FormattingEnabled = true;
+            this.tableSelect.Location = new System.Drawing.Point(6, 38);
+            this.tableSelect.Name = "tableSelect";
+            this.tableSelect.Size = new System.Drawing.Size(175, 21);
+            this.tableSelect.TabIndex = 31;
+            this.tableSelect.SelectedIndexChanged += new System.EventHandler(this.tableSelect_SelectedIndexChanged);
             // 
             // databaseSelect
             // 
@@ -850,26 +865,14 @@
             // groupBox9
             // 
             this.groupBox9.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.groupBox9.Controls.Add(this.tableSelect);
+            this.groupBox9.Controls.Add(this.ifSelect);
             this.groupBox9.Location = new System.Drawing.Point(573, 27);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(191, 62);
             this.groupBox9.TabIndex = 34;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Select Table:";
+            this.groupBox9.Text = "Select Import Format:";
             this.groupBox9.Enter += new System.EventHandler(this.groupBox9_Enter);
-            // 
-            // tableSelect
-            // 
-            this.tableSelect.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tableSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
-            this.tableSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tableSelect.FormattingEnabled = true;
-            this.tableSelect.Location = new System.Drawing.Point(6, 15);
-            this.tableSelect.Name = "tableSelect";
-            this.tableSelect.Size = new System.Drawing.Size(175, 21);
-            this.tableSelect.TabIndex = 31;
-            this.tableSelect.SelectedIndexChanged += new System.EventHandler(this.tableSelect_SelectedIndexChanged);
             // 
             // button8
             // 
@@ -925,6 +928,13 @@
             this.label9.TabIndex = 36;
             this.label9.Text = "Total Rows:";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(6, 38);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(210, 23);
+            this.progressBar1.TabIndex = 1;
+            // 
             // CCDataTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -934,7 +944,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.ifSelect);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
@@ -1083,6 +1092,7 @@
         private System.Windows.Forms.ComboBox ifSelect;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

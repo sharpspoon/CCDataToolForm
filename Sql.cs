@@ -28,8 +28,6 @@ namespace CCDataImportTool
                 DataTable dt = new DataTable();
                 dt.Columns.Add("name", typeof(string));
                 dt.Load(reader);
-
-                //comboBox2.ValueMember = "1";
                 databaseSelect.DataSource = dt;
                 databaseSelect.DisplayMember = "name";
                 conn.Close();
@@ -43,7 +41,7 @@ namespace CCDataImportTool
 
         private void databaseSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string ID = databaseSelect.SelectedValue.ToString();
+            //string ID = databaseSelect.SelectedValue.ToString();
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " SELECT table_name AS name FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' order by TABLE_NAME", conn);
@@ -89,8 +87,39 @@ namespace CCDataImportTool
                 dt.Load(reader);
                 ifSelect.DataSource = dt;
                 ifSelect.DisplayMember = "name";
+                conn.Close();
+            }
+            catch { return; }
 
+            conn.Close();
+        }
 
+        private void ifSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string ID = databaseSelect.SelectedValue.ToString();
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+            SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
+            SqlDataReader reader;
+            try
+            {
+
+                var select = "USE " + databaseSelect.Text + " select * from ImportFormat where ImportFormatId = "+ifSelect.Text;
+                var conn2 = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
+                var dataAdapter = new SqlDataAdapter(select, conn2);
+                var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                dataGridView3.ReadOnly = true;
+                dataGridView3.DataSource = ds.Tables[0];
+                textBox8.Text = dataGridView2.Rows.Count.ToString();
+
+                reader = sc.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                dt.Load(reader);
+                ifSelect.DataSource = dt;
+                ifSelect.DisplayMember = "name";
                 conn.Close();
             }
             catch { return; }

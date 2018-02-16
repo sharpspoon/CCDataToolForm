@@ -174,8 +174,6 @@ namespace CCDataImportTool
         private void medicareToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
-        private void ifSelect_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
+
     }
 }
