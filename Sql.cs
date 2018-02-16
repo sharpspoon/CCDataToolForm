@@ -12,6 +12,7 @@ namespace CCDataImportTool
 {
     public partial class CCDataTool
     {
+        Importformat imp = new Importformat();
 
         //------------------SQL LOADER START------------------------------------------------------
 

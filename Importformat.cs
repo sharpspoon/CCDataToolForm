@@ -12,12 +12,19 @@ namespace CCDataImportTool
 {
     public partial class Importformat : Form
     {
+        
+        //CCDataTool ccd = new CCDataTool();
         public Importformat()
         {
             InitializeComponent();
         }
 
-        private void Importformat_Load(object sender, EventArgs e)
+        public void Importformat_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void ifSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

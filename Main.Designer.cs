@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CCDataTool));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -94,25 +94,27 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.ifSelect = new System.Windows.Forms.ComboBox();
+            this.spDTAgetdatabasetableidsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.serverSelect = new System.Windows.Forms.ComboBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.databaseSelect = new System.Windows.Forms.ComboBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.tableSelect = new System.Windows.Forms.ComboBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.masterDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qBQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseSelect = new System.Windows.Forms.ComboBox();
-            this.spDTAgetdatabasetableidsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseFileSizeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.serverSelect = new System.Windows.Forms.ComboBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.tableSelect = new System.Windows.Forms.ComboBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.ifSelect = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -124,16 +126,21 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseFileSizeBindingSource)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFileSizeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -152,20 +159,20 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Cross;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(909, 826);
+            this.dataGridView1.Size = new System.Drawing.Size(907, 745);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
@@ -315,7 +322,7 @@
             this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem,
             this.customerNoCheckToolStripMenuItem});
             this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             // 
@@ -347,7 +354,7 @@
             this.selectFromDatabaseToolStripMenuItem,
             this.openFromZIPExportToolStripMenuItem});
             this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
-            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.openImportFormatToolStripMenuItem.Text = "Import Format";
             this.openImportFormatToolStripMenuItem.Click += new System.EventHandler(this.openImportFormatToolStripMenuItem_Click);
             // 
@@ -371,7 +378,7 @@
             this.createErrorFileToolStripMenuItem,
             this.inProgramCheckToolStripMenuItem});
             this.medicareToolStripMenuItem.Name = "medicareToolStripMenuItem";
-            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.medicareToolStripMenuItem.Text = "Medicare";
             this.medicareToolStripMenuItem.Click += new System.EventHandler(this.medicareToolStripMenuItem_Click);
             // 
@@ -418,7 +425,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1650, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(1617, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(170, 62);
             this.pictureBox1.TabIndex = 3;
@@ -450,7 +457,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(919, 27);
+            this.groupBox2.Location = new System.Drawing.Point(887, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(150, 62);
             this.groupBox2.TabIndex = 23;
@@ -474,7 +481,7 @@
             this.groupBox3.Controls.Add(this.textBox4);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Location = new System.Drawing.Point(1069, 27);
+            this.groupBox3.Location = new System.Drawing.Point(1037, 27);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(209, 62);
             this.groupBox3.TabIndex = 24;
@@ -536,7 +543,7 @@
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.textBox5);
             this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Location = new System.Drawing.Point(1278, 27);
+            this.groupBox4.Location = new System.Drawing.Point(1246, 27);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(215, 62);
             this.groupBox4.TabIndex = 26;
@@ -624,7 +631,7 @@
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.textBox6);
             this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Location = new System.Drawing.Point(1493, 27);
+            this.groupBox5.Location = new System.Drawing.Point(1461, 27);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(150, 62);
             this.groupBox5.TabIndex = 27;
@@ -701,23 +708,53 @@
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BackColor = System.Drawing.Color.RoyalBlue;
             this.splitContainer1.Location = new System.Drawing.Point(12, 95);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel1.Controls.Add(this.splitContainer3);
             this.splitContainer1.Panel1.Cursor = System.Windows.Forms.Cursors.VSplit;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer1.Panel2MinSize = 50;
-            this.splitContainer1.Size = new System.Drawing.Size(1808, 826);
-            this.splitContainer1.SplitterDistance = 909;
-            this.splitContainer1.SplitterWidth = 10;
+            this.splitContainer1.Size = new System.Drawing.Size(1808, 820);
+            this.splitContainer1.SplitterDistance = 907;
+            this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 22;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Cursor = System.Windows.Forms.Cursors.HSplit;
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.dataGridView3);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer3.Size = new System.Drawing.Size(907, 820);
+            this.splitContainer3.SplitterDistance = 68;
+            this.splitContainer3.SplitterWidth = 7;
+            this.splitContainer3.TabIndex = 6;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(907, 68);
+            this.dataGridView3.TabIndex = 0;
             // 
             // dataGridView2
             // 
@@ -726,39 +763,50 @@
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(889, 826);
+            this.dataGridView2.Size = new System.Drawing.Size(894, 820);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
-            // qBQueryBindingSource
+            // button2
             // 
-            this.qBQueryBindingSource.DataMember = "QBQuery";
+            this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(12, 27);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(65, 62);
+            this.button2.TabIndex = 38;
+            this.button2.Text = "Launch SSMS";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.ssms_Click);
             // 
-            // databaseSelect
+            // ifSelect
             // 
-            this.databaseSelect.Cursor = System.Windows.Forms.Cursors.Default;
-            this.databaseSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
-            this.databaseSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.databaseSelect.FormattingEnabled = true;
-            this.databaseSelect.Location = new System.Drawing.Point(6, 15);
-            this.databaseSelect.Name = "databaseSelect";
-            this.databaseSelect.Size = new System.Drawing.Size(175, 21);
-            this.databaseSelect.TabIndex = 31;
-            this.databaseSelect.SelectedIndexChanged += new System.EventHandler(this.databaseSelect_SelectedIndexChanged);
+            this.ifSelect.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ifSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
+            this.ifSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ifSelect.FormattingEnabled = true;
+            this.ifSelect.Location = new System.Drawing.Point(770, 48);
+            this.ifSelect.Name = "ifSelect";
+            this.ifSelect.Size = new System.Drawing.Size(111, 21);
+            this.ifSelect.TabIndex = 32;
+            this.ifSelect.SelectedIndexChanged += new System.EventHandler(this.ifSelect_SelectedIndexChanged);
             // 
             // spDTAgetdatabasetableidsBindingSource
             // 
             this.spDTAgetdatabasetableidsBindingSource.DataMember = "sp_DTA_get_databasetableids";
             // 
-            // form1BindingSource
+            // groupBox7
             // 
-            this.form1BindingSource.DataSource = typeof(CCDataImportTool.CCDataTool);
-            this.form1BindingSource.CurrentChanged += new System.EventHandler(this.form1BindingSource_CurrentChanged);
-            // 
-            // databaseFileSizeBindingSource
-            // 
-            this.databaseFileSizeBindingSource.DataMember = "DatabaseFileSize";
+            this.groupBox7.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox7.Controls.Add(this.serverSelect);
+            this.groupBox7.Location = new System.Drawing.Point(159, 27);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(223, 62);
+            this.groupBox7.TabIndex = 26;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Select Server:";
             // 
             // serverSelect
             // 
@@ -776,17 +824,6 @@
             this.serverSelect.TabIndex = 32;
             this.serverSelect.SelectedIndexChanged += new System.EventHandler(this.serverSelect_SelectedIndexChanged);
             // 
-            // groupBox7
-            // 
-            this.groupBox7.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.groupBox7.Controls.Add(this.serverSelect);
-            this.groupBox7.Location = new System.Drawing.Point(159, 27);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(223, 62);
-            this.groupBox7.TabIndex = 26;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Select Server:";
-            // 
             // groupBox8
             // 
             this.groupBox8.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -798,18 +835,17 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Select Database:";
             // 
-            // button8
+            // databaseSelect
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(88, 27);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(65, 62);
-            this.button8.TabIndex = 25;
-            this.button8.Text = "Login with ACTEK";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.acteksoft_Click);
+            this.databaseSelect.Cursor = System.Windows.Forms.Cursors.Default;
+            this.databaseSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
+            this.databaseSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.databaseSelect.FormattingEnabled = true;
+            this.databaseSelect.Location = new System.Drawing.Point(6, 15);
+            this.databaseSelect.Name = "databaseSelect";
+            this.databaseSelect.Size = new System.Drawing.Size(175, 21);
+            this.databaseSelect.TabIndex = 31;
+            this.databaseSelect.SelectedIndexChanged += new System.EventHandler(this.databaseSelect_SelectedIndexChanged);
             // 
             // groupBox9
             // 
@@ -835,6 +871,41 @@
             this.tableSelect.TabIndex = 31;
             this.tableSelect.SelectedIndexChanged += new System.EventHandler(this.tableSelect_SelectedIndexChanged);
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button8.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(83, 27);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(65, 62);
+            this.button8.TabIndex = 25;
+            this.button8.Text = "Login with ACTEK";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.acteksoft_Click);
+            // 
+            // textBox9
+            // 
+            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(930, 921);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(322, 26);
+            this.textBox9.TabIndex = 39;
+            // 
+            // qBQueryBindingSource
+            // 
+            this.qBQueryBindingSource.DataMember = "QBQuery";
+            // 
+            // form1BindingSource
+            // 
+            this.form1BindingSource.DataSource = typeof(CCDataImportTool.CCDataTool);
+            this.form1BindingSource.CurrentChanged += new System.EventHandler(this.form1BindingSource_CurrentChanged);
+            // 
+            // databaseFileSizeBindingSource
+            // 
+            this.databaseFileSizeBindingSource.DataMember = "DatabaseFileSize";
+            // 
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -854,66 +925,32 @@
             this.label9.TabIndex = 36;
             this.label9.Text = "Total Rows:";
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(12, 27);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 62);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "Launch SSMS";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.ssms_Click);
-            // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(931, 927);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(322, 26);
-            this.textBox9.TabIndex = 39;
-            // 
-            // ifSelect
-            // 
-            this.ifSelect.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ifSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
-            this.ifSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ifSelect.FormattingEnabled = true;
-            this.ifSelect.Location = new System.Drawing.Point(786, 45);
-            this.ifSelect.Name = "ifSelect";
-            this.ifSelect.Size = new System.Drawing.Size(111, 21);
-            this.ifSelect.TabIndex = 32;
-            this.ifSelect.SelectedIndexChanged += new System.EventHandler(this.ifSelect_SelectedIndexChanged);
-            // 
             // CCDataTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1832, 975);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.ifSelect);
             this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.groupBox9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.groupBox8);
-            this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.groupBox9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -941,16 +978,21 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseFileSizeBindingSource)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFileSizeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1039,6 +1081,8 @@
         private System.Windows.Forms.ToolStripMenuItem createErrorFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inProgramCheckToolStripMenuItem;
         private System.Windows.Forms.ComboBox ifSelect;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }
 

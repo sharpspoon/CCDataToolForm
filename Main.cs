@@ -13,7 +13,6 @@ namespace CCDataImportTool
     public partial class CCDataTool : Form
     {
         //------------------EXIT APP ACTION START------------------------------------------------------
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -37,11 +36,8 @@ namespace CCDataImportTool
         {
             this.Close();
         }
-
         //------------------EXIT APP ACTION END------------------------------------------------------
-
         //------------------DATE CONVERTER START------------------------------------------------------
-
         private void dateConvert_Click1(object sender, EventArgs e)
         {
             try
@@ -63,53 +59,36 @@ namespace CCDataImportTool
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
         }
-
         //------------------DATE CONVERTER END------------------------------------------------------
-
         //------------------ABOUT START------------------------------------------------------
-
         private void menu_About_Click(object sender, EventArgs e)
         {
             About about = new About();
             about.Show();
         }
-
         //------------------ABOUT END------------------------------------------------------
-
         //------------------ACKTEKSOFT LOGIN START------------------------------------------------------
-
         private void acteksoft_Click(object sender, EventArgs e)
         {
             acteksoft actek = new acteksoft();
             actek.Show();
         }
         //------------------ACKTEKSOFT LOGIN END------------------------------------------------------
-
         //------------------CC LOGO CLICK START------------------------------------------------------
         private void ccLogo_Click1(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://calliduscloud.com");
         }
-
         //------------------CC LOGO CLICK END------------------------------------------------------
-
-
-
-
-
         //------------------IMPORT FORMAT LOAD START------------------------------------------------------
-
         private void selectFromDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Importformat importformat = new Importformat();
             importformat.Show();
         }
-
         private void openImportFormatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
-
         private void openFromZIPExportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string zipPath;
@@ -122,7 +101,6 @@ namespace CCDataImportTool
                     ZipFile.ExtractToDirectory(zipPath, extractPath);
                     MessageBox.Show("Import Format Loaded", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
-
                 else
                 {
                     MessageBox.Show("error", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -130,8 +108,6 @@ namespace CCDataImportTool
             }
         }
         //------------------IMPORT FORMAT LOAD END------------------------------------------------------
-
-
         public CCDataTool()
         {
             InitializeComponent();
@@ -183,13 +159,11 @@ namespace CCDataImportTool
         private void label8_Click(object sender, EventArgs e)
         {
         }
-
         private void ssms_Click(object sender, EventArgs e)
         {
             Ssms ssms = new Ssms();
             ssms.Show();
         }
-
         private void dgvUserDetails_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             using (SolidBrush b = new SolidBrush(dataGridView1.RowHeadersDefaultCellStyle.ForeColor))
@@ -197,25 +171,11 @@ namespace CCDataImportTool
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
             }
         }
-
         private void medicareToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
-
-        private void medicareButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ifSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
     }
 }
