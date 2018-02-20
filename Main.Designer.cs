@@ -101,6 +101,7 @@
             this.ifSelect = new System.Windows.Forms.ComboBox();
             this.spDTAgetdatabasetableidsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.serverSelect = new System.Windows.Forms.ComboBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.tableSelect = new System.Windows.Forms.ComboBox();
@@ -115,7 +116,6 @@
             this.databaseFileSizeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -426,7 +426,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1617, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(1650, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(170, 62);
             this.pictureBox1.TabIndex = 3;
@@ -444,11 +444,11 @@
             // button1
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.Location = new System.Drawing.Point(86, 19);
+            this.button1.Location = new System.Drawing.Point(86, 16);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 37);
+            this.button1.Size = new System.Drawing.Size(48, 40);
             this.button1.TabIndex = 21;
-            this.button1.Text = "Convert";
+            this.button1.Text = "Check";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.dateConvert_Click1);
             // 
@@ -458,9 +458,9 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(887, 27);
+            this.groupBox2.Location = new System.Drawing.Point(893, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(150, 62);
+            this.groupBox2.Size = new System.Drawing.Size(144, 62);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Date Converter:";
@@ -493,7 +493,7 @@
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button4.Location = new System.Drawing.Point(154, 19);
+            this.button4.Location = new System.Drawing.Point(154, 16);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(48, 40);
             this.button4.TabIndex = 22;
@@ -599,9 +599,9 @@
             // button3
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button3.Location = new System.Drawing.Point(161, 20);
+            this.button3.Location = new System.Drawing.Point(161, 16);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(47, 36);
+            this.button3.Size = new System.Drawing.Size(48, 40);
             this.button3.TabIndex = 21;
             this.button3.Text = "Check";
             this.button3.UseVisualStyleBackColor = true;
@@ -659,9 +659,9 @@
             // button5
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button5.Location = new System.Drawing.Point(86, 19);
+            this.button5.Location = new System.Drawing.Point(86, 16);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(47, 36);
+            this.button5.Size = new System.Drawing.Size(48, 40);
             this.button5.TabIndex = 21;
             this.button5.Text = "Check";
             this.button5.UseVisualStyleBackColor = true;
@@ -810,6 +810,13 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Select Server:";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(6, 38);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(210, 23);
+            this.progressBar1.TabIndex = 1;
+            // 
             // serverSelect
             // 
             this.serverSelect.Cursor = System.Windows.Forms.Cursors.Default;
@@ -927,13 +934,6 @@
             this.label9.Size = new System.Drawing.Size(92, 20);
             this.label9.TabIndex = 36;
             this.label9.Text = "Total Rows:";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(6, 38);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(210, 23);
-            this.progressBar1.TabIndex = 1;
             // 
             // CCDataTool
             // 
