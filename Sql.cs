@@ -41,7 +41,6 @@ namespace CCDataImportTool
 
         private void databaseSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //string ID = databaseSelect.SelectedValue.ToString();
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " SELECT table_name AS name FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' order by TABLE_NAME", conn);
@@ -104,7 +103,7 @@ namespace CCDataImportTool
             try
             {
 
-                var select = "USE " + databaseSelect.Text + " select iff.ImportFormatFieldId from ImportFormat i inner join importformatfield iff on i.importformatno=iff.importformatno where ImportFormatId = " + @"'" + ifSelect.Text + @"'" + " order by iff.FieldSeq";
+                var select = "USE " + databaseSelect.Text + " select distinct iff.FieldSeq, ife.inentname,  i.ImportFormatId, i.ImportFormatNo, i.Delimiter, iff.importformatfieldid, iffm.InEntityFieldName from importformat i inner join importformatentity ife on ife.ImportFormatNo=i.ImportFormatNo inner join ImportFormatField iff on iff.ImportFormatNo=i.ImportFormatNo inner join importformatfieldmapping iffm on iffm.ValueFieldRef=iff.ImportFormatFieldId where i.importformatid = " + @"'" + ifSelect.Text + @"'" + " order by iff.FieldSeq";
                 var conn2 = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
                 var dataAdapter = new SqlDataAdapter(select, conn2);
                 var commandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -126,6 +125,25 @@ namespace CCDataImportTool
 
             conn.Close();
         }
+
+
+                //        select distinct
+                //iff.FieldSeq,
+                //ife.inentname, 
+                //i.ImportFormatId,
+                //i.ImportFormatNo,
+                //i.Delimiter,
+                //iff.importformatfieldid,
+                //iffm.InEntityFieldName
+                //from importformat i
+                //inner join importformatentity ife
+                //on ife.ImportFormatNo=i.ImportFormatNo
+                //inner join ImportFormatField iff
+                //on iff.ImportFormatNo= i.ImportFormatNo
+                //inner join importformatfieldmapping iffm
+                //on iffm.ValueFieldRef= iff.ImportFormatFieldId
+                //where i.importformatid= 'producermaster'
+                //order by iff.FieldSeq
 
         //------------------SQL LOADER END------------------------------------------------------
 
