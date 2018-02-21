@@ -78,7 +78,7 @@ namespace CCDataImportTool
                 dataAdapter.Fill(ds);
                 dataGridView2.ReadOnly = true;
                 dataGridView2.DataSource = ds.Tables[0];
-                textBox8.Text = dataGridView2.Rows.Count.ToString();
+                toolStripStatusLabel7.Text = dataGridView2.Rows.Count.ToString();
 
                 reader = sc.ExecuteReader();
                 DataTable dt = new DataTable();
@@ -103,7 +103,7 @@ namespace CCDataImportTool
             try
             {
 
-                var select = "USE " + databaseSelect.Text + " select distinct iff.FieldSeq, ife.inentname,  i.ImportFormatId, i.ImportFormatNo, i.Delimiter, iff.importformatfieldid, iffm.InEntityFieldName from importformat i inner join importformatentity ife on ife.ImportFormatNo=i.ImportFormatNo inner join ImportFormatField iff on iff.ImportFormatNo=i.ImportFormatNo inner join importformatfieldmapping iffm on iffm.ValueFieldRef=iff.ImportFormatFieldId where i.importformatid = " + @"'" + ifSelect.Text + @"'" + " order by iff.FieldSeq";
+                var select = "USE " + databaseSelect.Text + " SELECT IMF.ImportFormatId,IMF.Delimiter,IMF.HeaderRows,IMF.RecType,IMFE.InEntName,IMFF.ImportFormatFieldId,IMFF.FieldSeq,IMFF.FieldLength,IMFF.IgnoreField FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + " order by imff.FieldSeq";
                 var conn2 = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
                 var dataAdapter = new SqlDataAdapter(select, conn2);
                 var commandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -111,39 +111,15 @@ namespace CCDataImportTool
                 dataAdapter.Fill(ds);
                 dataGridView3.ReadOnly = true;
                 dataGridView3.DataSource = ds.Tables[0];
-                textBox8.Text = dataGridView2.Rows.Count.ToString();
-
+                toolStripStatusLabel7.Text = dataGridView2.Rows.Count.ToString();
                 reader = sc.ExecuteReader();
                 DataTable dt = new DataTable();
-                //dt.Columns.Add("name", typeof(string));
-                //dt.Load(reader);
-                //ifSelect.DataSource = dt;
-                //ifSelect.DisplayMember = "name";
                 conn.Close();
             }
             catch { return; }
 
             conn.Close();
         }
-
-
-                //        select distinct
-                //iff.FieldSeq,
-                //ife.inentname, 
-                //i.ImportFormatId,
-                //i.ImportFormatNo,
-                //i.Delimiter,
-                //iff.importformatfieldid,
-                //iffm.InEntityFieldName
-                //from importformat i
-                //inner join importformatentity ife
-                //on ife.ImportFormatNo=i.ImportFormatNo
-                //inner join ImportFormatField iff
-                //on iff.ImportFormatNo= i.ImportFormatNo
-                //inner join importformatfieldmapping iffm
-                //on iffm.ValueFieldRef= iff.ImportFormatFieldId
-                //where i.importformatid= 'producermaster'
-                //order by iff.FieldSeq
 
         //------------------SQL LOADER END------------------------------------------------------
 

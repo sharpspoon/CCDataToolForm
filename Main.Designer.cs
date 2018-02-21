@@ -34,7 +34,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +62,6 @@
             this.inProgramCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -89,9 +87,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -108,15 +103,26 @@
             this.databaseSelect = new System.Windows.Forms.ComboBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.masterDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qBQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseFileSizeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel11 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel12 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel13 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -143,6 +149,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFileSizeBindingSource)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -174,21 +181,10 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(907, 745);
+            this.dataGridView1.Size = new System.Drawing.Size(907, 778);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(294, 927);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox1.Size = new System.Drawing.Size(340, 26);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // saveFileDialog1
             // 
@@ -324,7 +320,7 @@
             this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem,
             this.customerNoCheckToolStripMenuItem});
             this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             // 
@@ -356,7 +352,7 @@
             this.selectFromDatabaseToolStripMenuItem,
             this.openFromZIPExportToolStripMenuItem});
             this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
-            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openImportFormatToolStripMenuItem.Text = "Import Format";
             this.openImportFormatToolStripMenuItem.Click += new System.EventHandler(this.openImportFormatToolStripMenuItem_Click);
             // 
@@ -380,9 +376,8 @@
             this.createErrorFileToolStripMenuItem,
             this.inProgramCheckToolStripMenuItem});
             this.medicareToolStripMenuItem.Name = "medicareToolStripMenuItem";
-            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.medicareToolStripMenuItem.Text = "Medicare";
-            this.medicareToolStripMenuItem.Click += new System.EventHandler(this.medicareToolStripMenuItem_Click);
             // 
             // createErrorFileToolStripMenuItem
             // 
@@ -412,16 +407,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.menu_About_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(193, 927);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 20);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Current File:";
             // 
             // pictureBox1
             // 
@@ -674,35 +659,6 @@
             this.notifyIcon1.Text = "CC Data Tool";
             this.notifyIcon1.Visible = true;
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 953);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1832, 22);
-            this.statusStrip1.TabIndex = 28;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(8, 927);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 20);
-            this.label8.TabIndex = 29;
-            this.label8.Text = "Total Rows:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(112, 927);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(75, 26);
-            this.textBox7.TabIndex = 30;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
             // notifyIcon2
             // 
             this.notifyIcon2.Text = "notifyIcon2";
@@ -723,7 +679,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer1.Size = new System.Drawing.Size(1808, 820);
+            this.splitContainer1.Size = new System.Drawing.Size(1808, 855);
             this.splitContainer1.SplitterDistance = 907;
             this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 22;
@@ -743,8 +699,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer3.Size = new System.Drawing.Size(907, 820);
-            this.splitContainer3.SplitterDistance = 68;
+            this.splitContainer3.Size = new System.Drawing.Size(907, 855);
+            this.splitContainer3.SplitterDistance = 70;
             this.splitContainer3.SplitterWidth = 7;
             this.splitContainer3.TabIndex = 6;
             // 
@@ -755,8 +711,9 @@
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(907, 68);
+            this.dataGridView3.Size = new System.Drawing.Size(907, 70);
             this.dataGridView3.TabIndex = 0;
+            this.dataGridView3.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
             // dataGridView2
             // 
@@ -765,9 +722,8 @@
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(894, 820);
+            this.dataGridView2.Size = new System.Drawing.Size(894, 855);
             this.dataGridView2.TabIndex = 31;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
             // button2
@@ -895,15 +851,6 @@
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.acteksoft_Click);
             // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(930, 921);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(322, 26);
-            this.textBox9.TabIndex = 39;
-            // 
             // qBQueryBindingSource
             // 
             this.qBQueryBindingSource.DataMember = "QBQuery";
@@ -917,28 +864,110 @@
             // 
             this.databaseFileSizeBindingSource.DataMember = "DatabaseFileSize";
             // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(1745, 927);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(75, 26);
-            this.textBox8.TabIndex = 37;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1647, 927);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 20);
-            this.label9.TabIndex = 36;
-            this.label9.Text = "Total Rows:";
-            // 
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel4,
+            this.toolStripStatusLabel5,
+            this.toolStripStatusLabel6,
+            this.toolStripStatusLabel7,
+            this.toolStripStatusLabel8,
+            this.toolStripStatusLabel9,
+            this.toolStripStatusLabel10,
+            this.toolStripStatusLabel11,
+            this.toolStripStatusLabel12,
+            this.toolStripStatusLabel13});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 953);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1832, 22);
+            this.statusStrip1.TabIndex = 28;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(129, 17);
+            this.toolStripStatusLabel1.Text = "Unable to Register User";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel3.Text = "|";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(142, 17);
+            this.toolStripStatusLabel2.Text = "Imported File Row Count:";
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(13, 17);
+            this.toolStripStatusLabel4.Text = "0";
+            this.toolStripStatusLabel4.Click += new System.EventHandler(this.toolStripStatusLabel4_Click);
+            // 
+            // toolStripStatusLabel5
+            // 
+            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel5.Text = "|";
+            // 
+            // toolStripStatusLabel6
+            // 
+            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(93, 17);
+            this.toolStripStatusLabel6.Text = "SQL Row Count:";
+            // 
+            // toolStripStatusLabel7
+            // 
+            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(13, 17);
+            this.toolStripStatusLabel7.Text = "0";
+            // 
+            // toolStripStatusLabel8
+            // 
+            this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
+            this.toolStripStatusLabel8.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel8.Text = "|";
+            // 
+            // toolStripStatusLabel9
+            // 
+            this.toolStripStatusLabel9.Name = "toolStripStatusLabel9";
+            this.toolStripStatusLabel9.Size = new System.Drawing.Size(149, 17);
+            this.toolStripStatusLabel9.Text = "Import Format Row Count:";
+            // 
+            // toolStripStatusLabel10
+            // 
+            this.toolStripStatusLabel10.Name = "toolStripStatusLabel10";
+            this.toolStripStatusLabel10.Size = new System.Drawing.Size(13, 17);
+            this.toolStripStatusLabel10.Text = "0";
+            // 
+            // toolStripStatusLabel11
+            // 
+            this.toolStripStatusLabel11.Name = "toolStripStatusLabel11";
+            this.toolStripStatusLabel11.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel11.Text = "|";
+            // 
+            // toolStripStatusLabel12
+            // 
+            this.toolStripStatusLabel12.Name = "toolStripStatusLabel12";
+            this.toolStripStatusLabel12.Size = new System.Drawing.Size(115, 17);
+            this.toolStripStatusLabel12.Text = "Imported File Name:";
+            // 
+            // toolStripStatusLabel13
+            // 
+            this.toolStripStatusLabel13.Name = "toolStripStatusLabel13";
+            this.toolStripStatusLabel13.Size = new System.Drawing.Size(36, 17);
+            this.toolStripStatusLabel13.Text = "NULL";
             // 
             // CCDataTool
             // 
@@ -949,20 +978,13 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.textBox9);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox8);
-            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.groupBox9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -1007,6 +1029,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFileSizeBindingSource)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1017,7 +1041,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -1025,7 +1048,6 @@
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cSVToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cSVToolStripMenuItem1;
@@ -1056,12 +1078,9 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource form1BindingSource;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.NotifyIcon notifyIcon2;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -1077,8 +1096,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.ComboBox tableSelect;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem brokerDetailCheckToolStripMenuItem1;
@@ -1086,7 +1103,6 @@
         private System.Windows.Forms.ToolStripMenuItem customerNoCheckToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openImportFormatToolStripMenuItem;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.ToolStripMenuItem selectFromDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openFromZIPExportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
@@ -1099,6 +1115,20 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel10;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel11;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel12;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel13;
     }
 }
 

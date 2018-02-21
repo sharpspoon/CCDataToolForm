@@ -139,7 +139,7 @@ namespace CCDataImportTool
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            textBox9.Text = @"TALLYCENTRAL\"+Environment.UserName;
+            toolStripStatusLabel1.Text = @"TALLYCENTRAL\"+Environment.UserName;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -168,17 +168,7 @@ namespace CCDataImportTool
         private void form1BindingSource_CurrentChanged(object sender, EventArgs e)
         {
         }
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-            textBox7.Text = dataGridView1.Rows.Count.ToString();
-        }
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
         private void groupBox9_Enter(object sender, EventArgs e)
-        {
-        }
-        private void label8_Click(object sender, EventArgs e)
         {
         }
         private void ssms_Click(object sender, EventArgs e)
@@ -186,18 +176,19 @@ namespace CCDataImportTool
             Ssms ssms = new Ssms();
             ssms.Show();
         }
-        private void dgvUserDetails_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        private void dgvUserDetails_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e) //row number logic
         {
             using (SolidBrush b = new SolidBrush(dataGridView1.RowHeadersDefaultCellStyle.ForeColor))
             {
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
             }
         }
-        private void medicareToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
+        }
+        private void toolStripStatusLabel4_Click(object sender, EventArgs e)
+        {
+            toolStripStatusLabel4.Text = dataGridView1.Rows.Count.ToString();
         }
     }
 }

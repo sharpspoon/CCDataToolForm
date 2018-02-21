@@ -22,8 +22,8 @@ namespace CCDataImportTool
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                         dataGridView1.DataSource = ReadCsv(ofd.FileName);
-                    textBox1.Text = ofd.FileName;
-                    textBox7.Text = dataGridView1.Rows.Count.ToString();
+                    toolStripStatusLabel13.Text = ofd.FileName;
+                    toolStripStatusLabel4.Text = dataGridView1.Rows.Count.ToString();
                 }
             }
             catch (Exception ex)
@@ -104,8 +104,8 @@ namespace CCDataImportTool
                         dataSet.ReadXml(ofd.FileName);
                     dataGridView1.DataSource = dataSet.Tables[0];
 
-                    textBox1.Text = ofd.FileName;
-                    textBox7.Text = dataGridView1[0, dataGridView1.Rows.Count - 1].Value.ToString();
+                    toolStripStatusLabel13.Text = ofd.FileName;
+                    toolStripStatusLabel4.Text = dataGridView1[0, dataGridView1.Rows.Count - 1].Value.ToString();
                 }
             }
             catch (Exception ex)
