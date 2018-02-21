@@ -69,6 +69,7 @@
             // button8
             // 
             this.button8.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Location = new System.Drawing.Point(199, 206);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(83, 40);
@@ -115,6 +116,7 @@
             this.AcceptButton = this.button8;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(490, 281);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -125,6 +127,7 @@
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "acteksoft";
             this.Text = "Login with ACTEKSOFT";
             this.Load += new System.EventHandler(this.acteksoft_Load);

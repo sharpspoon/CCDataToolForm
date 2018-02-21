@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ssms));
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -76,6 +77,7 @@
             // button8
             // 
             this.button8.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Location = new System.Drawing.Point(199, 206);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(83, 40);
@@ -89,14 +91,17 @@
             this.AcceptButton = this.button8;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(490, 281);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Ssms";
-            this.Text = "Ssms";
+            this.Text = "Launch SSMS";
             this.Load += new System.EventHandler(this.Ssms_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

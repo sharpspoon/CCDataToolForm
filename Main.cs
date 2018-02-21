@@ -20,6 +20,9 @@ namespace CCDataImportTool
                 DialogResult result = MessageBox.Show("Do you really want to exit?", "CCDataTool", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    notifyIcon1.Visible = false;
+                    notifyIcon1.Icon = null;
+                    notifyIcon1.Dispose();
                     Environment.Exit(0);
                 }
                 else

@@ -49,6 +49,8 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeAColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.brokerDetailCheckToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,7 +89,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -125,6 +126,7 @@
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel17 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -193,10 +195,12 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.AliceBlue;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.viewToolStripMenuItem,
+            this.settingsToolStripMenuItem,
             this.dataToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -302,6 +306,20 @@
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "View";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changeAColorToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // changeAColorToolStripMenuItem
+            // 
+            this.changeAColorToolStripMenuItem.Name = "changeAColorToolStripMenuItem";
+            this.changeAColorToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.changeAColorToolStripMenuItem.Text = "Change a color...";
             // 
             // dataToolStripMenuItem
             // 
@@ -429,6 +447,7 @@
             // button1
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(86, 16);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(48, 40);
@@ -439,7 +458,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox2.BackColor = System.Drawing.Color.AliceBlue;
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.button1);
@@ -461,7 +480,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox3.BackColor = System.Drawing.Color.AliceBlue;
             this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.textBox4);
@@ -478,6 +497,7 @@
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(154, 16);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(48, 40);
@@ -521,7 +541,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox4.BackColor = System.Drawing.Color.AliceBlue;
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.comboBox1);
             this.groupBox4.Controls.Add(this.label5);
@@ -545,8 +565,10 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "@",
@@ -582,6 +604,7 @@
             // button3
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(161, 16);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(48, 40);
@@ -611,7 +634,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox5.BackColor = System.Drawing.Color.AliceBlue;
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.textBox6);
             this.groupBox5.Controls.Add(this.button5);
@@ -641,6 +664,7 @@
             // button5
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Location = new System.Drawing.Point(86, 16);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(48, 40);
@@ -655,14 +679,9 @@
             this.notifyIcon1.Text = "CC Data Tool";
             this.notifyIcon1.Visible = true;
             // 
-            // notifyIcon2
-            // 
-            this.notifyIcon2.Text = "notifyIcon2";
-            this.notifyIcon2.Visible = true;
-            // 
             // splitContainer1
             // 
-            this.splitContainer1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.splitContainer1.BackColor = System.Drawing.Color.AliceBlue;
             this.splitContainer1.Location = new System.Drawing.Point(12, 95);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -737,9 +756,11 @@
             // 
             // ifSelect
             // 
+            this.ifSelect.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ifSelect.Cursor = System.Windows.Forms.Cursors.Default;
             this.ifSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
             this.ifSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ifSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ifSelect.FormattingEnabled = true;
             this.ifSelect.Location = new System.Drawing.Point(6, 35);
             this.ifSelect.Name = "ifSelect";
@@ -753,7 +774,7 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox7.BackColor = System.Drawing.Color.AliceBlue;
             this.groupBox7.Controls.Add(this.serverSelect);
             this.groupBox7.Controls.Add(this.databaseSelect);
             this.groupBox7.Location = new System.Drawing.Point(159, 27);
@@ -765,8 +786,10 @@
             // 
             // serverSelect
             // 
+            this.serverSelect.BackColor = System.Drawing.Color.LightSkyBlue;
             this.serverSelect.Cursor = System.Windows.Forms.Cursors.Default;
             this.serverSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.serverSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.serverSelect.FormattingEnabled = true;
             this.serverSelect.Items.AddRange(new object[] {
             "IcmTstDb1.cci.caldsaas.local\\tst1",
@@ -781,9 +804,11 @@
             // 
             // databaseSelect
             // 
+            this.databaseSelect.BackColor = System.Drawing.Color.LightSkyBlue;
             this.databaseSelect.Cursor = System.Windows.Forms.Cursors.Default;
             this.databaseSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
             this.databaseSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.databaseSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.databaseSelect.FormattingEnabled = true;
             this.databaseSelect.Location = new System.Drawing.Point(6, 35);
             this.databaseSelect.Name = "databaseSelect";
@@ -793,7 +818,7 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox8.BackColor = System.Drawing.Color.AliceBlue;
             this.groupBox8.Controls.Add(this.ifSelect);
             this.groupBox8.Controls.Add(this.tableSelect);
             this.groupBox8.Location = new System.Drawing.Point(382, 27);
@@ -805,9 +830,11 @@
             // 
             // tableSelect
             // 
+            this.tableSelect.BackColor = System.Drawing.Color.LightSkyBlue;
             this.tableSelect.Cursor = System.Windows.Forms.Cursors.Default;
             this.tableSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
             this.tableSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tableSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tableSelect.FormattingEnabled = true;
             this.tableSelect.Location = new System.Drawing.Point(6, 15);
             this.tableSelect.Name = "tableSelect";
@@ -843,6 +870,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.AliceBlue;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel3,
@@ -977,7 +1005,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1832, 975);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
@@ -995,10 +1023,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1848, 1013);
             this.Name = "CCDataTool";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CallidusCloud Data Import Tool";
+            this.Text = "CallidusCloud Data Tool";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -1083,7 +1111,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource form1BindingSource;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NotifyIcon notifyIcon2;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource qBQueryBindingSource;
@@ -1133,6 +1160,9 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel15;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel17;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeAColorToolStripMenuItem;
     }
 }
 
