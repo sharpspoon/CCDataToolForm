@@ -141,12 +141,6 @@ namespace CCDataImportTool
         {
             toolStripStatusLabel1.Text = @"TALLYCENTRAL\"+Environment.UserName;
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
         }
@@ -154,12 +148,6 @@ namespace CCDataImportTool
         {
         }
         private void label2_Click_1(object sender, EventArgs e)
-        {
-        }
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-        }
-        private void textBox3_TextChanged(object sender, EventArgs e)
         {
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -182,9 +170,6 @@ namespace CCDataImportTool
             {
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
             }
-        }
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
         }
         private void toolStripStatusLabel4_Click(object sender, EventArgs e)
         {

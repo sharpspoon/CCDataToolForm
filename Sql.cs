@@ -14,16 +14,20 @@ namespace CCDataImportTool
     {
         Importformat imp = new Importformat();
 
+
+
         //------------------SQL LOADER START------------------------------------------------------
 
         private void serverSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
+            toolStripProgressBar1.Value = 0;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
-            conn.Open();
-            SqlCommand sc = new SqlCommand("SELECT name FROM [master].[sys].[databases] where name <> 'master' and name <> 'tempdb' and name <> 'model' and name <> 'msdb' and name <> 'DBAtools'", conn);
-            SqlDataReader reader;
+            
             try
             {
+                conn.Open();
+                SqlCommand sc = new SqlCommand("SELECT name FROM [master].[sys].[databases] where name <> 'master' and name <> 'tempdb' and name <> 'model' and name <> 'msdb' and name <> 'DBAtools'", conn);
+                SqlDataReader reader;
                 reader = sc.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Columns.Add("name", typeof(string));
@@ -35,8 +39,12 @@ namespace CCDataImportTool
             catch
             {
                 conn.Close();
+                toolStripProgressBar1.Value = 0;
+                toolStripStatusLabel15.Text =  "Failed to read SQL";
                 return;
             }
+            toolStripProgressBar1.Value = 25;
+            toolStripStatusLabel15.Text = toolStripProgressBar1.Value.ToString() + "% Completed";
         }
 
         private void databaseSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,6 +66,8 @@ namespace CCDataImportTool
             catch { return; }
 
             conn.Close();
+            toolStripProgressBar1.Value = 70;
+            toolStripStatusLabel15.Text = toolStripProgressBar1.Value.ToString() + "% Completed";
         }
 
         private void tableSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -69,7 +79,6 @@ namespace CCDataImportTool
             SqlDataReader reader;
             try
             {
-
                 var select = "USE " + databaseSelect.Text + " SELECT top 20000 * FROM " + tableSelect.Text;
                 var conn2 = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
                 var dataAdapter = new SqlDataAdapter(select, conn2);
@@ -91,11 +100,12 @@ namespace CCDataImportTool
             catch { return; }
 
             conn.Close();
+            toolStripProgressBar1.Value = 100;
+            toolStripStatusLabel15.Text = toolStripProgressBar1.Value.ToString() + "% Completed";
         }
 
         private void ifSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //string ID = databaseSelect.SelectedValue.ToString();
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
@@ -114,6 +124,7 @@ namespace CCDataImportTool
                 toolStripStatusLabel7.Text = dataGridView2.Rows.Count.ToString();
                 reader = sc.ExecuteReader();
                 DataTable dt = new DataTable();
+                toolStripStatusLabel10.Text = dataGridView3.Rows.Count.ToString();
                 conn.Close();
             }
             catch { return; }

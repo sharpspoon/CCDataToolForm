@@ -18,6 +18,7 @@ namespace CCDataImportTool
         {
             try
             {
+                    
                 using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "CSV | *.csv", ValidateNames = true, Multiselect = false })
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
@@ -30,23 +31,34 @@ namespace CCDataImportTool
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
         public DataTable ReadCsv(string fileName)
         {
+            toolStripProgressBar1.Value = 0;
+            toolStripStatusLabel15.Text = toolStripProgressBar1.Value.ToString() + "% Completed";
             DataTable dt = new DataTable("Data");
             using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
                 Path.GetDirectoryName(fileName) + "\";Extended Properties='text;HDR=yes;FMT=Delimited(,)';"))
             {
+                toolStripProgressBar1.Value = 50;
+                toolStripStatusLabel15.Text = toolStripProgressBar1.Value.ToString() + "% Completed";
                 using (OleDbCommand cmd = new OleDbCommand(string.Format("select * from [{0}]", new FileInfo(fileName).Name), cn))
                 {
                     cn.Open();
                     using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
                     {
+                        toolStripProgressBar1.Value = 75;
+                        toolStripStatusLabel15.Text = toolStripProgressBar1.Value.ToString() + "% Completed";
                         adapter.Fill(dt);
                     }
                 }
             }
+            toolStripProgressBar1.Value = 100;
+            toolStripStatusLabel15.Text = toolStripProgressBar1.Value.ToString() + "% Completed";
+            toolStripStatusLabel17.Text = "CSV Loaded.";
             return dt;
+
         }
         protected void menu_Save_Csv_Click(object sender, EventArgs e)
         {
@@ -87,6 +99,7 @@ namespace CCDataImportTool
                 // closes the file
                 sw.Close();
             }
+            toolStripStatusLabel17.Text = "CSV File Saved.";
         }
 
         //------------------OPEN/SAVE CSV END------------------------------------------------------

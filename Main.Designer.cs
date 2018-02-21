@@ -96,19 +96,16 @@
             this.ifSelect = new System.Windows.Forms.ComboBox();
             this.spDTAgetdatabasetableidsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.serverSelect = new System.Windows.Forms.ComboBox();
+            this.databaseSelect = new System.Windows.Forms.ComboBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.tableSelect = new System.Windows.Forms.ComboBox();
-            this.databaseSelect = new System.Windows.Forms.ComboBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
             this.masterDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qBQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseFileSizeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -123,6 +120,11 @@
             this.toolStripStatusLabel11 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel12 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel13 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel14 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel15 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel17 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -143,7 +145,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
@@ -183,7 +184,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(907, 778);
             this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
             // saveFileDialog1
@@ -320,7 +320,7 @@
             this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem,
             this.customerNoCheckToolStripMenuItem});
             this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             // 
@@ -352,7 +352,7 @@
             this.selectFromDatabaseToolStripMenuItem,
             this.openFromZIPExportToolStripMenuItem});
             this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
-            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.openImportFormatToolStripMenuItem.Text = "Import Format";
             this.openImportFormatToolStripMenuItem.Click += new System.EventHandler(this.openImportFormatToolStripMenuItem_Click);
             // 
@@ -376,7 +376,7 @@
             this.createErrorFileToolStripMenuItem,
             this.inProgramCheckToolStripMenuItem});
             this.medicareToolStripMenuItem.Name = "medicareToolStripMenuItem";
-            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.medicareToolStripMenuItem.Text = "Medicare";
             // 
             // createErrorFileToolStripMenuItem
@@ -425,7 +425,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(74, 20);
             this.textBox2.TabIndex = 20;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button1
             // 
@@ -502,7 +501,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(59, 20);
             this.textBox4.TabIndex = 23;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label2
             // 
@@ -520,7 +518,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(75, 20);
             this.textBox3.TabIndex = 20;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // groupBox4
             // 
@@ -640,7 +637,6 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(74, 20);
             this.textBox6.TabIndex = 20;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // button5
             // 
@@ -745,7 +741,7 @@
             this.ifSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
             this.ifSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ifSelect.FormattingEnabled = true;
-            this.ifSelect.Location = new System.Drawing.Point(6, 15);
+            this.ifSelect.Location = new System.Drawing.Point(6, 35);
             this.ifSelect.Name = "ifSelect";
             this.ifSelect.Size = new System.Drawing.Size(179, 21);
             this.ifSelect.TabIndex = 32;
@@ -758,21 +754,14 @@
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.groupBox7.Controls.Add(this.progressBar1);
             this.groupBox7.Controls.Add(this.serverSelect);
+            this.groupBox7.Controls.Add(this.databaseSelect);
             this.groupBox7.Location = new System.Drawing.Point(159, 27);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(223, 62);
             this.groupBox7.TabIndex = 26;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Select Server:";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(6, 38);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(210, 23);
-            this.progressBar1.TabIndex = 1;
+            this.groupBox7.Text = "Select Server and Database:";
             // 
             // serverSelect
             // 
@@ -790,17 +779,29 @@
             this.serverSelect.TabIndex = 32;
             this.serverSelect.SelectedIndexChanged += new System.EventHandler(this.serverSelect_SelectedIndexChanged);
             // 
+            // databaseSelect
+            // 
+            this.databaseSelect.Cursor = System.Windows.Forms.Cursors.Default;
+            this.databaseSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
+            this.databaseSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.databaseSelect.FormattingEnabled = true;
+            this.databaseSelect.Location = new System.Drawing.Point(6, 35);
+            this.databaseSelect.Name = "databaseSelect";
+            this.databaseSelect.Size = new System.Drawing.Size(210, 21);
+            this.databaseSelect.TabIndex = 31;
+            this.databaseSelect.SelectedIndexChanged += new System.EventHandler(this.databaseSelect_SelectedIndexChanged);
+            // 
             // groupBox8
             // 
             this.groupBox8.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox8.Controls.Add(this.ifSelect);
             this.groupBox8.Controls.Add(this.tableSelect);
-            this.groupBox8.Controls.Add(this.databaseSelect);
             this.groupBox8.Location = new System.Drawing.Point(382, 27);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(191, 62);
             this.groupBox8.TabIndex = 33;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Select Database and Table:";
+            this.groupBox8.Text = "Select Table and/or Import Format:";
             // 
             // tableSelect
             // 
@@ -808,35 +809,11 @@
             this.tableSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
             this.tableSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tableSelect.FormattingEnabled = true;
-            this.tableSelect.Location = new System.Drawing.Point(6, 38);
+            this.tableSelect.Location = new System.Drawing.Point(6, 15);
             this.tableSelect.Name = "tableSelect";
-            this.tableSelect.Size = new System.Drawing.Size(175, 21);
+            this.tableSelect.Size = new System.Drawing.Size(179, 21);
             this.tableSelect.TabIndex = 31;
             this.tableSelect.SelectedIndexChanged += new System.EventHandler(this.tableSelect_SelectedIndexChanged);
-            // 
-            // databaseSelect
-            // 
-            this.databaseSelect.Cursor = System.Windows.Forms.Cursors.Default;
-            this.databaseSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
-            this.databaseSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.databaseSelect.FormattingEnabled = true;
-            this.databaseSelect.Location = new System.Drawing.Point(6, 15);
-            this.databaseSelect.Name = "databaseSelect";
-            this.databaseSelect.Size = new System.Drawing.Size(175, 21);
-            this.databaseSelect.TabIndex = 31;
-            this.databaseSelect.SelectedIndexChanged += new System.EventHandler(this.databaseSelect_SelectedIndexChanged);
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.groupBox9.Controls.Add(this.ifSelect);
-            this.groupBox9.Location = new System.Drawing.Point(573, 27);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(191, 62);
-            this.groupBox9.TabIndex = 34;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Select Import Format:";
-            this.groupBox9.Enter += new System.EventHandler(this.groupBox9_Enter);
             // 
             // button8
             // 
@@ -864,10 +841,6 @@
             // 
             this.databaseFileSizeBindingSource.DataMember = "DatabaseFileSize";
             // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -883,7 +856,11 @@
             this.toolStripStatusLabel10,
             this.toolStripStatusLabel11,
             this.toolStripStatusLabel12,
-            this.toolStripStatusLabel13});
+            this.toolStripStatusLabel13,
+            this.toolStripStatusLabel14,
+            this.toolStripStatusLabel15,
+            this.toolStripProgressBar1,
+            this.toolStripStatusLabel17});
             this.statusStrip1.Location = new System.Drawing.Point(0, 953);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1832, 22);
@@ -969,6 +946,33 @@
             this.toolStripStatusLabel13.Size = new System.Drawing.Size(36, 17);
             this.toolStripStatusLabel13.Text = "NULL";
             // 
+            // toolStripStatusLabel14
+            // 
+            this.toolStripStatusLabel14.Name = "toolStripStatusLabel14";
+            this.toolStripStatusLabel14.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel14.Text = "|";
+            // 
+            // toolStripStatusLabel15
+            // 
+            this.toolStripStatusLabel15.Name = "toolStripStatusLabel15";
+            this.toolStripStatusLabel15.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel15.Text = " ";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            // 
+            // toolStripStatusLabel17
+            // 
+            this.toolStripStatusLabel17.Name = "toolStripStatusLabel17";
+            this.toolStripStatusLabel17.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel17.Text = " ";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            // 
             // CCDataTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -984,7 +988,6 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox8);
-            this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -1023,7 +1026,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
@@ -1094,7 +1096,6 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.ComboBox tableSelect;
         private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inFileToolStripMenuItem;
@@ -1113,8 +1114,6 @@
         private System.Windows.Forms.ComboBox ifSelect;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
@@ -1129,6 +1128,11 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel11;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel12;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel13;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel14;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel15;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel17;
     }
 }
 

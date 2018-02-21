@@ -13,7 +13,6 @@ namespace CCDataImportTool
     public partial class CCDataTool
     {
         //------------------CELL LENGTH CHECKER START------------------------------------------------------
-
         private void cellLength_Click(object sender, EventArgs e)
         {
             {
@@ -105,10 +104,6 @@ namespace CCDataImportTool
                 }
             }
         }
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         //------------------NULL CHECKER END------------------------------------------------------
 
     }
