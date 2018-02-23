@@ -178,10 +178,5 @@ namespace CCDataImportTool
         {
             toolStripStatusLabel4.Text = dataGridView1.Rows.Count.ToString();
         }
-
-        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

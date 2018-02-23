@@ -35,7 +35,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>68</ApplicationRevision>
+    <ApplicationRevision>74</ApplicationRevision>
     <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -222,6 +222,23 @@
   <ItemGroup>
     <Content Include="download_BmO_icon.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\user_32xMD.png" />
+    <None Include="Resources\user_32xSM.png" />
+    <None Include="Resources\StatusAnnotations_Complete_and_ok_32xSM_color.png" />
+    <None Include="Resources\StatusAnnotations_Play_32xSM_color.png" />
+    <None Include="Resources\StatusAnnotations_Play_32xMD_color.png" />
+    <None Include="Resources\StatusAnnotations_Complete_and_ok_32xLG_color.png" />
+    <None Include="Resources\StatusAnnotations_Play_32xLG_color.png" />
+    <None Include="Resources\ShowDataSources_8451.png" />
+    <None Include="Resources\Help_6522.png" />
+    <None Include="Resources\ColorPalette.png" />
+    <None Include="Resources\Cut_6523.png" />
+    <None Include="Resources\Copy_6524.png" />
+    <None Include="Resources\Clearallrequests_8816.png" />
+    <None Include="Resources\Print_11009.png" />
+    <None Include="Resources\Paste_6520.png" />
+    <None Include="Resources\Open_6529.png" />
+    <None Include="Resources\Save_6530.png" />
     <None Include="Resources\CallidusCloud_Logo-62.png" />
     <None Include="Resources\CallidusCloud_Logo-3001.png" />
     <None Include="Resources\CallidusCloud_Company_Logoflip.png" />
