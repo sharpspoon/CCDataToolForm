@@ -63,6 +63,26 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap action_add_16xLG {
+            get {
+                object obj = ResourceManager.GetObject("action_add_16xLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_Up_16xLG {
+            get {
+                object obj = ResourceManager.GetObject("arrow_Up_16xLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CallidusCloud_Company_Logoflip {
             get {
                 object obj = ResourceManager.GetObject("CallidusCloud_Company_Logoflip", resourceCulture);
@@ -123,9 +143,39 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap database_16xLG {
+            get {
+                object obj = ResourceManager.GetObject("database_16xLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder_Closed_16xLG {
+            get {
+                object obj = ResourceManager.GetObject("folder_Closed_16xLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Help_6522 {
             get {
                 object obj = ResourceManager.GetObject("Help_6522", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LightBulb_16xLG {
+            get {
+                object obj = ResourceManager.GetObject("LightBulb_16xLG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +203,39 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pencil_005_16xLG {
+            get {
+                object obj = ResourceManager.GetObject("pencil_005_16xLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PickAxe_16xLG {
+            get {
+                object obj = ResourceManager.GetObject("PickAxe_16xLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Print_11009 {
             get {
                 object obj = ResourceManager.GetObject("Print_11009", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap process_16xLG {
+            get {
+                object obj = ResourceManager.GetObject("process_16xLG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,6 +283,16 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap StatusAnnotations_Help_and_inconclusive_16xLG {
+            get {
+                object obj = ResourceManager.GetObject("StatusAnnotations_Help_and_inconclusive_16xLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap StatusAnnotations_Play_32xLG_color {
             get {
                 object obj = ResourceManager.GetObject("StatusAnnotations_Play_32xLG_color", resourceCulture);
@@ -233,6 +323,16 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Symbols_Complete_and_ok_16xLG {
+            get {
+                object obj = ResourceManager.GetObject("Symbols_Complete_and_ok_16xLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user_32xMD {
             get {
                 object obj = ResourceManager.GetObject("user_32xMD", resourceCulture);
@@ -246,6 +346,16 @@ namespace CCDataImportTool.Properties {
         internal static System.Drawing.Bitmap user_32xSM {
             get {
                 object obj = ResourceManager.GetObject("user_32xSM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zoom_16xLG {
+            get {
+                object obj = ResourceManager.GetObject("zoom_16xLG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

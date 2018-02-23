@@ -62,6 +62,8 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeAColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.brokerDetailCheckToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +75,6 @@
             this.medicareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createErrorFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inProgramCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkUtilitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -227,6 +228,7 @@
             this.editToolStripMenuItem,
             this.viewToolStripMenuItem,
             this.settingsToolStripMenuItem,
+            this.toolsToolStripMenuItem,
             this.dataToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -242,8 +244,9 @@
             this.saveAsToolStripMenuItem,
             this.printToolStripMenuItem,
             this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.folder_Closed_16xLG;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
@@ -331,8 +334,9 @@
             this.cutToolStripMenuItem,
             this.copyToolStripMenuItem,
             this.pasteToolStripMenuItem});
+            this.editToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.pencil_005_16xLG;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // cutToolStripMenuItem
@@ -358,16 +362,18 @@
             // 
             // viewToolStripMenuItem
             // 
+            this.viewToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.zoom_16xLG;
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changeAColorToolStripMenuItem});
+            this.settingsToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.process_16xLG;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // changeAColorToolStripMenuItem
@@ -377,15 +383,32 @@
             this.changeAColorToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.changeAColorToolStripMenuItem.Text = "Change a color...";
             // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.checkToolsToolStripMenuItem});
+            this.toolsToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.PickAxe_16xLG;
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // checkToolsToolStripMenuItem
+            // 
+            this.checkToolsToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.Symbols_Complete_and_ok_16xLG;
+            this.checkToolsToolStripMenuItem.Name = "checkToolsToolStripMenuItem";
+            this.checkToolsToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.checkToolsToolStripMenuItem.Text = "Check Tools";
+            this.checkToolsToolStripMenuItem.Click += new System.EventHandler(this.checkToolsToolStripMenuItem_Click);
+            // 
             // dataToolStripMenuItem
             // 
             this.dataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inFileToolStripMenuItem,
             this.openImportFormatToolStripMenuItem,
-            this.medicareToolStripMenuItem,
-            this.checkUtilitiesToolStripMenuItem});
+            this.medicareToolStripMenuItem});
+            this.dataToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.database_16xLG;
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
-            this.dataToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.dataToolStripMenuItem.Text = "Data";
             // 
             // inFileToolStripMenuItem
@@ -396,7 +419,7 @@
             this.customerNoCheckToolStripMenuItem});
             this.inFileToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.ShowDataSources_8451;
             this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             // 
@@ -427,9 +450,9 @@
             this.openImportFormatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectFromDatabaseToolStripMenuItem,
             this.openFromZIPExportToolStripMenuItem});
-            this.openImportFormatToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.ShowDataSources_8451;
+            this.openImportFormatToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.arrow_Up_16xLG;
             this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
-            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openImportFormatToolStripMenuItem.Text = "Import Format";
             this.openImportFormatToolStripMenuItem.Click += new System.EventHandler(this.openImportFormatToolStripMenuItem_Click);
             // 
@@ -452,9 +475,9 @@
             this.medicareToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createErrorFileToolStripMenuItem,
             this.inProgramCheckToolStripMenuItem});
-            this.medicareToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.ShowDataSources_8451;
+            this.medicareToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.action_add_16xLG;
             this.medicareToolStripMenuItem.Name = "medicareToolStripMenuItem";
-            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.medicareToolStripMenuItem.Text = "Medicare";
             // 
             // createErrorFileToolStripMenuItem
@@ -471,18 +494,13 @@
             this.inProgramCheckToolStripMenuItem.Text = "In Program Check";
             this.inProgramCheckToolStripMenuItem.Click += new System.EventHandler(this.inProgramCheckToolStripMenuItem_Click);
             // 
-            // checkUtilitiesToolStripMenuItem
-            // 
-            this.checkUtilitiesToolStripMenuItem.Name = "checkUtilitiesToolStripMenuItem";
-            this.checkUtilitiesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.checkUtilitiesToolStripMenuItem.Text = "Check Utilities";
-            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.LightBulb_16xLG;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
@@ -1202,7 +1220,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -1297,7 +1314,9 @@
         public System.Windows.Forms.SplitContainer splitContainer1;
         public System.Windows.Forms.DataGridView dataGridView3;
         public System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.ToolStripMenuItem checkUtilitiesToolStripMenuItem;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checkToolsToolStripMenuItem;
     }
 }
 
