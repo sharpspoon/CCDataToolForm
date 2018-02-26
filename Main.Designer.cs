@@ -105,7 +105,9 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.ifSelect = new System.Windows.Forms.ComboBox();
@@ -138,11 +140,8 @@
             this.toolStripStatusLabel11 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel12 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel13 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel14 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel15 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusLabel17 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button6 = new System.Windows.Forms.Button();
+            this.dataInUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -159,6 +158,10 @@
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).BeginInit();
@@ -219,7 +222,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(759, 537);
+            this.dataGridView1.Size = new System.Drawing.Size(759, 422);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -419,7 +422,8 @@
             this.dataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inFileToolStripMenuItem,
             this.openImportFormatToolStripMenuItem,
-            this.medicareToolStripMenuItem});
+            this.medicareToolStripMenuItem,
+            this.dataInUseToolStripMenuItem});
             this.dataToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.database_16xLG;
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
             this.dataToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
@@ -433,7 +437,7 @@
             this.customerNoCheckToolStripMenuItem});
             this.inFileToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.ShowDataSources_8451;
             this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             // 
@@ -466,7 +470,7 @@
             this.openFromZIPExportToolStripMenuItem});
             this.openImportFormatToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.arrow_Up_16xLG;
             this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
-            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openImportFormatToolStripMenuItem.Text = "Import Format";
             this.openImportFormatToolStripMenuItem.Click += new System.EventHandler(this.openImportFormatToolStripMenuItem_Click);
             // 
@@ -491,7 +495,7 @@
             this.inProgramCheckToolStripMenuItem});
             this.medicareToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.action_add_16xLG;
             this.medicareToolStripMenuItem.Name = "medicareToolStripMenuItem";
-            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.medicareToolStripMenuItem.Text = "Medicare";
             // 
             // createErrorFileToolStripMenuItem
@@ -791,7 +795,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
             this.splitContainer1.Size = new System.Drawing.Size(1515, 591);
             this.splitContainer1.SplitterDistance = 759;
@@ -814,7 +818,7 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer3.Size = new System.Drawing.Size(759, 591);
-            this.splitContainer3.SplitterDistance = 47;
+            this.splitContainer3.SplitterDistance = 162;
             this.splitContainer3.SplitterWidth = 7;
             this.splitContainer3.TabIndex = 6;
             // 
@@ -849,9 +853,28 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView3.Size = new System.Drawing.Size(759, 47);
+            this.dataGridView3.Size = new System.Drawing.Size(759, 162);
             this.dataGridView3.TabIndex = 0;
             this.dataGridView3.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Cursor = System.Windows.Forms.Cursors.HSplit;
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.dataGridView2);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.richTextBox1);
+            this.splitContainer2.Size = new System.Drawing.Size(749, 591);
+            this.splitContainer2.SplitterDistance = 478;
+            this.splitContainer2.TabIndex = 32;
             // 
             // dataGridView2
             // 
@@ -884,9 +907,19 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView2.Size = new System.Drawing.Size(749, 591);
+            this.dataGridView2.Size = new System.Drawing.Size(749, 478);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(749, 109);
+            this.richTextBox1.TabIndex = 32;
+            this.richTextBox1.Text = "";
             // 
             // pictureBox3
             // 
@@ -1043,7 +1076,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(54, 62);
             this.button8.TabIndex = 25;
-            this.button8.Text = "Login with ACTEK";
+            this.button8.Text = "ACTEK Login";
             this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.acteksoft_Click);
@@ -1077,11 +1110,7 @@
             this.toolStripStatusLabel10,
             this.toolStripStatusLabel11,
             this.toolStripStatusLabel12,
-            this.toolStripStatusLabel13,
-            this.toolStripStatusLabel14,
-            this.toolStripStatusLabel15,
-            this.toolStripProgressBar1,
-            this.toolStripStatusLabel17});
+            this.toolStripStatusLabel13});
             this.statusStrip1.Location = new System.Drawing.Point(0, 689);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1540, 22);
@@ -1169,29 +1198,6 @@
             this.toolStripStatusLabel13.Size = new System.Drawing.Size(36, 17);
             this.toolStripStatusLabel13.Text = "NULL";
             // 
-            // toolStripStatusLabel14
-            // 
-            this.toolStripStatusLabel14.Name = "toolStripStatusLabel14";
-            this.toolStripStatusLabel14.Size = new System.Drawing.Size(10, 17);
-            this.toolStripStatusLabel14.Text = "|";
-            // 
-            // toolStripStatusLabel15
-            // 
-            this.toolStripStatusLabel15.Name = "toolStripStatusLabel15";
-            this.toolStripStatusLabel15.Size = new System.Drawing.Size(10, 17);
-            this.toolStripStatusLabel15.Text = " ";
-            // 
-            // toolStripProgressBar1
-            // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
-            // 
-            // toolStripStatusLabel17
-            // 
-            this.toolStripStatusLabel17.Name = "toolStripStatusLabel17";
-            this.toolStripStatusLabel17.Size = new System.Drawing.Size(10, 17);
-            this.toolStripStatusLabel17.Text = " ";
-            // 
             // button6
             // 
             this.button6.Cursor = System.Windows.Forms.Cursors.Default;
@@ -1202,6 +1208,14 @@
             this.button6.Size = new System.Drawing.Size(48, 62);
             this.button6.TabIndex = 26;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // dataInUseToolStripMenuItem
+            // 
+            this.dataInUseToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.RolesNodeWorker_Valid;
+            this.dataInUseToolStripMenuItem.Name = "dataInUseToolStripMenuItem";
+            this.dataInUseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dataInUseToolStripMenuItem.Text = "Data in Use";
             // 
             // CCDataTool
             // 
@@ -1254,6 +1268,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).EndInit();
@@ -1359,10 +1377,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel11;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel12;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel13;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel14;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel15;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel17;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeAColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
@@ -1379,6 +1393,9 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ToolStripMenuItem dataInUseToolStripMenuItem;
     }
 }
 

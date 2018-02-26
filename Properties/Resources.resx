@@ -163,8 +163,8 @@
   <data name="process_16xLG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\process_16xLG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Copy_6524" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Copy_6524.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UserDefinedDataType_8271_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserDefinedDataType_8271_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="StatusAnnotations_Help_and_inconclusive_16xLG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StatusAnnotations_Help_and_inconclusive_16xLG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,6 +187,9 @@
   <data name="Paste_6520" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Paste_6520.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DataTable_8468" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DataTable_8468.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ColorPalette" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ColorPalette.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,8 +208,8 @@
   <data name="user_32xSM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_32xSM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="database_16xLG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\database_16xLG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Copy_6524" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Copy_6524.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cut_6523" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cut_6523.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,13 +229,13 @@
   <data name="KeyOutput_8167" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KeyOutput_8167.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UserDefinedDataType_8271_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UserDefinedDataType_8271_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="database_16xLG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\database_16xLG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="StatusAnnotations_Play_32xSM_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StatusAnnotations_Play_32xSM_color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DataTable_8468" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DataTable_8468.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RolesNodeWorker_Valid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RolesNodeWorker_Valid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

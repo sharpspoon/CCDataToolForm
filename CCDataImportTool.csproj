@@ -35,7 +35,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>74</ApplicationRevision>
+    <ApplicationRevision>84</ApplicationRevision>
     <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -119,6 +119,12 @@
     <Compile Include="CheckTools.Designer.cs">
       <DependentUpon>CheckTools.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataInUse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataInUse.Designer.cs">
+      <DependentUpon>DataInUse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Importformat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CheckTools.resx">
       <DependentUpon>CheckTools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataInUse.resx">
+      <DependentUpon>DataInUse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Importformat.resx">
       <DependentUpon>Importformat.cs</DependentUpon>
@@ -231,6 +240,7 @@
   <ItemGroup>
     <Content Include="download_BmO_icon.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\RolesNodeWorker_Valid.png" />
     <None Include="Resources\DataTable_8468.png" />
     <None Include="Resources\DatabaseProject_7342_16x.png" />
     <None Include="Resources\DatabaseOptions_12882.png" />

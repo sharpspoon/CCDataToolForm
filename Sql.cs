@@ -20,7 +20,6 @@ namespace CCDataImportTool
 
         private void serverSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            toolStripProgressBar1.Value = 0;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             
             try
@@ -35,16 +34,13 @@ namespace CCDataImportTool
                 databaseSelect.DataSource = dt;
                 databaseSelect.DisplayMember = "name";
                 conn.Close();
+                richTextBox1.Text=richTextBox1.Text.Insert(0,Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect.Text + "...Done.");
             }
             catch
             {
                 conn.Close();
-                toolStripProgressBar1.Value = 0;
-                toolStripStatusLabel15.Text =  "Failed to read SQL";
                 return;
             }
-            toolStripProgressBar1.Value = 25;
-            toolStripStatusLabel15.Text = toolStripProgressBar1.Value.ToString() + "% Completed";
         }
 
         private void databaseSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,12 +58,11 @@ namespace CCDataImportTool
                 tableSelect.DataSource = dt;
                 tableSelect.DisplayMember = "name";
                 conn.Close();
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
             }
             catch { return; }
 
             conn.Close();
-            toolStripProgressBar1.Value = 70;
-            toolStripStatusLabel15.Text = toolStripProgressBar1.Value.ToString() + "% Completed";
         }
 
         private void tableSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,12 +91,11 @@ namespace CCDataImportTool
                 ifSelect.DataSource = dt;
                 ifSelect.DisplayMember = "name";
                 conn.Close();
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading table: " + tableSelect.Text + "...Done.");
             }
             catch { return; }
 
             conn.Close();
-            toolStripProgressBar1.Value = 100;
-            toolStripStatusLabel15.Text = toolStripProgressBar1.Value.ToString() + "% Completed";
         }
 
         private void ifSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -113,7 +107,7 @@ namespace CCDataImportTool
             try
             {
 
-                var select = "USE " + databaseSelect.Text + " SELECT IMF.ImportFormatId,IMF.Delimiter,IMF.HeaderRows,IMF.RecType,IMFE.InEntName,IMFF.ImportFormatFieldId,IMFF.FieldSeq,IMFF.FieldLength,IMFF.IgnoreField FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + " order by imff.FieldSeq";
+                var select = "USE " + databaseSelect.Text + " SELECT IMF.ImportFormatId,IMF.Delimiter,IMF.HeaderRows,IMF.RecType,IMFE.InEntName,IMFF.ImportFormatFieldId,IMFF.FieldSeq,IMFF.FieldLength,IMFF.IgnoreField FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null order by imff.FieldSeq";
                 var conn2 = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
                 var dataAdapter = new SqlDataAdapter(select, conn2);
                 var commandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -126,6 +120,35 @@ namespace CCDataImportTool
                 DataTable dt = new DataTable();
                 toolStripStatusLabel10.Text = dataGridView3.Rows.Count.ToString();
                 conn.Close();
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading import format: " + ifSelect.Text + "...Done.");
+            }
+            catch { return; }
+
+            conn.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+            SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
+            SqlDataReader reader;
+            try
+            {
+
+                var select = "USE " + databaseSelect.Text + " SELECT IMF.ImportFormatId,IMF.Delimiter,IMF.HeaderRows,IMF.RecType,IMFE.InEntName,IMFF.ImportFormatFieldId,IMFF.FieldSeq,IMFF.FieldLength,IMFF.IgnoreField FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null order by imff.FieldSeq";
+                var conn2 = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
+                var dataAdapter = new SqlDataAdapter(select, conn2);
+                var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                dataGridView3.ReadOnly = true;
+                dataGridView3.DataSource = ds.Tables[0];
+                reader = sc.ExecuteReader();
+                DataTable dt = new DataTable();
+                toolStripStatusLabel10.Text = dataGridView3.Rows.Count.ToString();
+                conn.Close();
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading import format: " + ifSelect.Text + "...Done.");
             }
             catch { return; }
 
