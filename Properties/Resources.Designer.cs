@@ -153,6 +153,66 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DatabaseOptions_12882 {
+            get {
+                object obj = ResourceManager.GetObject("DatabaseOptions_12882", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DatabaseProject_7342_16x {
+            get {
+                object obj = ResourceManager.GetObject("DatabaseProject_7342_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DatabaseReferenceNode_7598 {
+            get {
+                object obj = ResourceManager.GetObject("DatabaseReferenceNode_7598", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DataTable_8468 {
+            get {
+                object obj = ResourceManager.GetObject("DataTable_8468", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DBSchema_12823_16x {
+            get {
+                object obj = ResourceManager.GetObject("DBSchema_12823_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ExcelWorksheetView_11748 {
+            get {
+                object obj = ResourceManager.GetObject("ExcelWorksheetView_11748", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap folder_Closed_16xLG {
             get {
                 object obj = ResourceManager.GetObject("folder_Closed_16xLG", resourceCulture);
@@ -166,6 +226,16 @@ namespace CCDataImportTool.Properties {
         internal static System.Drawing.Bitmap Help_6522 {
             get {
                 object obj = ResourceManager.GetObject("Help_6522", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KeyOutput_8167 {
+            get {
+                object obj = ResourceManager.GetObject("KeyOutput_8167", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +416,26 @@ namespace CCDataImportTool.Properties {
         internal static System.Drawing.Bitmap user_32xSM {
             get {
                 object obj = ResourceManager.GetObject("user_32xSM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UserDefinedDataType_8271_16x {
+            get {
+                object obj = ResourceManager.GetObject("UserDefinedDataType_8271_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XSDSchema_ElementIcon_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("XSDSchema_ElementIcon_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

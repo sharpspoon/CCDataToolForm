@@ -106,12 +106,16 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.ifSelect = new System.Windows.Forms.ComboBox();
             this.spDTAgetdatabasetableidsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.serverSelect = new System.Windows.Forms.ComboBox();
             this.databaseSelect = new System.Windows.Forms.ComboBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.tableSelect = new System.Windows.Forms.ComboBox();
             this.button8 = new System.Windows.Forms.Button();
@@ -156,8 +160,12 @@
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).BeginInit();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).BeginInit();
@@ -262,6 +270,7 @@
             // 
             // cSVToolStripMenuItem
             // 
+            this.cSVToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.UserDefinedDataType_8271_16x;
             this.cSVToolStripMenuItem.Name = "cSVToolStripMenuItem";
             this.cSVToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.cSVToolStripMenuItem.Text = ".CSV";
@@ -269,6 +278,7 @@
             // 
             // xMLToolStripMenuItem1
             // 
+            this.xMLToolStripMenuItem1.Image = global::CCDataImportTool.Properties.Resources.XSDSchema_ElementIcon_16x16;
             this.xMLToolStripMenuItem1.Name = "xMLToolStripMenuItem1";
             this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
             this.xMLToolStripMenuItem1.Text = ".XML";
@@ -276,6 +286,7 @@
             // 
             // xLSToolStripMenuItem
             // 
+            this.xLSToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.ExcelWorksheetView_11748;
             this.xLSToolStripMenuItem.Name = "xLSToolStripMenuItem";
             this.xLSToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.xLSToolStripMenuItem.Text = ".XLS";
@@ -294,6 +305,7 @@
             // 
             // cSVToolStripMenuItem1
             // 
+            this.cSVToolStripMenuItem1.Image = global::CCDataImportTool.Properties.Resources.UserDefinedDataType_8271_16x;
             this.cSVToolStripMenuItem1.Name = "cSVToolStripMenuItem1";
             this.cSVToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
             this.cSVToolStripMenuItem1.Text = ".CSV";
@@ -301,6 +313,7 @@
             // 
             // xMLToolStripMenuItem
             // 
+            this.xMLToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.XSDSchema_ElementIcon_16x16;
             this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
             this.xMLToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.xMLToolStripMenuItem.Text = ".XML";
@@ -308,6 +321,7 @@
             // 
             // xLSToolStripMenuItem1
             // 
+            this.xLSToolStripMenuItem1.Image = global::CCDataImportTool.Properties.Resources.ExcelWorksheetView_11748;
             this.xLSToolStripMenuItem1.Name = "xLSToolStripMenuItem1";
             this.xLSToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
             this.xLSToolStripMenuItem1.Text = ".XLS";
@@ -419,7 +433,7 @@
             this.customerNoCheckToolStripMenuItem});
             this.inFileToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.ShowDataSources_8451;
             this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             // 
@@ -452,7 +466,7 @@
             this.openFromZIPExportToolStripMenuItem});
             this.openImportFormatToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.arrow_Up_16xLG;
             this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
-            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.openImportFormatToolStripMenuItem.Text = "Import Format";
             this.openImportFormatToolStripMenuItem.Click += new System.EventHandler(this.openImportFormatToolStripMenuItem_Click);
             // 
@@ -477,7 +491,7 @@
             this.inProgramCheckToolStripMenuItem});
             this.medicareToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.action_add_16xLG;
             this.medicareToolStripMenuItem.Name = "medicareToolStripMenuItem";
-            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.medicareToolStripMenuItem.Text = "Medicare";
             // 
             // createErrorFileToolStripMenuItem
@@ -874,16 +888,25 @@
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::CCDataImportTool.Properties.Resources.database_16xLG;
+            this.pictureBox3.Location = new System.Drawing.Point(6, 35);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox3.TabIndex = 33;
+            this.pictureBox3.TabStop = false;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::CCDataImportTool.Properties.Resources.StatusAnnotations_Play_32xSM_color;
+            this.button2.Image = global::CCDataImportTool.Properties.Resources.DatabaseReferenceNode_7598;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.Location = new System.Drawing.Point(12, 27);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 62);
+            this.button2.Size = new System.Drawing.Size(54, 62);
             this.button2.TabIndex = 38;
             this.button2.Text = "Launch SSMS";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -898,9 +921,9 @@
             this.ifSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ifSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ifSelect.FormattingEnabled = true;
-            this.ifSelect.Location = new System.Drawing.Point(6, 35);
+            this.ifSelect.Location = new System.Drawing.Point(28, 35);
             this.ifSelect.Name = "ifSelect";
-            this.ifSelect.Size = new System.Drawing.Size(179, 21);
+            this.ifSelect.Size = new System.Drawing.Size(157, 21);
             this.ifSelect.TabIndex = 32;
             this.ifSelect.SelectedIndexChanged += new System.EventHandler(this.ifSelect_SelectedIndexChanged);
             // 
@@ -911,6 +934,8 @@
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.AliceBlue;
+            this.groupBox7.Controls.Add(this.pictureBox3);
+            this.groupBox7.Controls.Add(this.pictureBox2);
             this.groupBox7.Controls.Add(this.serverSelect);
             this.groupBox7.Controls.Add(this.databaseSelect);
             this.groupBox7.Location = new System.Drawing.Point(159, 27);
@@ -919,6 +944,15 @@
             this.groupBox7.TabIndex = 26;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Select Server and Database:";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CCDataImportTool.Properties.Resources.DatabaseOptions_12882;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
             // 
             // serverSelect
             // 
@@ -932,9 +966,9 @@
             "IcmTstDb2.cci.caldsaas.local\\tst2",
             "IcmTstDb3.cci.caldsaas.local\\tst3",
             "IcmImpDb1.cci.caldsaas.local\\Imp1"});
-            this.serverSelect.Location = new System.Drawing.Point(6, 15);
+            this.serverSelect.Location = new System.Drawing.Point(28, 15);
             this.serverSelect.Name = "serverSelect";
-            this.serverSelect.Size = new System.Drawing.Size(210, 21);
+            this.serverSelect.Size = new System.Drawing.Size(188, 21);
             this.serverSelect.TabIndex = 32;
             this.serverSelect.SelectedIndexChanged += new System.EventHandler(this.serverSelect_SelectedIndexChanged);
             // 
@@ -946,15 +980,35 @@
             this.databaseSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.databaseSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.databaseSelect.FormattingEnabled = true;
-            this.databaseSelect.Location = new System.Drawing.Point(6, 35);
+            this.databaseSelect.Location = new System.Drawing.Point(28, 35);
             this.databaseSelect.Name = "databaseSelect";
-            this.databaseSelect.Size = new System.Drawing.Size(210, 21);
+            this.databaseSelect.Size = new System.Drawing.Size(188, 21);
             this.databaseSelect.TabIndex = 31;
             this.databaseSelect.SelectedIndexChanged += new System.EventHandler(this.databaseSelect_SelectedIndexChanged);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::CCDataImportTool.Properties.Resources.arrow_Up_16xLG;
+            this.pictureBox4.Location = new System.Drawing.Point(6, 35);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox4.TabIndex = 34;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::CCDataImportTool.Properties.Resources.DataTable_8468;
+            this.pictureBox5.Location = new System.Drawing.Point(6, 15);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox5.TabIndex = 35;
+            this.pictureBox5.TabStop = false;
             // 
             // groupBox8
             // 
             this.groupBox8.BackColor = System.Drawing.Color.AliceBlue;
+            this.groupBox8.Controls.Add(this.pictureBox4);
+            this.groupBox8.Controls.Add(this.pictureBox5);
             this.groupBox8.Controls.Add(this.ifSelect);
             this.groupBox8.Controls.Add(this.tableSelect);
             this.groupBox8.Location = new System.Drawing.Point(382, 27);
@@ -972,9 +1026,9 @@
             this.tableSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tableSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tableSelect.FormattingEnabled = true;
-            this.tableSelect.Location = new System.Drawing.Point(6, 15);
+            this.tableSelect.Location = new System.Drawing.Point(28, 15);
             this.tableSelect.Name = "tableSelect";
-            this.tableSelect.Size = new System.Drawing.Size(179, 21);
+            this.tableSelect.Size = new System.Drawing.Size(157, 21);
             this.tableSelect.TabIndex = 31;
             this.tableSelect.SelectedIndexChanged += new System.EventHandler(this.tableSelect_SelectedIndexChanged);
             // 
@@ -983,11 +1037,11 @@
             this.button8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button8.Cursor = System.Windows.Forms.Cursors.Default;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = global::CCDataImportTool.Properties.Resources.StatusAnnotations_Play_32xSM_color;
+            this.button8.Image = global::CCDataImportTool.Properties.Resources.KeyOutput_8167;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(83, 27);
+            this.button8.Location = new System.Drawing.Point(72, 27);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(65, 62);
+            this.button8.Size = new System.Drawing.Size(54, 62);
             this.button8.TabIndex = 25;
             this.button8.Text = "Login with ACTEK";
             this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1201,8 +1255,12 @@
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).EndInit();
             this.groupBox7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).EndInit();
@@ -1317,6 +1375,10 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkToolsToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 

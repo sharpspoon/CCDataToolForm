@@ -231,6 +231,15 @@
   <ItemGroup>
     <Content Include="download_BmO_icon.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\DataTable_8468.png" />
+    <None Include="Resources\DatabaseProject_7342_16x.png" />
+    <None Include="Resources\DatabaseOptions_12882.png" />
+    <None Include="Resources\DatabaseReferenceNode_7598.png" />
+    <None Include="Resources\DBSchema_12823_16x.png" />
+    <None Include="Resources\KeyOutput_8167.png" />
+    <None Include="Resources\ExcelWorksheetView_11748.png" />
+    <None Include="Resources\XSDSchema_ElementIcon_16x16.png" />
+    <None Include="Resources\UserDefinedDataType_8271_16x.png" />
     <None Include="Resources\arrow_Up_16xLG.png" />
     <None Include="Resources\action_add_16xLG.png" />
     <None Include="Resources\LightBulb_16xLG.png" />
