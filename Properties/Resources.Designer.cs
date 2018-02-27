@@ -73,6 +73,16 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddExistingItem_6269 {
+            get {
+                object obj = ResourceManager.GetObject("AddExistingItem_6269", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_Up_16xLG {
             get {
                 object obj = ResourceManager.GetObject("arrow_Up_16xLG", resourceCulture);
@@ -253,6 +263,16 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ModulesWindow_6540 {
+            get {
+                object obj = ResourceManager.GetObject("ModulesWindow_6540", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Open_6529 {
             get {
                 object obj = ResourceManager.GetObject("Open_6529", resourceCulture);
@@ -366,6 +386,16 @@ namespace CCDataImportTool.Properties {
         internal static System.Drawing.Bitmap StatusAnnotations_Help_and_inconclusive_16xLG {
             get {
                 object obj = ResourceManager.GetObject("StatusAnnotations_Help_and_inconclusive_16xLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StatusAnnotations_Play_16xLG_color {
+            get {
+                object obj = ResourceManager.GetObject("StatusAnnotations_Play_16xLG_color", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

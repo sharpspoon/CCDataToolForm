@@ -187,7 +187,5 @@ namespace CCDataImportTool
             CheckTools cu = new CheckTools();
             cu.Show();
         }
-
-
     }
 }

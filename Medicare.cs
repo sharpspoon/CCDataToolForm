@@ -925,6 +925,7 @@ namespace CCDataImportTool
 
                 }
                 MessageBox.Show("Medicare error file has been created. \nLocation: C:\\Program Files (x86)\\CCDataTool\\Medicare Error Files", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Medicare error file has been created. Location: C:\\Program Files (x86)\\CCDataTool\\Medicare Error Files");
             }
 
 

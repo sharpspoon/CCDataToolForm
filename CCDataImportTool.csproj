@@ -35,7 +35,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>84</ApplicationRevision>
+    <ApplicationRevision>91</ApplicationRevision>
     <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -240,6 +240,9 @@
   <ItemGroup>
     <Content Include="download_BmO_icon.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\ModulesWindow_6540.png" />
+    <None Include="Resources\AddExistingItem_6269.png" />
+    <None Include="Resources\StatusAnnotations_Play_16xLG_color.png" />
     <None Include="Resources\RolesNodeWorker_Valid.png" />
     <None Include="Resources\DataTable_8468.png" />
     <None Include="Resources\DatabaseProject_7342_16x.png" />
