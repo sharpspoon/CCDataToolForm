@@ -240,6 +240,8 @@
   <ItemGroup>
     <Content Include="download_BmO_icon.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\DeleteColumn_5627.png" />
+    <None Include="Resources\3%28three%29columns_9714.png" />
     <None Include="Resources\ModulesWindow_6540.png" />
     <None Include="Resources\AddExistingItem_6269.png" />
     <None Include="Resources\StatusAnnotations_Play_16xLG_color.png" />

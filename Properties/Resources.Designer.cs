@@ -63,6 +63,16 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3_three_columns_9714 {
+            get {
+                object obj = ResourceManager.GetObject("3(three)columns_9714", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap action_add_16xLG {
             get {
                 object obj = ResourceManager.GetObject("action_add_16xLG", resourceCulture);
@@ -206,6 +216,16 @@ namespace CCDataImportTool.Properties {
         internal static System.Drawing.Bitmap DBSchema_12823_16x {
             get {
                 object obj = ResourceManager.GetObject("DBSchema_12823_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DeleteColumn_5627 {
+            get {
+                object obj = ResourceManager.GetObject("DeleteColumn_5627", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
