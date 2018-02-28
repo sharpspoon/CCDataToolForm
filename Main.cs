@@ -43,43 +43,89 @@ namespace CCDataImportTool
         //------------------DATE CONVERTER START------------------------------------------------------
         private void dateConvert_Click1(object sender, EventArgs e)
         {
-            
-            //if (textBox2.Text.Length == 0)
-            //{
-            //    MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            //    return;
-            //}
-            //for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            //{
-            //    var value = dataGridView1.Rows[i].Cells[textBox2.Text].Value.ToString();
-            //    if ((value.Length != 8) && (value != null) && (value !=""))
-            //        {
-            //        MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "Make sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            //        return;
-            //    }
-            //}
 
-            //for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            //{
-            //    try
-            //    {
-            //        var value2 = dataGridView1.Rows[i].Cells[textBox2.Text].Value.ToString();
-            //        int year = int.Parse(value2.Substring(0, 4));
-            //        int month = int.Parse(value2.Substring(4, 2));
-            //        int day = int.Parse(value2.Substring(6, 2));
+            if (textBox2.Text.Length == 0)
+            {
+                MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
 
-            //        if (year > 2200)
-            //        {
-            //            MessageBox.Show("Error at line " + (i + 1)+"\r\n"+"The year is " +year+", which is greater than 2200.\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            //            return;
-            //        }
-            //    }
-            //    catch (Exception)
-            //    {
-            //        MessageBox.Show("Dates are OK");
-            //        return;
-            //    }
-            //}
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                try
+                {
+                    var value2 = dataGridView1.Rows[i].Cells[textBox2.Text].Value.ToString();
+                    if (checkBox1.Checked)
+                    {
+
+
+                        if (value2 == " " || value2 == "" || value2 == null)
+                        {
+                            MessageBox.Show("NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyyMMdd");
+                            return;
+                        }
+                    }
+                    if (value2.Length == 8)
+                    {
+                        int year = int.Parse(value2.Substring(0, 4));
+                        int month = int.Parse(value2.Substring(4, 2));
+                        int day = int.Parse(value2.Substring(6, 2));
+
+                        if (year > 2200)
+                        {
+                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyyMMdd");
+                            return;
+                        }
+
+                        if (month > 12)
+                        {
+                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyyMMdd");
+                            return;
+                        }
+
+                        if (month < 01)
+                        {
+                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyyMMdd");
+                            return;
+                        }
+
+                        if (day > 31)
+                        {
+                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyyMMdd");
+                            return;
+                        }
+
+                        if (day < 01)
+                        {
+                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyyMMdd");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyyMMdd");
+                        return;
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("dates are ok", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   dates are OK");
+                    return;
+                }
+
+
+
+            }
+
+
         }
         //------------------DATE CONVERTER END------------------------------------------------------
         //------------------ABOUT START------------------------------------------------------

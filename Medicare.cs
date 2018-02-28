@@ -791,7 +791,7 @@ namespace CCDataImportTool
 
                                 if (value24.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #25 (DualCoverage)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -805,7 +805,7 @@ namespace CCDataImportTool
 
                                 if (value25.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #26 (BrokerId)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -819,7 +819,7 @@ namespace CCDataImportTool
 
                                 if (value26.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #27 (TermType)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -833,7 +833,7 @@ namespace CCDataImportTool
 
                                 if (value27.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #28 (ProCode)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -847,7 +847,7 @@ namespace CCDataImportTool
 
                                 if (value28.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #29 (BrokerId2)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -861,7 +861,7 @@ namespace CCDataImportTool
 
                                 if (value29.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #30 (PrimaryBrokerPct)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -875,7 +875,7 @@ namespace CCDataImportTool
 
                                 if (value30.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #31 (SecondaryBrokerPct)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -889,7 +889,7 @@ namespace CCDataImportTool
 
                                 if (value31.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #32 (ReferralId)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -903,7 +903,7 @@ namespace CCDataImportTool
 
                                 if (value32.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #33 (BusType)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -917,7 +917,7 @@ namespace CCDataImportTool
 
                                 if (value33.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #34 (GroupId)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -931,7 +931,7 @@ namespace CCDataImportTool
 
                                 if (value34.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #35 (CustomerRegion)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -945,7 +945,7 @@ namespace CCDataImportTool
 
                                 if (value35.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #36 (AppSource)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -959,7 +959,7 @@ namespace CCDataImportTool
 
                                 if (value36.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #37 (HolderDOD)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -1462,7 +1462,7 @@ namespace CCDataImportTool
 
                                 if (value24.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #25 (DualCoverage)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -1476,7 +1476,7 @@ namespace CCDataImportTool
 
                                 if (value25.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #26 (BrokerId)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -1490,7 +1490,7 @@ namespace CCDataImportTool
 
                                 if (value26.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #27 (TermType)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -1504,7 +1504,7 @@ namespace CCDataImportTool
 
                                 if (value27.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #28 (ProCode)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -1518,7 +1518,7 @@ namespace CCDataImportTool
 
                                 if (value28.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #29 (BrokerId2)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -1532,7 +1532,7 @@ namespace CCDataImportTool
 
                                 if (value29.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #30 (PrimaryBrokerPct)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -1546,7 +1546,7 @@ namespace CCDataImportTool
 
                                 if (value30.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #31 (SecondaryBrokerPct)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -1560,7 +1560,7 @@ namespace CCDataImportTool
 
                                 if (value31.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #32 (ReferralId)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -1574,7 +1574,7 @@ namespace CCDataImportTool
 
                                 if (value32.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #33 (BusType)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -1588,7 +1588,7 @@ namespace CCDataImportTool
 
                                 if (value33.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #34 (GroupId)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -1602,7 +1602,7 @@ namespace CCDataImportTool
 
                                 if (value34.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #35 (CustomerRegion)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -1616,7 +1616,7 @@ namespace CCDataImportTool
 
                                 if (value35.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #36 (AppSource)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
@@ -1630,7 +1630,7 @@ namespace CCDataImportTool
 
                                 if (value36.Length > 60)
                                 {
-                                    tw.WriteLine("NULL value found in column #24 (PolState)  at line " + (i + 1) + ". This is a required field.");
+                                    tw.WriteLine("NULL value found in column #37 (HolderDOD)  at line " + (i + 1) + ". This is a required field.");
                                 }
                             }
                         }
