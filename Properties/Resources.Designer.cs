@@ -243,6 +243,16 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ExportTestRunResults_8602 {
+            get {
+                object obj = ResourceManager.GetObject("ExportTestRunResults_8602", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap folder_Closed_16xLG {
             get {
                 object obj = ResourceManager.GetObject("folder_Closed_16xLG", resourceCulture);

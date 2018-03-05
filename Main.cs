@@ -23,6 +23,22 @@ namespace CCDataImportTool
                     notifyIcon1.Visible = false;
                     notifyIcon1.Icon = null;
                     notifyIcon1.Dispose();
+                    System.IO.Directory.CreateDirectory(@"C:\Program Files (x86)\CCDataTool\Logs");
+                    string path = @"C:\Program Files (x86)\CCDataTool\Logs\CCDataTool_Log_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+                    using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                    {
+                        using (TextWriter tw = new StreamWriter(fs))
+                        {
+
+                            tw.WriteLine("CCDataTool - Error Log");
+                            tw.WriteLine("Log begin...");
+                            tw.WriteLine(".");
+                            tw.WriteLine(".");
+                            tw.WriteLine(".");
+                            tw.WriteLine(richTextBox1.Text);
+                            
+                        }
+                    }
                     Environment.Exit(0);
                 }
                 else
@@ -202,9 +218,6 @@ namespace CCDataImportTool
         private void form1BindingSource_CurrentChanged(object sender, EventArgs e)
         {
         }
-        private void groupBox9_Enter(object sender, EventArgs e)
-        {
-        }
         private void ssms_Click(object sender, EventArgs e)
         {
             Ssms ssms = new Ssms();
@@ -222,18 +235,73 @@ namespace CCDataImportTool
             toolStripStatusLabel4.Text = dataGridView1.Rows.Count.ToString();
         }
 
-        private void checkUtilitiesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CheckTools cu = new CheckTools();
-            cu.Show();
-        }
-
         private void checkToolsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CheckTools cu = new CheckTools();
             cu.Show();
         }
 
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control ctrl = this.ActiveControl;
 
+            if (ctrl != null)
+
+            {
+
+                if (ctrl is TextBox)
+
+                {
+
+                    TextBox tx = (TextBox)ctrl;
+
+                    tx.Copy();
+
+                }
+
+            }
+        }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control ctrl = this.ActiveControl;
+
+            if (ctrl != null)
+
+            {
+
+                if (ctrl is TextBox)
+
+                {
+
+                    TextBox tx = (TextBox)ctrl;
+
+                    tx.Cut();
+
+                }
+
+            }
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control ctrl = this.ActiveControl;
+
+            if (ctrl != null)
+
+            {
+
+                if (ctrl is TextBox)
+
+                {
+
+                    TextBox tx = (TextBox)ctrl;
+
+                    tx.Paste();
+
+                }
+
+            }
+        }
     }
 }
