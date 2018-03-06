@@ -1,4 +1,4 @@
-﻿namespace CCDataImportTool {
+﻿namespace CCDataTool {
     
     
     // This class allows you to handle specific events on the settings class:

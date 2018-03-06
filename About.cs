@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CCDataImportTool
+namespace CCDataTool
 {
     partial class About : Form
     {

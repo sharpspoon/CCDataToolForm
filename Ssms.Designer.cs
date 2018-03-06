@@ -1,4 +1,4 @@
-﻿namespace CCDataImportTool
+﻿namespace CCDataTool
 {
     partial class Ssms
     {
@@ -78,7 +78,7 @@
             // 
             this.button8.Cursor = System.Windows.Forms.Cursors.Default;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = global::CCDataImportTool.Properties.Resources.StatusAnnotations_Complete_and_ok_32xLG_color;
+            this.button8.Image = global::CCDataTool.Properties.Resources.StatusAnnotations_Complete_and_ok_32xLG_color;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button8.Location = new System.Drawing.Point(199, 206);
             this.button8.Name = "button8";

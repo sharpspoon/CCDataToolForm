@@ -1,4 +1,4 @@
-﻿namespace CCDataImportTool
+﻿namespace CCDataTool
 {
     partial class CheckTools
     {
@@ -71,7 +71,7 @@
             // 
             this.checkButton1.Cursor = System.Windows.Forms.Cursors.Default;
             this.checkButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkButton1.Image = global::CCDataImportTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
+            this.checkButton1.Image = global::CCDataTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
             this.checkButton1.Location = new System.Drawing.Point(86, 16);
             this.checkButton1.Name = "checkButton1";
             this.checkButton1.Size = new System.Drawing.Size(48, 40);

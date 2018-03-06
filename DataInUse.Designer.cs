@@ -1,4 +1,4 @@
-﻿namespace CCDataImportTool
+﻿namespace CCDataTool
 {
     partial class DataInUse
     {

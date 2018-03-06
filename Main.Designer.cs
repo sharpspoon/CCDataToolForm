@@ -1,4 +1,4 @@
-﻿namespace CCDataImportTool
+﻿namespace CCDataTool
 {
     partial class CCDataTool
     {
@@ -311,7 +311,7 @@
             // 
             // cCDataToolLogToolStripMenuItem
             // 
-            this.cCDataToolLogToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.IntelliTrace_16x;
+            this.cCDataToolLogToolStripMenuItem.Image = global::CCDataTool.Properties.Resources.IntelliTrace_16x;
             this.cCDataToolLogToolStripMenuItem.Name = "cCDataToolLogToolStripMenuItem";
             this.cCDataToolLogToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.cCDataToolLogToolStripMenuItem.Text = "CC Data Tool Log";
@@ -366,7 +366,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -468,6 +468,7 @@
             this.inFileToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
+            this.inFileToolStripMenuItem.Visible = false;
             // 
             // brokerDetailCheckToolStripMenuItem1
             // 
@@ -504,7 +505,7 @@
             // 
             // selectFromDatabaseToolStripMenuItem
             // 
-            this.selectFromDatabaseToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.ExportTestRunResults_8602;
+            this.selectFromDatabaseToolStripMenuItem.Image = global::CCDataTool.Properties.Resources.ExportTestRunResults_8602;
             this.selectFromDatabaseToolStripMenuItem.Name = "selectFromDatabaseToolStripMenuItem";
             this.selectFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.selectFromDatabaseToolStripMenuItem.Text = "Select From Database";
@@ -539,7 +540,7 @@
             // 
             // groupByColumnToolStripMenuItem
             // 
-            this.groupByColumnToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources._3_three_columns_9714;
+            this.groupByColumnToolStripMenuItem.Image = global::CCDataTool.Properties.Resources.threecolumns_9714;
             this.groupByColumnToolStripMenuItem.Name = "groupByColumnToolStripMenuItem";
             this.groupByColumnToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.groupByColumnToolStripMenuItem.Text = "Group by Column";
@@ -547,7 +548,7 @@
             // 
             // groupByErrorToolStripMenuItem
             // 
-            this.groupByErrorToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.DeleteColumn_5627;
+            this.groupByErrorToolStripMenuItem.Image = global::CCDataTool.Properties.Resources.DeleteColumn_5627;
             this.groupByErrorToolStripMenuItem.Name = "groupByErrorToolStripMenuItem";
             this.groupByErrorToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.groupByErrorToolStripMenuItem.Text = "Group by Error";
@@ -589,7 +590,7 @@
             // toolStripMenuItemClose
             // 
             this.toolStripMenuItemClose.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripMenuItemClose.Image = global::CCDataImportTool.Properties.Resources.Clearallrequests_88161;
+            this.toolStripMenuItemClose.Image = global::CCDataTool.Properties.Resources.Clearallrequests_88161;
             this.toolStripMenuItemClose.Name = "toolStripMenuItemClose";
             this.toolStripMenuItemClose.Size = new System.Drawing.Size(28, 20);
             this.toolStripMenuItemClose.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
@@ -597,7 +598,7 @@
             // toolStripMenuItemMaximize
             // 
             this.toolStripMenuItemMaximize.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripMenuItemMaximize.Image = global::CCDataImportTool.Properties.Resources.Larger_225;
+            this.toolStripMenuItemMaximize.Image = global::CCDataTool.Properties.Resources.Larger_225;
             this.toolStripMenuItemMaximize.Name = "toolStripMenuItemMaximize";
             this.toolStripMenuItemMaximize.Size = new System.Drawing.Size(28, 20);
             this.toolStripMenuItemMaximize.Click += new System.EventHandler(this.toolStripMenuItemMaximize_Click);
@@ -605,7 +606,7 @@
             // toolStripMenuItemMinimize
             // 
             this.toolStripMenuItemMinimize.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripMenuItemMinimize.Image = global::CCDataImportTool.Properties.Resources.Larger_2301;
+            this.toolStripMenuItemMinimize.Image = global::CCDataTool.Properties.Resources.Larger_2301;
             this.toolStripMenuItemMinimize.Name = "toolStripMenuItemMinimize";
             this.toolStripMenuItemMinimize.Size = new System.Drawing.Size(28, 20);
             this.toolStripMenuItemMinimize.Click += new System.EventHandler(this.toolStripMenuItemMinimize_Click);
@@ -1198,7 +1199,7 @@
             // 
             // form1BindingSource
             // 
-            this.form1BindingSource.DataSource = typeof(CCDataImportTool.CCDataTool);
+            this.form1BindingSource.DataSource = typeof(CCDataTool);
             this.form1BindingSource.CurrentChanged += new System.EventHandler(this.form1BindingSource_CurrentChanged);
             // 
             // databaseFileSizeBindingSource
@@ -1236,18 +1237,21 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(145, 17);
             this.toolStripStatusLabel1.Text = "Unable to Register User";
+            this.toolStripStatusLabel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(10, 17);
             this.toolStripStatusLabel3.Text = "|";
+            this.toolStripStatusLabel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(142, 17);
             this.toolStripStatusLabel2.Text = "Imported File Row Count:";
+            this.toolStripStatusLabel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel4
             // 
@@ -1255,54 +1259,63 @@
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(13, 17);
             this.toolStripStatusLabel4.Text = "0";
             this.toolStripStatusLabel4.Click += new System.EventHandler(this.toolStripStatusLabel4_Click);
+            this.toolStripStatusLabel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel5
             // 
             this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
             this.toolStripStatusLabel5.Size = new System.Drawing.Size(10, 17);
             this.toolStripStatusLabel5.Text = "|";
+            this.toolStripStatusLabel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel6
             // 
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
             this.toolStripStatusLabel6.Size = new System.Drawing.Size(93, 17);
             this.toolStripStatusLabel6.Text = "SQL Row Count:";
+            this.toolStripStatusLabel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel7
             // 
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
             this.toolStripStatusLabel7.Size = new System.Drawing.Size(13, 17);
             this.toolStripStatusLabel7.Text = "0";
+            this.toolStripStatusLabel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel8
             // 
             this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
             this.toolStripStatusLabel8.Size = new System.Drawing.Size(10, 17);
             this.toolStripStatusLabel8.Text = "|";
+            this.toolStripStatusLabel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel9
             // 
             this.toolStripStatusLabel9.Name = "toolStripStatusLabel9";
             this.toolStripStatusLabel9.Size = new System.Drawing.Size(149, 17);
             this.toolStripStatusLabel9.Text = "Import Format Row Count:";
+            this.toolStripStatusLabel9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel10
             // 
             this.toolStripStatusLabel10.Name = "toolStripStatusLabel10";
             this.toolStripStatusLabel10.Size = new System.Drawing.Size(13, 17);
             this.toolStripStatusLabel10.Text = "0";
+            this.toolStripStatusLabel10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel11
             // 
             this.toolStripStatusLabel11.Name = "toolStripStatusLabel11";
             this.toolStripStatusLabel11.Size = new System.Drawing.Size(10, 17);
             this.toolStripStatusLabel11.Text = "|";
+            this.toolStripStatusLabel11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel12
             // 
             this.toolStripStatusLabel12.Name = "toolStripStatusLabel12";
             this.toolStripStatusLabel12.Size = new System.Drawing.Size(115, 17);
             this.toolStripStatusLabel12.Text = "Imported File Name:";
+            this.toolStripStatusLabel12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel13
             // 
@@ -1310,6 +1323,7 @@
             this.toolStripStatusLabel13.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripStatusLabel13.Size = new System.Drawing.Size(36, 17);
             this.toolStripStatusLabel13.Text = "NULL";
+            this.toolStripStatusLabel13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // button6
             // 

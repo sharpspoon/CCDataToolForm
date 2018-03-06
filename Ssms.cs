@@ -16,7 +16,7 @@ using System.IO;
 using System.DirectoryServices.ActiveDirectory;
 using System.Web;
 
-namespace CCDataImportTool
+namespace CCDataTool
 {
     public partial class Ssms : Form
     {

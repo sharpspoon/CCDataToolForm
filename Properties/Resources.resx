@@ -136,7 +136,7 @@
   <data name="DatabaseProject_7342_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DatabaseProject_7342_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3(three)columns_9714" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="threecolumns_9714" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3(three)columns_9714.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ModulesWindow_6540" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -223,7 +223,7 @@
   <data name="StatusAnnotations_Complete_and_ok_32xLG_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StatusAnnotations_Complete_and_ok_32xLG_color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CallidusCloud_Logo-62" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="CallidusCloud_Logo62" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CallidusCloud_Logo-62.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pencil_005_16xLG" type="System.Resources.ResXFileRef, System.Windows.Forms">

@@ -1,4 +1,4 @@
-﻿namespace CCDataImportTool
+﻿namespace CCDataTool
 {
     partial class About
     {
@@ -67,7 +67,7 @@
             // logoPictureBox
             // 
             this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logoPictureBox.Image = global::CCDataImportTool.Properties.Resources.CallidusCloud_Company_Logoflip;
+            this.logoPictureBox.Image = global::CCDataTool.Properties.Resources.CallidusCloud_Company_Logoflip;
             this.logoPictureBox.Location = new System.Drawing.Point(3, 3);
             this.logoPictureBox.Name = "logoPictureBox";
             this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 6);
@@ -145,7 +145,7 @@
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.okButton.Image = global::CCDataImportTool.Properties.Resources.StatusAnnotations_Complete_and_ok_32xSM_color;
+            this.okButton.Image = global::CCDataTool.Properties.Resources.StatusAnnotations_Complete_and_ok_32xSM_color;
             this.okButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.okButton.Location = new System.Drawing.Point(339, 239);
             this.okButton.Name = "okButton";

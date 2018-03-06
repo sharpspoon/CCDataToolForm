@@ -1,4 +1,4 @@
-﻿namespace CCDataImportTool
+﻿namespace CCDataTool
 {
     partial class Importformat
     {
@@ -47,7 +47,7 @@
             // 
             // cCDataToolBindingSource
             // 
-            this.cCDataToolBindingSource.DataSource = typeof(CCDataImportTool.CCDataTool);
+            this.cCDataToolBindingSource.DataSource = typeof(CCDataTool);
             // 
             // Importformat
             // 

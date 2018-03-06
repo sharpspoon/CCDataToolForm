@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CCDataImportTool.Properties {
+namespace CCDataTool.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace CCDataImportTool.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CCDataImportTool.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CCDataTool.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,16 +57,6 @@ namespace CCDataImportTool.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _3_three_columns_9714 {
-            get {
-                object obj = ResourceManager.GetObject("3(three)columns_9714", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -113,9 +103,9 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CallidusCloud_Logo_62 {
+        internal static System.Drawing.Bitmap CallidusCloud_Logo62 {
             get {
-                object obj = ResourceManager.GetObject("CallidusCloud_Logo-62", resourceCulture);
+                object obj = ResourceManager.GetObject("CallidusCloud_Logo62", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -516,6 +506,16 @@ namespace CCDataImportTool.Properties {
         internal static System.Drawing.Bitmap Symbols_Complete_and_ok_16xLG {
             get {
                 object obj = ResourceManager.GetObject("Symbols_Complete_and_ok_16xLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap threecolumns_9714 {
+            get {
+                object obj = ResourceManager.GetObject("threecolumns_9714", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

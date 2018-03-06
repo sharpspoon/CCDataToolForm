@@ -8,7 +8,7 @@ using System.Data.OleDb;
 using System.IO;
 using System.IO.Compression;
 
-namespace CCDataImportTool
+namespace CCDataTool
 {
     public partial class CCDataTool
     {

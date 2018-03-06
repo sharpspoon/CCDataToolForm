@@ -7,8 +7,8 @@
     <ProjectGuid>{C6EF4AF1-1B4D-4760-A4AD-6AD940434EC8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CCDataImportTool</RootNamespace>
-    <AssemblyName>CCDataImportTool</AssemblyName>
+    <RootNamespace>CCDataTool</RootNamespace>
+    <AssemblyName>CCDataTool</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,7 +35,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>95</ApplicationRevision>
+    <ApplicationRevision>98</ApplicationRevision>
     <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -144,9 +144,6 @@
       <DependentUpon>Actek.cs</DependentUpon>
     </Compile>
     <Compile Include="Medicare.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OpenSaveItems.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
