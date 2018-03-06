@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Data.OleDb;
 using System.IO;
 using System.IO.Compression;
+using System.Diagnostics;
 
 namespace CCDataImportTool
 {
@@ -17,14 +18,15 @@ namespace CCDataImportTool
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
+                //MessageBox.Show(Application.UserAppDataPath);
                 DialogResult result = MessageBox.Show("Do you really want to exit?", "CCDataTool", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     notifyIcon1.Visible = false;
                     notifyIcon1.Icon = null;
                     notifyIcon1.Dispose();
-                    System.IO.Directory.CreateDirectory(@"C:\Program Files (x86)\CCDataTool\Logs");
-                    string path = @"C:\Program Files (x86)\CCDataTool\Logs\CCDataTool_Log_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+                    System.IO.Directory.CreateDirectory(Application.UserAppDataPath+@"\Logs");
+                    string path = Application.UserAppDataPath+@"\Logs\CCDataTool_Log_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
                     using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
                     {
                         using (TextWriter tw = new StreamWriter(fs))
@@ -144,26 +146,7 @@ namespace CCDataImportTool
 
         }
         //------------------DATE CONVERTER END------------------------------------------------------
-        //------------------ABOUT START------------------------------------------------------
-        private void menu_About_Click(object sender, EventArgs e)
-        {
-            About about = new About();
-            about.Show();
-        }
-        //------------------ABOUT END------------------------------------------------------
-        //------------------ACKTEKSOFT LOGIN START------------------------------------------------------
-        private void acteksoft_Click(object sender, EventArgs e)
-        {
-            acteksoft actek = new acteksoft();
-            actek.Show();
-        }
-        //------------------ACKTEKSOFT LOGIN END------------------------------------------------------
-        //------------------CC LOGO CLICK START------------------------------------------------------
-        private void ccLogo_Click1(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://calliduscloud.com");
-        }
-        //------------------CC LOGO CLICK END------------------------------------------------------
+
         //------------------IMPORT FORMAT LOAD START------------------------------------------------------
         private void selectFromDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -223,13 +206,7 @@ namespace CCDataImportTool
             Ssms ssms = new Ssms();
             ssms.Show();
         }
-        private void dgvUserDetails_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e) //row number logic
-        {
-            using (SolidBrush b = new SolidBrush(dataGridView1.RowHeadersDefaultCellStyle.ForeColor))
-            {
-                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
-            }
-        }
+
         private void toolStripStatusLabel4_Click(object sender, EventArgs e)
         {
             toolStripStatusLabel4.Text = dataGridView1.Rows.Count.ToString();
@@ -241,77 +218,15 @@ namespace CCDataImportTool
             cu.Show();
         }
 
-        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Control ctrl = this.ActiveControl;
+        /// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------FINALIZED CODE START
 
-            if (ctrl != null)
-
-            {
-
-                if (ctrl is TextBox)
-
-                {
-
-                    TextBox tx = (TextBox)ctrl;
-
-                    tx.Copy();
-
-                }
-
-            }
-        }
-
-        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Control ctrl = this.ActiveControl;
-
-            if (ctrl != null)
-
-            {
-
-                if (ctrl is TextBox)
-
-                {
-
-                    TextBox tx = (TextBox)ctrl;
-
-                    tx.Cut();
-
-                }
-
-            }
-        }
-
-        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Control ctrl = this.ActiveControl;
-
-            if (ctrl != null)
-
-            {
-
-                if (ctrl is TextBox)
-
-                {
-
-                    TextBox tx = (TextBox)ctrl;
-
-                    tx.Paste();
-
-                }
-
-            }
-        }
-
+        //------------------FORM DRAG LOGIC START------------------------------------------------------
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
-
         [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
-
         private void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -320,15 +235,15 @@ namespace CCDataImportTool
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+        //------------------FORM DRAG LOGIC END------------------------------------------------------
 
+        //------------------TOOLSTRIP MINIMIZE, MAXIMIZE, CLOSE START------------------------------------------------------
         private void toolStripMenuItemClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void toolStripMenuItemMaximize_Click(object sender, EventArgs e)
         {
-
             if (this.WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
@@ -337,12 +252,90 @@ namespace CCDataImportTool
             {
                 this.WindowState = FormWindowState.Maximized;
             }
-            
         }
-
         private void toolStripMenuItemMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        //------------------TOOLSTRIP MINIMIZE, MAXIMIZE, CLOSE END------------------------------------------------------
+
+        //------------------CUT, COPY, PASTE START------------------------------------------------------
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control ctrl = this.ActiveControl;
+            if (ctrl != null)
+            {
+                if (ctrl is TextBox)
+                {
+                    TextBox tx = (TextBox)ctrl;
+                    tx.Copy();
+                }
+            }
+        }
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control ctrl = this.ActiveControl;
+            if (ctrl != null)
+            {
+                if (ctrl is TextBox)
+                {
+                    TextBox tx = (TextBox)ctrl;
+                    tx.Cut();
+                }
+            }
+        }
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control ctrl = this.ActiveControl;
+            if (ctrl != null)
+            {
+                if (ctrl is TextBox)
+                {
+                    TextBox tx = (TextBox)ctrl;
+                    tx.Paste();
+                }
+            }
+        }
+        //------------------CUT, COPY, PASTE END------------------------------------------------------
+
+        //------------------CROW NUMBER LOGIC START------------------------------------------------------
+        private void dgvUserDetails_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e) 
+        {
+            using (SolidBrush b = new SolidBrush(dataGridView1.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
+            }
+        }
+        //------------------CROW NUMBER LOGIC END------------------------------------------------------
+
+        //------------------ABOUT START------------------------------------------------------
+        private void menu_About_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
+        }
+        //------------------ABOUT END------------------------------------------------------
+
+        //------------------ACKTEKSOFT LOGIN START------------------------------------------------------
+        private void acteksoft_Click(object sender, EventArgs e)
+        {
+            acteksoft actek = new acteksoft();
+            actek.Show();
+        }
+        //------------------ACKTEKSOFT LOGIN END------------------------------------------------------
+
+        //------------------CC LOGO CLICK START------------------------------------------------------
+        private void ccLogo_Click1(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://calliduscloud.com");
+        }
+
+
+        //------------------CC LOGO CLICK END------------------------------------------------------
+        private void cCDataToolLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(Application.UserAppDataPath + @"\Logs");
+        }
+        /// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------FINALIZED CODE END
     }
 }

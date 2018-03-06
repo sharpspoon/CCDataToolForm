@@ -49,6 +49,7 @@
             this.cSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xLSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cCDataToolLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cSVToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -276,17 +277,18 @@
             this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cSVToolStripMenuItem,
             this.xMLToolStripMenuItem1,
-            this.xLSToolStripMenuItem});
+            this.xLSToolStripMenuItem,
+            this.cCDataToolLogToolStripMenuItem});
             this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open...";
             // 
             // cSVToolStripMenuItem
             // 
             this.cSVToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cSVToolStripMenuItem.Image")));
             this.cSVToolStripMenuItem.Name = "cSVToolStripMenuItem";
-            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.cSVToolStripMenuItem.Text = ".CSV";
             this.cSVToolStripMenuItem.Click += new System.EventHandler(this.menu_Open_Csv_Click);
             // 
@@ -294,7 +296,7 @@
             // 
             this.xMLToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("xMLToolStripMenuItem1.Image")));
             this.xMLToolStripMenuItem1.Name = "xMLToolStripMenuItem1";
-            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
+            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
             this.xMLToolStripMenuItem1.Text = ".XML";
             this.xMLToolStripMenuItem1.Click += new System.EventHandler(this.menu_Open_Xml_Click);
             // 
@@ -302,10 +304,18 @@
             // 
             this.xLSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xLSToolStripMenuItem.Image")));
             this.xLSToolStripMenuItem.Name = "xLSToolStripMenuItem";
-            this.xLSToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.xLSToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.xLSToolStripMenuItem.Text = ".XLS";
             this.xLSToolStripMenuItem.Visible = false;
             this.xLSToolStripMenuItem.Click += new System.EventHandler(this.menu_Open_Xls_Click);
+            // 
+            // cCDataToolLogToolStripMenuItem
+            // 
+            this.cCDataToolLogToolStripMenuItem.Image = global::CCDataImportTool.Properties.Resources.IntelliTrace_16x;
+            this.cCDataToolLogToolStripMenuItem.Name = "cCDataToolLogToolStripMenuItem";
+            this.cCDataToolLogToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.cCDataToolLogToolStripMenuItem.Text = "CC Data Tool Log";
+            this.cCDataToolLogToolStripMenuItem.Click += new System.EventHandler(this.cCDataToolLogToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
@@ -315,7 +325,7 @@
             this.xLSToolStripMenuItem1});
             this.saveAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveAsToolStripMenuItem.Image")));
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
             // 
             // cSVToolStripMenuItem1
@@ -346,7 +356,7 @@
             // 
             this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -354,7 +364,7 @@
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
@@ -1500,6 +1510,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClose;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMaximize;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMinimize;
+        private System.Windows.Forms.ToolStripMenuItem cCDataToolLogToolStripMenuItem;
     }
 }
 
