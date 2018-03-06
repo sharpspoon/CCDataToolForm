@@ -17,7 +17,6 @@ namespace CCDataTool
 
         private void inProgramCheckToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                     if (dataGridView1.ColumnCount != 37)
@@ -669,13 +668,12 @@ namespace CCDataTool
                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Medicare file is OK");
                 return;
                 }
-            
         }
         private void groupByColumnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             {
-                System.IO.Directory.CreateDirectory("C:\\Program Files (x86)\\CCDataTool\\Medicare Error Files");
-                string path = @"C:\\Program Files (x86)\\CCDataTool\\Medicare Error Files\\CCDataTool_MEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+                System.IO.Directory.CreateDirectory(@"C:\Program Files (x86)\CCDataTool\Medicare Error Files");
+                string path = @"C:\Program Files (x86)\CCDataTool\Medicare Error Files\CCDataTool_MEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
                 using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
                 {
                     using (TextWriter tw = new StreamWriter(fs))
@@ -751,7 +749,6 @@ namespace CCDataTool
                         //column 4 -required
                         try
                         {
-
                             for (int i = 0; i < dataGridView1.Rows.Count; i++)
                             {
                                 var value3 = dataGridView1.Rows[i].Cells[3].Value.ToString();
@@ -764,7 +761,6 @@ namespace CCDataTool
                                     tw.WriteLine("column #4 (HICN)  needs to be 20 or less characters.  At line " + (i + 1) + " you have a value that is " + value3.Length + " characters long.");
                                     return;
                                 }
-
                             }
                         }
                         catch { tw.WriteLine("column #4 check...done."); }
@@ -1247,24 +1243,18 @@ namespace CCDataTool
                         catch { tw.WriteLine("column #37 check...done."); }
                         tw.WriteLine("EOF.");
                     }
-
-
                 }
-                MessageBox.Show("Medicare error file has been created. \nLocation: C:\\Program Files (x86)\\CCDataTool\\Medicare Error Files", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Medicare error file has been created. Location: C:\\Program Files (x86)\\CCDataTool\\Medicare Error Files");
+                MessageBox.Show(@"Medicare error file has been created. \nLocation: C:\Program Files (x86)\CCDataTool\Medicare Error Files", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Medicare error file has been created. Location: C:\Program Files (x86)\CCDataTool\Medicare Error Files");
             }
-
-
-
             //------------------MEDICARE CHECKER END------------------------------------------------------
 
         }
-
         private void groupByErrorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             {
-                System.IO.Directory.CreateDirectory("C:\\Program Files (x86)\\CCDataTool\\Medicare Error Files");
-                string path = @"C:\\Program Files (x86)\\CCDataTool\\Medicare Error Files\\CCDataTool_MEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+                System.IO.Directory.CreateDirectory(@"C:\Program Files (x86)\CCDataTool\Medicare Error Files");
+                string path = @"C:\Program Files (x86)\CCDataTool\Medicare Error Files\CCDataTool_MEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
                 using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
                 {
                     using (TextWriter tw = new StreamWriter(fs))
@@ -1921,8 +1911,8 @@ namespace CCDataTool
 
 
                 }
-                MessageBox.Show("Medicare error file has been created. \nLocation: C:\\Program Files (x86)\\CCDataTool\\Medicare Error Files", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Medicare error file has been created. Location: C:\\Program Files (x86)\\CCDataTool\\Medicare Error Files");
+                MessageBox.Show(@"Medicare error file has been created. \nLocation: C:\Program Files (x86)\CCDataTool\Medicare Error Files", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Medicare error file has been created. Location: C:\Program Files (x86)\CCDataTool\Medicare Error Files");
             }
         }
     }
