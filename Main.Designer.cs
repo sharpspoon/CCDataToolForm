@@ -80,6 +80,9 @@
             this.dataInUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemMaximize = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemMinimize = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -245,12 +248,16 @@
             this.settingsToolStripMenuItem,
             this.toolsToolStripMenuItem,
             this.dataToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.toolStripMenuItemClose,
+            this.toolStripMenuItemMaximize,
+            this.toolStripMenuItemMinimize});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1540, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // fileToolStripMenuItem
             // 
@@ -297,6 +304,7 @@
             this.xLSToolStripMenuItem.Name = "xLSToolStripMenuItem";
             this.xLSToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.xLSToolStripMenuItem.Text = ".XLS";
+            this.xLSToolStripMenuItem.Visible = false;
             this.xLSToolStripMenuItem.Click += new System.EventHandler(this.menu_Open_Xls_Click);
             // 
             // saveAsToolStripMenuItem
@@ -332,6 +340,7 @@
             this.xLSToolStripMenuItem1.Name = "xLSToolStripMenuItem1";
             this.xLSToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
             this.xLSToolStripMenuItem1.Text = ".XLS";
+            this.xLSToolStripMenuItem1.Visible = false;
             // 
             // printToolStripMenuItem
             // 
@@ -390,6 +399,7 @@
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.viewToolStripMenuItem.Text = "View";
+            this.viewToolStripMenuItem.Visible = false;
             // 
             // settingsToolStripMenuItem
             // 
@@ -399,6 +409,7 @@
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Visible = false;
             // 
             // changeAColorToolStripMenuItem
             // 
@@ -546,6 +557,7 @@
             this.dataInUseToolStripMenuItem.Name = "dataInUseToolStripMenuItem";
             this.dataInUseToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.dataInUseToolStripMenuItem.Text = "Data in Use";
+            this.dataInUseToolStripMenuItem.Visible = false;
             // 
             // helpToolStripMenuItem
             // 
@@ -563,6 +575,30 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.menu_About_Click);
+            // 
+            // toolStripMenuItemClose
+            // 
+            this.toolStripMenuItemClose.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItemClose.Image = global::CCDataImportTool.Properties.Resources.Clearallrequests_88161;
+            this.toolStripMenuItemClose.Name = "toolStripMenuItemClose";
+            this.toolStripMenuItemClose.Size = new System.Drawing.Size(28, 20);
+            this.toolStripMenuItemClose.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
+            // 
+            // toolStripMenuItemMaximize
+            // 
+            this.toolStripMenuItemMaximize.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItemMaximize.Image = global::CCDataImportTool.Properties.Resources.Larger_225;
+            this.toolStripMenuItemMaximize.Name = "toolStripMenuItemMaximize";
+            this.toolStripMenuItemMaximize.Size = new System.Drawing.Size(28, 20);
+            this.toolStripMenuItemMaximize.Click += new System.EventHandler(this.toolStripMenuItemMaximize_Click);
+            // 
+            // toolStripMenuItemMinimize
+            // 
+            this.toolStripMenuItemMinimize.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItemMinimize.Image = global::CCDataImportTool.Properties.Resources.Larger_2301;
+            this.toolStripMenuItemMinimize.Name = "toolStripMenuItemMinimize";
+            this.toolStripMenuItemMinimize.Size = new System.Drawing.Size(28, 20);
+            this.toolStripMenuItemMinimize.Click += new System.EventHandler(this.toolStripMenuItemMinimize_Click);
             // 
             // pictureBox1
             // 
@@ -1182,6 +1218,7 @@
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 28;
             this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel1
             // 
@@ -1286,6 +1323,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1540, 711);
+            this.ControlBox = false;
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
@@ -1303,9 +1341,10 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CCDataTool";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CallidusCloud Data Tool";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -1458,6 +1497,9 @@
         private System.Windows.Forms.ToolStripMenuItem groupByColumnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem groupByErrorToolStripMenuItem;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClose;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMaximize;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMinimize;
     }
 }
 

@@ -240,6 +240,10 @@
   <ItemGroup>
     <Content Include="download_BmO_icon.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\Larger_2301.png" />
+    <None Include="Resources\Larger_225.png" />
+    <None Include="Resources\Larger_230.png" />
+    <None Include="Resources\Clearallrequests_88161.png" />
     <None Include="Resources\ExportTestRunResults_8602.png" />
     <None Include="Resources\DeleteColumn_5627.png" />
     <None Include="Resources\3%28three%29columns_9714.png" />

@@ -134,6 +134,41 @@ namespace CCDataImportTool
 
         private void menu_Open_Xls_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "XLS | *.xls", ValidateNames = true, Multiselect = false })
+                {
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                        dataGridView1.DataSource = ReadXls(ofd.FileName);
+                    toolStripStatusLabel13.Text = ofd.FileName;
+                    toolStripStatusLabel4.Text = dataGridView1.Rows.Count.ToString();
+                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading XLS: " + ofd.FileName + "...Done.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public DataTable ReadXls(string fileName)
+        {
+            DataTable dt = new DataTable();
+            using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
+                Path.GetDirectoryName(fileName) + "\";Extended Properties='Excel 8.0;HDR=YES;';"))
+            {
+                using (OleDbCommand cmd = new OleDbCommand("select * from [" + fileName + "$]", cn))
+                {
+                    cn.Open();
+                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+
+            return dt;
 
         }
         //------------------OPEN/SAVE XLS END------------------------------------------------------

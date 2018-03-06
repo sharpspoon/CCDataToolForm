@@ -133,6 +133,16 @@ namespace CCDataImportTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Clearallrequests_88161 {
+            get {
+                object obj = ResourceManager.GetObject("Clearallrequests_88161", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ColorPalette {
             get {
                 object obj = ResourceManager.GetObject("ColorPalette", resourceCulture);
@@ -276,6 +286,36 @@ namespace CCDataImportTool.Properties {
         internal static System.Drawing.Bitmap KeyOutput_8167 {
             get {
                 object obj = ResourceManager.GetObject("KeyOutput_8167", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Larger_225 {
+            get {
+                object obj = ResourceManager.GetObject("Larger_225", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Larger_230 {
+            get {
+                object obj = ResourceManager.GetObject("Larger_230", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Larger_2301 {
+            get {
+                object obj = ResourceManager.GetObject("Larger_2301", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
