@@ -7,15 +7,15 @@
     <ProjectGuid>{C6EF4AF1-1B4D-4760-A4AD-6AD940434EC8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CCDataTool</RootNamespace>
-    <AssemblyName>CCDataTool</AssemblyName>
+    <RootNamespace>DataAnalysisTool</RootNamespace>
+    <AssemblyName>DataAnalysisTool</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\FS-CorpFileAL\Public\CCDataTool\</PublishUrl>
+    <PublishUrl>\\FS-CorpFileAL\Public\DataAnalysisTool\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
+    <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -23,20 +23,20 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>\\FS-CorpFileAL\Public\CCDataTool\</UpdateUrl>
+    <UpdateUrl>\\FS-CorpFileAL\Public\DataAnalysisTool\</UpdateUrl>
     <SupportUrl>http://calliduscloud.com</SupportUrl>
     <ErrorReportUrl>http://calliduscloud.com</ErrorReportUrl>
-    <ProductName>CallidusCloud Data Tool</ProductName>
+    <ProductName>Data Analysis Tool</ProductName>
     <PublisherName>CallidusCloud</PublisherName>
     <SuiteName>CallidusCloud</SuiteName>
-    <MinimumRequiredVersion>0.0.0.22</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.22</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>README.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>98</ApplicationRevision>
-    <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -86,7 +86,7 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetZone>Custom</TargetZone>
+    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -17,7 +17,7 @@ using System.IO;
 using System.DirectoryServices.ActiveDirectory;
 using System.Web;
 
-namespace CCDataTool
+namespace DataAnalysisTool
 {
     public partial class acteksoft : Form
     {
@@ -37,9 +37,9 @@ namespace CCDataTool
                 {
                     //tw.WriteLine(@"md C:\Program Files(x86)\CCDataTool\Data");
                     //tw.WriteLine("robocopy "+processdir+" "+@"""C:\Program Files (x86)\CCDataTool\Data"""+@" /MIR");
-                    tw.WriteLine("taskkill /IM CCDataImportTool.exe /F");
+                    tw.WriteLine("taskkill /IM DataAnalysisTool.exe /F");
                     tw.WriteLine("cls");
-                    tw.WriteLine(@"C:\Windows\System32\runas.exe /user:ACTEKSOFT\"+textBox7.Text+ @" /netonly " +@""""+processdir+@"\CCDataImportTool.exe""");
+                    tw.WriteLine(@"C:\Windows\System32\runas.exe /user:ACTEKSOFT\"+textBox7.Text+ @" /netonly " +@""""+processdir+ @"\DataAnalysisTool.exe""");
                     tw.WriteLine("exit");
                 }
                 System.Diagnostics.Process.Start(path);

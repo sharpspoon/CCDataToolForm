@@ -8,9 +8,9 @@ using System.Data.OleDb;
 using System.IO;
 using System.IO.Compression;
 
-namespace CCDataTool
+namespace DataAnalysisTool
 {
-    public partial class CCDataTool
+    public partial class DataAnalysisTool
     {
         //------------------CELL LENGTH CHECKER START------------------------------------------------------
         private void cellLength_Click(object sender, EventArgs e)

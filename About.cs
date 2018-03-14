@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CCDataTool
+namespace DataAnalysisTool
 {
     partial class About : Form
     {
@@ -118,6 +118,11 @@ namespace CCDataTool
         private void okButton_Click(object sender, EventArgs e)
         {
             this.Close(); 
+        }
+
+        private void About_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

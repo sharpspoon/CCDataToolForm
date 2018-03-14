@@ -8,10 +8,11 @@ using System.Data.OleDb;
 using System.IO;
 using System.IO.Compression;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
-namespace CCDataTool
+namespace DataAnalysisTool
 {
-    public partial class CCDataTool : Form
+    public partial class DataAnalysisTool : Form
     {
 
         //------------------DATE CONVERTER START------------------------------------------------------
@@ -20,7 +21,7 @@ namespace CCDataTool
 
             if (textBox2.Text.Length == 0)
             {
-                MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
 
@@ -35,7 +36,7 @@ namespace CCDataTool
 
                         if (value2 == " " || value2 == "" || value2 == null)
                         {
-                            MessageBox.Show("NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyyMMdd");
                             return;
                         }
@@ -48,49 +49,49 @@ namespace CCDataTool
 
                         if (year > 2200)
                         {
-                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyyMMdd");
                             return;
                         }
 
                         if (month > 12)
                         {
-                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyyMMdd");
                             return;
                         }
 
                         if (month < 01)
                         {
-                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyyMMdd");
                             return;
                         }
 
                         if (day > 31)
                         {
-                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyyMMdd");
                             return;
                         }
 
                         if (day < 01)
                         {
-                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyyMMdd");
                             return;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyyMMdd", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyyMMdd");
                         return;
                     }
                 }
                 catch
                 {
-                    MessageBox.Show("dates are ok", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("dates are ok", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   dates are OK");
                     return;
                 }
@@ -120,9 +121,9 @@ namespace CCDataTool
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     zipPath = ofd.FileName;
-                    string extractPath = @"C:\Program Files (x86)\CCDataTool\ZIP Extracts\" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss");
+                    string extractPath = @"C:\Program Files (x86)\DataAnalysisTool\ZIP Extracts\" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss");
                     ZipFile.ExtractToDirectory(zipPath, extractPath);
-                    MessageBox.Show("Import Format Loaded", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Import Format Loaded", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
                 else
                 {
@@ -131,7 +132,7 @@ namespace CCDataTool
             }
         }
         //------------------IMPORT FORMAT LOAD END------------------------------------------------------
-        public CCDataTool()
+        public DataAnalysisTool()
         {
             InitializeComponent();
         }
@@ -345,7 +346,7 @@ namespace CCDataTool
         {
             if (dataGridView1.Rows.Count == 0 || dataGridView1.Rows == null)
             {
-                MessageBox.Show("No data to print", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No data to print", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -383,7 +384,12 @@ namespace CCDataTool
                     if (ofd.ShowDialog() == DialogResult.OK)
                         dataGridView1.DataSource = ReadCsv(ofd.FileName);
                     toolStripStatusLabel13.Text = ofd.FileName;
+                    toolStripStatusLabel13.Visible = true;
                     toolStripStatusLabel4.Text = dataGridView1.Rows.Count.ToString();
+                    toolStripStatusLabel2.Visible = true;
+                    toolStripStatusLabel3.Visible = true;
+                    toolStripStatusLabel4.Visible = true;
+                    toolStripStatusLabel5.Visible = true;
                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading CSV: " + ofd.FileName + "...Done.");
                 }
             }
@@ -465,6 +471,11 @@ namespace CCDataTool
 
                     toolStripStatusLabel13.Text = ofd.FileName;
                     toolStripStatusLabel4.Text = dataGridView1[0, dataGridView1.Rows.Count - 1].Value.ToString();
+                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading XML: " + ofd.FileName + "...Done.");
+                    toolStripStatusLabel2.Visible = true;
+                    toolStripStatusLabel3.Visible = true;
+                    toolStripStatusLabel4.Visible = true;
+                    toolStripStatusLabel5.Visible = true;
                 }
             }
             catch (Exception ex)
@@ -489,7 +500,7 @@ namespace CCDataTool
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 //MessageBox.Show(Application.UserAppDataPath);
-                DialogResult result = MessageBox.Show("Do you really want to exit?", "CCDataTool", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Do you really want to exit?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     notifyIcon1.Visible = false;
@@ -500,13 +511,13 @@ namespace CCDataTool
                     else
                     {
                         System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\Logs");
-                        string path = Application.UserAppDataPath + @"\Logs\CCDataTool_Log_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+                        string path = Application.UserAppDataPath + @"\Logs\DataAnalysisTool_Log_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
                         using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
                         {
                             using (TextWriter tw = new StreamWriter(fs))
                             {
 
-                                tw.WriteLine("CCDataTool - Activity Log");
+                                tw.WriteLine("Data Analysis Tool - Activity Log");
                                 tw.WriteLine("Log begin...");
                                 tw.WriteLine(".");
                                 tw.WriteLine(".");
@@ -532,5 +543,9 @@ namespace CCDataTool
         //------------------EXIT APP ACTION END------------------------------------------------------
 
         /// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------FINALIZED CODE END
+        /// TEST CODE
+
+        /// TEST CODE
+
     }
 }

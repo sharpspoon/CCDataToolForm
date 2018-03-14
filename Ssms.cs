@@ -16,7 +16,7 @@ using System.IO;
 using System.DirectoryServices.ActiveDirectory;
 using System.Web;
 
-namespace CCDataTool
+namespace DataAnalysisTool
 {
     public partial class Ssms : Form
     {

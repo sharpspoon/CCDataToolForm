@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CCDataTool
+namespace DataAnalysisTool
 {
     public partial class Importformat : Form
     {

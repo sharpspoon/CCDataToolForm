@@ -8,9 +8,9 @@ using System.Data.OleDb;
 using System.IO;
 using System.IO.Compression;
 
-namespace CCDataTool
+namespace DataAnalysisTool
 {
-    public partial class CCDataTool
+    public partial class DataAnalysisTool
     {
         Importformat imp = new Importformat();
 

@@ -1,4 +1,4 @@
-﻿namespace CCDataTool
+﻿namespace DataAnalysisTool
 {
     partial class DataInUse
     {
