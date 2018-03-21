@@ -390,6 +390,7 @@ namespace DataAnalysisTool
                     toolStripStatusLabel3.Visible = true;
                     toolStripStatusLabel4.Visible = true;
                     toolStripStatusLabel5.Visible = true;
+                    toolStripStatusLabel12.Visible = true;
                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading CSV: " + ofd.FileName + "...Done.");
                 }
             }

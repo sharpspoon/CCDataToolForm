@@ -48,5 +48,25 @@ namespace DataAnalysisTool
         private void acteksoft_Load(object sender, EventArgs e)
         {
         }
+
+        private void toolStripMenuItemClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void toolStripMenuItemMaximize_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+        private void toolStripMenuItemMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

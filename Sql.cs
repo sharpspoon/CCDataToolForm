@@ -59,6 +59,9 @@ namespace DataAnalysisTool
                 tableSelect.DisplayMember = "name";
                 conn.Close();
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
+                toolStripStatusLabel5.Visible = true;
+                toolStripStatusLabel6.Visible = true;
+                toolStripStatusLabel7.Visible = true;
             }
             catch { return; }
 
@@ -121,6 +124,9 @@ namespace DataAnalysisTool
                 toolStripStatusLabel10.Text = dataGridView3.Rows.Count.ToString();
                 conn.Close();
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading import format: " + ifSelect.Text + "...Done.");
+                toolStripStatusLabel8.Visible = true;
+                toolStripStatusLabel9.Visible = true;
+                toolStripStatusLabel10.Visible = true;
             }
             catch { return; }
 

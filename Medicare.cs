@@ -17,6 +17,13 @@ namespace DataAnalysisTool
 
         private void inProgramCheckToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (databaseSelect.Text == null || databaseSelect.Text == "" || databaseSelect.Text == " ")
+
+            {
+                DialogResult result = MessageBox.Show("No database selected. \nThere will be no cross check with the database. Continue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result == DialogResult.No)
+                { return; }
+            }
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                     if (dataGridView1.ColumnCount != 37)
@@ -671,6 +678,14 @@ namespace DataAnalysisTool
         }
         private void groupByColumnToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (databaseSelect.Text == null || databaseSelect.Text=="" || databaseSelect.Text==" ")
+
+            {
+                DialogResult result =  MessageBox.Show("No database selected. \nThere will be no cross check with the database. Continue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result ==DialogResult.No)
+                { return; }
+            }
+            
             {
                 System.IO.Directory.CreateDirectory(@"C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
                 string path = @"C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files\DataAnalysisTool_MEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
@@ -1577,6 +1592,14 @@ namespace DataAnalysisTool
         }
         private void groupByErrorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            if (databaseSelect.Text == null || databaseSelect.Text == "" || databaseSelect.Text == " ")
+
+            {
+                DialogResult result = MessageBox.Show("No database selected. \nThere will be no cross check with the database. Continue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result == DialogResult.No)
+                { return; }
+            }
             {
                 System.IO.Directory.CreateDirectory(@"C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
                 string path = @"C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files\DataAnalysisTool_MEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
