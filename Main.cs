@@ -158,11 +158,7 @@ namespace DataAnalysisTool
         private void form1BindingSource_CurrentChanged(object sender, EventArgs e)
         {
         }
-        private void ssms_Click(object sender, EventArgs e)
-        {
-            Ssms ssms = new Ssms();
-            ssms.Show();
-        }
+
 
         private void toolStripStatusLabel4_Click(object sender, EventArgs e)
         {
@@ -317,12 +313,30 @@ namespace DataAnalysisTool
         //------------------ABOUT END------------------------------------------------------
 
         //------------------ACKTEKSOFT LOGIN START------------------------------------------------------
+
         private void acteksoft_Click(object sender, EventArgs e)
         {
+
+
             acteksoft actek = new acteksoft();
-            actek.Show();
+
+            while (Application.OpenForms.Count > 1)
+            {
+                Application.OpenForms[Application.OpenForms.Count - 1].Close();
+            }
+            actek.ShowDialog(); 
         }
         //------------------ACKTEKSOFT LOGIN END------------------------------------------------------
+
+        private void ssms_Click(object sender, EventArgs e)
+        {
+            Ssms ssms = new Ssms();
+            while (Application.OpenForms.Count > 1)
+            {
+                Application.OpenForms[Application.OpenForms.Count - 1].Close();
+            }
+            ssms.ShowDialog();
+        }
 
         //------------------CC LOGO CLICK START------------------------------------------------------
         private void ccLogo_Click1(object sender, EventArgs e)

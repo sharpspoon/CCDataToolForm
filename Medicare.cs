@@ -24,6 +24,16 @@ namespace DataAnalysisTool
                 if (result == DialogResult.No)
                 { return; }
             }
+
+            if (databaseSelect.Text != null || databaseSelect.Text != "" || databaseSelect.Text != " ")
+
+            {
+                DialogResult result = MessageBox.Show("there is a database selected. \ncool.", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result == DialogResult.No)
+                { return; }
+            }
+
+
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                     if (dataGridView1.ColumnCount != 37)
