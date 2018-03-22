@@ -566,6 +566,14 @@ namespace DataAnalysisTool
             }
             legend.ShowDialog();
         }
+
+        private void Form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
         //------------------EXIT APP ACTION END------------------------------------------------------
 
         /// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------FINALIZED CODE END

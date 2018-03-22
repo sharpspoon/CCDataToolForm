@@ -138,6 +138,7 @@
             this.databaseFileSizeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel15 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel16 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -153,7 +154,6 @@
             this.toolStripStatusLabel13 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel14 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button6 = new System.Windows.Forms.Button();
-            this.toolStripStatusLabel16 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -1284,6 +1284,13 @@
             this.toolStripStatusLabel15.Text = "Table Legend";
             this.toolStripStatusLabel15.Click += new System.EventHandler(this.toolStripStatusLabel15_Click);
             // 
+            // toolStripStatusLabel16
+            // 
+            this.toolStripStatusLabel16.Name = "toolStripStatusLabel16";
+            this.toolStripStatusLabel16.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel16.Text = "|";
+            this.toolStripStatusLabel16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel1.Image")));
@@ -1413,12 +1420,6 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.checkToolsToolStripMenuItem_Click);
             // 
-            // toolStripStatusLabel16
-            // 
-            this.toolStripStatusLabel16.Name = "toolStripStatusLabel16";
-            this.toolStripStatusLabel16.Size = new System.Drawing.Size(10, 17);
-            this.toolStripStatusLabel16.Text = "|";
-            // 
             // DataAnalysisTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1441,11 +1442,13 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "DataAnalysisTool";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_KeyDown);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Data.OleDb;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 
 namespace DataAnalysisTool
 {
@@ -17,7 +18,7 @@ namespace DataAnalysisTool
 
         private void inProgramCheckToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (databaseSelect.Text == null || databaseSelect.Text == "" || databaseSelect.Text == " ")
+            if ( databaseSelect.Text == "")
 
             {
                 DialogResult result = MessageBox.Show("No database selected. \nThere will be no cross check with the database. Continue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
@@ -25,12 +26,62 @@ namespace DataAnalysisTool
                 { return; }
             }
 
-            if (databaseSelect.Text != null || databaseSelect.Text != "" || databaseSelect.Text != " ")
+            if (databaseSelect.Text != "")
 
             {
-                DialogResult result = MessageBox.Show("there is a database selected. \ncool.", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                if (result == DialogResult.No)
-                { return; }
+                DialogResult result = MessageBox.Show("there is a database selected. \ncool.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+                SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
+                conn.Open();
+                SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
+                SqlDataReader reader;
+                try
+                {
+
+                    var select = "USE " + databaseSelect.Text + " select recval from CodSet where rectype='CMSPBP'";
+                    var conn2 = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
+                    var dataAdapter = new SqlDataAdapter(select, conn2);
+                    var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                    var ds = new DataSet();
+                    dataAdapter.Fill(ds);
+                    dataGridView4.ReadOnly = true;
+                    dataGridView4.DataSource = ds.Tables[0];
+                    toolStripStatusLabel7.Text = dataGridView4.Rows.Count.ToString();
+                    reader = sc.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    toolStripStatusLabel10.Text = dataGridView3.Rows.Count.ToString();
+                    conn.Close();
+
+
+                    //int[] intArray = dataGridView1.Rows
+                    //                .Cast<DataGridViewRow>()
+                    //                .Where(row => !row.IsNewRow)
+                    //                .Select(row => Convert.ToInt32(row.Cells[0].Value.ToString())).ToArray();
+                    //MessageBox.Show(intArray);
+
+
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        //MessageBox.Show("popup foreach value in datagridview4");
+                        var value = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                        MessageBox.Show(value);
+                        for (int j = 0; j < dataGridView4.Rows.Count; j++)
+                        {
+
+                            if (dataGridView1.Rows[i].Cells[2].Value != null && value == dataGridView4.Rows[i].Cells[0].Value.ToString())
+
+                            {
+                                MessageBox.Show("The value already existed in DataGridView.");
+                                break;
+
+                            }
+                        }
+                    }
+                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading PBP for a cross check...Done.");
+                }
+                catch { return; }
+
+                conn.Close();
             }
 
 
