@@ -233,6 +233,16 @@ namespace DataAnalysisTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap error_red_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("error_red_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ExcelWorksheetView_11748 {
             get {
                 object obj = ResourceManager.GetObject("ExcelWorksheetView_11748", resourceCulture);
@@ -266,6 +276,16 @@ namespace DataAnalysisTool.Properties {
         internal static System.Drawing.Bitmap Help_6522 {
             get {
                 object obj = ResourceManager.GetObject("Help_6522", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Information_blue_6227_21x20 {
+            get {
+                object obj = ResourceManager.GetObject("Information_blue_6227_21x20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

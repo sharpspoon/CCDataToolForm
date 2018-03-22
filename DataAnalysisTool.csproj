@@ -35,7 +35,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationRevision>15</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -119,6 +119,12 @@
     <Compile Include="CheckTools.Designer.cs">
       <DependentUpon>CheckTools.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataGridViewLegend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataGridViewLegend.Designer.cs">
+      <DependentUpon>DataGridViewLegend.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataInUse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CheckTools.resx">
       <DependentUpon>CheckTools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridViewLegend.resx">
+      <DependentUpon>DataGridViewLegend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataInUse.resx">
       <DependentUpon>DataInUse.cs</DependentUpon>
@@ -237,6 +246,8 @@
   <ItemGroup>
     <Content Include="download_BmO_icon.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\error_red_32x32.png" />
+    <None Include="Resources\Information_blue_6227_21x20.png" />
     <None Include="Resources\IntelliTrace_16x.png" />
     <None Include="Resources\Larger_2301.png" />
     <None Include="Resources\Larger_225.png" />

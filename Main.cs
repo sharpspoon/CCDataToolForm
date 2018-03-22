@@ -555,6 +555,17 @@ namespace DataAnalysisTool
                 e.Cancel = true;
             }
         }
+
+        private void toolStripStatusLabel15_Click(object sender, EventArgs e)
+        {
+            DataGridViewLegend legend = new DataGridViewLegend();
+
+            while (Application.OpenForms.Count > 1)
+            {
+                Application.OpenForms[Application.OpenForms.Count - 1].Close();
+            }
+            legend.ShowDialog();
+        }
         //------------------EXIT APP ACTION END------------------------------------------------------
 
         /// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------FINALIZED CODE END
