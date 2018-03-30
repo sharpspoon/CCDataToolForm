@@ -1642,14 +1642,26 @@ namespace DataAnalysisTool
         }
         private void groupByErrorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //global vars
+            var ifCount = "USE " + databaseSelect.Text + " SELECT IMFF.FieldSeq FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null order by imff.FieldSeq";
+            //MessageBox.Show(select2);
 
-            if (databaseSelect.Text == null || databaseSelect.Text == "" || databaseSelect.Text == " ")
+            if (databaseSelect.Text == "")
 
             {
                 DialogResult result = MessageBox.Show("No database selected. \nThere will be no cross check with the database. Continue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (result == DialogResult.No)
                 { return; }
             }
+
+            DialogResult result2 = MessageBox.Show("The DAT will check against the " + ifSelect.Text + " Import Format.\nContinue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (result2 == DialogResult.No)
+            { return; }
+
+
+
+
+
             {
                 System.IO.Directory.CreateDirectory(@"C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
                 string path = @"C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files\DataAnalysisTool_MEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
@@ -1664,10 +1676,63 @@ namespace DataAnalysisTool
                         tw.WriteLine(".");
                         tw.WriteLine(".");
                         tw.WriteLine(".");
-
-                        if (dataGridView1.ColumnCount != 37)
+                        if (dataGridView1.ColumnCount != dataGridView3.RowCount)
                         {
-                            tw.WriteLine("Medicare files need 37 columns. You have " + dataGridView1.ColumnCount + ".");
+                            tw.WriteLine("This Import Format requires "+dataGridView3.RowCount+" columns. You have " + dataGridView1.ColumnCount + ".");
+                            tw.WriteLine("This operation has ended. Please correct the column count issue.");
+                            return;
+                        }
+
+                        if (databaseSelect.Text != "")
+
+                        {
+
+                            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
+                            conn.Open();
+                            SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
+                            SqlDataReader reader;
+                            try
+                            {
+
+                                var select = "USE " + databaseSelect.Text + " select recval as DataBasePBP from CodSet where rectype='CMSPBP'";
+                                var conn2 = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
+                                var dataAdapter = new SqlDataAdapter(select, conn2);
+                                var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                                var ds = new DataSet();
+                                dataAdapter.Fill(ds);
+                                dataGridView4.ReadOnly = true;
+                                dataGridView4.DataSource = ds.Tables[0];
+                                toolStripStatusLabel7.Text = dataGridView4.Rows.Count.ToString();
+                                reader = sc.ExecuteReader();
+                                DataTable dt = new DataTable();
+                                toolStripStatusLabel10.Text = dataGridView3.Rows.Count.ToString();
+                                conn.Close();
+
+                                var array = dataGridView4.Rows.Cast<DataGridViewRow>()
+                                         .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+                                var iffidArray = dataGridView3.Rows.Cast<DataGridViewRow>()
+                                         .Select(x => x.Cells[5].Value.ToString().Trim()).ToArray();
+                                int a = 0;
+                                foreach (var s in iffidArray)
+                                {
+                                    
+                                    a++;
+                                    tw.WriteLine("COLUMN: "+s+(a-1));
+
+                                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                                    {
+                                        var value = dataGridView1.Rows[i].Cells[a-1].Value.ToString();
+                                        if (array.Contains(value) == false)
+                                        {
+                                            tw.WriteLine("Error at line " + (i + 1) + "." + " The value: '" + value + "' from your imported file does not exist in the database.");
+                                        }
+                                    }
+                                }
+
+                            }
+                            catch { return; }
+
+                            conn.Close();
                         }
                         //null check
                         tw.WriteLine("NULL Check");
@@ -2309,8 +2374,8 @@ namespace DataAnalysisTool
 
 
                 }
-                MessageBox.Show(@"Medicare error file has been created. \nLocation: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Medicare error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
+                MessageBox.Show("Import Format error file has been created. \nLocation: C:\\Program Files (x86)\\DataAnalysisTool\\Medicare Error Files", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
             }
         }
     }
