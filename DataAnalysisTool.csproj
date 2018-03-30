@@ -13,9 +13,9 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\FS-CorpFileAL\Public\DataAnalysisTool\</PublishUrl>
+    <PublishUrl>P:\DataAnalysisTool\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Unc</InstallFrom>
+    <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -30,12 +30,10 @@
     <PublisherName>CallidusCloud</PublisherName>
     <SuiteName>CallidusCloud</SuiteName>
     <MinimumRequiredVersion>1.0.0.22</MinimumRequiredVersion>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>README.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <AutorunEnabled>true</AutorunEnabled>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>25</ApplicationRevision>
+    <ApplicationRevision>52</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

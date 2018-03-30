@@ -29,8 +29,9 @@ namespace DataAnalysisTool
             if (databaseSelect.Text != "")
 
             {
-                DialogResult result = MessageBox.Show("there is a database selected. \ncool.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-
+                DialogResult result = MessageBox.Show("The DAT will check against the "+ifSelect.Text+" cross reference.\nContinue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result == DialogResult.No)
+                { return; }
                 SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
                 conn.Open();
                 SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
@@ -52,29 +53,17 @@ namespace DataAnalysisTool
                     toolStripStatusLabel10.Text = dataGridView3.Rows.Count.ToString();
                     conn.Close();
 
-
-                    //int[] intArray = dataGridView1.Rows
-                    //                .Cast<DataGridViewRow>()
-                    //                .Where(row => !row.IsNewRow)
-                    //                .Select(row => Convert.ToInt32(row.Cells[0].Value.ToString())).ToArray();
-                    //MessageBox.Show(intArray);
-
-
+                    var array = dataGridView4.Rows.Cast<DataGridViewRow>()
+                             .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
-                        //MessageBox.Show("popup foreach value in datagridview4");
                         var value = dataGridView1.Rows[i].Cells[2].Value.ToString();
-                        MessageBox.Show(value);
-                        for (int j = 0; j < dataGridView4.Rows.Count; j++)
+
+                        if (array.Contains(value) == false)
                         {
-
-                            if (dataGridView1.Rows[i].Cells[2].Value != null && value == dataGridView4.Rows[i].Cells[0].Value.ToString())
-
-                            {
-                                MessageBox.Show("The value already existed in DataGridView.");
-                                break;
-
-                            }
+                            MessageBox.Show("Error at line "+(i+1)+"."+"\n"+value + " from your imported file does not exist in the database.");
+                            richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line "+(i+1)+"."+"\n"+value + " from your imported file does not exist in the database.");
+                            return;
                         }
                     }
                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading PBP for a cross check...Done.");

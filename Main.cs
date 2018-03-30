@@ -483,7 +483,6 @@ namespace DataAnalysisTool
                     if (ofd.ShowDialog() == DialogResult.OK)
                         dataSet.ReadXml(ofd.FileName);
                     dataGridView1.DataSource = dataSet.Tables[0];
-
                     toolStripStatusLabel13.Text = ofd.FileName;
                     toolStripStatusLabel4.Text = dataGridView1[0, dataGridView1.Rows.Count - 1].Value.ToString();
                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading XML: " + ofd.FileName + "...Done.");
