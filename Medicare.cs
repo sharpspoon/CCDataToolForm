@@ -1692,6 +1692,8 @@ namespace DataAnalysisTool
                             {
                                 tw.WriteLine("This Import Format requires " + dataGridView3.RowCount + " columns. You have " + dataGridView1.ColumnCount + ".");
                                 tw.WriteLine("This operation has ended. Please correct the column count issue.");
+                                MessageBox.Show("Import Format error file has been created. \nLocation: C:\\Program Files (x86)\\DataAnalysisTool\\Medicare Error Files", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
                                 return;
                             }
 
