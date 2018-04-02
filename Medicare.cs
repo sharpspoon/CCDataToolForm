@@ -1646,6 +1646,13 @@ namespace DataAnalysisTool
             var ifCount = "USE " + databaseSelect.Text + " SELECT IMFF.FieldSeq FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null order by imff.FieldSeq";
             //MessageBox.Show(select2);
 
+            if (dataGridView1.Rows.Count == 0)
+
+            {
+               MessageBox.Show("No file imported. \nPlease open a file.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                 return; 
+            }
+
             if (databaseSelect.Text == "")
 
             {
@@ -1654,38 +1661,39 @@ namespace DataAnalysisTool
                 { return; }
             }
 
-            DialogResult result2 = MessageBox.Show("The DAT will check against the " + ifSelect.Text + " Import Format.\nContinue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-            if (result2 == DialogResult.No)
-            { return; }
+            if (databaseSelect.Text != "")
+            {
 
-
-
-
+                DialogResult result2 = MessageBox.Show("The DAT will check against the " + ifSelect.Text + " Import Format.\nContinue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result2 == DialogResult.No)
+                { return; }
+            }
 
             {
                 System.IO.Directory.CreateDirectory(@"C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
-                string path = @"C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files\DataAnalysisTool_MEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+                string path = @"C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files\DataAnalysisTool_IFEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
                 using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
                 {
                     using (TextWriter tw = new StreamWriter(fs))
                     {
 
-                        tw.WriteLine("DataAnalysisTool - Beginning of Medicare Error File");
+                        tw.WriteLine("DataAnalysisTool - Beginning of Import Format Error File");
                         tw.WriteLine("Reading file...");
                         tw.WriteLine(".");
                         tw.WriteLine(".");
                         tw.WriteLine(".");
                         tw.WriteLine(".");
-                        if (dataGridView1.ColumnCount != dataGridView3.RowCount)
-                        {
-                            tw.WriteLine("This Import Format requires "+dataGridView3.RowCount+" columns. You have " + dataGridView1.ColumnCount + ".");
-                            tw.WriteLine("This operation has ended. Please correct the column count issue.");
-                            return;
-                        }
+
 
                         if (databaseSelect.Text != "")
 
                         {
+                            if (dataGridView1.ColumnCount != dataGridView3.RowCount)
+                            {
+                                tw.WriteLine("This Import Format requires " + dataGridView3.RowCount + " columns. You have " + dataGridView1.ColumnCount + ".");
+                                tw.WriteLine("This operation has ended. Please correct the column count issue.");
+                                return;
+                            }
 
                             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
                             conn.Open();
@@ -1693,8 +1701,10 @@ namespace DataAnalysisTool
                             SqlDataReader reader;
                             try
                             {
-
+                                var entname = dataGridView3.Rows[0].Cells[4].Value.ToString();
+                                //MessageBox.Show(entname);
                                 var select = "USE " + databaseSelect.Text + " select recval as DataBasePBP from CodSet where rectype='CMSPBP'";
+                                var codetype = "USE " + databaseSelect.Text + " select codetype from entityfield where entname='CMSPBP'";
                                 var conn2 = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
                                 var dataAdapter = new SqlDataAdapter(select, conn2);
                                 var commandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -1717,7 +1727,7 @@ namespace DataAnalysisTool
                                 {
                                     
                                     a++;
-                                    tw.WriteLine("COLUMN: "+s+(a-1));
+                                    tw.WriteLine("COLUMN "+a+": "+s);
 
                                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                                     {
