@@ -116,7 +116,7 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.stagedDataGridView = new System.Windows.Forms.DataGridView();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -179,7 +179,7 @@
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stagedDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -452,7 +452,7 @@
             // 
             this.checkToolsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("checkToolsToolStripMenuItem.Image")));
             this.checkToolsToolStripMenuItem.Name = "checkToolsToolStripMenuItem";
-            this.checkToolsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.checkToolsToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.checkToolsToolStripMenuItem.Text = "Check Tools";
             this.checkToolsToolStripMenuItem.Click += new System.EventHandler(this.checkToolsToolStripMenuItem_Click);
             // 
@@ -477,7 +477,7 @@
             this.customerNoCheckToolStripMenuItem});
             this.inFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inFileToolStripMenuItem.Image")));
             this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             this.inFileToolStripMenuItem.Visible = false;
@@ -511,7 +511,7 @@
             this.openFromZIPExportToolStripMenuItem});
             this.openImportFormatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openImportFormatToolStripMenuItem.Image")));
             this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
-            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.openImportFormatToolStripMenuItem.Text = "Import Format";
             this.openImportFormatToolStripMenuItem.Visible = false;
             this.openImportFormatToolStripMenuItem.Click += new System.EventHandler(this.openImportFormatToolStripMenuItem_Click);
@@ -538,7 +538,7 @@
             this.inProgramCheckToolStripMenuItem});
             this.medicareToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("medicareToolStripMenuItem.Image")));
             this.medicareToolStripMenuItem.Name = "medicareToolStripMenuItem";
-            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.medicareToolStripMenuItem.Text = "Medicare";
             // 
             // createErrorFileToolStripMenuItem
@@ -578,7 +578,7 @@
             // 
             this.dataInUseToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dataInUseToolStripMenuItem.Image")));
             this.dataInUseToolStripMenuItem.Name = "dataInUseToolStripMenuItem";
-            this.dataInUseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dataInUseToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.dataInUseToolStripMenuItem.Text = "Data in Use";
             this.dataInUseToolStripMenuItem.Visible = false;
             // 
@@ -595,7 +595,7 @@
             // 
             this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.menu_About_Click);
             // 
@@ -973,6 +973,7 @@
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1017,9 +1018,9 @@
             // 
             // splitContainer4.Panel2
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.dataGridView4);
+            this.splitContainer4.Panel2.Controls.Add(this.stagedDataGridView);
             this.splitContainer4.Size = new System.Drawing.Size(749, 533);
-            this.splitContainer4.SplitterDistance = 263;
+            this.splitContainer4.SplitterDistance = 453;
             this.splitContainer4.TabIndex = 33;
             // 
             // dataGridView2
@@ -1046,6 +1047,7 @@
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1054,21 +1056,22 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView2.Size = new System.Drawing.Size(749, 263);
+            this.dataGridView2.Size = new System.Drawing.Size(749, 453);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
-            // dataGridView4
+            // stagedDataGridView
             // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView4.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(749, 266);
-            this.dataGridView4.TabIndex = 32;
-            this.dataGridView4.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
+            this.stagedDataGridView.AllowUserToAddRows = false;
+            this.stagedDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stagedDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.stagedDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stagedDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.stagedDataGridView.Name = "stagedDataGridView";
+            this.stagedDataGridView.ReadOnly = true;
+            this.stagedDataGridView.Size = new System.Drawing.Size(749, 76);
+            this.stagedDataGridView.TabIndex = 32;
+            this.stagedDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
             // richTextBox1
             // 
@@ -1486,7 +1489,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stagedDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).EndInit();
             this.groupBox7.ResumeLayout(false);
@@ -1618,7 +1621,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMinimize;
         private System.Windows.Forms.ToolStripMenuItem cCDataToolLogToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer4;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView stagedDataGridView;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel15;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel14;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel16;

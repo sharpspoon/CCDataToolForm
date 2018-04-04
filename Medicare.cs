@@ -8,6 +8,7 @@ using System.Data.OleDb;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Collections;
 
 namespace DataAnalysisTool
 {
@@ -45,15 +46,15 @@ namespace DataAnalysisTool
                     var commandBuilder = new SqlCommandBuilder(dataAdapter);
                     var ds = new DataSet();
                     dataAdapter.Fill(ds);
-                    dataGridView4.ReadOnly = true;
-                    dataGridView4.DataSource = ds.Tables[0];
-                    toolStripStatusLabel7.Text = dataGridView4.Rows.Count.ToString();
+                    stagedDataGridView.ReadOnly = true;
+                    stagedDataGridView.DataSource = ds.Tables[0];
+                    toolStripStatusLabel7.Text = stagedDataGridView.Rows.Count.ToString();
                     reader = sc.ExecuteReader();
                     DataTable dt = new DataTable();
                     toolStripStatusLabel10.Text = dataGridView3.Rows.Count.ToString();
                     conn.Close();
 
-                    var array = dataGridView4.Rows.Cast<DataGridViewRow>()
+                    var array = stagedDataGridView.Rows.Cast<DataGridViewRow>()
                              .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
@@ -1700,52 +1701,116 @@ namespace DataAnalysisTool
                             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
                             conn.Open();
                             SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
-                            SqlDataReader reader;
                             try
                             {
-                                var entname = dataGridView3.Rows[0].Cells[4].Value.ToString();
-                                //MessageBox.Show(entname);
-                                var select = "USE " + databaseSelect.Text + " select recval as DataBasePBP from CodSet where rectype='CMSPBP'";
-                                var codetype = "USE " + databaseSelect.Text + " select codetype from entityfield where entname='CMSPBP'";
-                                var conn2 = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
-                                var dataAdapter = new SqlDataAdapter(select, conn2);
-                                var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                                var select = "USE " + databaseSelect.Text + " SELECT ef.codetype FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.valuetype=1 order by imff.FieldSeq";
+                                var dataAdapter = new SqlDataAdapter(select, conn);
                                 var ds = new DataSet();
                                 dataAdapter.Fill(ds);
-                                dataGridView4.ReadOnly = true;
-                                dataGridView4.DataSource = ds.Tables[0];
-                                toolStripStatusLabel7.Text = dataGridView4.Rows.Count.ToString();
-                                reader = sc.ExecuteReader();
-                                DataTable dt = new DataTable();
-                                toolStripStatusLabel10.Text = dataGridView3.Rows.Count.ToString();
-                                conn.Close();
+                                stagedDataGridView.DataSource = ds.Tables[0];
+                                var codeArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
 
-                                var array = dataGridView4.Rows.Cast<DataGridViewRow>()
-                                         .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+                                var select3 = "USE " + databaseSelect.Text + " SELECT IMFF.FieldSeq FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.valuetype=1 order by imff.FieldSeq";
+                                var dataAdapter3 = new SqlDataAdapter(select3, conn);
+                                var ds3 = new DataSet();
+                                dataAdapter3.Fill(ds3);
+                                stagedDataGridView.DataSource = ds3.Tables[0];
+                                var codeArray3 = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
+
                                 var iffidArray = dataGridView3.Rows.Cast<DataGridViewRow>()
-                                         .Select(x => x.Cells[5].Value.ToString().Trim()).ToArray();
+                                        .Select(x => x.Cells[5].Value.ToString().Trim()).ToArray();
+                                var seqArray = dataGridView3.Rows.Cast<DataGridViewRow>()
+                                    .Select(x => x.Cells[6].Value.ToString().Trim()).ToArray();
+
+                                ArrayList codeValueArray = new ArrayList();
+                                foreach (var s in codeArray)
+                                {
+                                    var select2 = "USE " + databaseSelect.Text + "  select recval from codset where rectype="+"'"+s+"'";
+                                    var dataAdapter2 = new SqlDataAdapter(select2, conn);
+                                    var ds2 = new DataSet();
+                                    dataAdapter2.Fill(ds2);
+                                    stagedDataGridView.DataSource = ds2.Tables[0];
+
+                                    foreach (DataGridViewRow dr in stagedDataGridView.Rows)
+                                    {
+                                        codeValueArray.Add(dr.Cells[0].Value);
+                                    }
+                                    tw.WriteLine(s);
+                                }
+
+                                foreach (var value in codeValueArray)//this is test
+                                {
+                                    tw.WriteLine("codeValueArray "+value);
+                                }
+                                foreach (var value in codeArray)//this is test
+                                {
+                                    tw.WriteLine("codeArray " + value);
+                                }
+                                foreach (var value in codeArray3)//this is test
+                                {
+                                    tw.WriteLine("codeArray " + value);
+                                }
+
+
                                 int a = 0;
+                                //string b;
                                 foreach (var s in iffidArray)
                                 {
                                     
-                                    a++;
-                                    tw.WriteLine("COLUMN "+a+": "+s);
 
-                                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                                    a++;
+                                    var common = seqArray.Intersect(codeArray3).Any();
+                                        tw.WriteLine("COLUMN "+a+": "+s);//this is the header line in the output file
+                                    if (seqArray.Intersect(codeArray3).Any())
                                     {
-                                        var value = dataGridView1.Rows[i].Cells[a-1].Value.ToString();
-                                        if (array.Contains(value) == false)
+                                        for (int i = 0; i < dataGridView1.Rows.Count; i++)//this is the loop that spits out the errors
                                         {
-                                            tw.WriteLine("Error at line " + (i + 1) + "." + " The value: '" + value + "' from your imported file does not exist in the database.");
+                                            var value = dataGridView1.Rows[i].Cells[a - 1].Value.ToString();
+                                            if (codeValueArray.Contains(value) == false)
+                                            {
+                                                tw.WriteLine("Error at line " + (i + 1) + "." + " The value: '" + value + "' from your imported file does not exist in the database.");
+
+                                            }
                                         }
                                     }
                                 }
-
+                                toolStripStatusLabel10.Text = dataGridView3.Rows.Count.ToString();
+                                toolStripStatusLabel7.Text = stagedDataGridView.Rows.Count.ToString();
+                                conn.Close();
                             }
                             catch { return; }
 
                             conn.Close();
                         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         //null check
                         tw.WriteLine("NULL Check");
                         //column 1 -required
