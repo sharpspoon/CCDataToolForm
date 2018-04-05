@@ -48,7 +48,7 @@ namespace DataAnalysisTool
             {
                 if (ApplicationDeployment.IsNetworkDeployed)
                 {
-                    return Assembly.GetExecutingAssembly().GetName().Version.ToString() + " Publish: "+(ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4));
+                    return ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
                 }
                 else
                 {
@@ -121,6 +121,11 @@ namespace DataAnalysisTool
         }
 
         private void About_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelVersion_Click(object sender, EventArgs e)
         {
 
         }
