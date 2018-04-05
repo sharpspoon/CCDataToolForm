@@ -28,10 +28,10 @@ namespace DataAnalysisTool
                 //return;
             }
             else
-            for (int i = 0; i < ccd.dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < ccd.importedfileDataGridView.Rows.Count; i++)
             {
                 MessageBox.Show("you got in the loop", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                var value = ccd.dataGridView1.Rows[i].Cells[ctTextBox2.Text].Value.ToString();
+                var value = ccd.importedfileDataGridView.Rows[i].Cells[ctTextBox2.Text].Value.ToString();
                 if ((value.Length != 8) && (value != null) && (value != ""))
                 {
                     MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "Make sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
@@ -39,11 +39,11 @@ namespace DataAnalysisTool
                 }
             }
 
-            for (int i = 0; i < ccd.dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < ccd.importedfileDataGridView.Rows.Count; i++)
             {
                 try
                 {
-                    var value2 = ccd.dataGridView1.Rows[i].Cells[ctTextBox2.Text].Value.ToString();
+                    var value2 = ccd.importedfileDataGridView.Rows[i].Cells[ctTextBox2.Text].Value.ToString();
                     int year = int.Parse(value2.Substring(0, 4));
                     int month = int.Parse(value2.Substring(4, 2));
                     int day = int.Parse(value2.Substring(6, 2));

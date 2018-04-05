@@ -18,7 +18,7 @@ namespace DataAnalysisTool
             {
                 try
                 {
-                    DataGridViewColumn column = dataGridView1.Columns[textBox3.Text];
+                    DataGridViewColumn column = importedfileDataGridView.Columns[textBox3.Text];
                     MessageBox.Show(column.Name + " must be " + textBox4.Text + " Digit(s) Long!");
                 }
                 catch (Exception ex)
@@ -56,7 +56,7 @@ namespace DataAnalysisTool
                 MessageBox.Show("You did not select a special character!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in importedfileDataGridView.Rows)
             {
                 try
                 {
@@ -85,14 +85,14 @@ namespace DataAnalysisTool
                 MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
             {
                 try
                 {
-                    var value = dataGridView1.Rows[i].Cells[textBox6.Text].Value.ToString();
+                    var value = importedfileDataGridView.Rows[i].Cells[textBox6.Text].Value.ToString();
                     if (string.IsNullOrWhiteSpace(value))
                     {
-                        MessageBox.Show("NULL value found in column " + "'" + textBox6.Text + "'" + " at line " + dataGridView1.Rows[i + 1]);
+                        MessageBox.Show("NULL value found in column " + "'" + textBox6.Text + "'" + " at line " + importedfileDataGridView.Rows[i + 1]);
                         return;
                     }
                 }

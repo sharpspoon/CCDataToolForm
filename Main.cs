@@ -25,11 +25,11 @@ namespace DataAnalysisTool
                 return;
             }
 
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
             {
                 try
                 {
-                    var value2 = dataGridView1.Rows[i].Cells[textBox2.Text].Value.ToString();
+                    var value2 = importedfileDataGridView.Rows[i].Cells[textBox2.Text].Value.ToString();
                     if (checkBox1.Checked)
                     {
 
@@ -162,7 +162,7 @@ namespace DataAnalysisTool
 
         private void toolStripStatusLabel4_Click(object sender, EventArgs e)
         {
-            toolStripStatusLabel4.Text = dataGridView1.Rows.Count.ToString();
+            toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
         }
 
         private void checkToolsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -181,9 +181,9 @@ namespace DataAnalysisTool
                 using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "XLS | *.xls", ValidateNames = true, Multiselect = false })
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
-                        dataGridView1.DataSource = ReadXls(ofd.FileName);
+                        importedfileDataGridView.DataSource = ReadXls(ofd.FileName);
                     toolStripStatusLabel13.Text = ofd.FileName;
-                    toolStripStatusLabel4.Text = dataGridView1.Rows.Count.ToString();
+                    toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading XLS: " + ofd.FileName + "...Done.");
                 }
             }
@@ -297,7 +297,7 @@ namespace DataAnalysisTool
         //------------------CROW NUMBER LOGIC START------------------------------------------------------
         private void dgvUserDetails_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e) 
         {
-            using (SolidBrush b = new SolidBrush(dataGridView1.RowHeadersDefaultCellStyle.ForeColor))
+            using (SolidBrush b = new SolidBrush(importedfileDataGridView.RowHeadersDefaultCellStyle.ForeColor))
             {
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
             }
@@ -358,22 +358,22 @@ namespace DataAnalysisTool
         Bitmap bitmap;
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count == 0 || dataGridView1.Rows == null)
+            if (importedfileDataGridView.Rows.Count == 0 || importedfileDataGridView.Rows == null)
             {
                 MessageBox.Show("No data to print", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 //Resize DataGridView to full height.
-                int height = dataGridView1.Height;
-                dataGridView1.Height = dataGridView1.RowCount * dataGridView1.RowTemplate.Height;
+                int height = importedfileDataGridView.Height;
+                importedfileDataGridView.Height = importedfileDataGridView.RowCount * importedfileDataGridView.RowTemplate.Height;
 
                 //Create a Bitmap and draw the DataGridView on it.
-                bitmap = new Bitmap(this.dataGridView1.Width, this.dataGridView1.Height);
-                dataGridView1.DrawToBitmap(bitmap, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
+                bitmap = new Bitmap(this.importedfileDataGridView.Width, this.importedfileDataGridView.Height);
+                importedfileDataGridView.DrawToBitmap(bitmap, new Rectangle(0, 0, this.importedfileDataGridView.Width, this.importedfileDataGridView.Height));
 
                 //Resize DataGridView back to original height.
-                dataGridView1.Height = height;
+                importedfileDataGridView.Height = height;
 
                 //Show the Print Preview Dialog.
                 printPreviewDialog1.Document = printDocument1;
@@ -396,10 +396,10 @@ namespace DataAnalysisTool
                 using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "CSV | *.csv", ValidateNames = true, Multiselect = false })
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
-                        dataGridView1.DataSource = ReadCsv(ofd.FileName);
+                        importedfileDataGridView.DataSource = ReadCsv(ofd.FileName);
                     toolStripStatusLabel13.Text = ofd.FileName;
                     toolStripStatusLabel13.Visible = true;
-                    toolStripStatusLabel4.Text = dataGridView1.Rows.Count.ToString();
+                    toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
                     toolStripStatusLabel2.Visible = true;
                     toolStripStatusLabel3.Visible = true;
                     toolStripStatusLabel4.Visible = true;
@@ -438,10 +438,10 @@ namespace DataAnalysisTool
                 // create one file gridview.csv in writing mode using streamwriter
                 StreamWriter sw = new StreamWriter("c:\\gridview.csv");
                 // now add the gridview header in csv file suffix with "," delimeter except last one
-                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                for (int i = 0; i < importedfileDataGridView.Columns.Count; i++)
                 {
-                    sw.Write(dataGridView1.Columns[i].HeaderText);
-                    if (i != dataGridView1.Columns.Count)
+                    sw.Write(importedfileDataGridView.Columns[i].HeaderText);
+                    if (i != importedfileDataGridView.Columns.Count)
                     {
                         sw.Write(",");
                     }
@@ -449,14 +449,14 @@ namespace DataAnalysisTool
                 // add new line
                 sw.Write(sw.NewLine);
                 // iterate through all the rows within the gridview
-                foreach (DataGridViewRow dr in dataGridView1.Rows)
+                foreach (DataGridViewRow dr in importedfileDataGridView.Rows)
                 {
                     // iterate through all colums of specific row
-                    for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                    for (int i = 0; i < importedfileDataGridView.Columns.Count; i++)
                     {
                         // write particular cell to csv file
                         sw.Write(dr.Cells[i]);
-                        if (i != dataGridView1.Columns.Count)
+                        if (i != importedfileDataGridView.Columns.Count)
                         {
                             sw.Write(",");
                         }
@@ -482,9 +482,9 @@ namespace DataAnalysisTool
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                         dataSet.ReadXml(ofd.FileName);
-                    dataGridView1.DataSource = dataSet.Tables[0];
+                    importedfileDataGridView.DataSource = dataSet.Tables[0];
                     toolStripStatusLabel13.Text = ofd.FileName;
-                    toolStripStatusLabel4.Text = dataGridView1[0, dataGridView1.Rows.Count - 1].Value.ToString();
+                    toolStripStatusLabel4.Text = importedfileDataGridView[0, importedfileDataGridView.Rows.Count - 1].Value.ToString();
                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading XML: " + ofd.FileName + "...Done.");
                     toolStripStatusLabel2.Visible = true;
                     toolStripStatusLabel3.Visible = true;
@@ -502,7 +502,7 @@ namespace DataAnalysisTool
             saveFileDialog1.Filter = "XML|*.xml";
             if (this.saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                DataTable dt = (DataTable)this.dataGridView1.DataSource;
+                DataTable dt = (DataTable)this.importedfileDataGridView.DataSource;
                 dt.WriteXml(this.saveFileDialog1.FileName, XmlWriteMode.WriteSchema);
             }
         }

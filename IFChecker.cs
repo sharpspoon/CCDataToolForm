@@ -51,14 +51,14 @@ namespace DataAnalysisTool
                     toolStripStatusLabel7.Text = stagedDataGridView.Rows.Count.ToString();
                     reader = sc.ExecuteReader();
                     DataTable dt = new DataTable();
-                    toolStripStatusLabel10.Text = dataGridView3.Rows.Count.ToString();
+                    toolStripStatusLabel10.Text = importformatDataGridView.Rows.Count.ToString();
                     conn.Close();
 
                     var array = stagedDataGridView.Rows.Cast<DataGridViewRow>()
                              .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                     {
-                        var value = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                        var value = importedfileDataGridView.Rows[i].Cells[2].Value.ToString();
 
                         if (array.Contains(value) == false)
                         {
@@ -75,50 +75,50 @@ namespace DataAnalysisTool
             }
 
 
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
             {
-                    if (dataGridView1.ColumnCount != 37)
+                    if (importedfileDataGridView.ColumnCount != 37)
                     {
-                        MessageBox.Show("Medicare files need 37 columns. You have " + dataGridView1.ColumnCount + ".", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Medicare files need 37 columns. You have " + importedfileDataGridView.ColumnCount + ".", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
-                    var value0 = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                    var value1 = dataGridView1.Rows[i].Cells[1].Value.ToString();
-                    var value2 = dataGridView1.Rows[i].Cells[2].Value.ToString();
-                    var value3 = dataGridView1.Rows[i].Cells[3].Value.ToString();
-                    var value4 = dataGridView1.Rows[i].Cells[4].Value.ToString();
-                    var value5 = dataGridView1.Rows[i].Cells[5].Value.ToString();
-                    var value6 = dataGridView1.Rows[i].Cells[6].Value.ToString();
-                    var value7 = dataGridView1.Rows[i].Cells[7].Value.ToString();
-                    var value8 = dataGridView1.Rows[i].Cells[8].Value.ToString();
-                    var value9 = dataGridView1.Rows[i].Cells[9].Value.ToString();
-                    var value10 = dataGridView1.Rows[i].Cells[10].Value.ToString();
-                    var value11 = dataGridView1.Rows[i].Cells[11].Value.ToString();
-                    var value12 = dataGridView1.Rows[i].Cells[12].Value.ToString();
-                    var value13 = dataGridView1.Rows[i].Cells[13].Value.ToString();
-                    var value14 = dataGridView1.Rows[i].Cells[14].Value.ToString();
-                    var value15 = dataGridView1.Rows[i].Cells[15].Value.ToString();
-                    var value16 = dataGridView1.Rows[i].Cells[16].Value.ToString();
-                    var value17 = dataGridView1.Rows[i].Cells[17].Value.ToString();
-                    var value18 = dataGridView1.Rows[i].Cells[18].Value.ToString();
-                    var value19 = dataGridView1.Rows[i].Cells[19].Value.ToString();
-                    var value20 = dataGridView1.Rows[i].Cells[20].Value.ToString();
-                    var value21 = dataGridView1.Rows[i].Cells[21].Value.ToString();
-                    var value22 = dataGridView1.Rows[i].Cells[22].Value.ToString();
-                    var value23 = dataGridView1.Rows[i].Cells[23].Value.ToString();
-                    var value24 = dataGridView1.Rows[i].Cells[24].Value.ToString();
-                    var value25 = dataGridView1.Rows[i].Cells[25].Value.ToString();
-                    var value26 = dataGridView1.Rows[i].Cells[26].Value.ToString();
-                    var value27 = dataGridView1.Rows[i].Cells[27].Value.ToString();
-                    var value28 = dataGridView1.Rows[i].Cells[28].Value.ToString();
-                    var value29 = dataGridView1.Rows[i].Cells[29].Value.ToString();
-                    var value30 = dataGridView1.Rows[i].Cells[30].Value.ToString();
-                    var value31 = dataGridView1.Rows[i].Cells[31].Value.ToString();
-                    var value32 = dataGridView1.Rows[i].Cells[32].Value.ToString();
-                    var value33 = dataGridView1.Rows[i].Cells[33].Value.ToString();
-                    var value34 = dataGridView1.Rows[i].Cells[34].Value.ToString();
-                    var value35 = dataGridView1.Rows[i].Cells[35].Value.ToString();
-                    var value36 = dataGridView1.Rows[i].Cells[36].Value.ToString();
+                    var value0 = importedfileDataGridView.Rows[i].Cells[0].Value.ToString();
+                    var value1 = importedfileDataGridView.Rows[i].Cells[1].Value.ToString();
+                    var value2 = importedfileDataGridView.Rows[i].Cells[2].Value.ToString();
+                    var value3 = importedfileDataGridView.Rows[i].Cells[3].Value.ToString();
+                    var value4 = importedfileDataGridView.Rows[i].Cells[4].Value.ToString();
+                    var value5 = importedfileDataGridView.Rows[i].Cells[5].Value.ToString();
+                    var value6 = importedfileDataGridView.Rows[i].Cells[6].Value.ToString();
+                    var value7 = importedfileDataGridView.Rows[i].Cells[7].Value.ToString();
+                    var value8 = importedfileDataGridView.Rows[i].Cells[8].Value.ToString();
+                    var value9 = importedfileDataGridView.Rows[i].Cells[9].Value.ToString();
+                    var value10 = importedfileDataGridView.Rows[i].Cells[10].Value.ToString();
+                    var value11 = importedfileDataGridView.Rows[i].Cells[11].Value.ToString();
+                    var value12 = importedfileDataGridView.Rows[i].Cells[12].Value.ToString();
+                    var value13 = importedfileDataGridView.Rows[i].Cells[13].Value.ToString();
+                    var value14 = importedfileDataGridView.Rows[i].Cells[14].Value.ToString();
+                    var value15 = importedfileDataGridView.Rows[i].Cells[15].Value.ToString();
+                    var value16 = importedfileDataGridView.Rows[i].Cells[16].Value.ToString();
+                    var value17 = importedfileDataGridView.Rows[i].Cells[17].Value.ToString();
+                    var value18 = importedfileDataGridView.Rows[i].Cells[18].Value.ToString();
+                    var value19 = importedfileDataGridView.Rows[i].Cells[19].Value.ToString();
+                    var value20 = importedfileDataGridView.Rows[i].Cells[20].Value.ToString();
+                    var value21 = importedfileDataGridView.Rows[i].Cells[21].Value.ToString();
+                    var value22 = importedfileDataGridView.Rows[i].Cells[22].Value.ToString();
+                    var value23 = importedfileDataGridView.Rows[i].Cells[23].Value.ToString();
+                    var value24 = importedfileDataGridView.Rows[i].Cells[24].Value.ToString();
+                    var value25 = importedfileDataGridView.Rows[i].Cells[25].Value.ToString();
+                    var value26 = importedfileDataGridView.Rows[i].Cells[26].Value.ToString();
+                    var value27 = importedfileDataGridView.Rows[i].Cells[27].Value.ToString();
+                    var value28 = importedfileDataGridView.Rows[i].Cells[28].Value.ToString();
+                    var value29 = importedfileDataGridView.Rows[i].Cells[29].Value.ToString();
+                    var value30 = importedfileDataGridView.Rows[i].Cells[30].Value.ToString();
+                    var value31 = importedfileDataGridView.Rows[i].Cells[31].Value.ToString();
+                    var value32 = importedfileDataGridView.Rows[i].Cells[32].Value.ToString();
+                    var value33 = importedfileDataGridView.Rows[i].Cells[33].Value.ToString();
+                    var value34 = importedfileDataGridView.Rows[i].Cells[34].Value.ToString();
+                    var value35 = importedfileDataGridView.Rows[i].Cells[35].Value.ToString();
+                    var value36 = importedfileDataGridView.Rows[i].Cells[36].Value.ToString();
 
                     //Required/Optional Check
                     if (string.IsNullOrWhiteSpace(value0))
@@ -752,18 +752,18 @@ namespace DataAnalysisTool
                         tw.WriteLine(".");
                         tw.WriteLine(".");
 
-                        if (dataGridView1.ColumnCount != 37)
+                        if (importedfileDataGridView.ColumnCount != 37)
                         {
-                            tw.WriteLine("Medicare files need 37 columns. You have " + dataGridView1.ColumnCount + ".");
+                            tw.WriteLine("Medicare files need 37 columns. You have " + importedfileDataGridView.ColumnCount + ".");
                         }
                         //column 1 -required
                         try
                         {
                             tw.WriteLine("Column #1");
 
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value0 = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                                var value0 = importedfileDataGridView.Rows[i].Cells[0].Value.ToString();
 
                                 if (string.IsNullOrWhiteSpace(value0))
                                 {
@@ -780,9 +780,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #2");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value1 = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                                var value1 = importedfileDataGridView.Rows[i].Cells[1].Value.ToString();
 
                                 if (string.IsNullOrWhiteSpace(value1))
                                 {
@@ -800,9 +800,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #3");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value2 = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                                var value2 = importedfileDataGridView.Rows[i].Cells[2].Value.ToString();
                                 if (string.IsNullOrWhiteSpace(value2))
                                 {
                                     tw.WriteLine("NULL value found in column #3 (PBP)  at line " + (i + 1) + ". This is a required field.");
@@ -819,9 +819,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #4");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value3 = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                                var value3 = importedfileDataGridView.Rows[i].Cells[3].Value.ToString();
                                 if (string.IsNullOrWhiteSpace(value3))
                                 {
                                     tw.WriteLine("NULL value found in column #4 (HICN)  at line " + (i + 1) + ". This is a required field.");
@@ -838,9 +838,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #5");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value4 = dataGridView1.Rows[i].Cells[4].Value.ToString();
+                                var value4 = importedfileDataGridView.Rows[i].Cells[4].Value.ToString();
 
                                 if (value4.Length > 20)
                                 {
@@ -890,9 +890,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #6");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value5 = dataGridView1.Rows[i].Cells[5].Value.ToString();
+                                var value5 = importedfileDataGridView.Rows[i].Cells[5].Value.ToString();
 
                                 if (value5.Length > 20)
                                 {
@@ -941,9 +941,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #7");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value6 = dataGridView1.Rows[i].Cells[6].Value.ToString();
+                                var value6 = importedfileDataGridView.Rows[i].Cells[6].Value.ToString();
 
                                 if (string.IsNullOrWhiteSpace(value6))
                                 {
@@ -997,9 +997,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #8");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value7 = dataGridView1.Rows[i].Cells[7].Value.ToString();
+                                var value7 = importedfileDataGridView.Rows[i].Cells[7].Value.ToString();
 
                                 if (value7.Length > 20)
                                 {
@@ -1048,9 +1048,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #9");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value8 = dataGridView1.Rows[i].Cells[8].Value.ToString();
+                                var value8 = importedfileDataGridView.Rows[i].Cells[8].Value.ToString();
 
                                 if (string.IsNullOrWhiteSpace(value8))
                                 {
@@ -1104,9 +1104,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #10");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value9 = dataGridView1.Rows[i].Cells[9].Value.ToString();
+                                var value9 = importedfileDataGridView.Rows[i].Cells[9].Value.ToString();
 
                                 if (value9.Length > 20)
                                 {
@@ -1155,9 +1155,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #11");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value10 = dataGridView1.Rows[i].Cells[10].Value.ToString();
+                                var value10 = importedfileDataGridView.Rows[i].Cells[10].Value.ToString();
 
                                 if (string.IsNullOrWhiteSpace(value10))
                                 {
@@ -1174,9 +1174,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #12");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value11 = dataGridView1.Rows[i].Cells[11].Value.ToString();
+                                var value11 = importedfileDataGridView.Rows[i].Cells[11].Value.ToString();
 
                                 if (value11.Length > 60)
                                 {
@@ -1189,9 +1189,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #13");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value12 = dataGridView1.Rows[i].Cells[12].Value.ToString();
+                                var value12 = importedfileDataGridView.Rows[i].Cells[12].Value.ToString();
 
                                 if (value12.Length > 60)
                                 {
@@ -1204,9 +1204,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #14");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value13 = dataGridView1.Rows[i].Cells[13].Value.ToString();
+                                var value13 = importedfileDataGridView.Rows[i].Cells[13].Value.ToString();
 
                                 if (value13.Length > 60)
                                 {
@@ -1219,9 +1219,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #15");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value14 = dataGridView1.Rows[i].Cells[14].Value.ToString();
+                                var value14 = importedfileDataGridView.Rows[i].Cells[14].Value.ToString();
 
                                 if (value14.Length > 60)
                                 {
@@ -1234,9 +1234,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #16");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value15 = dataGridView1.Rows[i].Cells[15].Value.ToString();
+                                var value15 = importedfileDataGridView.Rows[i].Cells[15].Value.ToString();
 
                                 if (value15.Length > 60)
                                 {
@@ -1249,9 +1249,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #17");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value16 = dataGridView1.Rows[i].Cells[16].Value.ToString();
+                                var value16 = importedfileDataGridView.Rows[i].Cells[16].Value.ToString();
 
                                 if (value16.Length > 60)
                                 {
@@ -1264,9 +1264,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #18");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value17 = dataGridView1.Rows[i].Cells[17].Value.ToString();
+                                var value17 = importedfileDataGridView.Rows[i].Cells[17].Value.ToString();
 
                                 if (value17.Length > 60)
                                 {
@@ -1279,9 +1279,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #19");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value18 = dataGridView1.Rows[i].Cells[18].Value.ToString();
+                                var value18 = importedfileDataGridView.Rows[i].Cells[18].Value.ToString();
 
                                 if (value18.Length > 60)
                                 {
@@ -1294,9 +1294,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #20");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value19 = dataGridView1.Rows[i].Cells[19].Value.ToString();
+                                var value19 = importedfileDataGridView.Rows[i].Cells[19].Value.ToString();
 
                                 if (value19.Length > 60)
                                 {
@@ -1309,9 +1309,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #21");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value20 = dataGridView1.Rows[i].Cells[20].Value.ToString();
+                                var value20 = importedfileDataGridView.Rows[i].Cells[20].Value.ToString();
 
                                 if (value20.Length > 60)
                                 {
@@ -1324,9 +1324,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #22");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value21 = dataGridView1.Rows[i].Cells[21].Value.ToString();
+                                var value21 = importedfileDataGridView.Rows[i].Cells[21].Value.ToString();
 
                                 if (value21.Length > 60)
                                 {
@@ -1375,9 +1375,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #23");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value22 = dataGridView1.Rows[i].Cells[22].Value.ToString();
+                                var value22 = importedfileDataGridView.Rows[i].Cells[22].Value.ToString();
 
                                 if (value22.Length > 60)
                                 {
@@ -1390,9 +1390,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #24");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value23 = dataGridView1.Rows[i].Cells[23].Value.ToString();
+                                var value23 = importedfileDataGridView.Rows[i].Cells[23].Value.ToString();
 
                                 if (string.IsNullOrWhiteSpace(value23))
                                 {
@@ -1405,9 +1405,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #25");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value24 = dataGridView1.Rows[i].Cells[24].Value.ToString();
+                                var value24 = importedfileDataGridView.Rows[i].Cells[24].Value.ToString();
 
                                 if (value24.Length > 60)
                                 {
@@ -1420,9 +1420,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #26");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value25 = dataGridView1.Rows[i].Cells[25].Value.ToString();
+                                var value25 = importedfileDataGridView.Rows[i].Cells[25].Value.ToString();
 
                                 if (value25.Length > 60)
                                 {
@@ -1435,9 +1435,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #27");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value26 = dataGridView1.Rows[i].Cells[26].Value.ToString();
+                                var value26 = importedfileDataGridView.Rows[i].Cells[26].Value.ToString();
 
                                 if (value26.Length > 60)
                                 {
@@ -1450,9 +1450,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #28");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value27 = dataGridView1.Rows[i].Cells[27].Value.ToString();
+                                var value27 = importedfileDataGridView.Rows[i].Cells[27].Value.ToString();
 
                                 if (value27.Length > 60)
                                 {
@@ -1465,9 +1465,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #29");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value28 = dataGridView1.Rows[i].Cells[28].Value.ToString();
+                                var value28 = importedfileDataGridView.Rows[i].Cells[28].Value.ToString();
 
                                 if (value28.Length > 60)
                                 {
@@ -1480,9 +1480,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #30");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value29 = dataGridView1.Rows[i].Cells[29].Value.ToString();
+                                var value29 = importedfileDataGridView.Rows[i].Cells[29].Value.ToString();
 
                                 if (value29.Length > 60)
                                 {
@@ -1495,9 +1495,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #31");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value30 = dataGridView1.Rows[i].Cells[30].Value.ToString();
+                                var value30 = importedfileDataGridView.Rows[i].Cells[30].Value.ToString();
 
                                 if (value30.Length > 60)
                                 {
@@ -1510,9 +1510,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #32");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value31 = dataGridView1.Rows[i].Cells[31].Value.ToString();
+                                var value31 = importedfileDataGridView.Rows[i].Cells[31].Value.ToString();
 
                                 if (value31.Length > 60)
                                 {
@@ -1525,9 +1525,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #33");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value32 = dataGridView1.Rows[i].Cells[32].Value.ToString();
+                                var value32 = importedfileDataGridView.Rows[i].Cells[32].Value.ToString();
 
                                 if (value32.Length > 60)
                                 {
@@ -1540,9 +1540,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #34");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value33 = dataGridView1.Rows[i].Cells[33].Value.ToString();
+                                var value33 = importedfileDataGridView.Rows[i].Cells[33].Value.ToString();
 
                                 if (value33.Length > 60)
                                 {
@@ -1555,9 +1555,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #35");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value34 = dataGridView1.Rows[i].Cells[34].Value.ToString();
+                                var value34 = importedfileDataGridView.Rows[i].Cells[34].Value.ToString();
 
                                 if (value34.Length > 60)
                                 {
@@ -1570,9 +1570,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #36");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value35 = dataGridView1.Rows[i].Cells[35].Value.ToString();
+                                var value35 = importedfileDataGridView.Rows[i].Cells[35].Value.ToString();
 
                                 if (value35.Length > 60)
                                 {
@@ -1585,9 +1585,9 @@ namespace DataAnalysisTool
                         try
                         {
                             tw.WriteLine("Column #37");
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value36 = dataGridView1.Rows[i].Cells[36].Value.ToString();
+                                var value36 = importedfileDataGridView.Rows[i].Cells[36].Value.ToString();
 
                                 if (value36.Length > 60)
                                 {
@@ -1647,7 +1647,7 @@ namespace DataAnalysisTool
             var ifCount = "USE " + databaseSelect.Text + " SELECT IMFF.FieldSeq FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null order by imff.FieldSeq";
             //MessageBox.Show(select2);
 
-            if (dataGridView1.Rows.Count == 0)
+            if (importedfileDataGridView.Rows.Count == 0)
 
             {
                MessageBox.Show("No file imported. \nPlease open a file.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
@@ -1671,27 +1671,27 @@ namespace DataAnalysisTool
             }
 
             {
-                System.IO.Directory.CreateDirectory(@"C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
-                string path = @"C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files\DataAnalysisTool_IFEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+                System.IO.Directory.CreateDirectory(@"C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files");
+                string path = @"C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files\DataAnalysisTool_IFEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
                 using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
                 {
                     using (TextWriter tw = new StreamWriter(fs))
                     {
-
                         tw.WriteLine("DataAnalysisTool - Beginning of Import Format Error File");
                         tw.WriteLine("Reading file...");
                         tw.WriteLine(".");
                         tw.WriteLine(".");
+                        tw.WriteLine("Server: " + serverSelect.Text);
+                        tw.WriteLine("Database: "+databaseSelect.Text);
                         tw.WriteLine(".");
                         tw.WriteLine(".");
 
 
                         if (databaseSelect.Text != "")
-
                         {
-                            if (dataGridView1.ColumnCount != dataGridView3.RowCount)
+                            if (importedfileDataGridView.ColumnCount != importformatDataGridView.RowCount)
                             {
-                                tw.WriteLine("This Import Format requires " + dataGridView3.RowCount + " columns. You have " + dataGridView1.ColumnCount + ".");
+                                tw.WriteLine("This Import Format requires " + importformatDataGridView.RowCount + " columns. You have " + importedfileDataGridView.ColumnCount + ".");
                                 tw.WriteLine("This operation has ended. Please correct the column count issue.");
                                 MessageBox.Show("Import Format error file has been created. \nLocation: C:\\Program Files (x86)\\DataAnalysisTool\\Medicare Error Files", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
@@ -1720,10 +1720,11 @@ namespace DataAnalysisTool
                                         .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
 
 
-                                var iffidArray = dataGridView3.Rows.Cast<DataGridViewRow>()
+                                var iffidArray = importformatDataGridView.Rows.Cast<DataGridViewRow>()
                                         .Select(x => x.Cells[5].Value.ToString().Trim()).ToArray();
-                                var seqArray = dataGridView3.Rows.Cast<DataGridViewRow>()
+                                var seqArray = importformatDataGridView.Rows.Cast<DataGridViewRow>()
                                     .Select(x => x.Cells[6].Value.ToString().Trim()).ToArray();
+                                int[] myInts = Array.ConvertAll(codeArray3, s => int.Parse(s));
 
                                 ArrayList codeValueArray = new ArrayList();
                                 foreach (var s in codeArray)
@@ -1738,46 +1739,48 @@ namespace DataAnalysisTool
                                     {
                                         codeValueArray.Add(dr.Cells[0].Value);
                                     }
-                                    tw.WriteLine(s);
                                 }
+                                tw.WriteLine("---DATA THAT IS USED---");
+                                foreach (var value in codeArray)
+                                {
+                                    tw.WriteLine("Code: " + value);
+                                }
+                                foreach (var value in codeValueArray)
+                                {
+                                    tw.WriteLine("Code Value: "+value);
+                                }
+                                foreach (int value in myInts)
+                                {
+                                    tw.WriteLine("Columns with Codes: " + value);
+                                }
+                                tw.WriteLine(".");
+                                tw.WriteLine(".");
+                                tw.WriteLine("ERROR LIST START");
+                                tw.WriteLine("");
+                                tw.WriteLine("Code Check");
 
-                                foreach (var value in codeValueArray)//this is test
-                                {
-                                    tw.WriteLine("codeValueArray "+value);
-                                }
-                                foreach (var value in codeArray)//this is test
-                                {
-                                    tw.WriteLine("codeArray " + value);
-                                }
-                                foreach (var value in codeArray3)//this is test
-                                {
-                                    tw.WriteLine("codeArray " + value);
-                                }
-
+                                var intersect = codeArray3.Intersect(seqArray);
+                                int[] intIntersect = Array.ConvertAll(seqArray, s => int.Parse(s));
 
                                 int a = 0;
-                                //string b;
                                 foreach (var s in iffidArray)
                                 {
-                                    
-
                                     a++;
-                                    var common = seqArray.Intersect(codeArray3).Any();
-                                        tw.WriteLine("COLUMN "+a+": "+s);//this is the header line in the output file
-                                    if (seqArray.Intersect(codeArray3).Any())
+                                        
+                                    if (myInts.Contains(a) == true)
                                     {
-                                        for (int i = 0; i < dataGridView1.Rows.Count; i++)//this is the loop that spits out the errors
+                                        tw.WriteLine("\nCOLUMN " + a + ": " + s);//this is the header line in the output file
+                                        for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)//this is the loop that spits out the errors
                                         {
-                                            var value = dataGridView1.Rows[i].Cells[a - 1].Value.ToString();
+                                            var value = importedfileDataGridView.Rows[i].Cells[a - 1].Value.ToString();
                                             if (codeValueArray.Contains(value) == false)
                                             {
                                                 tw.WriteLine("Error at line " + (i + 1) + "." + " The value: '" + value + "' from your imported file does not exist in the database.");
-
                                             }
                                         }
                                     }
                                 }
-                                toolStripStatusLabel10.Text = dataGridView3.Rows.Count.ToString();
+                                toolStripStatusLabel10.Text = importformatDataGridView.Rows.Count.ToString();
                                 toolStripStatusLabel7.Text = stagedDataGridView.Rows.Count.ToString();
                                 conn.Close();
                             }
@@ -1817,9 +1820,9 @@ namespace DataAnalysisTool
                         try
                         {
 
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value0 = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                                var value0 = importedfileDataGridView.Rows[i].Cells[0].Value.ToString();
 
                                 if (string.IsNullOrWhiteSpace(value0))
                                 {
@@ -1831,9 +1834,9 @@ namespace DataAnalysisTool
                         //column 2 -required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value1 = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                                var value1 = importedfileDataGridView.Rows[i].Cells[1].Value.ToString();
 
                                 if (string.IsNullOrWhiteSpace(value1))
                                 {
@@ -1845,9 +1848,9 @@ namespace DataAnalysisTool
                         //column 3 -required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value2 = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                                var value2 = importedfileDataGridView.Rows[i].Cells[2].Value.ToString();
                                 if (string.IsNullOrWhiteSpace(value2))
                                 {
                                     tw.WriteLine("NULL value found in column #3 (PBP)  at line " + (i + 1) + ". This is a required field.");
@@ -1859,9 +1862,9 @@ namespace DataAnalysisTool
                         try
                         {
 
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value3 = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                                var value3 = importedfileDataGridView.Rows[i].Cells[3].Value.ToString();
                                 if (string.IsNullOrWhiteSpace(value3))
                                 {
                                     tw.WriteLine("NULL value found in column #4 (HICN)  at line " + (i + 1) + ". This is a required field.");
@@ -1873,9 +1876,9 @@ namespace DataAnalysisTool
                         //column 7 -required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value6 = dataGridView1.Rows[i].Cells[6].Value.ToString();
+                                var value6 = importedfileDataGridView.Rows[i].Cells[6].Value.ToString();
 
                                 if (string.IsNullOrWhiteSpace(value6))
                                 {
@@ -1888,9 +1891,9 @@ namespace DataAnalysisTool
                         //column 9 -required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value8 = dataGridView1.Rows[i].Cells[8].Value.ToString();
+                                var value8 = importedfileDataGridView.Rows[i].Cells[8].Value.ToString();
 
                                 if (string.IsNullOrWhiteSpace(value8))
                                 {
@@ -1903,9 +1906,9 @@ namespace DataAnalysisTool
                         //column 11 -required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value10 = dataGridView1.Rows[i].Cells[10].Value.ToString();
+                                var value10 = importedfileDataGridView.Rows[i].Cells[10].Value.ToString();
 
                                 if (string.IsNullOrWhiteSpace(value10))
                                 {
@@ -1918,9 +1921,9 @@ namespace DataAnalysisTool
                         //column 24 -required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value23 = dataGridView1.Rows[i].Cells[23].Value.ToString();
+                                var value23 = importedfileDataGridView.Rows[i].Cells[23].Value.ToString();
 
                                 if (string.IsNullOrWhiteSpace(value23))
                                 {
@@ -1937,9 +1940,9 @@ namespace DataAnalysisTool
                         try
                         {
 
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value0 = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                                var value0 = importedfileDataGridView.Rows[i].Cells[0].Value.ToString();
                                 if (value0.Length > 30)
                                 {
                                     tw.WriteLine("column #1 (CustomerId)  needs to be 30 or less characters.  At line " + (i + 1) + " you have a value that is " + value0.Length + " characters long.");
@@ -1950,9 +1953,9 @@ namespace DataAnalysisTool
                         //column 2 -required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value1 = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                                var value1 = importedfileDataGridView.Rows[i].Cells[1].Value.ToString();
                                 if (value1.Length > 10)
                                 {
                                     tw.WriteLine("column #2 (ContractNbr)  needs to be 10 or less characters.  At line " + (i + 1) + " you have a value that is " + value1.Length + " characters long.");
@@ -1964,9 +1967,9 @@ namespace DataAnalysisTool
                         //column 3 -required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value2 = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                                var value2 = importedfileDataGridView.Rows[i].Cells[2].Value.ToString();
                                 if (value2.Length > 10)
                                 {
                                     tw.WriteLine("column #3 (PBP)  needs to be 10 or less characters.  At line " + (i + 1) + " you have a value that is " + value2.Length + " characters long.");
@@ -1979,9 +1982,9 @@ namespace DataAnalysisTool
                         try
                         {
 
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value3 = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                                var value3 = importedfileDataGridView.Rows[i].Cells[3].Value.ToString();
                                 if (value3.Length > 20)
                                 {
                                     tw.WriteLine("column #4 (HICN)  needs to be 20 or less characters.  At line " + (i + 1) + " you have a value that is " + value3.Length + " characters long.");
@@ -1994,9 +1997,9 @@ namespace DataAnalysisTool
                         //column 5 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value4 = dataGridView1.Rows[i].Cells[4].Value.ToString();
+                                var value4 = importedfileDataGridView.Rows[i].Cells[4].Value.ToString();
 
                                 if (value4.Length > 20)
                                 {
@@ -2009,9 +2012,9 @@ namespace DataAnalysisTool
                         //column 6 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value5 = dataGridView1.Rows[i].Cells[5].Value.ToString();
+                                var value5 = importedfileDataGridView.Rows[i].Cells[5].Value.ToString();
 
                                 if (value5.Length > 20)
                                 {
@@ -2023,9 +2026,9 @@ namespace DataAnalysisTool
                         //column 7 -required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value6 = dataGridView1.Rows[i].Cells[6].Value.ToString();
+                                var value6 = importedfileDataGridView.Rows[i].Cells[6].Value.ToString();
                                 if (value6.Length > 20)
                                 {
                                     tw.WriteLine("column #7 (DatEff)  needs to be 30 or less characters.  At line " + (i + 1) + " you have a value that is " + value6.Length + " characters long.");
@@ -2036,9 +2039,9 @@ namespace DataAnalysisTool
                         //column 8 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value7 = dataGridView1.Rows[i].Cells[7].Value.ToString();
+                                var value7 = importedfileDataGridView.Rows[i].Cells[7].Value.ToString();
 
                                 if (value7.Length > 20)
                                 {
@@ -2050,9 +2053,9 @@ namespace DataAnalysisTool
                         //column 9 -required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value8 = dataGridView1.Rows[i].Cells[8].Value.ToString();
+                                var value8 = importedfileDataGridView.Rows[i].Cells[8].Value.ToString();
                                 if (value8.Length > 20)
                                 {
                                     tw.WriteLine("column #9 (AppSignedDate)  int-length for this?");
@@ -2063,9 +2066,9 @@ namespace DataAnalysisTool
                         //column 10 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value9 = dataGridView1.Rows[i].Cells[9].Value.ToString();
+                                var value9 = importedfileDataGridView.Rows[i].Cells[9].Value.ToString();
 
                                 if (value9.Length > 20)
                                 {
@@ -2077,9 +2080,9 @@ namespace DataAnalysisTool
                         //column 11 -required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value10 = dataGridView1.Rows[i].Cells[10].Value.ToString();
+                                var value10 = importedfileDataGridView.Rows[i].Cells[10].Value.ToString();
                                 if (value10.Length > 60)
                                 {
                                     tw.WriteLine("column #11 (Holder)  needs to be 60 or less characters.  At line " + (i + 1) + " you have a value that is " + value10.Length + " characters long.");
@@ -2090,9 +2093,9 @@ namespace DataAnalysisTool
                         //column 12 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value11 = dataGridView1.Rows[i].Cells[11].Value.ToString();
+                                var value11 = importedfileDataGridView.Rows[i].Cells[11].Value.ToString();
 
                                 if (value11.Length > 60)
                                 {
@@ -2104,9 +2107,9 @@ namespace DataAnalysisTool
                         //column 13 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value12 = dataGridView1.Rows[i].Cells[12].Value.ToString();
+                                var value12 = importedfileDataGridView.Rows[i].Cells[12].Value.ToString();
 
                                 if (value12.Length > 60)
                                 {
@@ -2118,9 +2121,9 @@ namespace DataAnalysisTool
                         //column 14 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value13 = dataGridView1.Rows[i].Cells[13].Value.ToString();
+                                var value13 = importedfileDataGridView.Rows[i].Cells[13].Value.ToString();
 
                                 if (value13.Length > 60)
                                 {
@@ -2132,9 +2135,9 @@ namespace DataAnalysisTool
                         //column 15 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value14 = dataGridView1.Rows[i].Cells[14].Value.ToString();
+                                var value14 = importedfileDataGridView.Rows[i].Cells[14].Value.ToString();
 
                                 if (value14.Length > 60)
                                 {
@@ -2146,9 +2149,9 @@ namespace DataAnalysisTool
                         //column 16 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value15 = dataGridView1.Rows[i].Cells[15].Value.ToString();
+                                var value15 = importedfileDataGridView.Rows[i].Cells[15].Value.ToString();
 
                                 if (value15.Length > 60)
                                 {
@@ -2160,9 +2163,9 @@ namespace DataAnalysisTool
                         //column 17 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value16 = dataGridView1.Rows[i].Cells[16].Value.ToString();
+                                var value16 = importedfileDataGridView.Rows[i].Cells[16].Value.ToString();
 
                                 if (value16.Length > 60)
                                 {
@@ -2174,9 +2177,9 @@ namespace DataAnalysisTool
                         //column 18 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value17 = dataGridView1.Rows[i].Cells[17].Value.ToString();
+                                var value17 = importedfileDataGridView.Rows[i].Cells[17].Value.ToString();
 
                                 if (value17.Length > 60)
                                 {
@@ -2188,9 +2191,9 @@ namespace DataAnalysisTool
                         //column 19 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value18 = dataGridView1.Rows[i].Cells[18].Value.ToString();
+                                var value18 = importedfileDataGridView.Rows[i].Cells[18].Value.ToString();
 
                                 if (value18.Length > 60)
                                 {
@@ -2202,9 +2205,9 @@ namespace DataAnalysisTool
                         //column 20 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value19 = dataGridView1.Rows[i].Cells[19].Value.ToString();
+                                var value19 = importedfileDataGridView.Rows[i].Cells[19].Value.ToString();
 
                                 if (value19.Length > 60)
                                 {
@@ -2216,9 +2219,9 @@ namespace DataAnalysisTool
                         //column 21 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value20 = dataGridView1.Rows[i].Cells[20].Value.ToString();
+                                var value20 = importedfileDataGridView.Rows[i].Cells[20].Value.ToString();
 
                                 if (value20.Length > 60)
                                 {
@@ -2230,9 +2233,9 @@ namespace DataAnalysisTool
                         //column 22 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value21 = dataGridView1.Rows[i].Cells[21].Value.ToString();
+                                var value21 = importedfileDataGridView.Rows[i].Cells[21].Value.ToString();
 
                                 if (value21.Length > 60)
                                 {
@@ -2244,9 +2247,9 @@ namespace DataAnalysisTool
                         //column 23 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value22 = dataGridView1.Rows[i].Cells[22].Value.ToString();
+                                var value22 = importedfileDataGridView.Rows[i].Cells[22].Value.ToString();
 
                                 if (value22.Length > 60)
                                 {
@@ -2267,9 +2270,9 @@ namespace DataAnalysisTool
                         //column 25 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value24 = dataGridView1.Rows[i].Cells[24].Value.ToString();
+                                var value24 = importedfileDataGridView.Rows[i].Cells[24].Value.ToString();
 
                                 if (value24.Length > 60)
                                 {
@@ -2281,9 +2284,9 @@ namespace DataAnalysisTool
                         //column 26 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value25 = dataGridView1.Rows[i].Cells[25].Value.ToString();
+                                var value25 = importedfileDataGridView.Rows[i].Cells[25].Value.ToString();
 
                                 if (value25.Length > 60)
                                 {
@@ -2295,9 +2298,9 @@ namespace DataAnalysisTool
                         //column 27 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value26 = dataGridView1.Rows[i].Cells[26].Value.ToString();
+                                var value26 = importedfileDataGridView.Rows[i].Cells[26].Value.ToString();
 
                                 if (value26.Length > 60)
                                 {
@@ -2309,9 +2312,9 @@ namespace DataAnalysisTool
                         //column 28 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value27 = dataGridView1.Rows[i].Cells[27].Value.ToString();
+                                var value27 = importedfileDataGridView.Rows[i].Cells[27].Value.ToString();
 
                                 if (value27.Length > 60)
                                 {
@@ -2323,9 +2326,9 @@ namespace DataAnalysisTool
                         //column 29 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value28 = dataGridView1.Rows[i].Cells[28].Value.ToString();
+                                var value28 = importedfileDataGridView.Rows[i].Cells[28].Value.ToString();
 
                                 if (value28.Length > 60)
                                 {
@@ -2337,9 +2340,9 @@ namespace DataAnalysisTool
                         //column 30 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value29 = dataGridView1.Rows[i].Cells[29].Value.ToString();
+                                var value29 = importedfileDataGridView.Rows[i].Cells[29].Value.ToString();
 
                                 if (value29.Length > 60)
                                 {
@@ -2351,9 +2354,9 @@ namespace DataAnalysisTool
                         //column 31 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value30 = dataGridView1.Rows[i].Cells[30].Value.ToString();
+                                var value30 = importedfileDataGridView.Rows[i].Cells[30].Value.ToString();
 
                                 if (value30.Length > 60)
                                 {
@@ -2365,9 +2368,9 @@ namespace DataAnalysisTool
                         //column 32 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value31 = dataGridView1.Rows[i].Cells[31].Value.ToString();
+                                var value31 = importedfileDataGridView.Rows[i].Cells[31].Value.ToString();
 
                                 if (value31.Length > 60)
                                 {
@@ -2379,9 +2382,9 @@ namespace DataAnalysisTool
                         //column 33 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value32 = dataGridView1.Rows[i].Cells[32].Value.ToString();
+                                var value32 = importedfileDataGridView.Rows[i].Cells[32].Value.ToString();
 
                                 if (value32.Length > 60)
                                 {
@@ -2393,9 +2396,9 @@ namespace DataAnalysisTool
                         //column 34 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value33 = dataGridView1.Rows[i].Cells[33].Value.ToString();
+                                var value33 = importedfileDataGridView.Rows[i].Cells[33].Value.ToString();
 
                                 if (value33.Length > 60)
                                 {
@@ -2407,9 +2410,9 @@ namespace DataAnalysisTool
                         //column 35 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value34 = dataGridView1.Rows[i].Cells[34].Value.ToString();
+                                var value34 = importedfileDataGridView.Rows[i].Cells[34].Value.ToString();
 
                                 if (value34.Length > 60)
                                 {
@@ -2421,9 +2424,9 @@ namespace DataAnalysisTool
                         //column 36 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value35 = dataGridView1.Rows[i].Cells[35].Value.ToString();
+                                var value35 = importedfileDataGridView.Rows[i].Cells[35].Value.ToString();
 
                                 if (value35.Length > 60)
                                 {
@@ -2435,9 +2438,9 @@ namespace DataAnalysisTool
                         //column 37 -not required
                         try
                         {
-                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                             {
-                                var value36 = dataGridView1.Rows[i].Cells[36].Value.ToString();
+                                var value36 = importedfileDataGridView.Rows[i].Cells[36].Value.ToString();
 
                                 if (value36.Length > 60)
                                 {

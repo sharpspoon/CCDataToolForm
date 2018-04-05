@@ -116,12 +116,12 @@ namespace DataAnalysisTool
                 var commandBuilder = new SqlCommandBuilder(dataAdapter);
                 var ds = new DataSet();
                 dataAdapter.Fill(ds);
-                dataGridView3.ReadOnly = true;
-                dataGridView3.DataSource = ds.Tables[0];
+                importformatDataGridView.ReadOnly = true;
+                importformatDataGridView.DataSource = ds.Tables[0];
                 toolStripStatusLabel7.Text = dataGridView2.Rows.Count.ToString();
                 reader = sc.ExecuteReader();
                 DataTable dt = new DataTable();
-                toolStripStatusLabel10.Text = dataGridView3.Rows.Count.ToString();
+                toolStripStatusLabel10.Text = importformatDataGridView.Rows.Count.ToString();
                 conn.Close();
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading import format: " + ifSelect.Text + "...Done.");
                 toolStripStatusLabel8.Visible = true;
