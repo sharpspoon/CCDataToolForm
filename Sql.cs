@@ -20,10 +20,12 @@ namespace DataAnalysisTool
 
         private void serverSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             
             try
             {
+                
                 conn.Open();
                 SqlCommand sc = new SqlCommand("SELECT name FROM [master].[sys].[databases] where name <> 'master' and name <> 'tempdb' and name <> 'model' and name <> 'msdb' and name <> 'DBAtools'", conn);
                 SqlDataReader reader;
@@ -41,6 +43,7 @@ namespace DataAnalysisTool
                 conn.Close();
                 return;
             }
+            progressBar1.MarqueeAnimationSpeed = 0;
         }
 
         private void databaseSelect_SelectedIndexChanged(object sender, EventArgs e)
