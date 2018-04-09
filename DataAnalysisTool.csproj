@@ -33,7 +33,7 @@
     <WebPage>README.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>168</ApplicationRevision>
+    <ApplicationRevision>181</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -246,6 +246,8 @@
   <ItemGroup>
     <Content Include="download_BmO_icon.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\Login_6031_32x.png" />
+    <None Include="Resources\DatabaseProject_7342_32x.png" />
     <Content Include="RetiredCode.txt" />
     <None Include="Resources\error_red_32x32.png" />
     <None Include="Resources\Information_blue_6227_21x20.png" />

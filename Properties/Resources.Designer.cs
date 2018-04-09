@@ -193,6 +193,16 @@ namespace DataAnalysisTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DatabaseProject_7342_32x {
+            get {
+                object obj = ResourceManager.GetObject("DatabaseProject_7342_32x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DatabaseReferenceNode_7598 {
             get {
                 object obj = ResourceManager.GetObject("DatabaseReferenceNode_7598", resourceCulture);
@@ -346,6 +356,16 @@ namespace DataAnalysisTool.Properties {
         internal static System.Drawing.Bitmap LightBulb_16xLG {
             get {
                 object obj = ResourceManager.GetObject("LightBulb_16xLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Login_6031_32x {
+            get {
+                object obj = ResourceManager.GetObject("Login_6031_32x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

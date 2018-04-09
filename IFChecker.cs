@@ -1683,8 +1683,7 @@ namespace DataAnalysisTool
                         tw.WriteLine(".");
                         tw.WriteLine("Server: " + serverSelect.Text);
                         tw.WriteLine("Database: "+databaseSelect.Text);
-                        tw.WriteLine(".");
-                        tw.WriteLine(".");
+
 
 
                         if (databaseSelect.Text != "")
@@ -1727,6 +1726,14 @@ namespace DataAnalysisTool
                                 var maxLengthFieldArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
                                         .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
 
+                                var selectMaxLengthColumnNumber = "USE " + databaseSelect.Text + " SELECT IMFF.FieldSeq FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.MaxLength is not null order by imff.FieldSeq";
+                                var dataAdapter6 = new SqlDataAdapter(selectMaxLengthColumnNumber, conn);
+                                var ds6 = new DataSet();
+                                dataAdapter6.Fill(ds6);
+                                stagedDataGridView.DataSource = ds6.Tables[0];
+                                var maxLengthFieldColumnNumberArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
                                 var selectMaxLengthValue = "USE " + databaseSelect.Text + " SELECT ef.maxlength FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.MaxLength is not null order by imff.FieldSeq";
                                 var dataAdapter5 = new SqlDataAdapter(selectMaxLengthValue, conn);
                                 var ds5 = new DataSet();
@@ -1735,13 +1742,23 @@ namespace DataAnalysisTool
                                 var maxLengthFieldArrayValue = stagedDataGridView.Rows.Cast<DataGridViewRow>()
                                         .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
 
+                                var selectClientName = "USE " + databaseSelect.Text + " select optval from optset where OptName='ui.title.prefix'";
+                                var dataAdapter7 = new SqlDataAdapter(selectClientName, conn);
+                                var ds7 = new DataSet();
+                                dataAdapter7.Fill(ds7);
+                                stagedDataGridView.DataSource = ds7.Tables[0];
+                                var clientName = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
 
                                 var iffidArray = importformatDataGridView.Rows.Cast<DataGridViewRow>()
                                         .Select(x => x.Cells[5].Value.ToString().Trim()).ToArray();
 
                                 var seqArray = importformatDataGridView.Rows.Cast<DataGridViewRow>()
                                     .Select(x => x.Cells[6].Value.ToString().Trim()).ToArray();
-                                int[] myInts = Array.ConvertAll(fieldsThatAreCodesArray, s => int.Parse(s));
+
+                                int[] fieldsThatAreCodesArrayColumnCount = Array.ConvertAll(fieldsThatAreCodesArray, s => int.Parse(s));
+
+                                //int[] maxLengthFieldColumnNumberArrayColumnCount = Array.ConvertAll(maxLengthFieldColumnNumberArray, s => int.Parse(s));
 
                                 ArrayList codeValueArray = new ArrayList();
                                 //this foreach gets the values for all of the codes
@@ -1758,7 +1775,13 @@ namespace DataAnalysisTool
                                         codeValueArray.Add(dr.Cells[0].Value);
                                     }
                                 }
+                                foreach (var value in clientName)
+                                {
+                                    tw.WriteLine("Client: " + value);
+                                }
+                                tw.WriteLine(".");
                                 tw.WriteLine("---DATA THAT IS USED---");
+                                tw.WriteLine("---THIS IS DATA PULLED FROM "+databaseSelect.Text+"---");
                                 foreach (var value in codeArray)
                                 {
                                     tw.WriteLine("Code: " + value);
@@ -1767,18 +1790,22 @@ namespace DataAnalysisTool
                                 {
                                     tw.WriteLine("Code Value: "+value);
                                 }
-                                foreach (int value in myInts)
+                                foreach (int value in fieldsThatAreCodesArrayColumnCount)
                                 {
                                     tw.WriteLine("Columns with Codes: " + value);
                                 }
-                                foreach (var value in maxLengthFieldArray)
+
+                                foreach (var value in maxLengthFieldColumnNumberArray)
                                 {
                                     tw.WriteLine("Columns with length restrictions: " + value);
                                 }
+
                                 foreach (var value in maxLengthFieldArrayValue)
                                 {
                                     tw.WriteLine("length restriction: " + value);
                                 }
+
+
 
                                 var intersect = fieldsThatAreCodesArray.Intersect(seqArray);
                                 int[] intIntersect = Array.ConvertAll(seqArray, s => int.Parse(s));
@@ -1796,7 +1823,7 @@ namespace DataAnalysisTool
                                 {
                                     a++;
                                         
-                                    if (myInts.Contains(a) == true)
+                                    if (fieldsThatAreCodesArrayColumnCount.Contains(a) == true)
                                     {
                                         tw.WriteLine("\nCOLUMN " + a + ": " + s);//this is the header line in the output file
                                         for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)//this is the loop that spits out the errors
@@ -1813,12 +1840,12 @@ namespace DataAnalysisTool
 
                                 tw.WriteLine("Max Length Check");
                                 int b = 0;
-                                foreach (var s in iffidArray)//cycle through every column
+                                foreach (var s in seqArray)//cycle through every column
                                 {
-                                    if (maxLengthFieldArray.Contains(s) == true)//if one of the columns has a max length, enter this IF
+                                    if (maxLengthFieldColumnNumberArray.Contains(s) == true)//if one of the columns has a max length, enter this IF
                                     {
-                                        tw.WriteLine("column=" + s);
-                                        int index = Array.IndexOf(iffidArray, s);
+                                        
+                                        int index = Array.IndexOf(seqArray, s);
 
 
                                         for (int j=0; j< importedfileDataGridView.Columns.Count; j++)
@@ -1832,11 +1859,9 @@ namespace DataAnalysisTool
                                                     var value = importedfileDataGridView.Rows[i].Cells[j].Value.ToString();
                                                     int valueLength = value.Length;
                                                     int maxValueLength = intMaxLengthFieldArrayValue[b-1];
-                                                    //tw.WriteLine("maxValueLength=" + maxValueLength + "a=" + a + "b=" + (b-1));
-                                                    
-                                                    
                                                     if (valueLength > maxValueLength)
                                                     {
+                                                        tw.WriteLine("Column: " + s);
                                                         tw.WriteLine("Error at line " + (i + 1) + "." + " The value: '" + value + "' from your imported file is "+valueLength+" characters long. This is too long.");
                                                     }
                                                 }
