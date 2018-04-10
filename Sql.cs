@@ -112,14 +112,12 @@ namespace DataAnalysisTool
             SqlDataReader reader;
             try
             {
-
                 var select = "USE " + databaseSelect.Text + " SELECT IMF.ImportFormatId,IMF.Delimiter,IMF.HeaderRows,IMF.RecType,IMFE.InEntName,IMFF.ImportFormatFieldId,IMFF.FieldSeq,IMFF.FieldLength,IMFF.IgnoreField, ef.* FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null order by imff.FieldSeq";
                 var conn2 = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
                 var dataAdapter = new SqlDataAdapter(select, conn2);
                 var commandBuilder = new SqlCommandBuilder(dataAdapter);
                 var ds = new DataSet();
                 dataAdapter.Fill(ds);
-                importformatDataGridView.ReadOnly = true;
                 importformatDataGridView.DataSource = ds.Tables[0];
                 toolStripStatusLabel7.Text = dataGridView2.Rows.Count.ToString();
                 reader = sc.ExecuteReader();
@@ -134,6 +132,9 @@ namespace DataAnalysisTool
             catch { return; }
 
             conn.Close();
+            
+
+            
         }
 
         //------------------SQL LOADER END------------------------------------------------------

@@ -1758,8 +1758,6 @@ namespace DataAnalysisTool
 
                                 int[] fieldsThatAreCodesArrayColumnCount = Array.ConvertAll(fieldsThatAreCodesArray, s => int.Parse(s));
 
-                                //int[] maxLengthFieldColumnNumberArrayColumnCount = Array.ConvertAll(maxLengthFieldColumnNumberArray, s => int.Parse(s));
-
                                 ArrayList codeValueArray = new ArrayList();
                                 //this foreach gets the values for all of the codes
                                 foreach (var s in codeArray)
@@ -1810,7 +1808,7 @@ namespace DataAnalysisTool
                                 var intersect = fieldsThatAreCodesArray.Intersect(seqArray);
                                 int[] intIntersect = Array.ConvertAll(seqArray, s => int.Parse(s));
                                 int[] intMaxLengthFieldArrayValue = Array.ConvertAll(maxLengthFieldArrayValue, s => int.Parse(s));
-                                int a = 0;
+                                
                                 
 
                                 tw.WriteLine(".");
@@ -1818,7 +1816,10 @@ namespace DataAnalysisTool
                                 tw.WriteLine("ERROR LIST START");
                                 tw.WriteLine("");
 
+
+
                                 tw.WriteLine("Code Check");
+                                int a = 0;
                                 foreach (var s in iffidArray)
                                 {
                                     a++;
@@ -1837,9 +1838,28 @@ namespace DataAnalysisTool
                                     }
                                 }
 
+                                tw.WriteLine("Required Field Check");
+                                int b = 0;
+                                foreach (var s in iffidArray)
+                                {
+                                    a++;
+
+                                    if (fieldsThatAreCodesArrayColumnCount.Contains(a) == true)
+                                    {
+                                        tw.WriteLine("\nCOLUMN " + a + ": " + s);//this is the header line in the output file
+                                        for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)//this is the loop that spits out the errors
+                                        {
+                                            var value = importedfileDataGridView.Rows[i].Cells[a - 1].Value.ToString();
+                                            if (codeValueArray.Contains(value) == false)
+                                            {
+                                                tw.WriteLine("Error at line " + (i + 1) + "." + " This column is required and you have a missing value.");
+                                            }
+                                        }
+                                    }
+                                }
+
 
                                 tw.WriteLine("Max Length Check");
-                                int b = 0;
                                 foreach (var s in seqArray)//cycle through every column
                                 {
                                     if (maxLengthFieldColumnNumberArray.Contains(s) == true)//if one of the columns has a max length, enter this IF

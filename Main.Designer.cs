@@ -73,6 +73,7 @@
             this.openImportFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectFromDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFromZIPExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addRequiredColumnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medicareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createErrorFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupByColumnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -468,7 +469,6 @@
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
             this.dataToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.dataToolStripMenuItem.Text = "Data";
-            this.dataToolStripMenuItem.Visible = false;
             // 
             // inFileToolStripMenuItem
             // 
@@ -478,7 +478,7 @@
             this.customerNoCheckToolStripMenuItem});
             this.inFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inFileToolStripMenuItem.Image")));
             this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             this.inFileToolStripMenuItem.Visible = false;
@@ -509,12 +509,12 @@
             // 
             this.openImportFormatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectFromDatabaseToolStripMenuItem,
-            this.openFromZIPExportToolStripMenuItem});
+            this.openFromZIPExportToolStripMenuItem,
+            this.addRequiredColumnToolStripMenuItem});
             this.openImportFormatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openImportFormatToolStripMenuItem.Image")));
             this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
-            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openImportFormatToolStripMenuItem.Text = "Import Format";
-            this.openImportFormatToolStripMenuItem.Visible = false;
             this.openImportFormatToolStripMenuItem.Click += new System.EventHandler(this.openImportFormatToolStripMenuItem_Click);
             // 
             // selectFromDatabaseToolStripMenuItem
@@ -523,6 +523,7 @@
             this.selectFromDatabaseToolStripMenuItem.Name = "selectFromDatabaseToolStripMenuItem";
             this.selectFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.selectFromDatabaseToolStripMenuItem.Text = "Select From Database";
+            this.selectFromDatabaseToolStripMenuItem.Visible = false;
             this.selectFromDatabaseToolStripMenuItem.Click += new System.EventHandler(this.selectFromDatabaseToolStripMenuItem_Click);
             // 
             // openFromZIPExportToolStripMenuItem
@@ -530,7 +531,16 @@
             this.openFromZIPExportToolStripMenuItem.Name = "openFromZIPExportToolStripMenuItem";
             this.openFromZIPExportToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.openFromZIPExportToolStripMenuItem.Text = "Open From .ZIP Export";
+            this.openFromZIPExportToolStripMenuItem.Visible = false;
             this.openFromZIPExportToolStripMenuItem.Click += new System.EventHandler(this.openFromZIPExportToolStripMenuItem_Click);
+            // 
+            // addRequiredColumnToolStripMenuItem
+            // 
+            this.addRequiredColumnToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.column_16xLG;
+            this.addRequiredColumnToolStripMenuItem.Name = "addRequiredColumnToolStripMenuItem";
+            this.addRequiredColumnToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.addRequiredColumnToolStripMenuItem.Text = "Add Required Column";
+            this.addRequiredColumnToolStripMenuItem.Click += new System.EventHandler(this.addRequiredColumnToolStripMenuItem_Click);
             // 
             // medicareToolStripMenuItem
             // 
@@ -539,8 +549,9 @@
             this.inProgramCheckToolStripMenuItem});
             this.medicareToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("medicareToolStripMenuItem.Image")));
             this.medicareToolStripMenuItem.Name = "medicareToolStripMenuItem";
-            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.medicareToolStripMenuItem.Text = "Medicare";
+            this.medicareToolStripMenuItem.Visible = false;
             // 
             // createErrorFileToolStripMenuItem
             // 
@@ -579,7 +590,7 @@
             // 
             this.dataInUseToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dataInUseToolStripMenuItem.Image")));
             this.dataInUseToolStripMenuItem.Name = "dataInUseToolStripMenuItem";
-            this.dataInUseToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.dataInUseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dataInUseToolStripMenuItem.Text = "Data in Use";
             this.dataInUseToolStripMenuItem.Visible = false;
             // 
@@ -974,7 +985,6 @@
             this.importformatDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.importformatDataGridView.Location = new System.Drawing.Point(0, 0);
             this.importformatDataGridView.Name = "importformatDataGridView";
-            this.importformatDataGridView.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1640,6 +1650,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel14;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel16;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ToolStripMenuItem addRequiredColumnToolStripMenuItem;
     }
 }
 

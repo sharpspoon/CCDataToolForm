@@ -573,6 +573,17 @@ namespace DataAnalysisTool
                 this.Close();
             }
         }
+
+        private void addRequiredColumnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+                chk.Name = "Required";
+                chk.HeaderText = "Required";
+                chk.ReadOnly = false;
+                chk.Width = 60;
+                importformatDataGridView.Columns.Insert(0, chk);
+            
+        }
         //------------------EXIT APP ACTION END------------------------------------------------------
 
         /// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------FINALIZED CODE END
