@@ -316,7 +316,7 @@ namespace DataAnalysisTool
 
         private void acteksoft_Click(object sender, EventArgs e)
         {
-
+            progressBar1.MarqueeAnimationSpeed = 1;
 
             acteksoft actek = new acteksoft();
 
@@ -324,7 +324,9 @@ namespace DataAnalysisTool
             {
                 Application.OpenForms[Application.OpenForms.Count - 1].Close();
             }
-            actek.ShowDialog(); 
+            actek.ShowDialog();
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
         }
         //------------------ACKTEKSOFT LOGIN END------------------------------------------------------
 
@@ -572,17 +574,6 @@ namespace DataAnalysisTool
             {
                 this.Close();
             }
-        }
-
-        private void addRequiredColumnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-                DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
-                chk.Name = "Required";
-                chk.HeaderText = "Required";
-                chk.ReadOnly = false;
-                chk.Width = 60;
-                importformatDataGridView.Columns.Insert(0, chk);
-            
         }
         //------------------EXIT APP ACTION END------------------------------------------------------
 

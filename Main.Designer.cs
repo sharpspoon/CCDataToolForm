@@ -73,7 +73,6 @@
             this.openImportFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectFromDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFromZIPExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addRequiredColumnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medicareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createErrorFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupByColumnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -156,6 +155,7 @@
             this.toolStripStatusLabel14 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button6 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.Required = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -242,7 +242,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.importedfileDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.importedfileDataGridView.Size = new System.Drawing.Size(759, 452);
+            this.importedfileDataGridView.Size = new System.Drawing.Size(1112, 452);
             this.importedfileDataGridView.TabIndex = 5;
             this.importedfileDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -469,6 +469,7 @@
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
             this.dataToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.dataToolStripMenuItem.Text = "Data";
+            this.dataToolStripMenuItem.Visible = false;
             // 
             // inFileToolStripMenuItem
             // 
@@ -509,8 +510,7 @@
             // 
             this.openImportFormatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectFromDatabaseToolStripMenuItem,
-            this.openFromZIPExportToolStripMenuItem,
-            this.addRequiredColumnToolStripMenuItem});
+            this.openFromZIPExportToolStripMenuItem});
             this.openImportFormatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openImportFormatToolStripMenuItem.Image")));
             this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
             this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
@@ -533,14 +533,6 @@
             this.openFromZIPExportToolStripMenuItem.Text = "Open From .ZIP Export";
             this.openFromZIPExportToolStripMenuItem.Visible = false;
             this.openFromZIPExportToolStripMenuItem.Click += new System.EventHandler(this.openFromZIPExportToolStripMenuItem_Click);
-            // 
-            // addRequiredColumnToolStripMenuItem
-            // 
-            this.addRequiredColumnToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.column_16xLG;
-            this.addRequiredColumnToolStripMenuItem.Name = "addRequiredColumnToolStripMenuItem";
-            this.addRequiredColumnToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.addRequiredColumnToolStripMenuItem.Text = "Add Required Column";
-            this.addRequiredColumnToolStripMenuItem.Click += new System.EventHandler(this.addRequiredColumnToolStripMenuItem_Click);
             // 
             // medicareToolStripMenuItem
             // 
@@ -937,7 +929,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
             this.splitContainer1.Size = new System.Drawing.Size(1515, 632);
-            this.splitContainer1.SplitterDistance = 759;
+            this.splitContainer1.SplitterDistance = 1112;
             this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 22;
             // 
@@ -956,7 +948,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.importedfileDataGridView);
-            this.splitContainer3.Size = new System.Drawing.Size(759, 632);
+            this.splitContainer3.Size = new System.Drawing.Size(1112, 632);
             this.splitContainer3.SplitterDistance = 173;
             this.splitContainer3.SplitterWidth = 7;
             this.splitContainer3.TabIndex = 6;
@@ -973,6 +965,8 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.importformatDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.importformatDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.importformatDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Required});
             this.importformatDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
@@ -993,7 +987,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.importformatDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.importformatDataGridView.Size = new System.Drawing.Size(759, 173);
+            this.importformatDataGridView.Size = new System.Drawing.Size(1112, 173);
             this.importformatDataGridView.TabIndex = 0;
             this.importformatDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -1012,7 +1006,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.richTextBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(749, 632);
+            this.splitContainer2.Size = new System.Drawing.Size(396, 632);
             this.splitContainer2.SplitterDistance = 569;
             this.splitContainer2.TabIndex = 32;
             // 
@@ -1030,7 +1024,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.stagedDataGridView);
-            this.splitContainer4.Size = new System.Drawing.Size(749, 569);
+            this.splitContainer4.Size = new System.Drawing.Size(396, 569);
             this.splitContainer4.SplitterDistance = 483;
             this.splitContainer4.TabIndex = 33;
             // 
@@ -1067,7 +1061,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView2.Size = new System.Drawing.Size(749, 483);
+            this.dataGridView2.Size = new System.Drawing.Size(396, 483);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -1080,7 +1074,7 @@
             this.stagedDataGridView.Location = new System.Drawing.Point(0, 0);
             this.stagedDataGridView.Name = "stagedDataGridView";
             this.stagedDataGridView.ReadOnly = true;
-            this.stagedDataGridView.Size = new System.Drawing.Size(749, 82);
+            this.stagedDataGridView.Size = new System.Drawing.Size(396, 82);
             this.stagedDataGridView.TabIndex = 32;
             this.stagedDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -1090,7 +1084,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(749, 59);
+            this.richTextBox1.Size = new System.Drawing.Size(396, 59);
             this.richTextBox1.TabIndex = 32;
             this.richTextBox1.Text = "";
             // 
@@ -1451,6 +1445,16 @@
             this.progressBar1.TabIndex = 7;
             this.progressBar1.Value = 10;
             // 
+            // Required
+            // 
+            this.Required.FalseValue = "";
+            this.Required.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Required.HeaderText = "Required";
+            this.Required.Name = "Required";
+            this.Required.TrueValue = "";
+            this.Required.Visible = false;
+            this.Required.Width = 60;
+            // 
             // DataAnalysisTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1650,7 +1654,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel14;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel16;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.ToolStripMenuItem addRequiredColumnToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Required;
     }
 }
 

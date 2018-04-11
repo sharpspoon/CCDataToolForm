@@ -9,6 +9,8 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Collections;
+using System.Configuration;
+using System.Web;
 
 namespace DataAnalysisTool
 {
@@ -1644,6 +1646,7 @@ namespace DataAnalysisTool
         private void groupByErrorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //global vars
+            progressBar1.MarqueeAnimationSpeed = 1;
             var ifCount = "USE " + databaseSelect.Text + " SELECT IMFF.FieldSeq FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null order by imff.FieldSeq";
             
 
@@ -1651,7 +1654,9 @@ namespace DataAnalysisTool
 
             {
                MessageBox.Show("No file imported. \nPlease open a file.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                 return; 
+                progressBar1.MarqueeAnimationSpeed = 0;
+                progressBar1.Refresh();
+                return; 
             }
 
             if (databaseSelect.Text == "")
@@ -1659,7 +1664,11 @@ namespace DataAnalysisTool
             {
                 DialogResult result = MessageBox.Show("No database selected. \nThere will be no cross check with the database. Continue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (result == DialogResult.No)
-                { return; }
+                {
+                    progressBar1.MarqueeAnimationSpeed = 0;
+                    progressBar1.Refresh();
+                    return;
+                }
             }
 
             if (databaseSelect.Text != "")
@@ -1667,7 +1676,11 @@ namespace DataAnalysisTool
 
                 DialogResult result2 = MessageBox.Show("The DAT will check against the " + ifSelect.Text + " Import Format.\nContinue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (result2 == DialogResult.No)
-                { return; }
+                {
+                    progressBar1.MarqueeAnimationSpeed = 0;
+                    progressBar1.Refresh();
+                    return;
+                }
             }
 
             {
@@ -1694,6 +1707,8 @@ namespace DataAnalysisTool
                                 tw.WriteLine("This operation has ended. Please correct the column count issue.");
                                 MessageBox.Show("Import Format error file has been created. \nLocation: C:\\Program Files (x86)\\DataAnalysisTool\\Medicare Error Files", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
+                                progressBar1.MarqueeAnimationSpeed = 0;
+                                progressBar1.Refresh();
                                 return;
                             }
 
@@ -1756,6 +1771,11 @@ namespace DataAnalysisTool
                                 var seqArray = importformatDataGridView.Rows.Cast<DataGridViewRow>()
                                     .Select(x => x.Cells[6].Value.ToString().Trim()).ToArray();
 
+
+
+                                //var reqArray = importformatDataGridView.Rows.Cast<DataGridViewRow>()
+                                //    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
                                 int[] fieldsThatAreCodesArrayColumnCount = Array.ConvertAll(fieldsThatAreCodesArray, s => int.Parse(s));
 
                                 ArrayList codeValueArray = new ArrayList();
@@ -1773,12 +1793,18 @@ namespace DataAnalysisTool
                                         codeValueArray.Add(dr.Cells[0].Value);
                                     }
                                 }
+
                                 foreach (var value in clientName)
                                 {
                                     tw.WriteLine("Client: " + value);
                                 }
                                 tw.WriteLine(".");
                                 tw.WriteLine("---DATA THAT IS USED---");
+                                foreach (DataGridViewRow dr in importformatDataGridView.Rows)
+                                {
+                                    bool checkBoxValue = Convert.ToBoolean(dr.Cells[0].Value);
+                                    //tw.WriteLine("checkbox: " + checkBoxValue);
+                                }
                                 tw.WriteLine("---THIS IS DATA PULLED FROM "+databaseSelect.Text+"---");
                                 foreach (var value in codeArray)
                                 {
@@ -1806,10 +1832,10 @@ namespace DataAnalysisTool
 
 
                                 var intersect = fieldsThatAreCodesArray.Intersect(seqArray);
-                                int[] intIntersect = Array.ConvertAll(seqArray, s => int.Parse(s));
+                                //int[] intIntersect = Array.ConvertAll(seqArray, s => int.Parse(s));
                                 int[] intMaxLengthFieldArrayValue = Array.ConvertAll(maxLengthFieldArrayValue, s => int.Parse(s));
-                                
-                                
+
+
 
                                 tw.WriteLine(".");
                                 tw.WriteLine(".");
@@ -1912,6 +1938,8 @@ namespace DataAnalysisTool
                 }
                 MessageBox.Show("Import Format error file has been created. \nLocation: C:\\Program Files (x86)\\DataAnalysisTool\\Import Format Error Files", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files");
+                progressBar1.MarqueeAnimationSpeed = 0;
+                progressBar1.Refresh();
             }
         }
     }

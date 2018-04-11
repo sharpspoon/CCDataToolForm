@@ -631,3 +631,20 @@
                             }
                         }
                         catch { tw.WriteLine("column #37 check...done."); }
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            if (importformatDataGridView.Columns[0].CellType == System.Windows.Forms.DataGridViewCheckBoxCell())
+            {
+                DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+                chk.Name = "Required";
+                chk.HeaderText = "Required";
+                chk.ReadOnly = false;
+                chk.Width = 60;
+                importformatDataGridView.Columns.Insert(0, chk);
+            }
