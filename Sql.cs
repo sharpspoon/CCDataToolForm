@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Data.OleDb;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 
 namespace DataAnalysisTool
 {
@@ -108,26 +109,26 @@ namespace DataAnalysisTool
 
         private void ifSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.importformatDataGridView.Columns["Required"].Visible = true;
 
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
-            SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
-            SqlDataReader reader;
             try
             {
                 var select = "USE " + databaseSelect.Text + " SELECT IMF.ImportFormatId,IMF.Delimiter,IMF.HeaderRows,IMF.RecType,IMFE.InEntName,IMFF.ImportFormatFieldId,IMFF.FieldSeq,IMFF.FieldLength,IMFF.IgnoreField, ef.* FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null order by imff.FieldSeq";
+                var select2 = "USE " + databaseSelect.Text + " SELECT IMFF.ImportFormatFieldId FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null order by imff.FieldSeq";
                 var conn2 = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
                 var dataAdapter = new SqlDataAdapter(select, conn2);
-                var commandBuilder = new SqlCommandBuilder(dataAdapter);
                 var ds = new DataSet();
                 dataAdapter.Fill(ds);
                 importformatDataGridView.DataSource = ds.Tables[0];
-                toolStripStatusLabel7.Text = dataGridView2.Rows.Count.ToString();
-                reader = sc.ExecuteReader();
-                DataTable dt = new DataTable();
-                toolStripStatusLabel10.Text = importformatDataGridView.Rows.Count.ToString();
+
+
+
+
                 conn.Close();
+
+                toolStripStatusLabel7.Text = dataGridView2.Rows.Count.ToString();
+                toolStripStatusLabel10.Text = importformatDataGridView.Rows.Count.ToString();
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading import format: " + ifSelect.Text + "...Done.");
                 toolStripStatusLabel8.Visible = true;
                 toolStripStatusLabel9.Visible = true;
@@ -136,9 +137,41 @@ namespace DataAnalysisTool
             catch { return; }
 
             conn.Close();
-            
 
+
+        }
+
+        private void buttonRequirementCheckAdd_Click(object sender, EventArgs e)
+        {
+            //this.requiredGridView.Columns["Required"].Visible = true;
+            this.requiredGridView.Columns["Field"].Visible = true;
+            var iffidArray2 = importformatDataGridView.Rows.Cast<DataGridViewRow>()
+                .Select(x => x.Cells[5].Value.ToString().Trim()).ToArray();
+
+
+            DataGridViewCheckBoxColumn CBColumn = new DataGridViewCheckBoxColumn();
+            CBColumn.HeaderText = "ColumnHeader";
+            CBColumn.FalseValue = "0";
+            CBColumn.TrueValue = "1";
             
+            foreach (var s in iffidArray2)
+            {
+                requiredGridView.Rows.Add(s);
+            }
+            DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
+            checkColumn.Name = "X";
+            checkColumn.HeaderText = "X";
+            checkColumn.Width = 50;
+            checkColumn.ReadOnly = false;
+            checkColumn.FillWeight = 10; //if the datagridview is resized (on form resize) the checkbox won't take up too much; value is relative to the other columns' fill values
+            requiredGridView.Columns.Add(checkColumn);
+
+
+            //foreach (var s in iffidArray2)
+            //{
+            //    requiredGridView.Columns.Insert(0, CBColumn);
+            //}
+
         }
 
         //------------------SQL LOADER END------------------------------------------------------

@@ -111,7 +111,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.splitRequiredImportFormat_ImportedFile = new System.Windows.Forms.SplitContainer();
+            this.splitRequired_ImportFormat = new System.Windows.Forms.SplitContainer();
+            this.requiredGridView = new System.Windows.Forms.DataGridView();
             this.importformatDataGridView = new System.Windows.Forms.DataGridView();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
@@ -155,7 +157,8 @@
             this.toolStripStatusLabel14 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button6 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.Required = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.buttonRequirementCheckAdd = new System.Windows.Forms.Button();
+            this.Field = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -167,10 +170,15 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitRequiredImportFormat_ImportedFile)).BeginInit();
+            this.splitRequiredImportFormat_ImportedFile.Panel1.SuspendLayout();
+            this.splitRequiredImportFormat_ImportedFile.Panel2.SuspendLayout();
+            this.splitRequiredImportFormat_ImportedFile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitRequired_ImportFormat)).BeginInit();
+            this.splitRequired_ImportFormat.Panel1.SuspendLayout();
+            this.splitRequired_ImportFormat.Panel2.SuspendLayout();
+            this.splitRequired_ImportFormat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.requiredGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.importformatDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -242,7 +250,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.importedfileDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.importedfileDataGridView.Size = new System.Drawing.Size(1112, 452);
+            this.importedfileDataGridView.Size = new System.Drawing.Size(1142, 486);
             this.importedfileDataGridView.TabIndex = 5;
             this.importedfileDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -267,7 +275,7 @@
             this.toolStripMenuItemMinimize});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1540, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1582, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -479,7 +487,7 @@
             this.customerNoCheckToolStripMenuItem});
             this.inFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inFileToolStripMenuItem.Image")));
             this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             this.inFileToolStripMenuItem.Visible = false;
@@ -513,7 +521,7 @@
             this.openFromZIPExportToolStripMenuItem});
             this.openImportFormatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openImportFormatToolStripMenuItem.Image")));
             this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
-            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.openImportFormatToolStripMenuItem.Text = "Import Format";
             this.openImportFormatToolStripMenuItem.Click += new System.EventHandler(this.openImportFormatToolStripMenuItem_Click);
             // 
@@ -541,7 +549,7 @@
             this.inProgramCheckToolStripMenuItem});
             this.medicareToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("medicareToolStripMenuItem.Image")));
             this.medicareToolStripMenuItem.Name = "medicareToolStripMenuItem";
-            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.medicareToolStripMenuItem.Text = "Medicare";
             this.medicareToolStripMenuItem.Visible = false;
             // 
@@ -582,7 +590,7 @@
             // 
             this.dataInUseToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dataInUseToolStripMenuItem.Image")));
             this.dataInUseToolStripMenuItem.Name = "dataInUseToolStripMenuItem";
-            this.dataInUseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dataInUseToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.dataInUseToolStripMenuItem.Text = "Data in Use";
             this.dataInUseToolStripMenuItem.Visible = false;
             // 
@@ -636,7 +644,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1357, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(1399, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(170, 72);
             this.pictureBox1.TabIndex = 3;
@@ -657,9 +665,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(111, 16);
+            this.button1.Location = new System.Drawing.Point(111, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(48, 50);
+            this.button1.Size = new System.Drawing.Size(34, 50);
             this.button1.TabIndex = 21;
             this.button1.Text = "GO";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -673,9 +681,9 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(612, 27);
+            this.groupBox2.Location = new System.Drawing.Point(702, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(165, 72);
+            this.groupBox2.Size = new System.Drawing.Size(152, 72);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Date Checker:";
@@ -708,9 +716,9 @@
             this.groupBox3.Controls.Add(this.textBox4);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Location = new System.Drawing.Point(777, 27);
+            this.groupBox3.Location = new System.Drawing.Point(860, 27);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(209, 72);
+            this.groupBox3.Size = new System.Drawing.Size(195, 72);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cell Length Checker:";
@@ -722,9 +730,9 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(154, 16);
+            this.button4.Location = new System.Drawing.Point(154, 12);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(48, 50);
+            this.button4.Size = new System.Drawing.Size(34, 50);
             this.button4.TabIndex = 22;
             this.button4.Text = "GO";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -772,9 +780,9 @@
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.textBox5);
             this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Location = new System.Drawing.Point(986, 27);
+            this.groupBox4.Location = new System.Drawing.Point(1061, 27);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(215, 72);
+            this.groupBox4.Size = new System.Drawing.Size(198, 72);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Special Character Checker:";
@@ -832,9 +840,9 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(161, 16);
+            this.button3.Location = new System.Drawing.Point(158, 15);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(48, 50);
+            this.button3.Size = new System.Drawing.Size(34, 50);
             this.button3.TabIndex = 21;
             this.button3.Text = "GO";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -866,9 +874,9 @@
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.textBox6);
             this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Location = new System.Drawing.Point(1201, 27);
+            this.groupBox5.Location = new System.Drawing.Point(1265, 27);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(150, 72);
+            this.groupBox5.Size = new System.Drawing.Size(128, 72);
             this.groupBox5.TabIndex = 27;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "NULL Checker:";
@@ -897,7 +905,7 @@
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button5.Location = new System.Drawing.Point(86, 16);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(48, 50);
+            this.button5.Size = new System.Drawing.Size(34, 50);
             this.button5.TabIndex = 21;
             this.button5.Text = "GO";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -921,37 +929,69 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.splitContainer3);
+            this.splitContainer1.Panel1.Controls.Add(this.splitRequiredImportFormat_ImportedFile);
             this.splitContainer1.Panel1.Cursor = System.Windows.Forms.Cursors.VSplit;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer1.Size = new System.Drawing.Size(1515, 632);
-            this.splitContainer1.SplitterDistance = 1112;
+            this.splitContainer1.Size = new System.Drawing.Size(1557, 632);
+            this.splitContainer1.SplitterDistance = 1142;
             this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 22;
             // 
-            // splitContainer3
+            // splitRequiredImportFormat_ImportedFile
             // 
-            this.splitContainer3.Cursor = System.Windows.Forms.Cursors.HSplit;
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitRequiredImportFormat_ImportedFile.Cursor = System.Windows.Forms.Cursors.HSplit;
+            this.splitRequiredImportFormat_ImportedFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitRequiredImportFormat_ImportedFile.Location = new System.Drawing.Point(0, 0);
+            this.splitRequiredImportFormat_ImportedFile.Name = "splitRequiredImportFormat_ImportedFile";
+            this.splitRequiredImportFormat_ImportedFile.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // splitContainer3.Panel1
+            // splitRequiredImportFormat_ImportedFile.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.importformatDataGridView);
+            this.splitRequiredImportFormat_ImportedFile.Panel1.Controls.Add(this.splitRequired_ImportFormat);
             // 
-            // splitContainer3.Panel2
+            // splitRequiredImportFormat_ImportedFile.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.importedfileDataGridView);
-            this.splitContainer3.Size = new System.Drawing.Size(1112, 632);
-            this.splitContainer3.SplitterDistance = 173;
-            this.splitContainer3.SplitterWidth = 7;
-            this.splitContainer3.TabIndex = 6;
+            this.splitRequiredImportFormat_ImportedFile.Panel2.Controls.Add(this.importedfileDataGridView);
+            this.splitRequiredImportFormat_ImportedFile.Size = new System.Drawing.Size(1142, 632);
+            this.splitRequiredImportFormat_ImportedFile.SplitterDistance = 139;
+            this.splitRequiredImportFormat_ImportedFile.SplitterWidth = 7;
+            this.splitRequiredImportFormat_ImportedFile.TabIndex = 6;
+            // 
+            // splitRequired_ImportFormat
+            // 
+            this.splitRequired_ImportFormat.Cursor = System.Windows.Forms.Cursors.VSplit;
+            this.splitRequired_ImportFormat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitRequired_ImportFormat.Location = new System.Drawing.Point(0, 0);
+            this.splitRequired_ImportFormat.Name = "splitRequired_ImportFormat";
+            // 
+            // splitRequired_ImportFormat.Panel1
+            // 
+            this.splitRequired_ImportFormat.Panel1.Controls.Add(this.requiredGridView);
+            // 
+            // splitRequired_ImportFormat.Panel2
+            // 
+            this.splitRequired_ImportFormat.Panel2.Controls.Add(this.importformatDataGridView);
+            this.splitRequired_ImportFormat.Size = new System.Drawing.Size(1142, 139);
+            this.splitRequired_ImportFormat.SplitterDistance = 195;
+            this.splitRequired_ImportFormat.TabIndex = 1;
+            // 
+            // requiredGridView
+            // 
+            this.requiredGridView.AllowUserToAddRows = false;
+            this.requiredGridView.AllowUserToDeleteRows = false;
+            this.requiredGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.requiredGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Field});
+            this.requiredGridView.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.requiredGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.requiredGridView.Location = new System.Drawing.Point(0, 0);
+            this.requiredGridView.Name = "requiredGridView";
+            this.requiredGridView.Size = new System.Drawing.Size(195, 139);
+            this.requiredGridView.TabIndex = 1;
             // 
             // importformatDataGridView
             // 
@@ -965,8 +1005,6 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.importformatDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.importformatDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.importformatDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Required});
             this.importformatDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
@@ -987,7 +1025,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.importformatDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.importformatDataGridView.Size = new System.Drawing.Size(1112, 173);
+            this.importformatDataGridView.Size = new System.Drawing.Size(943, 139);
             this.importformatDataGridView.TabIndex = 0;
             this.importformatDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -1006,7 +1044,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.richTextBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(396, 632);
+            this.splitContainer2.Size = new System.Drawing.Size(408, 632);
             this.splitContainer2.SplitterDistance = 569;
             this.splitContainer2.TabIndex = 32;
             // 
@@ -1024,7 +1062,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.stagedDataGridView);
-            this.splitContainer4.Size = new System.Drawing.Size(396, 569);
+            this.splitContainer4.Size = new System.Drawing.Size(408, 569);
             this.splitContainer4.SplitterDistance = 483;
             this.splitContainer4.TabIndex = 33;
             // 
@@ -1061,7 +1099,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView2.Size = new System.Drawing.Size(396, 483);
+            this.dataGridView2.Size = new System.Drawing.Size(408, 483);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -1074,7 +1112,7 @@
             this.stagedDataGridView.Location = new System.Drawing.Point(0, 0);
             this.stagedDataGridView.Name = "stagedDataGridView";
             this.stagedDataGridView.ReadOnly = true;
-            this.stagedDataGridView.Size = new System.Drawing.Size(396, 82);
+            this.stagedDataGridView.Size = new System.Drawing.Size(408, 82);
             this.stagedDataGridView.TabIndex = 32;
             this.stagedDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -1084,7 +1122,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(396, 59);
+            this.richTextBox1.Size = new System.Drawing.Size(408, 59);
             this.richTextBox1.TabIndex = 32;
             this.richTextBox1.Text = "";
             // 
@@ -1282,7 +1320,7 @@
             this.toolStripStatusLabel14});
             this.statusStrip1.Location = new System.Drawing.Point(0, 740);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1540, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1582, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 28;
             this.statusStrip1.Text = "statusStrip1";
@@ -1424,9 +1462,9 @@
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.Location = new System.Drawing.Point(558, 27);
+            this.button6.Location = new System.Drawing.Point(616, 27);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(48, 72);
+            this.button6.Size = new System.Drawing.Size(47, 72);
             this.button6.TabIndex = 26;
             this.button6.Text = "GO";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1445,15 +1483,23 @@
             this.progressBar1.TabIndex = 7;
             this.progressBar1.Value = 10;
             // 
-            // Required
+            // buttonRequirementCheckAdd
             // 
-            this.Required.FalseValue = "";
-            this.Required.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Required.HeaderText = "Required";
-            this.Required.Name = "Required";
-            this.Required.TrueValue = "";
-            this.Required.Visible = false;
-            this.Required.Width = 60;
+            this.buttonRequirementCheckAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRequirementCheckAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRequirementCheckAdd.Location = new System.Drawing.Point(556, 27);
+            this.buttonRequirementCheckAdd.Name = "buttonRequirementCheckAdd";
+            this.buttonRequirementCheckAdd.Size = new System.Drawing.Size(54, 72);
+            this.buttonRequirementCheckAdd.TabIndex = 39;
+            this.buttonRequirementCheckAdd.Text = "Add Req Check";
+            this.buttonRequirementCheckAdd.UseVisualStyleBackColor = true;
+            this.buttonRequirementCheckAdd.Click += new System.EventHandler(this.buttonRequirementCheckAdd_Click);
+            // 
+            // Field
+            // 
+            this.Field.HeaderText = "Field";
+            this.Field.Name = "Field";
+            this.Field.Visible = false;
             // 
             // DataAnalysisTool
             // 
@@ -1461,8 +1507,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1540, 762);
+            this.ClientSize = new System.Drawing.Size(1582, 762);
             this.ControlBox = false;
+            this.Controls.Add(this.buttonRequirementCheckAdd);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button2);
@@ -1503,10 +1550,15 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
+            this.splitRequiredImportFormat_ImportedFile.Panel1.ResumeLayout(false);
+            this.splitRequiredImportFormat_ImportedFile.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitRequiredImportFormat_ImportedFile)).EndInit();
+            this.splitRequiredImportFormat_ImportedFile.ResumeLayout(false);
+            this.splitRequired_ImportFormat.Panel1.ResumeLayout(false);
+            this.splitRequired_ImportFormat.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitRequired_ImportFormat)).EndInit();
+            this.splitRequired_ImportFormat.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.requiredGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.importformatDataGridView)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -1630,7 +1682,7 @@
         private System.Windows.Forms.Button button6;
         public System.Windows.Forms.SplitContainer splitContainer1;
         public System.Windows.Forms.DataGridView importformatDataGridView;
-        public System.Windows.Forms.SplitContainer splitContainer3;
+        public System.Windows.Forms.SplitContainer splitRequiredImportFormat_ImportedFile;
         public System.Windows.Forms.DataGridView importedfileDataGridView;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkToolsToolStripMenuItem;
@@ -1654,7 +1706,10 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel14;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel16;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Required;
+        private System.Windows.Forms.SplitContainer splitRequired_ImportFormat;
+        private System.Windows.Forms.DataGridView requiredGridView;
+        private System.Windows.Forms.Button buttonRequirementCheckAdd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Field;
     }
 }
 

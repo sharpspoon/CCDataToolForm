@@ -1800,11 +1800,11 @@ namespace DataAnalysisTool
                                 }
                                 tw.WriteLine(".");
                                 tw.WriteLine("---DATA THAT IS USED---");
-                                foreach (DataGridViewRow dr in importformatDataGridView.Rows)
-                                {
-                                    bool checkBoxValue = Convert.ToBoolean(dr.Cells[0].Value);
-                                    //tw.WriteLine("checkbox: " + checkBoxValue);
-                                }
+                                //foreach (DataGridViewRow dr in importformatDataGridView.Rows)
+                                //{
+                                //    bool checkBoxValue = Convert.ToBoolean(dr.Cells[0].Value);
+                                //    tw.WriteLine("checkbox: " + checkBoxValue);
+                                //}
                                 tw.WriteLine("---THIS IS DATA PULLED FROM "+databaseSelect.Text+"---");
                                 foreach (var value in codeArray)
                                 {
