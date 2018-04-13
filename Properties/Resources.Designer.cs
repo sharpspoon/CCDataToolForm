@@ -563,6 +563,16 @@ namespace DataAnalysisTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Textfile_818_16x {
+            get {
+                object obj = ResourceManager.GetObject("Textfile_818_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap threecolumns_9714 {
             get {
                 object obj = ResourceManager.GetObject("threecolumns_9714", resourceCulture);

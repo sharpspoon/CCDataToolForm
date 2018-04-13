@@ -177,39 +177,39 @@ namespace DataAnalysisTool
         {
             try
             {
-
-                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "XLS | *.xls", ValidateNames = true, Multiselect = false })
+                OpenFileDialog openfile1 = new OpenFileDialog();
+                if (openfile1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    if (ofd.ShowDialog() == DialogResult.OK)
-                        importedfileDataGridView.DataSource = ReadXls(ofd.FileName);
-                    toolStripStatusLabel13.Text = ofd.FileName;
-                    toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
-                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading XLS: " + ofd.FileName + "...Done.");
+                    this.toolStripStatusLabel13.Text = openfile1.FileName;
+                }
+                {
+                    string pathconn = "Provider = Microsoft.jet.OLEDB.4.0; Data source=" + toolStripStatusLabel13.Text + ";Extended Properties=\"Excel 8.0;HDR= yes;\";";
+                    OleDbConnection conn = new OleDbConnection(pathconn);
+                    OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select * from [Sheet1$]", conn);
+                    DataTable dt = new DataTable();
+                    MyDataAdapter.Fill(dt);
+                    importedfileDataGridView.DataSource = dt;
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch { }
         }
 
         public DataTable ReadXls(string fileName)
         {
-            DataTable dt = new DataTable();
-            using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
-                Path.GetDirectoryName(fileName) + "\";Extended Properties='Excel 8.0;HDR=YES;';"))
-            {
-                using (OleDbCommand cmd = new OleDbCommand("select * from [" + fileName + "$]", cn))
-                {
-                    cn.Open();
-                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
-                    {
-                        adapter.Fill(dt);
-                    }
-                }
-            }
+            String name = "Sheet1";
+            String constr = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
+                            "C:\\Sample.xls" +
+                            ";Extended Properties='Excel 8.0;HDR=YES;';";
 
-            return dt;
+            OleDbConnection con = new OleDbConnection(constr);
+            OleDbCommand oconn = new OleDbCommand("Select * From [" + name + "$]", con);
+            con.Open();
+
+            OleDbDataAdapter sda = new OleDbDataAdapter(oconn);
+            DataTable data = new DataTable();
+            sda.Fill(data);
+            importedfileDataGridView.DataSource = data;
+            return data;
 
         }
         //------------------OPEN/SAVE XLS END------------------------------------------------------
