@@ -11,6 +11,8 @@ using System.Linq;
 using System.Collections;
 using System.Configuration;
 using System.Web;
+using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace DataAnalysisTool
 {
@@ -1802,18 +1804,18 @@ namespace DataAnalysisTool
                                 tw.WriteLine("---DATA THAT IS USED---");
 
                                 int a = 0;
-                                foreach (DataGridViewRow row in requiredGridView.Rows)
-                                {
-                                    a++;
-                                    var oCell = row.Cells["X"] as DataGridViewCheckBoxCell;
+                                //foreach (DataGridViewRow row in requiredGridView.Rows)
+                                //{
+                                //    a++;
+                                //    var oCell = row.Cells["X"] as DataGridViewCheckBoxCell;
                                     
-                                    bool bChecked = (null != oCell && null != oCell.Value && true == (bool)oCell.Value);
-                                    if (true == bChecked)
-                                    {
-                                        //var fieldCell = requiredGridView.Rows[0].Cells[a - 1].Value.ToString();
-                                        tw.WriteLine("Required Column: " + a);
-                                    }
-                                }
+                                //    bool bChecked = (null != oCell && null != oCell.Value && true == (bool)oCell.Value);
+                                //    if (true == bChecked)
+                                //    {
+                                //        //var fieldCell = requiredGridView.Rows[0].Cells[a - 1].Value.ToString();
+                                //        tw.WriteLine("Required Column: " + a);
+                                //    }
+                                //}
                                 tw.WriteLine("---THIS IS DATA PULLED FROM "+databaseSelect.Text+"---");
                                 foreach (var value in codeArray)
                                 {
@@ -1874,24 +1876,22 @@ namespace DataAnalysisTool
                                 }
 
                                 tw.WriteLine("Required Field Check");
-
-                                a = 0;
-                                foreach (DataGridViewRow row in requiredGridView.Rows)
+                                
+                                String reqItem;
+                                foreach (Object selecteditem in reqListBox.SelectedItems)
                                 {
-                                    a++;
-                                    var oCell = row.Cells["X"] as DataGridViewCheckBoxCell;
-
-                                    bool bChecked = (null != oCell && null != oCell.Value && true == (bool)oCell.Value);
-                                    if (true == bChecked)
+                                    
+                                    reqItem = selecteditem as String;
+                                    int reqCurIndex = reqListBox.Items.IndexOf(reqItem);
+                                    if (reqCurIndex >= 0)
                                     {
-                                        //var fieldCell = requiredGridView.Rows[0].Cells[a - 1].Value.ToString();
-                                        tw.WriteLine("Required Column: " + a);
+                                        tw.WriteLine("Required Column: " + reqItem);
 
                                         for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                                         {
                                             try
                                             {
-                                                var value = importedfileDataGridView.Rows[i].Cells[a-1].Value.ToString();
+                                                var value = importedfileDataGridView.Rows[i].Cells[reqCurIndex].Value.ToString();
                                                 if (string.IsNullOrWhiteSpace(value))
                                                 {
                                                     tw.WriteLine("Error at line " + (i + 1) + "." + " This column is required and you have a missing value.");
@@ -1900,30 +1900,73 @@ namespace DataAnalysisTool
                                             catch (Exception)
                                             {
                                                 // If we have reached this far, then none of the cells were empty.
-                                                tw.WriteLine("No NULL values found in column " + "'" + textBox6.Text + "'");
+                                                tw.WriteLine("No NULL values found in column " + "'" + reqItem + "'");
                                             }
                                         }
                                     }
+
+                                    
+
+
                                 }
 
 
-                                foreach (var s in iffidArray)
-                                {
-                                    a++;
 
-                                    if (fieldsThatAreCodesArrayColumnCount.Contains(a) == true)
-                                    {
-                                        tw.WriteLine("\nCOLUMN " + a + ": " + s);//this is the header line in the output file
-                                        for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)//this is the loop that spits out the errors
-                                        {
-                                            var value = importedfileDataGridView.Rows[i].Cells[a - 1].Value.ToString();
-                                            if (codeValueArray.Contains(value) == false)
-                                            {
-                                                tw.WriteLine("Error at line " + (i + 1) + "." + " This column is required and you have a missing value.");
-                                            }
-                                        }
-                                    }
-                                }
+                                //tw.WriteLine("Required Field Check");
+
+                                //a = 0;
+                                //foreach (DataGridViewRow row in requiredGridView.Rows)
+                                //{
+                                //    a++;
+                                //    var oCell = row.Cells["X"] as DataGridViewCheckBoxCell;
+
+                                //    bool bChecked = (null != oCell && null != oCell.Value && true == (bool)oCell.Value);
+                                //    if (true == bChecked)
+                                //    {
+                                //        //var fieldCell = requiredGridView.Rows[0].Cells[a - 1].Value.ToString();
+                                //        tw.WriteLine("Required Column: " + a);
+
+                                //        for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
+                                //        {
+                                //            try
+                                //            {
+                                //                var value = importedfileDataGridView.Rows[i].Cells[a-1].Value.ToString();
+                                //                if (string.IsNullOrWhiteSpace(value))
+                                //                {
+                                //                    tw.WriteLine("Error at line " + (i + 1) + "." + " This column is required and you have a missing value.");
+                                //                }
+                                //            }
+                                //            catch (Exception)
+                                //            {
+                                //                // If we have reached this far, then none of the cells were empty.
+                                //                tw.WriteLine("No NULL values found in column " + "'" + textBox6.Text + "'");
+                                //            }
+                                //        }
+                                //    }
+                                //}
+
+
+                                //foreach (var s in iffidArray)
+                                //{
+                                //    a++;
+
+                                //    if (fieldsThatAreCodesArrayColumnCount.Contains(a) == true)
+                                //    {
+                                //        tw.WriteLine("\nCOLUMN " + a + ": " + s);//this is the header line in the output file
+                                //        for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)//this is the loop that spits out the errors
+                                //        {
+                                //            var value = importedfileDataGridView.Rows[i].Cells[a - 1].Value.ToString();
+                                //            if (codeValueArray.Contains(value) == false)
+                                //            {
+                                //                tw.WriteLine("Error at line " + (i + 1) + "." + " This column is required and you have a missing value.");
+                                //            }
+                                //        }
+                                //    }
+                                //}
+
+
+
+
 
 
                                 tw.WriteLine("Max Length Check");
@@ -1982,6 +2025,7 @@ namespace DataAnalysisTool
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files");
                 progressBar1.MarqueeAnimationSpeed = 0;
                 progressBar1.Refresh();
+                Process.Start(path);
             }
         }
     }

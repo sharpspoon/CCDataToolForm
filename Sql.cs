@@ -51,6 +51,7 @@ namespace DataAnalysisTool
 
         private void databaseSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " SELECT table_name AS name FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' order by TABLE_NAME", conn);
@@ -72,10 +73,12 @@ namespace DataAnalysisTool
             catch { return; }
 
             conn.Close();
+            progressBar1.MarqueeAnimationSpeed = 0;
         }
 
         private void tableSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             string ID = databaseSelect.SelectedValue.ToString();
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
@@ -105,10 +108,12 @@ namespace DataAnalysisTool
             catch { return; }
 
             conn.Close();
+            progressBar1.MarqueeAnimationSpeed = 0;
         }
 
         private void ifSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
 
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
@@ -121,6 +126,16 @@ namespace DataAnalysisTool
                 var ds = new DataSet();
                 dataAdapter.Fill(ds);
                 importformatDataGridView.DataSource = ds.Tables[0];
+
+                var iffidArray2 = importformatDataGridView.Rows.Cast<DataGridViewRow>()
+                    .Select(x => x.Cells[5].Value.ToString().Trim()).ToArray();
+
+                reqListBox.Items.Clear();
+
+                for (int i = 0; i < iffidArray2.Length; i++)
+                {
+                    reqListBox.Items.Add(iffidArray2[i].ToString());
+                }
 
 
 
@@ -137,42 +152,45 @@ namespace DataAnalysisTool
             catch { return; }
 
             conn.Close();
+            progressBar1.MarqueeAnimationSpeed = 0;
 
 
         }
 
-        private void buttonRequirementCheckAdd_Click(object sender, EventArgs e)
-        {
-            //this.requiredGridView.Columns["Required"].Visible = true;
-            this.requiredGridView.Columns["Field"].Visible = true;
-            var iffidArray2 = importformatDataGridView.Rows.Cast<DataGridViewRow>()
-                .Select(x => x.Cells[5].Value.ToString().Trim()).ToArray();
+        //private void buttonRequirementCheckAdd_Click(object sender, EventArgs e)
+        //{
+        //    progressBar1.MarqueeAnimationSpeed = 1;
+        //    //this.requiredGridView.Columns["Required"].Visible = true;
+        //    this.requiredGridView.Columns["Field"].Visible = true;
+        //    var iffidArray2 = importformatDataGridView.Rows.Cast<DataGridViewRow>()
+        //        .Select(x => x.Cells[5].Value.ToString().Trim()).ToArray();
 
 
-            DataGridViewCheckBoxColumn CBColumn = new DataGridViewCheckBoxColumn();
-            CBColumn.HeaderText = "ColumnHeader";
-            CBColumn.FalseValue = "0";
-            CBColumn.TrueValue = "1";
+        //    DataGridViewCheckBoxColumn CBColumn = new DataGridViewCheckBoxColumn();
+        //    CBColumn.HeaderText = "ColumnHeader";
+        //    CBColumn.FalseValue = "0";
+        //    CBColumn.TrueValue = "1";
             
-            foreach (var s in iffidArray2)
-            {
-                requiredGridView.Rows.Add(s);
-            }
-            DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
-            checkColumn.Name = "X";
-            checkColumn.HeaderText = "X";
-            checkColumn.Width = 50;
-            checkColumn.ReadOnly = false;
-            checkColumn.FillWeight = 10; //if the datagridview is resized (on form resize) the checkbox won't take up too much; value is relative to the other columns' fill values
-            requiredGridView.Columns.Add(checkColumn);
+        //    foreach (var s in iffidArray2)
+        //    {
+        //        requiredGridView.Rows.Add(s);
+        //    }
+        //    DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
+        //    checkColumn.Name = "X";
+        //    checkColumn.HeaderText = "X";
+        //    checkColumn.Width = 50;
+        //    checkColumn.ReadOnly = false;
+        //    checkColumn.FillWeight = 10; //if the datagridview is resized (on form resize) the checkbox won't take up too much; value is relative to the other columns' fill values
+        //    requiredGridView.Columns.Add(checkColumn);
+        //    progressBar1.MarqueeAnimationSpeed = 0;
+        //    reqListBox.Items.Clear();
 
+        //    for (int i = 0; i < iffidArray2.Length; i++)
+        //    {
+        //        reqListBox.Items.Add(iffidArray2[i].ToString());
+        //    }
 
-            //foreach (var s in iffidArray2)
-            //{
-            //    requiredGridView.Columns.Insert(0, CBColumn);
-            //}
-
-        }
+        //}
 
         //------------------SQL LOADER END------------------------------------------------------
 

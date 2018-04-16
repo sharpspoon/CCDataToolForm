@@ -332,18 +332,24 @@ namespace DataAnalysisTool
 
         private void ssms_Click(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             Ssms ssms = new Ssms();
             while (Application.OpenForms.Count > 1)
             {
                 Application.OpenForms[Application.OpenForms.Count - 1].Close();
             }
             ssms.ShowDialog();
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
         }
 
         //------------------CC LOGO CLICK START------------------------------------------------------
         private void ccLogo_Click1(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             System.Diagnostics.Process.Start("https://calliduscloud.com");
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
         }
 
 
@@ -352,7 +358,10 @@ namespace DataAnalysisTool
         //------------------CC LOG OPEN START------------------------------------------------------
         private void cCDataToolLogToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             Process.Start(Application.UserAppDataPath + @"\Logs");
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
         }
         //------------------CC LOG OPEN END------------------------------------------------------
 
@@ -574,6 +583,11 @@ namespace DataAnalysisTool
             {
                 this.Close();
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files");
         }
 
 

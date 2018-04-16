@@ -28,7 +28,9 @@ namespace DataAnalysisTool
         {
         }
         private void button8_Click(object sender, EventArgs e)
+
         {
+            //progressBar1.MarqueeAnimationSpeed = 1;
             var processdir = Environment.CurrentDirectory;
             System.IO.Directory.CreateDirectory(processdir + @"\SSMS");
             string path = processdir + @"\SSMS\LaunchWithACTEKSOFT.cmd";
@@ -41,7 +43,9 @@ namespace DataAnalysisTool
                 System.Diagnostics.Process.Start(processdir + @"\SSMS\LaunchWithACTEKSOFT.cmd");
                 this.Close();
             }
+            //progressBar1.MarqueeAnimationSpeed = 0;
         }
+
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
