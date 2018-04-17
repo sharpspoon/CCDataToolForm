@@ -369,6 +369,7 @@ namespace DataAnalysisTool
         Bitmap bitmap;
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             if (importedfileDataGridView.Rows.Count == 0 || importedfileDataGridView.Rows == null)
             {
                 MessageBox.Show("No data to print", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -391,6 +392,8 @@ namespace DataAnalysisTool
                 printPreviewDialog1.PrintPreviewControl.Zoom = 1;
                 printPreviewDialog1.ShowDialog();
             }
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
         }
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -402,6 +405,7 @@ namespace DataAnalysisTool
         //------------------OPEN/SAVE CSV START------------------------------------------------------
         private void menu_Open_Csv_Click(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             try
             {
                 using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "CSV | *.csv", ValidateNames = true, Multiselect = false })
@@ -423,6 +427,8 @@ namespace DataAnalysisTool
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
         }
         public DataTable ReadCsv(string fileName)
         {
@@ -443,6 +449,7 @@ namespace DataAnalysisTool
         }
         protected void menu_Save_Csv_Click(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             saveFileDialog1.Filter = "CSV|*.csv";
             if (this.saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -480,12 +487,15 @@ namespace DataAnalysisTool
                 // closes the file
                 sw.Close();
             }
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
         }
         //------------------OPEN/SAVE CSV END------------------------------------------------------
 
         //------------------OPEN/SAVE XML START------------------------------------------------------
         private void menu_Open_Xml_Click(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             try
             {
                 DataSet dataSet = new DataSet();
@@ -507,6 +517,8 @@ namespace DataAnalysisTool
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
         }
         private void menu_Save_Xml_Click(object sender, EventArgs e)
         {
@@ -522,6 +534,7 @@ namespace DataAnalysisTool
         //------------------EXIT APP ACTION START------------------------------------------------------
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 //MessageBox.Show(Application.UserAppDataPath);
@@ -564,6 +577,8 @@ namespace DataAnalysisTool
             {
                 e.Cancel = true;
             }
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
         }
 
         private void toolStripStatusLabel15_Click(object sender, EventArgs e)
@@ -592,6 +607,7 @@ namespace DataAnalysisTool
 
         private void tXTToolStripMenuItemComma_Click(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             try
             {
                 using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "TXT | *.txt", ValidateNames = true, Multiselect = false })
@@ -613,6 +629,8 @@ namespace DataAnalysisTool
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
         }
 
         public DataTable ReadTxtComma(string fileName)
@@ -674,6 +692,304 @@ namespace DataAnalysisTool
                 }
             }
             return dt;
+        }
+
+        private void dateComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //day check
+            if (dateComboBox1.Text == "d" || dateComboBox1.Text == "dd" || dateComboBox1.Text == "ddd" || dateComboBox1.Text == "dddd")
+            {
+                if (dateComboBox2.Text == "d" || dateComboBox3.Text == "d")
+                {
+                    MessageBox.Show("Cannot have more than one 'day' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox1.Text = null;
+                    return;
+                }
+                if (dateComboBox2.Text == "dd" || dateComboBox3.Text == "dd")
+                {
+                    MessageBox.Show("Cannot have more than one 'day' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox1.Text = null;
+                    return;
+                }
+                if (dateComboBox2.Text == "ddd" || dateComboBox3.Text == "ddd")
+                {
+                    MessageBox.Show("Cannot have more than one 'day' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox1.Text = null;
+                    return;
+                }
+                if (dateComboBox2.Text == "dddd" || dateComboBox3.Text == "dddd")
+                {
+                    MessageBox.Show("Cannot have more than one 'day' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox1.Text = null;
+                    return;
+                }
+            }
+
+            //month check
+            if (dateComboBox1.Text == "m" || dateComboBox1.Text == "mm" || dateComboBox1.Text == "M" || dateComboBox1.Text == "MM" || dateComboBox1.Text == "MMM" || dateComboBox1.Text == "MMM" || dateComboBox1.Text == "MMMM")
+            {
+                if (dateComboBox2.Text == "m" || dateComboBox3.Text == "m")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox1.Text = null;
+                    return;
+                }
+                if (dateComboBox2.Text == "mm" || dateComboBox3.Text == "mm")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox1.Text = null;
+                    return;
+                }
+                if (dateComboBox2.Text == "M" || dateComboBox3.Text == "M")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox1.Text = null;
+                    return;
+                }
+                if (dateComboBox2.Text == "MM" || dateComboBox3.Text == "MM")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox1.Text = null;
+                    return;
+                }
+                if (dateComboBox2.Text == "MMM" || dateComboBox3.Text == "MMM")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox1.Text = null;
+                    return;
+                }
+                if (dateComboBox2.Text == "MMMM" || dateComboBox3.Text == "MMMM")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox1.Text = null;
+                    return;
+                }
+            }
+
+            //year check
+            if (dateComboBox1.Text == "y" || dateComboBox1.Text == "yy" || dateComboBox1.Text == "yyy")
+            {
+                if (dateComboBox2.Text == "y" || dateComboBox3.Text == "y")
+                {
+                    MessageBox.Show("Cannot have more than one 'year' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox1.Text = null;
+                    return;
+                }
+                if (dateComboBox2.Text == "yy" || dateComboBox3.Text == "yy")
+                {
+                    MessageBox.Show("Cannot have more than one 'year' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox1.Text = null;
+                    return;
+                }
+                if (dateComboBox2.Text == "yyy" || dateComboBox3.Text == "yyy")
+                {
+                    MessageBox.Show("Cannot have more than one 'year' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox1.Text = null;
+                    return;
+                }
+            }
+
+
+            dateFormat.Text = "Date Format: "+dateComboBox1.Text+ dateComboBoxSeperator.Text + dateComboBox2.Text+ dateComboBoxSeperator.Text+dateComboBox3.Text;
+        }
+
+        private void dateComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //day check
+            if (dateComboBox2.Text == "d" || dateComboBox2.Text == "dd" || dateComboBox2.Text == "ddd" || dateComboBox2.Text == "dddd")
+            {
+                if (dateComboBox1.Text == "d" || dateComboBox3.Text == "d")
+                {
+                    MessageBox.Show("Cannot have more than one 'day' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox2.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "dd" || dateComboBox3.Text == "dd")
+                {
+                    MessageBox.Show("Cannot have more than one 'day' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox2.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "ddd" || dateComboBox3.Text == "ddd")
+                {
+                    MessageBox.Show("Cannot have more than one 'day' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox2.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "dddd" || dateComboBox3.Text == "dddd")
+                {
+                    MessageBox.Show("Cannot have more than one 'day' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox1.Text = null;
+                    return;
+                }
+            }
+
+            //month check
+            if (dateComboBox2.Text == "m" || dateComboBox2.Text == "mm" || dateComboBox2.Text == "M" || dateComboBox2.Text == "MM" || dateComboBox2.Text == "MMM" || dateComboBox2.Text == "MMM" || dateComboBox2.Text == "MMMM")
+            {
+                if (dateComboBox1.Text == "m" || dateComboBox3.Text == "m")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox2.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "mm" || dateComboBox3.Text == "mm")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox2.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "M" || dateComboBox3.Text == "M")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox2.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "MM" || dateComboBox3.Text == "MM")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox2.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "MMM" || dateComboBox3.Text == "MMM")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox2.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "MMMM" || dateComboBox3.Text == "MMMM")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox2.Text = null;
+                    return;
+                }
+            }
+
+            //year check
+            if (dateComboBox2.Text == "y" || dateComboBox2.Text == "yy" || dateComboBox2.Text == "yyy")
+            {
+                if (dateComboBox1.Text == "y" || dateComboBox3.Text == "y")
+                {
+                    MessageBox.Show("Cannot have more than one 'year' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox2.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "yy" || dateComboBox3.Text == "yy")
+                {
+                    MessageBox.Show("Cannot have more than one 'year' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox2.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "yyy" || dateComboBox3.Text == "yyy")
+                {
+                    MessageBox.Show("Cannot have more than one 'year' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox2.Text = null;
+                    return;
+                }
+            }
+            dateFormat.Text = "Date Format: " + dateComboBox1.Text + dateComboBoxSeperator.Text + dateComboBox2.Text + dateComboBoxSeperator.Text + dateComboBox3.Text;
+        }
+
+        private void dateComboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //day check
+            if (dateComboBox3.Text == "d" || dateComboBox3.Text == "dd" || dateComboBox3.Text == "ddd" || dateComboBox3.Text == "dddd")
+            {
+                if (dateComboBox1.Text == "d" || dateComboBox2.Text == "d")
+                {
+                    MessageBox.Show("Cannot have more than one 'day' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox3.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "dd" || dateComboBox2.Text == "dd")
+                {
+                    MessageBox.Show("Cannot have more than one 'day' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox3.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "ddd" || dateComboBox2.Text == "ddd")
+                {
+                    MessageBox.Show("Cannot have more than one 'day' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox3.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "dddd" || dateComboBox2.Text == "dddd")
+                {
+                    MessageBox.Show("Cannot have more than one 'day' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox3.Text = null;
+                    return;
+                }
+            }
+
+            //month check
+            if (dateComboBox3.Text == "m" || dateComboBox3.Text == "mm" || dateComboBox3.Text == "M" || dateComboBox3.Text == "MM" || dateComboBox3.Text == "MMM" || dateComboBox3.Text == "MMM" || dateComboBox3.Text == "MMMM")
+            {
+                if (dateComboBox1.Text == "m" || dateComboBox2.Text == "m")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox3.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "mm" || dateComboBox2.Text == "mm")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox3.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "M" || dateComboBox2.Text == "M")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox3.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "MM" || dateComboBox2.Text == "MM")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox3.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "MMM" || dateComboBox2.Text == "MMM")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox3.Text = null;
+                    return;
+                }
+                if (dateComboBox1.Text == "MMMM" || dateComboBox2.Text == "MMMM")
+                {
+                    MessageBox.Show("Cannot have more than one 'month' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox3.Text = null;
+                    return;
+                }
+            }
+
+            //year check
+            if (dateComboBox3.Text == "y" || dateComboBox3.Text == "yy" || dateComboBox3.Text == "yyy")
+            {
+                if (dateComboBox2.Text == "y" || dateComboBox1.Text == "y")
+                {
+                    MessageBox.Show("Cannot have more than one 'year' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox3.Text = null;
+                    return;
+                }
+                if (dateComboBox2.Text == "yy" || dateComboBox1.Text == "yy")
+                {
+                    MessageBox.Show("Cannot have more than one 'year' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox3.Text = null;
+                    return;
+                }
+                if (dateComboBox2.Text == "yyy" || dateComboBox1.Text == "yyy")
+                {
+                    MessageBox.Show("Cannot have more than one 'year' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    dateComboBox3.Text = null;
+                    return;
+                }
+            }
+            dateFormat.Text = "Date Format: " + dateComboBox1.Text + dateComboBoxSeperator.Text + dateComboBox2.Text + dateComboBoxSeperator.Text + dateComboBox3.Text;
+        }
+
+        private void dateComboBoxSeperator_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dateFormat.Text = "Date Format: " + dateComboBox1.Text + dateComboBoxSeperator.Text + dateComboBox2.Text + dateComboBoxSeperator.Text + dateComboBox3.Text;
         }
 
 

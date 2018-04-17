@@ -161,13 +161,16 @@
             this.button6 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateFormat = new System.Windows.Forms.Label();
+            this.dateComboBoxSeperator = new System.Windows.Forms.ComboBox();
+            this.dateComboBox3 = new System.Windows.Forms.ComboBox();
+            this.dateComboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateComboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.reqListBox = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -320,7 +323,7 @@
             this.iFLogToolStripMenuItem});
             this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.openToolStripMenuItem.Text = "Open...";
             // 
             // cSVToolStripMenuItem
@@ -395,7 +398,7 @@
             this.xLSToolStripMenuItem1});
             this.saveAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveAsToolStripMenuItem.Image")));
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
             // 
             // cSVToolStripMenuItem1
@@ -426,7 +429,7 @@
             // 
             this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -434,7 +437,7 @@
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
             // 
@@ -1518,6 +1521,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage3.Controls.Add(this.button10);
             this.tabPage3.Controls.Add(this.button9);
             this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.button8);
@@ -1528,6 +1532,23 @@
             this.tabPage3.Size = new System.Drawing.Size(970, 92);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Shortcuts";
+            this.tabPage3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button10.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Image = global::DataAnalysisTool.Properties.Resources.UserDefinedDataType_8271_32x;
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button10.Location = new System.Drawing.Point(178, 11);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(54, 72);
+            this.button10.TabIndex = 42;
+            this.button10.Text = "Open CSV";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.menu_Open_Csv_Click);
             // 
             // button9
             // 
@@ -1537,7 +1558,7 @@
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(186, 11);
+            this.button9.Location = new System.Drawing.Point(910, 14);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(54, 72);
             this.button9.TabIndex = 41;
@@ -1554,7 +1575,7 @@
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(126, 11);
+            this.button7.Location = new System.Drawing.Point(850, 14);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(54, 72);
             this.button7.TabIndex = 40;
@@ -1578,12 +1599,15 @@
             this.tabPage1.Size = new System.Drawing.Size(970, 92);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Import Format";
+            this.tabPage1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.comboBox4);
-            this.groupBox6.Controls.Add(this.comboBox3);
-            this.groupBox6.Controls.Add(this.comboBox2);
+            this.groupBox6.Controls.Add(this.dateFormat);
+            this.groupBox6.Controls.Add(this.dateComboBoxSeperator);
+            this.groupBox6.Controls.Add(this.dateComboBox3);
+            this.groupBox6.Controls.Add(this.dateComboBox2);
+            this.groupBox6.Controls.Add(this.dateComboBox1);
             this.groupBox6.Location = new System.Drawing.Point(571, 6);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(287, 80);
@@ -1591,10 +1615,39 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Select Date Format and Date Columns";
             // 
-            // comboBox4
+            // dateFormat
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.dateFormat.AutoSize = true;
+            this.dateFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFormat.Location = new System.Drawing.Point(6, 43);
+            this.dateFormat.Name = "dateFormat";
+            this.dateFormat.Size = new System.Drawing.Size(103, 20);
+            this.dateFormat.TabIndex = 42;
+            this.dateFormat.Text = "Date Format:";
+            // 
+            // dateComboBoxSeperator
+            // 
+            this.dateComboBoxSeperator.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dateComboBoxSeperator.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dateComboBoxSeperator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dateComboBoxSeperator.FormattingEnabled = true;
+            this.dateComboBoxSeperator.Items.AddRange(new object[] {
+            "",
+            "/",
+            "-"});
+            this.dateComboBoxSeperator.Location = new System.Drawing.Point(213, 19);
+            this.dateComboBoxSeperator.Name = "dateComboBoxSeperator";
+            this.dateComboBoxSeperator.Size = new System.Drawing.Size(63, 21);
+            this.dateComboBoxSeperator.TabIndex = 43;
+            this.dateComboBoxSeperator.SelectedIndexChanged += new System.EventHandler(this.dateComboBoxSeperator_SelectedIndexChanged);
+            // 
+            // dateComboBox3
+            // 
+            this.dateComboBox3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dateComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dateComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dateComboBox3.FormattingEnabled = true;
+            this.dateComboBox3.Items.AddRange(new object[] {
             "d",
             "dd",
             "ddd",
@@ -1608,15 +1661,19 @@
             "y",
             "yy",
             "yyyy"});
-            this.comboBox4.Location = new System.Drawing.Point(101, 19);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(72, 21);
-            this.comboBox4.TabIndex = 42;
+            this.dateComboBox3.Location = new System.Drawing.Point(144, 19);
+            this.dateComboBox3.Name = "dateComboBox3";
+            this.dateComboBox3.Size = new System.Drawing.Size(63, 21);
+            this.dateComboBox3.TabIndex = 42;
+            this.dateComboBox3.SelectedIndexChanged += new System.EventHandler(this.dateComboBox3_SelectedIndexChanged);
             // 
-            // comboBox3
+            // dateComboBox2
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.dateComboBox2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dateComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dateComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dateComboBox2.FormattingEnabled = true;
+            this.dateComboBox2.Items.AddRange(new object[] {
             "d",
             "dd",
             "ddd",
@@ -1630,15 +1687,19 @@
             "y",
             "yy",
             "yyyy"});
-            this.comboBox3.Location = new System.Drawing.Point(51, 19);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(44, 21);
-            this.comboBox3.TabIndex = 41;
+            this.dateComboBox2.Location = new System.Drawing.Point(75, 19);
+            this.dateComboBox2.Name = "dateComboBox2";
+            this.dateComboBox2.Size = new System.Drawing.Size(63, 21);
+            this.dateComboBox2.TabIndex = 41;
+            this.dateComboBox2.SelectedIndexChanged += new System.EventHandler(this.dateComboBox2_SelectedIndexChanged);
             // 
-            // comboBox2
+            // dateComboBox1
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.dateComboBox1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dateComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dateComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dateComboBox1.FormattingEnabled = true;
+            this.dateComboBox1.Items.AddRange(new object[] {
             "d",
             "dd",
             "ddd",
@@ -1652,10 +1713,11 @@
             "y",
             "yy",
             "yyyy"});
-            this.comboBox2.Location = new System.Drawing.Point(6, 19);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(39, 21);
-            this.comboBox2.TabIndex = 40;
+            this.dateComboBox1.Location = new System.Drawing.Point(6, 19);
+            this.dateComboBox1.Name = "dateComboBox1";
+            this.dateComboBox1.Size = new System.Drawing.Size(63, 21);
+            this.dateComboBox1.TabIndex = 40;
+            this.dateComboBox1.SelectedIndexChanged += new System.EventHandler(this.dateComboBox1_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -1689,6 +1751,7 @@
             this.tabPage2.Size = new System.Drawing.Size(970, 92);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Check Tools";
+            this.tabPage2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // progressBar1
             // 
@@ -1776,6 +1839,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1908,15 +1972,18 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.ToolStripMenuItem iFLogToolStripMenuItem;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox dateComboBox1;
         private System.Windows.Forms.ListBox reqListBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox dateComboBox3;
+        private System.Windows.Forms.ComboBox dateComboBox2;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ToolStripMenuItem commaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pipeToolStripMenuItem;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.ComboBox dateComboBoxSeperator;
+        private System.Windows.Forms.Label dateFormat;
     }
 }
 

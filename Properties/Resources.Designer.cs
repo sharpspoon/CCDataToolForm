@@ -613,6 +613,16 @@ namespace DataAnalysisTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap UserDefinedDataType_8271_32x {
+            get {
+                object obj = ResourceManager.GetObject("UserDefinedDataType_8271_32x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap XSDSchema_ElementIcon_16x16 {
             get {
                 object obj = ResourceManager.GetObject("XSDSchema_ElementIcon_16x16", resourceCulture);
