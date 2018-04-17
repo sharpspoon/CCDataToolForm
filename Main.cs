@@ -590,6 +590,94 @@ namespace DataAnalysisTool
             Process.Start(@"C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files");
         }
 
+        private void tXTToolStripMenuItemComma_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "TXT | *.txt", ValidateNames = true, Multiselect = false })
+                {
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                        importedfileDataGridView.DataSource = ReadTxtComma(ofd.FileName);
+                    toolStripStatusLabel13.Text = ofd.FileName;
+                    toolStripStatusLabel13.Visible = true;
+                    toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
+                    toolStripStatusLabel2.Visible = true;
+                    toolStripStatusLabel3.Visible = true;
+                    toolStripStatusLabel4.Visible = true;
+                    toolStripStatusLabel5.Visible = true;
+                    toolStripStatusLabel12.Visible = true;
+                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading TXT: " + ofd.FileName + "...Done.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public DataTable ReadTxtComma(string fileName)
+        {
+            DataTable dt = new DataTable("Data");
+            using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
+                Path.GetDirectoryName(fileName) + "\";Extended Properties='text;HDR=yes;FMT=Delimited(,)';"))
+            {
+                using (OleDbCommand cmd = new OleDbCommand(string.Format("select * from [{0}]", new FileInfo(fileName).Name), cn))
+                {
+                    cn.Open();
+                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+            return dt;
+        }
+
+        private void pipeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "TXT | *.txt", ValidateNames = true, Multiselect = false })
+                {
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                        importedfileDataGridView.DataSource = ReadTxtPipe(ofd.FileName);
+                    toolStripStatusLabel13.Text = ofd.FileName;
+                    toolStripStatusLabel13.Visible = true;
+                    toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
+                    toolStripStatusLabel2.Visible = true;
+                    toolStripStatusLabel3.Visible = true;
+                    toolStripStatusLabel4.Visible = true;
+                    toolStripStatusLabel5.Visible = true;
+                    toolStripStatusLabel12.Visible = true;
+                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading TXT: " + ofd.FileName + "...Done.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public DataTable ReadTxtPipe(string fileName)
+        {
+            DataTable dt = new DataTable("Data");
+            using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
+                Path.GetDirectoryName(fileName) + "\";Extended Properties='text;HDR=yes;FMT=Delimited(|)';"))
+            {
+                using (OleDbCommand cmd = new OleDbCommand(string.Format("select * from [{0}]", new FileInfo(fileName).Name), cn))
+                {
+                    cn.Open();
+                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+            return dt;
+        }
+
+
+
 
         //------------------EXIT APP ACTION END------------------------------------------------------
 
