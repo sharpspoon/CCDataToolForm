@@ -767,7 +767,7 @@ namespace DataAnalysisTool
             }
 
             //year check
-            if (dateComboBox1.Text == "y" || dateComboBox1.Text == "yy" || dateComboBox1.Text == "yyy")
+            if (dateComboBox1.Text == "y" || dateComboBox1.Text == "yy" || dateComboBox1.Text == "yyyy")
             {
                 if (dateComboBox2.Text == "y" || dateComboBox3.Text == "y")
                 {
@@ -781,7 +781,7 @@ namespace DataAnalysisTool
                     dateComboBox1.Text = null;
                     return;
                 }
-                if (dateComboBox2.Text == "yyy" || dateComboBox3.Text == "yyy")
+                if (dateComboBox2.Text == "yyyy" || dateComboBox3.Text == "yyyy")
                 {
                     MessageBox.Show("Cannot have more than one 'year' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     dateComboBox1.Text = null;
@@ -866,7 +866,7 @@ namespace DataAnalysisTool
             }
 
             //year check
-            if (dateComboBox2.Text == "y" || dateComboBox2.Text == "yy" || dateComboBox2.Text == "yyy")
+            if (dateComboBox2.Text == "y" || dateComboBox2.Text == "yy" || dateComboBox2.Text == "yyyy")
             {
                 if (dateComboBox1.Text == "y" || dateComboBox3.Text == "y")
                 {
@@ -880,7 +880,7 @@ namespace DataAnalysisTool
                     dateComboBox2.Text = null;
                     return;
                 }
-                if (dateComboBox1.Text == "yyy" || dateComboBox3.Text == "yyy")
+                if (dateComboBox1.Text == "yyyy" || dateComboBox3.Text == "yyyy")
                 {
                     MessageBox.Show("Cannot have more than one 'year' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     dateComboBox2.Text = null;
@@ -963,7 +963,7 @@ namespace DataAnalysisTool
             }
 
             //year check
-            if (dateComboBox3.Text == "y" || dateComboBox3.Text == "yy" || dateComboBox3.Text == "yyy")
+            if (dateComboBox3.Text == "y" || dateComboBox3.Text == "yy" || dateComboBox3.Text == "yyyy")
             {
                 if (dateComboBox2.Text == "y" || dateComboBox1.Text == "y")
                 {
@@ -977,7 +977,7 @@ namespace DataAnalysisTool
                     dateComboBox3.Text = null;
                     return;
                 }
-                if (dateComboBox2.Text == "yyy" || dateComboBox1.Text == "yyy")
+                if (dateComboBox2.Text == "yyyy" || dateComboBox1.Text == "yyyy")
                 {
                     MessageBox.Show("Cannot have more than one 'year' type", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     dateComboBox3.Text = null;

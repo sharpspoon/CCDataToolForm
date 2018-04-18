@@ -253,6 +253,16 @@ namespace DataAnalysisTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DeploymentDiagram_SubsystemMapper__11298_32x {
+            get {
+                object obj = ResourceManager.GetObject("DeploymentDiagram(SubsystemMapper)_11298_32x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap error_red_32x32 {
             get {
                 object obj = ResourceManager.GetObject("error_red_32x32", resourceCulture);
@@ -573,6 +583,16 @@ namespace DataAnalysisTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Textfile_818_32x {
+            get {
+                object obj = ResourceManager.GetObject("Textfile_818_32x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap threecolumns_9714 {
             get {
                 object obj = ResourceManager.GetObject("threecolumns_9714", resourceCulture);
@@ -616,6 +636,16 @@ namespace DataAnalysisTool.Properties {
         internal static System.Drawing.Bitmap UserDefinedDataType_8271_32x {
             get {
                 object obj = ResourceManager.GetObject("UserDefinedDataType_8271_32x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XMLFile_828_32x {
+            get {
+                object obj = ResourceManager.GetObject("XMLFile_828_32x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

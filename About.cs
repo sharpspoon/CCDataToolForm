@@ -66,7 +66,7 @@ namespace DataAnalysisTool
                 {
                     return "";
                 }
-                return ((AssemblyDescriptionAttribute)attributes[0]).Description+"For enhancement requests, please email roward@calliduscloud.com";
+                return ((AssemblyDescriptionAttribute)attributes[0]).Description+ "For enhancement requests:\r\nRobin Ward: roward@calliduscloud.com\r\nAnuradha Kotwal:  akotwal@calliduscloud.com";
             }
         }
 

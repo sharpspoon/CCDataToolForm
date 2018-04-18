@@ -137,6 +137,13 @@ namespace DataAnalysisTool
                     reqListBox.Items.Add(iffidArray2[i].ToString());
                 }
 
+                dateListBox.Items.Clear();
+
+                for (int i = 0; i < iffidArray2.Length; i++)
+                {
+                    dateListBox.Items.Add(iffidArray2[i].ToString());
+                }
+
 
 
 
