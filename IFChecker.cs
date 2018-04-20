@@ -196,7 +196,7 @@ namespace DataAnalysisTool
                                         tw.WriteLine("Date Column: " + dateItem);
                                     }
                                 }
-                                tw.WriteLine("Date Format: " + dateFormat.Text);
+                                tw.WriteLine(dateFormat.Text);
                                 tw.WriteLine("");
 
                                 int a = 0;
@@ -272,7 +272,7 @@ namespace DataAnalysisTool
                                         for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)//this is the loop that spits out the errors
                                         {
                                             var value = importedfileDataGridView.Rows[i].Cells[a - 1].Value.ToString();
-                                            if (codeValueArray.Contains(value) == false)
+                                            if (codeValueArray.Contains(value) == false && value != "")
                                             {
                                                 tw.WriteLine("Error at line " + (i + 1) + "." + " The value: '" + value + "' from your imported file does not exist in the database.");
                                             }
@@ -315,20 +315,39 @@ namespace DataAnalysisTool
                                 foreach (Object selecteditem in dateListBox.SelectedItems)
                                 {
                                     dateItem = selecteditem as String;
-                                    int dateFormatLength = dateFormat.Text.Length;
                                     int dateCurIndex = dateListBox.Items.IndexOf(dateItem);
+                                    if (dateComboBox1.Text == "" && dateComboBox2.Text=="" && dateComboBox3.Text=="")
+                                    {
+                                        MessageBox.Show("Your date format is NULL. Please create a date format using the dropdown menus.");
+                                        return;
+                                    }
+                                    string dateFormat2 = dateFormat.Text.Remove(0, 13);
+
+
+
+                                    int dateFormatLength = dateFormat2.Length;
+                                    MessageBox.Show("dateFormat2=" + dateFormat2+ "dateFormatLength="+ dateFormatLength);
                                     if (dateCurIndex >= 0)
                                     {
+                                        if (dateFormatLength == 0) {
+                                            MessageBox.Show("Your date format cannot be empty if you are specifying a date column", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                            return;
+                                        }
+
                                         tw.WriteLine("Date Column: " + dateItem);
 
                                         for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                                         {
                                             var value = importedfileDataGridView.Rows[i].Cells[dateCurIndex].Value.ToString();
                                             int valueLength = value.Length;
-                                            if ((dateFormatLength-13) != valueLength)
+                                            //int year = int.Parse(value.Substring(0, 4));
+                                            //int month = int.Parse(value.Substring(4, 2));
+                                            //int day = int.Parse(value.Substring(6, 2));
+                                            //tw.WriteLine("dateFormatLength= " + dateFormatLength + "valueLength= " + valueLength + "value= " + value);
+                                            if ((dateFormatLength) != valueLength)
                                             {
-                                                tw.WriteLine("dateFormatLength= "+ dateFormatLength+ "valueLength= "+ valueLength);
-                                                tw.WriteLine("Error at line " + (i + 1) + "." + " Your date length does not match the length of the specified "+dateFormat.Text+".");
+                                                
+                                                tw.WriteLine("Error at line " + (i + 1) + "." + " Your date format does not match your specified "+dateFormat.Text+".");
                                             }
                                         }
                                     }

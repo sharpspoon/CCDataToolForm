@@ -253,9 +253,9 @@ namespace DataAnalysisTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DeploymentDiagram_SubsystemMapper__11298_32x {
+        internal static System.Drawing.Bitmap DeploymentDiagramSubsystemMapper_11298_32x {
             get {
-                object obj = ResourceManager.GetObject("DeploymentDiagram(SubsystemMapper)_11298_32x", resourceCulture);
+                object obj = ResourceManager.GetObject("DeploymentDiagramSubsystemMapper_11298_32x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

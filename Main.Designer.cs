@@ -1585,7 +1585,7 @@
             this.button11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button11.Cursor = System.Windows.Forms.Cursors.Default;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Image = global::DataAnalysisTool.Properties.Resources.DeploymentDiagram_SubsystemMapper__11298_32x;
+            this.button11.Image = global::DataAnalysisTool.Properties.Resources.DeploymentDiagramSubsystemMapper_11298_32x;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button11.Location = new System.Drawing.Point(318, 11);
             this.button11.Name = "button11";

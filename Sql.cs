@@ -131,17 +131,20 @@ namespace DataAnalysisTool
                     .Select(x => x.Cells[5].Value.ToString().Trim()).ToArray();
 
                 reqListBox.Items.Clear();
-
+                int a = 0;
                 for (int i = 0; i < iffidArray2.Length; i++)
                 {
-                    reqListBox.Items.Add(iffidArray2[i].ToString());
+                    a++;
+                    reqListBox.Items.Add(a + ". " + iffidArray2[i].ToString());
                 }
 
                 dateListBox.Items.Clear();
 
+                a = 0;
                 for (int i = 0; i < iffidArray2.Length; i++)
                 {
-                    dateListBox.Items.Add(iffidArray2[i].ToString());
+                    a++;
+                    dateListBox.Items.Add(a+". "+iffidArray2[i].ToString());
                 }
 
 

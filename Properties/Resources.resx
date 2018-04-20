@@ -298,7 +298,7 @@
   <data name="Copy_6524" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Copy_6524.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DeploymentDiagram(SubsystemMapper)_11298_32x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="DeploymentDiagramSubsystemMapper_11298_32x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DeploymentDiagram(SubsystemMapper)_11298_32x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
