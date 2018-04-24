@@ -136,24 +136,9 @@ namespace DataAnalysisTool
         {
             InitializeComponent();
         }
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-        }
         private void Form1_Load(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = @"TALLYCENTRAL\"+Environment.UserName;
-        }
-        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-        }
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-        }
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-        }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
         private void form1BindingSource_CurrentChanged(object sender, EventArgs e)
         {
@@ -175,6 +160,7 @@ namespace DataAnalysisTool
 
         private void menu_Open_Xls_Click(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             try
             {
                 OpenFileDialog openfile1 = new OpenFileDialog();
@@ -192,6 +178,9 @@ namespace DataAnalysisTool
                 }
             }
             catch { }
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
+
         }
 
         public DataTable ReadXls(string fileName)
@@ -411,16 +400,18 @@ namespace DataAnalysisTool
                 using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "CSV | *.csv", ValidateNames = true, Multiselect = false })
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
+                    {
                         importedfileDataGridView.DataSource = ReadCsv(ofd.FileName);
-                    toolStripStatusLabel13.Text = ofd.FileName;
-                    toolStripStatusLabel13.Visible = true;
-                    toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
-                    toolStripStatusLabel2.Visible = true;
-                    toolStripStatusLabel3.Visible = true;
-                    toolStripStatusLabel4.Visible = true;
-                    toolStripStatusLabel5.Visible = true;
-                    toolStripStatusLabel12.Visible = true;
-                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading CSV: " + ofd.FileName + "...Done.");
+                        toolStripStatusLabel13.Text = ofd.FileName;
+                        toolStripStatusLabel13.Visible = true;
+                        toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
+                        toolStripStatusLabel2.Visible = true;
+                        toolStripStatusLabel3.Visible = true;
+                        toolStripStatusLabel4.Visible = true;
+                        toolStripStatusLabel5.Visible = true;
+                        toolStripStatusLabel12.Visible = true;
+                        richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading CSV: " + ofd.FileName + "...Done.");
+                    }
                 }
             }
             catch (Exception ex)
@@ -502,15 +493,18 @@ namespace DataAnalysisTool
                 using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "XML | *.xml", ValidateNames = true, Multiselect = false })
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
+                    {
                         dataSet.ReadXml(ofd.FileName);
-                    importedfileDataGridView.DataSource = dataSet.Tables[0];
-                    toolStripStatusLabel13.Text = ofd.FileName;
-                    toolStripStatusLabel4.Text = importedfileDataGridView[0, importedfileDataGridView.Rows.Count - 1].Value.ToString();
-                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading XML: " + ofd.FileName + "...Done.");
-                    toolStripStatusLabel2.Visible = true;
-                    toolStripStatusLabel3.Visible = true;
-                    toolStripStatusLabel4.Visible = true;
-                    toolStripStatusLabel5.Visible = true;
+                        importedfileDataGridView.DataSource = dataSet.Tables[0];
+
+                        toolStripStatusLabel13.Text = ofd.FileName;
+                        toolStripStatusLabel4.Text = importedfileDataGridView[0, importedfileDataGridView.Rows.Count - 1].Value.ToString();
+                        richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading XML: " + ofd.FileName + "...Done.");
+                        toolStripStatusLabel2.Visible = true;
+                        toolStripStatusLabel3.Visible = true;
+                        toolStripStatusLabel4.Visible = true;
+                        toolStripStatusLabel5.Visible = true;
+                    }
                 }
             }
             catch (Exception ex)
@@ -613,16 +607,18 @@ namespace DataAnalysisTool
                 using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "TXT | *.txt", ValidateNames = true, Multiselect = false })
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
+                    {
                         importedfileDataGridView.DataSource = ReadTxtComma(ofd.FileName);
-                    toolStripStatusLabel13.Text = ofd.FileName;
-                    toolStripStatusLabel13.Visible = true;
-                    toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
-                    toolStripStatusLabel2.Visible = true;
-                    toolStripStatusLabel3.Visible = true;
-                    toolStripStatusLabel4.Visible = true;
-                    toolStripStatusLabel5.Visible = true;
-                    toolStripStatusLabel12.Visible = true;
-                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading TXT: " + ofd.FileName + "...Done.");
+                        toolStripStatusLabel13.Text = ofd.FileName;
+                        toolStripStatusLabel13.Visible = true;
+                        toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
+                        toolStripStatusLabel2.Visible = true;
+                        toolStripStatusLabel3.Visible = true;
+                        toolStripStatusLabel4.Visible = true;
+                        toolStripStatusLabel5.Visible = true;
+                        toolStripStatusLabel12.Visible = true;
+                        richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading TXT: " + ofd.FileName + "...Done.");
+                    }
                 }
             }
             catch (Exception ex)
@@ -653,27 +649,32 @@ namespace DataAnalysisTool
 
         private void pipeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             try
             {
                 using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "TXT | *.txt", ValidateNames = true, Multiselect = false })
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
+                    {
                         importedfileDataGridView.DataSource = ReadTxtPipe(ofd.FileName);
-                    toolStripStatusLabel13.Text = ofd.FileName;
-                    toolStripStatusLabel13.Visible = true;
-                    toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
-                    toolStripStatusLabel2.Visible = true;
-                    toolStripStatusLabel3.Visible = true;
-                    toolStripStatusLabel4.Visible = true;
-                    toolStripStatusLabel5.Visible = true;
-                    toolStripStatusLabel12.Visible = true;
-                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading TXT: " + ofd.FileName + "...Done.");
+                        toolStripStatusLabel13.Text = ofd.FileName;
+                        toolStripStatusLabel13.Visible = true;
+                        toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
+                        toolStripStatusLabel2.Visible = true;
+                        toolStripStatusLabel3.Visible = true;
+                        toolStripStatusLabel4.Visible = true;
+                        toolStripStatusLabel5.Visible = true;
+                        toolStripStatusLabel12.Visible = true;
+                        richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading TXT: " + ofd.FileName + "...Done.");
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
         }
 
         public DataTable ReadTxtPipe(string fileName)

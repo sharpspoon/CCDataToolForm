@@ -235,7 +235,6 @@
             this.openFileDialog1.FileName = ".csv";
             this.openFileDialog1.InitialDirectory = "c:\\";
             this.openFileDialog1.Title = "open";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // imageList1
             // 
@@ -281,7 +280,6 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.InitialDirectory = "c:";
-            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // menuStrip1
             // 
@@ -327,7 +325,7 @@
             this.iFLogToolStripMenuItem});
             this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.openToolStripMenuItem.Text = "Open...";
             // 
             // cSVToolStripMenuItem
@@ -402,7 +400,7 @@
             this.xLSToolStripMenuItem1});
             this.saveAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveAsToolStripMenuItem.Image")));
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
             // 
             // cSVToolStripMenuItem1
@@ -433,7 +431,7 @@
             // 
             this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -441,7 +439,7 @@
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
             // 
@@ -769,7 +767,6 @@
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cell Length Checker:";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // button4
             // 
@@ -810,7 +807,6 @@
             this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 22;
             this.label2.Text = "Column name:";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // textBox3
             // 
@@ -863,7 +859,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(66, 21);
             this.comboBox1.TabIndex = 29;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label5
             // 

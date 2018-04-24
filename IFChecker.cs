@@ -340,14 +340,42 @@ namespace DataAnalysisTool
                                         {
                                             var value = importedfileDataGridView.Rows[i].Cells[dateCurIndex].Value.ToString();
                                             int valueLength = value.Length;
-                                            //int year = int.Parse(value.Substring(0, 4));
-                                            //int month = int.Parse(value.Substring(4, 2));
-                                            //int day = int.Parse(value.Substring(6, 2));
-                                            //tw.WriteLine("dateFormatLength= " + dateFormatLength + "valueLength= " + valueLength + "value= " + value);
                                             if ((dateFormatLength) != valueLength)
                                             {
                                                 
                                                 tw.WriteLine("Error at line " + (i + 1) + "." + " Your date format does not match your specified "+dateFormat.Text+".");
+                                            }
+
+                                            if (dateFormat2 == "yyyymmdd")
+                                            {
+                                                int year = int.Parse(value.Substring(0, 4));
+                                                int month = int.Parse(value.Substring(4, 2));
+                                                int day = int.Parse(value.Substring(6, 2));
+
+                                                if (year > 2200)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: "+dateFormat2);
+                                                }
+
+                                                if (month > 12)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (month < 01)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (day > 31)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (day < 01)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
                                             }
                                         }
                                     }
