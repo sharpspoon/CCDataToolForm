@@ -12,6 +12,7 @@ using System.Runtime.InteropServices;
 
 namespace DataAnalysisTool
 {
+
     public partial class DataAnalysisTool : Form
     {
 
@@ -135,6 +136,7 @@ namespace DataAnalysisTool
         public DataAnalysisTool()
         {
             InitializeComponent();
+            ModifyProgressBarColor.SetState(progressBar2, 2);
             backgroundWorker1.WorkerReportsProgress = true;
             backgroundWorker1.WorkerSupportsCancellation = true;
         }
@@ -1003,10 +1005,14 @@ namespace DataAnalysisTool
         /// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------FINALIZED CODE END
         /// TEST CODE
 
+        //[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
+        //static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr w, IntPtr l);
+        //public static void SetState(this ProgressBar pBar, int state)
+        //{
+        //    SendMessage(pBar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
+        //}
 
-
-
-
+        
         private void startAsyncButton_Click(object sender, EventArgs e)
         {
             if (backgroundWorker1.IsBusy != true)
@@ -1030,6 +1036,7 @@ namespace DataAnalysisTool
         // This event handler is where the time-consuming work is done.
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
+            
             BackgroundWorker worker = sender as BackgroundWorker;
 
             for (int i = 1; i <= 10; i++)
@@ -1052,7 +1059,8 @@ namespace DataAnalysisTool
         // This event handler updates the progress.
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            label1.Text = (e.ProgressPercentage.ToString() + "%");
+            progressBar2.Value = (e.ProgressPercentage);
+
         }
 
         // This event handler deals with the results of the background operation.
@@ -1069,6 +1077,7 @@ namespace DataAnalysisTool
             else
             {
                 label1.Text = "Done!";
+                progressBar2.Value = 100;
             }
         }
 
@@ -1094,5 +1103,14 @@ namespace DataAnalysisTool
 
         /// TEST CODE
 
+    }
+    public static class ModifyProgressBarColor
+    {
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
+        static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr w, IntPtr l);
+        public static void SetState(this ProgressBar pBar, int state)
+        {
+            SendMessage(pBar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
+        }
     }
 }
