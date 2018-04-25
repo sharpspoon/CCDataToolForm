@@ -136,7 +136,6 @@ namespace DataAnalysisTool
         public DataAnalysisTool()
         {
             InitializeComponent();
-            ModifyProgressBarColor.SetState(progressBar2, 2);
             backgroundWorker1.WorkerReportsProgress = true;
             backgroundWorker1.WorkerSupportsCancellation = true;
         }
@@ -520,12 +519,15 @@ namespace DataAnalysisTool
         }
         private void menu_Save_Xml_Click(object sender, EventArgs e)
         {
+            progressBar1.MarqueeAnimationSpeed = 1;
             saveFileDialog1.Filter = "XML|*.xml";
             if (this.saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 DataTable dt = (DataTable)this.importedfileDataGridView.DataSource;
                 dt.WriteXml(this.saveFileDialog1.FileName, XmlWriteMode.WriteSchema);
             }
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
         }
         //------------------OPEN/SAVE XML END------------------------------------------------------
 
@@ -1005,13 +1007,6 @@ namespace DataAnalysisTool
         /// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------FINALIZED CODE END
         /// TEST CODE
 
-        //[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
-        //static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr w, IntPtr l);
-        //public static void SetState(this ProgressBar pBar, int state)
-        //{
-        //    SendMessage(pBar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
-        //}
-
         
         private void startAsyncButton_Click(object sender, EventArgs e)
         {
@@ -1049,7 +1044,7 @@ namespace DataAnalysisTool
                 else
                 {
                     // Perform a time consuming operation and report progress.
-                    System.Threading.Thread.Sleep(500);
+                    System.Threading.Thread.Sleep(1);
                     worker.ReportProgress(i * 10);
                 }
             }
@@ -1066,51 +1061,31 @@ namespace DataAnalysisTool
         // This event handler deals with the results of the background operation.
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (e.Cancelled == true)
-            {
-                label1.Text = "Canceled!";
-            }
-            else if (e.Error != null)
-            {
-                label1.Text = "Error: " + e.Error.Message;
-            }
-            else
-            {
-                label1.Text = "Done!";
-                progressBar2.Value = 100;
-            }
+            //if (e.Cancelled == true)
+            //{
+            //    label1.Text = "Canceled!";
+            //}
+            //else if (e.Error != null)
+            //{
+            //    label1.Text = "Error: " + e.Error.Message;
+            //}
+            //else
+            //{
+            //    label1.Text = "Done!";
+            //}
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.sap.com/index.html");
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.calliduscloud.com/"); 
+        }
 
         /// TEST CODE
 
-    }
-    public static class ModifyProgressBarColor
-    {
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
-        static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr w, IntPtr l);
-        public static void SetState(this ProgressBar pBar, int state)
-        {
-            SendMessage(pBar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
-        }
     }
 }

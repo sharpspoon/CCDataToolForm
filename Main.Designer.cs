@@ -115,7 +115,6 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitRequiredImportFormat_ImportedFile = new System.Windows.Forms.SplitContainer();
-            this.splitRequired_ImportFormat = new System.Windows.Forms.SplitContainer();
             this.importformatDataGridView = new System.Windows.Forms.DataGridView();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
@@ -160,6 +159,8 @@
             this.button6 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -180,10 +181,9 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -199,9 +199,6 @@
             this.splitRequiredImportFormat_ImportedFile.Panel1.SuspendLayout();
             this.splitRequiredImportFormat_ImportedFile.Panel2.SuspendLayout();
             this.splitRequiredImportFormat_ImportedFile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitRequired_ImportFormat)).BeginInit();
-            this.splitRequired_ImportFormat.Panel2.SuspendLayout();
-            this.splitRequired_ImportFormat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.importformatDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -278,7 +275,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.importedfileDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.importedfileDataGridView.Size = new System.Drawing.Size(1142, 451);
+            this.importedfileDataGridView.Size = new System.Drawing.Size(1142, 438);
             this.importedfileDataGridView.TabIndex = 5;
             this.importedfileDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -710,8 +707,12 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Honeydew;
             this.button1.CausesValidation = false;
             this.button1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -721,7 +722,7 @@
             this.button1.TabIndex = 21;
             this.button1.Text = "GO";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.dateConvert_Click1);
             // 
             // groupBox2
@@ -775,7 +776,11 @@
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.Honeydew;
             this.button4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -785,7 +790,7 @@
             this.button4.TabIndex = 22;
             this.button4.Text = "GO";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.cellLength_Click);
             // 
             // label3
@@ -883,7 +888,11 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.Honeydew;
             this.button3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -893,7 +902,7 @@
             this.button3.TabIndex = 21;
             this.button3.Text = "GO";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.specialCharacter_Click);
             // 
             // printDialog1
@@ -946,7 +955,11 @@
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.Color.Honeydew;
             this.button5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -956,7 +969,7 @@
             this.button5.TabIndex = 21;
             this.button5.Text = "GO";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.nullChecker_Click);
             // 
             // notifyIcon1
@@ -971,7 +984,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.BackColor = System.Drawing.Color.AliceBlue;
-            this.splitContainer1.Location = new System.Drawing.Point(12, 151);
+            this.splitContainer1.Location = new System.Drawing.Point(12, 169);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -983,7 +996,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer1.Size = new System.Drawing.Size(1557, 586);
+            this.splitContainer1.Size = new System.Drawing.Size(1557, 568);
             this.splitContainer1.SplitterDistance = 1142;
             this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 22;
@@ -998,29 +1011,15 @@
             // 
             // splitRequiredImportFormat_ImportedFile.Panel1
             // 
-            this.splitRequiredImportFormat_ImportedFile.Panel1.Controls.Add(this.splitRequired_ImportFormat);
+            this.splitRequiredImportFormat_ImportedFile.Panel1.Controls.Add(this.importformatDataGridView);
             // 
             // splitRequiredImportFormat_ImportedFile.Panel2
             // 
             this.splitRequiredImportFormat_ImportedFile.Panel2.Controls.Add(this.importedfileDataGridView);
-            this.splitRequiredImportFormat_ImportedFile.Size = new System.Drawing.Size(1142, 586);
-            this.splitRequiredImportFormat_ImportedFile.SplitterDistance = 128;
+            this.splitRequiredImportFormat_ImportedFile.Size = new System.Drawing.Size(1142, 568);
+            this.splitRequiredImportFormat_ImportedFile.SplitterDistance = 123;
             this.splitRequiredImportFormat_ImportedFile.SplitterWidth = 7;
             this.splitRequiredImportFormat_ImportedFile.TabIndex = 6;
-            // 
-            // splitRequired_ImportFormat
-            // 
-            this.splitRequired_ImportFormat.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitRequired_ImportFormat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitRequired_ImportFormat.Location = new System.Drawing.Point(0, 0);
-            this.splitRequired_ImportFormat.Name = "splitRequired_ImportFormat";
-            // 
-            // splitRequired_ImportFormat.Panel2
-            // 
-            this.splitRequired_ImportFormat.Panel2.Controls.Add(this.importformatDataGridView);
-            this.splitRequired_ImportFormat.Size = new System.Drawing.Size(1142, 128);
-            this.splitRequired_ImportFormat.SplitterDistance = 31;
-            this.splitRequired_ImportFormat.TabIndex = 1;
             // 
             // importformatDataGridView
             // 
@@ -1054,7 +1053,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.importformatDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.importformatDataGridView.Size = new System.Drawing.Size(1107, 128);
+            this.importformatDataGridView.Size = new System.Drawing.Size(1142, 123);
             this.importformatDataGridView.TabIndex = 0;
             this.importformatDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -1073,8 +1072,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.richTextBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(408, 586);
-            this.splitContainer2.SplitterDistance = 527;
+            this.splitContainer2.Size = new System.Drawing.Size(408, 568);
+            this.splitContainer2.SplitterDistance = 510;
             this.splitContainer2.TabIndex = 32;
             // 
             // splitContainer4
@@ -1091,8 +1090,8 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.stagedDataGridView);
-            this.splitContainer4.Size = new System.Drawing.Size(408, 527);
-            this.splitContainer4.SplitterDistance = 446;
+            this.splitContainer4.Size = new System.Drawing.Size(408, 510);
+            this.splitContainer4.SplitterDistance = 431;
             this.splitContainer4.TabIndex = 33;
             // 
             // dataGridView2
@@ -1128,7 +1127,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView2.Size = new System.Drawing.Size(408, 446);
+            this.dataGridView2.Size = new System.Drawing.Size(408, 431);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -1141,7 +1140,7 @@
             this.stagedDataGridView.Location = new System.Drawing.Point(0, 0);
             this.stagedDataGridView.Name = "stagedDataGridView";
             this.stagedDataGridView.ReadOnly = true;
-            this.stagedDataGridView.Size = new System.Drawing.Size(408, 77);
+            this.stagedDataGridView.Size = new System.Drawing.Size(408, 75);
             this.stagedDataGridView.TabIndex = 32;
             this.stagedDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -1151,7 +1150,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(408, 55);
+            this.richTextBox1.Size = new System.Drawing.Size(408, 54);
             this.richTextBox1.TabIndex = 32;
             this.richTextBox1.Text = "";
             // 
@@ -1166,8 +1165,11 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button2.BackColor = System.Drawing.Color.MistyRose;
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::DataAnalysisTool.Properties.Resources.DatabaseProject_7342_32x;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1301,8 +1303,11 @@
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button8.BackColor = System.Drawing.Color.MistyRose;
             this.button8.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Image = global::DataAnalysisTool.Properties.Resources.Login_6031_32x;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1486,7 +1491,11 @@
             // 
             // button6
             // 
+            this.button6.BackColor = System.Drawing.Color.Honeydew;
             this.button6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
@@ -1497,7 +1506,7 @@
             this.button6.TabIndex = 26;
             this.button6.Text = "GO";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.groupByErrorToolStripMenuItem_Click);
             // 
             // tabControl1
@@ -1515,6 +1524,8 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage3.Controls.Add(this.button16);
+            this.tabPage3.Controls.Add(this.button15);
             this.tabPage3.Controls.Add(this.button14);
             this.tabPage3.Controls.Add(this.button13);
             this.tabPage3.Controls.Add(this.button12);
@@ -1531,6 +1542,42 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Shortcuts";
             this.tabPage3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button16.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button16.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.button16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Image = global::DataAnalysisTool.Properties.Resources.XMLFile_828_32x;
+            this.button16.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button16.Location = new System.Drawing.Point(510, 11);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(54, 72);
+            this.button16.TabIndex = 48;
+            this.button16.Text = "Save As XML";
+            this.button16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.menu_Save_Xml_Click);
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button15.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button15.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.button15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Image = global::DataAnalysisTool.Properties.Resources.XMLFile_828_32x;
+            this.button15.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button15.Location = new System.Drawing.Point(450, 11);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(54, 72);
+            this.button15.TabIndex = 47;
+            this.button15.Text = "Save As CSV";
+            this.button15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.menu_Save_Csv_Click);
             // 
             // button14
             // 
@@ -1614,13 +1661,16 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button9.BackColor = System.Drawing.Color.Cornsilk;
             this.button9.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.DarkGoldenrod;
+            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkKhaki;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(910, 14);
+            this.button9.Location = new System.Drawing.Point(641, 11);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(54, 72);
             this.button9.TabIndex = 41;
@@ -1631,13 +1681,16 @@
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button7.BackColor = System.Drawing.Color.Cornsilk;
             this.button7.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.DarkGoldenrod;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkKhaki;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(850, 14);
+            this.button7.Location = new System.Drawing.Point(581, 11);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(54, 72);
             this.button7.TabIndex = 40;
@@ -1828,10 +1881,10 @@
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(1400, 105);
+            this.progressBar1.Location = new System.Drawing.Point(1400, 118);
             this.progressBar1.MarqueeAnimationSpeed = 0;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(169, 40);
+            this.progressBar1.Size = new System.Drawing.Size(169, 27);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 39;
             // 
@@ -1841,45 +1894,39 @@
             this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1227, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "label1";
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(1170, 40);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 41;
-            this.button15.Text = "start";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.startAsyncButton_Click);
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(1271, 40);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 23);
-            this.button16.TabIndex = 42;
-            this.button16.Text = "stop";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.cancelAsyncButton_Click);
-            // 
             // progressBar2
             // 
             this.progressBar2.BackColor = System.Drawing.Color.AliceBlue;
             this.progressBar2.ForeColor = System.Drawing.Color.DarkRed;
-            this.progressBar2.Location = new System.Drawing.Point(12, 147);
+            this.progressBar2.Location = new System.Drawing.Point(11, 147);
             this.progressBar2.MarqueeAnimationSpeed = 1;
             this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(1558, 10);
-            this.progressBar2.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar2.Size = new System.Drawing.Size(1558, 16);
             this.progressBar2.TabIndex = 7;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel1.Location = new System.Drawing.Point(1397, 102);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(28, 13);
+            this.linkLabel1.TabIndex = 40;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "SAP";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel2.Location = new System.Drawing.Point(1431, 102);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(70, 13);
+            this.linkLabel2.TabIndex = 41;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "CallidusCloud";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // DataAnalysisTool
             // 
@@ -1889,9 +1936,8 @@
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1582, 762);
             this.ControlBox = false;
-            this.Controls.Add(this.button16);
-            this.Controls.Add(this.button15);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pictureBox1);
@@ -1929,9 +1975,6 @@
             this.splitRequiredImportFormat_ImportedFile.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitRequiredImportFormat_ImportedFile)).EndInit();
             this.splitRequiredImportFormat_ImportedFile.ResumeLayout(false);
-            this.splitRequired_ImportFormat.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitRequired_ImportFormat)).EndInit();
-            this.splitRequired_ImportFormat.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.importformatDataGridView)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -2084,7 +2127,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel15;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel14;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel16;
-        private System.Windows.Forms.SplitContainer splitRequired_ImportFormat;
         private System.Windows.Forms.ToolStripMenuItem tXTToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -2111,10 +2153,11 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
         private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }
 

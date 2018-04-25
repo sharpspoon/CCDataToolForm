@@ -377,6 +377,166 @@ namespace DataAnalysisTool
                                                     tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
                                                 }
                                             }
+
+                                            if (dateFormat2 == "yyyyddmm")
+                                            {
+                                                int year = int.Parse(value.Substring(0, 4));
+                                                int month = int.Parse(value.Substring(6, 2));
+                                                int day = int.Parse(value.Substring(4, 2));
+
+                                                if (year > 2200)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (month > 12)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (month < 01)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (day > 31)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (day < 01)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+                                            }
+
+                                            if (dateFormat2 == "yyddmm")
+                                            {
+                                                int year = int.Parse(value.Substring(0, 2));
+                                                int month = int.Parse(value.Substring(4, 2));
+                                                int day = int.Parse(value.Substring(2, 2));
+
+                                                if (year > 22)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (month > 12)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (month < 01)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (day > 31)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (day < 01)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+                                            }
+
+                                            if (dateFormat2 == "yymmdd")
+                                            {
+                                                int year = int.Parse(value.Substring(0, 2));
+                                                int month = int.Parse(value.Substring(2, 2));
+                                                int day = int.Parse(value.Substring(4, 2));
+
+                                                if (year > 22)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (month > 12)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (month < 01)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (day > 31)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (day < 01)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+                                            }
+
+                                            if (dateFormat2 == "mmddyyyy")
+                                            {
+                                                int year = int.Parse(value.Substring(4, 4));
+                                                int month = int.Parse(value.Substring(0, 2));
+                                                int day = int.Parse(value.Substring(2, 2));
+
+                                                if (year > 2200)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (month > 12)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (month < 01)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (day > 31)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (day < 01)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+                                            }
+
+                                            if (dateFormat2 == "mmyyyydd")
+                                            {
+                                                int year = int.Parse(value.Substring(2, 4));
+                                                int month = int.Parse(value.Substring(0, 2));
+                                                int day = int.Parse(value.Substring(6, 2));
+
+                                                if (year > 2200)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (month > 12)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (month < 01)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (day > 31)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+
+                                                if (day < 01)
+                                                {
+                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                }
+                                            }
                                         }
                                     }
                                 }
