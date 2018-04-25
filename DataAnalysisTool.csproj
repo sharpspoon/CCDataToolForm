@@ -33,7 +33,7 @@
     <WebPage>README.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>111</ApplicationRevision>
+    <ApplicationRevision>118</ApplicationRevision>
     <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -73,7 +73,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>download_BmO_icon.ico</ApplicationIcon>
+    <ApplicationIcon>dat2.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -246,6 +246,8 @@
     <None Include="Resources\CallidusCloud_Logo-300.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="dat.ico" />
+    <Content Include="dat2.ico" />
     <Content Include="download_BmO_icon.ico" />
     <Content Include="favicon.ico" />
     <None Include="Resources\Login_6031_32x.png" />

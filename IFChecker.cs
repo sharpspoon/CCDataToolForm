@@ -60,18 +60,20 @@ namespace DataAnalysisTool
             }
 
             {
-                System.IO.Directory.CreateDirectory(@"C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files");
-                string path = @"C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files\DataAnalysisTool_IFEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+                System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\IF_Error_Files");
+                string path = Application.UserAppDataPath + @"\IF_Error_Files\DataAnalysisTool_IFEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
                 using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
                 {
                     using (TextWriter tw = new StreamWriter(fs))
                     {
                         tw.WriteLine("###########################################################################################");
-                        tw.WriteLine("##################DataAnalysisTool - Beginning of Import Format Error File#################");
+                        tw.WriteLine("########################DataAnalysisTool - Import Format Error File########################");
                         tw.WriteLine("###########################################################################################");
+                        tw.WriteLine(DateTime.Now);
                         tw.WriteLine("Reading file...Done.");
                         tw.WriteLine("Server: " + serverSelect.Text);
                         tw.WriteLine("Database: "+databaseSelect.Text);
+                        tw.WriteLine("Import Format: " + ifSelect.Text);
 
 
 
@@ -81,7 +83,7 @@ namespace DataAnalysisTool
                             {
                                 tw.WriteLine("This Import Format requires " + importformatDataGridView.RowCount + " columns. You have " + importedfileDataGridView.ColumnCount + ".");
                                 tw.WriteLine("This operation has ended. Please correct the column count issue.");
-                                MessageBox.Show("Import Format error file has been created. \nLocation: C:\\Program Files (x86)\\DataAnalysisTool\\Medicare Error Files", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                                MessageBox.Show("Import Format error file has been created. \nLocation: "+path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
                                 progressBar1.MarqueeAnimationSpeed = 0;
                                 progressBar1.Refresh();
@@ -172,7 +174,12 @@ namespace DataAnalysisTool
                                     tw.WriteLine("Client: " + value);
                                 }
                                 tw.WriteLine("");
-                                tw.WriteLine("---DATA THAT IS USED---");
+                                tw.WriteLine("****************************************************");
+                                tw.WriteLine("******CONFIGURATION / SYSTEM DATA THAT IS USED******");
+                                tw.WriteLine("****************************************************");
+                                tw.WriteLine("");
+
+                                tw.WriteLine("---Selected Required Fields---");
                                 String reqItem;
                                 foreach (Object selecteditem in reqListBox.SelectedItems)
                                 {
@@ -184,7 +191,7 @@ namespace DataAnalysisTool
                                         tw.WriteLine("Required Column: " + reqItem);
                                     }
                                 }
-
+                                tw.WriteLine("---Selected Date Format and Date Columns---");
                                 String dateItem;
                                 foreach (Object selecteditem in dateListBox.SelectedItems)
                                 {
@@ -200,7 +207,12 @@ namespace DataAnalysisTool
                                 tw.WriteLine("");
 
                                 int a = 0;
-                                tw.WriteLine("---THIS IS DATA PULLED FROM "+databaseSelect.Text+"---");
+                                tw.WriteLine("");
+                                tw.WriteLine("****************************************************");
+                                tw.WriteLine("**********SYSTEM DATA PULLED FROM DATABASE**********");
+                                tw.WriteLine("****************************************************");
+                                tw.WriteLine("");
+                                tw.WriteLine("---Predefined Codes in System Configuration---");
                                 foreach (var value in codeArray)
                                 {
                                     tw.WriteLine("Code: " + value);
@@ -213,7 +225,8 @@ namespace DataAnalysisTool
                                 {
                                     tw.WriteLine("Columns with Codes: " + value);
                                 }
-
+                                tw.WriteLine("");
+                                tw.WriteLine("---Predefined Field Length Restrictions in System Configuration---");
                                 foreach (var value in maxLengthFieldColumnNumberArray)
                                 {
                                     tw.WriteLine("Columns with length restrictions: " + value);
@@ -227,7 +240,10 @@ namespace DataAnalysisTool
                                 int[] intMaxLengthFieldArrayValue = Array.ConvertAll(maxLengthFieldArrayValue, s => int.Parse(s));
 
                                 tw.WriteLine("");
-                                tw.WriteLine("---ERROR LIST START---");
+                                tw.WriteLine("****************************************************");
+                                tw.WriteLine("******************ERROR LIST START******************");
+                                tw.WriteLine("****************************************************");
+                                tw.WriteLine("");
 
                                 tw.WriteLine("--Required Field Check--");
 
@@ -326,7 +342,7 @@ namespace DataAnalysisTool
 
 
                                     int dateFormatLength = dateFormat2.Length;
-                                    MessageBox.Show("dateFormat2=" + dateFormat2+ "dateFormatLength="+ dateFormatLength);
+                                    //MessageBox.Show("dateFormat2=" + dateFormat2+ "dateFormatLength="+ dateFormatLength);
                                     if (dateCurIndex >= 0)
                                     {
                                         if (dateFormatLength == 0) {
@@ -553,7 +569,7 @@ namespace DataAnalysisTool
                         tw.WriteLine("EOF.");
                     }
                 }
-                MessageBox.Show("Import Format error file has been created. \nLocation: C:\\Program Files (x86)\\DataAnalysisTool\\Import Format Error Files", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Import Format error file has been created. \nLocation: "+path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files");
                 progressBar1.MarqueeAnimationSpeed = 0;
                 progressBar1.Refresh();

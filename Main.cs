@@ -602,7 +602,7 @@ namespace DataAnalysisTool
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Process.Start(@"C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files");
+            Process.Start(Application.UserAppDataPath + @"\IF_Error_Files");
         }
 
         private void tXTToolStripMenuItemComma_Click(object sender, EventArgs e)
