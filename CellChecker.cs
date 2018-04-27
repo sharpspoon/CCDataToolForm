@@ -25,12 +25,12 @@ namespace DataAnalysisTool
                 {
                     if (textBox3.Text.Length == 0)
                     {
-                        MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     if (textBox4.Text.Length == 0)
                     {
-                        MessageBox.Show("You did not enter a length!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("You did not enter a length!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     MessageBox.Show(ex.Message, "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -44,34 +44,62 @@ namespace DataAnalysisTool
 
         private void specialCharacter_Click(object sender, EventArgs e)
         {
-            String searchValue = comboBox1.Text;
-            string specialBoxFill = textBox5.Text;
-            if (textBox5.Text.Length == 0)
-            {
-                MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                return;
-            }
+            int a = 0;
+            String reqItem;
+            String specialChar=comboBox1.Text;
             if (comboBox1.Text.Length == 0)
             {
-                MessageBox.Show("You did not select a special character!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("You did not select a special character!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
-            foreach (DataGridViewRow row in importedfileDataGridView.Rows)
+            foreach (Object selecteditem in specialCharacterCheckerListBox.SelectedItems)
             {
-                try
+                a++;
+                reqItem = selecteditem as String;
+                int specialCharacterCurIndex = specialCharacterCheckerListBox.Items.IndexOf(reqItem);
+                if (specialCharacterCurIndex >= 0)
                 {
-                    if (row.Cells[textBox5.Text].Value.ToString().Contains(comboBox1.Text))
+
+                    for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                     {
-                        MessageBox.Show("'" + comboBox1.Text + "'" + " WAS found in the column " + "'" + textBox5.Text + "'", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                        return;
+                        
+                        var value = importedfileDataGridView.Rows[i].Cells[specialCharacterCurIndex].Value.ToString();
+                        //MessageBox.Show("value "+value+"reqitem "+reqItem);
+                        if (value.Contains(specialChar) == true)
+                        {
+                            MessageBox.Show("'" + specialChar + "'" + " WAS found in the column " + "'" + selecteditem + "'", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            return;
+                        }
                     }
                 }
-                catch
-                {
-                    MessageBox.Show("'" + comboBox1.Text + "'" + " WAS NOT  found in column " + "'" + textBox5.Text + "'", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    return;
-                }
             }
+            if (a == 0)
+            {
+                MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+
+
+
+            //String searchValue = comboBox1.Text;
+            //string specialBoxFill = textBox5.Text;
+
+            //foreach (DataGridViewRow row in importedfileDataGridView.Rows)
+            //{
+            //    try
+            //    {
+            //        if (row.Cells[textBox5.Text].Value.ToString().Contains(comboBox1.Text))
+            //        {
+            //            MessageBox.Show("'" + comboBox1.Text + "'" + " WAS found in the column " + "'" + textBox5.Text + "'", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            //            return;
+            //        }
+            //    }
+            //    catch
+            //    {
+            //        MessageBox.Show("'" + comboBox1.Text + "'" + " WAS NOT  found in column " + "'" + textBox5.Text + "'", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            //        return;
+            //    }
+            //}
         }
 
         //------------------SPECIAL CHARACTER CHECKER END------------------------------------------------------
@@ -82,7 +110,7 @@ namespace DataAnalysisTool
         {
             if (textBox6.Text.Length == 0)
             {
-                MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
             for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
