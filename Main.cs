@@ -9,6 +9,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Linq;
 
 namespace DataAnalysisTool
 {
@@ -19,89 +20,83 @@ namespace DataAnalysisTool
         //------------------DATE CONVERTER START------------------------------------------------------
         private void dateConvert_Click1(object sender, EventArgs e)
         {
-
-            if (textBox2.Text.Length == 0)
+            int a = 0;
+            String reqItem;
+            foreach (Object selecteditem in dateCheckerListBox.SelectedItems)
             {
-                MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                a++;
+                reqItem = selecteditem as String;
+                int dateFormatCurIndex = dateCheckerListBox.Items.IndexOf(reqItem);
+                if (dateFormatCurIndex >= 0)
+                {
+                    
+                    for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
+                    {
+                            var value = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex].Value.ToString();
+                        if (checkBox1.Checked)
+                        {
+                            if (value == " " || value == "" || value == null)
+                            {
+                                MessageBox.Show("NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyyMMdd");
+                                return;
+                            }
+                        }
+
+                            if (value.Length == 8)
+                            {
+                                int year = int.Parse(value.Substring(0, 4));
+                                int month = int.Parse(value.Substring(4, 2));
+                                int day = int.Parse(value.Substring(6, 2));
+
+                                if (year > 2200)
+                                {
+                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyyMMdd");
+                                    return;
+                                }
+
+                                if (month > 12)
+                                {
+                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyyMMdd");
+                                    return;
+                                }
+
+                                if (month < 01)
+                                {
+                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyyMMdd");
+                                    return;
+                                }
+
+                                if (day > 31)
+                                {
+                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyyMMdd");
+                                    return;
+                                }
+
+                                if (day < 01)
+                                {
+                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyyMMdd");
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyyMMdd");
+                                return;
+                            }
+                    }
+                }
+            }
+            if (a == 0){
+                MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
-
-            for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
-            {
-                try
-                {
-                    var value2 = importedfileDataGridView.Rows[i].Cells[textBox2.Text].Value.ToString();
-                    if (checkBox1.Checked)
-                    {
-
-
-                        if (value2 == " " || value2 == "" || value2 == null)
-                        {
-                            MessageBox.Show("NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyyMMdd");
-                            return;
-                        }
-                    }
-                    if (value2.Length == 8)
-                    {
-                        int year = int.Parse(value2.Substring(0, 4));
-                        int month = int.Parse(value2.Substring(4, 2));
-                        int day = int.Parse(value2.Substring(6, 2));
-
-                        if (year > 2200)
-                        {
-                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyyMMdd");
-                            return;
-                        }
-
-                        if (month > 12)
-                        {
-                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyyMMdd");
-                            return;
-                        }
-
-                        if (month < 01)
-                        {
-                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyyMMdd");
-                            return;
-                        }
-
-                        if (day > 31)
-                        {
-                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyyMMdd");
-                            return;
-                        }
-
-                        if (day < 01)
-                        {
-                            MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyyMMdd");
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyyMMdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                        richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyyMMdd");
-                        return;
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("dates are ok", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   dates are OK");
-                    return;
-                }
-
-
-
-            }
-
-
         }
         //------------------DATE CONVERTER END------------------------------------------------------
 
@@ -136,6 +131,9 @@ namespace DataAnalysisTool
         public DataAnalysisTool()
         {
             InitializeComponent();
+            dateComboBox1.SelectedIndex = 12;
+            dateComboBox2.SelectedIndex = 5;
+            dateComboBox3.SelectedIndex = 1;
             backgroundWorker1.WorkerReportsProgress = true;
             backgroundWorker1.WorkerSupportsCancellation = true;
         }
@@ -425,6 +423,17 @@ namespace DataAnalysisTool
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            var importedFileArray = importedfileDataGridView.Columns.Cast<DataGridViewColumn>()
+                .Select(x => x.HeaderCell.Value.ToString().Trim()).ToArray();
+
+            dateCheckerListBox.Items.Clear();
+            int a = 0;
+            for (int i = 0; i < importedFileArray.Length; i++)
+            {
+                a++;
+                dateCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
+            }
+
             progressBar1.MarqueeAnimationSpeed = 0;
             progressBar1.Refresh();
         }

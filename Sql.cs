@@ -167,41 +167,6 @@ namespace DataAnalysisTool
 
         }
 
-        //private void buttonRequirementCheckAdd_Click(object sender, EventArgs e)
-        //{
-        //    progressBar1.MarqueeAnimationSpeed = 1;
-        //    //this.requiredGridView.Columns["Required"].Visible = true;
-        //    this.requiredGridView.Columns["Field"].Visible = true;
-        //    var iffidArray2 = importformatDataGridView.Rows.Cast<DataGridViewRow>()
-        //        .Select(x => x.Cells[5].Value.ToString().Trim()).ToArray();
-
-
-        //    DataGridViewCheckBoxColumn CBColumn = new DataGridViewCheckBoxColumn();
-        //    CBColumn.HeaderText = "ColumnHeader";
-        //    CBColumn.FalseValue = "0";
-        //    CBColumn.TrueValue = "1";
-            
-        //    foreach (var s in iffidArray2)
-        //    {
-        //        requiredGridView.Rows.Add(s);
-        //    }
-        //    DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
-        //    checkColumn.Name = "X";
-        //    checkColumn.HeaderText = "X";
-        //    checkColumn.Width = 50;
-        //    checkColumn.ReadOnly = false;
-        //    checkColumn.FillWeight = 10; //if the datagridview is resized (on form resize) the checkbox won't take up too much; value is relative to the other columns' fill values
-        //    requiredGridView.Columns.Add(checkColumn);
-        //    progressBar1.MarqueeAnimationSpeed = 0;
-        //    reqListBox.Items.Clear();
-
-        //    for (int i = 0; i < iffidArray2.Length; i++)
-        //    {
-        //        reqListBox.Items.Add(iffidArray2[i].ToString());
-        //    }
-
-        //}
-
         //------------------SQL LOADER END------------------------------------------------------
 
     }
