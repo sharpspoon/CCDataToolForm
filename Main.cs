@@ -142,6 +142,7 @@ namespace DataAnalysisTool
         private void Form1_Load(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = @"TALLYCENTRAL\"+Environment.UserName;
+
         }
         private void form1BindingSource_CurrentChanged(object sender, EventArgs e)
         {
@@ -234,11 +235,14 @@ namespace DataAnalysisTool
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
+                this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
                 this.WindowState = FormWindowState.Normal;
             }
             else
             {
+                this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
                 this.WindowState = FormWindowState.Maximized;
+
             }
         }
         private void toolStripMenuItemMinimize_Click(object sender, EventArgs e)
