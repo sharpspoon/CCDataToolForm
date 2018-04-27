@@ -114,12 +114,6 @@
     <Compile Include="CellChecker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CheckTools.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CheckTools.Designer.cs">
-      <DependentUpon>CheckTools.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataGridViewLegend.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,9 +167,6 @@
     <Compile Include="System\IO\Compression\ZipFile.cs" />
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CheckTools.resx">
-      <DependentUpon>CheckTools.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataGridViewLegend.resx">
       <DependentUpon>DataGridViewLegend.cs</DependentUpon>

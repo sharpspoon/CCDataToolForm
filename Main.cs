@@ -152,12 +152,6 @@ namespace DataAnalysisTool
             toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
         }
 
-        private void checkToolsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CheckTools cu = new CheckTools();
-            cu.Show();
-        }
-
         //------------------OPEN/SAVE XLS START------------------------------------------------------
 
         private void menu_Open_Xls_Click(object sender, EventArgs e)
@@ -432,6 +426,14 @@ namespace DataAnalysisTool
             {
                 a++;
                 dateCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
+            }
+
+            specialCharacterCheckerListBox.Items.Clear();
+            a = 0;
+            for (int i = 0; i < importedFileArray.Length; i++)
+            {
+                a++;
+                specialCharacterCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
             }
 
             progressBar1.MarqueeAnimationSpeed = 0;

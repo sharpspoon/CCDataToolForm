@@ -68,7 +68,6 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeAColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.brokerDetailCheckToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,11 +99,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.specialCharacterCheckerListBox = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
@@ -184,7 +184,6 @@
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.specialCharacterCheckerListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -461,7 +460,7 @@
             // 
             this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
@@ -469,7 +468,7 @@
             // 
             this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
@@ -477,7 +476,7 @@
             // 
             this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
@@ -508,21 +507,11 @@
             // 
             // toolsToolStripMenuItem
             // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.checkToolsToolStripMenuItem});
             this.toolsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("toolsToolStripMenuItem.Image")));
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             this.toolsToolStripMenuItem.Visible = false;
-            // 
-            // checkToolsToolStripMenuItem
-            // 
-            this.checkToolsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("checkToolsToolStripMenuItem.Image")));
-            this.checkToolsToolStripMenuItem.Name = "checkToolsToolStripMenuItem";
-            this.checkToolsToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.checkToolsToolStripMenuItem.Text = "Check Tools";
-            this.checkToolsToolStripMenuItem.Click += new System.EventHandler(this.checkToolsToolStripMenuItem_Click);
             // 
             // dataToolStripMenuItem
             // 
@@ -545,7 +534,7 @@
             this.customerNoCheckToolStripMenuItem});
             this.inFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inFileToolStripMenuItem.Image")));
             this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             this.inFileToolStripMenuItem.Visible = false;
@@ -579,7 +568,7 @@
             this.openFromZIPExportToolStripMenuItem});
             this.openImportFormatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openImportFormatToolStripMenuItem.Image")));
             this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
-            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openImportFormatToolStripMenuItem.Text = "Import Format";
             this.openImportFormatToolStripMenuItem.Click += new System.EventHandler(this.openImportFormatToolStripMenuItem_Click);
             // 
@@ -607,7 +596,7 @@
             this.inProgramCheckToolStripMenuItem});
             this.medicareToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("medicareToolStripMenuItem.Image")));
             this.medicareToolStripMenuItem.Name = "medicareToolStripMenuItem";
-            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.medicareToolStripMenuItem.Text = "Medicare";
             this.medicareToolStripMenuItem.Visible = false;
             // 
@@ -638,7 +627,7 @@
             // 
             this.dataInUseToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dataInUseToolStripMenuItem.Image")));
             this.dataInUseToolStripMenuItem.Name = "dataInUseToolStripMenuItem";
-            this.dataInUseToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.dataInUseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dataInUseToolStripMenuItem.Text = "Data in Use";
             this.dataInUseToolStripMenuItem.Visible = false;
             // 
@@ -655,7 +644,7 @@
             // 
             this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.menu_About_Click);
             // 
@@ -843,6 +832,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Special Character Checker:";
             // 
+            // specialCharacterCheckerListBox
+            // 
+            this.specialCharacterCheckerListBox.FormattingEnabled = true;
+            this.specialCharacterCheckerListBox.Location = new System.Drawing.Point(94, 18);
+            this.specialCharacterCheckerListBox.Name = "specialCharacterCheckerListBox";
+            this.specialCharacterCheckerListBox.Size = new System.Drawing.Size(117, 56);
+            this.specialCharacterCheckerListBox.TabIndex = 31;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -882,13 +879,6 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Select Column(s):";
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(840, 37);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(74, 20);
-            this.textBox5.TabIndex = 20;
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Honeydew;
@@ -907,6 +897,13 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.specialCharacter_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(840, 37);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(74, 20);
+            this.textBox5.TabIndex = 20;
             // 
             // printDialog1
             // 
@@ -1939,14 +1936,6 @@
             this.linkLabel2.Text = "CallidusCloud";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // specialCharacterCheckerListBox
-            // 
-            this.specialCharacterCheckerListBox.FormattingEnabled = true;
-            this.specialCharacterCheckerListBox.Location = new System.Drawing.Point(94, 18);
-            this.specialCharacterCheckerListBox.Name = "specialCharacterCheckerListBox";
-            this.specialCharacterCheckerListBox.Size = new System.Drawing.Size(117, 56);
-            this.specialCharacterCheckerListBox.TabIndex = 31;
-            // 
             // DataAnalysisTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2127,7 +2116,6 @@
         public System.Windows.Forms.SplitContainer splitRequiredImportFormat_ImportedFile;
         public System.Windows.Forms.DataGridView importedfileDataGridView;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem checkToolsToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox5;
