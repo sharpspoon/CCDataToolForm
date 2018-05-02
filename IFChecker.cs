@@ -342,7 +342,7 @@ namespace DataAnalysisTool
 
 
                                     int dateFormatLength = dateFormat2.Length;
-                                    //MessageBox.Show("dateFormat2=" + dateFormat2+ "dateFormatLength="+ dateFormatLength);
+                                    MessageBox.Show("dateFormat2=" + dateFormat2+ "dateFormatLength="+ dateFormatLength);
                                     if (dateCurIndex >= 0)
                                     {
                                         if (dateFormatLength == 0) {
@@ -356,14 +356,20 @@ namespace DataAnalysisTool
                                         {
                                             var value = importedfileDataGridView.Rows[i].Cells[dateCurIndex].Value.ToString();
                                             int valueLength = value.Length;
-                                            if ((dateFormatLength) != valueLength)
+                                            if ((dateFormatLength) != valueLength & (value != "" & value != null & value != " "))
                                             {
                                                 
                                                 tw.WriteLine("Error at line " + (i + 1) + "." + " Your date format does not match your specified "+dateFormat.Text+".");
                                             }
 
-                                            if (dateFormat2 == "yyyymmdd")
+                                            if ((checkBox2.Checked) & (value == "" || value == null || value == " "))
                                             {
+                                                tw.WriteLine("NULL at line " + (i + 1) + ".");
+                                            }
+
+                                            if (dateFormat2 == "yyyymmdd" & (value !="" & value !=null & value != " "))
+                                            {
+                                                //MessageBox.Show("got inside the if");
                                                 int year = int.Parse(value.Substring(0, 4));
                                                 int month = int.Parse(value.Substring(4, 2));
                                                 int day = int.Parse(value.Substring(6, 2));
@@ -394,7 +400,7 @@ namespace DataAnalysisTool
                                                 }
                                             }
 
-                                            if (dateFormat2 == "yyyyddmm")
+                                            if (dateFormat2 == "yyyyddmm" & value != "" & value != null & value != " ")
                                             {
                                                 int year = int.Parse(value.Substring(0, 4));
                                                 int month = int.Parse(value.Substring(6, 2));
@@ -426,7 +432,7 @@ namespace DataAnalysisTool
                                                 }
                                             }
 
-                                            if (dateFormat2 == "yyddmm")
+                                            if (dateFormat2 == "yyddmm" & value != "" & value != null & value != " ")
                                             {
                                                 int year = int.Parse(value.Substring(0, 2));
                                                 int month = int.Parse(value.Substring(4, 2));
@@ -458,7 +464,7 @@ namespace DataAnalysisTool
                                                 }
                                             }
 
-                                            if (dateFormat2 == "yymmdd")
+                                            if (dateFormat2 == "yymmdd" & value != "" & value != null & value != " ")
                                             {
                                                 int year = int.Parse(value.Substring(0, 2));
                                                 int month = int.Parse(value.Substring(2, 2));
@@ -490,7 +496,7 @@ namespace DataAnalysisTool
                                                 }
                                             }
 
-                                            if (dateFormat2 == "mmddyyyy")
+                                            if (dateFormat2 == "mmddyyyy" & value != "" & value != null & value != " ")
                                             {
                                                 int year = int.Parse(value.Substring(4, 4));
                                                 int month = int.Parse(value.Substring(0, 2));
@@ -522,7 +528,7 @@ namespace DataAnalysisTool
                                                 }
                                             }
 
-                                            if (dateFormat2 == "mmyyyydd")
+                                            if (dateFormat2 == "mmyyyydd" & value != "" & value != null & value != " ")
                                             {
                                                 int year = int.Parse(value.Substring(2, 4));
                                                 int month = int.Parse(value.Substring(0, 2));
