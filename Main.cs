@@ -420,20 +420,20 @@ namespace DataAnalysisTool
             var importedFileArray = importedfileDataGridView.Columns.Cast<DataGridViewColumn>()
                 .Select(x => x.HeaderCell.Value.ToString().Trim()).ToArray();
 
+
+            
             dateCheckerListBox.Items.Clear();
+            specialCharacterCheckerListBox.Items.Clear();
+            nullCheckerListBox.Items.Clear();
+            cellLengthCheckerListBox.Items.Clear();
             int a = 0;
             for (int i = 0; i < importedFileArray.Length; i++)
             {
                 a++;
-                dateCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
-            }
-
-            specialCharacterCheckerListBox.Items.Clear();
-            a = 0;
-            for (int i = 0; i < importedFileArray.Length; i++)
-            {
-                a++;
                 specialCharacterCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
+                dateCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
+                nullCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
+                cellLengthCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
             }
 
             progressBar1.MarqueeAnimationSpeed = 0;
@@ -1098,6 +1098,21 @@ namespace DataAnalysisTool
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.calliduscloud.com/"); 
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+    (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
 
         /// TEST CODE

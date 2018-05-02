@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataAnalysisTool));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.importedfileDataGridView = new System.Windows.Forms.DataGridView();
@@ -93,24 +93,26 @@
             this.label4 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cellLengthCheckerListBox = new System.Windows.Forms.ListBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.specialCharacterCheckerListBox = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.nullCheckerListBox = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitRequiredImportFormat_ImportedFile = new System.Windows.Forms.SplitContainer();
@@ -169,6 +171,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.dateListBox = new System.Windows.Forms.ListBox();
             this.dateFormat = new System.Windows.Forms.Label();
             this.dateComboBoxSeperator = new System.Windows.Forms.ComboBox();
@@ -183,7 +186,6 @@
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -247,34 +249,34 @@
             // importedfileDataGridView
             // 
             this.importedfileDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.importedfileDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.importedfileDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.importedfileDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.importedfileDataGridView.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.importedfileDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
             this.importedfileDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.importedfileDataGridView.Location = new System.Drawing.Point(0, 0);
             this.importedfileDataGridView.Name = "importedfileDataGridView";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.importedfileDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.importedfileDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.importedfileDataGridView.Size = new System.Drawing.Size(1034, 438);
             this.importedfileDataGridView.TabIndex = 5;
             this.importedfileDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
@@ -313,7 +315,7 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
@@ -327,14 +329,14 @@
             this.iFLogToolStripMenuItem});
             this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.openToolStripMenuItem.Text = "Open...";
             // 
             // cSVToolStripMenuItem
             // 
             this.cSVToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cSVToolStripMenuItem.Image")));
             this.cSVToolStripMenuItem.Name = "cSVToolStripMenuItem";
-            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.cSVToolStripMenuItem.Text = ".CSV";
             this.cSVToolStripMenuItem.Click += new System.EventHandler(this.menu_Open_Csv_Click);
             // 
@@ -345,20 +347,20 @@
             this.pipeToolStripMenuItem});
             this.tXTToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Textfile_818_16x;
             this.tXTToolStripMenuItem.Name = "tXTToolStripMenuItem";
-            this.tXTToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.tXTToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.tXTToolStripMenuItem.Text = ".TXT";
             // 
             // commaToolStripMenuItem
             // 
             this.commaToolStripMenuItem.Name = "commaToolStripMenuItem";
-            this.commaToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.commaToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.commaToolStripMenuItem.Text = "Comma Delimited";
             this.commaToolStripMenuItem.Click += new System.EventHandler(this.tXTToolStripMenuItemComma_Click);
             // 
             // pipeToolStripMenuItem
             // 
             this.pipeToolStripMenuItem.Name = "pipeToolStripMenuItem";
-            this.pipeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.pipeToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.pipeToolStripMenuItem.Text = "Pipe Delimited";
             this.pipeToolStripMenuItem.Click += new System.EventHandler(this.pipeToolStripMenuItem_Click);
             // 
@@ -366,7 +368,7 @@
             // 
             this.xLSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xLSToolStripMenuItem.Image")));
             this.xLSToolStripMenuItem.Name = "xLSToolStripMenuItem";
-            this.xLSToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.xLSToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.xLSToolStripMenuItem.Text = ".XLS";
             this.xLSToolStripMenuItem.Click += new System.EventHandler(this.menu_Open_Xls_Click);
             // 
@@ -374,7 +376,7 @@
             // 
             this.xMLToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("xMLToolStripMenuItem1.Image")));
             this.xMLToolStripMenuItem1.Name = "xMLToolStripMenuItem1";
-            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
+            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.xMLToolStripMenuItem1.Text = ".XML";
             this.xMLToolStripMenuItem1.Click += new System.EventHandler(this.menu_Open_Xml_Click);
             // 
@@ -382,7 +384,7 @@
             // 
             this.cCDataToolLogToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
             this.cCDataToolLogToolStripMenuItem.Name = "cCDataToolLogToolStripMenuItem";
-            this.cCDataToolLogToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.cCDataToolLogToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.cCDataToolLogToolStripMenuItem.Text = "DAT Log Folder";
             this.cCDataToolLogToolStripMenuItem.Click += new System.EventHandler(this.cCDataToolLogToolStripMenuItem_Click);
             // 
@@ -390,7 +392,7 @@
             // 
             this.iFLogToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
             this.iFLogToolStripMenuItem.Name = "iFLogToolStripMenuItem";
-            this.iFLogToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.iFLogToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.iFLogToolStripMenuItem.Text = "IF Log Folder";
             this.iFLogToolStripMenuItem.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -402,14 +404,14 @@
             this.xLSToolStripMenuItem1});
             this.saveAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveAsToolStripMenuItem.Image")));
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
             // 
             // cSVToolStripMenuItem1
             // 
             this.cSVToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("cSVToolStripMenuItem1.Image")));
             this.cSVToolStripMenuItem1.Name = "cSVToolStripMenuItem1";
-            this.cSVToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
+            this.cSVToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
             this.cSVToolStripMenuItem1.Text = ".CSV";
             this.cSVToolStripMenuItem1.Click += new System.EventHandler(this.menu_Save_Csv_Click);
             // 
@@ -417,7 +419,7 @@
             // 
             this.xMLToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xMLToolStripMenuItem.Image")));
             this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
             this.xMLToolStripMenuItem.Text = ".XML";
             this.xMLToolStripMenuItem.Click += new System.EventHandler(this.menu_Save_Xml_Click);
             // 
@@ -425,7 +427,7 @@
             // 
             this.xLSToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("xLSToolStripMenuItem1.Image")));
             this.xLSToolStripMenuItem1.Name = "xLSToolStripMenuItem1";
-            this.xLSToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
+            this.xLSToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
             this.xLSToolStripMenuItem1.Text = ".XLS";
             this.xLSToolStripMenuItem1.Visible = false;
             // 
@@ -433,7 +435,7 @@
             // 
             this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -441,7 +443,7 @@
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
             // 
@@ -453,14 +455,14 @@
             this.pasteToolStripMenuItem});
             this.editToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editToolStripMenuItem.Image")));
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // cutToolStripMenuItem
             // 
             this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
@@ -468,7 +470,7 @@
             // 
             this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
@@ -476,7 +478,7 @@
             // 
             this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
@@ -484,7 +486,7 @@
             // 
             this.viewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("viewToolStripMenuItem.Image")));
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.viewToolStripMenuItem.Text = "View";
             this.viewToolStripMenuItem.Visible = false;
             // 
@@ -494,7 +496,7 @@
             this.changeAColorToolStripMenuItem});
             this.settingsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("settingsToolStripMenuItem.Image")));
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Visible = false;
             // 
@@ -502,14 +504,14 @@
             // 
             this.changeAColorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("changeAColorToolStripMenuItem.Image")));
             this.changeAColorToolStripMenuItem.Name = "changeAColorToolStripMenuItem";
-            this.changeAColorToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.changeAColorToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.changeAColorToolStripMenuItem.Text = "Change a color...";
             // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("toolsToolStripMenuItem.Image")));
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             this.toolsToolStripMenuItem.Visible = false;
             // 
@@ -522,7 +524,7 @@
             this.dataInUseToolStripMenuItem});
             this.dataToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dataToolStripMenuItem.Image")));
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
-            this.dataToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.dataToolStripMenuItem.Text = "Data";
             this.dataToolStripMenuItem.Visible = false;
             // 
@@ -534,7 +536,7 @@
             this.customerNoCheckToolStripMenuItem});
             this.inFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inFileToolStripMenuItem.Image")));
             this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.inFileToolStripMenuItem.Text = "InFile";
             this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
             this.inFileToolStripMenuItem.Visible = false;
@@ -542,14 +544,14 @@
             // brokerDetailCheckToolStripMenuItem1
             // 
             this.brokerDetailCheckToolStripMenuItem1.Name = "brokerDetailCheckToolStripMenuItem1";
-            this.brokerDetailCheckToolStripMenuItem1.Size = new System.Drawing.Size(283, 22);
+            this.brokerDetailCheckToolStripMenuItem1.Size = new System.Drawing.Size(263, 22);
             this.brokerDetailCheckToolStripMenuItem1.Text = "BrokerDetail Check";
             this.brokerDetailCheckToolStripMenuItem1.ToolTipText = "Example: No BrokerDetail found for Broker# = xyz";
             // 
             // inMatchRuleInBrokerRoleBrokerToolStripMenuItem
             // 
             this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Name = "inMatchRuleInBrokerRoleBrokerToolStripMenuItem";
-            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
+            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
             this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Text = "InMatchRule/InBrokerRoleBroker Check";
             this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.ToolTipText = "Example: The InMatchRule cannot be posted because its parent InBrokerRoleBroker f" +
     "ailed to post successfully.";
@@ -557,7 +559,7 @@
             // customerNoCheckToolStripMenuItem
             // 
             this.customerNoCheckToolStripMenuItem.Name = "customerNoCheckToolStripMenuItem";
-            this.customerNoCheckToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
+            this.customerNoCheckToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
             this.customerNoCheckToolStripMenuItem.Text = "CustomerNo Check";
             this.customerNoCheckToolStripMenuItem.ToolTipText = "Example: Group/CORP (CustomerNo) is invalid.";
             // 
@@ -568,7 +570,7 @@
             this.openFromZIPExportToolStripMenuItem});
             this.openImportFormatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openImportFormatToolStripMenuItem.Image")));
             this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
-            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.openImportFormatToolStripMenuItem.Text = "Import Format";
             this.openImportFormatToolStripMenuItem.Click += new System.EventHandler(this.openImportFormatToolStripMenuItem_Click);
             // 
@@ -576,7 +578,7 @@
             // 
             this.selectFromDatabaseToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.ExportTestRunResults_8602;
             this.selectFromDatabaseToolStripMenuItem.Name = "selectFromDatabaseToolStripMenuItem";
-            this.selectFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.selectFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.selectFromDatabaseToolStripMenuItem.Text = "Select From Database";
             this.selectFromDatabaseToolStripMenuItem.Visible = false;
             this.selectFromDatabaseToolStripMenuItem.Click += new System.EventHandler(this.selectFromDatabaseToolStripMenuItem_Click);
@@ -584,7 +586,7 @@
             // openFromZIPExportToolStripMenuItem
             // 
             this.openFromZIPExportToolStripMenuItem.Name = "openFromZIPExportToolStripMenuItem";
-            this.openFromZIPExportToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.openFromZIPExportToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.openFromZIPExportToolStripMenuItem.Text = "Open From .ZIP Export";
             this.openFromZIPExportToolStripMenuItem.Visible = false;
             this.openFromZIPExportToolStripMenuItem.Click += new System.EventHandler(this.openFromZIPExportToolStripMenuItem_Click);
@@ -596,7 +598,7 @@
             this.inProgramCheckToolStripMenuItem});
             this.medicareToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("medicareToolStripMenuItem.Image")));
             this.medicareToolStripMenuItem.Name = "medicareToolStripMenuItem";
-            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.medicareToolStripMenuItem.Text = "Medicare";
             this.medicareToolStripMenuItem.Visible = false;
             // 
@@ -606,28 +608,28 @@
             this.groupByColumnToolStripMenuItem});
             this.createErrorFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("createErrorFileToolStripMenuItem.Image")));
             this.createErrorFileToolStripMenuItem.Name = "createErrorFileToolStripMenuItem";
-            this.createErrorFileToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.createErrorFileToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.createErrorFileToolStripMenuItem.Text = "Create Error File";
             // 
             // groupByColumnToolStripMenuItem
             // 
             this.groupByColumnToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.threecolumns_9714;
             this.groupByColumnToolStripMenuItem.Name = "groupByColumnToolStripMenuItem";
-            this.groupByColumnToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.groupByColumnToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.groupByColumnToolStripMenuItem.Text = "Group by Column";
             // 
             // inProgramCheckToolStripMenuItem
             // 
             this.inProgramCheckToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inProgramCheckToolStripMenuItem.Image")));
             this.inProgramCheckToolStripMenuItem.Name = "inProgramCheckToolStripMenuItem";
-            this.inProgramCheckToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.inProgramCheckToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.inProgramCheckToolStripMenuItem.Text = "In Program Check";
             // 
             // dataInUseToolStripMenuItem
             // 
             this.dataInUseToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dataInUseToolStripMenuItem.Image")));
             this.dataInUseToolStripMenuItem.Name = "dataInUseToolStripMenuItem";
-            this.dataInUseToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.dataInUseToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.dataInUseToolStripMenuItem.Text = "Data in Use";
             this.dataInUseToolStripMenuItem.Visible = false;
             // 
@@ -637,14 +639,14 @@
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripMenuItem.Image")));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.menu_About_Click);
             // 
@@ -698,13 +700,13 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(216, 11);
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(6, 54);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 63);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 21;
             this.button1.Text = "GO";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.dateConvert_Click1);
             // 
@@ -717,7 +719,7 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(256, 80);
+            this.groupBox2.Size = new System.Drawing.Size(216, 80);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Date Checker:";
@@ -725,7 +727,7 @@
             // dateCheckerListBox
             // 
             this.dateCheckerListBox.FormattingEnabled = true;
-            this.dateCheckerListBox.Location = new System.Drawing.Point(93, 18);
+            this.dateCheckerListBox.Location = new System.Drawing.Point(94, 18);
             this.dateCheckerListBox.Name = "dateCheckerListBox";
             this.dateCheckerListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.dateCheckerListBox.Size = new System.Drawing.Size(117, 56);
@@ -754,17 +756,44 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.AliceBlue;
-            this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.cellLengthCheckerListBox);
+            this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Location = new System.Drawing.Point(665, 6);
+            this.groupBox3.Location = new System.Drawing.Point(673, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(195, 80);
+            this.groupBox3.Size = new System.Drawing.Size(218, 80);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cell Length Checker:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Max length:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(68, 33);
+            this.textBox4.MaxLength = 3;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(24, 20);
+            this.textBox4.TabIndex = 23;
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
+            // 
+            // cellLengthCheckerListBox
+            // 
+            this.cellLengthCheckerListBox.FormattingEnabled = true;
+            this.cellLengthCheckerListBox.Location = new System.Drawing.Point(94, 18);
+            this.cellLengthCheckerListBox.Name = "cellLengthCheckerListBox";
+            this.cellLengthCheckerListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.cellLengthCheckerListBox.Size = new System.Drawing.Size(117, 56);
+            this.cellLengthCheckerListBox.TabIndex = 33;
             // 
             // button4
             // 
@@ -775,44 +804,28 @@
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(154, 11);
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.Location = new System.Drawing.Point(6, 54);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(34, 63);
+            this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 22;
             this.button4.Text = "GO";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.cellLength_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(86, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Max length:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(89, 36);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(59, 20);
-            this.textBox4.TabIndex = 23;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 18);
+            this.label2.Location = new System.Drawing.Point(6, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 22;
-            this.label2.Text = "Column name:";
+            this.label2.Text = "Select Column(s):";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(9, 36);
+            this.textBox3.Location = new System.Drawing.Point(1144, 42);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(75, 20);
             this.textBox3.TabIndex = 20;
@@ -820,17 +833,25 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.AliceBlue;
+            this.groupBox4.Controls.Add(this.textBox1);
             this.groupBox4.Controls.Add(this.specialCharacterCheckerListBox);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.comboBox1);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Location = new System.Drawing.Point(268, 6);
+            this.groupBox4.Location = new System.Drawing.Point(228, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(257, 80);
+            this.groupBox4.Size = new System.Drawing.Size(218, 80);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Special Character Checker:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(72, 33);
+            this.textBox1.MaxLength = 1;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(16, 20);
+            this.textBox1.TabIndex = 30;
             // 
             // specialCharacterCheckerListBox
             // 
@@ -850,27 +871,6 @@
             this.label7.TabIndex = 30;
             this.label7.Text = "Special char:";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "@",
-            "!",
-            "#",
-            "$",
-            "%",
-            "^",
-            "&",
-            "*"});
-            this.comboBox1.Location = new System.Drawing.Point(9, 50);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(66, 21);
-            this.comboBox1.TabIndex = 29;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -889,13 +889,13 @@
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(217, 11);
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.Location = new System.Drawing.Point(6, 54);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(34, 63);
+            this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 21;
             this.button3.Text = "GO";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.specialCharacter_Click);
             // 
@@ -921,31 +921,33 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.AliceBlue;
+            this.groupBox5.Controls.Add(this.nullCheckerListBox);
             this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Controls.Add(this.textBox6);
             this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Location = new System.Drawing.Point(531, 6);
+            this.groupBox5.Location = new System.Drawing.Point(452, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(128, 80);
+            this.groupBox5.Size = new System.Drawing.Size(215, 80);
             this.groupBox5.TabIndex = 27;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "NULL Checker:";
             // 
+            // nullCheckerListBox
+            // 
+            this.nullCheckerListBox.FormattingEnabled = true;
+            this.nullCheckerListBox.Location = new System.Drawing.Point(94, 18);
+            this.nullCheckerListBox.Name = "nullCheckerListBox";
+            this.nullCheckerListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.nullCheckerListBox.Size = new System.Drawing.Size(117, 56);
+            this.nullCheckerListBox.TabIndex = 32;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 19);
+            this.label6.Location = new System.Drawing.Point(6, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 13);
+            this.label6.Size = new System.Drawing.Size(89, 13);
             this.label6.TabIndex = 25;
-            this.label6.Text = "Column name:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(6, 35);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(74, 20);
-            this.textBox6.TabIndex = 20;
+            this.label6.Text = "Select Column(s):";
             // 
             // button5
             // 
@@ -956,15 +958,22 @@
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(86, 11);
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.Location = new System.Drawing.Point(6, 54);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(34, 63);
+            this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 21;
             this.button5.Text = "GO";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.nullChecker_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(1145, 17);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(74, 20);
+            this.textBox6.TabIndex = 20;
             // 
             // notifyIcon1
             // 
@@ -1018,35 +1027,35 @@
             // importformatDataGridView
             // 
             this.importformatDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.importformatDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.importformatDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.importformatDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.importformatDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.importformatDataGridView.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.importformatDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
             this.importformatDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.importformatDataGridView.Location = new System.Drawing.Point(0, 0);
             this.importformatDataGridView.Name = "importformatDataGridView";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.importformatDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.importformatDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.importformatDataGridView.Size = new System.Drawing.Size(1034, 123);
             this.importformatDataGridView.TabIndex = 0;
             this.importformatDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
@@ -1091,36 +1100,36 @@
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridView2.Size = new System.Drawing.Size(370, 431);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
@@ -1362,14 +1371,14 @@
             // 
             this.toolStripStatusLabel15.Image = global::DataAnalysisTool.Properties.Resources.Information_blue_6227_21x20;
             this.toolStripStatusLabel15.Name = "toolStripStatusLabel15";
-            this.toolStripStatusLabel15.Size = new System.Drawing.Size(94, 17);
+            this.toolStripStatusLabel15.Size = new System.Drawing.Size(87, 17);
             this.toolStripStatusLabel15.Text = "Table Legend";
             this.toolStripStatusLabel15.Click += new System.EventHandler(this.toolStripStatusLabel15_Click);
             // 
             // toolStripStatusLabel16
             // 
             this.toolStripStatusLabel16.Name = "toolStripStatusLabel16";
-            this.toolStripStatusLabel16.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel16.Size = new System.Drawing.Size(11, 17);
             this.toolStripStatusLabel16.Text = "|";
             this.toolStripStatusLabel16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
@@ -1377,14 +1386,14 @@
             // 
             this.toolStripStatusLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel1.Image")));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(145, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(137, 17);
             this.toolStripStatusLabel1.Text = "Unable to Register User";
             this.toolStripStatusLabel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(11, 17);
             this.toolStripStatusLabel3.Text = "|";
             this.toolStripStatusLabel3.Visible = false;
             this.toolStripStatusLabel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1392,7 +1401,7 @@
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(142, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(130, 17);
             this.toolStripStatusLabel2.Text = "Imported File Row Count:";
             this.toolStripStatusLabel2.Visible = false;
             this.toolStripStatusLabel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1409,7 +1418,7 @@
             // toolStripStatusLabel5
             // 
             this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(11, 17);
             this.toolStripStatusLabel5.Text = "|";
             this.toolStripStatusLabel5.Visible = false;
             this.toolStripStatusLabel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1417,7 +1426,7 @@
             // toolStripStatusLabel6
             // 
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(93, 17);
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(86, 17);
             this.toolStripStatusLabel6.Text = "SQL Row Count:";
             this.toolStripStatusLabel6.Visible = false;
             this.toolStripStatusLabel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1433,7 +1442,7 @@
             // toolStripStatusLabel8
             // 
             this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel8.Size = new System.Drawing.Size(11, 17);
             this.toolStripStatusLabel8.Text = "|";
             this.toolStripStatusLabel8.Visible = false;
             this.toolStripStatusLabel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1441,7 +1450,7 @@
             // toolStripStatusLabel9
             // 
             this.toolStripStatusLabel9.Name = "toolStripStatusLabel9";
-            this.toolStripStatusLabel9.Size = new System.Drawing.Size(149, 17);
+            this.toolStripStatusLabel9.Size = new System.Drawing.Size(136, 17);
             this.toolStripStatusLabel9.Text = "Import Format Row Count:";
             this.toolStripStatusLabel9.Visible = false;
             this.toolStripStatusLabel9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1457,7 +1466,7 @@
             // toolStripStatusLabel11
             // 
             this.toolStripStatusLabel11.Name = "toolStripStatusLabel11";
-            this.toolStripStatusLabel11.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel11.Size = new System.Drawing.Size(11, 17);
             this.toolStripStatusLabel11.Text = "|";
             this.toolStripStatusLabel11.Visible = false;
             this.toolStripStatusLabel11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1465,7 +1474,7 @@
             // toolStripStatusLabel12
             // 
             this.toolStripStatusLabel12.Name = "toolStripStatusLabel12";
-            this.toolStripStatusLabel12.Size = new System.Drawing.Size(115, 17);
+            this.toolStripStatusLabel12.Size = new System.Drawing.Size(104, 17);
             this.toolStripStatusLabel12.Text = "Imported File Name:";
             this.toolStripStatusLabel12.Visible = false;
             this.toolStripStatusLabel12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1474,7 +1483,7 @@
             // 
             this.toolStripStatusLabel13.Name = "toolStripStatusLabel13";
             this.toolStripStatusLabel13.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabel13.Size = new System.Drawing.Size(36, 17);
+            this.toolStripStatusLabel13.Size = new System.Drawing.Size(31, 17);
             this.toolStripStatusLabel13.Text = "NULL";
             this.toolStripStatusLabel13.Visible = false;
             this.toolStripStatusLabel13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1734,6 +1743,17 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Select Date Format and Date Columns";
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox2.Location = new System.Drawing.Point(10, 60);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(80, 17);
+            this.checkBox2.TabIndex = 42;
+            this.checkBox2.Text = "Find NULL?";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // dateListBox
             // 
             this.dateListBox.FormattingEnabled = true;
@@ -1869,7 +1889,9 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage2.Controls.Add(this.textBox6);
             this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.textBox3);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Controls.Add(this.groupBox5);
@@ -1934,17 +1956,6 @@
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "CallidusCloud";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox2.Location = new System.Drawing.Point(10, 60);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 17);
-            this.checkBox2.TabIndex = 42;
-            this.checkBox2.Text = "Find NULL?";
-            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // DataAnalysisTool
             // 
@@ -2025,6 +2036,7 @@
             this.groupBox6.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2069,7 +2081,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource form1BindingSource;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -2176,6 +2187,9 @@
         private System.Windows.Forms.ListBox dateCheckerListBox;
         private System.Windows.Forms.ListBox specialCharacterCheckerListBox;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.ListBox nullCheckerListBox;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListBox cellLengthCheckerListBox;
     }
 }
 
