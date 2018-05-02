@@ -18,28 +18,29 @@ namespace DataAnalysisTool
         {
             int a = 0;
             String reqItem;
-            String specialChar = textBox1.Text;
-            if (textBox1.Text.Length == 0)
+            if (textBox4.Text.Length == 0)
             {
-                MessageBox.Show("You did not select a special character!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("You did not enter a length!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
-            foreach (Object selecteditem in specialCharacterCheckerListBox.SelectedItems)
+            int length = int.Parse(textBox4.Text);
+
+            foreach (Object selecteditem in cellLengthCheckerListBox.SelectedItems)
             {
                 a++;
                 reqItem = selecteditem as String;
-                int specialCharacterCurIndex = specialCharacterCheckerListBox.Items.IndexOf(reqItem);
-                if (specialCharacterCurIndex >= 0)
+                int lengthCharacterCurIndex = cellLengthCheckerListBox.Items.IndexOf(reqItem);
+                if (lengthCharacterCurIndex >= 0)
                 {
 
                     for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                     {
 
-                        var value = importedfileDataGridView.Rows[i].Cells[specialCharacterCurIndex].Value.ToString();
+                        var value = importedfileDataGridView.Rows[i].Cells[lengthCharacterCurIndex].Value.ToString();
                         //MessageBox.Show("value "+value+"reqitem "+reqItem);
-                        if (value.Contains(specialChar) == true)
+                        if (value.Length > length)
                         {
-                            MessageBox.Show("'" + specialChar + "'" + " WAS found in the column " + "'" + selecteditem + "'", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("The value '" + value + "'" + " in column "+selecteditem+" is too long", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             return;
                         }
                     }
@@ -50,38 +51,11 @@ namespace DataAnalysisTool
                 MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
-            MessageBox.Show("'" + specialChar + "'" + " WAS NOT FOUND!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            MessageBox.Show("All columns/rows are under "+length, "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
 
 
-
-
-
-
-
-
-
-            //{
-            //    try
-            //    {
-            //        DataGridViewColumn column = importedfileDataGridView.Columns[textBox3.Text];
-            //        MessageBox.Show(column.Name + " must be " + textBox4.Text + " Digit(s) Long!");
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        if (textBox3.Text.Length == 0)
-            //        {
-            //            MessageBox.Show("You did not enter a column name!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            //            return;
-            //        }
-            //        if (textBox4.Text.Length == 0)
-            //        {
-            //            MessageBox.Show("You did not enter a length!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            //            return;
-            //        }
-            //        MessageBox.Show(ex.Message, "CCDataTool", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
+            
         }
 
         //------------------CELL LENGTH CHECKER END------------------------------------------------------
@@ -95,7 +69,7 @@ namespace DataAnalysisTool
             String specialChar=textBox1.Text;
             if (textBox1.Text.Length == 0)
             {
-                MessageBox.Show("You did not select a special character!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("You did not enter a special character!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
             foreach (Object selecteditem in specialCharacterCheckerListBox.SelectedItems)
