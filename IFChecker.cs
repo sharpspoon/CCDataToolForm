@@ -339,8 +339,6 @@ namespace DataAnalysisTool
                                     }
                                     string dateFormat2 = dateFormat.Text.Remove(0, 13);
 
-
-
                                     int dateFormatLength = dateFormat2.Length;
                                     MessageBox.Show("dateFormat2=" + dateFormat2+ "dateFormatLength="+ dateFormatLength);
                                     if (dateCurIndex >= 0)
@@ -568,10 +566,8 @@ namespace DataAnalysisTool
                                 conn.Close();
                             }
                             catch { return; }
-
                             conn.Close();
                         }
-                      
                         tw.WriteLine("EOF.");
                     }
                 }

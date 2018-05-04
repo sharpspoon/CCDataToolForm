@@ -40,7 +40,8 @@ namespace DataAnalysisTool
                         //MessageBox.Show("value "+value+"reqitem "+reqItem);
                         if (value.Length > length)
                         {
-                            MessageBox.Show("The value '" + value + "'" + " in column "+selecteditem+" is too long", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[lengthCharacterCurIndex];
+                            MessageBox.Show("The value '" + value + "'" + " in column "+selecteditem+", line "+ (i + 1)+" is too long", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             return;
                         }
                     }
@@ -87,7 +88,9 @@ namespace DataAnalysisTool
                         //MessageBox.Show("value "+value+"reqitem "+reqItem);
                         if (value.Contains(specialChar) == true)
                         {
-                            MessageBox.Show("'" + specialChar + "'" + " WAS found in the column " + "'" + selecteditem + "'", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[specialCharacterCurIndex];
+                            MessageBox.Show("'" + specialChar + "'" + " WAS found in the column " + "'" + selecteditem + "'"+ " at line " + (i + 1), "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            
                             return;
                         }
                     }
@@ -98,7 +101,7 @@ namespace DataAnalysisTool
                 MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
-            MessageBox.Show("'" + specialChar + "'" + " WAS NOT FOUND!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            MessageBox.Show("'" + specialChar + "'" + " WAS NOT FOUND!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
 
         //------------------SPECIAL CHARACTER CHECKER END------------------------------------------------------
@@ -123,6 +126,7 @@ namespace DataAnalysisTool
                         var value = importedfileDataGridView.Rows[i].Cells[nullCheckCurIndex].Value.ToString();
                         if (string.IsNullOrWhiteSpace(value))
                         {
+                            importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[nullCheckCurIndex];
                             MessageBox.Show("NULL value found in column " + "'" + reqItem + "'" + " at line " + (i + 1), "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             
                             return;
