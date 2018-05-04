@@ -28,6 +28,16 @@ namespace DataAnalysisTool
         //*********************************HEADER MENU*************************************************
         //*********************************************************************************************
 
+        //------------------CC LOG OPEN START------------------------------------------------------
+        private void cCDataToolLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            progressBar1.MarqueeAnimationSpeed = 1;
+            Process.Start(Application.UserAppDataPath + @"\Logs");
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
+        }
+        //------------------CC LOG OPEN END------------------------------------------------------
+
         //------------------OPEN/SAVE XML START------------------------------------------------------
         private void menu_Open_Xml_Click(object sender, EventArgs e)
         {
@@ -356,7 +366,6 @@ namespace DataAnalysisTool
             progressBar1.MarqueeAnimationSpeed = 1;
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                //MessageBox.Show(Application.UserAppDataPath);
                 DialogResult result = MessageBox.Show("Do you really want to exit?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
@@ -381,7 +390,6 @@ namespace DataAnalysisTool
                                 tw.WriteLine(".");
                                 tw.WriteLine(richTextBox1.Text);
                                 tw.WriteLine("EOF.");
-
                             }
                         }
                         Environment.Exit(0);
@@ -430,6 +438,71 @@ namespace DataAnalysisTool
         //*********************************************************************************************
         //*********************************/SHORTCUT TAB***********************************************
         //*********************************************************************************************
+
+        //*********************************************************************************************
+        //*********************************CELL CHECK TAB**********************************************
+        //*********************************************************************************************
+
+        //------------------SELECT/CLEAR LIST BOX START------------------------------------------------------
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dateCheckerListBox.Items.Count; i++)
+            {
+                dateCheckerListBox.SetSelected(i, true);
+            }
+        }
+        private void button18_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < specialCharacterCheckerListBox.Items.Count; i++)
+            {
+                specialCharacterCheckerListBox.SetSelected(i, true);
+            }
+        }
+        private void button19_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < nullCheckerListBox.Items.Count; i++)
+            {
+                nullCheckerListBox.SetSelected(i, true);
+            }
+        }
+        private void button20_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < cellLengthCheckerListBox.Items.Count; i++)
+            {
+                cellLengthCheckerListBox.SetSelected(i, true);
+            }
+        }
+        private void button21_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dateCheckerListBox.Items.Count; i++)
+            {
+                dateCheckerListBox.SetSelected(i, false);
+            }
+        }
+        private void button24_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < specialCharacterCheckerListBox.Items.Count; i++)
+            {
+                specialCharacterCheckerListBox.SetSelected(i, false);
+            }
+        }
+        private void button23_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < nullCheckerListBox.Items.Count; i++)
+            {
+                nullCheckerListBox.SetSelected(i, false);
+            }
+        }
+        private void button22_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < cellLengthCheckerListBox.Items.Count; i++)
+            {
+                cellLengthCheckerListBox.SetSelected(i, false);
+            }
+        }
+
+        //------------------SELECT/CLEAR LIST BOX END------------------------------------------------------
 
         //------------------DATE CONVERTER START------------------------------------------------------
         private void dateConvert_Click1(object sender, EventArgs e)
@@ -535,6 +608,145 @@ namespace DataAnalysisTool
             return;
         }
         //------------------DATE CONVERTER END------------------------------------------------------
+
+        //------------------NULL CHECKER START------------------------------------------------------
+
+        private void nullChecker_Click(object sender, EventArgs e)
+        {
+            int a = 0;
+            String reqItem;
+            foreach (Object selecteditem in nullCheckerListBox.SelectedItems)
+            {
+                a++;
+                reqItem = selecteditem as String;
+                int nullCheckCurIndex = nullCheckerListBox.Items.IndexOf(reqItem);
+                if (nullCheckCurIndex >= 0)
+                {
+
+                    for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
+                    {
+
+                        var value = importedfileDataGridView.Rows[i].Cells[nullCheckCurIndex].Value.ToString();
+                        if (string.IsNullOrWhiteSpace(value))
+                        {
+                            importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[nullCheckCurIndex];
+                            MessageBox.Show("NULL value found in column " + "'" + reqItem + "'" + " at line " + (i + 1), "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            return;
+                        }
+                    }
+                }
+            }
+            if (a == 0)
+            {
+                MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            MessageBox.Show("no NULL value!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        }
+        //------------------NULL CHECKER END------------------------------------------------------
+
+        //------------------CELL LENGTH CHECKER START------------------------------------------------------
+
+        private void cellLength_Click(object sender, EventArgs e)
+        {
+            int a = 0;
+            String reqItem;
+            if (textBox4.Text.Length == 0)
+            {
+                MessageBox.Show("You did not enter a length!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            int length = int.Parse(textBox4.Text);
+
+            foreach (Object selecteditem in cellLengthCheckerListBox.SelectedItems)
+            {
+                a++;
+                reqItem = selecteditem as String;
+                int lengthCharacterCurIndex = cellLengthCheckerListBox.Items.IndexOf(reqItem);
+                if (lengthCharacterCurIndex >= 0)
+                {
+
+                    for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
+                    {
+
+                        var value = importedfileDataGridView.Rows[i].Cells[lengthCharacterCurIndex].Value.ToString();
+                        //MessageBox.Show("value "+value+"reqitem "+reqItem);
+                        if (value.Length > length)
+                        {
+                            importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[lengthCharacterCurIndex];
+                            MessageBox.Show("The value '" + value + "'" + " in column " + selecteditem + ", line " + (i + 1) + " is too long", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            return;
+                        }
+                    }
+                }
+            }
+            if (a == 0)
+            {
+                MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            MessageBox.Show("All columns/rows are under " + length, "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+
+
+
+        }
+
+        //------------------CELL LENGTH CHECKER END------------------------------------------------------
+
+        //------------------SPECIAL CHARACTER CHECKER START------------------------------------------------------
+
+        private void specialCharacter_Click(object sender, EventArgs e)
+        {
+            int a = 0;
+            String reqItem;
+            String specialChar = textBox1.Text;
+            if (textBox1.Text.Length == 0)
+            {
+                MessageBox.Show("You did not enter a special character!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            foreach (Object selecteditem in specialCharacterCheckerListBox.SelectedItems)
+            {
+                a++;
+                reqItem = selecteditem as String;
+                int specialCharacterCurIndex = specialCharacterCheckerListBox.Items.IndexOf(reqItem);
+                if (specialCharacterCurIndex >= 0)
+                {
+
+                    for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
+                    {
+
+                        var value = importedfileDataGridView.Rows[i].Cells[specialCharacterCurIndex].Value.ToString();
+                        //MessageBox.Show("value "+value+"reqitem "+reqItem);
+                        if (value.Contains(specialChar) == true)
+                        {
+                            importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[specialCharacterCurIndex];
+                            MessageBox.Show("'" + specialChar + "'" + " WAS found in the column " + "'" + selecteditem + "'" + " at line " + (i + 1), "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            return;
+                        }
+                    }
+                }
+            }
+            if (a == 0)
+            {
+                MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            MessageBox.Show("'" + specialChar + "'" + " WAS NOT FOUND!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        }
+
+        //------------------SPECIAL CHARACTER CHECKER END------------------------------------------------------
+
+        //*********************************************************************************************
+        //*********************************/CELL CHECK TAB*********************************************
+        //*********************************************************************************************
+
+        //*********************************************************************************************
+        //*********************************GLOBAL******************************************************
+        //*********************************************************************************************
         public DataAnalysisTool()
         {
             InitializeComponent();
@@ -549,14 +761,6 @@ namespace DataAnalysisTool
             toolStripStatusLabel1.Text = @"TALLYCENTRAL\"+Environment.UserName;
         }
 
-
-        private void toolStripStatusLabel4_Click(object sender, EventArgs e)
-        {
-            toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
-        }
-
-
-        
         //------------------FORM DRAG LOGIC START------------------------------------------------------
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -574,12 +778,8 @@ namespace DataAnalysisTool
         }
         //------------------FORM DRAG LOGIC END------------------------------------------------------
 
-
-
-
-
         //------------------CROW NUMBER LOGIC START------------------------------------------------------
-        private void dgvUserDetails_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e) 
+        private void dgvUserDetails_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             using (SolidBrush b = new SolidBrush(importedfileDataGridView.RowHeadersDefaultCellStyle.ForeColor))
             {
@@ -588,10 +788,23 @@ namespace DataAnalysisTool
         }
         //------------------CROW NUMBER LOGIC END------------------------------------------------------
 
+        private void Form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        //*********************************************************************************************
+        //*********************************/GLOBAL*****************************************************
+        //*********************************************************************************************
 
 
-
-
+        private void toolStripStatusLabel4_Click(object sender, EventArgs e)
+        {
+            toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
+        }
         private void ssms_Click(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
@@ -605,26 +818,6 @@ namespace DataAnalysisTool
             progressBar1.Refresh();
         }
 
-
-
-        //------------------CC LOG OPEN START------------------------------------------------------
-        private void cCDataToolLogToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            progressBar1.MarqueeAnimationSpeed = 1;
-            Process.Start(Application.UserAppDataPath + @"\Logs");
-            progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
-        }
-        //------------------CC LOG OPEN END------------------------------------------------------
-
-
-
-
-
-
-
-
-
         private void toolStripStatusLabel15_Click(object sender, EventArgs e)
         {
             DataGridViewLegend legend = new DataGridViewLegend();
@@ -636,13 +829,7 @@ namespace DataAnalysisTool
             legend.ShowDialog();
         }
 
-        private void Form_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-            {
-                this.Close();
-            }
-        }
+
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -1144,69 +1331,7 @@ namespace DataAnalysisTool
             }
         }
 
-        private void button17_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < dateCheckerListBox.Items.Count; i++)
-            {
-                dateCheckerListBox.SetSelected(i, true);
-            }
-        }
 
-        private void button18_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < specialCharacterCheckerListBox.Items.Count; i++)
-            {
-                specialCharacterCheckerListBox.SetSelected(i, true);
-            }
-        }
-
-        private void button19_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < nullCheckerListBox.Items.Count; i++)
-            {
-                nullCheckerListBox.SetSelected(i, true);
-            }
-        }
-
-        private void button20_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < cellLengthCheckerListBox.Items.Count; i++)
-            {
-                cellLengthCheckerListBox.SetSelected(i, true);
-            }
-        }
-
-        private void button21_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < dateCheckerListBox.Items.Count; i++)
-            {
-                dateCheckerListBox.SetSelected(i, false);
-            }
-        }
-
-        private void button24_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < specialCharacterCheckerListBox.Items.Count; i++)
-            {
-                specialCharacterCheckerListBox.SetSelected(i, false);
-            }
-        }
-
-        private void button23_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < nullCheckerListBox.Items.Count; i++)
-            {
-                nullCheckerListBox.SetSelected(i, false);
-            }
-        }
-
-        private void button22_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < cellLengthCheckerListBox.Items.Count; i++)
-            {
-                cellLengthCheckerListBox.SetSelected(i, false);
-            }
-        }
 
     }
 }

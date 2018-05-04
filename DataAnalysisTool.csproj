@@ -110,9 +110,6 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="CellChecker.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="DataGridViewLegend.cs">
       <SubType>Form</SubType>
     </Compile>
