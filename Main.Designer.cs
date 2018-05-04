@@ -64,23 +64,6 @@
             this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeAColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.brokerDetailCheckToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerNoCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openImportFormatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectFromDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFromZIPExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.medicareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createErrorFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupByColumnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inProgramCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataInUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
@@ -143,7 +126,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.masterDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qBQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseFileSizeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -227,7 +209,6 @@
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFileSizeBindingSource)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -297,10 +278,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.viewToolStripMenuItem,
-            this.settingsToolStripMenuItem,
-            this.toolsToolStripMenuItem,
-            this.dataToolStripMenuItem,
             this.helpToolStripMenuItem,
             this.toolStripMenuItemClose,
             this.toolStripMenuItemMaximize,
@@ -487,157 +464,6 @@
             this.pasteToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("viewToolStripMenuItem.Image")));
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.viewToolStripMenuItem.Text = "View";
-            this.viewToolStripMenuItem.Visible = false;
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changeAColorToolStripMenuItem});
-            this.settingsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("settingsToolStripMenuItem.Image")));
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            this.settingsToolStripMenuItem.Visible = false;
-            // 
-            // changeAColorToolStripMenuItem
-            // 
-            this.changeAColorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("changeAColorToolStripMenuItem.Image")));
-            this.changeAColorToolStripMenuItem.Name = "changeAColorToolStripMenuItem";
-            this.changeAColorToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.changeAColorToolStripMenuItem.Text = "Change a color...";
-            // 
-            // toolsToolStripMenuItem
-            // 
-            this.toolsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("toolsToolStripMenuItem.Image")));
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.toolsToolStripMenuItem.Text = "Tools";
-            this.toolsToolStripMenuItem.Visible = false;
-            // 
-            // dataToolStripMenuItem
-            // 
-            this.dataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inFileToolStripMenuItem,
-            this.openImportFormatToolStripMenuItem,
-            this.medicareToolStripMenuItem,
-            this.dataInUseToolStripMenuItem});
-            this.dataToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dataToolStripMenuItem.Image")));
-            this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
-            this.dataToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.dataToolStripMenuItem.Text = "Data";
-            this.dataToolStripMenuItem.Visible = false;
-            // 
-            // inFileToolStripMenuItem
-            // 
-            this.inFileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.brokerDetailCheckToolStripMenuItem1,
-            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem,
-            this.customerNoCheckToolStripMenuItem});
-            this.inFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inFileToolStripMenuItem.Image")));
-            this.inFileToolStripMenuItem.Name = "inFileToolStripMenuItem";
-            this.inFileToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.inFileToolStripMenuItem.Text = "InFile";
-            this.inFileToolStripMenuItem.ToolTipText = "Check for various types of InFile posting errors.";
-            this.inFileToolStripMenuItem.Visible = false;
-            // 
-            // brokerDetailCheckToolStripMenuItem1
-            // 
-            this.brokerDetailCheckToolStripMenuItem1.Name = "brokerDetailCheckToolStripMenuItem1";
-            this.brokerDetailCheckToolStripMenuItem1.Size = new System.Drawing.Size(263, 22);
-            this.brokerDetailCheckToolStripMenuItem1.Text = "BrokerDetail Check";
-            this.brokerDetailCheckToolStripMenuItem1.ToolTipText = "Example: No BrokerDetail found for Broker# = xyz";
-            // 
-            // inMatchRuleInBrokerRoleBrokerToolStripMenuItem
-            // 
-            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Name = "inMatchRuleInBrokerRoleBrokerToolStripMenuItem";
-            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
-            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.Text = "InMatchRule/InBrokerRoleBroker Check";
-            this.inMatchRuleInBrokerRoleBrokerToolStripMenuItem.ToolTipText = "Example: The InMatchRule cannot be posted because its parent InBrokerRoleBroker f" +
-    "ailed to post successfully.";
-            // 
-            // customerNoCheckToolStripMenuItem
-            // 
-            this.customerNoCheckToolStripMenuItem.Name = "customerNoCheckToolStripMenuItem";
-            this.customerNoCheckToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
-            this.customerNoCheckToolStripMenuItem.Text = "CustomerNo Check";
-            this.customerNoCheckToolStripMenuItem.ToolTipText = "Example: Group/CORP (CustomerNo) is invalid.";
-            // 
-            // openImportFormatToolStripMenuItem
-            // 
-            this.openImportFormatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.selectFromDatabaseToolStripMenuItem,
-            this.openFromZIPExportToolStripMenuItem});
-            this.openImportFormatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openImportFormatToolStripMenuItem.Image")));
-            this.openImportFormatToolStripMenuItem.Name = "openImportFormatToolStripMenuItem";
-            this.openImportFormatToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.openImportFormatToolStripMenuItem.Text = "Import Format";
-            this.openImportFormatToolStripMenuItem.Click += new System.EventHandler(this.openImportFormatToolStripMenuItem_Click);
-            // 
-            // selectFromDatabaseToolStripMenuItem
-            // 
-            this.selectFromDatabaseToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.ExportTestRunResults_8602;
-            this.selectFromDatabaseToolStripMenuItem.Name = "selectFromDatabaseToolStripMenuItem";
-            this.selectFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.selectFromDatabaseToolStripMenuItem.Text = "Select From Database";
-            this.selectFromDatabaseToolStripMenuItem.Visible = false;
-            this.selectFromDatabaseToolStripMenuItem.Click += new System.EventHandler(this.selectFromDatabaseToolStripMenuItem_Click);
-            // 
-            // openFromZIPExportToolStripMenuItem
-            // 
-            this.openFromZIPExportToolStripMenuItem.Name = "openFromZIPExportToolStripMenuItem";
-            this.openFromZIPExportToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.openFromZIPExportToolStripMenuItem.Text = "Open From .ZIP Export";
-            this.openFromZIPExportToolStripMenuItem.Visible = false;
-            this.openFromZIPExportToolStripMenuItem.Click += new System.EventHandler(this.openFromZIPExportToolStripMenuItem_Click);
-            // 
-            // medicareToolStripMenuItem
-            // 
-            this.medicareToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createErrorFileToolStripMenuItem,
-            this.inProgramCheckToolStripMenuItem});
-            this.medicareToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("medicareToolStripMenuItem.Image")));
-            this.medicareToolStripMenuItem.Name = "medicareToolStripMenuItem";
-            this.medicareToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.medicareToolStripMenuItem.Text = "Medicare";
-            this.medicareToolStripMenuItem.Visible = false;
-            // 
-            // createErrorFileToolStripMenuItem
-            // 
-            this.createErrorFileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.groupByColumnToolStripMenuItem});
-            this.createErrorFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("createErrorFileToolStripMenuItem.Image")));
-            this.createErrorFileToolStripMenuItem.Name = "createErrorFileToolStripMenuItem";
-            this.createErrorFileToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.createErrorFileToolStripMenuItem.Text = "Create Error File";
-            // 
-            // groupByColumnToolStripMenuItem
-            // 
-            this.groupByColumnToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.threecolumns_9714;
-            this.groupByColumnToolStripMenuItem.Name = "groupByColumnToolStripMenuItem";
-            this.groupByColumnToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.groupByColumnToolStripMenuItem.Text = "Group by Column";
-            // 
-            // inProgramCheckToolStripMenuItem
-            // 
-            this.inProgramCheckToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inProgramCheckToolStripMenuItem.Image")));
-            this.inProgramCheckToolStripMenuItem.Name = "inProgramCheckToolStripMenuItem";
-            this.inProgramCheckToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.inProgramCheckToolStripMenuItem.Text = "In Program Check";
-            // 
-            // dataInUseToolStripMenuItem
-            // 
-            this.dataInUseToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dataInUseToolStripMenuItem.Image")));
-            this.dataInUseToolStripMenuItem.Name = "dataInUseToolStripMenuItem";
-            this.dataInUseToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.dataInUseToolStripMenuItem.Text = "Data in Use";
-            this.dataInUseToolStripMenuItem.Visible = false;
             // 
             // helpToolStripMenuItem
             // 
@@ -1419,10 +1245,6 @@
             // 
             this.qBQueryBindingSource.DataMember = "QBQuery";
             // 
-            // form1BindingSource
-            // 
-            this.form1BindingSource.CurrentChanged += new System.EventHandler(this.form1BindingSource_CurrentChanged);
-            // 
             // databaseFileSizeBindingSource
             // 
             this.databaseFileSizeBindingSource.DataMember = "DatabaseFileSize";
@@ -2110,7 +1932,6 @@
             this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFileSizeBindingSource)).EndInit();
             this.statusStrip1.ResumeLayout(false);
@@ -2164,7 +1985,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.BindingSource form1BindingSource;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource qBQueryBindingSource;
@@ -2178,20 +1998,8 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.ComboBox tableSelect;
-        private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inFileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem brokerDetailCheckToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem inMatchRuleInBrokerRoleBrokerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customerNoCheckToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openImportFormatToolStripMenuItem;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ToolStripMenuItem selectFromDatabaseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openFromZIPExportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem medicareToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createErrorFileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inProgramCheckToolStripMenuItem;
         private System.Windows.Forms.ComboBox ifSelect;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
@@ -2207,8 +2015,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel11;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel12;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel13;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changeAColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
@@ -2217,15 +2023,12 @@
         public System.Windows.Forms.DataGridView importformatDataGridView;
         public System.Windows.Forms.SplitContainer splitRequiredImportFormat_ImportedFile;
         public System.Windows.Forms.DataGridView importedfileDataGridView;
-        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ToolStripMenuItem dataInUseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem groupByColumnToolStripMenuItem;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClose;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMaximize;
