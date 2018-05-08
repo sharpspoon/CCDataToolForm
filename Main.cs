@@ -109,25 +109,6 @@ namespace DataAnalysisTool
             progressBar1.Refresh();
 
         }
-
-        public DataTable ReadXls(string fileName)
-        {
-            String name = "Sheet1";
-            String constr = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
-                            "C:\\Sample.xls" +
-                            ";Extended Properties='Excel 8.0;HDR=YES;';";
-
-            OleDbConnection con = new OleDbConnection(constr);
-            OleDbCommand oconn = new OleDbCommand("Select * From [" + name + "$]", con);
-            con.Open();
-
-            OleDbDataAdapter sda = new OleDbDataAdapter(oconn);
-            DataTable data = new DataTable();
-            sda.Fill(data);
-            importedfileDataGridView.DataSource = data;
-            return data;
-
-        }
         //------------------OPEN/SAVE XLS END------------------------------------------------------
 
         //------------------CUT, COPY, PASTE START------------------------------------------------------
@@ -916,18 +897,30 @@ namespace DataAnalysisTool
 
         public DataTable ReadTxtPipe(string fileName)
         {
-            DataTable dt = new DataTable("Data");
-            using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
-                Path.GetDirectoryName(fileName) + "\";Extended Properties='text;HDR=yes;FMT=Delimited(|)';"))
+            DataTable dt = new DataTable();
+            string[] columns = null;
+
+            var lines = File.ReadAllLines(fileName);
+
+            // assuming the first row contains the columns information
+            if (lines.Count() > 0)
             {
-                using (OleDbCommand cmd = new OleDbCommand(string.Format("select * from [{0}]", new FileInfo(fileName).Name), cn))
-                {
-                    cn.Open();
-                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
-                    {
-                        adapter.Fill(dt);
-                    }
-                }
+                columns = lines[0].Split(new char[] { '|' });
+
+                foreach (var column in columns)
+                    dt.Columns.Add(column);
+            }
+
+            // reading rest of the data
+            for (int i = 1; i < lines.Count(); i++)
+            {
+                DataRow dr = dt.NewRow();
+                string[] values = lines[i].Split(new char[] { '|' });
+
+                for (int j = 0; j < values.Count() && j < columns.Count(); j++)
+                    dr[j] = values[j];
+
+                dt.Rows.Add(dr);
             }
             return dt;
         }
@@ -1330,8 +1323,5 @@ namespace DataAnalysisTool
                 e.Handled = true;
             }
         }
-
-
-
     }
 }

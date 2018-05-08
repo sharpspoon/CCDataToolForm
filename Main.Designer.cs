@@ -1101,6 +1101,7 @@
             this.button2.Text = "Launch SSMS";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.ssms_Click);
             // 
             // ifSelect
