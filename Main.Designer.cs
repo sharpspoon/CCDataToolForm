@@ -174,6 +174,7 @@
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -236,7 +237,7 @@
             // importedfileDataGridView
             // 
             this.importedfileDataGridView.AllowUserToAddRows = false;
-            this.importedfileDataGridView.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.importedfileDataGridView.BackgroundColor = System.Drawing.Color.Azure;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -522,6 +523,7 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.ccLogo_Click1);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // button1
             // 
@@ -942,7 +944,7 @@
             // importformatDataGridView
             // 
             this.importformatDataGridView.AllowUserToAddRows = false;
-            this.importformatDataGridView.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.importformatDataGridView.BackgroundColor = System.Drawing.Color.Azure;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1016,7 +1018,7 @@
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.Azure;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1054,7 +1056,7 @@
             // stagedDataGridView
             // 
             this.stagedDataGridView.AllowUserToAddRows = false;
-            this.stagedDataGridView.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.stagedDataGridView.BackgroundColor = System.Drawing.Color.Azure;
             this.stagedDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stagedDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
             this.stagedDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1094,7 +1096,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::DataAnalysisTool.Properties.Resources.DatabaseProject_7342_32x;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(6, 11);
+            this.button2.Location = new System.Drawing.Point(896, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(54, 72);
             this.button2.TabIndex = 38;
@@ -1117,6 +1119,7 @@
             this.ifSelect.Size = new System.Drawing.Size(188, 21);
             this.ifSelect.TabIndex = 32;
             this.ifSelect.SelectedIndexChanged += new System.EventHandler(this.ifSelect_SelectedIndexChanged);
+            this.ifSelect.MouseEnter += new System.EventHandler(this.ifSelect_MouseHover);
             // 
             // spDTAgetdatabasetableidsBindingSource
             // 
@@ -1137,6 +1140,7 @@
             this.groupBox7.TabIndex = 26;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Select Server/Database/Import Format:";
+            this.groupBox7.MouseHover += new System.EventHandler(this.groupBox7_MouseHover);
             // 
             // pictureBox4
             // 
@@ -1146,6 +1150,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(16, 16);
             this.pictureBox4.TabIndex = 34;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.MouseEnter += new System.EventHandler(this.ifSelect_MouseHover);
             // 
             // pictureBox2
             // 
@@ -1173,6 +1178,7 @@
             this.serverSelect.Size = new System.Drawing.Size(188, 21);
             this.serverSelect.TabIndex = 32;
             this.serverSelect.SelectedIndexChanged += new System.EventHandler(this.serverSelect_SelectedIndexChanged);
+            this.serverSelect.MouseEnter += new System.EventHandler(this.serverSelect_MouseHover);
             // 
             // databaseSelect
             // 
@@ -1187,6 +1193,7 @@
             this.databaseSelect.Size = new System.Drawing.Size(188, 21);
             this.databaseSelect.TabIndex = 31;
             this.databaseSelect.SelectedIndexChanged += new System.EventHandler(this.databaseSelect_SelectedIndexChanged);
+            this.databaseSelect.MouseEnter += new System.EventHandler(this.databaseSelect_MouseHover);
             // 
             // pictureBox5
             // 
@@ -1237,7 +1244,7 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Image = global::DataAnalysisTool.Properties.Resources.Login_6031_32x;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(66, 11);
+            this.button8.Location = new System.Drawing.Point(6, 6);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(54, 72);
             this.button8.TabIndex = 25;
@@ -1430,6 +1437,7 @@
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.groupByErrorToolStripMenuItem_Click);
+            this.button6.MouseEnter += new System.EventHandler(this.button6_MouseEnter);
             // 
             // tabControl1
             // 
@@ -1444,6 +1452,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1233, 132);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // tabPage3
             // 
@@ -1476,7 +1485,7 @@
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Image = global::DataAnalysisTool.Properties.Resources.XMLFile_828_32x;
             this.button16.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button16.Location = new System.Drawing.Point(510, 11);
+            this.button16.Location = new System.Drawing.Point(450, 6);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(54, 72);
             this.button16.TabIndex = 48;
@@ -1494,7 +1503,7 @@
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Image = global::DataAnalysisTool.Properties.Resources.XMLFile_828_32x;
             this.button15.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button15.Location = new System.Drawing.Point(450, 11);
+            this.button15.Location = new System.Drawing.Point(390, 6);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(54, 72);
             this.button15.TabIndex = 47;
@@ -1510,7 +1519,7 @@
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Image = global::DataAnalysisTool.Properties.Resources.XMLFile_828_32x;
             this.button14.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button14.Location = new System.Drawing.Point(378, 11);
+            this.button14.Location = new System.Drawing.Point(318, 6);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(54, 72);
             this.button14.TabIndex = 46;
@@ -1527,7 +1536,7 @@
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.Image = global::DataAnalysisTool.Properties.Resources.Textfile_818_32x;
             this.button13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button13.Location = new System.Drawing.Point(198, 11);
+            this.button13.Location = new System.Drawing.Point(138, 6);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(54, 72);
             this.button13.TabIndex = 45;
@@ -1544,7 +1553,7 @@
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.Image = global::DataAnalysisTool.Properties.Resources.Textfile_818_32x;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button12.Location = new System.Drawing.Point(258, 11);
+            this.button12.Location = new System.Drawing.Point(198, 6);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(54, 72);
             this.button12.TabIndex = 44;
@@ -1560,7 +1569,7 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Image = global::DataAnalysisTool.Properties.Resources.DeploymentDiagramSubsystemMapper_11298_32x;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button11.Location = new System.Drawing.Point(318, 11);
+            this.button11.Location = new System.Drawing.Point(258, 6);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(54, 72);
             this.button11.TabIndex = 43;
@@ -1576,7 +1585,7 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Image = global::DataAnalysisTool.Properties.Resources.UserDefinedDataType_8271_32x;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(138, 11);
+            this.button10.Location = new System.Drawing.Point(78, 6);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(54, 72);
             this.button10.TabIndex = 42;
@@ -1596,7 +1605,7 @@
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(641, 11);
+            this.button9.Location = new System.Drawing.Point(581, 6);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(54, 72);
             this.button9.TabIndex = 41;
@@ -1616,7 +1625,7 @@
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(581, 11);
+            this.button7.Location = new System.Drawing.Point(521, 6);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(54, 72);
             this.button7.TabIndex = 40;
@@ -1668,6 +1677,7 @@
             this.checkBox2.TabIndex = 42;
             this.checkBox2.Text = "Find NULL?";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.MouseEnter += new System.EventHandler(this.checkBox2_MouseEnter);
             // 
             // dateListBox
             // 
@@ -1677,6 +1687,7 @@
             this.dateListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.dateListBox.Size = new System.Drawing.Size(120, 56);
             this.dateListBox.TabIndex = 42;
+            this.dateListBox.MouseEnter += new System.EventHandler(this.dateListBox_MouseEnter);
             // 
             // dateFormat
             // 
@@ -1687,6 +1698,7 @@
             this.dateFormat.Size = new System.Drawing.Size(103, 20);
             this.dateFormat.TabIndex = 42;
             this.dateFormat.Text = "Date Format:";
+            this.dateFormat.MouseEnter += new System.EventHandler(this.dateFormat_MouseEnter);
             // 
             // dateComboBoxSeperator
             // 
@@ -1703,6 +1715,7 @@
             this.dateComboBoxSeperator.Size = new System.Drawing.Size(63, 21);
             this.dateComboBoxSeperator.TabIndex = 43;
             this.dateComboBoxSeperator.SelectedIndexChanged += new System.EventHandler(this.dateComboBoxSeperator_SelectedIndexChanged);
+            this.dateComboBoxSeperator.MouseEnter += new System.EventHandler(this.dateComboBoxSeperator_MouseEnter);
             // 
             // dateComboBox3
             // 
@@ -1729,6 +1742,7 @@
             this.dateComboBox3.Size = new System.Drawing.Size(63, 21);
             this.dateComboBox3.TabIndex = 42;
             this.dateComboBox3.SelectedIndexChanged += new System.EventHandler(this.dateComboBox3_SelectedIndexChanged);
+            this.dateComboBox3.MouseEnter += new System.EventHandler(this.dateComboBox3_MouseEnter);
             // 
             // dateComboBox2
             // 
@@ -1755,6 +1769,7 @@
             this.dateComboBox2.Size = new System.Drawing.Size(63, 21);
             this.dateComboBox2.TabIndex = 41;
             this.dateComboBox2.SelectedIndexChanged += new System.EventHandler(this.dateComboBox2_SelectedIndexChanged);
+            this.dateComboBox2.MouseEnter += new System.EventHandler(this.dateComboBox2_MouseEnter);
             // 
             // dateComboBox1
             // 
@@ -1781,6 +1796,7 @@
             this.dateComboBox1.Size = new System.Drawing.Size(63, 21);
             this.dateComboBox1.TabIndex = 40;
             this.dateComboBox1.SelectedIndexChanged += new System.EventHandler(this.dateComboBox1_SelectedIndexChanged);
+            this.dateComboBox1.MouseEnter += new System.EventHandler(this.dateComboBox1_MouseEnter);
             // 
             // groupBox1
             // 
@@ -1791,6 +1807,7 @@
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select Required Fields";
+            this.groupBox1.MouseHover += new System.EventHandler(this.groupBox1_MouseHover);
             // 
             // reqListBox
             // 
@@ -1800,6 +1817,7 @@
             this.reqListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.reqListBox.Size = new System.Drawing.Size(120, 56);
             this.reqListBox.TabIndex = 41;
+            this.reqListBox.MouseEnter += new System.EventHandler(this.reqListBox_MouseEnter);
             // 
             // tabPage2
             // 
@@ -1825,6 +1843,7 @@
             this.progressBar1.Size = new System.Drawing.Size(169, 41);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 39;
+            this.progressBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // backgroundWorker1
             // 
@@ -2089,6 +2108,7 @@
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
