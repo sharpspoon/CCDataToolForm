@@ -273,6 +273,7 @@ namespace DataAnalysisTool
         }
         public DataTable ReadCsv(string fileName)
         {
+            
             DataTable dt = new DataTable("Data");
             using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
                 Path.GetDirectoryName(fileName) + "\";Extended Properties='text;HDR=yes;FMT=Delimited(,)';"))
@@ -596,6 +597,7 @@ namespace DataAnalysisTool
         {
             int a = 0;
             String reqItem;
+            
             foreach (Object selecteditem in nullCheckerListBox.SelectedItems)
             {
                 a++;
@@ -623,6 +625,7 @@ namespace DataAnalysisTool
                 MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
+            progressBar2.Value = 100;
             MessageBox.Show("no NULL value!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
         //------------------NULL CHECKER END------------------------------------------------------
@@ -680,6 +683,8 @@ namespace DataAnalysisTool
 
         private void specialCharacter_Click(object sender, EventArgs e)
         {
+            progressBar2.Value = 50;
+            System.Threading.Thread.Sleep(100);
             int a = 0;
             String reqItem;
             String specialChar = textBox1.Text;
@@ -717,6 +722,7 @@ namespace DataAnalysisTool
                 return;
             }
             MessageBox.Show("'" + specialChar + "'" + " WAS NOT FOUND!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            progressBar2.Value = 100;
         }
 
         //------------------SPECIAL CHARACTER CHECKER END------------------------------------------------------
@@ -734,8 +740,6 @@ namespace DataAnalysisTool
             dateComboBox1.SelectedIndex = 12;
             dateComboBox2.SelectedIndex = 5;
             dateComboBox3.SelectedIndex = 1;
-            backgroundWorker1.WorkerReportsProgress = true;
-            backgroundWorker1.WorkerSupportsCancellation = true;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -776,6 +780,103 @@ namespace DataAnalysisTool
                 this.Close();
             }
         }
+
+        //------------------TOOLTIP LOGIC START------------------------------------------------------
+
+        ToolTip tt = new ToolTip();
+
+        private void serverSelect_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.serverSelect, "Select your ICM server.");
+        }
+
+        private void databaseSelect_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.databaseSelect, "Select your ICM database.");
+        }
+
+        private void ifSelect_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.ifSelect, "Select your Import Format.");
+
+        }
+
+        private void groupBox7_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.groupBox7, "Select your Server/Database/Import Format.");
+        }
+
+        private void reqListBox_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.reqListBox, "Select your required Import Format fields.");
+        }
+
+        private void groupBox1_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.groupBox1, "Select your required Import Format fields.");
+        }
+
+        private void dateListBox_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.dateListBox, "Select the columns your created date format should apply to.");
+        }
+
+        private void dateComboBox1_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.dateComboBox1, "Use this dropdown to build your date format.");
+        }
+
+        private void dateComboBox2_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.dateComboBox2, "Use this dropdown to build your date format.");
+        }
+
+        private void dateComboBox3_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.dateComboBox3, "Use this dropdown to build your date format.");
+        }
+
+        private void dateComboBoxSeperator_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.dateComboBoxSeperator, "Do you want to use a seperator?");
+        }
+
+        private void dateFormat_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.dateFormat, "This is the current date format you built");
+        }
+
+        private void checkBox2_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.checkBox2, "Do you want to find NULLs in the date column?");
+        }
+
+        private void button6_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.button6, "Run the tool!");
+        }
+
+        private void tableSelect_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.tableSelect, "Use this dropdown to check any table within your selected database.");
+        }
+
+        //------------------TOOLTIP LOGIC END------------------------------------------------------
 
         //*********************************************************************************************
         //*********************************/GLOBAL*****************************************************
@@ -1232,71 +1333,17 @@ namespace DataAnalysisTool
         */
 
 
-        private void startAsyncButton_Click(object sender, EventArgs e)
+        private void button25_Click(object sender, EventArgs e)
         {
-            if (backgroundWorker1.IsBusy != true)
-            {
-                // Start the asynchronous operation.
-                backgroundWorker1.RunWorkerAsync();
-            }
-        }
-
-        private void cancelAsyncButton_Click(object sender, EventArgs e)
-        {
-            if (backgroundWorker1.WorkerSupportsCancellation == true)
-            {
-                // Cancel the asynchronous operation.
-                backgroundWorker1.CancelAsync();
-            }
-        }
-
-
-
-        // This event handler is where the time-consuming work is done.
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            
-            BackgroundWorker worker = sender as BackgroundWorker;
-
-            for (int i = 1; i <= 10; i++)
-            {
-                if (worker.CancellationPending == true)
-                {
-                    e.Cancel = true;
-                    break;
-                }
-                else
-                {
-                    // Perform a time consuming operation and report progress.
-                    System.Threading.Thread.Sleep(1);
-                    worker.ReportProgress(i * 10);
-                }
-            }
-        }
-
-
-        // This event handler updates the progress.
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            progressBar2.Value = (e.ProgressPercentage);
-
-        }
-
-        // This event handler deals with the results of the background operation.
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            //if (e.Cancelled == true)
+            //if (backgroundWorker1.IsBusy != true)
             //{
-            //    label1.Text = "Canceled!";
+            //    // Start the asynchronous operation.
+            //    backgroundWorker1.RunWorkerAsync();
             //}
-            //else if (e.Error != null)
-            //{
-            //    label1.Text = "Error: " + e.Error.Message;
-            //}
-            //else
-            //{
-            //    label1.Text = "Done!";
-            //}
+
+            progressBar2.Value = 0;
+            System.Threading.Thread.Sleep(100);
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1324,91 +1371,6 @@ namespace DataAnalysisTool
             }
         }
 
-        ToolTip tt = new ToolTip();
 
-        private void serverSelect_MouseHover(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
-            ToolTip1.SetToolTip(this.serverSelect, "Select your ICM server.");
-        }
-
-        private void databaseSelect_MouseHover(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.databaseSelect, "Select your ICM database.");
-        }
-
-        private void ifSelect_MouseHover(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.ifSelect, "Select your Import Format.");
-
-        }
-
-        private void groupBox7_MouseHover(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.groupBox7, "Select your Server/Database/Import Format.");
-        }
-
-        private void reqListBox_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.reqListBox, "Select your required Import Format fields.");
-        }
-
-        private void groupBox1_MouseHover(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.groupBox1, "Select your required Import Format fields.");
-        }
-
-        private void dateListBox_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.dateListBox, "Select the columns your created date format should apply to.");
-        }
-
-        private void dateComboBox1_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.dateComboBox1, "Use this dropdown to build your date format.");
-        }
-
-        private void dateComboBox2_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.dateComboBox2, "Use this dropdown to build your date format.");
-        }
-
-        private void dateComboBox3_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.dateComboBox3, "Use this dropdown to build your date format.");
-        }
-
-        private void dateComboBoxSeperator_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.dateComboBoxSeperator, "Do you want to use a seperator?");
-        }
-
-        private void dateFormat_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.dateFormat, "This is the current date format you built");
-        }
-
-        private void checkBox2_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.checkBox2, "Do you want to find NULLs in the date column?");
-        }
-
-        private void button6_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.button6, "Run the tool!");
-        }
     }
 }

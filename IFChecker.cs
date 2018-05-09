@@ -136,12 +136,22 @@ namespace DataAnalysisTool
                                 var maxLengthFieldArrayValue = stagedDataGridView.Rows.Cast<DataGridViewRow>()
                                         .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
 
+                                //gives me the client name of the selected database
                                 var selectClientName = "USE " + databaseSelect.Text + " select optval from optset where OptName='ui.title.prefix'";
                                 var dataAdapter7 = new SqlDataAdapter(selectClientName, conn);
                                 var ds7 = new DataSet();
                                 dataAdapter7.Fill(ds7);
                                 stagedDataGridView.DataSource = ds7.Tables[0];
                                 var clientName = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
+                                //gives me the InEntName of the import format
+                                var selectInEntName = "USE " + databaseSelect.Text + " select top 1 ife.InEntName from ImportFormat i inner join importformatentity ife on i.ImportFormatNo=ife.ImportFormatNo left join ImportFormatFieldMapping iffm on iffm.ImportFormatEntityNo=ife.ImportFormatEntityNo where i.ImportFormatId=" + @"'" + ifSelect.Text + @"'";
+                                var dataAdapter8 = new SqlDataAdapter(selectClientName, conn);
+                                var ds8 = new DataSet();
+                                dataAdapter8.Fill(ds8);
+                                stagedDataGridView.DataSource = ds8.Tables[0];
+                                var inEntName = stagedDataGridView.Rows.Cast<DataGridViewRow>()
                                         .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
 
                                 var iffidArray = importformatDataGridView.Rows.Cast<DataGridViewRow>()
