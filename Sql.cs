@@ -22,6 +22,10 @@ namespace DataAnalysisTool
         private void serverSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
+            progressBar2.Value = 20;
+            System.Threading.Thread.Sleep(25);
+            progressBar2.Value = 40;
+            System.Threading.Thread.Sleep(25);
 
 
 
@@ -47,11 +51,16 @@ namespace DataAnalysisTool
                 return;
             }
             progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar2.Value = 100;
         }
 
         private void databaseSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
+            progressBar2.Value = 20;
+            System.Threading.Thread.Sleep(25);
+            progressBar2.Value = 40;
+            System.Threading.Thread.Sleep(25);
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " SELECT table_name AS name FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' order by TABLE_NAME", conn);
@@ -74,11 +83,16 @@ namespace DataAnalysisTool
 
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar2.Value = 100;
         }
 
         private void tableSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
+            progressBar2.Value = 20;
+            System.Threading.Thread.Sleep(25);
+            progressBar2.Value = 40;
+            System.Threading.Thread.Sleep(25);
             string ID = databaseSelect.SelectedValue.ToString();
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
@@ -109,12 +123,16 @@ namespace DataAnalysisTool
 
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar2.Value = 100;
         }
 
         private void ifSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
-
+            progressBar2.Value = 20;
+            System.Threading.Thread.Sleep(25);
+            progressBar2.Value = 40;
+            System.Threading.Thread.Sleep(25);
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             try
@@ -163,6 +181,7 @@ namespace DataAnalysisTool
 
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar2.Value = 100;
 
 
         }

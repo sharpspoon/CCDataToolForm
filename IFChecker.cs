@@ -21,6 +21,11 @@ namespace DataAnalysisTool
 
         private void groupByErrorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            progressBar2.Value = 0;
+            System.Threading.Thread.Sleep(50);
+            progressBar2.Value = 10;
+            System.Threading.Thread.Sleep(50);
+
             //global vars
             progressBar1.MarqueeAnimationSpeed = 1;
             var ifCount = "USE " + databaseSelect.Text + " SELECT IMFF.FieldSeq FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null order by imff.FieldSeq";
@@ -32,6 +37,7 @@ namespace DataAnalysisTool
                MessageBox.Show("No file imported. \nPlease open a file.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
                 progressBar1.Refresh();
+                progressBar2.Value = 0;
                 return; 
             }
 
@@ -43,6 +49,7 @@ namespace DataAnalysisTool
                 {
                     progressBar1.MarqueeAnimationSpeed = 0;
                     progressBar1.Refresh();
+                    progressBar2.Value = 0;
                     return;
                 }
             }
@@ -64,6 +71,8 @@ namespace DataAnalysisTool
                 string path = Application.UserAppDataPath + @"\IF_Error_Files\DataAnalysisTool_IFEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
                 using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
                 {
+                    progressBar2.Value = 20;
+                    System.Threading.Thread.Sleep(50);
                     using (TextWriter tw = new StreamWriter(fs))
                     {
                         tw.WriteLine("###########################################################################################");
@@ -79,6 +88,8 @@ namespace DataAnalysisTool
 
                         if (databaseSelect.Text != "")
                         {
+                            progressBar2.Value = 30;
+                            System.Threading.Thread.Sleep(50);
                             if (importedfileDataGridView.ColumnCount != importformatDataGridView.RowCount)
                             {
                                 tw.WriteLine("This Import Format requires " + importformatDataGridView.RowCount + " columns. You have " + importedfileDataGridView.ColumnCount + ".");
@@ -87,6 +98,7 @@ namespace DataAnalysisTool
                                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
                                 progressBar1.MarqueeAnimationSpeed = 0;
                                 progressBar1.Refresh();
+                                progressBar2.Value = 0;
                                 Process.Start(path);
                                 return;
                             }
@@ -179,6 +191,9 @@ namespace DataAnalysisTool
                                     }
                                 }
 
+                                progressBar2.Value = 40;
+                                System.Threading.Thread.Sleep(50);
+
                                 foreach (var value in clientName)
                                 {
                                     tw.WriteLine("Client: " + value);
@@ -256,6 +271,8 @@ namespace DataAnalysisTool
                                 tw.WriteLine("");
 
                                 tw.WriteLine("--Required Field Check--");
+                                progressBar2.Value = 50;
+                                System.Threading.Thread.Sleep(50);
 
                                 //String reqItem;
                                 foreach (Object selecteditem in reqListBox.SelectedItems)
@@ -287,6 +304,8 @@ namespace DataAnalysisTool
                                 tw.WriteLine("");
 
                                 tw.WriteLine("--Code Check--");
+                                progressBar2.Value = 60;
+                                System.Threading.Thread.Sleep(50);
                                 a = 0;
                                 foreach (var s in iffidArray)
                                 {
@@ -308,6 +327,8 @@ namespace DataAnalysisTool
                                 tw.WriteLine("");
 
                                 tw.WriteLine("--Max Length Check--");
+                                progressBar2.Value = 70;
+                                System.Threading.Thread.Sleep(50);
                                 a = 0;
                                 foreach (var s in seqArray)//cycle through every column
                                 {
@@ -337,7 +358,9 @@ namespace DataAnalysisTool
                                 }
                                 tw.WriteLine("");
                                 tw.WriteLine("--Date Format Check--");
-                                
+                                progressBar2.Value = 80;
+                                System.Threading.Thread.Sleep(50);
+
                                 foreach (Object selecteditem in dateListBox.SelectedItems)
                                 {
                                     dateItem = selecteditem as String;
@@ -581,10 +604,14 @@ namespace DataAnalysisTool
                         tw.WriteLine("EOF.");
                     }
                 }
+                progressBar2.Value = 90;
+                System.Threading.Thread.Sleep(50);
                 MessageBox.Show("Import Format error file has been created. \nLocation: "+path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files");
                 progressBar1.MarqueeAnimationSpeed = 0;
                 progressBar1.Refresh();
+                progressBar2.Value = 100;
+                System.Threading.Thread.Sleep(50);
                 Process.Start(path);
             }
         }
