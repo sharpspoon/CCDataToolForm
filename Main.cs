@@ -10,6 +10,7 @@ using System.IO.Compression;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Linq;
+using System.Security.Principal;
 
 namespace DataAnalysisTool
 {
@@ -1385,15 +1386,9 @@ namespace DataAnalysisTool
 
         private void button25_Click_1(object sender, EventArgs e)
         {
-            progressBar2.Value = 0;
-            System.Threading.Thread.Sleep(100);
-            progressBar2.Value = 20;
-            System.Threading.Thread.Sleep(100);
-            progressBar2.Value = 30;
-            System.Threading.Thread.Sleep(100);
-            progressBar2.Value = 40;
-            System.Threading.Thread.Sleep(100);
-            progressBar2.Value = 100;
+            string userID = WindowsIdentity.GetCurrent().Name;
+            MessageBox.Show("" + userID);
+
         }
     }
 }

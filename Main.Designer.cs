@@ -1682,9 +1682,9 @@
             this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox3.Location = new System.Drawing.Point(6, 14);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(157, 17);
+            this.checkBox3.Size = new System.Drawing.Size(167, 17);
             this.checkBox3.TabIndex = 44;
-            this.checkBox3.Text = "Check for Broker/Producer?";
+            this.checkBox3.Text = "Is the Broker in the Database?";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // groupBox6
