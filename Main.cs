@@ -499,6 +499,7 @@ namespace DataAnalysisTool
         {
             int a = 0;
             String reqItem;
+            progressBar2.Value = 50;
             foreach (Object selecteditem in dateCheckerListBox.SelectedItems)
             {
                 a++;
@@ -514,7 +515,8 @@ namespace DataAnalysisTool
                             if (value == " " || value == "" || value == null)
                             {
                             importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                            MessageBox.Show("NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                progressBar2.Value = 100;
+                                MessageBox.Show("NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyymmdd");
                                 return;
                             }
@@ -531,6 +533,7 @@ namespace DataAnalysisTool
                                 if (year > 2200)
                                 {
                                     importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                    progressBar2.Value = 100;
                                     MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyymmdd");
                                     return;
@@ -539,6 +542,7 @@ namespace DataAnalysisTool
                                 if (month > 12)
                                 {
                                     importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                    progressBar2.Value = 100;
                                     MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyymmdd");
                                     return;
@@ -547,6 +551,7 @@ namespace DataAnalysisTool
                                 if (month < 01)
                                 {
                                     importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                    progressBar2.Value = 100;
                                     MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyymmdd");
                                     return;
@@ -555,6 +560,7 @@ namespace DataAnalysisTool
                                 if (day > 31)
                                 {
                                     importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                    progressBar2.Value = 100;
                                     MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyymmdd");
                                     return;
@@ -563,6 +569,7 @@ namespace DataAnalysisTool
                                 if (day < 01)
                                 {
                                     importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                    progressBar2.Value = 100;
                                     MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyymmdd");
                                     return;
@@ -570,6 +577,7 @@ namespace DataAnalysisTool
                             }
                             catch {
                                 importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                progressBar2.Value = 100;
                                 MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The value has characters that are not numbers.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The value has characters that are not numbers.\r\nMake sure that the date is in the format: yyyymmdd");
                                 return;
@@ -580,6 +588,7 @@ namespace DataAnalysisTool
                             if (value.Length > 0)
                             {
                                 importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                progressBar2.Value = 100;
                                 MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyymmdd");
                                 return;
@@ -590,10 +599,12 @@ namespace DataAnalysisTool
                 }
             }
             if (a == 0){
+                progressBar2.Value = 0;
                 MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
             MessageBox.Show("Dates are OK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            progressBar2.Value = 100;
             richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Dates are OK");
             return;
         }
@@ -605,7 +616,7 @@ namespace DataAnalysisTool
         {
             int a = 0;
             String reqItem;
-            
+            progressBar2.Value = 50;
             foreach (Object selecteditem in nullCheckerListBox.SelectedItems)
             {
                 a++;
@@ -630,6 +641,7 @@ namespace DataAnalysisTool
             }
             if (a == 0)
             {
+                progressBar2.Value = 0;
                 MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
@@ -650,7 +662,7 @@ namespace DataAnalysisTool
                 return;
             }
             int length = int.Parse(textBox4.Text);
-
+            progressBar2.Value = 50;
             foreach (Object selecteditem in cellLengthCheckerListBox.SelectedItems)
             {
                 a++;
@@ -691,8 +703,7 @@ namespace DataAnalysisTool
 
         private void specialCharacter_Click(object sender, EventArgs e)
         {
-            progressBar2.Value = 50;
-            System.Threading.Thread.Sleep(100);
+
             int a = 0;
             String reqItem;
             String specialChar = textBox1.Text;
@@ -701,8 +712,10 @@ namespace DataAnalysisTool
                 MessageBox.Show("You did not enter a special character!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
+            progressBar2.Value = 50;
             foreach (Object selecteditem in specialCharacterCheckerListBox.SelectedItems)
             {
+                
                 a++;
                 reqItem = selecteditem as String;
                 int specialCharacterCurIndex = specialCharacterCheckerListBox.Items.IndexOf(reqItem);
@@ -717,6 +730,7 @@ namespace DataAnalysisTool
                         if (value.Contains(specialChar) == true)
                         {
                             importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[specialCharacterCurIndex];
+                            progressBar2.Value = 100;
                             MessageBox.Show("'" + specialChar + "'" + " WAS found in the column " + "'" + selecteditem + "'" + " at line " + (i + 1), "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                             return;
@@ -727,10 +741,12 @@ namespace DataAnalysisTool
             if (a == 0)
             {
                 MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                progressBar2.Value = 0;
                 return;
             }
-            MessageBox.Show("'" + specialChar + "'" + " WAS NOT FOUND!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             progressBar2.Value = 100;
+            MessageBox.Show("'" + specialChar + "'" + " WAS NOT FOUND!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            
         }
 
         //------------------SPECIAL CHARACTER CHECKER END------------------------------------------------------
@@ -885,6 +901,31 @@ namespace DataAnalysisTool
         }
 
         //------------------TOOLTIP LOGIC END------------------------------------------------------
+
+        private void toolStripStatusLabel18_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.sap.com/index.html");
+        }
+
+        private void toolStripStatusLabel19_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.calliduscloud.com/");
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+    (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
 
         //*********************************************************************************************
         //*********************************/GLOBAL*****************************************************
@@ -1331,6 +1372,14 @@ namespace DataAnalysisTool
         {
             dateFormat.Text = "Date Format: " + dateComboBox1.Text + dateComboBoxSeperator.Text + dateComboBox2.Text + dateComboBoxSeperator.Text + dateComboBox3.Text;
         }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            int length = int.Parse(textBox2.Text);
+            importedfileDataGridView.Rows[length].Selected = true;
+        }
+
+
         //------------------EXIT APP ACTION END------------------------------------------------------
         /*
          * ############################################################################################   
@@ -1341,54 +1390,7 @@ namespace DataAnalysisTool
         */
 
 
-        private void button25_Click(object sender, EventArgs e)
-        {
-            //if (backgroundWorker1.IsBusy != true)
-            //{
-            //    // Start the asynchronous operation.
-            //    backgroundWorker1.RunWorkerAsync();
-            //}
 
-            progressBar2.Value = 0;
-            System.Threading.Thread.Sleep(10000000);
-            progressBar2.Value = 15;
-            System.Threading.Thread.Sleep(1000000000);
-            progressBar2.Value = 40;
-            System.Threading.Thread.Sleep(100);
-            progressBar2.Value = 100;
 
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://www.sap.com/index.html");
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://www.calliduscloud.com/"); 
-        }
-
-        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-    (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void button25_Click_1(object sender, EventArgs e)
-        {
-            string userID = WindowsIdentity.GetCurrent().Name;
-            MessageBox.Show("" + userID);
-
-        }
     }
 }

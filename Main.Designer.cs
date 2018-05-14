@@ -69,7 +69,6 @@
             this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemMaximize = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemMinimize = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button21 = new System.Windows.Forms.Button();
@@ -145,10 +144,13 @@
             this.toolStripStatusLabel12 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel13 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel14 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel17 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel18 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel20 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel19 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button6 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button25 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -174,12 +176,12 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.button25 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -222,6 +224,7 @@
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -269,7 +272,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.importedfileDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.importedfileDataGridView.Size = new System.Drawing.Size(1034, 438);
+            this.importedfileDataGridView.Size = new System.Drawing.Size(1034, 434);
             this.importedfileDataGridView.TabIndex = 5;
             this.importedfileDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -515,19 +518,6 @@
             this.toolStripMenuItemMinimize.Text = "Minimize";
             this.toolStripMenuItemMinimize.Click += new System.EventHandler(this.toolStripMenuItemMinimize_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1254, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 72);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.ccLogo_Click1);
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Honeydew;
@@ -670,7 +660,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(24, 20);
             this.textBox4.TabIndex = 23;
-            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // cellLengthCheckerListBox
             // 
@@ -907,7 +896,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.BackColor = System.Drawing.Color.AliceBlue;
-            this.splitContainer1.Location = new System.Drawing.Point(12, 169);
+            this.splitContainer1.Location = new System.Drawing.Point(12, 175);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -919,7 +908,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer1.Size = new System.Drawing.Size(1411, 568);
+            this.splitContainer1.Size = new System.Drawing.Size(1411, 562);
             this.splitContainer1.SplitterDistance = 1034;
             this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 22;
@@ -939,8 +928,8 @@
             // splitRequiredImportFormat_ImportedFile.Panel2
             // 
             this.splitRequiredImportFormat_ImportedFile.Panel2.Controls.Add(this.importedfileDataGridView);
-            this.splitRequiredImportFormat_ImportedFile.Size = new System.Drawing.Size(1034, 568);
-            this.splitRequiredImportFormat_ImportedFile.SplitterDistance = 123;
+            this.splitRequiredImportFormat_ImportedFile.Size = new System.Drawing.Size(1034, 562);
+            this.splitRequiredImportFormat_ImportedFile.SplitterDistance = 121;
             this.splitRequiredImportFormat_ImportedFile.SplitterWidth = 7;
             this.splitRequiredImportFormat_ImportedFile.TabIndex = 6;
             // 
@@ -977,7 +966,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.importformatDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.importformatDataGridView.Size = new System.Drawing.Size(1034, 123);
+            this.importformatDataGridView.Size = new System.Drawing.Size(1034, 121);
             this.importformatDataGridView.TabIndex = 0;
             this.importformatDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -996,8 +985,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.richTextBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(370, 568);
-            this.splitContainer2.SplitterDistance = 510;
+            this.splitContainer2.Size = new System.Drawing.Size(370, 562);
+            this.splitContainer2.SplitterDistance = 504;
             this.splitContainer2.TabIndex = 32;
             // 
             // splitContainer4
@@ -1014,8 +1003,8 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.stagedDataGridView);
-            this.splitContainer4.Size = new System.Drawing.Size(370, 510);
-            this.splitContainer4.SplitterDistance = 431;
+            this.splitContainer4.Size = new System.Drawing.Size(370, 504);
+            this.splitContainer4.SplitterDistance = 425;
             this.splitContainer4.TabIndex = 33;
             // 
             // dataGridView2
@@ -1052,7 +1041,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView2.Size = new System.Drawing.Size(370, 431);
+            this.dataGridView2.Size = new System.Drawing.Size(370, 425);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -1283,7 +1272,11 @@
             this.toolStripStatusLabel11,
             this.toolStripStatusLabel12,
             this.toolStripStatusLabel13,
-            this.toolStripStatusLabel14});
+            this.toolStripStatusLabel14,
+            this.toolStripStatusLabel17,
+            this.toolStripStatusLabel18,
+            this.toolStripStatusLabel20,
+            this.toolStripStatusLabel19});
             this.statusStrip1.Location = new System.Drawing.Point(0, 740);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1436, 22);
@@ -1421,6 +1414,38 @@
             this.toolStripStatusLabel14.Size = new System.Drawing.Size(0, 17);
             this.toolStripStatusLabel14.Text = "toolStripStatusLabel14";
             // 
+            // toolStripStatusLabel17
+            // 
+            this.toolStripStatusLabel17.Name = "toolStripStatusLabel17";
+            this.toolStripStatusLabel17.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripStatusLabel17.Size = new System.Drawing.Size(1079, 17);
+            this.toolStripStatusLabel17.Spring = true;
+            this.toolStripStatusLabel17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripStatusLabel18
+            // 
+            this.toolStripStatusLabel18.IsLink = true;
+            this.toolStripStatusLabel18.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.toolStripStatusLabel18.Name = "toolStripStatusLabel18";
+            this.toolStripStatusLabel18.Size = new System.Drawing.Size(26, 17);
+            this.toolStripStatusLabel18.Text = "SAP";
+            this.toolStripStatusLabel18.Click += new System.EventHandler(this.toolStripStatusLabel18_Click);
+            // 
+            // toolStripStatusLabel20
+            // 
+            this.toolStripStatusLabel20.Name = "toolStripStatusLabel20";
+            this.toolStripStatusLabel20.Size = new System.Drawing.Size(11, 17);
+            this.toolStripStatusLabel20.Text = "|";
+            // 
+            // toolStripStatusLabel19
+            // 
+            this.toolStripStatusLabel19.IsLink = true;
+            this.toolStripStatusLabel19.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.toolStripStatusLabel19.Name = "toolStripStatusLabel19";
+            this.toolStripStatusLabel19.Size = new System.Drawing.Size(70, 17);
+            this.toolStripStatusLabel19.Text = "CallidusCloud";
+            this.toolStripStatusLabel19.Click += new System.EventHandler(this.toolStripStatusLabel19_Click);
+            // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Honeydew;
@@ -1460,7 +1485,6 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.AliceBlue;
-            this.tabPage3.Controls.Add(this.button25);
             this.tabPage3.Controls.Add(this.button16);
             this.tabPage3.Controls.Add(this.button15);
             this.tabPage3.Controls.Add(this.button14);
@@ -1479,17 +1503,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Shortcuts";
             this.tabPage3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            // 
-            // button25
-            // 
-            this.button25.Location = new System.Drawing.Point(721, 43);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(75, 23);
-            this.button25.TabIndex = 42;
-            this.button25.Text = "button25";
-            this.button25.UseVisualStyleBackColor = true;
-            this.button25.Visible = false;
-            this.button25.Click += new System.EventHandler(this.button25_Click_1);
             // 
             // button16
             // 
@@ -1873,10 +1886,11 @@
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(1254, 118);
+            this.progressBar1.Location = new System.Drawing.Point(12, 167);
             this.progressBar1.MarqueeAnimationSpeed = 0;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(169, 10);
+            this.progressBar1.Size = new System.Drawing.Size(1412, 5);
+            this.progressBar1.Step = 100;
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 39;
             this.progressBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1893,31 +1907,42 @@
             this.progressBar2.Size = new System.Drawing.Size(1412, 10);
             this.progressBar2.TabIndex = 7;
             // 
-            // linkLabel1
+            // groupBox10
             // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkLabel1.Location = new System.Drawing.Point(1251, 102);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(28, 13);
-            this.linkLabel1.TabIndex = 40;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "SAP";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.groupBox10.Controls.Add(this.button25);
+            this.groupBox10.Controls.Add(this.textBox2);
+            this.groupBox10.Location = new System.Drawing.Point(1254, 76);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(169, 41);
+            this.groupBox10.TabIndex = 36;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Jump to column:";
             // 
-            // linkLabel2
+            // button25
             // 
-            this.linkLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkLabel2.Location = new System.Drawing.Point(1285, 102);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(70, 13);
-            this.linkLabel2.TabIndex = 41;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "CallidusCloud";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.button25.BackColor = System.Drawing.Color.Honeydew;
+            this.button25.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button25.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button25.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
+            this.button25.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button25.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
+            this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button25.Location = new System.Drawing.Point(60, 13);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(82, 26);
+            this.button25.TabIndex = 44;
+            this.button25.Text = "GO";
+            this.button25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(6, 15);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(48, 20);
+            this.textBox2.TabIndex = 0;
             // 
             // DataAnalysisTool
             // 
@@ -1927,12 +1952,10 @@
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1436, 762);
             this.ControlBox = false;
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -1950,7 +1973,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -2000,6 +2022,8 @@
             this.groupBox6.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2008,7 +2032,6 @@
         #endregion
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -2124,8 +2147,6 @@
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.ListBox dateCheckerListBox;
         private System.Windows.Forms.ListBox specialCharacterCheckerListBox;
         private System.Windows.Forms.CheckBox checkBox2;
@@ -2143,7 +2164,13 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel17;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel18;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel19;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel20;
+        private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
