@@ -632,6 +632,7 @@ namespace DataAnalysisTool
                         if (string.IsNullOrWhiteSpace(value))
                         {
                             importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[nullCheckCurIndex];
+                            progressBar2.Value = 100;
                             MessageBox.Show("NULL value found in column " + "'" + reqItem + "'" + " at line " + (i + 1), "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                             return;
@@ -679,6 +680,7 @@ namespace DataAnalysisTool
                         if (value.Length > length)
                         {
                             importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[lengthCharacterCurIndex];
+                            progressBar2.Value = 100;
                             MessageBox.Show("The value '" + value + "'" + " in column " + selecteditem + ", line " + (i + 1) + " is too long", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             return;
                         }
@@ -690,6 +692,7 @@ namespace DataAnalysisTool
                 MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
+            progressBar2.Value = 100;
             MessageBox.Show("All columns/rows are under " + length, "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
 
@@ -1375,8 +1378,13 @@ namespace DataAnalysisTool
 
         private void button25_Click(object sender, EventArgs e)
         {
-            int length = int.Parse(textBox2.Text);
-            importedfileDataGridView.Rows[length].Selected = true;
+            try
+            {
+                int length = int.Parse(textBox2.Text);
+                importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[length - 1].Cells[0];
+                importedfileDataGridView.Rows[length - 1].Selected = true;
+            }
+            catch { MessageBox.Show("That column does not exist!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1); }
         }
 
 

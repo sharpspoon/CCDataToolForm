@@ -61,6 +61,7 @@ namespace DataAnalysisTool
                 if (result2 == DialogResult.No)
                 {
                     progressBar1.MarqueeAnimationSpeed = 0;
+                    progressBar2.Value = 0;
                     progressBar1.Refresh();
                     return;
                 }
@@ -373,7 +374,7 @@ namespace DataAnalysisTool
                                     string dateFormat2 = dateFormat.Text.Remove(0, 13);
 
                                     int dateFormatLength = dateFormat2.Length;
-                                    MessageBox.Show("dateFormat2=" + dateFormat2+ "dateFormatLength="+ dateFormatLength);
+                                    //MessageBox.Show("dateFormat2=" + dateFormat2+ "dateFormatLength="+ dateFormatLength);
                                     if (dateCurIndex >= 0)
                                     {
                                         if (dateFormatLength == 0) {
@@ -605,13 +606,11 @@ namespace DataAnalysisTool
                     }
                 }
                 progressBar2.Value = 90;
-                System.Threading.Thread.Sleep(50);
+                progressBar2.Value = 100;
                 MessageBox.Show("Import Format error file has been created. \nLocation: "+path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files");
                 progressBar1.MarqueeAnimationSpeed = 0;
                 progressBar1.Refresh();
-                progressBar2.Value = 100;
-                System.Threading.Thread.Sleep(50);
                 Process.Start(path);
             }
         }

@@ -1885,7 +1885,8 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.Location = new System.Drawing.Point(12, 167);
             this.progressBar1.MarqueeAnimationSpeed = 0;
             this.progressBar1.Name = "progressBar1";
@@ -1909,17 +1910,19 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox10.Controls.Add(this.button25);
             this.groupBox10.Controls.Add(this.textBox2);
             this.groupBox10.Location = new System.Drawing.Point(1254, 76);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(169, 41);
+            this.groupBox10.Size = new System.Drawing.Size(170, 41);
             this.groupBox10.TabIndex = 36;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Jump to column:";
+            this.groupBox10.Text = "Jump to row:";
             // 
             // button25
             // 
+            this.button25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button25.BackColor = System.Drawing.Color.Honeydew;
             this.button25.Cursor = System.Windows.Forms.Cursors.Default;
             this.button25.FlatAppearance.BorderColor = System.Drawing.Color.Green;
@@ -1928,7 +1931,7 @@
             this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button25.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
             this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button25.Location = new System.Drawing.Point(60, 13);
+            this.button25.Location = new System.Drawing.Point(61, 13);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(82, 26);
             this.button25.TabIndex = 44;
@@ -1939,7 +1942,8 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 15);
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Location = new System.Drawing.Point(7, 15);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(48, 20);
             this.textBox2.TabIndex = 0;
