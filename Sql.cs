@@ -167,10 +167,6 @@ namespace DataAnalysisTool
                     a++;
                     dateListBox.Items.Add(a+". "+iffidArray2[i].ToString());
                 }
-
-
-
-
                 conn.Close();
 
                 toolStripStatusLabel7.Text = dataGridView2.Rows.Count.ToString();
