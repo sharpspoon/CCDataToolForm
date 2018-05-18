@@ -99,7 +99,16 @@ namespace DataAnalysisTool
             string ID = databaseSelect.SelectedValue.ToString();
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
-            SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
+            SqlCommand sc;
+            if (checkBox4.Checked == true)
+            {
+                sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
+            }
+            else
+            {
+                sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat where prosta=1", conn);
+            }
+            
             SqlDataReader reader;
             try
             {

@@ -22,9 +22,9 @@ namespace DataAnalysisTool
         private void groupByErrorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             progressBar2.Value = 0;
-            System.Threading.Thread.Sleep(50);
+            System.Threading.Thread.Sleep(25);
             progressBar2.Value = 10;
-            System.Threading.Thread.Sleep(50);
+            System.Threading.Thread.Sleep(25);
 
             //global vars
             progressBar1.MarqueeAnimationSpeed = 1;
