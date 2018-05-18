@@ -22,9 +22,7 @@ namespace DataAnalysisTool
         private void groupByErrorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             progressBar2.Value = 0;
-            System.Threading.Thread.Sleep(25);
             progressBar2.Value = 10;
-            System.Threading.Thread.Sleep(25);
 
             //global vars
             progressBar1.MarqueeAnimationSpeed = 1;
@@ -41,17 +39,14 @@ namespace DataAnalysisTool
                 return; 
             }
 
-            if (databaseSelect.Text == "")
+            if (ifSelect.Text == "")
 
             {
-                DialogResult result = MessageBox.Show("No database selected. \nThere will be no cross check with the database. Continue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                if (result == DialogResult.No)
-                {
-                    progressBar1.MarqueeAnimationSpeed = 0;
-                    progressBar1.Refresh();
-                    progressBar2.Value = 0;
-                    return;
-                }
+                DialogResult result = MessageBox.Show("No IF selected. \nPlease make sure you are connected to ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                progressBar1.MarqueeAnimationSpeed = 0;
+                progressBar2.Value = 0;
+                progressBar1.Refresh();
+                return;
             }
 
             if (databaseSelect.Text != "")
@@ -67,35 +62,115 @@ namespace DataAnalysisTool
                 }
             }
 
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+            SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
+
+            var selectCodeType = "USE " + databaseSelect.Text + " SELECT ef.codetype FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.valuetype=1 order by imff.FieldSeq";
+            var dataAdapter = new SqlDataAdapter(selectCodeType, conn);
+            var ds = new DataSet();
+            dataAdapter.Fill(ds);
+            stagedDataGridView.DataSource = ds.Tables[0];
+            var codeArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
+            var selectFieldSeq = "USE " + databaseSelect.Text + " SELECT IMFF.FieldSeq FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.valuetype=1 order by imff.FieldSeq";
+            var dataAdapter3 = new SqlDataAdapter(selectFieldSeq, conn);
+            var ds3 = new DataSet();
+            dataAdapter3.Fill(ds3);
+            stagedDataGridView.DataSource = ds3.Tables[0];
+            var fieldsThatAreCodesArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
+            var selectMaxLength = "USE " + databaseSelect.Text + " SELECT ef.FldName FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.MaxLength is not null order by imff.FieldSeq";
+            var dataAdapter4 = new SqlDataAdapter(selectMaxLength, conn);
+            var ds4 = new DataSet();
+            dataAdapter4.Fill(ds4);
+            stagedDataGridView.DataSource = ds4.Tables[0];
+            var maxLengthFieldArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
+            var selectMaxLengthColumnNumber = "USE " + databaseSelect.Text + " SELECT IMFF.FieldSeq FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.MaxLength is not null order by imff.FieldSeq";
+            var dataAdapter6 = new SqlDataAdapter(selectMaxLengthColumnNumber, conn);
+            var ds6 = new DataSet();
+            dataAdapter6.Fill(ds6);
+            stagedDataGridView.DataSource = ds6.Tables[0];
+            var maxLengthFieldColumnNumberArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
+            var selectMaxLengthValue = "USE " + databaseSelect.Text + " SELECT ef.maxlength FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.MaxLength is not null order by imff.FieldSeq";
+            var dataAdapter5 = new SqlDataAdapter(selectMaxLengthValue, conn);
+            var ds5 = new DataSet();
+            dataAdapter5.Fill(ds5);
+            stagedDataGridView.DataSource = ds5.Tables[0];
+            var maxLengthFieldArrayValue = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
+            //gives me the client name of the selected database
+            var selectClientName = "USE " + databaseSelect.Text + " select optval from optset where OptName='ui.title.prefix'";
+            var dataAdapter7 = new SqlDataAdapter(selectClientName, conn);
+            var ds7 = new DataSet();
+            dataAdapter7.Fill(ds7);
+            stagedDataGridView.DataSource = ds7.Tables[0];
+            var clientName = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
+            var iffidArray = importformatDataGridView.Rows.Cast<DataGridViewRow>()
+                    .Select(x => x.Cells[5].Value.ToString().Trim()).ToArray();
+
+            var seqArray = importformatDataGridView.Rows.Cast<DataGridViewRow>()
+                .Select(x => x.Cells[6].Value.ToString().Trim()).ToArray();
+
+
+            int[] fieldsThatAreCodesArrayColumnCount = Array.ConvertAll(fieldsThatAreCodesArray, s => int.Parse(s));
+
+            ArrayList codeValueArray = new ArrayList();
+            //this foreach gets the values for all of the codes
+            foreach (var s in codeArray)
             {
-                System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\IF_Error_Files");
-                string path = Application.UserAppDataPath + @"\IF_Error_Files\DataAnalysisTool_IFEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+                var select2 = "USE " + databaseSelect.Text + "  select recval from codset where rectype=" + "'" + s + "'";
+                var dataAdapter2 = new SqlDataAdapter(select2, conn);
+                var ds2 = new DataSet();
+                dataAdapter2.Fill(ds2);
+                stagedDataGridView.DataSource = ds2.Tables[0];
+
+                foreach (DataGridViewRow dr in stagedDataGridView.Rows)
+                {
+                    codeValueArray.Add(dr.Cells[0].Value);
+                }
+            }
+            var intersect = fieldsThatAreCodesArray.Intersect(seqArray);
+            int[] intMaxLengthFieldArrayValue = Array.ConvertAll(maxLengthFieldArrayValue, s => int.Parse(s));
+
+
+            toolStripStatusLabel10.Text = importformatDataGridView.Rows.Count.ToString();
+            toolStripStatusLabel7.Text = stagedDataGridView.Rows.Count.ToString();
+            
+
+            {
+                System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\IF_Error_Files_Data");
+                string path = Application.UserAppDataPath + @"\IF_Error_Files_Data\DataAnalysisTool_IFEF_Data_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
                 using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
                 {
-                    progressBar2.Value = 20;
-                    System.Threading.Thread.Sleep(50);
                     using (TextWriter tw = new StreamWriter(fs))
                     {
                         tw.WriteLine("###########################################################################################");
-                        tw.WriteLine("########################DataAnalysisTool - Import Format Error File########################");
+                        tw.WriteLine("########################DataAnalysisTool - Data Used - Import Format#######################");
                         tw.WriteLine("###########################################################################################");
                         tw.WriteLine(DateTime.Now);
-                        tw.WriteLine("Reading file...Done.");
                         tw.WriteLine("Server: " + serverSelect.Text);
-                        tw.WriteLine("Database: "+databaseSelect.Text);
+                        tw.WriteLine("Database: " + databaseSelect.Text);
                         tw.WriteLine("Import Format: " + ifSelect.Text);
 
 
 
                         if (databaseSelect.Text != "")
                         {
-                            progressBar2.Value = 30;
-                            System.Threading.Thread.Sleep(50);
                             if (importedfileDataGridView.ColumnCount != importformatDataGridView.RowCount)
                             {
                                 tw.WriteLine("This Import Format requires " + importformatDataGridView.RowCount + " columns. You have " + importedfileDataGridView.ColumnCount + ".");
                                 tw.WriteLine("This operation has ended. Please correct the column count issue.");
-                                MessageBox.Show("Import Format error file has been created. \nLocation: "+path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                                MessageBox.Show("Import Format error file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
                                 progressBar1.MarqueeAnimationSpeed = 0;
                                 progressBar1.Refresh();
@@ -103,98 +178,8 @@ namespace DataAnalysisTool
                                 Process.Start(path);
                                 return;
                             }
-
-                            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
-                            conn.Open();
-                            SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
                             try
                             {
-                                var selectCodeType = "USE " + databaseSelect.Text + " SELECT ef.codetype FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.valuetype=1 order by imff.FieldSeq";
-                                var dataAdapter = new SqlDataAdapter(selectCodeType, conn);
-                                var ds = new DataSet();
-                                dataAdapter.Fill(ds);
-                                stagedDataGridView.DataSource = ds.Tables[0];
-                                var codeArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-
-                                var selectFieldSeq = "USE " + databaseSelect.Text + " SELECT IMFF.FieldSeq FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.valuetype=1 order by imff.FieldSeq";
-                                var dataAdapter3 = new SqlDataAdapter(selectFieldSeq, conn);
-                                var ds3 = new DataSet();
-                                dataAdapter3.Fill(ds3);
-                                stagedDataGridView.DataSource = ds3.Tables[0];
-                                var fieldsThatAreCodesArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-
-                                var selectMaxLength = "USE " + databaseSelect.Text + " SELECT ef.FldName FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.MaxLength is not null order by imff.FieldSeq";
-                                var dataAdapter4 = new SqlDataAdapter(selectMaxLength, conn);
-                                var ds4 = new DataSet();
-                                dataAdapter4.Fill(ds4);
-                                stagedDataGridView.DataSource = ds4.Tables[0];
-                                var maxLengthFieldArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-
-                                var selectMaxLengthColumnNumber = "USE " + databaseSelect.Text + " SELECT IMFF.FieldSeq FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.MaxLength is not null order by imff.FieldSeq";
-                                var dataAdapter6 = new SqlDataAdapter(selectMaxLengthColumnNumber, conn);
-                                var ds6 = new DataSet();
-                                dataAdapter6.Fill(ds6);
-                                stagedDataGridView.DataSource = ds6.Tables[0];
-                                var maxLengthFieldColumnNumberArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-
-                                var selectMaxLengthValue = "USE " + databaseSelect.Text + " SELECT ef.maxlength FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.MaxLength is not null order by imff.FieldSeq";
-                                var dataAdapter5 = new SqlDataAdapter(selectMaxLengthValue, conn);
-                                var ds5 = new DataSet();
-                                dataAdapter5.Fill(ds5);
-                                stagedDataGridView.DataSource = ds5.Tables[0];
-                                var maxLengthFieldArrayValue = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-
-                                //gives me the client name of the selected database
-                                var selectClientName = "USE " + databaseSelect.Text + " select optval from optset where OptName='ui.title.prefix'";
-                                var dataAdapter7 = new SqlDataAdapter(selectClientName, conn);
-                                var ds7 = new DataSet();
-                                dataAdapter7.Fill(ds7);
-                                stagedDataGridView.DataSource = ds7.Tables[0];
-                                var clientName = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-
-                                //gives me the InEntName of the import format
-                                var selectInEntName = "USE " + databaseSelect.Text + " select top 1 ife.InEntName from ImportFormat i inner join importformatentity ife on i.ImportFormatNo=ife.ImportFormatNo left join ImportFormatFieldMapping iffm on iffm.ImportFormatEntityNo=ife.ImportFormatEntityNo where i.ImportFormatId=" + @"'" + ifSelect.Text + @"'";
-                                var dataAdapter8 = new SqlDataAdapter(selectClientName, conn);
-                                var ds8 = new DataSet();
-                                dataAdapter8.Fill(ds8);
-                                stagedDataGridView.DataSource = ds8.Tables[0];
-                                var inEntName = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-
-                                var iffidArray = importformatDataGridView.Rows.Cast<DataGridViewRow>()
-                                        .Select(x => x.Cells[5].Value.ToString().Trim()).ToArray();
-
-                                var seqArray = importformatDataGridView.Rows.Cast<DataGridViewRow>()
-                                    .Select(x => x.Cells[6].Value.ToString().Trim()).ToArray();
-                                
-
-                                int[] fieldsThatAreCodesArrayColumnCount = Array.ConvertAll(fieldsThatAreCodesArray, s => int.Parse(s));
-
-                                ArrayList codeValueArray = new ArrayList();
-                                //this foreach gets the values for all of the codes
-                                foreach (var s in codeArray)
-                                {
-                                    var select2 = "USE " + databaseSelect.Text + "  select recval from codset where rectype="+"'"+s+"'";
-                                    var dataAdapter2 = new SqlDataAdapter(select2, conn);
-                                    var ds2 = new DataSet();
-                                    dataAdapter2.Fill(ds2);
-                                    stagedDataGridView.DataSource = ds2.Tables[0];
-
-                                    foreach (DataGridViewRow dr in stagedDataGridView.Rows)
-                                    {
-                                        codeValueArray.Add(dr.Cells[0].Value);
-                                    }
-                                }
-
-                                progressBar2.Value = 40;
-                                System.Threading.Thread.Sleep(50);
-
                                 foreach (var value in clientName)
                                 {
                                     tw.WriteLine("Client: " + value);
@@ -231,8 +216,6 @@ namespace DataAnalysisTool
                                 }
                                 tw.WriteLine(dateFormat.Text);
                                 tw.WriteLine("");
-
-                                int a = 0;
                                 tw.WriteLine("");
                                 tw.WriteLine("****************************************************");
                                 tw.WriteLine("**********SYSTEM DATA PULLED FROM DATABASE**********");
@@ -245,7 +228,7 @@ namespace DataAnalysisTool
                                 }
                                 foreach (var value in codeValueArray)
                                 {
-                                    tw.WriteLine("Code Value: "+value);
+                                    tw.WriteLine("Code Value: " + value);
                                 }
                                 foreach (int value in fieldsThatAreCodesArrayColumnCount)
                                 {
@@ -262,8 +245,88 @@ namespace DataAnalysisTool
                                 {
                                     tw.WriteLine("length restriction: " + value);
                                 }
-                                var intersect = fieldsThatAreCodesArray.Intersect(seqArray);
-                                int[] intMaxLengthFieldArrayValue = Array.ConvertAll(maxLengthFieldArrayValue, s => int.Parse(s));
+                            }
+                            catch { return; }
+                        }
+                        tw.WriteLine("EOF.");
+                    }
+                }
+            }
+
+            {
+                System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\IF_Error_Files");
+                string path = Application.UserAppDataPath + @"\IF_Error_Files\DataAnalysisTool_IFEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                {
+                    progressBar2.Value = 20;
+                    System.Threading.Thread.Sleep(50);
+                    using (TextWriter tw = new StreamWriter(fs))
+                    {
+                        tw.WriteLine("###########################################################################################");
+                        tw.WriteLine("########################DataAnalysisTool - Import Format Error File########################");
+                        tw.WriteLine("###########################################################################################");
+                        tw.WriteLine(DateTime.Now);
+                        tw.WriteLine("Server: " + serverSelect.Text);
+                        tw.WriteLine("Database: "+databaseSelect.Text);
+                        tw.WriteLine("Import Format: " + ifSelect.Text);
+
+
+
+                        if (databaseSelect.Text != "")
+                        {
+                            progressBar2.Value = 30;
+                            System.Threading.Thread.Sleep(50);
+                            if (importedfileDataGridView.ColumnCount != importformatDataGridView.RowCount)
+                            {
+                                tw.WriteLine("This Import Format requires " + importformatDataGridView.RowCount + " columns. You have " + importedfileDataGridView.ColumnCount + ".");
+                                tw.WriteLine("This operation has ended. Please correct the column count issue.");
+                                MessageBox.Show("Import Format error file has been created. \nLocation: "+path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
+                                progressBar1.MarqueeAnimationSpeed = 0;
+                                progressBar1.Refresh();
+                                progressBar2.Value = 0;
+                                Process.Start(path);
+                                return;
+                            }
+                            try
+                            {
+                                //gives me the InEntName of the import format
+                                var selectInEntName = "USE " + databaseSelect.Text + " select top 1 ife.InEntName from ImportFormat i inner join importformatentity ife on i.ImportFormatNo=ife.ImportFormatNo left join ImportFormatFieldMapping iffm on iffm.ImportFormatEntityNo=ife.ImportFormatEntityNo where i.ImportFormatId=" + @"'" + ifSelect.Text + @"'";
+                                var dataAdapter8 = new SqlDataAdapter(selectClientName, conn);
+                                var ds8 = new DataSet();
+                                dataAdapter8.Fill(ds8);
+                                stagedDataGridView.DataSource = ds8.Tables[0];
+                                var inEntName = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+                                
+                                //this foreach gets the values for all of the codes
+                                foreach (var s in codeArray)
+                                {
+                                    var select2 = "USE " + databaseSelect.Text + "  select recval from codset where rectype="+"'"+s+"'";
+                                    var dataAdapter2 = new SqlDataAdapter(select2, conn);
+                                    var ds2 = new DataSet();
+                                    dataAdapter2.Fill(ds2);
+                                    stagedDataGridView.DataSource = ds2.Tables[0];
+
+                                    foreach (DataGridViewRow dr in stagedDataGridView.Rows)
+                                    {
+                                        codeValueArray.Add(dr.Cells[0].Value);
+                                    }
+                                }
+
+                                progressBar2.Value = 40;
+                                System.Threading.Thread.Sleep(50);
+
+                                foreach (var value in clientName)
+                                {
+                                    tw.WriteLine("Client: " + value);
+                                }
+
+                                String reqItem;
+                                String dateItem;
+                                tw.WriteLine("");
+
+                                int a = 0;
 
                                 tw.WriteLine("");
                                 tw.WriteLine("****************************************************");
@@ -383,16 +446,9 @@ namespace DataAnalysisTool
                                         }
 
                                         tw.WriteLine("Date Column: " + dateItem);
-
                                         for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                                         {
                                             var value = importedfileDataGridView.Rows[i].Cells[dateCurIndex].Value.ToString();
-                                            int valueLength = value.Length;
-                                            if ((dateFormatLength) != valueLength & (value != "" & value != null & value != " "))
-                                            {
-                                                
-                                                tw.WriteLine("Error at line " + (i + 1) + "." + " Your date format does not match your specified "+dateFormat.Text+".");
-                                            }
 
                                             if ((checkBox2.Checked) & (value == "" || value == null || value == " "))
                                             {
@@ -401,194 +457,237 @@ namespace DataAnalysisTool
 
                                             if (dateFormat2 == "yyyymmdd" & (value !="" & value !=null & value != " "))
                                             {
-                                                //MessageBox.Show("got inside the if");
-                                                int year = int.Parse(value.Substring(0, 4));
-                                                int month = int.Parse(value.Substring(4, 2));
-                                                int day = int.Parse(value.Substring(6, 2));
-
-                                                if (year > 2200)
+                                                try
                                                 {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: "+dateFormat2);
+                                                    int year = int.Parse(value.Substring(0, 4));
+                                                    int month = int.Parse(value.Substring(4, 2));
+                                                    int day = int.Parse(value.Substring(6, 2));
+
+
+                                                    if (year > 2200)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (month > 12)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (month < 01)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (day > 31)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (day < 01)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
                                                 }
-
-                                                if (month > 12)
+                                                catch
                                                 {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
+                                                    tw.WriteLine("Error at line " + (i + 1) + "." + " Unable to parse the date. Make sure that the date is in the format: " + dateFormat2+".");
 
-                                                if (month < 01)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (day > 31)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (day < 01)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
                                                 }
                                             }
 
                                             if (dateFormat2 == "yyyyddmm" & value != "" & value != null & value != " ")
                                             {
-                                                int year = int.Parse(value.Substring(0, 4));
-                                                int month = int.Parse(value.Substring(6, 2));
-                                                int day = int.Parse(value.Substring(4, 2));
-
-                                                if (year > 2200)
+                                                try
                                                 {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    int year = int.Parse(value.Substring(0, 4));
+                                                    int month = int.Parse(value.Substring(6, 2));
+                                                    int day = int.Parse(value.Substring(4, 2));
+
+                                                    if (year > 2200)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (month > 12)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (month < 01)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (day > 31)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (day < 01)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
                                                 }
-
-                                                if (month > 12)
+                                                catch
                                                 {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (month < 01)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (day > 31)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (day < 01)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    tw.WriteLine("Error at line " + (i + 1) + "." + " Unable to parse the date. Make sure that the date is in the format: " + dateFormat2 + ".");
                                                 }
                                             }
 
                                             if (dateFormat2 == "yyddmm" & value != "" & value != null & value != " ")
                                             {
-                                                int year = int.Parse(value.Substring(0, 2));
-                                                int month = int.Parse(value.Substring(4, 2));
-                                                int day = int.Parse(value.Substring(2, 2));
-
-                                                if (year > 22)
+                                                try
                                                 {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    int year = int.Parse(value.Substring(0, 2));
+                                                    int month = int.Parse(value.Substring(4, 2));
+                                                    int day = int.Parse(value.Substring(2, 2));
+
+                                                    if (year > 22)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (month > 12)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (month < 01)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (day > 31)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (day < 01)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
                                                 }
-
-                                                if (month > 12)
+                                                catch
                                                 {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (month < 01)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (day > 31)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (day < 01)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    tw.WriteLine("Error at line " + (i + 1) + "." + " Unable to parse the date. Make sure that the date is in the format: " + dateFormat2 + ".");
                                                 }
                                             }
 
                                             if (dateFormat2 == "yymmdd" & value != "" & value != null & value != " ")
                                             {
-                                                int year = int.Parse(value.Substring(0, 2));
-                                                int month = int.Parse(value.Substring(2, 2));
-                                                int day = int.Parse(value.Substring(4, 2));
-
-                                                if (year > 22)
+                                                try
                                                 {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    int year = int.Parse(value.Substring(0, 2));
+                                                    int month = int.Parse(value.Substring(2, 2));
+                                                    int day = int.Parse(value.Substring(4, 2));
+
+                                                    if (year > 22)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (month > 12)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (month < 01)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (day > 31)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (day < 01)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
                                                 }
-
-                                                if (month > 12)
+                                                catch
                                                 {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (month < 01)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (day > 31)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (day < 01)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    tw.WriteLine("Error at line " + (i + 1) + "." + " Unable to parse the date. Make sure that the date is in the format: " + dateFormat2 + ".");
                                                 }
                                             }
 
                                             if (dateFormat2 == "mmddyyyy" & value != "" & value != null & value != " ")
                                             {
-                                                int year = int.Parse(value.Substring(4, 4));
-                                                int month = int.Parse(value.Substring(0, 2));
-                                                int day = int.Parse(value.Substring(2, 2));
-
-                                                if (year > 2200)
+                                                try
                                                 {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    int year = int.Parse(value.Substring(4, 4));
+                                                    int month = int.Parse(value.Substring(0, 2));
+                                                    int day = int.Parse(value.Substring(2, 2));
+
+                                                    if (year > 2200)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (month > 12)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (month < 01)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (day > 31)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (day < 01)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
                                                 }
-
-                                                if (month > 12)
+                                                catch
                                                 {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (month < 01)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (day > 31)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (day < 01)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    tw.WriteLine("Error at line " + (i + 1) + "." + " Unable to parse the date. Make sure that the date is in the format: " + dateFormat2 + ".");
                                                 }
                                             }
 
                                             if (dateFormat2 == "mmyyyydd" & value != "" & value != null & value != " ")
                                             {
-                                                int year = int.Parse(value.Substring(2, 4));
-                                                int month = int.Parse(value.Substring(0, 2));
-                                                int day = int.Parse(value.Substring(6, 2));
-
-                                                if (year > 2200)
+                                                try
                                                 {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    int year = int.Parse(value.Substring(2, 4));
+                                                    int month = int.Parse(value.Substring(0, 2));
+                                                    int day = int.Parse(value.Substring(6, 2));
+
+                                                    if (year > 2200)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (month > 12)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (month < 01)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (day > 31)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
+
+                                                    if (day < 01)
+                                                    {
+                                                        tw.WriteLine("Error at line " + (i + 1) + "." + " The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    }
                                                 }
-
-                                                if (month > 12)
+                                                catch
                                                 {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (month < 01)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (day > 31)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: " + dateFormat2);
-                                                }
-
-                                                if (day < 01)
-                                                {
-                                                    tw.WriteLine("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: " + dateFormat2);
+                                                    tw.WriteLine("Error at line " + (i + 1) + "." + " Unable to parse the date. Make sure that the date is in the format: " + dateFormat2 + ".");
                                                 }
                                             }
                                         }
