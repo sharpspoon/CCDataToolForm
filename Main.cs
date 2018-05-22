@@ -227,6 +227,7 @@ namespace DataAnalysisTool
         private void menu_Open_Csv_Click(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
+
             try
             {
                 using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "CSV | *.csv", ValidateNames = true, Multiselect = false })
@@ -263,6 +264,7 @@ namespace DataAnalysisTool
             for (int i = 0; i < importedFileArray.Length; i++)
             {
                 a++;
+
                 specialCharacterCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
                 dateCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
                 nullCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
@@ -1050,19 +1052,45 @@ namespace DataAnalysisTool
 
         public DataTable ReadTxtPipe(string fileName)
         {
+
             DataTable dt = new DataTable();
             string[] columns = null;
 
             var lines = File.ReadAllLines(fileName);
 
-            // assuming the first row contains the columns information
-            if (lines.Count() > 0)
+            if (checkBox5.Checked == false)
             {
-                columns = lines[0].Split(new char[] { '|' });
+                if (lines.Count() > 0)
+                {
+                    columns = lines[0].Split(new char[] { '|' });
 
-                foreach (var column in columns)
-                    dt.Columns.Add(column);
+                    //foreach (var column in columns)
+                    //dt.Columns.Add(column);
+                }
+
+                int columnCount1 = columns.Count();
+                for (int i = 0; i < columnCount1; i++)
+                {
+                    dt.Columns.Add("column " + i);
+                }
             }
+            else
+            {
+                if (lines.Count() > 0)
+                {
+                    columns = lines[0].Split(new char[] { '|' });
+
+                    foreach (var column in columns)
+                        dt.Columns.Add(column);
+                }
+
+                int columnCount = columns.Count();
+                for (int i = 0; i < columnCount; i++)
+                {
+                    dt.Columns.Add("column " + i);
+                }
+            }
+
 
             // reading rest of the data
             for (int i = 1; i < lines.Count(); i++)
