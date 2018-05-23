@@ -1029,6 +1029,7 @@ namespace DataAnalysisTool
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
+                        progressBar2.Value = 20;
                         importedfileDataGridView.DataSource = ReadTxtPipe(ofd.FileName);
                         toolStripStatusLabel13.Text = ofd.FileName;
                         toolStripStatusLabel13.Visible = true;
@@ -1044,15 +1045,17 @@ namespace DataAnalysisTool
             }
             catch (Exception ex)
             {
+                progressBar2.Value = 0;
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            progressBar2.Value = 100;
             progressBar1.MarqueeAnimationSpeed = 0;
             progressBar1.Refresh();
         }
 
         public DataTable ReadTxtPipe(string fileName)
         {
-
+            progressBar2.Value = 30;
             DataTable dt = new DataTable();
             string[] columns = null;
 
@@ -1060,8 +1063,10 @@ namespace DataAnalysisTool
 
             if (checkBox5.Checked == false)
             {
+                progressBar2.Value = 50;
                 if (lines.Count() > 0)
                 {
+                    progressBar2.Value = 60;
                     columns = lines[0].Split(new char[] { '|' });
 
                     //foreach (var column in columns)
@@ -1076,8 +1081,10 @@ namespace DataAnalysisTool
             }
             else
             {
+                progressBar2.Value = 50;
                 if (lines.Count() > 0)
                 {
+                    progressBar2.Value = 60;
                     columns = lines[0].Split(new char[] { '|' });
 
                     foreach (var column in columns)
@@ -1103,6 +1110,7 @@ namespace DataAnalysisTool
 
                 dt.Rows.Add(dr);
             }
+            progressBar2.Value = 70;
             return dt;
         }
 

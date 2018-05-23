@@ -67,7 +67,24 @@ namespace DataAnalysisTool
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " SELECT table_name AS name FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' order by TABLE_NAME", conn);
+            SqlCommand scVersion = new SqlCommand("use " + databaseSelect.Text + " SELECT codetype FROM entityfield", conn);
             SqlDataReader reader;
+
+            try
+            {
+                reader = scVersion.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                dt.Load(reader);
+                icmVersion.Visible = true;
+                icmVersion.Text = "v.7.0";
+            }
+            catch
+            {
+                icmVersion.Visible = true;
+                icmVersion.Text = "v.2018";
+            }
+
             try
             {
                 reader = sc.ExecuteReader();
