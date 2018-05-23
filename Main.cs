@@ -1065,9 +1065,6 @@ namespace DataAnalysisTool
                 {
                     progressBar2.Value = 60;
                     columns = lines[0].Split(new char[] { '|' });
-
-                    //foreach (var column in columns)
-                    //dt.Columns.Add(column);
                 }
 
                 int columnCount1 = columns.Count();
@@ -1107,18 +1104,13 @@ namespace DataAnalysisTool
                 {
                     DataRow dr = dt.NewRow();
                     string[] values = lines[i].Split(new char[] { '|' });
-
                     for (int j = 0; j < values.Count() && j < columns.Count(); j++)
                         dr[j] = values[j];
-
                     dt.Rows.Add(dr);
                 }
                 progressBar2.Value = 70;
                 return dt;
             }
-
-
-
         }
 
         private void dateComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -1432,6 +1424,14 @@ namespace DataAnalysisTool
 
         private void checkBox4_Click(object sender, EventArgs e)
         {
+            if (databaseSelect.Text != "")
+            {
+
+                int value = databaseSelect.SelectedIndex;
+                databaseSelect.SelectedIndex = -1;
+                databaseSelect.SelectedIndex = value;
+            }
+
         }
 
 

@@ -21,6 +21,10 @@ namespace DataAnalysisTool
 
         private void serverSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (serverSelect.Text == "")
+            {
+                return;
+            }
             progressBar2.Value = 0;
             progressBar1.MarqueeAnimationSpeed = 1;
             progressBar2.Value = 20;
