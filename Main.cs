@@ -1071,7 +1071,7 @@ namespace DataAnalysisTool
                 int columnCount1 = columns.Count();
                 for (int i = 0; i < columnCount1; i++)
                 {
-                    dt.Columns.Add("column " + i);
+                    dt.Columns.Add("column " + (i+1));
                 }
             }
             else
