@@ -1075,6 +1075,20 @@ namespace DataAnalysisTool
                 {
                     dt.Columns.Add("column " + (i+1));
                 }
+
+                // reading rest of the data
+                for (int i = 0; i < lines.Count(); i++)
+                {
+                    DataRow dr = dt.NewRow();
+                    string[] values = lines[i].Split(new char[] { '|' });
+
+                    for (int j = 0; j < values.Count() && j < columns.Count(); j++)
+                        dr[j] = values[j];
+
+                    dt.Rows.Add(dr);
+                }
+                progressBar2.Value = 70;
+                return dt;
             }
             else
             {
@@ -1088,27 +1102,23 @@ namespace DataAnalysisTool
                         dt.Columns.Add(column);
                 }
 
-                int columnCount = columns.Count();
-                for (int i = 0; i < columnCount; i++)
+                // reading rest of the data
+                for (int i = 1; i < lines.Count(); i++)
                 {
-                    dt.Columns.Add("column " + i);
+                    DataRow dr = dt.NewRow();
+                    string[] values = lines[i].Split(new char[] { '|' });
+
+                    for (int j = 0; j < values.Count() && j < columns.Count(); j++)
+                        dr[j] = values[j];
+
+                    dt.Rows.Add(dr);
                 }
+                progressBar2.Value = 70;
+                return dt;
             }
 
 
-            // reading rest of the data
-            for (int i = 1; i < lines.Count(); i++)
-            {
-                DataRow dr = dt.NewRow();
-                string[] values = lines[i].Split(new char[] { '|' });
 
-                for (int j = 0; j < values.Count() && j < columns.Count(); j++)
-                    dr[j] = values[j];
-
-                dt.Rows.Add(dr);
-            }
-            progressBar2.Value = 70;
-            return dt;
         }
 
         private void dateComboBox1_SelectedIndexChanged(object sender, EventArgs e)
