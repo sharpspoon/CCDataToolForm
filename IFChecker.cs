@@ -66,10 +66,23 @@ namespace DataAnalysisTool
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
 
-            var selectCodeType = "USE " + databaseSelect.Text + " SELECT ef.codetype FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.valuetype=1 order by imff.FieldSeq";
-            var dataAdapter = new SqlDataAdapter(selectCodeType, conn);
+            //for version 7.0
+            var selectCodeType1 = "USE " + databaseSelect.Text + " SELECT ef.codetype FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.valuetype=1 order by imff.FieldSeq";
+            //for version 2018
+            var selectCodeType2 = "USE " + databaseSelect.Text + " SELECT ct.codetypeid FROM ImportFormat IMF INNER JOIN ImportFormatEntity IMFE ON IMF.ImportFormatNo= IMFE.ImportFormatNo INNER JOIN ImportFormatField IMFF ON IMF.ImportFormatNo = IMFF.ImportFormatNo  left JOIN EntityField EF ON ef.entname=imfe.inentname and ef.fldname=IMFF.ImportFormatFieldId left join codetype ct on ef.codetypeno=ct.codetypeno where imf.importformatid = " + @"'" + ifSelect.Text + @"'" + "  and IMF.QBQueryNo is null and ef.valuetype=1 order by imff.FieldSeq";
+
+            var dataAdapter1 = new SqlDataAdapter(selectCodeType1, conn);
+            var dataAdapter22 = new SqlDataAdapter(selectCodeType2, conn);
             var ds = new DataSet();
-            dataAdapter.Fill(ds);
+            if (icmVersion.Text == "v.7.0")
+            {
+                dataAdapter1.Fill(ds);
+            }
+            else
+            {
+                dataAdapter22.Fill(ds);
+            }
+            
             stagedDataGridView.DataSource = ds.Tables[0];
             var codeArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
                     .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
@@ -170,11 +183,12 @@ namespace DataAnalysisTool
                             {
                                 tw.WriteLine("This Import Format requires " + importformatDataGridView.RowCount + " columns. You have " + importedfileDataGridView.ColumnCount + ".");
                                 tw.WriteLine("This operation has ended. Please correct the column count issue.");
+                                tw.WriteLine("EOF.");
+                                progressBar2.Value = 100;
                                 MessageBox.Show("Import Format error file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
                                 progressBar1.MarqueeAnimationSpeed = 0;
                                 progressBar1.Refresh();
-                                progressBar2.Value = 0;
                                 Process.Start(path);
                                 return;
                             }
@@ -259,7 +273,6 @@ namespace DataAnalysisTool
                 using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
                 {
                     progressBar2.Value = 20;
-                    System.Threading.Thread.Sleep(50);
                     using (TextWriter tw = new StreamWriter(fs))
                     {
                         tw.WriteLine("###########################################################################################");
@@ -275,7 +288,6 @@ namespace DataAnalysisTool
                         if (databaseSelect.Text != "")
                         {
                             progressBar2.Value = 30;
-                            System.Threading.Thread.Sleep(50);
                             if (importedfileDataGridView.ColumnCount != importformatDataGridView.RowCount)
                             {
                                 tw.WriteLine("This Import Format requires " + importformatDataGridView.RowCount + " columns. You have " + importedfileDataGridView.ColumnCount + ".");
@@ -315,7 +327,6 @@ namespace DataAnalysisTool
                                 }
 
                                 progressBar2.Value = 40;
-                                System.Threading.Thread.Sleep(50);
 
                                 foreach (var value in clientName)
                                 {
@@ -336,7 +347,6 @@ namespace DataAnalysisTool
 
                                 tw.WriteLine("--Required Field Check--");
                                 progressBar2.Value = 50;
-                                System.Threading.Thread.Sleep(50);
 
                                 //String reqItem;
                                 foreach (Object selecteditem in reqListBox.SelectedItems)
@@ -369,7 +379,6 @@ namespace DataAnalysisTool
 
                                 tw.WriteLine("--Code Check--");
                                 progressBar2.Value = 60;
-                                System.Threading.Thread.Sleep(50);
                                 a = 0;
                                 foreach (var s in iffidArray)
                                 {
@@ -392,7 +401,6 @@ namespace DataAnalysisTool
 
                                 tw.WriteLine("--Max Length Check--");
                                 progressBar2.Value = 70;
-                                System.Threading.Thread.Sleep(50);
                                 a = 0;
                                 foreach (var s in seqArray)//cycle through every column
                                 {
@@ -423,7 +431,6 @@ namespace DataAnalysisTool
                                 tw.WriteLine("");
                                 tw.WriteLine("--Date Format Check--");
                                 progressBar2.Value = 80;
-                                System.Threading.Thread.Sleep(50);
 
                                 foreach (Object selecteditem in dateListBox.SelectedItems)
                                 {

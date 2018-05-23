@@ -277,11 +277,9 @@ namespace DataAnalysisTool
         public DataTable ReadCsv(string fileName)
         {
             progressBar2.Value = 0;
-            System.Threading.Thread.Sleep(50);
             progressBar2.Value = 20;
             System.Threading.Thread.Sleep(50);
             progressBar2.Value = 40;
-            System.Threading.Thread.Sleep(50);
             DataTable dt = new DataTable("Data");
             using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
                 Path.GetDirectoryName(fileName) + "\";Extended Properties='text;HDR=yes;FMT=Delimited(,)';"))
@@ -296,7 +294,6 @@ namespace DataAnalysisTool
                 }
             }
             progressBar2.Value = 100;
-            System.Threading.Thread.Sleep(50);
             return dt;
         }
         protected void menu_Save_Csv_Click(object sender, EventArgs e)
@@ -1421,6 +1418,10 @@ namespace DataAnalysisTool
                 importedfileDataGridView.Rows[length - 1].Selected = true;
             }
             catch { MessageBox.Show("That column does not exist!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1); }
+        }
+
+        private void checkBox4_Click(object sender, EventArgs e)
+        {
         }
 
 
