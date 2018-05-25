@@ -14,9 +14,6 @@ namespace DataAnalysisTool
     public partial class DataAnalysisTool
     {
         Importformat imp = new Importformat();
-
-
-
         //------------------SQL LOADER START------------------------------------------------------
 
         private void serverSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -28,13 +25,8 @@ namespace DataAnalysisTool
             progressBar2.Value = 0;
             progressBar1.MarqueeAnimationSpeed = 1;
             progressBar2.Value = 20;
-            System.Threading.Thread.Sleep(25);
             progressBar2.Value = 40;
-
-
-
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
-            
             try
             {
                 conn.Open();
@@ -47,6 +39,7 @@ namespace DataAnalysisTool
                 databaseSelect.DataSource = dt;
                 databaseSelect.DisplayMember = "name";
                 conn.Close();
+                connectionStatus.Visible = true;
                 richTextBox1.Text=richTextBox1.Text.Insert(0,Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect.Text + "...Done.");
             }
             catch
@@ -61,11 +54,84 @@ namespace DataAnalysisTool
             progressBar2.Value = 100;
         }
 
+        private void serverSelect2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            progressBar2.Value = 0;
+            progressBar1.MarqueeAnimationSpeed = 1;
+            progressBar2.Value = 20;
+            progressBar2.Value = 40;
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect2.Text + "; Initial Catalog = master; Integrated Security = True");
+            try
+            {
+                conn.Open();
+                SqlCommand sc = new SqlCommand("SELECT name FROM [master].[sys].[databases] where name <> 'master' and name <> 'tempdb' and name <> 'model' and name <> 'msdb' and name <> 'DBAtools'", conn);
+                SqlDataReader reader;
+                reader = sc.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                dt.Load(reader);
+                databaseSelect2.DataSource = dt;
+                databaseSelect2.DisplayMember = "name";
+                conn.Close();
+                connectionStatus.Visible = true;
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect.Text + "...Done.");
+            }
+            catch
+            {
+                return;
+            }
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar2.Value = 100;
+        }
+
+        private void runquery_Click(object sender, EventArgs e)
+        {
+            progressBar1.MarqueeAnimationSpeed = 1;
+            System.Threading.Thread.Sleep(25);
+            progressBar2.Value = 20;
+            progressBar2.Value = 40;
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect2.Text + "; Initial Catalog = master; Integrated Security = True");
+            
+            try
+            {
+                string ID = databaseSelect2.SelectedValue.ToString();
+                conn.Open();
+                var select = "USE " + databaseSelect2.Text + " " + queryWindow.Text;
+                if (queryWindow.Text.Equals("select * from tranhis", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    DialogResult result = MessageBox.Show("Performing a SELECT * FROM TRANHIS is insane. Continue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.No)
+                    {
+                        progressBar1.MarqueeAnimationSpeed = 0;
+                        progressBar2.Value = 0;
+                        return;
+                    }
+                }
+                var conn2 = new SqlConnection(@"Data Source = " + serverSelect2.Text + "; Initial Catalog = master; Integrated Security = True");
+                var dataAdapter = new SqlDataAdapter(select, conn2);
+                var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                dataGridView2.ReadOnly = true;
+                dataGridView2.DataSource = ds.Tables[0];
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                conn.Close();
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Running query against: " + databaseSelect2.Text + "...Done.");
+            }
+            catch
+            {
+                return;
+            }
+            conn.Close();
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar2.Value = 100;
+        }
+
         private void databaseSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
             progressBar2.Value = 20;
-            System.Threading.Thread.Sleep(25);
             progressBar2.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
@@ -97,12 +163,16 @@ namespace DataAnalysisTool
                 tableSelect.DataSource = dt;
                 tableSelect.DisplayMember = "name";
                 conn.Close();
+//                connectionStatus.Visible = true;
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
                 toolStripStatusLabel5.Visible = true;
                 toolStripStatusLabel6.Visible = true;
                 toolStripStatusLabel7.Visible = true;
             }
-            catch { return; }
+            catch
+            {
+                return;
+            }
 
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
@@ -150,7 +220,10 @@ namespace DataAnalysisTool
                 conn.Close();
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading table: " + tableSelect.Text + "...Done.");
             }
-            catch { return; }
+            catch
+            {
+                return;
+            }
 
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
@@ -161,7 +234,6 @@ namespace DataAnalysisTool
         {
             progressBar1.MarqueeAnimationSpeed = 1;
             progressBar2.Value = 20;
-            System.Threading.Thread.Sleep(25);
             progressBar2.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
@@ -203,16 +275,16 @@ namespace DataAnalysisTool
                 toolStripStatusLabel9.Visible = true;
                 toolStripStatusLabel10.Visible = true;
             }
-            catch { return; }
+            catch
+            {
+                return;
+            }
 
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
             progressBar2.Value = 100;
-
-
         }
 
         //------------------SQL LOADER END------------------------------------------------------
-
     }
 }
