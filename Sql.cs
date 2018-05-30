@@ -78,6 +78,10 @@ namespace DataAnalysisTool
             }
             catch
             {
+                conn.Close();
+                MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                progressBar1.MarqueeAnimationSpeed = 0;
+                progressBar2.Value = 0;
                 return;
             }
             progressBar1.MarqueeAnimationSpeed = 0;
@@ -121,6 +125,10 @@ namespace DataAnalysisTool
             }
             catch
             {
+                conn.Close();
+                MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                progressBar1.MarqueeAnimationSpeed = 0;
+                progressBar2.Value = 0;
                 return;
             }
             conn.Close();
