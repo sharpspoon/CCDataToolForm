@@ -126,7 +126,7 @@ namespace DataAnalysisTool
             catch
             {
                 conn.Close();
-                MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Unable to run query. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
                 progressBar2.Value = 0;
                 return;
@@ -257,6 +257,292 @@ namespace DataAnalysisTool
 
                 var iffidArray2 = importformatDataGridView.Rows.Cast<DataGridViewRow>()
                     .Select(x => x.Cells[5].Value.ToString().Trim()).ToArray();
+
+                //gives me the InEntName of the import format
+                var selectInEntName = "USE " + databaseSelect.Text + " select top 1 ife.InEntName from ImportFormat i inner join importformatentity ife on i.ImportFormatNo=ife.ImportFormatNo left join ImportFormatFieldMapping iffm on iffm.ImportFormatEntityNo=ife.ImportFormatEntityNo where i.ImportFormatId=" + @"'" + ifSelect.Text + @"'";
+                var dataAdapter8 = new SqlDataAdapter(selectInEntName, conn);
+                var ds8 = new DataSet();
+                dataAdapter8.Fill(ds8);
+                stagedDataGridView.DataSource = ds8.Tables[0];
+                var inEntName = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+                var inEntNameVar  = stagedDataGridView.Rows[0].Cells[0].Value.ToString();
+
+                if (inEntNameVar == "InAddress")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InAdjustmentHis")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InAssignment")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InBroker")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InBrokerAdj")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InBrokerContract")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InBrokerCustomer")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InBrokerDetail")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InBrokerHierarchy")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InBrokerHold")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InBrokerLicense")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InBrokerReserveHis")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InBrokerRoleBroker")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InBrokerVendor")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InCarrier")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InCertificate")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InCertificateDet")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InCmsMarx")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InCmsMmr")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InCmsTrr")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InCodSet")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InCustomer")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InCustomerApplication")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InCustomerMatch")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InCustPolicy")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InEducation")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InEntityRef")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InExtCrossRef")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InFile")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InFileImportFile")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InFileImportParm")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InFileImportRequest")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InFileRunList")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InIdentSet")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InMatchRule")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InPerfHis")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InPrepayBalanceAdjustment")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InProAppointment")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InProAppointmentDet")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InProBackground")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InProContract")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InProContractDet")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InProducer")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InProducts")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InProductsLicense")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InProInsurance")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InProLicense")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InProLicenseDet")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InterestDetail")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InterestSet")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InTimeSheet")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InTranDefault")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InTranHead")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InVendor")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
+                if (inEntNameVar == "InVoucher")
+                {
+                    label9.Text = inEntNameVar;
+                    checkBox3.Visible = true;
+                }
 
                 reqListBox.Items.Clear();
                 int a = 0;

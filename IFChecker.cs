@@ -302,14 +302,7 @@ namespace DataAnalysisTool
                             }
                             try
                             {
-                                //gives me the InEntName of the import format
-                                var selectInEntName = "USE " + databaseSelect.Text + " select top 1 ife.InEntName from ImportFormat i inner join importformatentity ife on i.ImportFormatNo=ife.ImportFormatNo left join ImportFormatFieldMapping iffm on iffm.ImportFormatEntityNo=ife.ImportFormatEntityNo where i.ImportFormatId=" + @"'" + ifSelect.Text + @"'";
-                                var dataAdapter8 = new SqlDataAdapter(selectClientName, conn);
-                                var ds8 = new DataSet();
-                                dataAdapter8.Fill(ds8);
-                                stagedDataGridView.DataSource = ds8.Tables[0];
-                                var inEntName = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
                                 
                                 //this foreach gets the values for all of the codes
                                 foreach (var s in codeArray)
