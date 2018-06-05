@@ -93,6 +93,16 @@ namespace DataAnalysisTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap big_loading_gif {
+            get {
+                object obj = ResourceManager.GetObject("big-loading-gif", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CallidusCloud_Company_Logoflip {
             get {
                 object obj = ResourceManager.GetObject("CallidusCloud_Company_Logoflip", resourceCulture);

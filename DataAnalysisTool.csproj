@@ -228,6 +228,7 @@
     <Content Include="download_BmO_icon.ico" />
     <Content Include="favicon.ico" />
     <None Include="Resources\folder_Open_32xLG1.png" />
+    <None Include="Resources\big-loading-gif.gif" />
     <Content Include="sap_32_hsh_icon.ico" />
     <Content Include="sap_32_jqX_icon.ico" />
     <None Include="Resources\Login_6031_32x.png" />
