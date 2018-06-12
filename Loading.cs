@@ -16,10 +16,5 @@ namespace DataAnalysisTool
         {
             InitializeComponent();
         }
-
-        private void Loading_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

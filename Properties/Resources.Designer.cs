@@ -463,6 +463,16 @@ namespace DataAnalysisTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap preload_waiting {
+            get {
+                object obj = ResourceManager.GetObject("preload_waiting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Print_11009 {
             get {
                 object obj = ResourceManager.GetObject("Print_11009", resourceCulture);
