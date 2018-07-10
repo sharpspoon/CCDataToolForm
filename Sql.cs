@@ -18,11 +18,8 @@ namespace DataAnalysisTool
 
         private void serverSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loader.Visible = true;
-            if (serverSelect.Text == "")
-            {
-                return;
-            }
+            Loading load = new Loading();
+            load.ShowDialog();
             progressBar2.Value = 0;
             progressBar1.MarqueeAnimationSpeed = 1;
             progressBar2.Value = 20;
@@ -42,7 +39,6 @@ namespace DataAnalysisTool
                 conn.Close();
                 connectionStatus.Visible = true;
                 richTextBox1.Text=richTextBox1.Text.Insert(0,Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect.Text + "...Done.");
-                loader.Visible = false;
             }
             catch
             {
@@ -50,7 +46,6 @@ namespace DataAnalysisTool
                 MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
                 progressBar2.Value = 0;
-                loader.Visible = false;
                 return;
             }
             progressBar1.MarqueeAnimationSpeed = 0;

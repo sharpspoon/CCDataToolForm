@@ -15,6 +15,13 @@ namespace DataAnalysisTool
         public Loading()
         {
             InitializeComponent();
+            MessageBox.Show("asdf");
+            this.Close();
+        }
+
+        private void Loading_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
