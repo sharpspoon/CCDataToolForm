@@ -11,6 +11,9 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Linq;
 using System.Security.Principal;
+using System.Data.SqlTypes;
+using System.Collections;
+using System.Text;
 
 namespace DataAnalysisTool
 {
@@ -1434,7 +1437,87 @@ namespace DataAnalysisTool
 
         }
 
+        private void reportRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (databaseSelect3.Text != "")
+            {
 
+                int value = databaseSelect3.SelectedIndex;
+                databaseSelect3.SelectedIndex = -1;
+                databaseSelect3.SelectedIndex = value;
+            }
+        }
+
+        private void statementRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (databaseSelect3.Text != "")
+            {
+
+                int value = databaseSelect3.SelectedIndex;
+                databaseSelect3.SelectedIndex = -1;
+                databaseSelect3.SelectedIndex = value;
+            }
+        }
+
+        private void button26_Click(SqlBytes binary, SqlString path, SqlBoolean append)
+        {
+            try
+            {
+                System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\Reports_Statements");
+                if (!binary.IsNull && !path.IsNull && !append.IsNull)
+                {
+                    var dir = Path.GetDirectoryName(path.Value);
+                    if (!Directory.Exists(dir))
+                        Directory.CreateDirectory(dir);
+                    using (var fs = new FileStream(path.Value, append ? FileMode.Append : FileMode.OpenOrCreate))
+                    {
+                        byte[] byteArr = binary.Value;
+                        for (int i = 0; i < byteArr.Length; i++)
+                        {
+                            fs.WriteByte(byteArr[i]);
+                        };
+                    }
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect3.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+            var selectClientName = "USE " + databaseSelect3.Text + " select  compiledreport from jasperreport where ReportId='"+reportStatementSelect.Text+"'";
+            var dataAdapter7 = new SqlDataAdapter(selectClientName, conn);
+            var ds7 = new DataSet();
+            dataAdapter7.Fill(ds7);
+            stagedDataGridView.DataSource = ds7.Tables[0];
+            var blob = stagedDataGridView.Rows[0].Cells[0];
+            //byte[] bytes = Encoding.ASCII.GetBytes(blob);
+            {
+                System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\test");
+                string path = Application.UserAppDataPath + @"\test\DataAnalysisTool_IFEF_Data_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                {
+                    using (TextWriter tw = new StreamWriter(fs))
+                    {
+                        try
+                        {
+                                tw.WriteLine(blob);
+                        }
+                        catch { return; }
+                    }
+                }
+                Process.Start(path);
+            }
+        }
 
 
         //------------------EXIT APP ACTION END------------------------------------------------------

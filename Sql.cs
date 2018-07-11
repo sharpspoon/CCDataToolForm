@@ -18,8 +18,8 @@ namespace DataAnalysisTool
 
         private void serverSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Loading load = new Loading();
-            load.ShowDialog();
+            //Loading load = new Loading();
+            //load.ShowDialog();
             progressBar2.Value = 0;
             progressBar1.MarqueeAnimationSpeed = 1;
             progressBar2.Value = 20;
@@ -73,6 +73,42 @@ namespace DataAnalysisTool
                 conn.Close();
                 connectionStatus.Visible = true;
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect.Text + "...Done.");
+            }
+            catch
+            {
+                conn.Close();
+                MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                progressBar1.MarqueeAnimationSpeed = 0;
+                progressBar2.Value = 0;
+                return;
+            }
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar2.Value = 100;
+        }
+
+        private void serverSelect3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Loading load = new Loading();
+            //load.ShowDialog();
+            progressBar2.Value = 0;
+            progressBar1.MarqueeAnimationSpeed = 1;
+            progressBar2.Value = 20;
+            progressBar2.Value = 40;
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect3.Text + "; Initial Catalog = master; Integrated Security = True");
+            try
+            {
+                conn.Open();
+                SqlCommand sc = new SqlCommand("SELECT name FROM [master].[sys].[databases] where name <> 'master' and name <> 'tempdb' and name <> 'model' and name <> 'msdb' and name <> 'DBAtools'", conn);
+                SqlDataReader reader;
+                reader = sc.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                dt.Load(reader);
+                databaseSelect3.DataSource = dt;
+                databaseSelect3.DisplayMember = "name";
+                conn.Close();
+                connectionStatus.Visible = true;
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect3.Text + "...Done.");
             }
             catch
             {
@@ -169,7 +205,51 @@ namespace DataAnalysisTool
                 tableSelect.DataSource = dt;
                 tableSelect.DisplayMember = "name";
                 conn.Close();
-//                connectionStatus.Visible = true;
+                connectionStatus.Visible = true;
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
+                toolStripStatusLabel5.Visible = true;
+                toolStripStatusLabel6.Visible = true;
+                toolStripStatusLabel7.Visible = true;
+            }
+            catch
+            {
+                return;
+            }
+
+            conn.Close();
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar2.Value = 100;
+        }
+
+        private void databaseSelect3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            progressBar1.MarqueeAnimationSpeed = 1;
+            progressBar2.Value = 20;
+            progressBar2.Value = 40;
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect3.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+            SqlCommand sc = new SqlCommand("use " + databaseSelect3.Text + " SELECT reportid as name FROM jasperreport  order by name", conn);
+            SqlCommand sc2 = new SqlCommand("use " + databaseSelect3.Text + " SELECT statementtemplateid AS name FROM statementtemplate order by name", conn);
+            
+            SqlDataReader reader;
+
+            try
+            {
+                if (reportRadio.Checked == true)
+                {
+                    reader = sc.ExecuteReader();
+                }
+                else
+                {
+                    reader = sc2.ExecuteReader();
+                }
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                dt.Load(reader);
+                reportStatementSelect.DataSource = dt;
+                reportStatementSelect.DisplayMember = "name";
+                conn.Close();
+                connectionStatus.Visible = true;
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
                 toolStripStatusLabel5.Visible = true;
                 toolStripStatusLabel6.Visible = true;
