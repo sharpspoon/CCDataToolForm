@@ -1492,6 +1492,11 @@ namespace DataAnalysisTool
 
         private void button26_Click(object sender, EventArgs e)
         {
+            if (reportStatementSelect.Text==null || reportStatementSelect.Text == "")
+            {
+                MessageBox.Show("Please select a statement or report to extract!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect3.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             var selectClientName = "USE " + databaseSelect3.Text + " select  compiledreport from jasperreport where ReportId='"+reportStatementSelect.Text+"'";
