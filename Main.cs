@@ -36,9 +36,17 @@ namespace DataAnalysisTool
         private void cCDataToolLogToolStripMenuItem_Click(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
-            Process.Start(Application.UserAppDataPath + @"\Logs");
-            progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
+            try
+            {
+                Process.Start(Application.UserAppDataPath + @"\Logs");
+                progressBar1.MarqueeAnimationSpeed = 0;
+                progressBar1.Refresh();
+            }
+            catch
+            {
+                progressBar1.MarqueeAnimationSpeed = 0;
+                progressBar1.Refresh();
+            }
         }
         //------------------CC LOG OPEN END------------------------------------------------------
 
