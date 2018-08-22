@@ -204,18 +204,18 @@
             this.databaseSelect3 = new System.Windows.Forms.ComboBox();
             this.benchmark = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.payoutSelect = new System.Windows.Forms.ComboBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.payoutTypeSelect = new System.Windows.Forms.ComboBox();
+            this.serverSelect4 = new System.Windows.Forms.ComboBox();
+            this.databaseSelect4 = new System.Windows.Forms.ComboBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -1024,7 +1024,7 @@
             this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox10.Controls.Add(this.button25);
             this.groupBox10.Controls.Add(this.textBox2);
-            this.groupBox10.Location = new System.Drawing.Point(3, 322);
+            this.groupBox10.Location = new System.Drawing.Point(3, 319);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(170, 38);
             this.groupBox10.TabIndex = 36;
@@ -2305,19 +2305,32 @@
             // groupBox12
             // 
             this.groupBox12.BackColor = System.Drawing.Color.AliceBlue;
-            this.groupBox12.Controls.Add(this.comboBox4);
+            this.groupBox12.Controls.Add(this.payoutSelect);
             this.groupBox12.Controls.Add(this.pictureBox12);
             this.groupBox12.Controls.Add(this.pictureBox13);
             this.groupBox12.Controls.Add(this.pictureBox14);
-            this.groupBox12.Controls.Add(this.comboBox1);
-            this.groupBox12.Controls.Add(this.comboBox2);
-            this.groupBox12.Controls.Add(this.comboBox3);
+            this.groupBox12.Controls.Add(this.payoutTypeSelect);
+            this.groupBox12.Controls.Add(this.serverSelect4);
+            this.groupBox12.Controls.Add(this.databaseSelect4);
             this.groupBox12.Location = new System.Drawing.Point(8, 6);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(222, 112);
             this.groupBox12.TabIndex = 28;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Select Server/Database/Payout";
+            // 
+            // payoutSelect
+            // 
+            this.payoutSelect.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.payoutSelect.Cursor = System.Windows.Forms.Cursors.Default;
+            this.payoutSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
+            this.payoutSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.payoutSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.payoutSelect.FormattingEnabled = true;
+            this.payoutSelect.Location = new System.Drawing.Point(28, 85);
+            this.payoutSelect.Name = "payoutSelect";
+            this.payoutSelect.Size = new System.Drawing.Size(188, 21);
+            this.payoutSelect.TabIndex = 35;
             // 
             // pictureBox12
             // 
@@ -2346,48 +2359,50 @@
             this.pictureBox14.TabIndex = 6;
             this.pictureBox14.TabStop = false;
             // 
-            // comboBox1
+            // payoutTypeSelect
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.comboBox1.DataSource = this.spDTAgetdatabasetableidsBindingSource;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(28, 63);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(188, 21);
-            this.comboBox1.TabIndex = 32;
+            this.payoutTypeSelect.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.payoutTypeSelect.Cursor = System.Windows.Forms.Cursors.Default;
+            this.payoutTypeSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
+            this.payoutTypeSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.payoutTypeSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.payoutTypeSelect.FormattingEnabled = true;
+            this.payoutTypeSelect.Location = new System.Drawing.Point(28, 63);
+            this.payoutTypeSelect.Name = "payoutTypeSelect";
+            this.payoutTypeSelect.Size = new System.Drawing.Size(188, 21);
+            this.payoutTypeSelect.TabIndex = 32;
             // 
-            // comboBox2
+            // serverSelect4
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.comboBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.serverSelect4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.serverSelect4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.serverSelect4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.serverSelect4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.serverSelect4.FormattingEnabled = true;
+            this.serverSelect4.Items.AddRange(new object[] {
             "IcmTstDb1.cci.caldsaas.local\\tst1",
             "IcmTstDb2.cci.caldsaas.local\\tst2",
             "IcmTstDb3.cci.caldsaas.local\\tst3",
             "IcmImpDb1.cci.caldsaas.local\\Imp1"});
-            this.comboBox2.Location = new System.Drawing.Point(28, 19);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(188, 21);
-            this.comboBox2.TabIndex = 32;
+            this.serverSelect4.Location = new System.Drawing.Point(28, 19);
+            this.serverSelect4.Name = "serverSelect4";
+            this.serverSelect4.Size = new System.Drawing.Size(188, 21);
+            this.serverSelect4.TabIndex = 32;
+            this.serverSelect4.SelectedIndexChanged += new System.EventHandler(this.serverSelect4_SelectedIndexChanged);
             // 
-            // comboBox3
+            // databaseSelect4
             // 
-            this.comboBox3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.comboBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.comboBox3.DataSource = this.spDTAgetdatabasetableidsBindingSource;
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(28, 41);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(188, 21);
-            this.comboBox3.TabIndex = 31;
+            this.databaseSelect4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.databaseSelect4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.databaseSelect4.DataSource = this.spDTAgetdatabasetableidsBindingSource;
+            this.databaseSelect4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.databaseSelect4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.databaseSelect4.FormattingEnabled = true;
+            this.databaseSelect4.Location = new System.Drawing.Point(28, 41);
+            this.databaseSelect4.Name = "databaseSelect4";
+            this.databaseSelect4.Size = new System.Drawing.Size(188, 21);
+            this.databaseSelect4.TabIndex = 31;
+            this.databaseSelect4.SelectedIndexChanged += new System.EventHandler(this.databaseSelect4_SelectedIndexChanged);
             // 
             // progressBar1
             // 
@@ -2438,19 +2453,6 @@
             this.pictureBox6.TabIndex = 43;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.comboBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.comboBox4.DataSource = this.spDTAgetdatabasetableidsBindingSource;
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(28, 85);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(188, 21);
-            this.comboBox4.TabIndex = 35;
             // 
             // DataAnalysisTool
             // 
@@ -2722,10 +2724,10 @@
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox payoutTypeSelect;
+        private System.Windows.Forms.ComboBox serverSelect4;
+        private System.Windows.Forms.ComboBox databaseSelect4;
+        private System.Windows.Forms.ComboBox payoutSelect;
     }
 }
 
