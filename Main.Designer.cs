@@ -204,6 +204,7 @@
             this.databaseSelect3 = new System.Windows.Forms.ComboBox();
             this.benchmark = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.payoutSelect = new System.Windows.Forms.ComboBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
@@ -267,6 +268,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.benchmark.SuspendLayout();
             this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -1024,7 +1026,7 @@
             this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox10.Controls.Add(this.button25);
             this.groupBox10.Controls.Add(this.textBox2);
-            this.groupBox10.Location = new System.Drawing.Point(3, 319);
+            this.groupBox10.Location = new System.Drawing.Point(3, 310);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(170, 38);
             this.groupBox10.TabIndex = 36;
@@ -1425,6 +1427,7 @@
             this.connectionStatus.Size = new System.Drawing.Size(75, 17);
             this.connectionStatus.Text = "Connected";
             this.connectionStatus.Visible = false;
+            this.connectionStatus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel1
             // 
@@ -2305,6 +2308,7 @@
             // groupBox12
             // 
             this.groupBox12.BackColor = System.Drawing.Color.AliceBlue;
+            this.groupBox12.Controls.Add(this.pictureBox15);
             this.groupBox12.Controls.Add(this.payoutSelect);
             this.groupBox12.Controls.Add(this.pictureBox12);
             this.groupBox12.Controls.Add(this.pictureBox13);
@@ -2318,6 +2322,15 @@
             this.groupBox12.TabIndex = 28;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Select Server/Database/Payout";
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Image = global::DataAnalysisTool.Properties.Resources.calendar_16xLG;
+            this.pictureBox15.Location = new System.Drawing.Point(6, 85);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox15.TabIndex = 36;
+            this.pictureBox15.TabStop = false;
             // 
             // payoutSelect
             // 
@@ -2334,8 +2347,8 @@
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Image = global::DataAnalysisTool.Properties.Resources.IFrame_5767;
-            this.pictureBox12.Location = new System.Drawing.Point(6, 65);
+            this.pictureBox12.Image = global::DataAnalysisTool.Properties.Resources.Money_16xMD;
+            this.pictureBox12.Location = new System.Drawing.Point(6, 63);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(16, 16);
             this.pictureBox12.TabIndex = 34;
@@ -2371,6 +2384,7 @@
             this.payoutTypeSelect.Name = "payoutTypeSelect";
             this.payoutTypeSelect.Size = new System.Drawing.Size(188, 21);
             this.payoutTypeSelect.TabIndex = 32;
+            this.payoutTypeSelect.SelectedIndexChanged += new System.EventHandler(this.payoutTypeSelect_SelectedIndexChanged);
             // 
             // serverSelect4
             // 
@@ -2543,6 +2557,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.benchmark.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
@@ -2728,6 +2743,7 @@
         private System.Windows.Forms.ComboBox serverSelect4;
         private System.Windows.Forms.ComboBox databaseSelect4;
         private System.Windows.Forms.ComboBox payoutSelect;
+        private System.Windows.Forms.PictureBox pictureBox15;
     }
 }
 

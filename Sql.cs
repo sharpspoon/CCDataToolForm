@@ -388,6 +388,42 @@ namespace DataAnalysisTool
             progressBar2.Value = 100;
         }
 
+        private void payoutTypeSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            progressBar1.MarqueeAnimationSpeed = 1;
+            progressBar2.Value = 20;
+            progressBar2.Value = 40;
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+            SqlCommand sc = new SqlCommand("use " + databaseSelect4.Text + " select distinct cast(datfrom as varchar)+'-'+cast(datto as varchar)as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='"+payoutTypeSelect.Text+"')order by 1 desc", conn);
+
+            SqlDataReader reader;
+
+            try
+            {
+                reader = sc.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                dt.Load(reader);
+                payoutSelect.DataSource = dt;
+                payoutSelect.DisplayMember = "name";
+                conn.Close();
+                connectionStatus.Visible = true;
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
+                toolStripStatusLabel5.Visible = true;
+                toolStripStatusLabel6.Visible = true;
+                toolStripStatusLabel7.Visible = true;
+            }
+            catch
+            {
+                return;
+            }
+
+            conn.Close();
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar2.Value = 100;
+        }
+
         private void ifSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
