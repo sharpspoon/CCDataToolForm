@@ -203,6 +203,7 @@
             this.serverSelect3 = new System.Windows.Forms.ComboBox();
             this.databaseSelect3 = new System.Windows.Forms.ComboBox();
             this.benchmark = new System.Windows.Forms.TabPage();
+            this.button27 = new System.Windows.Forms.Button();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.payoutSelect = new System.Windows.Forms.ComboBox();
@@ -217,6 +218,9 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -274,6 +278,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.groupBox13.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -1026,7 +1031,7 @@
             this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox10.Controls.Add(this.button25);
             this.groupBox10.Controls.Add(this.textBox2);
-            this.groupBox10.Location = new System.Drawing.Point(3, 310);
+            this.groupBox10.Location = new System.Drawing.Point(3, 301);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(170, 38);
             this.groupBox10.TabIndex = 36;
@@ -2298,12 +2303,36 @@
             // benchmark
             // 
             this.benchmark.BackColor = System.Drawing.Color.AliceBlue;
+            this.benchmark.Controls.Add(this.groupBox13);
+            this.benchmark.Controls.Add(this.button27);
             this.benchmark.Controls.Add(this.groupBox12);
             this.benchmark.Location = new System.Drawing.Point(4, 22);
             this.benchmark.Name = "benchmark";
             this.benchmark.Size = new System.Drawing.Size(1225, 120);
             this.benchmark.TabIndex = 5;
             this.benchmark.Text = "Payout Benchmark (ALPHA)";
+            this.benchmark.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // button27
+            // 
+            this.button27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button27.BackColor = System.Drawing.Color.Honeydew;
+            this.button27.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button27.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button27.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
+            this.button27.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button27.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
+            this.button27.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button27.Location = new System.Drawing.Point(1175, 3);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(47, 96);
+            this.button27.TabIndex = 35;
+            this.button27.Text = "GO";
+            this.button27.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button27.UseVisualStyleBackColor = false;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
             // groupBox12
             // 
@@ -2468,6 +2497,42 @@
             this.pictureBox6.TabStop = false;
             this.pictureBox6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
+            // groupBox13
+            // 
+            this.groupBox13.BackColor = System.Drawing.Color.AliceBlue;
+            this.groupBox13.Controls.Add(this.checkBox7);
+            this.groupBox13.Controls.Add(this.checkBox6);
+            this.groupBox13.Location = new System.Drawing.Point(236, 6);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(143, 40);
+            this.groupBox13.TabIndex = 37;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Payout Status";
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Checked = true;
+            this.checkBox6.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox6.Location = new System.Drawing.Point(3, 16);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(65, 17);
+            this.checkBox6.TabIndex = 0;
+            this.checkBox6.Text = "Pending";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Checked = true;
+            this.checkBox7.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox7.Location = new System.Drawing.Point(74, 16);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(67, 17);
+            this.checkBox7.TabIndex = 1;
+            this.checkBox7.Text = "Finalized";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
             // DataAnalysisTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2563,6 +2628,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2744,6 +2811,10 @@
         private System.Windows.Forms.ComboBox databaseSelect4;
         private System.Windows.Forms.ComboBox payoutSelect;
         private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox6;
     }
 }
 

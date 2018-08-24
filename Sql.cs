@@ -395,7 +395,7 @@ namespace DataAnalysisTool
             progressBar2.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
-            SqlCommand sc = new SqlCommand("use " + databaseSelect4.Text + " select distinct cast(datfrom as varchar)+'-'+cast(datto as varchar)as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='"+payoutTypeSelect.Text+"')order by 1 desc", conn);
+            SqlCommand sc = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='"+payoutTypeSelect.Text+"')order by 1 desc", conn);
 
             SqlDataReader reader;
 
