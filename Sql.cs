@@ -395,13 +395,52 @@ namespace DataAnalysisTool
             progressBar2.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
-            SqlCommand sc = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='"+payoutTypeSelect.Text+"')order by 1 desc", conn);
+            SqlCommand sc = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='"+payoutTypeSelect.Text+"') and rl.rectype='pay' and order by 1 desc", conn);
+            SqlCommand sc1 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and rl.[Reverse] ='n' order by 1 desc", conn);
+            SqlCommand sc2 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and (rl.[Reverse] ='n' or rl.finalizestatus='n') order by 1 desc", conn);
+            SqlCommand sc3 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "')order by 1 desc", conn);
+            SqlCommand sc4 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "')order by 1 desc", conn);
+            SqlCommand sc5 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "')order by 1 desc", conn);
+            SqlCommand sc6 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "')order by 1 desc", conn);
 
             SqlDataReader reader;
 
             try
             {
-                reader = sc.ExecuteReader();
+
+                if (pendingCheckBox.Checked == true && finalizedCheckBox.Checked == true && reversedCheckBox.Checked == true)
+                {
+                    reader = sc.ExecuteReader();
+                }
+                if (pendingCheckBox.Checked == true && finalizedCheckBox.Checked == true && reversedCheckBox.Checked == false)
+                {
+                    reader = sc1.ExecuteReader();
+                }
+                if (pendingCheckBox.Checked == true && finalizedCheckBox.Checked == false && reversedCheckBox.Checked == false)
+                {
+                    reader = sc2.ExecuteReader();
+                }
+                if (pendingCheckBox.Checked == false && finalizedCheckBox.Checked == false && reversedCheckBox.Checked == false)
+                {
+                    reader = sc3.ExecuteReader();
+                }
+                if (pendingCheckBox.Checked == true && finalizedCheckBox.Checked == false && reversedCheckBox.Checked == true)
+                {
+                    reader = sc4.ExecuteReader();
+                }
+                if (pendingCheckBox.Checked == false && finalizedCheckBox.Checked == false && reversedCheckBox.Checked == true)
+                {
+                    reader = sc5.ExecuteReader();
+                }
+                if (pendingCheckBox.Checked == true && finalizedCheckBox.Checked == true && reversedCheckBox.Checked == false)
+                {
+                    reader = sc6.ExecuteReader();
+                }
+                else
+                {
+                    return;
+                }
+                //reader = sc.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Columns.Add("name", typeof(string));
                 dt.Load(reader);
@@ -409,7 +448,7 @@ namespace DataAnalysisTool
                 payoutSelect.DisplayMember = "name";
                 conn.Close();
                 connectionStatus.Visible = true;
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading payouts: " + databaseSelect.Text + "...Done.");
                 toolStripStatusLabel5.Visible = true;
                 toolStripStatusLabel6.Visible = true;
                 toolStripStatusLabel7.Visible = true;
