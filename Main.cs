@@ -1634,7 +1634,17 @@ namespace DataAnalysisTool
             }
         }
 
-        private void pendingCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void pendingRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (payoutTypeSelect.Text != "")
+            {
+                int value = payoutTypeSelect.SelectedIndex;
+                payoutTypeSelect.SelectedIndex = -1;
+                payoutTypeSelect.SelectedIndex = value;
+            }
+        }
+
+        private void finalizedRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             if (payoutTypeSelect.Text != "")
             {
@@ -1645,18 +1655,7 @@ namespace DataAnalysisTool
             }
         }
 
-        private void finalizedCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (payoutTypeSelect.Text != "")
-            {
-
-                int value = payoutTypeSelect.SelectedIndex;
-                payoutTypeSelect.SelectedIndex = -1;
-                payoutTypeSelect.SelectedIndex = value;
-            }
-        }
-
-        private void reversedCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void reversedRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             if (payoutTypeSelect.Text != "")
             {

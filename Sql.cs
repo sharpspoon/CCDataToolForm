@@ -257,6 +257,8 @@ namespace DataAnalysisTool
             progressBar2.Value = 100;
         }
 
+        //databaseSelect2 not used right now
+
         private void databaseSelect3_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
@@ -303,13 +305,15 @@ namespace DataAnalysisTool
 
         private void databaseSelect4_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //MessageBox.Show("should not hit this");
+            //payoutSelect.SelectedIndex = -1;
+            //payoutTypeSelect.SelectedIndex = -1;
             progressBar1.MarqueeAnimationSpeed = 1;
             progressBar2.Value = 20;
             progressBar2.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + databaseSelect4.Text + " SELECT payouttypeid as name FROM payouttype  order by name", conn);
-
             SqlDataReader reader;
 
             try
@@ -329,9 +333,66 @@ namespace DataAnalysisTool
             }
             catch
             {
+                conn.Close();
+                progressBar1.MarqueeAnimationSpeed = 0;
+                progressBar2.Value = 0;
                 return;
             }
+            conn.Close();
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar2.Value = 100;
+        }
 
+        private void payoutTypeSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            progressBar1.MarqueeAnimationSpeed = 1;
+            progressBar2.Value = 20;
+            progressBar2.Value = 40;
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+            SqlCommand sc1 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and rl.rectype='pay' and rl.finalizestatus='p' order by 1 desc", conn);
+            SqlCommand sc2 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and rl.rectype='pay' and rl.finalizestatus='f' order by 1 desc", conn);
+            SqlCommand sc3 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and rl.rectype='pay' and rl.finalizestatus='r' order by 1 desc", conn);
+
+            SqlDataReader reader;
+
+            try
+            {
+                if (pendingRadioButton.Checked == true)
+                {
+                    reader = sc1.ExecuteReader();
+                }
+                else if (finalizedRadioButton.Checked == true)
+                {
+                    reader = sc2.ExecuteReader();
+                }
+                else if (reversedRadioButton.Checked == true)
+                {
+                    reader = sc3.ExecuteReader();
+                }
+                else
+                {
+                    return;
+                }
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                dt.Load(reader);
+                payoutSelect.DataSource = dt;
+                payoutSelect.DisplayMember = "name";
+                conn.Close();
+                connectionStatus.Visible = true;
+                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading payouts: " + payoutTypeSelect.Text + "...Done.");
+                toolStripStatusLabel5.Visible = true;
+                toolStripStatusLabel6.Visible = true;
+                toolStripStatusLabel7.Visible = true;
+            }
+            catch
+            {
+                conn.Close();
+                progressBar1.MarqueeAnimationSpeed = 0;
+                progressBar2.Value = 0;
+                return;
+            }
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
             progressBar2.Value = 100;
@@ -388,80 +449,7 @@ namespace DataAnalysisTool
             progressBar2.Value = 100;
         }
 
-        private void payoutTypeSelect_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            progressBar1.MarqueeAnimationSpeed = 1;
-            progressBar2.Value = 20;
-            progressBar2.Value = 40;
-            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
-            conn.Open();
-            SqlCommand sc = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='"+payoutTypeSelect.Text+"') and rl.rectype='pay' and order by 1 desc", conn);
-            SqlCommand sc1 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and rl.[Reverse] ='n' order by 1 desc", conn);
-            SqlCommand sc2 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and (rl.[Reverse] ='n' or rl.finalizestatus='n') order by 1 desc", conn);
-            SqlCommand sc3 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "')order by 1 desc", conn);
-            SqlCommand sc4 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "')order by 1 desc", conn);
-            SqlCommand sc5 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "')order by 1 desc", conn);
-            SqlCommand sc6 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "')order by 1 desc", conn);
 
-            SqlDataReader reader;
-
-            try
-            {
-
-                if (pendingCheckBox.Checked == true && finalizedCheckBox.Checked == true && reversedCheckBox.Checked == true)
-                {
-                    reader = sc.ExecuteReader();
-                }
-                if (pendingCheckBox.Checked == true && finalizedCheckBox.Checked == true && reversedCheckBox.Checked == false)
-                {
-                    reader = sc1.ExecuteReader();
-                }
-                if (pendingCheckBox.Checked == true && finalizedCheckBox.Checked == false && reversedCheckBox.Checked == false)
-                {
-                    reader = sc2.ExecuteReader();
-                }
-                if (pendingCheckBox.Checked == false && finalizedCheckBox.Checked == false && reversedCheckBox.Checked == false)
-                {
-                    reader = sc3.ExecuteReader();
-                }
-                if (pendingCheckBox.Checked == true && finalizedCheckBox.Checked == false && reversedCheckBox.Checked == true)
-                {
-                    reader = sc4.ExecuteReader();
-                }
-                if (pendingCheckBox.Checked == false && finalizedCheckBox.Checked == false && reversedCheckBox.Checked == true)
-                {
-                    reader = sc5.ExecuteReader();
-                }
-                if (pendingCheckBox.Checked == true && finalizedCheckBox.Checked == true && reversedCheckBox.Checked == false)
-                {
-                    reader = sc6.ExecuteReader();
-                }
-                else
-                {
-                    return;
-                }
-                //reader = sc.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Columns.Add("name", typeof(string));
-                dt.Load(reader);
-                payoutSelect.DataSource = dt;
-                payoutSelect.DisplayMember = "name";
-                conn.Close();
-                connectionStatus.Visible = true;
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading payouts: " + databaseSelect.Text + "...Done.");
-                toolStripStatusLabel5.Visible = true;
-                toolStripStatusLabel6.Visible = true;
-                toolStripStatusLabel7.Visible = true;
-            }
-            catch
-            {
-                return;
-            }
-
-            conn.Close();
-            progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
-        }
 
         private void ifSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
