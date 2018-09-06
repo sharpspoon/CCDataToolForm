@@ -119,7 +119,6 @@ namespace DataAnalysisTool
             catch { }
             progressBar1.MarqueeAnimationSpeed = 0;
             progressBar1.Refresh();
-
         }
         //------------------OPEN/SAVE XLS END------------------------------------------------------
 
@@ -178,7 +177,6 @@ namespace DataAnalysisTool
             {
                 this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
                 this.WindowState = FormWindowState.Maximized;
-
             }
         }
         private void toolStripMenuItemMinimize_Click(object sender, EventArgs e)
@@ -605,7 +603,6 @@ namespace DataAnalysisTool
                             }
                         }
                     }
-
                 }
             }
             if (a == 0){
@@ -704,10 +701,7 @@ namespace DataAnalysisTool
             }
             progressBar2.Value = 100;
             MessageBox.Show("All columns/rows are under " + length, "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-
-
-
+            
         }
 
         //------------------CELL LENGTH CHECKER END------------------------------------------------------
@@ -739,7 +733,6 @@ namespace DataAnalysisTool
                     {
 
                         var value = importedfileDataGridView.Rows[i].Cells[specialCharacterCurIndex].Value.ToString();
-                        //MessageBox.Show("value "+value+"reqitem "+reqItem);
                         if (value.Contains(specialChar) == true)
                         {
                             importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[specialCharacterCurIndex];
@@ -1442,7 +1435,6 @@ namespace DataAnalysisTool
                 databaseSelect.SelectedIndex = -1;
                 databaseSelect.SelectedIndex = value;
             }
-
         }
 
         private void reportRadio_CheckedChanged(object sender, EventArgs e)
@@ -1562,10 +1554,8 @@ namespace DataAnalysisTool
                 }
             }
 
-
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
-            
 
             var runListNoRoot = "use " + databaseSelect4.Text + " USE " + databaseSelect4.Text + " select distinct rl.runlistnoroot from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "') and rl.DatFrom = '" + payoutSelect.Text + "'";
             var dataAdapter3 = new SqlDataAdapter(runListNoRoot, conn);
@@ -1590,7 +1580,7 @@ namespace DataAnalysisTool
                         tw.WriteLine("###########################################################################################");
                         tw.WriteLine("########################DataAnalysisTool - Payout Benchmark################################");
                         tw.WriteLine("###########################################################################################");
-                        tw.WriteLine("Current Date: "+DateTime.Now);
+                        tw.WriteLine("Current Date: "+ DateTime.Now);
                         tw.WriteLine("Server: " + serverSelect4.Text);
                         tw.WriteLine("Database: " + databaseSelect4.Text);
                         tw.WriteLine("Payout Type: " + payoutTypeSelect.Text);
@@ -1600,10 +1590,6 @@ namespace DataAnalysisTool
                             tw.WriteLine("RunListNoRoot: "+run);
                             runListNoRootText.Text = run;
                         }
-                        
-
-
-
                         if (databaseSelect4.Text != "")
                         {
                             try
@@ -1620,17 +1606,12 @@ namespace DataAnalysisTool
                         tw.WriteLine("EOF.");
                     }
                 }
-                
                 progressBar2.Value = 90;
                 progressBar2.Value = 100;
                 MessageBox.Show("Payout Benchmark file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
                 progressBar1.Refresh();
                 Process.Start(path);
-            }
-
-            {
-
             }
         }
 
@@ -1665,11 +1646,6 @@ namespace DataAnalysisTool
                 payoutTypeSelect.SelectedIndex = value;
             }
         }
-
-
-
-
-
 
         //------------------EXIT APP ACTION END------------------------------------------------------
         /*

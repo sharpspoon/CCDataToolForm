@@ -402,7 +402,7 @@ namespace DataAnalysisTool
         {
             progressBar1.MarqueeAnimationSpeed = 1;
             progressBar2.Value = 20;
-            System.Threading.Thread.Sleep(25);
+            //System.Threading.Thread.Sleep(25);
             progressBar2.Value = 40;
             string ID = databaseSelect.SelectedValue.ToString();
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
