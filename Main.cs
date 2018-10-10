@@ -1524,7 +1524,7 @@ namespace DataAnalysisTool
             }
         }
 
-        private void button27_Click(object sender, EventArgs e)
+        private void payoutBenchmarkButton_Click(object sender, EventArgs e)
         {
             progressBar2.Value = 0;
             progressBar2.Value = 10;
@@ -1646,6 +1646,102 @@ namespace DataAnalysisTool
                 payoutTypeSelect.SelectedIndex = value;
             }
         }
+
+        private void apiReadinessCheckButton_Click(object sender, EventArgs e)
+        {
+            progressBar2.Value = 0;
+            progressBar2.Value = 10;
+
+            //global vars
+            progressBar1.MarqueeAnimationSpeed = 1;
+            if (databaseSelect5.Text == "")
+
+            {
+                DialogResult result = MessageBox.Show("No database selected. \nPlease make sure you are connected to ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                progressBar1.MarqueeAnimationSpeed = 0;
+                progressBar2.Value = 0;
+                progressBar1.Refresh();
+                return;
+            }
+
+            if (databaseSelect5.Text != "")
+            {
+
+                DialogResult result2 = MessageBox.Show("The DAT will check against the " + databaseSelect5.Text + " database.\nContinue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result2 == DialogResult.No)
+                {
+                    progressBar1.MarqueeAnimationSpeed = 0;
+                    progressBar2.Value = 0;
+                    progressBar1.Refresh();
+                    return;
+                }
+            }
+
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect5.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+
+            var apiEnabled = " USE " + databaseSelect5.Text + " select case when enabled=1 then 'Yes' else 'No' end as 'Enabled' from feature where FeatureId='System API''s'";
+            var dataAdapter3 = new SqlDataAdapter(apiEnabled, conn);
+            var ds3 = new DataSet();
+            dataAdapter3.Fill(ds3);
+            stagedDataGridView.DataSource = ds3.Tables[0];
+            var apiEnabledArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
+            conn.Close();
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar2.Value = 100;
+
+
+            {
+                System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\API_Readiness_Check");
+                string path = Application.UserAppDataPath + @"\API_Readiness_Check\DataAnalysisTool_API_Check_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                {
+                    using (TextWriter tw = new StreamWriter(fs))
+                    {
+                        tw.WriteLine("###########################################################################################");
+                        tw.WriteLine("########################DataAnalysisTool - API Readiness Check##############################");
+                        tw.WriteLine("###########################################################################################");
+                        tw.WriteLine("Current Date: " + DateTime.Now);
+                        tw.WriteLine("Server: " + serverSelect5.Text);
+                        tw.WriteLine("Database: " + databaseSelect5.Text);
+                        tw.WriteLine("");
+                        foreach (var api in apiEnabledArray)
+                        {
+                            tw.WriteLine("API Enabled?: " + api);
+                            if (api == "No")
+                            {
+                                tw.WriteLine("Please enable API access. You can do this in the Global Featues section within ICM.");
+                                return;
+                            }
+                        }
+                        if (databaseSelect4.Text != "")
+                        {
+                            try
+                            {
+                                tw.WriteLine("");
+                                tw.WriteLine("****************************************************");
+                                tw.WriteLine("********************PAYOUT STATS********************");
+                                tw.WriteLine("****************************************************");
+                                tw.WriteLine("");
+                                tw.WriteLine("Average payout time for the " + payoutTypeSelect.Text + " payout: ");
+                            }
+                            catch { return; }
+                        }
+                        tw.WriteLine("EOF.");
+                    }
+                }
+                progressBar2.Value = 90;
+                progressBar2.Value = 100;
+                MessageBox.Show("Payout Benchmark file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                progressBar1.MarqueeAnimationSpeed = 0;
+                progressBar1.Refresh();
+                Process.Start(path);
+            }
+        }
+
+
 
         //------------------EXIT APP ACTION END------------------------------------------------------
         /*
