@@ -14,9 +14,12 @@ namespace DataAnalysisTool
     {
         public Loading()
         {
+
             InitializeComponent();
-            MessageBox.Show("asdf");
-            this.Close();
+            this.BackColor = Color.LimeGreen;
+            this.TransparencyKey = Color.LimeGreen;
+            //MessageBox.Show("asdf");
+            //this.Close();
         }
 
         private void Loading_Load(object sender, EventArgs e)

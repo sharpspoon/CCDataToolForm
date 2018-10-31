@@ -8,6 +8,7 @@ using System.Data.OleDb;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Threading;
 
 namespace DataAnalysisTool
 {
@@ -122,10 +123,25 @@ namespace DataAnalysisTool
             progressBar2.Value = 100;
         }
 
+
+
         private void serverSelect4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Loading load = new Loading();
-            //load.ShowDialog();
+
+
+            while (backgroundWorker1.IsBusy)
+            {
+                backgroundWorker1.CancelAsync();
+            }
+            if (backgroundWorker1.IsBusy)
+            {
+                MessageBox.Show("Asdf");
+                backgroundWorker1.CancelAsync();
+                backgroundWorker1.Dispose();
+            }
+            this.backgroundWorker1.RunWorkerAsync();
+
+
             progressBar2.Value = 0;
             progressBar1.MarqueeAnimationSpeed = 1;
             progressBar2.Value = 20;
@@ -148,14 +164,39 @@ namespace DataAnalysisTool
             }
             catch
             {
+
+                backgroundWorker1.CancelAsync();
+                backgroundWorker1.Dispose();
+                System.Threading.Thread.Sleep(500);
                 conn.Close();
                 MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
                 progressBar2.Value = 0;
-                return;
+                //return;
             }
-            progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
+            //progressBar1.MarqueeAnimationSpeed = 0;
+            //progressBar2.Value = 100;
+        }
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            //while (Application.OpenForms.Count > 1)
+            //{
+            //    Application.OpenForms[Application.OpenForms.Count - 1].Close();
+            //}
+            loading.ShowDialog();
+
+        }
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            return;
+            //MessageBox.Show("asdf");
+            //Form.ActiveForm.Close();
+
+            //while (Application.OpenForms.Count > 1)
+            //{
+            //    Application.OpenForms[Application.OpenForms.Count - 1].Close();
+            //}
         }
 
         private void serverSelect5_SelectedIndexChanged(object sender, EventArgs e)

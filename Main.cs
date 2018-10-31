@@ -1741,6 +1741,23 @@ namespace DataAnalysisTool
             }
         }
 
+        private void button27_Click(object sender, EventArgs e)
+        {
+            progressBar1.MarqueeAnimationSpeed = 1;
+            Loading loading = new Loading();
+            while (Application.OpenForms.Count > 1)
+            {
+                Application.OpenForms[Application.OpenForms.Count - 1].Close();
+            }
+            loading.ShowDialog();
+            progressBar1.MarqueeAnimationSpeed = 0;
+            progressBar1.Refresh();
+        }
+
+
+
+
+
 
 
         //------------------EXIT APP ACTION END------------------------------------------------------
