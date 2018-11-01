@@ -18,13 +18,29 @@ namespace DataAnalysisTool
             InitializeComponent();
             this.BackColor = Color.LimeGreen;
             this.TransparencyKey = Color.LimeGreen;
-            //MessageBox.Show("asdf");
-            //this.Close();
+            
+
         }
 
         private void Loading_Load(object sender, EventArgs e)
         {
-            
+
+            //this.Close();
+        }
+
+        private void Loading_Leave(object sender, EventArgs e)
+        {
+            //this.Close();
+        }
+
+        private void Loading_VisibleChanged(object sender, EventArgs e)
+        {
+            //this.Close();
+        }
+
+        private void Loading_Deactivate(object sender, EventArgs e)
+        {
+            //this.Close();
         }
     }
 }

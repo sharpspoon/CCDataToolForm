@@ -56,7 +56,10 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Deactivate += new System.EventHandler(this.Loading_Deactivate);
             this.Load += new System.EventHandler(this.Loading_Load);
+            this.VisibleChanged += new System.EventHandler(this.Loading_VisibleChanged);
+            this.Leave += new System.EventHandler(this.Loading_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

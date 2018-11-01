@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataAnalysisTool));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.importedfileDataGridView = new System.Windows.Forms.DataGridView();
@@ -108,6 +108,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitRequiredImportFormat_ImportedFile = new System.Windows.Forms.SplitContainer();
             this.importformatDataGridView = new System.Windows.Forms.DataGridView();
+            this.pictureBoxLoading = new System.Windows.Forms.PictureBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.button25 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -234,6 +235,55 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker5 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker6 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker7 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker8 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker9 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker10 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker11 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker12 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker13 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker14 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker15 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker16 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker17 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker18 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker19 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker20 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker21 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker22 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker23 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker24 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker25 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker26 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker27 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker28 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker29 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker30 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker31 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker32 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker33 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker34 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker35 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker36 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker37 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker38 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker39 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker40 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker41 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker42 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker43 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker44 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker45 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker46 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker47 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker48 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker49 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker50 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -249,6 +299,7 @@
             this.splitRequiredImportFormat_ImportedFile.Panel2.SuspendLayout();
             this.splitRequiredImportFormat_ImportedFile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.importformatDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).BeginInit();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -315,34 +366,34 @@
             // 
             this.importedfileDataGridView.AllowUserToAddRows = false;
             this.importedfileDataGridView.BackgroundColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.importedfileDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.importedfileDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.importedfileDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.importedfileDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.importedfileDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.importedfileDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.importedfileDataGridView.Location = new System.Drawing.Point(0, 0);
             this.importedfileDataGridView.Name = "importedfileDataGridView";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.importedfileDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.importedfileDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.importedfileDataGridView.Size = new System.Drawing.Size(1034, 420);
             this.importedfileDataGridView.TabIndex = 5;
             this.importedfileDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
@@ -1010,45 +1061,55 @@
             // 
             this.importformatDataGridView.AllowUserToAddRows = false;
             this.importformatDataGridView.BackgroundColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.importformatDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.importformatDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.importformatDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.importformatDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.importformatDataGridView.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.importformatDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.importformatDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.importformatDataGridView.Location = new System.Drawing.Point(0, 0);
             this.importformatDataGridView.Name = "importformatDataGridView";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.importformatDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.importformatDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.importformatDataGridView.Size = new System.Drawing.Size(1034, 121);
             this.importformatDataGridView.TabIndex = 0;
             this.importformatDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
+            // 
+            // pictureBoxLoading
+            // 
+            this.pictureBoxLoading.Image = global::DataAnalysisTool.Properties.Resources.preload_waiting;
+            this.pictureBoxLoading.Location = new System.Drawing.Point(695, 18);
+            this.pictureBoxLoading.Name = "pictureBoxLoading";
+            this.pictureBoxLoading.Size = new System.Drawing.Size(161, 60);
+            this.pictureBoxLoading.TabIndex = 37;
+            this.pictureBoxLoading.TabStop = false;
+            this.pictureBoxLoading.Visible = false;
             // 
             // groupBox10
             // 
             this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox10.Controls.Add(this.button25);
             this.groupBox10.Controls.Add(this.textBox2);
-            this.groupBox10.Location = new System.Drawing.Point(3, 253);
+            this.groupBox10.Location = new System.Drawing.Point(3, 238);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(170, 38);
             this.groupBox10.TabIndex = 36;
@@ -1151,36 +1212,36 @@
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView2.Size = new System.Drawing.Size(370, 506);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
@@ -1199,35 +1260,35 @@
             // 
             this.stagedDataGridView.AllowUserToAddRows = false;
             this.stagedDataGridView.BackgroundColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.stagedDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.stagedDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.stagedDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stagedDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.stagedDataGridView.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.stagedDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
             this.stagedDataGridView.Location = new System.Drawing.Point(956, 6);
             this.stagedDataGridView.Name = "stagedDataGridView";
             this.stagedDataGridView.ReadOnly = true;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.stagedDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.stagedDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.stagedDataGridView.Size = new System.Drawing.Size(49, 26);
             this.stagedDataGridView.TabIndex = 32;
             this.stagedDataGridView.Visible = false;
@@ -1657,6 +1718,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage3.Controls.Add(this.pictureBoxLoading);
             this.tabPage3.Controls.Add(this.button27);
             this.tabPage3.Controls.Add(this.stagedTextBox);
             this.tabPage3.Controls.Add(this.checkBox5);
@@ -2705,6 +2767,241 @@
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
+            this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
+            // 
+            // backgroundWorker3
+            // 
+            this.backgroundWorker3.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker3_DoWork);
+            this.backgroundWorker3.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker3_RunWorkerCompleted);
+            // 
+            // backgroundWorker4
+            // 
+            this.backgroundWorker4.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker4_DoWork);
+            this.backgroundWorker4.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker4_RunWorkerCompleted);
+            // 
+            // backgroundWorker5
+            // 
+            this.backgroundWorker5.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker5_DoWork);
+            this.backgroundWorker5.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker5_RunWorkerCompleted);
+            // 
+            // backgroundWorker6
+            // 
+            this.backgroundWorker6.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker6_DoWork);
+            this.backgroundWorker6.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker6_RunWorkerCompleted);
+            // 
+            // backgroundWorker7
+            // 
+            this.backgroundWorker7.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker7_DoWork);
+            this.backgroundWorker7.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker7_RunWorkerCompleted);
+            // 
+            // backgroundWorker8
+            // 
+            this.backgroundWorker8.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker8_DoWork);
+            this.backgroundWorker8.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker8_RunWorkerCompleted);
+            // 
+            // backgroundWorker9
+            // 
+            this.backgroundWorker9.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker9_DoWork);
+            this.backgroundWorker9.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker9_RunWorkerCompleted);
+            // 
+            // backgroundWorker10
+            // 
+            this.backgroundWorker10.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker10_DoWork);
+            this.backgroundWorker10.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker10_RunWorkerCompleted);
+            // 
+            // backgroundWorker11
+            // 
+            this.backgroundWorker11.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker11_DoWork);
+            this.backgroundWorker11.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker11_RunWorkerCompleted);
+            // 
+            // backgroundWorker12
+            // 
+            this.backgroundWorker12.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker12_DoWork);
+            this.backgroundWorker12.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker12_RunWorkerCompleted);
+            // 
+            // backgroundWorker13
+            // 
+            this.backgroundWorker13.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker13_DoWork);
+            this.backgroundWorker13.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker13_RunWorkerCompleted);
+            // 
+            // backgroundWorker14
+            // 
+            this.backgroundWorker14.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker14_DoWork);
+            this.backgroundWorker14.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker14_RunWorkerCompleted);
+            // 
+            // backgroundWorker15
+            // 
+            this.backgroundWorker15.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker15_DoWork);
+            this.backgroundWorker15.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker15_RunWorkerCompleted);
+            // 
+            // backgroundWorker16
+            // 
+            this.backgroundWorker16.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker16_DoWork);
+            this.backgroundWorker16.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker16_RunWorkerCompleted);
+            // 
+            // backgroundWorker17
+            // 
+            this.backgroundWorker17.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker17_DoWork);
+            this.backgroundWorker17.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker17_RunWorkerCompleted);
+            // 
+            // backgroundWorker18
+            // 
+            this.backgroundWorker18.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker18_DoWork);
+            this.backgroundWorker18.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker18_RunWorkerCompleted);
+            // 
+            // backgroundWorker19
+            // 
+            this.backgroundWorker19.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker19_DoWork);
+            this.backgroundWorker19.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker19_RunWorkerCompleted);
+            // 
+            // backgroundWorker20
+            // 
+            this.backgroundWorker20.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker20_DoWork);
+            this.backgroundWorker20.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker20_RunWorkerCompleted);
+            // 
+            // backgroundWorker21
+            // 
+            this.backgroundWorker21.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker21_DoWork);
+            this.backgroundWorker21.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker21_RunWorkerCompleted);
+            // 
+            // backgroundWorker22
+            // 
+            this.backgroundWorker22.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker22_DoWork);
+            this.backgroundWorker22.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker22_RunWorkerCompleted);
+            // 
+            // backgroundWorker23
+            // 
+            this.backgroundWorker23.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker23_DoWork);
+            this.backgroundWorker23.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker23_RunWorkerCompleted);
+            // 
+            // backgroundWorker24
+            // 
+            this.backgroundWorker24.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker24_DoWork);
+            this.backgroundWorker24.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker24_RunWorkerCompleted);
+            // 
+            // backgroundWorker25
+            // 
+            this.backgroundWorker25.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker25_DoWork);
+            this.backgroundWorker25.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker25_RunWorkerCompleted);
+            // 
+            // backgroundWorker26
+            // 
+            this.backgroundWorker26.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker26_DoWork);
+            this.backgroundWorker26.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker26_RunWorkerCompleted);
+            // 
+            // backgroundWorker27
+            // 
+            this.backgroundWorker27.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker27_DoWork);
+            this.backgroundWorker27.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker27_RunWorkerCompleted);
+            // 
+            // backgroundWorker28
+            // 
+            this.backgroundWorker28.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker28_DoWork);
+            this.backgroundWorker28.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker28_RunWorkerCompleted);
+            // 
+            // backgroundWorker29
+            // 
+            this.backgroundWorker29.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker29_DoWork);
+            this.backgroundWorker29.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker29_RunWorkerCompleted);
+            // 
+            // backgroundWorker30
+            // 
+            this.backgroundWorker30.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker30_DoWork);
+            this.backgroundWorker30.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker30_RunWorkerCompleted);
+            // 
+            // backgroundWorker31
+            // 
+            this.backgroundWorker31.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker31_DoWork);
+            this.backgroundWorker31.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker31_RunWorkerCompleted);
+            // 
+            // backgroundWorker32
+            // 
+            this.backgroundWorker32.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker32_DoWork);
+            this.backgroundWorker32.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker32_RunWorkerCompleted);
+            // 
+            // backgroundWorker33
+            // 
+            this.backgroundWorker33.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker33_DoWork);
+            this.backgroundWorker33.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker33_RunWorkerCompleted);
+            // 
+            // backgroundWorker34
+            // 
+            this.backgroundWorker34.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker34_DoWork);
+            this.backgroundWorker34.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker34_RunWorkerCompleted);
+            // 
+            // backgroundWorker35
+            // 
+            this.backgroundWorker35.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker35_DoWork);
+            this.backgroundWorker35.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker35_RunWorkerCompleted);
+            // 
+            // backgroundWorker36
+            // 
+            this.backgroundWorker36.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker36_DoWork);
+            this.backgroundWorker36.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker36_RunWorkerCompleted);
+            // 
+            // backgroundWorker37
+            // 
+            this.backgroundWorker37.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker37_DoWork);
+            this.backgroundWorker37.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker37_RunWorkerCompleted);
+            // 
+            // backgroundWorker38
+            // 
+            this.backgroundWorker38.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker38_DoWork);
+            this.backgroundWorker38.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker38_RunWorkerCompleted);
+            // 
+            // backgroundWorker39
+            // 
+            this.backgroundWorker39.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker39_DoWork);
+            this.backgroundWorker39.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker39_RunWorkerCompleted);
+            // 
+            // backgroundWorker40
+            // 
+            this.backgroundWorker40.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker40_DoWork);
+            this.backgroundWorker40.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker40_RunWorkerCompleted);
+            // 
+            // backgroundWorker41
+            // 
+            this.backgroundWorker41.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker41_DoWork);
+            // 
+            // backgroundWorker42
+            // 
+            this.backgroundWorker42.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker42_DoWork);
+            // 
+            // backgroundWorker43
+            // 
+            this.backgroundWorker43.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker43_DoWork);
+            // 
+            // backgroundWorker44
+            // 
+            this.backgroundWorker44.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker44_DoWork);
+            // 
+            // backgroundWorker45
+            // 
+            this.backgroundWorker45.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker45_DoWork);
+            // 
+            // backgroundWorker46
+            // 
+            this.backgroundWorker46.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker46_DoWork);
+            // 
+            // backgroundWorker47
+            // 
+            this.backgroundWorker47.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker47_DoWork);
+            // 
+            // backgroundWorker48
+            // 
+            this.backgroundWorker48.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker48_DoWork);
+            // 
+            // backgroundWorker49
+            // 
+            this.backgroundWorker49.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker49_DoWork);
+            // 
+            // backgroundWorker50
+            // 
+            this.backgroundWorker50.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker50_DoWork);
+            // 
             // DataAnalysisTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2751,6 +3048,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitRequiredImportFormat_ImportedFile)).EndInit();
             this.splitRequiredImportFormat_ImportedFile.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.importformatDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -3005,6 +3303,56 @@
         private System.Windows.Forms.ComboBox databaseSelect5;
         private System.Windows.Forms.Button button27;
         public System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker4;
+        private System.ComponentModel.BackgroundWorker backgroundWorker5;
+        private System.ComponentModel.BackgroundWorker backgroundWorker6;
+        private System.ComponentModel.BackgroundWorker backgroundWorker7;
+        private System.ComponentModel.BackgroundWorker backgroundWorker8;
+        private System.ComponentModel.BackgroundWorker backgroundWorker9;
+        private System.ComponentModel.BackgroundWorker backgroundWorker10;
+        private System.ComponentModel.BackgroundWorker backgroundWorker11;
+        private System.ComponentModel.BackgroundWorker backgroundWorker12;
+        private System.ComponentModel.BackgroundWorker backgroundWorker13;
+        private System.ComponentModel.BackgroundWorker backgroundWorker14;
+        private System.ComponentModel.BackgroundWorker backgroundWorker15;
+        private System.ComponentModel.BackgroundWorker backgroundWorker16;
+        private System.ComponentModel.BackgroundWorker backgroundWorker17;
+        private System.ComponentModel.BackgroundWorker backgroundWorker18;
+        private System.ComponentModel.BackgroundWorker backgroundWorker19;
+        private System.ComponentModel.BackgroundWorker backgroundWorker20;
+        private System.ComponentModel.BackgroundWorker backgroundWorker21;
+        private System.ComponentModel.BackgroundWorker backgroundWorker22;
+        private System.ComponentModel.BackgroundWorker backgroundWorker23;
+        private System.ComponentModel.BackgroundWorker backgroundWorker24;
+        private System.ComponentModel.BackgroundWorker backgroundWorker25;
+        private System.ComponentModel.BackgroundWorker backgroundWorker26;
+        private System.ComponentModel.BackgroundWorker backgroundWorker27;
+        private System.ComponentModel.BackgroundWorker backgroundWorker28;
+        private System.ComponentModel.BackgroundWorker backgroundWorker29;
+        private System.ComponentModel.BackgroundWorker backgroundWorker30;
+        private System.ComponentModel.BackgroundWorker backgroundWorker31;
+        private System.ComponentModel.BackgroundWorker backgroundWorker32;
+        private System.ComponentModel.BackgroundWorker backgroundWorker33;
+        private System.ComponentModel.BackgroundWorker backgroundWorker34;
+        private System.ComponentModel.BackgroundWorker backgroundWorker35;
+        private System.ComponentModel.BackgroundWorker backgroundWorker36;
+        private System.ComponentModel.BackgroundWorker backgroundWorker37;
+        private System.ComponentModel.BackgroundWorker backgroundWorker38;
+        private System.ComponentModel.BackgroundWorker backgroundWorker39;
+        private System.ComponentModel.BackgroundWorker backgroundWorker40;
+        private System.ComponentModel.BackgroundWorker backgroundWorker41;
+        private System.ComponentModel.BackgroundWorker backgroundWorker42;
+        private System.ComponentModel.BackgroundWorker backgroundWorker43;
+        private System.ComponentModel.BackgroundWorker backgroundWorker44;
+        private System.ComponentModel.BackgroundWorker backgroundWorker45;
+        private System.ComponentModel.BackgroundWorker backgroundWorker46;
+        private System.ComponentModel.BackgroundWorker backgroundWorker47;
+        private System.ComponentModel.BackgroundWorker backgroundWorker48;
+        private System.ComponentModel.BackgroundWorker backgroundWorker49;
+        private System.ComponentModel.BackgroundWorker backgroundWorker50;
+        private System.Windows.Forms.PictureBox pictureBoxLoading;
     }
 }
 
