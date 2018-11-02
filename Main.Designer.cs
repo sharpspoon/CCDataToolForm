@@ -42,6 +42,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.importedfileDataGridView = new System.Windows.Forms.DataGridView();
@@ -57,12 +60,14 @@
             this.xMLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cCDataToolLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iFLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.benchmarksFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cSVToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xLSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aCTEKLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,17 +113,16 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitRequiredImportFormat_ImportedFile = new System.Windows.Forms.SplitContainer();
             this.importformatDataGridView = new System.Windows.Forms.DataGridView();
-            this.pictureBoxLoading = new System.Windows.Forms.PictureBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.button25 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tableSelect = new System.Windows.Forms.ComboBox();
             this.spDTAgetdatabasetableidsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.pictureBoxLoading = new System.Windows.Forms.PictureBox();
             this.stagedDataGridView = new System.Windows.Forms.DataGridView();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -131,12 +135,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.serverSelect = new System.Windows.Forms.ComboBox();
             this.databaseSelect = new System.Windows.Forms.ComboBox();
-            this.button8 = new System.Windows.Forms.Button();
             this.masterDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qBQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.masterDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseFileSizeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.progressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.connectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel16 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -158,22 +162,18 @@
             this.toolStripStatusLabel18 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel20 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel19 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button27 = new System.Windows.Forms.Button();
-            this.stagedTextBox = new System.Windows.Forms.TextBox();
+            this.importFormatGoButton = new System.Windows.Forms.Button();
+            this.apiReadinessGoButton = new System.Windows.Forms.TabControl();
+            this.importFormat = new System.Windows.Forms.TabPage();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button29 = new System.Windows.Forms.Button();
+            this.button30 = new System.Windows.Forms.Button();
+            this.button31 = new System.Windows.Forms.Button();
+            this.openCsvButton = new System.Windows.Forms.Button();
+            this.importFormatProgressBar = new System.Windows.Forms.ProgressBar();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -186,26 +186,19 @@
             this.dateComboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.reqListBox = new System.Windows.Forms.ListBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.checkTools = new System.Windows.Forms.TabPage();
+            this.checkToolsProgressBar = new System.Windows.Forms.ProgressBar();
+            this.sqlQuery = new System.Windows.Forms.TabPage();
+            this.sqlQueryDataGridView = new System.Windows.Forms.DataGridView();
+            this.sqlQueryProgressBar = new System.Windows.Forms.ProgressBar();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.databaseSelect2 = new System.Windows.Forms.ComboBox();
             this.serverSelect2 = new System.Windows.Forms.ComboBox();
-            this.executeQuery = new System.Windows.Forms.Button();
+            this.executeQueryButton = new System.Windows.Forms.Button();
             this.queryWindow = new System.Windows.Forms.RichTextBox();
-            this.jasperExtract = new System.Windows.Forms.TabPage();
-            this.button26 = new System.Windows.Forms.Button();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.statementRadio = new System.Windows.Forms.RadioButton();
-            this.reportRadio = new System.Windows.Forms.RadioButton();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.reportStatementSelect = new System.Windows.Forms.ComboBox();
-            this.serverSelect3 = new System.Windows.Forms.ComboBox();
-            this.databaseSelect3 = new System.Windows.Forms.ComboBox();
             this.benchmark = new System.Windows.Forms.TabPage();
+            this.benchmarkProgressBar = new System.Windows.Forms.ProgressBar();
             this.runListNoRootText = new System.Windows.Forms.TextBox();
             this.runListNoRoot = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
@@ -223,67 +216,29 @@
             this.serverSelect4 = new System.Windows.Forms.ComboBox();
             this.databaseSelect4 = new System.Windows.Forms.ComboBox();
             this.api = new System.Windows.Forms.TabPage();
+            this.apiReadinessProgressBar = new System.Windows.Forms.ProgressBar();
             this.apiReadinessCheckButton = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.serverSelect5 = new System.Windows.Forms.ComboBox();
             this.databaseSelect5 = new System.Windows.Forms.ComboBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.stagedData = new System.Windows.Forms.TabPage();
+            this.button27 = new System.Windows.Forms.Button();
+            this.stagedTextBox = new System.Windows.Forms.TextBox();
+            this.jasperExtract = new System.Windows.Forms.TabPage();
+            this.button26 = new System.Windows.Forms.Button();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.statementRadio = new System.Windows.Forms.RadioButton();
+            this.reportRadio = new System.Windows.Forms.RadioButton();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.reportStatementSelect = new System.Windows.Forms.ComboBox();
+            this.serverSelect3 = new System.Windows.Forms.ComboBox();
+            this.databaseSelect3 = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker5 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker6 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker7 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker8 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker9 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker10 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker11 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker12 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker13 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker14 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker15 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker16 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker17 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker18 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker19 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker20 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker21 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker22 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker23 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker24 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker25 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker26 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker27 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker28 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker29 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker30 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker31 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker32 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker33 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker34 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker35 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker36 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker37 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker38 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker39 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker40 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker41 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker42 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker43 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker44 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker45 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker46 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker47 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker48 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker49 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker50 = new System.ComponentModel.BackgroundWorker();
+            this.mainLogSplitContainer = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -299,16 +254,12 @@
             this.splitRequiredImportFormat_ImportedFile.Panel2.SuspendLayout();
             this.splitRequiredImportFormat_ImportedFile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.importformatDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).BeginInit();
             this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stagedDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -319,21 +270,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFileSizeBindingSource)).BeginInit();
             this.statusStrip1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.apiReadinessGoButton.SuspendLayout();
+            this.importFormat.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.checkTools.SuspendLayout();
+            this.sqlQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sqlQueryDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.jasperExtract.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.benchmark.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
@@ -345,8 +291,16 @@
             this.groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.stagedData.SuspendLayout();
+            this.jasperExtract.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainLogSplitContainer)).BeginInit();
+            this.mainLogSplitContainer.Panel1.SuspendLayout();
+            this.mainLogSplitContainer.Panel2.SuspendLayout();
+            this.mainLogSplitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -394,7 +348,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.importedfileDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.importedfileDataGridView.Size = new System.Drawing.Size(1034, 420);
+            this.importedfileDataGridView.Size = new System.Drawing.Size(1036, 209);
             this.importedfileDataGridView.TabIndex = 5;
             this.importedfileDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -407,6 +361,7 @@
             this.menuStrip1.BackColor = System.Drawing.Color.AliceBlue;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.aCTEKLoginToolStripMenuItem,
             this.editToolStripMenuItem,
             this.helpToolStripMenuItem,
             this.toolStripMenuItemClose,
@@ -414,7 +369,7 @@
             this.toolStripMenuItemMinimize});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1436, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1510, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -439,17 +394,18 @@
             this.xLSToolStripMenuItem,
             this.xMLToolStripMenuItem1,
             this.cCDataToolLogToolStripMenuItem,
-            this.iFLogToolStripMenuItem});
+            this.iFLogToolStripMenuItem,
+            this.benchmarksFolderToolStripMenuItem});
             this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open...";
             // 
             // cSVToolStripMenuItem
             // 
             this.cSVToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cSVToolStripMenuItem.Image")));
             this.cSVToolStripMenuItem.Name = "cSVToolStripMenuItem";
-            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.cSVToolStripMenuItem.Text = ".CSV";
             this.cSVToolStripMenuItem.Click += new System.EventHandler(this.menu_Open_Csv_Click);
             // 
@@ -460,7 +416,7 @@
             this.pipeToolStripMenuItem});
             this.tXTToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Textfile_818_16x;
             this.tXTToolStripMenuItem.Name = "tXTToolStripMenuItem";
-            this.tXTToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.tXTToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.tXTToolStripMenuItem.Text = ".TXT";
             // 
             // commaToolStripMenuItem
@@ -481,7 +437,7 @@
             // 
             this.xLSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xLSToolStripMenuItem.Image")));
             this.xLSToolStripMenuItem.Name = "xLSToolStripMenuItem";
-            this.xLSToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.xLSToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.xLSToolStripMenuItem.Text = ".XLS";
             this.xLSToolStripMenuItem.Click += new System.EventHandler(this.menu_Open_Xls_Click);
             // 
@@ -489,7 +445,7 @@
             // 
             this.xMLToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("xMLToolStripMenuItem1.Image")));
             this.xMLToolStripMenuItem1.Name = "xMLToolStripMenuItem1";
-            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
+            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
             this.xMLToolStripMenuItem1.Text = ".XML";
             this.xMLToolStripMenuItem1.Click += new System.EventHandler(this.menu_Open_Xml_Click);
             // 
@@ -497,7 +453,7 @@
             // 
             this.cCDataToolLogToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
             this.cCDataToolLogToolStripMenuItem.Name = "cCDataToolLogToolStripMenuItem";
-            this.cCDataToolLogToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.cCDataToolLogToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.cCDataToolLogToolStripMenuItem.Text = "DAT Log Folder";
             this.cCDataToolLogToolStripMenuItem.Click += new System.EventHandler(this.cCDataToolLogToolStripMenuItem_Click);
             // 
@@ -505,9 +461,17 @@
             // 
             this.iFLogToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
             this.iFLogToolStripMenuItem.Name = "iFLogToolStripMenuItem";
-            this.iFLogToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.iFLogToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.iFLogToolStripMenuItem.Text = "IF Log Folder";
             this.iFLogToolStripMenuItem.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // benchmarksFolderToolStripMenuItem
+            // 
+            this.benchmarksFolderToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
+            this.benchmarksFolderToolStripMenuItem.Name = "benchmarksFolderToolStripMenuItem";
+            this.benchmarksFolderToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.benchmarksFolderToolStripMenuItem.Text = "Benchmarks Folder";
+            this.benchmarksFolderToolStripMenuItem.Click += new System.EventHandler(this.button28_Click);
             // 
             // saveAsToolStripMenuItem
             // 
@@ -517,14 +481,14 @@
             this.xLSToolStripMenuItem1});
             this.saveAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveAsToolStripMenuItem.Image")));
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
             // 
             // cSVToolStripMenuItem1
             // 
             this.cSVToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("cSVToolStripMenuItem1.Image")));
             this.cSVToolStripMenuItem1.Name = "cSVToolStripMenuItem1";
-            this.cSVToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
+            this.cSVToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.cSVToolStripMenuItem1.Text = ".CSV";
             this.cSVToolStripMenuItem1.Click += new System.EventHandler(this.menu_Save_Csv_Click);
             // 
@@ -532,7 +496,7 @@
             // 
             this.xMLToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xMLToolStripMenuItem.Image")));
             this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
+            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.xMLToolStripMenuItem.Text = ".XML";
             this.xMLToolStripMenuItem.Click += new System.EventHandler(this.menu_Save_Xml_Click);
             // 
@@ -540,7 +504,7 @@
             // 
             this.xLSToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("xLSToolStripMenuItem1.Image")));
             this.xLSToolStripMenuItem1.Name = "xLSToolStripMenuItem1";
-            this.xLSToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
+            this.xLSToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.xLSToolStripMenuItem1.Text = ".XLS";
             this.xLSToolStripMenuItem1.Visible = false;
             // 
@@ -548,7 +512,7 @@
             // 
             this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -556,9 +520,17 @@
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
+            // 
+            // aCTEKLoginToolStripMenuItem
+            // 
+            this.aCTEKLoginToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Login_6031_32x;
+            this.aCTEKLoginToolStripMenuItem.Name = "aCTEKLoginToolStripMenuItem";
+            this.aCTEKLoginToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.aCTEKLoginToolStripMenuItem.Text = "ACTEK Login";
+            this.aCTEKLoginToolStripMenuItem.Click += new System.EventHandler(this.acteksoft_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -575,7 +547,7 @@
             // 
             this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
@@ -583,7 +555,7 @@
             // 
             this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
@@ -591,7 +563,7 @@
             // 
             this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
@@ -1019,7 +991,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.BackColor = System.Drawing.Color.AliceBlue;
-            this.splitContainer1.Location = new System.Drawing.Point(14, 189);
+            this.splitContainer1.Location = new System.Drawing.Point(6, 151);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -1029,10 +1001,11 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox8);
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer1.Size = new System.Drawing.Size(1411, 548);
-            this.splitContainer1.SplitterDistance = 1034;
+            this.splitContainer1.Size = new System.Drawing.Size(1494, 579);
+            this.splitContainer1.SplitterDistance = 1036;
             this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 22;
             // 
@@ -1052,8 +1025,8 @@
             // 
             this.splitRequiredImportFormat_ImportedFile.Panel2.Controls.Add(this.groupBox10);
             this.splitRequiredImportFormat_ImportedFile.Panel2.Controls.Add(this.importedfileDataGridView);
-            this.splitRequiredImportFormat_ImportedFile.Size = new System.Drawing.Size(1034, 548);
-            this.splitRequiredImportFormat_ImportedFile.SplitterDistance = 121;
+            this.splitRequiredImportFormat_ImportedFile.Size = new System.Drawing.Size(1036, 579);
+            this.splitRequiredImportFormat_ImportedFile.SplitterDistance = 363;
             this.splitRequiredImportFormat_ImportedFile.SplitterWidth = 7;
             this.splitRequiredImportFormat_ImportedFile.TabIndex = 6;
             // 
@@ -1090,26 +1063,16 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.importformatDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.importformatDataGridView.Size = new System.Drawing.Size(1034, 121);
+            this.importformatDataGridView.Size = new System.Drawing.Size(1036, 363);
             this.importformatDataGridView.TabIndex = 0;
             this.importformatDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
-            // 
-            // pictureBoxLoading
-            // 
-            this.pictureBoxLoading.Image = global::DataAnalysisTool.Properties.Resources.preload_waiting;
-            this.pictureBoxLoading.Location = new System.Drawing.Point(695, 18);
-            this.pictureBoxLoading.Name = "pictureBoxLoading";
-            this.pictureBoxLoading.Size = new System.Drawing.Size(161, 60);
-            this.pictureBoxLoading.TabIndex = 37;
-            this.pictureBoxLoading.TabStop = false;
-            this.pictureBoxLoading.Visible = false;
             // 
             // groupBox10
             // 
             this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox10.Controls.Add(this.button25);
             this.groupBox10.Controls.Add(this.textBox2);
-            this.groupBox10.Location = new System.Drawing.Point(3, 238);
+            this.groupBox10.Location = new System.Drawing.Point(3, 163);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(170, 38);
             this.groupBox10.TabIndex = 36;
@@ -1145,33 +1108,13 @@
             this.textBox2.TabIndex = 0;
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Cursor = System.Windows.Forms.Cursors.HSplit;
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.groupBox8);
-            this.splitContainer2.Panel1.Controls.Add(this.dataGridView2);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.richTextBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(370, 548);
-            this.splitContainer2.SplitterDistance = 506;
-            this.splitContainer2.TabIndex = 32;
-            // 
             // groupBox8
             // 
             this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox8.BackColor = System.Drawing.Color.AliceBlue;
             this.groupBox8.Controls.Add(this.pictureBox5);
             this.groupBox8.Controls.Add(this.tableSelect);
-            this.groupBox8.Location = new System.Drawing.Point(3, 467);
+            this.groupBox8.Location = new System.Drawing.Point(3, 540);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(169, 36);
             this.groupBox8.TabIndex = 33;
@@ -1242,7 +1185,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView2.Size = new System.Drawing.Size(370, 506);
+            this.dataGridView2.Size = new System.Drawing.Size(451, 579);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -1252,9 +1195,19 @@
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(370, 38);
+            this.richTextBox1.Size = new System.Drawing.Size(1510, 66);
             this.richTextBox1.TabIndex = 32;
             this.richTextBox1.Text = "";
+            // 
+            // pictureBoxLoading
+            // 
+            this.pictureBoxLoading.Image = global::DataAnalysisTool.Properties.Resources.preload_waiting;
+            this.pictureBoxLoading.Location = new System.Drawing.Point(966, 64);
+            this.pictureBoxLoading.Name = "pictureBoxLoading";
+            this.pictureBoxLoading.Size = new System.Drawing.Size(57, 26);
+            this.pictureBoxLoading.TabIndex = 37;
+            this.pictureBoxLoading.TabStop = false;
+            this.pictureBoxLoading.Visible = false;
             // 
             // stagedDataGridView
             // 
@@ -1278,7 +1231,7 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.stagedDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
-            this.stagedDataGridView.Location = new System.Drawing.Point(956, 6);
+            this.stagedDataGridView.Location = new System.Drawing.Point(287, 177);
             this.stagedDataGridView.Name = "stagedDataGridView";
             this.stagedDataGridView.ReadOnly = true;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1289,9 +1242,8 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.stagedDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.stagedDataGridView.Size = new System.Drawing.Size(49, 26);
+            this.stagedDataGridView.Size = new System.Drawing.Size(881, 399);
             this.stagedDataGridView.TabIndex = 32;
-            this.stagedDataGridView.Visible = false;
             this.stagedDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
             // pictureBox3
@@ -1350,7 +1302,7 @@
             this.groupBox7.Controls.Add(this.ifSelect);
             this.groupBox7.Controls.Add(this.serverSelect);
             this.groupBox7.Controls.Add(this.databaseSelect);
-            this.groupBox7.Location = new System.Drawing.Point(6, 6);
+            this.groupBox7.Location = new System.Drawing.Point(464, 6);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(222, 112);
             this.groupBox7.TabIndex = 26;
@@ -1442,26 +1394,6 @@
             this.databaseSelect.SelectedIndexChanged += new System.EventHandler(this.databaseSelect_SelectedIndexChanged);
             this.databaseSelect.MouseEnter += new System.EventHandler(this.databaseSelect_MouseHover);
             // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.MistyRose;
-            this.button8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = global::DataAnalysisTool.Properties.Resources.Login_6031_32x;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(6, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(66, 89);
-            this.button8.TabIndex = 25;
-            this.button8.Text = "ACTEK Login";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.acteksoft_Click);
-            // 
             // qBQueryBindingSource
             // 
             this.qBQueryBindingSource.DataMember = "QBQuery";
@@ -1474,6 +1406,7 @@
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.AliceBlue;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.progressBar1,
             this.connectionStatus,
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel16,
@@ -1495,13 +1428,20 @@
             this.toolStripStatusLabel18,
             this.toolStripStatusLabel20,
             this.toolStripStatusLabel19});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 740);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 856);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1436, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1510, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 28;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.MarqueeAnimationSpeed = 0;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 16);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             // 
             // connectionStatus
             // 
@@ -1645,7 +1585,7 @@
             // 
             this.toolStripStatusLabel17.Name = "toolStripStatusLabel17";
             this.toolStripStatusLabel17.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabel17.Size = new System.Drawing.Size(1079, 17);
+            this.toolStripStatusLabel17.Size = new System.Drawing.Size(1051, 17);
             this.toolStripStatusLabel17.Spring = true;
             this.toolStripStatusLabel17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolStripStatusLabel17.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1674,208 +1614,120 @@
             this.toolStripStatusLabel19.Text = "CallidusCloud";
             this.toolStripStatusLabel19.Click += new System.EventHandler(this.toolStripStatusLabel19_Click);
             // 
-            // button6
+            // importFormatGoButton
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.BackColor = System.Drawing.Color.Honeydew;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.Location = new System.Drawing.Point(1169, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(54, 115);
-            this.button6.TabIndex = 26;
-            this.button6.Text = "GO";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.groupByErrorToolStripMenuItem_Click);
-            this.button6.MouseEnter += new System.EventHandler(this.button6_MouseEnter);
+            this.importFormatGoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.importFormatGoButton.BackColor = System.Drawing.Color.Honeydew;
+            this.importFormatGoButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.importFormatGoButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.importFormatGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
+            this.importFormatGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.importFormatGoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.importFormatGoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importFormatGoButton.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
+            this.importFormatGoButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.importFormatGoButton.Location = new System.Drawing.Point(1446, 3);
+            this.importFormatGoButton.Name = "importFormatGoButton";
+            this.importFormatGoButton.Size = new System.Drawing.Size(54, 115);
+            this.importFormatGoButton.TabIndex = 26;
+            this.importFormatGoButton.Text = "GO";
+            this.importFormatGoButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.importFormatGoButton.UseVisualStyleBackColor = false;
+            this.importFormatGoButton.Click += new System.EventHandler(this.groupByErrorToolStripMenuItem_Click);
+            this.importFormatGoButton.MouseEnter += new System.EventHandler(this.button6_MouseEnter);
             // 
-            // tabControl1
+            // apiReadinessGoButton
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.jasperExtract);
-            this.tabControl1.Controls.Add(this.benchmark);
-            this.tabControl1.Controls.Add(this.api);
-            this.tabControl1.Location = new System.Drawing.Point(12, 27);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1233, 146);
-            this.tabControl1.TabIndex = 0;
-            this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.apiReadinessGoButton.Controls.Add(this.importFormat);
+            this.apiReadinessGoButton.Controls.Add(this.checkTools);
+            this.apiReadinessGoButton.Controls.Add(this.sqlQuery);
+            this.apiReadinessGoButton.Controls.Add(this.benchmark);
+            this.apiReadinessGoButton.Controls.Add(this.api);
+            this.apiReadinessGoButton.Controls.Add(this.stagedData);
+            this.apiReadinessGoButton.Controls.Add(this.jasperExtract);
+            this.apiReadinessGoButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.apiReadinessGoButton.Location = new System.Drawing.Point(0, 0);
+            this.apiReadinessGoButton.Multiline = true;
+            this.apiReadinessGoButton.Name = "apiReadinessGoButton";
+            this.apiReadinessGoButton.SelectedIndex = 0;
+            this.apiReadinessGoButton.Size = new System.Drawing.Size(1510, 762);
+            this.apiReadinessGoButton.TabIndex = 0;
+            this.apiReadinessGoButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // tabPage3
+            // importFormat
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.AliceBlue;
-            this.tabPage3.Controls.Add(this.pictureBoxLoading);
-            this.tabPage3.Controls.Add(this.button27);
-            this.tabPage3.Controls.Add(this.stagedTextBox);
-            this.tabPage3.Controls.Add(this.checkBox5);
-            this.tabPage3.Controls.Add(this.stagedDataGridView);
-            this.tabPage3.Controls.Add(this.button16);
-            this.tabPage3.Controls.Add(this.button15);
-            this.tabPage3.Controls.Add(this.button14);
-            this.tabPage3.Controls.Add(this.button13);
-            this.tabPage3.Controls.Add(this.button12);
-            this.tabPage3.Controls.Add(this.button11);
-            this.tabPage3.Controls.Add(this.button10);
-            this.tabPage3.Controls.Add(this.button9);
-            this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.button8);
-            this.tabPage3.Controls.Add(this.button7);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1225, 120);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Shortcuts";
-            this.tabPage3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            // 
-            // button27
-            // 
-            this.button27.Location = new System.Drawing.Point(1114, 35);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(75, 23);
-            this.button27.TabIndex = 50;
-            this.button27.Text = "button27";
-            this.button27.UseVisualStyleBackColor = true;
-            this.button27.Visible = false;
-            this.button27.Click += new System.EventHandler(this.button27_Click);
-            // 
-            // stagedTextBox
-            // 
-            this.stagedTextBox.Location = new System.Drawing.Point(956, 38);
-            this.stagedTextBox.Name = "stagedTextBox";
-            this.stagedTextBox.Size = new System.Drawing.Size(100, 20);
-            this.stagedTextBox.TabIndex = 49;
-            this.stagedTextBox.Visible = false;
+            this.importFormat.BackColor = System.Drawing.Color.AliceBlue;
+            this.importFormat.Controls.Add(this.checkBox5);
+            this.importFormat.Controls.Add(this.button11);
+            this.importFormat.Controls.Add(this.button12);
+            this.importFormat.Controls.Add(this.button10);
+            this.importFormat.Controls.Add(this.button29);
+            this.importFormat.Controls.Add(this.button30);
+            this.importFormat.Controls.Add(this.button31);
+            this.importFormat.Controls.Add(this.openCsvButton);
+            this.importFormat.Controls.Add(this.importFormatProgressBar);
+            this.importFormat.Controls.Add(this.groupBox9);
+            this.importFormat.Controls.Add(this.splitContainer1);
+            this.importFormat.Controls.Add(this.groupBox6);
+            this.importFormat.Controls.Add(this.groupBox1);
+            this.importFormat.Controls.Add(this.groupBox7);
+            this.importFormat.Controls.Add(this.importFormatGoButton);
+            this.importFormat.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.importFormat.Location = new System.Drawing.Point(4, 22);
+            this.importFormat.Name = "importFormat";
+            this.importFormat.Padding = new System.Windows.Forms.Padding(3);
+            this.importFormat.Size = new System.Drawing.Size(1502, 736);
+            this.importFormat.TabIndex = 0;
+            this.importFormat.Text = "Import Format";
+            this.importFormat.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(93, 97);
+            this.checkBox5.Location = new System.Drawing.Point(15, 103);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(124, 17);
-            this.checkBox5.TabIndex = 46;
-            this.checkBox5.Text = "Include Header Row";
+            this.checkBox5.Size = new System.Drawing.Size(220, 17);
+            this.checkBox5.TabIndex = 53;
+            this.checkBox5.Text = "Include Header Row when Opening Files";
             this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button16.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button16.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
-            this.button16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Image = global::DataAnalysisTool.Properties.Resources.XMLFile_828_32x;
-            this.button16.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button16.Location = new System.Drawing.Point(465, 3);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(54, 89);
-            this.button16.TabIndex = 48;
-            this.button16.Text = "Save As XML";
-            this.button16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button16.UseVisualStyleBackColor = false;
-            this.button16.Click += new System.EventHandler(this.menu_Save_Xml_Click);
-            // 
-            // button15
-            // 
-            this.button15.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button15.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button15.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
-            this.button15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Image = global::DataAnalysisTool.Properties.Resources.XMLFile_828_32x;
-            this.button15.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button15.Location = new System.Drawing.Point(405, 3);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(54, 89);
-            this.button15.TabIndex = 47;
-            this.button15.Text = "Save As CSV";
-            this.button15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button15.UseVisualStyleBackColor = false;
-            this.button15.Click += new System.EventHandler(this.menu_Save_Csv_Click);
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button14.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Image = global::DataAnalysisTool.Properties.Resources.XMLFile_828_32x;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button14.Location = new System.Drawing.Point(333, 3);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(54, 89);
-            this.button14.TabIndex = 46;
-            this.button14.Text = "Open XML";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.menu_Open_Xml_Click);
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button13.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Image = global::DataAnalysisTool.Properties.Resources.Textfile_818_32x;
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button13.Location = new System.Drawing.Point(153, 3);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(54, 89);
-            this.button13.TabIndex = 45;
-            this.button13.Text = "Open TXT Comma";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.tXTToolStripMenuItemComma_Click);
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button12.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Image = global::DataAnalysisTool.Properties.Resources.Textfile_818_32x;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button12.Location = new System.Drawing.Point(213, 3);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(54, 89);
-            this.button12.TabIndex = 44;
-            this.button12.Text = "Open TXT Pipe";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.pipeToolStripMenuItem_Click);
             // 
             // button11
             // 
-            this.button11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button11.BackColor = System.Drawing.Color.MediumTurquoise;
             this.button11.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Image = global::DataAnalysisTool.Properties.Resources.DeploymentDiagramSubsystemMapper_11298_32x;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Image = global::DataAnalysisTool.Properties.Resources.XMLFile_828_32x;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button11.Location = new System.Drawing.Point(273, 3);
+            this.button11.Location = new System.Drawing.Point(404, 8);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(54, 89);
-            this.button11.TabIndex = 43;
-            this.button11.Text = "Open XLS";
+            this.button11.TabIndex = 52;
+            this.button11.Text = "Save As XML";
             this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.menu_Open_Xls_Click);
+            this.button11.Click += new System.EventHandler(this.menu_Save_Xml_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button12.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Image = global::DataAnalysisTool.Properties.Resources.XMLFile_828_32x;
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button12.Location = new System.Drawing.Point(344, 8);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(54, 89);
+            this.button12.TabIndex = 51;
+            this.button12.Text = "Save As CSV";
+            this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.menu_Save_Csv_Click);
             // 
             // button10
             // 
@@ -1883,78 +1735,102 @@
             this.button10.Cursor = System.Windows.Forms.Cursors.Default;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Image = global::DataAnalysisTool.Properties.Resources.UserDefinedDataType_8271_32x;
+            this.button10.Image = global::DataAnalysisTool.Properties.Resources.XMLFile_828_32x;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(93, 3);
+            this.button10.Location = new System.Drawing.Point(256, 8);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(54, 89);
-            this.button10.TabIndex = 42;
-            this.button10.Text = "Open CSV";
+            this.button10.TabIndex = 50;
+            this.button10.Text = "Open XML";
             this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.menu_Open_Csv_Click);
+            this.button10.Click += new System.EventHandler(this.menu_Open_Xml_Click);
             // 
-            // button9
+            // button29
             // 
-            this.button9.BackColor = System.Drawing.Color.Cornsilk;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.DarkGoldenrod;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkKhaki;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Image = global::DataAnalysisTool.Properties.Resources.folder_Open_32xLG;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(596, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(54, 89);
-            this.button9.TabIndex = 41;
-            this.button9.Text = "Open DAT Log Folder";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.cCDataToolLogToolStripMenuItem_Click);
+            this.button29.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button29.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button29.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button29.Image = global::DataAnalysisTool.Properties.Resources.Textfile_818_32x;
+            this.button29.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button29.Location = new System.Drawing.Point(76, 8);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(54, 89);
+            this.button29.TabIndex = 49;
+            this.button29.Text = "Open TXT Comma";
+            this.button29.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button29.UseVisualStyleBackColor = false;
+            this.button29.Click += new System.EventHandler(this.tXTToolStripMenuItemComma_Click);
             // 
-            // button7
+            // button30
             // 
-            this.button7.BackColor = System.Drawing.Color.Cornsilk;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.DarkGoldenrod;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkKhaki;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = global::DataAnalysisTool.Properties.Resources.folder_Open_32xLG;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(536, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(54, 89);
-            this.button7.TabIndex = 40;
-            this.button7.Text = "Open IF Log Folder";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button30.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button30.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button30.Image = global::DataAnalysisTool.Properties.Resources.Textfile_818_32x;
+            this.button30.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button30.Location = new System.Drawing.Point(136, 8);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(54, 89);
+            this.button30.TabIndex = 48;
+            this.button30.Text = "Open TXT Pipe";
+            this.button30.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button30.UseVisualStyleBackColor = false;
+            this.button30.Click += new System.EventHandler(this.pipeToolStripMenuItem_Click);
             // 
-            // tabPage1
+            // button31
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.AliceBlue;
-            this.tabPage1.Controls.Add(this.groupBox9);
-            this.tabPage1.Controls.Add(this.groupBox6);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.groupBox7);
-            this.tabPage1.Controls.Add(this.button6);
-            this.tabPage1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1225, 120);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Import Format";
-            this.tabPage1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.button31.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button31.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button31.Image = global::DataAnalysisTool.Properties.Resources.DeploymentDiagramSubsystemMapper_11298_32x;
+            this.button31.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button31.Location = new System.Drawing.Point(196, 8);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(54, 89);
+            this.button31.TabIndex = 47;
+            this.button31.Text = "Open XLS";
+            this.button31.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button31.UseVisualStyleBackColor = false;
+            this.button31.Click += new System.EventHandler(this.menu_Open_Xls_Click);
+            // 
+            // openCsvButton
+            // 
+            this.openCsvButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.openCsvButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.openCsvButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openCsvButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openCsvButton.Image = global::DataAnalysisTool.Properties.Resources.UserDefinedDataType_8271_32x;
+            this.openCsvButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.openCsvButton.Location = new System.Drawing.Point(15, 8);
+            this.openCsvButton.Name = "openCsvButton";
+            this.openCsvButton.Size = new System.Drawing.Size(54, 89);
+            this.openCsvButton.TabIndex = 43;
+            this.openCsvButton.Text = "Open CSV";
+            this.openCsvButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.openCsvButton.UseVisualStyleBackColor = false;
+            this.openCsvButton.Click += new System.EventHandler(this.menu_Open_Csv_Click);
+            // 
+            // importFormatProgressBar
+            // 
+            this.importFormatProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.importFormatProgressBar.BackColor = System.Drawing.Color.AliceBlue;
+            this.importFormatProgressBar.ForeColor = System.Drawing.Color.DarkRed;
+            this.importFormatProgressBar.Location = new System.Drawing.Point(6, 124);
+            this.importFormatProgressBar.MarqueeAnimationSpeed = 1;
+            this.importFormatProgressBar.Name = "importFormatProgressBar";
+            this.importFormatProgressBar.Size = new System.Drawing.Size(2104, 21);
+            this.importFormatProgressBar.TabIndex = 7;
+            this.importFormatProgressBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.checkBox3);
-            this.groupBox9.Location = new System.Drawing.Point(791, 6);
+            this.groupBox9.Location = new System.Drawing.Point(1249, 6);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(177, 112);
             this.groupBox9.TabIndex = 6;
@@ -1982,7 +1858,7 @@
             this.groupBox6.Controls.Add(this.dateComboBox3);
             this.groupBox6.Controls.Add(this.dateComboBox2);
             this.groupBox6.Controls.Add(this.dateComboBox1);
-            this.groupBox6.Location = new System.Drawing.Point(373, 6);
+            this.groupBox6.Location = new System.Drawing.Point(831, 6);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(412, 112);
             this.groupBox6.TabIndex = 41;
@@ -2123,7 +1999,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.reqListBox);
-            this.groupBox1.Location = new System.Drawing.Point(234, 6);
+            this.groupBox1.Location = new System.Drawing.Point(692, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(133, 112);
             this.groupBox1.TabIndex = 36;
@@ -2141,36 +2017,101 @@
             this.reqListBox.TabIndex = 41;
             this.reqListBox.MouseEnter += new System.EventHandler(this.reqListBox_MouseEnter);
             // 
-            // tabPage2
+            // checkTools
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.AliceBlue;
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Controls.Add(this.groupBox5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1225, 120);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Check Tools";
-            this.tabPage2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.checkTools.BackColor = System.Drawing.Color.AliceBlue;
+            this.checkTools.Controls.Add(this.checkToolsProgressBar);
+            this.checkTools.Controls.Add(this.groupBox2);
+            this.checkTools.Controls.Add(this.groupBox3);
+            this.checkTools.Controls.Add(this.groupBox4);
+            this.checkTools.Controls.Add(this.groupBox5);
+            this.checkTools.Location = new System.Drawing.Point(4, 22);
+            this.checkTools.Name = "checkTools";
+            this.checkTools.Padding = new System.Windows.Forms.Padding(3);
+            this.checkTools.Size = new System.Drawing.Size(1502, 701);
+            this.checkTools.TabIndex = 1;
+            this.checkTools.Text = "Check Tools";
+            this.checkTools.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // tabPage4
+            // checkToolsProgressBar
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.AliceBlue;
-            this.tabPage4.Controls.Add(this.pictureBox8);
-            this.tabPage4.Controls.Add(this.pictureBox7);
-            this.tabPage4.Controls.Add(this.databaseSelect2);
-            this.tabPage4.Controls.Add(this.serverSelect2);
-            this.tabPage4.Controls.Add(this.executeQuery);
-            this.tabPage4.Controls.Add(this.queryWindow);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1225, 120);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "SQL Query";
-            this.tabPage4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.checkToolsProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkToolsProgressBar.BackColor = System.Drawing.Color.AliceBlue;
+            this.checkToolsProgressBar.ForeColor = System.Drawing.Color.DarkRed;
+            this.checkToolsProgressBar.Location = new System.Drawing.Point(6, 124);
+            this.checkToolsProgressBar.MarqueeAnimationSpeed = 1;
+            this.checkToolsProgressBar.Name = "checkToolsProgressBar";
+            this.checkToolsProgressBar.Size = new System.Drawing.Size(1667, 21);
+            this.checkToolsProgressBar.TabIndex = 28;
+            // 
+            // sqlQuery
+            // 
+            this.sqlQuery.BackColor = System.Drawing.Color.AliceBlue;
+            this.sqlQuery.Controls.Add(this.sqlQueryDataGridView);
+            this.sqlQuery.Controls.Add(this.sqlQueryProgressBar);
+            this.sqlQuery.Controls.Add(this.pictureBox8);
+            this.sqlQuery.Controls.Add(this.executeQueryButton);
+            this.sqlQuery.Controls.Add(this.pictureBox7);
+            this.sqlQuery.Controls.Add(this.databaseSelect2);
+            this.sqlQuery.Controls.Add(this.serverSelect2);
+            this.sqlQuery.Controls.Add(this.queryWindow);
+            this.sqlQuery.Location = new System.Drawing.Point(4, 22);
+            this.sqlQuery.Name = "sqlQuery";
+            this.sqlQuery.Size = new System.Drawing.Size(1502, 736);
+            this.sqlQuery.TabIndex = 3;
+            this.sqlQuery.Text = "SQL Query";
+            this.sqlQuery.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // sqlQueryDataGridView
+            // 
+            this.sqlQueryDataGridView.AllowUserToAddRows = false;
+            this.sqlQueryDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sqlQueryDataGridView.BackgroundColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.sqlQueryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.sqlQueryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sqlQueryDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.sqlQueryDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
+            this.sqlQueryDataGridView.Location = new System.Drawing.Point(3, 151);
+            this.sqlQueryDataGridView.Name = "sqlQueryDataGridView";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.sqlQueryDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.sqlQueryDataGridView.Size = new System.Drawing.Size(1497, 582);
+            this.sqlQueryDataGridView.TabIndex = 45;
+            // 
+            // sqlQueryProgressBar
+            // 
+            this.sqlQueryProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sqlQueryProgressBar.BackColor = System.Drawing.Color.AliceBlue;
+            this.sqlQueryProgressBar.ForeColor = System.Drawing.Color.DarkRed;
+            this.sqlQueryProgressBar.Location = new System.Drawing.Point(6, 124);
+            this.sqlQueryProgressBar.MarqueeAnimationSpeed = 1;
+            this.sqlQueryProgressBar.Name = "sqlQueryProgressBar";
+            this.sqlQueryProgressBar.Size = new System.Drawing.Size(1667, 21);
+            this.sqlQueryProgressBar.TabIndex = 44;
             // 
             // pictureBox8
             // 
@@ -2221,26 +2162,26 @@
             this.serverSelect2.TabIndex = 35;
             this.serverSelect2.SelectedIndexChanged += new System.EventHandler(this.serverSelect2_SelectedIndexChanged);
             // 
-            // executeQuery
+            // executeQueryButton
             // 
-            this.executeQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.executeQuery.BackColor = System.Drawing.Color.Honeydew;
-            this.executeQuery.Cursor = System.Windows.Forms.Cursors.Default;
-            this.executeQuery.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.executeQuery.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
-            this.executeQuery.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.executeQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.executeQuery.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.executeQuery.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
-            this.executeQuery.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.executeQuery.Location = new System.Drawing.Point(1175, 3);
-            this.executeQuery.Name = "executeQuery";
-            this.executeQuery.Size = new System.Drawing.Size(47, 96);
-            this.executeQuery.TabIndex = 34;
-            this.executeQuery.Text = "GO";
-            this.executeQuery.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.executeQuery.UseVisualStyleBackColor = false;
-            this.executeQuery.Click += new System.EventHandler(this.runquery_Click);
+            this.executeQueryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.executeQueryButton.BackColor = System.Drawing.Color.Honeydew;
+            this.executeQueryButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.executeQueryButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.executeQueryButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
+            this.executeQueryButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.executeQueryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.executeQueryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.executeQueryButton.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
+            this.executeQueryButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.executeQueryButton.Location = new System.Drawing.Point(1446, 3);
+            this.executeQueryButton.Name = "executeQueryButton";
+            this.executeQueryButton.Size = new System.Drawing.Size(54, 115);
+            this.executeQueryButton.TabIndex = 34;
+            this.executeQueryButton.Text = "GO";
+            this.executeQueryButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.executeQueryButton.UseVisualStyleBackColor = false;
+            this.executeQueryButton.Click += new System.EventHandler(this.runquery_Click);
             // 
             // queryWindow
             // 
@@ -2250,160 +2191,14 @@
             this.queryWindow.ForeColor = System.Drawing.Color.Blue;
             this.queryWindow.Location = new System.Drawing.Point(251, 3);
             this.queryWindow.Name = "queryWindow";
-            this.queryWindow.Size = new System.Drawing.Size(918, 96);
+            this.queryWindow.Size = new System.Drawing.Size(1105, 115);
             this.queryWindow.TabIndex = 33;
             this.queryWindow.Text = "";
-            // 
-            // jasperExtract
-            // 
-            this.jasperExtract.BackColor = System.Drawing.Color.AliceBlue;
-            this.jasperExtract.Controls.Add(this.button26);
-            this.jasperExtract.Controls.Add(this.groupBox11);
-            this.jasperExtract.Location = new System.Drawing.Point(4, 22);
-            this.jasperExtract.Name = "jasperExtract";
-            this.jasperExtract.Size = new System.Drawing.Size(1225, 120);
-            this.jasperExtract.TabIndex = 4;
-            this.jasperExtract.Text = "Jasper Extract(ALPHA)";
-            this.jasperExtract.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            // 
-            // button26
-            // 
-            this.button26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button26.BackColor = System.Drawing.Color.Honeydew;
-            this.button26.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button26.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.button26.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
-            this.button26.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button26.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
-            this.button26.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button26.Location = new System.Drawing.Point(1169, 3);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(54, 115);
-            this.button26.TabIndex = 28;
-            this.button26.Text = "GO";
-            this.button26.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button26.UseVisualStyleBackColor = false;
-            this.button26.Click += new System.EventHandler(this.button26_Click);
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.BackColor = System.Drawing.Color.AliceBlue;
-            this.groupBox11.Controls.Add(this.statementRadio);
-            this.groupBox11.Controls.Add(this.reportRadio);
-            this.groupBox11.Controls.Add(this.pictureBox9);
-            this.groupBox11.Controls.Add(this.pictureBox10);
-            this.groupBox11.Controls.Add(this.pictureBox11);
-            this.groupBox11.Controls.Add(this.reportStatementSelect);
-            this.groupBox11.Controls.Add(this.serverSelect3);
-            this.groupBox11.Controls.Add(this.databaseSelect3);
-            this.groupBox11.Location = new System.Drawing.Point(8, 6);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(222, 112);
-            this.groupBox11.TabIndex = 27;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Select Server/Database/Jasper Extract:";
-            // 
-            // statementRadio
-            // 
-            this.statementRadio.AutoSize = true;
-            this.statementRadio.Location = new System.Drawing.Point(97, 19);
-            this.statementRadio.Name = "statementRadio";
-            this.statementRadio.Size = new System.Drawing.Size(78, 17);
-            this.statementRadio.TabIndex = 35;
-            this.statementRadio.Text = "Statements";
-            this.statementRadio.UseVisualStyleBackColor = true;
-            this.statementRadio.CheckedChanged += new System.EventHandler(this.statementRadio_CheckedChanged);
-            // 
-            // reportRadio
-            // 
-            this.reportRadio.AutoSize = true;
-            this.reportRadio.Checked = true;
-            this.reportRadio.Location = new System.Drawing.Point(6, 19);
-            this.reportRadio.Name = "reportRadio";
-            this.reportRadio.Size = new System.Drawing.Size(62, 17);
-            this.reportRadio.TabIndex = 28;
-            this.reportRadio.TabStop = true;
-            this.reportRadio.Text = "Reports";
-            this.reportRadio.UseVisualStyleBackColor = true;
-            this.reportRadio.CheckedChanged += new System.EventHandler(this.reportRadio_CheckedChanged);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::DataAnalysisTool.Properties.Resources.IFrame_5767;
-            this.pictureBox9.Location = new System.Drawing.Point(6, 89);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox9.TabIndex = 34;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(6, 69);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox10.TabIndex = 33;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(6, 49);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox11.TabIndex = 6;
-            this.pictureBox11.TabStop = false;
-            // 
-            // reportStatementSelect
-            // 
-            this.reportStatementSelect.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.reportStatementSelect.Cursor = System.Windows.Forms.Cursors.Default;
-            this.reportStatementSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
-            this.reportStatementSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.reportStatementSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reportStatementSelect.FormattingEnabled = true;
-            this.reportStatementSelect.Location = new System.Drawing.Point(28, 87);
-            this.reportStatementSelect.Name = "reportStatementSelect";
-            this.reportStatementSelect.Size = new System.Drawing.Size(188, 21);
-            this.reportStatementSelect.TabIndex = 32;
-            // 
-            // serverSelect3
-            // 
-            this.serverSelect3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.serverSelect3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.serverSelect3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.serverSelect3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.serverSelect3.FormattingEnabled = true;
-            this.serverSelect3.Items.AddRange(new object[] {
-            "IcmTstDb1.cci.caldsaas.local\\tst1",
-            "IcmTstDb2.cci.caldsaas.local\\tst2",
-            "IcmTstDb3.cci.caldsaas.local\\tst3",
-            "IcmImpDb1.cci.caldsaas.local\\Imp1"});
-            this.serverSelect3.Location = new System.Drawing.Point(28, 49);
-            this.serverSelect3.Name = "serverSelect3";
-            this.serverSelect3.Size = new System.Drawing.Size(188, 21);
-            this.serverSelect3.TabIndex = 32;
-            this.serverSelect3.SelectedIndexChanged += new System.EventHandler(this.serverSelect3_SelectedIndexChanged);
-            // 
-            // databaseSelect3
-            // 
-            this.databaseSelect3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.databaseSelect3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.databaseSelect3.DataSource = this.spDTAgetdatabasetableidsBindingSource;
-            this.databaseSelect3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.databaseSelect3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.databaseSelect3.FormattingEnabled = true;
-            this.databaseSelect3.Location = new System.Drawing.Point(28, 69);
-            this.databaseSelect3.Name = "databaseSelect3";
-            this.databaseSelect3.Size = new System.Drawing.Size(188, 21);
-            this.databaseSelect3.TabIndex = 31;
-            this.databaseSelect3.SelectedIndexChanged += new System.EventHandler(this.databaseSelect3_SelectedIndexChanged);
             // 
             // benchmark
             // 
             this.benchmark.BackColor = System.Drawing.Color.AliceBlue;
+            this.benchmark.Controls.Add(this.benchmarkProgressBar);
             this.benchmark.Controls.Add(this.runListNoRootText);
             this.benchmark.Controls.Add(this.runListNoRoot);
             this.benchmark.Controls.Add(this.groupBox13);
@@ -2411,10 +2206,22 @@
             this.benchmark.Controls.Add(this.groupBox12);
             this.benchmark.Location = new System.Drawing.Point(4, 22);
             this.benchmark.Name = "benchmark";
-            this.benchmark.Size = new System.Drawing.Size(1225, 120);
+            this.benchmark.Size = new System.Drawing.Size(1502, 701);
             this.benchmark.TabIndex = 5;
             this.benchmark.Text = "Payout Benchmark (ALPHA)";
             this.benchmark.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // benchmarkProgressBar
+            // 
+            this.benchmarkProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.benchmarkProgressBar.BackColor = System.Drawing.Color.AliceBlue;
+            this.benchmarkProgressBar.ForeColor = System.Drawing.Color.DarkRed;
+            this.benchmarkProgressBar.Location = new System.Drawing.Point(6, 124);
+            this.benchmarkProgressBar.MarqueeAnimationSpeed = 1;
+            this.benchmarkProgressBar.Name = "benchmarkProgressBar";
+            this.benchmarkProgressBar.Size = new System.Drawing.Size(1667, 21);
+            this.benchmarkProgressBar.TabIndex = 40;
             // 
             // runListNoRootText
             // 
@@ -2491,12 +2298,12 @@
             this.payoutBenchmarkButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
             this.payoutBenchmarkButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.payoutBenchmarkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.payoutBenchmarkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payoutBenchmarkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.payoutBenchmarkButton.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
             this.payoutBenchmarkButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.payoutBenchmarkButton.Location = new System.Drawing.Point(1175, 3);
+            this.payoutBenchmarkButton.Location = new System.Drawing.Point(1446, 3);
             this.payoutBenchmarkButton.Name = "payoutBenchmarkButton";
-            this.payoutBenchmarkButton.Size = new System.Drawing.Size(47, 96);
+            this.payoutBenchmarkButton.Size = new System.Drawing.Size(54, 115);
             this.payoutBenchmarkButton.TabIndex = 35;
             this.payoutBenchmarkButton.Text = "GO";
             this.payoutBenchmarkButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -2619,13 +2426,26 @@
             // api
             // 
             this.api.BackColor = System.Drawing.Color.AliceBlue;
+            this.api.Controls.Add(this.apiReadinessProgressBar);
             this.api.Controls.Add(this.apiReadinessCheckButton);
             this.api.Controls.Add(this.groupBox14);
             this.api.Location = new System.Drawing.Point(4, 22);
             this.api.Name = "api";
-            this.api.Size = new System.Drawing.Size(1225, 120);
+            this.api.Size = new System.Drawing.Size(1502, 701);
             this.api.TabIndex = 6;
             this.api.Text = "API Readiness Check (ALPHA)";
+            // 
+            // apiReadinessProgressBar
+            // 
+            this.apiReadinessProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.apiReadinessProgressBar.BackColor = System.Drawing.Color.AliceBlue;
+            this.apiReadinessProgressBar.ForeColor = System.Drawing.Color.DarkRed;
+            this.apiReadinessProgressBar.Location = new System.Drawing.Point(6, 124);
+            this.apiReadinessProgressBar.MarqueeAnimationSpeed = 1;
+            this.apiReadinessProgressBar.Name = "apiReadinessProgressBar";
+            this.apiReadinessProgressBar.Size = new System.Drawing.Size(1667, 21);
+            this.apiReadinessProgressBar.TabIndex = 37;
             // 
             // apiReadinessCheckButton
             // 
@@ -2636,12 +2456,12 @@
             this.apiReadinessCheckButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
             this.apiReadinessCheckButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.apiReadinessCheckButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.apiReadinessCheckButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apiReadinessCheckButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apiReadinessCheckButton.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
             this.apiReadinessCheckButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.apiReadinessCheckButton.Location = new System.Drawing.Point(1175, 3);
+            this.apiReadinessCheckButton.Location = new System.Drawing.Point(1446, 3);
             this.apiReadinessCheckButton.Name = "apiReadinessCheckButton";
-            this.apiReadinessCheckButton.Size = new System.Drawing.Size(47, 96);
+            this.apiReadinessCheckButton.Size = new System.Drawing.Size(54, 115);
             this.apiReadinessCheckButton.TabIndex = 36;
             this.apiReadinessCheckButton.Text = "GO";
             this.apiReadinessCheckButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -2711,57 +2531,205 @@
             this.databaseSelect5.Size = new System.Drawing.Size(188, 21);
             this.databaseSelect5.TabIndex = 31;
             // 
-            // progressBar1
+            // stagedData
             // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(14, 185);
-            this.progressBar1.MarqueeAnimationSpeed = 0;
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1412, 5);
-            this.progressBar1.Step = 100;
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.progressBar1.TabIndex = 39;
-            this.progressBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.stagedData.BackColor = System.Drawing.Color.AliceBlue;
+            this.stagedData.Controls.Add(this.pictureBoxLoading);
+            this.stagedData.Controls.Add(this.button27);
+            this.stagedData.Controls.Add(this.stagedTextBox);
+            this.stagedData.Controls.Add(this.stagedDataGridView);
+            this.stagedData.Controls.Add(this.button2);
+            this.stagedData.Location = new System.Drawing.Point(4, 22);
+            this.stagedData.Name = "stagedData";
+            this.stagedData.Padding = new System.Windows.Forms.Padding(3);
+            this.stagedData.Size = new System.Drawing.Size(1497, 701);
+            this.stagedData.TabIndex = 2;
+            this.stagedData.Text = "Staged Data";
+            this.stagedData.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // progressBar2
+            // button27
             // 
-            this.progressBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar2.BackColor = System.Drawing.Color.AliceBlue;
-            this.progressBar2.ForeColor = System.Drawing.Color.DarkRed;
-            this.progressBar2.Location = new System.Drawing.Point(14, 173);
-            this.progressBar2.MarqueeAnimationSpeed = 1;
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(1412, 10);
-            this.progressBar2.TabIndex = 7;
-            this.progressBar2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.button27.Location = new System.Drawing.Point(1114, 35);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(75, 23);
+            this.button27.TabIndex = 50;
+            this.button27.Text = "button27";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Visible = false;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
-            // pictureBox1
+            // stagedTextBox
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(1361, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(62, 50);
-            this.pictureBox1.TabIndex = 42;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.stagedTextBox.Location = new System.Drawing.Point(956, 38);
+            this.stagedTextBox.Name = "stagedTextBox";
+            this.stagedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.stagedTextBox.TabIndex = 49;
+            this.stagedTextBox.Visible = false;
             // 
-            // pictureBox6
+            // jasperExtract
             // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(1254, 27);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(101, 41);
-            this.pictureBox6.TabIndex = 43;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.jasperExtract.BackColor = System.Drawing.Color.AliceBlue;
+            this.jasperExtract.Controls.Add(this.button26);
+            this.jasperExtract.Controls.Add(this.groupBox11);
+            this.jasperExtract.Location = new System.Drawing.Point(4, 22);
+            this.jasperExtract.Name = "jasperExtract";
+            this.jasperExtract.Size = new System.Drawing.Size(1502, 701);
+            this.jasperExtract.TabIndex = 4;
+            this.jasperExtract.Text = "Jasper Extract(ALPHA)";
+            this.jasperExtract.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-           
+            // button26
+            // 
+            this.button26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button26.BackColor = System.Drawing.Color.Honeydew;
+            this.button26.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button26.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button26.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
+            this.button26.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button26.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
+            this.button26.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button26.Location = new System.Drawing.Point(1356, 3);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(54, 115);
+            this.button26.TabIndex = 28;
+            this.button26.Text = "GO";
+            this.button26.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button26.UseVisualStyleBackColor = false;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.BackColor = System.Drawing.Color.AliceBlue;
+            this.groupBox11.Controls.Add(this.statementRadio);
+            this.groupBox11.Controls.Add(this.reportRadio);
+            this.groupBox11.Controls.Add(this.pictureBox9);
+            this.groupBox11.Controls.Add(this.pictureBox10);
+            this.groupBox11.Controls.Add(this.pictureBox11);
+            this.groupBox11.Controls.Add(this.reportStatementSelect);
+            this.groupBox11.Controls.Add(this.serverSelect3);
+            this.groupBox11.Controls.Add(this.databaseSelect3);
+            this.groupBox11.Location = new System.Drawing.Point(8, 6);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(222, 112);
+            this.groupBox11.TabIndex = 27;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Select Server/Database/Jasper Extract:";
+            // 
+            // statementRadio
+            // 
+            this.statementRadio.AutoSize = true;
+            this.statementRadio.Location = new System.Drawing.Point(97, 19);
+            this.statementRadio.Name = "statementRadio";
+            this.statementRadio.Size = new System.Drawing.Size(78, 17);
+            this.statementRadio.TabIndex = 35;
+            this.statementRadio.Text = "Statements";
+            this.statementRadio.UseVisualStyleBackColor = true;
+            this.statementRadio.CheckedChanged += new System.EventHandler(this.statementRadio_CheckedChanged);
+            // 
+            // reportRadio
+            // 
+            this.reportRadio.AutoSize = true;
+            this.reportRadio.Checked = true;
+            this.reportRadio.Location = new System.Drawing.Point(6, 19);
+            this.reportRadio.Name = "reportRadio";
+            this.reportRadio.Size = new System.Drawing.Size(62, 17);
+            this.reportRadio.TabIndex = 28;
+            this.reportRadio.TabStop = true;
+            this.reportRadio.Text = "Reports";
+            this.reportRadio.UseVisualStyleBackColor = true;
+            this.reportRadio.CheckedChanged += new System.EventHandler(this.reportRadio_CheckedChanged);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::DataAnalysisTool.Properties.Resources.IFrame_5767;
+            this.pictureBox9.Location = new System.Drawing.Point(6, 89);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox9.TabIndex = 34;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(6, 69);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox10.TabIndex = 33;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(6, 49);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox11.TabIndex = 6;
+            this.pictureBox11.TabStop = false;
+            // 
+            // reportStatementSelect
+            // 
+            this.reportStatementSelect.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.reportStatementSelect.Cursor = System.Windows.Forms.Cursors.Default;
+            this.reportStatementSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
+            this.reportStatementSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.reportStatementSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reportStatementSelect.FormattingEnabled = true;
+            this.reportStatementSelect.Location = new System.Drawing.Point(28, 87);
+            this.reportStatementSelect.Name = "reportStatementSelect";
+            this.reportStatementSelect.Size = new System.Drawing.Size(188, 21);
+            this.reportStatementSelect.TabIndex = 32;
+            // 
+            // serverSelect3
+            // 
+            this.serverSelect3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.serverSelect3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.serverSelect3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.serverSelect3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.serverSelect3.FormattingEnabled = true;
+            this.serverSelect3.Items.AddRange(new object[] {
+            "IcmTstDb1.cci.caldsaas.local\\tst1",
+            "IcmTstDb2.cci.caldsaas.local\\tst2",
+            "IcmTstDb3.cci.caldsaas.local\\tst3",
+            "IcmImpDb1.cci.caldsaas.local\\Imp1"});
+            this.serverSelect3.Location = new System.Drawing.Point(28, 49);
+            this.serverSelect3.Name = "serverSelect3";
+            this.serverSelect3.Size = new System.Drawing.Size(188, 21);
+            this.serverSelect3.TabIndex = 32;
+            this.serverSelect3.SelectedIndexChanged += new System.EventHandler(this.serverSelect3_SelectedIndexChanged);
+            // 
+            // databaseSelect3
+            // 
+            this.databaseSelect3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.databaseSelect3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.databaseSelect3.DataSource = this.spDTAgetdatabasetableidsBindingSource;
+            this.databaseSelect3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.databaseSelect3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.databaseSelect3.FormattingEnabled = true;
+            this.databaseSelect3.Location = new System.Drawing.Point(28, 69);
+            this.databaseSelect3.Name = "databaseSelect3";
+            this.databaseSelect3.Size = new System.Drawing.Size(188, 21);
+            this.databaseSelect3.TabIndex = 31;
+            this.databaseSelect3.SelectedIndexChanged += new System.EventHandler(this.databaseSelect3_SelectedIndexChanged);
+            // 
+            // mainLogSplitContainer
+            // 
+            this.mainLogSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainLogSplitContainer.Location = new System.Drawing.Point(0, 24);
+            this.mainLogSplitContainer.Name = "mainLogSplitContainer";
+            this.mainLogSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // mainLogSplitContainer.Panel1
+            // 
+            this.mainLogSplitContainer.Panel1.Controls.Add(this.apiReadinessGoButton);
+            // 
+            // mainLogSplitContainer.Panel2
+            // 
+            this.mainLogSplitContainer.Panel2.Controls.Add(this.richTextBox1);
+            this.mainLogSplitContainer.Size = new System.Drawing.Size(1510, 832);
+            this.mainLogSplitContainer.SplitterDistance = 762;
+            this.mainLogSplitContainer.TabIndex = 33;
             // 
             // DataAnalysisTool
             // 
@@ -2769,16 +2737,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1436, 762);
+            this.ClientSize = new System.Drawing.Size(1510, 878);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.mainLogSplitContainer);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.progressBar2);
-            this.Controls.Add(this.progressBar1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -2809,17 +2772,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitRequiredImportFormat_ImportedFile)).EndInit();
             this.splitRequiredImportFormat_ImportedFile.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.importformatDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stagedDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox7.ResumeLayout(false);
@@ -2832,25 +2791,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.databaseFileSizeBindingSource)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
+            this.apiReadinessGoButton.ResumeLayout(false);
+            this.importFormat.ResumeLayout(false);
+            this.importFormat.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
+            this.checkTools.ResumeLayout(false);
+            this.sqlQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sqlQueryDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.jasperExtract.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.benchmark.ResumeLayout(false);
             this.benchmark.PerformLayout();
             this.groupBox13.ResumeLayout(false);
@@ -2864,8 +2817,18 @@
             this.groupBox14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.stagedData.ResumeLayout(false);
+            this.stagedData.PerformLayout();
+            this.jasperExtract.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            this.mainLogSplitContainer.Panel1.ResumeLayout(false);
+            this.mainLogSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mainLogSplitContainer)).EndInit();
+            this.mainLogSplitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2918,7 +2881,6 @@
         private System.Windows.Forms.ComboBox serverSelect;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.ComboBox tableSelect;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
@@ -2940,7 +2902,7 @@
         private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button importFormatGoButton;
         public System.Windows.Forms.SplitContainer splitContainer1;
         public System.Windows.Forms.DataGridView importformatDataGridView;
         public System.Windows.Forms.SplitContainer splitRequiredImportFormat_ImportedFile;
@@ -2949,7 +2911,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClose;
@@ -2961,33 +2922,23 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel14;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel16;
         private System.Windows.Forms.ToolStripMenuItem tXTToolStripMenuItem;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabControl apiReadinessGoButton;
+        private System.Windows.Forms.TabPage importFormat;
+        private System.Windows.Forms.TabPage checkTools;
+        private System.Windows.Forms.TabPage stagedData;
         private System.Windows.Forms.ToolStripMenuItem iFLogToolStripMenuItem;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ComboBox dateComboBox1;
         private System.Windows.Forms.ListBox reqListBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.ComboBox dateComboBox3;
         private System.Windows.Forms.ComboBox dateComboBox2;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ToolStripMenuItem commaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pipeToolStripMenuItem;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.ComboBox dateComboBoxSeperator;
         private System.Windows.Forms.Label dateFormat;
         private System.Windows.Forms.ListBox dateListBox;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.ProgressBar progressBar2;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.ProgressBar importFormatProgressBar;
         private System.Windows.Forms.ListBox dateCheckerListBox;
         private System.Windows.Forms.ListBox specialCharacterCheckerListBox;
         private System.Windows.Forms.CheckBox checkBox2;
@@ -3013,12 +2964,9 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label icmVersion;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button executeQuery;
+        private System.Windows.Forms.TabPage sqlQuery;
+        private System.Windows.Forms.Button executeQueryButton;
         private System.Windows.Forms.RichTextBox queryWindow;
         private System.Windows.Forms.ComboBox databaseSelect2;
         private System.Windows.Forms.ComboBox serverSelect2;
@@ -3063,57 +3011,24 @@
         private System.Windows.Forms.ComboBox serverSelect5;
         private System.Windows.Forms.ComboBox databaseSelect5;
         private System.Windows.Forms.Button button27;
-        public System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private System.ComponentModel.BackgroundWorker backgroundWorker3;
-        private System.ComponentModel.BackgroundWorker backgroundWorker4;
-        private System.ComponentModel.BackgroundWorker backgroundWorker5;
-        private System.ComponentModel.BackgroundWorker backgroundWorker6;
-        private System.ComponentModel.BackgroundWorker backgroundWorker7;
-        private System.ComponentModel.BackgroundWorker backgroundWorker8;
-        private System.ComponentModel.BackgroundWorker backgroundWorker9;
-        private System.ComponentModel.BackgroundWorker backgroundWorker10;
-        private System.ComponentModel.BackgroundWorker backgroundWorker11;
-        private System.ComponentModel.BackgroundWorker backgroundWorker12;
-        private System.ComponentModel.BackgroundWorker backgroundWorker13;
-        private System.ComponentModel.BackgroundWorker backgroundWorker14;
-        private System.ComponentModel.BackgroundWorker backgroundWorker15;
-        private System.ComponentModel.BackgroundWorker backgroundWorker16;
-        private System.ComponentModel.BackgroundWorker backgroundWorker17;
-        private System.ComponentModel.BackgroundWorker backgroundWorker18;
-        private System.ComponentModel.BackgroundWorker backgroundWorker19;
-        private System.ComponentModel.BackgroundWorker backgroundWorker20;
-        private System.ComponentModel.BackgroundWorker backgroundWorker21;
-        private System.ComponentModel.BackgroundWorker backgroundWorker22;
-        private System.ComponentModel.BackgroundWorker backgroundWorker23;
-        private System.ComponentModel.BackgroundWorker backgroundWorker24;
-        private System.ComponentModel.BackgroundWorker backgroundWorker25;
-        private System.ComponentModel.BackgroundWorker backgroundWorker26;
-        private System.ComponentModel.BackgroundWorker backgroundWorker27;
-        private System.ComponentModel.BackgroundWorker backgroundWorker28;
-        private System.ComponentModel.BackgroundWorker backgroundWorker29;
-        private System.ComponentModel.BackgroundWorker backgroundWorker30;
-        private System.ComponentModel.BackgroundWorker backgroundWorker31;
-        private System.ComponentModel.BackgroundWorker backgroundWorker32;
-        private System.ComponentModel.BackgroundWorker backgroundWorker33;
-        private System.ComponentModel.BackgroundWorker backgroundWorker34;
-        private System.ComponentModel.BackgroundWorker backgroundWorker35;
-        private System.ComponentModel.BackgroundWorker backgroundWorker36;
-        private System.ComponentModel.BackgroundWorker backgroundWorker37;
-        private System.ComponentModel.BackgroundWorker backgroundWorker38;
-        private System.ComponentModel.BackgroundWorker backgroundWorker39;
-        private System.ComponentModel.BackgroundWorker backgroundWorker40;
-        private System.ComponentModel.BackgroundWorker backgroundWorker41;
-        private System.ComponentModel.BackgroundWorker backgroundWorker42;
-        private System.ComponentModel.BackgroundWorker backgroundWorker43;
-        private System.ComponentModel.BackgroundWorker backgroundWorker44;
-        private System.ComponentModel.BackgroundWorker backgroundWorker45;
-        private System.ComponentModel.BackgroundWorker backgroundWorker46;
-        private System.ComponentModel.BackgroundWorker backgroundWorker47;
-        private System.ComponentModel.BackgroundWorker backgroundWorker48;
-        private System.ComponentModel.BackgroundWorker backgroundWorker49;
-        private System.ComponentModel.BackgroundWorker backgroundWorker50;
         private System.Windows.Forms.PictureBox pictureBoxLoading;
+        private System.Windows.Forms.ToolStripProgressBar progressBar1;
+        private System.Windows.Forms.Button openCsvButton;
+        private System.Windows.Forms.ToolStripMenuItem aCTEKLoginToolStripMenuItem;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.Button button30;
+        private System.Windows.Forms.Button button31;
+        private System.Windows.Forms.ToolStripMenuItem benchmarksFolderToolStripMenuItem;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.ProgressBar checkToolsProgressBar;
+        private System.Windows.Forms.ProgressBar sqlQueryProgressBar;
+        private System.Windows.Forms.ProgressBar benchmarkProgressBar;
+        private System.Windows.Forms.ProgressBar apiReadinessProgressBar;
+        public System.Windows.Forms.DataGridView sqlQueryDataGridView;
+        private System.Windows.Forms.SplitContainer mainLogSplitContainer;
     }
 }
 

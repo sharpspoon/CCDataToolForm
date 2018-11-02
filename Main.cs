@@ -40,12 +40,10 @@ namespace DataAnalysisTool
             {
                 Process.Start(Application.UserAppDataPath + @"\Logs");
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar1.Refresh();
             }
             catch
             {
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar1.Refresh();
             }
         }
         //------------------CC LOG OPEN END------------------------------------------------------
@@ -79,7 +77,6 @@ namespace DataAnalysisTool
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
         }
         private void menu_Save_Xml_Click(object sender, EventArgs e)
         {
@@ -91,7 +88,6 @@ namespace DataAnalysisTool
                 dt.WriteXml(this.saveFileDialog1.FileName, XmlWriteMode.WriteSchema);
             }
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
         }
         //------------------OPEN/SAVE XML END------------------------------------------------------
 
@@ -118,7 +114,6 @@ namespace DataAnalysisTool
             }
             catch { }
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
         }
         //------------------OPEN/SAVE XLS END------------------------------------------------------
 
@@ -213,7 +208,6 @@ namespace DataAnalysisTool
                 printPreviewDialog1.ShowDialog();
             }
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
         }
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -228,7 +222,6 @@ namespace DataAnalysisTool
             progressBar1.MarqueeAnimationSpeed = 1;
             System.Diagnostics.Process.Start("https://calliduscloud.com");
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
         }
         //------------------CC LOGO CLICK END------------------------------------------------------
 
@@ -281,14 +274,13 @@ namespace DataAnalysisTool
             }
 
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
         }
         public DataTable ReadCsv(string fileName)
         {
-            progressBar2.Value = 0;
-            progressBar2.Value = 20;
+            importFormatProgressBar.Value = 0;
+            importFormatProgressBar.Value = 20;
             System.Threading.Thread.Sleep(50);
-            progressBar2.Value = 40;
+            importFormatProgressBar.Value = 40;
             DataTable dt = new DataTable("Data");
             using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
                 Path.GetDirectoryName(fileName) + "\";Extended Properties='text;HDR=yes;FMT=Delimited(,)';"))
@@ -302,7 +294,7 @@ namespace DataAnalysisTool
                     }
                 }
             }
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
             return dt;
         }
         protected void menu_Save_Csv_Click(object sender, EventArgs e)
@@ -346,7 +338,6 @@ namespace DataAnalysisTool
                 sw.Close();
             }
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
         }
         //------------------OPEN/SAVE CSV END------------------------------------------------------
 
@@ -403,7 +394,6 @@ namespace DataAnalysisTool
                 e.Cancel = true;
             }
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
         }
         //------------------EXIT APP ACTION END------------------------------------------------------
 
@@ -419,7 +409,7 @@ namespace DataAnalysisTool
         //------------------ACKTEKSOFT LOGIN START------------------------------------------------------
         private void acteksoft_Click(object sender, EventArgs e)
         {
-            progressBar1.MarqueeAnimationSpeed = 1;
+            progressBar1.MarqueeAnimationSpeed = 10;
 
             acteksoft actek = new acteksoft();
 
@@ -429,7 +419,6 @@ namespace DataAnalysisTool
             }
             actek.ShowDialog();
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
         }
         //------------------ACKTEKSOFT LOGIN END------------------------------------------------------
 
@@ -507,7 +496,7 @@ namespace DataAnalysisTool
         {
             int a = 0;
             String reqItem;
-            progressBar2.Value = 50;
+            importFormatProgressBar.Value = 50;
             foreach (Object selecteditem in dateCheckerListBox.SelectedItems)
             {
                 a++;
@@ -523,7 +512,7 @@ namespace DataAnalysisTool
                             if (value == " " || value == "" || value == null)
                             {
                             importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                progressBar2.Value = 100;
+                                importFormatProgressBar.Value = 100;
                                 MessageBox.Show("NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyymmdd");
                                 return;
@@ -541,7 +530,7 @@ namespace DataAnalysisTool
                                 if (year > 2200)
                                 {
                                     importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                    progressBar2.Value = 100;
+                                    importFormatProgressBar.Value = 100;
                                     MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyymmdd");
                                     return;
@@ -550,7 +539,7 @@ namespace DataAnalysisTool
                                 if (month > 12)
                                 {
                                     importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                    progressBar2.Value = 100;
+                                    importFormatProgressBar.Value = 100;
                                     MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyymmdd");
                                     return;
@@ -559,7 +548,7 @@ namespace DataAnalysisTool
                                 if (month < 01)
                                 {
                                     importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                    progressBar2.Value = 100;
+                                    importFormatProgressBar.Value = 100;
                                     MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyymmdd");
                                     return;
@@ -568,7 +557,7 @@ namespace DataAnalysisTool
                                 if (day > 31)
                                 {
                                     importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                    progressBar2.Value = 100;
+                                    importFormatProgressBar.Value = 100;
                                     MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyymmdd");
                                     return;
@@ -577,7 +566,7 @@ namespace DataAnalysisTool
                                 if (day < 01)
                                 {
                                     importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                    progressBar2.Value = 100;
+                                    importFormatProgressBar.Value = 100;
                                     MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                     richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyymmdd");
                                     return;
@@ -585,7 +574,7 @@ namespace DataAnalysisTool
                             }
                             catch {
                                 importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                progressBar2.Value = 100;
+                                importFormatProgressBar.Value = 100;
                                 MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The value has characters that are not numbers.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The value has characters that are not numbers.\r\nMake sure that the date is in the format: yyyymmdd");
                                 return;
@@ -596,7 +585,7 @@ namespace DataAnalysisTool
                             if (value.Length > 0)
                             {
                                 importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                progressBar2.Value = 100;
+                                importFormatProgressBar.Value = 100;
                                 MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyymmdd");
                                 return;
@@ -606,12 +595,12 @@ namespace DataAnalysisTool
                 }
             }
             if (a == 0){
-                progressBar2.Value = 0;
+                importFormatProgressBar.Value = 0;
                 MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
             MessageBox.Show("Dates are OK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
             richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Dates are OK");
             return;
         }
@@ -623,7 +612,7 @@ namespace DataAnalysisTool
         {
             int a = 0;
             String reqItem;
-            progressBar2.Value = 50;
+            importFormatProgressBar.Value = 50;
             foreach (Object selecteditem in nullCheckerListBox.SelectedItems)
             {
                 a++;
@@ -639,7 +628,7 @@ namespace DataAnalysisTool
                         if (string.IsNullOrWhiteSpace(value))
                         {
                             importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[nullCheckCurIndex];
-                            progressBar2.Value = 100;
+                            importFormatProgressBar.Value = 100;
                             MessageBox.Show("NULL value found in column " + "'" + reqItem + "'" + " at line " + (i + 1), "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                             return;
@@ -649,11 +638,11 @@ namespace DataAnalysisTool
             }
             if (a == 0)
             {
-                progressBar2.Value = 0;
+                importFormatProgressBar.Value = 0;
                 MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
             MessageBox.Show("no NULL value!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
         //------------------NULL CHECKER END------------------------------------------------------
@@ -670,7 +659,7 @@ namespace DataAnalysisTool
                 return;
             }
             int length = int.Parse(textBox4.Text);
-            progressBar2.Value = 50;
+            importFormatProgressBar.Value = 50;
             foreach (Object selecteditem in cellLengthCheckerListBox.SelectedItems)
             {
                 a++;
@@ -687,7 +676,7 @@ namespace DataAnalysisTool
                         if (value.Length > length)
                         {
                             importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[lengthCharacterCurIndex];
-                            progressBar2.Value = 100;
+                            importFormatProgressBar.Value = 100;
                             MessageBox.Show("The value '" + value + "'" + " in column " + selecteditem + ", line " + (i + 1) + " is too long", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             return;
                         }
@@ -699,7 +688,7 @@ namespace DataAnalysisTool
                 MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
             MessageBox.Show("All columns/rows are under " + length, "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             
         }
@@ -719,7 +708,7 @@ namespace DataAnalysisTool
                 MessageBox.Show("You did not enter a special character!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
-            progressBar2.Value = 50;
+            importFormatProgressBar.Value = 50;
             foreach (Object selecteditem in specialCharacterCheckerListBox.SelectedItems)
             {
                 
@@ -736,7 +725,7 @@ namespace DataAnalysisTool
                         if (value.Contains(specialChar) == true)
                         {
                             importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[specialCharacterCurIndex];
-                            progressBar2.Value = 100;
+                            importFormatProgressBar.Value = 100;
                             MessageBox.Show("'" + specialChar + "'" + " WAS found in the column " + "'" + selecteditem + "'" + " at line " + (i + 1), "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                             return;
@@ -747,10 +736,10 @@ namespace DataAnalysisTool
             if (a == 0)
             {
                 MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                progressBar2.Value = 0;
+                importFormatProgressBar.Value = 0;
                 return;
             }
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
             MessageBox.Show("'" + specialChar + "'" + " WAS NOT FOUND!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             
         }
@@ -897,7 +886,7 @@ namespace DataAnalysisTool
         private void button6_MouseEnter(object sender, EventArgs e)
         {
             System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.button6, "Run the tool!");
+            ToolTip2.SetToolTip(this.importFormatGoButton, "Run the tool!");
         }
 
         private void tableSelect_MouseEnter(object sender, EventArgs e)
@@ -952,7 +941,6 @@ namespace DataAnalysisTool
             }
             ssms.ShowDialog();
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
         }
 
         private void toolStripStatusLabel15_Click(object sender, EventArgs e)
@@ -1000,7 +988,6 @@ namespace DataAnalysisTool
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
         }
 
         public DataTable ReadTxtComma(string fileName)
@@ -1030,7 +1017,7 @@ namespace DataAnalysisTool
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
-                        progressBar2.Value = 20;
+                        importFormatProgressBar.Value = 20;
                         importedfileDataGridView.DataSource = ReadTxtPipe(ofd.FileName);
                         toolStripStatusLabel13.Text = ofd.FileName;
                         toolStripStatusLabel13.Visible = true;
@@ -1046,17 +1033,16 @@ namespace DataAnalysisTool
             }
             catch (Exception ex)
             {
-                progressBar2.Value = 0;
+                importFormatProgressBar.Value = 0;
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
         }
 
         public DataTable ReadTxtPipe(string fileName)
         {
-            progressBar2.Value = 30;
+            importFormatProgressBar.Value = 30;
             DataTable dt = new DataTable();
             string[] columns = null;
 
@@ -1064,10 +1050,10 @@ namespace DataAnalysisTool
 
             if (checkBox5.Checked == false)
             {
-                progressBar2.Value = 50;
+                importFormatProgressBar.Value = 50;
                 if (lines.Count() > 0)
                 {
-                    progressBar2.Value = 60;
+                    importFormatProgressBar.Value = 60;
                     columns = lines[0].Split(new char[] { '|' });
                 }
 
@@ -1088,15 +1074,15 @@ namespace DataAnalysisTool
 
                     dt.Rows.Add(dr);
                 }
-                progressBar2.Value = 70;
+                importFormatProgressBar.Value = 70;
                 return dt;
             }
             else
             {
-                progressBar2.Value = 50;
+                importFormatProgressBar.Value = 50;
                 if (lines.Count() > 0)
                 {
-                    progressBar2.Value = 60;
+                    importFormatProgressBar.Value = 60;
                     columns = lines[0].Split(new char[] { '|' });
 
                     foreach (var column in columns)
@@ -1112,7 +1098,7 @@ namespace DataAnalysisTool
                         dr[j] = values[j];
                     dt.Rows.Add(dr);
                 }
-                progressBar2.Value = 70;
+                importFormatProgressBar.Value = 70;
                 return dt;
             }
         }
@@ -1526,8 +1512,8 @@ namespace DataAnalysisTool
 
         private void payoutBenchmarkButton_Click(object sender, EventArgs e)
         {
-            progressBar2.Value = 0;
-            progressBar2.Value = 10;
+            importFormatProgressBar.Value = 0;
+            importFormatProgressBar.Value = 10;
 
             //global vars
             progressBar1.MarqueeAnimationSpeed = 1;
@@ -1536,8 +1522,7 @@ namespace DataAnalysisTool
             {
                 DialogResult result = MessageBox.Show("No server selected. \nPlease make sure you are connected to ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar2.Value = 0;
-                progressBar1.Refresh();
+                importFormatProgressBar.Value = 0;
                 return;
             }
 
@@ -1548,8 +1533,7 @@ namespace DataAnalysisTool
                 if (result2 == DialogResult.No)
                 {
                     progressBar1.MarqueeAnimationSpeed = 0;
-                    progressBar2.Value = 0;
-                    progressBar1.Refresh();
+                    importFormatProgressBar.Value = 0;
                     return;
                 }
             }
@@ -1562,12 +1546,13 @@ namespace DataAnalysisTool
             var ds3 = new DataSet();
             dataAdapter3.Fill(ds3);
             stagedDataGridView.DataSource = ds3.Tables[0];
+            var runListNo = stagedDataGridView.Rows[stagedDataGridView.SelectedRows[0].Index].Cells[1].Value.ToString();
             var runListNoRootArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
                     .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
 
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
 
             
             {
@@ -1585,6 +1570,7 @@ namespace DataAnalysisTool
                         tw.WriteLine("Database: " + databaseSelect4.Text);
                         tw.WriteLine("Payout Type: " + payoutTypeSelect.Text);
                         tw.WriteLine("Payout Date: " + payoutSelect.Text);
+                        tw.WriteLine("RunListNoRoot1: " + runListNo);
                         foreach (var run in runListNoRootArray)
                         {
                             tw.WriteLine("RunListNoRoot: "+run);
@@ -1606,11 +1592,10 @@ namespace DataAnalysisTool
                         tw.WriteLine("EOF.");
                     }
                 }
-                progressBar2.Value = 90;
-                progressBar2.Value = 100;
+                importFormatProgressBar.Value = 90;
+                importFormatProgressBar.Value = 100;
                 MessageBox.Show("Payout Benchmark file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar1.Refresh();
                 Process.Start(path);
             }
         }
@@ -1649,18 +1634,17 @@ namespace DataAnalysisTool
 
         private void apiReadinessCheckButton_Click(object sender, EventArgs e)
         {
-            progressBar2.Value = 0;
-            progressBar2.Value = 10;
+            importFormatProgressBar.Value = 0;
+            importFormatProgressBar.Value = 10;
 
             //global vars
-            progressBar1.MarqueeAnimationSpeed = 1;
+            progressBar1.MarqueeAnimationSpeed = 10;
             if (databaseSelect5.Text == "")
 
             {
                 DialogResult result = MessageBox.Show("No database selected. \nPlease make sure you are connected to ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar2.Value = 0;
-                progressBar1.Refresh();
+                importFormatProgressBar.Value = 0;
                 return;
             }
 
@@ -1671,8 +1655,7 @@ namespace DataAnalysisTool
                 if (result2 == DialogResult.No)
                 {
                     progressBar1.MarqueeAnimationSpeed = 0;
-                    progressBar2.Value = 0;
-                    progressBar1.Refresh();
+                    importFormatProgressBar.Value = 0;
                     return;
                 }
             }
@@ -1690,7 +1673,7 @@ namespace DataAnalysisTool
 
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
 
 
             {
@@ -1732,11 +1715,10 @@ namespace DataAnalysisTool
                         tw.WriteLine("EOF.");
                     }
                 }
-                progressBar2.Value = 90;
-                progressBar2.Value = 100;
+                importFormatProgressBar.Value = 90;
+                importFormatProgressBar.Value = 100;
                 MessageBox.Show("Payout Benchmark file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar1.Refresh();
                 Process.Start(path);
             }
         }
@@ -1751,7 +1733,11 @@ namespace DataAnalysisTool
             }
             loading.ShowDialog();
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Refresh();
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            Process.Start(Application.UserAppDataPath + @"\Payout_Benchmarks");
         }
         //------------------EXIT APP ACTION END------------------------------------------------------
         /*

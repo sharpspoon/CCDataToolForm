@@ -20,10 +20,10 @@ namespace DataAnalysisTool
         private void serverSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            progressBar2.Value = 0;
+            importFormatProgressBar.Value = 0;
             progressBar1.MarqueeAnimationSpeed = 1;
-            progressBar2.Value = 20;
-            progressBar2.Value = 40;
+            importFormatProgressBar.Value = 20;
+            importFormatProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             try
             {
@@ -45,20 +45,20 @@ namespace DataAnalysisTool
                 conn.Close();
                 MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar2.Value = 0;
+                importFormatProgressBar.Value = 0;
                 return;
             }
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
         }
 
         private void serverSelect2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            progressBar2.Value = 0;
+
+            sqlQueryProgressBar.Value = 0;
             progressBar1.MarqueeAnimationSpeed = 1;
-            progressBar2.Value = 20;
-            progressBar2.Value = 40;
+            sqlQueryProgressBar.Value = 20;
+            sqlQueryProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect2.Text + "; Initial Catalog = master; Integrated Security = True");
             try
             {
@@ -80,20 +80,20 @@ namespace DataAnalysisTool
                 conn.Close();
                 MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar2.Value = 0;
+                sqlQueryProgressBar.Value = 0;
                 return;
             }
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
+            sqlQueryProgressBar.Value = 100;
         }
 
         private void serverSelect3_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            progressBar2.Value = 0;
+            importFormatProgressBar.Value = 0;
             progressBar1.MarqueeAnimationSpeed = 1;
-            progressBar2.Value = 20;
-            progressBar2.Value = 40;
+            importFormatProgressBar.Value = 20;
+            importFormatProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect3.Text + "; Initial Catalog = master; Integrated Security = True");
             try
             {
@@ -115,11 +115,11 @@ namespace DataAnalysisTool
                 conn.Close();
                 MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar2.Value = 0;
+                importFormatProgressBar.Value = 0;
                 return;
             }
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
         }
 
 
@@ -127,10 +127,10 @@ namespace DataAnalysisTool
         private void serverSelect4_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            progressBar2.Value = 0;
+            importFormatProgressBar.Value = 0;
             progressBar1.MarqueeAnimationSpeed = 1;
-            progressBar2.Value = 20;
-            progressBar2.Value = 40;
+            importFormatProgressBar.Value = 20;
+            importFormatProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
             try
             {
@@ -146,14 +146,14 @@ namespace DataAnalysisTool
                 conn.Close();
                 connectionStatus.Visible = true;
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect4.Text + "...Done.");
-                progressBar2.Value = 100;
+                importFormatProgressBar.Value = 100;
             }
             catch
             {
                 conn.Close();
                 MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar2.Value = 0;
+                importFormatProgressBar.Value = 0;
             }
             progressBar1.MarqueeAnimationSpeed = 0;
         }
@@ -162,10 +162,10 @@ namespace DataAnalysisTool
         private void serverSelect5_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            progressBar2.Value = 0;
+            importFormatProgressBar.Value = 0;
             progressBar1.MarqueeAnimationSpeed = 1;
-            progressBar2.Value = 20;
-            progressBar2.Value = 40;
+            importFormatProgressBar.Value = 20;
+            importFormatProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect5.Text + "; Initial Catalog = master; Integrated Security = True");
             try
             {
@@ -187,19 +187,19 @@ namespace DataAnalysisTool
                 conn.Close();
                 MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar2.Value = 0;
+                importFormatProgressBar.Value = 0;
                 return;
             }
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
         }
 
         private void runquery_Click(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
             System.Threading.Thread.Sleep(25);
-            progressBar2.Value = 20;
-            progressBar2.Value = 40;
+            sqlQueryProgressBar.Value = 20;
+            sqlQueryProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect2.Text + "; Initial Catalog = master; Integrated Security = True");
             
             try
@@ -213,7 +213,7 @@ namespace DataAnalysisTool
                     if (result == DialogResult.No)
                     {
                         progressBar1.MarqueeAnimationSpeed = 0;
-                        progressBar2.Value = 0;
+                        sqlQueryProgressBar.Value = 0;
                         return;
                     }
                 }
@@ -222,31 +222,32 @@ namespace DataAnalysisTool
                 var commandBuilder = new SqlCommandBuilder(dataAdapter);
                 var ds = new DataSet();
                 dataAdapter.Fill(ds);
-                dataGridView2.ReadOnly = true;
-                dataGridView2.DataSource = ds.Tables[0];
+                sqlQueryDataGridView.ReadOnly = true;
+                sqlQueryDataGridView.DataSource = ds.Tables[0];
                 DataTable dt = new DataTable();
                 dt.Columns.Add("name", typeof(string));
                 conn.Close();
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Running query against: " + databaseSelect2.Text + "...Done.");
+                sqlQueryProgressBar.Value = 100;
             }
             catch
             {
                 conn.Close();
                 MessageBox.Show("Unable to run query. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar2.Value = 0;
+                sqlQueryProgressBar.Value = 0;
                 return;
             }
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
         }
 
         private void databaseSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
-            progressBar2.Value = 20;
-            progressBar2.Value = 40;
+            importFormatProgressBar.Value = 20;
+            importFormatProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + databaseSelect.Text + " SELECT table_name AS name FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' order by TABLE_NAME", conn);
@@ -290,7 +291,7 @@ namespace DataAnalysisTool
 
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
         }
 
         //databaseSelect2 not used right now
@@ -298,8 +299,8 @@ namespace DataAnalysisTool
         private void databaseSelect3_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
-            progressBar2.Value = 20;
-            progressBar2.Value = 40;
+            importFormatProgressBar.Value = 20;
+            importFormatProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect3.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + databaseSelect3.Text + " SELECT reportid as name FROM jasperreport  order by name", conn);
@@ -336,7 +337,7 @@ namespace DataAnalysisTool
 
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
         }
 
         private void databaseSelect4_SelectedIndexChanged(object sender, EventArgs e)
@@ -345,8 +346,8 @@ namespace DataAnalysisTool
             //payoutSelect.SelectedIndex = -1;
             //payoutTypeSelect.SelectedIndex = -1;
             progressBar1.MarqueeAnimationSpeed = 1;
-            progressBar2.Value = 20;
-            progressBar2.Value = 40;
+            importFormatProgressBar.Value = 20;
+            importFormatProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + databaseSelect4.Text + " SELECT payouttypeid as name FROM payouttype  order by name", conn);
@@ -371,19 +372,19 @@ namespace DataAnalysisTool
             {
                 conn.Close();
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar2.Value = 0;
+                importFormatProgressBar.Value = 0;
                 return;
             }
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
         }
 
         private void payoutTypeSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
-            progressBar2.Value = 20;
-            progressBar2.Value = 40;
+            importFormatProgressBar.Value = 20;
+            importFormatProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc1 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and rl.rectype='pay' and rl.finalizestatus='p' order by 1 desc", conn);
@@ -426,20 +427,20 @@ namespace DataAnalysisTool
             {
                 conn.Close();
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar2.Value = 0;
+                importFormatProgressBar.Value = 0;
                 return;
             }
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
         }
 
         private void tableSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
-            progressBar2.Value = 20;
+            importFormatProgressBar.Value = 20;
             //System.Threading.Thread.Sleep(25);
-            progressBar2.Value = 40;
+            importFormatProgressBar.Value = 40;
             string ID = databaseSelect.SelectedValue.ToString();
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
@@ -482,7 +483,7 @@ namespace DataAnalysisTool
 
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
         }
 
 
@@ -490,8 +491,8 @@ namespace DataAnalysisTool
         private void ifSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
-            progressBar2.Value = 20;
-            progressBar2.Value = 40;
+            importFormatProgressBar.Value = 20;
+            importFormatProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             try
@@ -825,7 +826,7 @@ namespace DataAnalysisTool
 
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar2.Value = 100;
+            importFormatProgressBar.Value = 100;
         }
 
         //------------------SQL LOADER END------------------------------------------------------

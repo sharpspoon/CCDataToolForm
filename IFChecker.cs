@@ -21,8 +21,8 @@ namespace DataAnalysisTool
 
         private void groupByErrorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            progressBar2.Value = 0;
-            progressBar2.Value = 10;
+            importFormatProgressBar.Value = 0;
+            importFormatProgressBar.Value = 10;
 
             //global vars
             progressBar1.MarqueeAnimationSpeed = 1;
@@ -34,8 +34,7 @@ namespace DataAnalysisTool
             {
                MessageBox.Show("No file imported. \nPlease open a file.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar1.Refresh();
-                progressBar2.Value = 0;
+                importFormatProgressBar.Value = 0;
                 return; 
             }
 
@@ -44,8 +43,7 @@ namespace DataAnalysisTool
             {
                 DialogResult result = MessageBox.Show("No IF selected. \nPlease make sure you are connected to ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar2.Value = 0;
-                progressBar1.Refresh();
+                importFormatProgressBar.Value = 0;
                 return;
             }
 
@@ -56,8 +54,7 @@ namespace DataAnalysisTool
                 if (result2 == DialogResult.No)
                 {
                     progressBar1.MarqueeAnimationSpeed = 0;
-                    progressBar2.Value = 0;
-                    progressBar1.Refresh();
+                    importFormatProgressBar.Value = 0;
                     return;
                 }
             }
@@ -184,11 +181,10 @@ namespace DataAnalysisTool
                                 tw.WriteLine("This Import Format requires " + importformatDataGridView.RowCount + " columns. You have " + importedfileDataGridView.ColumnCount + ".");
                                 tw.WriteLine("This operation has ended. Please correct the column count issue.");
                                 tw.WriteLine("EOF.");
-                                progressBar2.Value = 100;
+                                importFormatProgressBar.Value = 100;
                                 MessageBox.Show("Import Format error file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
                                 progressBar1.MarqueeAnimationSpeed = 0;
-                                progressBar1.Refresh();
                                 Process.Start(path);
                                 return;
                             }
@@ -272,7 +268,7 @@ namespace DataAnalysisTool
                 string path = Application.UserAppDataPath + @"\IF_Error_Files\DataAnalysisTool_IFEF_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
                 using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
                 {
-                    progressBar2.Value = 20;
+                    importFormatProgressBar.Value = 20;
                     using (TextWriter tw = new StreamWriter(fs))
                     {
                         tw.WriteLine("###########################################################################################");
@@ -287,7 +283,7 @@ namespace DataAnalysisTool
 
                         if (databaseSelect.Text != "")
                         {
-                            progressBar2.Value = 30;
+                            importFormatProgressBar.Value = 30;
                             if (importedfileDataGridView.ColumnCount != importformatDataGridView.RowCount)
                             {
                                 tw.WriteLine("This Import Format requires " + importformatDataGridView.RowCount + " columns. You have " + importedfileDataGridView.ColumnCount + ".");
@@ -295,8 +291,7 @@ namespace DataAnalysisTool
                                 MessageBox.Show("Import Format error file has been created. \nLocation: "+path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
                                 progressBar1.MarqueeAnimationSpeed = 0;
-                                progressBar1.Refresh();
-                                progressBar2.Value = 0;
+                                importFormatProgressBar.Value = 0;
                                 Process.Start(path);
                                 return;
                             }
@@ -319,7 +314,7 @@ namespace DataAnalysisTool
                                     }
                                 }
 
-                                progressBar2.Value = 40;
+                                importFormatProgressBar.Value = 40;
 
                                 foreach (var value in clientName)
                                 {
@@ -339,7 +334,7 @@ namespace DataAnalysisTool
                                 tw.WriteLine("");
 
                                 tw.WriteLine("--Required Field Check--");
-                                progressBar2.Value = 50;
+                                importFormatProgressBar.Value = 50;
 
                                 //String reqItem;
                                 foreach (Object selecteditem in reqListBox.SelectedItems)
@@ -371,7 +366,7 @@ namespace DataAnalysisTool
                                 tw.WriteLine("");
 
                                 tw.WriteLine("--Code Check--");
-                                progressBar2.Value = 60;
+                                importFormatProgressBar.Value = 60;
                                 a = 0;
                                 foreach (var s in iffidArray)
                                 {
@@ -393,7 +388,7 @@ namespace DataAnalysisTool
                                 tw.WriteLine("");
 
                                 tw.WriteLine("--Max Length Check--");
-                                progressBar2.Value = 70;
+                                importFormatProgressBar.Value = 70;
                                 a = 0;
                                 foreach (var s in seqArray)//cycle through every column
                                 {
@@ -423,7 +418,7 @@ namespace DataAnalysisTool
                                 }
                                 tw.WriteLine("");
                                 tw.WriteLine("--Date Format Check--");
-                                progressBar2.Value = 80;
+                                importFormatProgressBar.Value = 80;
 
                                 foreach (Object selecteditem in dateListBox.SelectedItems)
                                 {
@@ -704,12 +699,11 @@ namespace DataAnalysisTool
                         tw.WriteLine("EOF.");
                     }
                 }
-                progressBar2.Value = 90;
-                progressBar2.Value = 100;
+                importFormatProgressBar.Value = 90;
+                importFormatProgressBar.Value = 100;
                 MessageBox.Show("Import Format error file has been created. \nLocation: "+path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files");
                 progressBar1.MarqueeAnimationSpeed = 0;
-                progressBar1.Refresh();
                 Process.Start(path);
             }
         }
