@@ -2300,3 +2300,925 @@
                 return;
                 }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////loading GIF work
+
+
+
+////this is step 1 action
+if (backgroundWorker1.IsBusy)
+            {
+                if (backgroundWorker2.IsBusy)
+                {
+                    if (backgroundWorker3.IsBusy)
+                    {
+                        if (backgroundWorker4.IsBusy)
+                        {
+                            if (backgroundWorker5.IsBusy)
+                            {
+                                if (backgroundWorker6.IsBusy)
+                                {
+                                    if (backgroundWorker7.IsBusy)
+                                    {
+                                        if (backgroundWorker8.IsBusy)
+                                        {
+                                            if (backgroundWorker9.IsBusy)
+                                            {
+                                                if (backgroundWorker10.IsBusy)
+                                                {
+                                                    if (backgroundWorker11.IsBusy)
+                                                    {
+                                                        if (backgroundWorker12.IsBusy)
+                                                        {
+                                                            if (backgroundWorker13.IsBusy)
+                                                            {
+                                                                if (backgroundWorker14.IsBusy)
+                                                                {
+                                                                    if (backgroundWorker15.IsBusy)
+                                                                    {
+                                                                        if (backgroundWorker16.IsBusy)
+                                                                        {
+                                                                            if (backgroundWorker17.IsBusy)
+                                                                            {
+                                                                                if (backgroundWorker18.IsBusy)
+                                                                                {
+                                                                                    if (backgroundWorker19.IsBusy)
+                                                                                    {
+                                                                                        if (backgroundWorker20.IsBusy)
+                                                                                        {
+                                                                                            if (backgroundWorker21.IsBusy)
+                                                                                            {
+                                                                                                if (backgroundWorker22.IsBusy)
+                                                                                                {
+                                                                                                    if (backgroundWorker23.IsBusy)
+                                                                                                    {
+                                                                                                        if (backgroundWorker24.IsBusy)
+                                                                                                        {
+                                                                                                            if (backgroundWorker25.IsBusy)
+                                                                                                            {
+                                                                                                                if (backgroundWorker26.IsBusy)
+                                                                                                                {
+                                                                                                                    if (backgroundWorker27.IsBusy)
+                                                                                                                    {
+                                                                                                                        if (backgroundWorker28.IsBusy)
+                                                                                                                        {
+                                                                                                                            if (backgroundWorker29.IsBusy)
+                                                                                                                            {
+                                                                                                                                if (backgroundWorker30.IsBusy)
+                                                                                                                                {
+                                                                                                                                    if (backgroundWorker31.IsBusy)
+                                                                                                                                    {
+                                                                                                                                        if (backgroundWorker32.IsBusy)
+                                                                                                                                        {
+                                                                                                                                            if (backgroundWorker33.IsBusy)
+                                                                                                                                            {
+                                                                                                                                                if (backgroundWorker34.IsBusy)
+                                                                                                                                                {
+                                                                                                                                                    if (backgroundWorker35.IsBusy)
+                                                                                                                                                    {
+                                                                                                                                                        if (backgroundWorker36.IsBusy)
+                                                                                                                                                        {
+                                                                                                                                                            if (backgroundWorker37.IsBusy)
+                                                                                                                                                            {
+                                                                                                                                                                if (backgroundWorker38.IsBusy)
+                                                                                                                                                                {
+                                                                                                                                                                    if (backgroundWorker39.IsBusy)
+                                                                                                                                                                    {
+                                                                                                                                                                        if (backgroundWorker40.IsBusy)
+                                                                                                                                                                        {
+                                                                                                                                                                            if (backgroundWorker41.IsBusy)
+                                                                                                                                                                            {
+                                                                                                                                                                                if (backgroundWorker42.IsBusy)
+                                                                                                                                                                                {
+                                                                                                                                                                                    if (backgroundWorker43.IsBusy)
+                                                                                                                                                                                    {
+                                                                                                                                                                                        if (backgroundWorker44.IsBusy)
+                                                                                                                                                                                        {
+                                                                                                                                                                                            if (backgroundWorker45.IsBusy)
+                                                                                                                                                                                            {
+                                                                                                                                                                                                if (backgroundWorker46.IsBusy)
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    if (backgroundWorker47.IsBusy)
+                                                                                                                                                                                                    {
+                                                                                                                                                                                                        if (backgroundWorker48.IsBusy)
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            if (backgroundWorker49.IsBusy)
+                                                                                                                                                                                                            {
+                                                                                                                                                                                                                if (backgroundWorker50.IsBusy)
+                                                                                                                                                                                                                {
+
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                            else
+                                                                                                                                                                                                            {
+                                                                                                                                                                                                                this.backgroundWorker49.RunWorkerAsync();
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                        else
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            this.backgroundWorker48.RunWorkerAsync();
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                    else
+                                                                                                                                                                                                    {
+                                                                                                                                                                                                        this.backgroundWorker47.RunWorkerAsync();
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                }
+                                                                                                                                                                                                else
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    this.backgroundWorker46.RunWorkerAsync();
+                                                                                                                                                                                                }
+                                                                                                                                                                                            }
+                                                                                                                                                                                            else
+                                                                                                                                                                                            {
+                                                                                                                                                                                                this.backgroundWorker45.RunWorkerAsync();
+                                                                                                                                                                                            }
+                                                                                                                                                                                        }
+                                                                                                                                                                                        else
+                                                                                                                                                                                        {
+                                                                                                                                                                                            this.backgroundWorker44.RunWorkerAsync();
+                                                                                                                                                                                        }
+                                                                                                                                                                                    }
+                                                                                                                                                                                    else
+                                                                                                                                                                                    {
+                                                                                                                                                                                        this.backgroundWorker43.RunWorkerAsync();
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                                else
+                                                                                                                                                                                {
+                                                                                                                                                                                    this.backgroundWorker42.RunWorkerAsync();
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                            else
+                                                                                                                                                                            {
+                                                                                                                                                                                this.backgroundWorker41.RunWorkerAsync();
+                                                                                                                                                                            }
+                                                                                                                                                                        }
+                                                                                                                                                                        else
+                                                                                                                                                                        {
+                                                                                                                                                                            this.backgroundWorker40.RunWorkerAsync();
+                                                                                                                                                                        }
+                                                                                                                                                                    }
+                                                                                                                                                                    else
+                                                                                                                                                                    {
+                                                                                                                                                                        this.backgroundWorker39.RunWorkerAsync();
+                                                                                                                                                                    }
+                                                                                                                                                                }
+                                                                                                                                                                else
+                                                                                                                                                                {
+                                                                                                                                                                    this.backgroundWorker38.RunWorkerAsync();
+                                                                                                                                                                }
+                                                                                                                                                            }
+                                                                                                                                                            else
+                                                                                                                                                            {
+                                                                                                                                                                this.backgroundWorker37.RunWorkerAsync();
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                        else
+                                                                                                                                                        {
+                                                                                                                                                            this.backgroundWorker36.RunWorkerAsync();
+                                                                                                                                                        }
+                                                                                                                                                    }
+                                                                                                                                                    else
+                                                                                                                                                    {
+                                                                                                                                                        this.backgroundWorker35.RunWorkerAsync();
+                                                                                                                                                    }
+                                                                                                                                                }
+                                                                                                                                                else
+                                                                                                                                                {
+                                                                                                                                                    this.backgroundWorker34.RunWorkerAsync();
+                                                                                                                                                }
+                                                                                                                                            }
+                                                                                                                                            else
+                                                                                                                                            {
+                                                                                                                                                this.backgroundWorker33.RunWorkerAsync();
+                                                                                                                                            }
+                                                                                                                                        }
+                                                                                                                                        else
+                                                                                                                                        {
+                                                                                                                                            this.backgroundWorker32.RunWorkerAsync();
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                    else
+                                                                                                                                    {
+                                                                                                                                        this.backgroundWorker31.RunWorkerAsync();
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                else
+                                                                                                                                {
+                                                                                                                                    this.backgroundWorker30.RunWorkerAsync();
+                                                                                                                                }
+                                                                                                                            }
+                                                                                                                            else
+                                                                                                                            {
+                                                                                                                                this.backgroundWorker29.RunWorkerAsync();
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                        else
+                                                                                                                        {
+                                                                                                                            this.backgroundWorker28.RunWorkerAsync();
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                    else
+                                                                                                                    {
+                                                                                                                        this.backgroundWorker27.RunWorkerAsync();
+                                                                                                                    }
+                                                                                                                }
+                                                                                                                else
+                                                                                                                {
+                                                                                                                    this.backgroundWorker26.RunWorkerAsync();
+                                                                                                                }
+                                                                                                            }
+                                                                                                            else
+                                                                                                            {
+                                                                                                                this.backgroundWorker25.RunWorkerAsync();
+                                                                                                            }
+                                                                                                        }
+                                                                                                        else
+                                                                                                        {
+                                                                                                            this.backgroundWorker24.RunWorkerAsync();
+                                                                                                        }
+                                                                                                    }
+                                                                                                    else
+                                                                                                    {
+                                                                                                        this.backgroundWorker23.RunWorkerAsync();
+                                                                                                    }
+                                                                                                }
+                                                                                                else
+                                                                                                {
+                                                                                                    this.backgroundWorker22.RunWorkerAsync();
+                                                                                                }
+                                                                                            }
+                                                                                            else
+                                                                                            {
+                                                                                                this.backgroundWorker21.RunWorkerAsync();
+                                                                                            }
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            this.backgroundWorker20.RunWorkerAsync();
+                                                                                        }
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        this.backgroundWorker19.RunWorkerAsync();
+                                                                                    }
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    this.backgroundWorker18.RunWorkerAsync();
+                                                                                }
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                this.backgroundWorker17.RunWorkerAsync();
+                                                                            }
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            this.backgroundWorker16.RunWorkerAsync();
+                                                                        }
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        this.backgroundWorker15.RunWorkerAsync();
+                                                                    }
+                                                                }
+                                                                else
+                                                                {
+                                                                    this.backgroundWorker14.RunWorkerAsync();
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                this.backgroundWorker13.RunWorkerAsync();
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            this.backgroundWorker12.RunWorkerAsync();
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        this.backgroundWorker11.RunWorkerAsync();
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    this.backgroundWorker10.RunWorkerAsync();
+                                                }
+                                            }
+                                            else
+                                            {
+                                                this.backgroundWorker9.RunWorkerAsync();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            this.backgroundWorker8.RunWorkerAsync();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        this.backgroundWorker7.RunWorkerAsync();
+                                    }
+                                }
+                                else
+                                {
+                                    this.backgroundWorker6.RunWorkerAsync();
+                                }
+                            }
+                            else
+                            {
+                                this.backgroundWorker5.RunWorkerAsync();
+                            }
+                        }
+                        else
+                        {
+                            this.backgroundWorker4.RunWorkerAsync();
+                        }
+                    }
+                    else
+                    {
+                        this.backgroundWorker3.RunWorkerAsync();
+                    }
+                }
+                else
+                {
+                    this.backgroundWorker2.RunWorkerAsync();
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    this.backgroundWorker1.RunWorkerAsync();
+                }
+                catch
+                {
+                    MessageBox.Show("Threads Full");
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+        private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+        }
+
+        private void backgroundWorker3_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker3_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker4_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker4_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker5_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker5_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker6_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker6_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker7_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker7_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker8_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker8_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker9_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker9_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker10_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker10_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker11_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker11_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker12_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker12_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker13_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker13_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker14_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker14_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker15_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker15_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker16_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker16_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker17_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker17_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker18_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker18_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker19_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker19_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker20_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker20_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker21_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker21_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker22_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker22_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker23_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker23_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker24_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker24_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker25_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker25_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker26_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker26_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker27_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker27_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker28_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker28_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker29_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker29_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker30_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker30_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker31_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker31_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker32_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker32_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker33_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker33_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker34_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker34_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker35_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker35_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker36_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker36_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker37_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker37_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker38_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker38_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker39_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker39_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker40_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker40_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker41_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker42_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker43_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker44_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker45_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker46_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker47_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker48_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker49_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+        private void backgroundWorker50_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Loading loading = new Loading();
+            loading.ShowDialog();
+        }
+
+//////////////////loading GIF work
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
