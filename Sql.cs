@@ -502,19 +502,17 @@ namespace DataAnalysisTool
             var ds3 = new DataSet();
             dataAdapter3.Fill(ds3);
             stagedDataGridView.DataSource = ds3.Tables[0];
-            if(stagedDataGridView.SelectedCells.Count > 0)
+            if(stagedDataGridView.RowCount  > 0)
             {
-                var runListNo = stagedDataGridView.Rows[stagedDataGridView.SelectedRows[1].Index].Cells[0].Value.ToString();
+                var runListNo = ds3.Tables[0].ToString();
                 runListNoRootText.Text = runListNo;
             }
-
         }
 
         private void tableSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
             importFormatProgressBar.Value = 20;
-            //System.Threading.Thread.Sleep(25);
             importFormatProgressBar.Value = 40;
             string ID = databaseSelect.SelectedValue.ToString();
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
