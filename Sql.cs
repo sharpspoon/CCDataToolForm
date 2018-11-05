@@ -504,8 +504,10 @@ namespace DataAnalysisTool
             stagedDataGridView.DataSource = ds3.Tables[0];
             if(stagedDataGridView.RowCount  > 0)
             {
-                var runListNo = ds3.Tables[0].ToString();
-                runListNoRootText.Text = runListNo;
+                // MessageBox.Show(stagedDataGridView.SelectedCells[0].Value.ToString());
+                //runListNoLabel.Visible = true;
+                var runListNo = stagedDataGridView.SelectedCells[0].Value.ToString();
+                runListNoLabel.Text = runListNo;
             }
         }
 
