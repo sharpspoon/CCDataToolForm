@@ -183,7 +183,7 @@ namespace DataAnalysisTool
                                 tw.WriteLine("EOF.");
                                 importFormatProgressBar.Value = 100;
                                 MessageBox.Show("Import Format error file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
+                                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
                                 progressBar1.MarqueeAnimationSpeed = 0;
                                 Process.Start(path);
                                 return;
@@ -289,7 +289,7 @@ namespace DataAnalysisTool
                                 tw.WriteLine("This Import Format requires " + importformatDataGridView.RowCount + " columns. You have " + importedfileDataGridView.ColumnCount + ".");
                                 tw.WriteLine("This operation has ended. Please correct the column count issue.");
                                 MessageBox.Show("Import Format error file has been created. \nLocation: "+path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
+                                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Medicare Error Files");
                                 progressBar1.MarqueeAnimationSpeed = 0;
                                 importFormatProgressBar.Value = 0;
                                 Process.Start(path);
@@ -702,7 +702,7 @@ namespace DataAnalysisTool
                 importFormatProgressBar.Value = 90;
                 importFormatProgressBar.Value = 100;
                 MessageBox.Show("Import Format error file has been created. \nLocation: "+path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files");
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files");
                 progressBar1.MarqueeAnimationSpeed = 0;
                 Process.Start(path);
             }

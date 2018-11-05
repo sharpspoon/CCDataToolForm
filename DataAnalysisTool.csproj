@@ -33,7 +33,7 @@
     <WebPage>README.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>134</ApplicationRevision>
+    <ApplicationRevision>152</ApplicationRevision>
     <ApplicationVersion>1.0.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -242,6 +242,7 @@
     <None Include="Resources\IFrame_5767.png" />
     <None Include="Resources\calendar_16xLG.png" />
     <None Include="Resources\Money_16xMD.png" />
+    <None Include="Resources\timer_16xLG.png" />
     <Content Include="sap_32_hsh_icon.ico" />
     <Content Include="sap_32_jqX_icon.ico" />
     <None Include="Resources\Login_6031_32x.png" />

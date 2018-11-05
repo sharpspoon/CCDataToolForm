@@ -38,7 +38,7 @@ namespace DataAnalysisTool
                 databaseSelect.DisplayMember = "name";
                 conn.Close();
                 connectionStatus.Visible = true;
-                richTextBox1.Text=richTextBox1.Text.Insert(0,Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect.Text + "...Done.");
+                systemLogTextBox.Text=systemLogTextBox.Text.Insert(0,Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect.Text + "...Done.");
             }
             catch
             {
@@ -73,7 +73,7 @@ namespace DataAnalysisTool
                 databaseSelect2.DisplayMember = "name";
                 conn.Close();
                 connectionStatus.Visible = true;
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect.Text + "...Done.");
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect.Text + "...Done.");
             }
             catch
             {
@@ -108,7 +108,7 @@ namespace DataAnalysisTool
                 databaseSelect3.DisplayMember = "name";
                 conn.Close();
                 connectionStatus.Visible = true;
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect3.Text + "...Done.");
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect3.Text + "...Done.");
             }
             catch
             {
@@ -129,8 +129,8 @@ namespace DataAnalysisTool
             
             importFormatProgressBar.Value = 0;
             progressBar1.MarqueeAnimationSpeed = 1;
-            importFormatProgressBar.Value = 20;
-            importFormatProgressBar.Value = 40;
+            benchmarkProgressBar.Value = 20;
+            benchmarkProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
             try
             {
@@ -145,15 +145,15 @@ namespace DataAnalysisTool
                 databaseSelect4.DisplayMember = "name";
                 conn.Close();
                 connectionStatus.Visible = true;
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect4.Text + "...Done.");
-                importFormatProgressBar.Value = 100;
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect4.Text + "...Done.");
+                benchmarkProgressBar.Value = 100;
             }
             catch
             {
                 conn.Close();
                 MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
-                importFormatProgressBar.Value = 0;
+                benchmarkProgressBar.Value = 0;
             }
             progressBar1.MarqueeAnimationSpeed = 0;
         }
@@ -180,7 +180,7 @@ namespace DataAnalysisTool
                 databaseSelect5.DisplayMember = "name";
                 conn.Close();
                 connectionStatus.Visible = true;
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect5.Text + "...Done.");
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect5.Text + "...Done.");
             }
             catch
             {
@@ -227,7 +227,7 @@ namespace DataAnalysisTool
                 DataTable dt = new DataTable();
                 dt.Columns.Add("name", typeof(string));
                 conn.Close();
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Running query against: " + databaseSelect2.Text + "...Done.");
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Running query against: " + databaseSelect2.Text + "...Done.");
                 sqlQueryProgressBar.Value = 100;
             }
             catch
@@ -279,7 +279,7 @@ namespace DataAnalysisTool
                 tableSelect.DisplayMember = "name";
                 conn.Close();
                 connectionStatus.Visible = true;
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
                 toolStripStatusLabel5.Visible = true;
                 toolStripStatusLabel6.Visible = true;
                 toolStripStatusLabel7.Visible = true;
@@ -325,7 +325,7 @@ namespace DataAnalysisTool
                 reportStatementSelect.DisplayMember = "name";
                 conn.Close();
                 connectionStatus.Visible = true;
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
                 toolStripStatusLabel5.Visible = true;
                 toolStripStatusLabel6.Visible = true;
                 toolStripStatusLabel7.Visible = true;
@@ -346,8 +346,8 @@ namespace DataAnalysisTool
             //payoutSelect.SelectedIndex = -1;
             //payoutTypeSelect.SelectedIndex = -1;
             progressBar1.MarqueeAnimationSpeed = 1;
-            importFormatProgressBar.Value = 20;
-            importFormatProgressBar.Value = 40;
+            benchmarkProgressBar.Value = 20;
+            benchmarkProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + databaseSelect4.Text + " SELECT payouttypeid as name FROM payouttype  order by name", conn);
@@ -363,7 +363,7 @@ namespace DataAnalysisTool
                 payoutTypeSelect.DisplayMember = "name";
                 conn.Close();
                 connectionStatus.Visible = true;
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
                 toolStripStatusLabel5.Visible = true;
                 toolStripStatusLabel6.Visible = true;
                 toolStripStatusLabel7.Visible = true;
@@ -372,26 +372,27 @@ namespace DataAnalysisTool
             {
                 conn.Close();
                 progressBar1.MarqueeAnimationSpeed = 0;
-                importFormatProgressBar.Value = 0;
+                benchmarkProgressBar.Value = 0;
                 return;
             }
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
-            importFormatProgressBar.Value = 100;
+            benchmarkProgressBar.Value = 100;
         }
 
         private void payoutTypeSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
-            importFormatProgressBar.Value = 20;
-            importFormatProgressBar.Value = 40;
+            benchmarkProgressBar.Value = 20;
+            benchmarkProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
+            //data select
+            SqlDataReader reader;
             SqlCommand sc1 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and rl.rectype='pay' and rl.finalizestatus='p' order by 1 desc", conn);
             SqlCommand sc2 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and rl.rectype='pay' and rl.finalizestatus='f' order by 1 desc", conn);
             SqlCommand sc3 = new SqlCommand("use " + databaseSelect4.Text + " select distinct datfrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and rl.rectype='pay' and rl.finalizestatus='r' order by 1 desc", conn);
-
-            SqlDataReader reader;
+            
 
             try
             {
@@ -418,7 +419,7 @@ namespace DataAnalysisTool
                 payoutSelect.DisplayMember = "name";
                 conn.Close();
                 connectionStatus.Visible = true;
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading payouts: " + payoutTypeSelect.Text + "...Done.");
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading payouts: " + payoutTypeSelect.Text + "...Done.");
                 toolStripStatusLabel5.Visible = true;
                 toolStripStatusLabel6.Visible = true;
                 toolStripStatusLabel7.Visible = true;
@@ -427,12 +428,86 @@ namespace DataAnalysisTool
             {
                 conn.Close();
                 progressBar1.MarqueeAnimationSpeed = 0;
-                importFormatProgressBar.Value = 0;
+                benchmarkProgressBar.Value = 0;
                 return;
             }
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
-            importFormatProgressBar.Value = 100;
+            benchmarkProgressBar.Value = 100;
+        }
+
+        private void payoutSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            progressBar1.MarqueeAnimationSpeed = 1;
+            benchmarkProgressBar.Value = 20;
+            benchmarkProgressBar.Value = 40;
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+            //data select
+            SqlDataReader reader;
+            SqlCommand sc1 = new SqlCommand("use " + databaseSelect4.Text + " select distinct timefrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and rl.rectype='pay' and DatFrom='" + payoutSelect.Text + "' and rl.finalizestatus='p' order by 1 desc", conn);
+            SqlCommand sc2 = new SqlCommand("use " + databaseSelect4.Text + " select distinct timefrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and rl.rectype='pay' and DatFrom='" + payoutSelect.Text + "' and rl.finalizestatus='f' order by 1 desc", conn);
+            SqlCommand sc3 = new SqlCommand("use " + databaseSelect4.Text + " select distinct timefrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and rl.rectype='pay' and DatFrom='" + payoutSelect.Text + "' and rl.finalizestatus='r' order by 1 desc", conn);
+
+
+            try
+            {
+                if (pendingRadioButton.Checked == true)
+                {
+                    reader = sc1.ExecuteReader();
+                }
+                else if (finalizedRadioButton.Checked == true)
+                {
+                    reader = sc2.ExecuteReader();
+                }
+                else if (reversedRadioButton.Checked == true)
+                {
+                    reader = sc3.ExecuteReader();
+                }
+                else
+                {
+                    return;
+                }
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                dt.Load(reader);
+                payoutTimeSelect.DataSource = dt;
+                payoutTimeSelect.DisplayMember = "name";
+                conn.Close();
+                connectionStatus.Visible = true;
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading payouts: " + payoutTypeSelect.Text + "...Done.");
+                toolStripStatusLabel5.Visible = true;
+                toolStripStatusLabel6.Visible = true;
+                toolStripStatusLabel7.Visible = true;
+            }
+            catch
+            {
+                conn.Close();
+                progressBar1.MarqueeAnimationSpeed = 0;
+                benchmarkProgressBar.Value = 0;
+                return;
+            }
+            conn.Close();
+            progressBar1.MarqueeAnimationSpeed = 0;
+            benchmarkProgressBar.Value = 100;
+        }
+
+        private void payoutTimeSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+
+            var runListNoRoot =  " USE " + databaseSelect4.Text + " select distinct rl.runlistnoroot from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "') and rl.DatFrom = '" + payoutSelect.Text + "' and rl.timefrom = '"+payoutTimeSelect.Text+"'";
+            var dataAdapter3 = new SqlDataAdapter(runListNoRoot, conn);
+            var ds3 = new DataSet();
+            dataAdapter3.Fill(ds3);
+            stagedDataGridView.DataSource = ds3.Tables[0];
+            if(stagedDataGridView.SelectedCells.Count > 0)
+            {
+                var runListNo = stagedDataGridView.Rows[stagedDataGridView.SelectedRows[1].Index].Cells[0].Value.ToString();
+                runListNoRootText.Text = runListNo;
+            }
+
         }
 
         private void tableSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -474,7 +549,7 @@ namespace DataAnalysisTool
                 ifSelect.DataSource = dt;
                 ifSelect.DisplayMember = "name";
                 conn.Close();
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading table: " + tableSelect.Text + "...Done.");
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading table: " + tableSelect.Text + "...Done.");
             }
             catch
             {
@@ -814,7 +889,7 @@ namespace DataAnalysisTool
 
                 toolStripStatusLabel7.Text = dataGridView2.Rows.Count.ToString();
                 toolStripStatusLabel10.Text = importformatDataGridView.Rows.Count.ToString();
-                richTextBox1.Text = richTextBox1.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading import format: " + ifSelect.Text + "...Done.");
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading import format: " + ifSelect.Text + "...Done.");
                 toolStripStatusLabel8.Visible = true;
                 toolStripStatusLabel9.Visible = true;
                 toolStripStatusLabel10.Visible = true;

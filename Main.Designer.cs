@@ -121,7 +121,7 @@
             this.tableSelect = new System.Windows.Forms.ComboBox();
             this.spDTAgetdatabasetableidsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.systemLogTextBox = new System.Windows.Forms.RichTextBox();
             this.pictureBoxLoading = new System.Windows.Forms.PictureBox();
             this.stagedDataGridView = new System.Windows.Forms.DataGridView();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -192,12 +192,14 @@
             this.sqlQueryDataGridView = new System.Windows.Forms.DataGridView();
             this.sqlQueryProgressBar = new System.Windows.Forms.ProgressBar();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.executeQueryButton = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.databaseSelect2 = new System.Windows.Forms.ComboBox();
             this.serverSelect2 = new System.Windows.Forms.ComboBox();
-            this.executeQueryButton = new System.Windows.Forms.Button();
             this.queryWindow = new System.Windows.Forms.RichTextBox();
             this.benchmark = new System.Windows.Forms.TabPage();
+            this.benchmarkExportResults = new System.Windows.Forms.Button();
+            this.benchmarkRichTextBox = new System.Windows.Forms.RichTextBox();
             this.benchmarkProgressBar = new System.Windows.Forms.ProgressBar();
             this.runListNoRootText = new System.Windows.Forms.TextBox();
             this.runListNoRoot = new System.Windows.Forms.Label();
@@ -207,6 +209,8 @@
             this.pendingRadioButton = new System.Windows.Forms.RadioButton();
             this.payoutBenchmarkButton = new System.Windows.Forms.Button();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.payoutTimeSelect = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.payoutSelect = new System.Windows.Forms.ComboBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
@@ -283,6 +287,7 @@
             this.benchmark.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
@@ -398,7 +403,7 @@
             this.benchmarksFolderToolStripMenuItem});
             this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.openToolStripMenuItem.Text = "Open...";
             // 
             // cSVToolStripMenuItem
@@ -481,14 +486,14 @@
             this.xLSToolStripMenuItem1});
             this.saveAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveAsToolStripMenuItem.Image")));
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
             // 
             // cSVToolStripMenuItem1
             // 
             this.cSVToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("cSVToolStripMenuItem1.Image")));
             this.cSVToolStripMenuItem1.Name = "cSVToolStripMenuItem1";
-            this.cSVToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.cSVToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
             this.cSVToolStripMenuItem1.Text = ".CSV";
             this.cSVToolStripMenuItem1.Click += new System.EventHandler(this.menu_Save_Csv_Click);
             // 
@@ -496,7 +501,7 @@
             // 
             this.xMLToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xMLToolStripMenuItem.Image")));
             this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
             this.xMLToolStripMenuItem.Text = ".XML";
             this.xMLToolStripMenuItem.Click += new System.EventHandler(this.menu_Save_Xml_Click);
             // 
@@ -504,7 +509,7 @@
             // 
             this.xLSToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("xLSToolStripMenuItem1.Image")));
             this.xLSToolStripMenuItem1.Name = "xLSToolStripMenuItem1";
-            this.xLSToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.xLSToolStripMenuItem1.Size = new System.Drawing.Size(97, 22);
             this.xLSToolStripMenuItem1.Text = ".XLS";
             this.xLSToolStripMenuItem1.Visible = false;
             // 
@@ -512,7 +517,7 @@
             // 
             this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -520,7 +525,7 @@
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
             // 
@@ -547,7 +552,7 @@
             // 
             this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
@@ -555,7 +560,7 @@
             // 
             this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
@@ -563,7 +568,7 @@
             // 
             this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
@@ -1072,7 +1077,7 @@
             this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox10.Controls.Add(this.button25);
             this.groupBox10.Controls.Add(this.textBox2);
-            this.groupBox10.Location = new System.Drawing.Point(3, 163);
+            this.groupBox10.Location = new System.Drawing.Point(3, 133);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(170, 38);
             this.groupBox10.TabIndex = 36;
@@ -1189,15 +1194,15 @@
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
-            // richTextBox1
+            // systemLogTextBox
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(1510, 66);
-            this.richTextBox1.TabIndex = 32;
-            this.richTextBox1.Text = "";
+            this.systemLogTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.systemLogTextBox.Location = new System.Drawing.Point(0, 0);
+            this.systemLogTextBox.Name = "systemLogTextBox";
+            this.systemLogTextBox.ReadOnly = true;
+            this.systemLogTextBox.Size = new System.Drawing.Size(1510, 66);
+            this.systemLogTextBox.TabIndex = 32;
+            this.systemLogTextBox.Text = "";
             // 
             // pictureBoxLoading
             // 
@@ -2028,7 +2033,7 @@
             this.checkTools.Location = new System.Drawing.Point(4, 22);
             this.checkTools.Name = "checkTools";
             this.checkTools.Padding = new System.Windows.Forms.Padding(3);
-            this.checkTools.Size = new System.Drawing.Size(1502, 701);
+            this.checkTools.Size = new System.Drawing.Size(1502, 736);
             this.checkTools.TabIndex = 1;
             this.checkTools.Text = "Check Tools";
             this.checkTools.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -2122,6 +2127,27 @@
             this.pictureBox8.TabIndex = 43;
             this.pictureBox8.TabStop = false;
             // 
+            // executeQueryButton
+            // 
+            this.executeQueryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.executeQueryButton.BackColor = System.Drawing.Color.Honeydew;
+            this.executeQueryButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.executeQueryButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.executeQueryButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
+            this.executeQueryButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.executeQueryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.executeQueryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.executeQueryButton.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
+            this.executeQueryButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.executeQueryButton.Location = new System.Drawing.Point(1446, 3);
+            this.executeQueryButton.Name = "executeQueryButton";
+            this.executeQueryButton.Size = new System.Drawing.Size(54, 115);
+            this.executeQueryButton.TabIndex = 34;
+            this.executeQueryButton.Text = "GO";
+            this.executeQueryButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.executeQueryButton.UseVisualStyleBackColor = false;
+            this.executeQueryButton.Click += new System.EventHandler(this.runquery_Click);
+            // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::DataAnalysisTool.Properties.Resources.DatabaseOptions_12882;
@@ -2162,27 +2188,6 @@
             this.serverSelect2.TabIndex = 35;
             this.serverSelect2.SelectedIndexChanged += new System.EventHandler(this.serverSelect2_SelectedIndexChanged);
             // 
-            // executeQueryButton
-            // 
-            this.executeQueryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.executeQueryButton.BackColor = System.Drawing.Color.Honeydew;
-            this.executeQueryButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.executeQueryButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.executeQueryButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
-            this.executeQueryButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.executeQueryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.executeQueryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.executeQueryButton.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
-            this.executeQueryButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.executeQueryButton.Location = new System.Drawing.Point(1446, 3);
-            this.executeQueryButton.Name = "executeQueryButton";
-            this.executeQueryButton.Size = new System.Drawing.Size(54, 115);
-            this.executeQueryButton.TabIndex = 34;
-            this.executeQueryButton.Text = "GO";
-            this.executeQueryButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.executeQueryButton.UseVisualStyleBackColor = false;
-            this.executeQueryButton.Click += new System.EventHandler(this.runquery_Click);
-            // 
             // queryWindow
             // 
             this.queryWindow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -2198,6 +2203,8 @@
             // benchmark
             // 
             this.benchmark.BackColor = System.Drawing.Color.AliceBlue;
+            this.benchmark.Controls.Add(this.benchmarkExportResults);
+            this.benchmark.Controls.Add(this.benchmarkRichTextBox);
             this.benchmark.Controls.Add(this.benchmarkProgressBar);
             this.benchmark.Controls.Add(this.runListNoRootText);
             this.benchmark.Controls.Add(this.runListNoRoot);
@@ -2206,10 +2213,33 @@
             this.benchmark.Controls.Add(this.groupBox12);
             this.benchmark.Location = new System.Drawing.Point(4, 22);
             this.benchmark.Name = "benchmark";
-            this.benchmark.Size = new System.Drawing.Size(1502, 701);
+            this.benchmark.Size = new System.Drawing.Size(1502, 736);
             this.benchmark.TabIndex = 5;
             this.benchmark.Text = "Payout Benchmark (ALPHA)";
             this.benchmark.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // benchmarkExportResults
+            // 
+            this.benchmarkExportResults.Location = new System.Drawing.Point(236, 95);
+            this.benchmarkExportResults.Name = "benchmarkExportResults";
+            this.benchmarkExportResults.Size = new System.Drawing.Size(105, 23);
+            this.benchmarkExportResults.TabIndex = 41;
+            this.benchmarkExportResults.Text = "Export Results";
+            this.benchmarkExportResults.UseVisualStyleBackColor = true;
+            this.benchmarkExportResults.Click += new System.EventHandler(this.benchmarkExportResults_Click);
+            // 
+            // benchmarkRichTextBox
+            // 
+            this.benchmarkRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.benchmarkRichTextBox.BackColor = System.Drawing.Color.Azure;
+            this.benchmarkRichTextBox.Location = new System.Drawing.Point(6, 151);
+            this.benchmarkRichTextBox.Name = "benchmarkRichTextBox";
+            this.benchmarkRichTextBox.ReadOnly = true;
+            this.benchmarkRichTextBox.Size = new System.Drawing.Size(1494, 582);
+            this.benchmarkRichTextBox.TabIndex = 33;
+            this.benchmarkRichTextBox.Text = "";
             // 
             // benchmarkProgressBar
             // 
@@ -2313,6 +2343,8 @@
             // groupBox12
             // 
             this.groupBox12.BackColor = System.Drawing.Color.AliceBlue;
+            this.groupBox12.Controls.Add(this.payoutTimeSelect);
+            this.groupBox12.Controls.Add(this.pictureBox1);
             this.groupBox12.Controls.Add(this.pictureBox15);
             this.groupBox12.Controls.Add(this.payoutSelect);
             this.groupBox12.Controls.Add(this.pictureBox12);
@@ -2327,6 +2359,29 @@
             this.groupBox12.TabIndex = 28;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Select Server/Database/Payout";
+            // 
+            // payoutTimeSelect
+            // 
+            this.payoutTimeSelect.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.payoutTimeSelect.Cursor = System.Windows.Forms.Cursors.Default;
+            this.payoutTimeSelect.DataSource = this.spDTAgetdatabasetableidsBindingSource;
+            this.payoutTimeSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.payoutTimeSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.payoutTimeSelect.FormattingEnabled = true;
+            this.payoutTimeSelect.Location = new System.Drawing.Point(126, 85);
+            this.payoutTimeSelect.Name = "payoutTimeSelect";
+            this.payoutTimeSelect.Size = new System.Drawing.Size(90, 21);
+            this.payoutTimeSelect.TabIndex = 37;
+            this.payoutTimeSelect.SelectedIndexChanged += new System.EventHandler(this.payoutTimeSelect_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DataAnalysisTool.Properties.Resources.timer_16xLG;
+            this.pictureBox1.Location = new System.Drawing.Point(107, 85);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox15
             // 
@@ -2347,8 +2402,9 @@
             this.payoutSelect.FormattingEnabled = true;
             this.payoutSelect.Location = new System.Drawing.Point(28, 85);
             this.payoutSelect.Name = "payoutSelect";
-            this.payoutSelect.Size = new System.Drawing.Size(188, 21);
+            this.payoutSelect.Size = new System.Drawing.Size(78, 21);
             this.payoutSelect.TabIndex = 35;
+            this.payoutSelect.SelectedIndexChanged += new System.EventHandler(this.payoutSelect_SelectedIndexChanged);
             // 
             // pictureBox12
             // 
@@ -2431,7 +2487,7 @@
             this.api.Controls.Add(this.groupBox14);
             this.api.Location = new System.Drawing.Point(4, 22);
             this.api.Name = "api";
-            this.api.Size = new System.Drawing.Size(1502, 701);
+            this.api.Size = new System.Drawing.Size(1502, 736);
             this.api.TabIndex = 6;
             this.api.Text = "API Readiness Check (ALPHA)";
             // 
@@ -2542,7 +2598,7 @@
             this.stagedData.Location = new System.Drawing.Point(4, 22);
             this.stagedData.Name = "stagedData";
             this.stagedData.Padding = new System.Windows.Forms.Padding(3);
-            this.stagedData.Size = new System.Drawing.Size(1497, 701);
+            this.stagedData.Size = new System.Drawing.Size(1502, 736);
             this.stagedData.TabIndex = 2;
             this.stagedData.Text = "Staged Data";
             this.stagedData.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -2573,7 +2629,7 @@
             this.jasperExtract.Controls.Add(this.groupBox11);
             this.jasperExtract.Location = new System.Drawing.Point(4, 22);
             this.jasperExtract.Name = "jasperExtract";
-            this.jasperExtract.Size = new System.Drawing.Size(1502, 701);
+            this.jasperExtract.Size = new System.Drawing.Size(1502, 736);
             this.jasperExtract.TabIndex = 4;
             this.jasperExtract.Text = "Jasper Extract(ALPHA)";
             this.jasperExtract.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -2726,7 +2782,7 @@
             // 
             // mainLogSplitContainer.Panel2
             // 
-            this.mainLogSplitContainer.Panel2.Controls.Add(this.richTextBox1);
+            this.mainLogSplitContainer.Panel2.Controls.Add(this.systemLogTextBox);
             this.mainLogSplitContainer.Size = new System.Drawing.Size(1510, 832);
             this.mainLogSplitContainer.SplitterDistance = 762;
             this.mainLogSplitContainer.TabIndex = 33;
@@ -2809,6 +2865,7 @@
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             this.groupBox12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
@@ -2911,7 +2968,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox systemLogTextBox;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClose;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMaximize;
@@ -3029,6 +3086,10 @@
         private System.Windows.Forms.ProgressBar apiReadinessProgressBar;
         public System.Windows.Forms.DataGridView sqlQueryDataGridView;
         private System.Windows.Forms.SplitContainer mainLogSplitContainer;
+        private System.Windows.Forms.RichTextBox benchmarkRichTextBox;
+        private System.Windows.Forms.Button benchmarkExportResults;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox payoutTimeSelect;
     }
 }
 
