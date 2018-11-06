@@ -492,25 +492,6 @@ namespace DataAnalysisTool
             benchmarkProgressBar.Value = 100;
         }
 
-        private void payoutTimeSelect_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
-            conn.Open();
-
-            var runListNoRoot =  " USE " + databaseSelect4.Text + " select distinct rl.runlistnoroot from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "') and rl.DatFrom = '" + payoutSelect.Text + "' and rl.timefrom = '"+payoutTimeSelect.Text+"'";
-            var dataAdapter3 = new SqlDataAdapter(runListNoRoot, conn);
-            var ds3 = new DataSet();
-            dataAdapter3.Fill(ds3);
-            stagedDataGridView.DataSource = ds3.Tables[0];
-            if(stagedDataGridView.RowCount  > 0)
-            {
-                // MessageBox.Show(stagedDataGridView.SelectedCells[0].Value.ToString());
-                //runListNoLabel.Visible = true;
-                var runListNo = stagedDataGridView.SelectedCells[0].Value.ToString();
-                runListNoLabel.Text = runListNo;
-            }
-        }
-
         private void tableSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;

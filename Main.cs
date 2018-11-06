@@ -14,6 +14,7 @@ using System.Security.Principal;
 using System.Data.SqlTypes;
 using System.Collections;
 using System.Text;
+using System.Collections.Generic;
 
 namespace DataAnalysisTool
 {
@@ -1541,15 +1542,32 @@ namespace DataAnalysisTool
 
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
-
-            var runListNoRoot = "use " + databaseSelect4.Text + " USE " + databaseSelect4.Text + " select distinct rl.runlistnoroot from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "') and rl.DatFrom = '" + payoutSelect.Text + "'";
+            //runlistnoroot
+            var runListNoRoot = "";
+            if (pendingRadioButton.Checked == true)
+            {
+                runListNoRoot = " USE " + databaseSelect4.Text + " select distinct rl.runlistnoroot from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "') and rl.DatFrom = '" + payoutSelect.Text + "' and rl.finalizestatus='p'";
+            }
+            else if (finalizedRadioButton.Checked == true)
+            {
+                runListNoRoot = " USE " + databaseSelect4.Text + " select distinct rl.runlistnoroot from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "') and rl.DatFrom = '" + payoutSelect.Text + "' and rl.finalizestatus='f'";
+            }
+            else if (reversedRadioButton.Checked == true)
+            {
+                runListNoRoot = " USE " + databaseSelect4.Text + " select distinct rl.runlistnoroot from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "') and rl.DatFrom = '" + payoutSelect.Text + "' and rl.finalizestatus='r'";
+            }
             var dataAdapter3 = new SqlDataAdapter(runListNoRoot, conn);
             var ds3 = new DataSet();
             dataAdapter3.Fill(ds3);
             stagedDataGridView.DataSource = ds3.Tables[0];
-            //var runListNo = stagedDataGridView.Rows[stagedDataGridView.SelectedRows[0].Index].Cells[1].Value.ToString();
-            var runListNoRootArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+            var runListNo = stagedDataGridView.Rows[0].Cells[0].Value;
+            //elapsed time
+            var elapsedTime = " USE " + databaseSelect4.Text + " select distinct (elapsedtime / 1000) / 60 as name from RunList  where RunListNo = " + runListNo;
+            var dataAdapter4 = new SqlDataAdapter(elapsedTime, conn);
+            var ds4 = new DataSet();
+            dataAdapter4.Fill(ds4);
+            stagedDataGridView.DataSource = ds4.Tables[0];
+            var elapsedTimeActual = stagedDataGridView.Rows[0].Cells[0].Value;
 
             benchmarkRichTextBox.Text = benchmarkRichTextBox.Text.Insert(0, Environment.NewLine +
                 @"###########################################################################################" + System.Environment.NewLine +
@@ -1559,25 +1577,18 @@ namespace DataAnalysisTool
                 @"Server: "+serverSelect4.Text+ System.Environment.NewLine +
                 @"Database: " +databaseSelect4.Text + System.Environment.NewLine +
                 @"Payout Type: " +payoutTypeSelect.Text + System.Environment.NewLine +
-                @"RunListNoRoot: " +runListNoRootArray +
+                @"RunListNoRoot: " +runListNo +
                 @"" + System.Environment.NewLine+
+                @"" + System.Environment.NewLine +
                 @"****************************************************" +  System.Environment.NewLine +
                 @"********************PAYOUT STATS********************" +  System.Environment.NewLine +
                 @"****************************************************" +  System.Environment.NewLine +
-                @"" +  System.Environment.NewLine +
+                @"Elapsed time: " + elapsedTimeActual + " Minutes" + System.Environment.NewLine +
                 @"Average payout time for the " + payoutTypeSelect.Text + " payout: ");
 
-            conn.Close();
+            //conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
             benchmarkProgressBar.Value = 100;
-
-            
-
-
-
-            {
-
-            }
         }
 
         private void benchmarkExportResults_Click(object sender, EventArgs e)
@@ -1742,6 +1753,11 @@ namespace DataAnalysisTool
         private void button28_Click(object sender, EventArgs e)
         {
             Process.Start(Application.UserAppDataPath + @"\Payout_Benchmarks");
+        }
+
+        private void benchmarkClearResults_Click(object sender, EventArgs e)
+        {
+            benchmarkRichTextBox.Clear();
         }
 
 
