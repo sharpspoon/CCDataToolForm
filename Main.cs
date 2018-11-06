@@ -1542,6 +1542,7 @@ namespace DataAnalysisTool
 
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
+
             //runlistnoroot
             var runListNoRoot = "";
             if (pendingRadioButton.Checked == true)
@@ -1561,6 +1562,7 @@ namespace DataAnalysisTool
             dataAdapter3.Fill(ds3);
             stagedDataGridView.DataSource = ds3.Tables[0];
             var runListNo = stagedDataGridView.Rows[0].Cells[0].Value;
+
             //elapsed time
             var elapsedTime = " USE " + databaseSelect4.Text + " select distinct (elapsedtime / 1000) / 60 as name from RunList  where RunListNo = " + runListNo;
             var dataAdapter4 = new SqlDataAdapter(elapsedTime, conn);
@@ -1568,6 +1570,49 @@ namespace DataAnalysisTool
             dataAdapter4.Fill(ds4);
             stagedDataGridView.DataSource = ds4.Tables[0];
             var elapsedTimeActual = stagedDataGridView.Rows[0].Cells[0].Value;
+
+            //elapsed time average
+            var elapsedTimeAverage = "";
+            if (pendingRadioButton.Checked == true)
+            {
+                elapsedTimeAverage = " USE " + databaseSelect4.Text + " select ((sum(elapsedtime)/COUNT(*))/1000) / 60 as name from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "')  and rl.finalizestatus='p'";
+            }
+            else if (finalizedRadioButton.Checked == true)
+            {
+                elapsedTimeAverage = " USE " + databaseSelect4.Text + " select ((sum(elapsedtime)/COUNT(*))/1000) / 60 as name from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "')  and rl.finalizestatus='f'";
+            }
+            else if (reversedRadioButton.Checked == true)
+            {
+                elapsedTimeAverage = " USE " + databaseSelect4.Text + " select ((sum(elapsedtime)/COUNT(*))/1000) / 60 as name from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "')  and rl.finalizestatus='r'";
+            }
+            var dataAdapter5 = new SqlDataAdapter(elapsedTimeAverage, conn);
+            var ds5 = new DataSet();
+            dataAdapter5.Fill(ds5);
+            stagedDataGridView.DataSource = ds5.Tables[0];
+            var elapsedTimeAverageActual = stagedDataGridView.Rows[0].Cells[0].Value;
+
+            //fasterslower
+            var fasterSlower = "";
+            if(Convert.ToInt32(elapsedTimeActual) < Convert.ToInt32(elapsedTimeAverageActual))
+            {
+                fasterSlower = "faster";
+            }
+            else
+            {
+                fasterSlower = "slower";
+            }
+
+            //fasterslowerpercent
+            decimal fasterSlowerPercent = 0;
+            if (Convert.ToInt32(elapsedTimeActual) < Convert.ToInt32(elapsedTimeAverageActual))
+            {
+                fasterSlowerPercent = ((Convert.ToDecimal(elapsedTimeAverageActual) / Convert.ToDecimal(elapsedTimeActual))-1) * 100;
+            }
+            else
+            {
+                fasterSlowerPercent = fasterSlowerPercent = ((Convert.ToDecimal(elapsedTimeActual) / Convert.ToDecimal(elapsedTimeAverageActual)) - 1) * 100;
+            }
+
 
             benchmarkRichTextBox.Text = benchmarkRichTextBox.Text.Insert(0, Environment.NewLine +
                 @"###########################################################################################" + System.Environment.NewLine +
@@ -1584,7 +1629,8 @@ namespace DataAnalysisTool
                 @"********************PAYOUT STATS********************" +  System.Environment.NewLine +
                 @"****************************************************" +  System.Environment.NewLine +
                 @"Elapsed time: " + elapsedTimeActual + " Minutes" + System.Environment.NewLine +
-                @"Average payout time for the " + payoutTypeSelect.Text + " payout: ");
+                @"Average payout time for the " + payoutTypeSelect.Text + " payout: "+elapsedTimeAverageActual+" Minutes" + System.Environment.NewLine +
+                @"Percent " + fasterSlower + " than the payout average: " + fasterSlowerPercent + "%");
 
             //conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
