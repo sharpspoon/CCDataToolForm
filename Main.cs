@@ -1613,6 +1613,14 @@ namespace DataAnalysisTool
                 fasterSlowerPercent = fasterSlowerPercent = ((Convert.ToDecimal(elapsedTimeActual) / Convert.ToDecimal(elapsedTimeAverageActual)) - 1) * 100;
             }
 
+            //elapsed time
+            var taskNumber = " USE " + databaseSelect4.Text + " select taskindex+1 as TaskNumber from runlist where RunListNoRoot=" +runListNo+ " and TaskId is not null order by elapsedtime desc";
+            var dataAdapter6 = new SqlDataAdapter(taskNumber, conn);
+            var ds6 = new DataSet();
+            dataAdapter6.Fill(ds6);
+            stagedDataGridView.DataSource = ds6.Tables[0];
+            var taskNumberArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
 
             benchmarkRichTextBox.Text = benchmarkRichTextBox.Text.Insert(0, Environment.NewLine +
                 @"###########################################################################################" + System.Environment.NewLine +
@@ -1630,7 +1638,15 @@ namespace DataAnalysisTool
                 @"****************************************************" +  System.Environment.NewLine +
                 @"Elapsed time: " + elapsedTimeActual + " Minutes" + System.Environment.NewLine +
                 @"Average payout time for the " + payoutTypeSelect.Text + " payout: "+elapsedTimeAverageActual+" Minutes" + System.Environment.NewLine +
-                @"Percent " + fasterSlower + " than the payout average: " + fasterSlowerPercent + "%");
+                @"Percent " + fasterSlower + " than the payout average: " + fasterSlowerPercent + "%" + System.Environment.NewLine +
+                @"" + System.Environment.NewLine +
+                @"" + System.Environment.NewLine +
+                @"********************PAYOUT TASKS - Longest Run Time First********************" + System.Environment.NewLine);
+            //select taskindex+1 as TaskNumber,TaskId,ElapsedTime from runlist where RunListNoRoot=15289990769180000 and TaskId is not null order by elapsedtime desc
+            foreach (var t in taskNumberArray)
+            {
+                benchmarkRichTextBox.Text +=  System.Environment.NewLine + t;
+            }
 
             //conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
