@@ -1613,7 +1613,7 @@ namespace DataAnalysisTool
                 fasterSlowerPercent = fasterSlowerPercent = ((Convert.ToDecimal(elapsedTimeActual) / Convert.ToDecimal(elapsedTimeAverageActual)) - 1) * 100;
             }
 
-            //elapsed time
+            //task numbers
             var taskNumber = " USE " + databaseSelect4.Text + " select taskindex+1 as TaskNumber from runlist where RunListNoRoot=" +runListNo+ " and TaskId is not null order by elapsedtime desc";
             var dataAdapter6 = new SqlDataAdapter(taskNumber, conn);
             var ds6 = new DataSet();
@@ -1621,6 +1621,32 @@ namespace DataAnalysisTool
             stagedDataGridView.DataSource = ds6.Tables[0];
             var taskNumberArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
                 .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
+            //task ids
+            var taskIds = " USE " + databaseSelect4.Text + " select taskid from runlist where RunListNoRoot=" + runListNo + " and TaskId is not null order by elapsedtime desc";
+            var dataAdapter7 = new SqlDataAdapter(taskIds, conn);
+            var ds7 = new DataSet();
+            dataAdapter7.Fill(ds7);
+            stagedDataGridView.DataSource = ds7.Tables[0];
+            var taskIdsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+            
+
+
+            var tasks = " USE " + databaseSelect4.Text + " select taskindex+1 as 'Task #',TaskId as 'Task Name',((sum(elapsedtime)/COUNT(*))/1000) / 60 as 'Task Run Time in Minutes' from runlist where RunListNoRoot=" + runListNo + " and TaskId is not null group by taskid, TaskIndex, ElapsedTime order by elapsedtime desc";
+            var dataAdapter8 = new SqlDataAdapter(tasks, conn);
+            var ds8 = new DataSet();
+            dataAdapter8.Fill(ds8);
+            benchmarkDataGridView.DataSource = ds8.Tables[0];
+            //var array = new object[benchmarkDataGridView.RowCount, benchmarkDataGridView.ColumnCount];
+            //foreach (DataGridViewRow i in benchmarkDataGridView.Rows)
+            //{
+            //    if (i.IsNewRow) continue;
+            //    foreach (DataGridViewCell j in i.Cells)
+            //    {
+            //        array[j.RowIndex, j.ColumnIndex] = System.Environment.NewLine + j.Value;
+            //    }
+            //}
 
             benchmarkRichTextBox.Text = benchmarkRichTextBox.Text.Insert(0, Environment.NewLine +
                 @"###########################################################################################" + System.Environment.NewLine +
@@ -1640,13 +1666,15 @@ namespace DataAnalysisTool
                 @"Average payout time for the " + payoutTypeSelect.Text + " payout: "+elapsedTimeAverageActual+" Minutes" + System.Environment.NewLine +
                 @"Percent " + fasterSlower + " than the payout average: " + fasterSlowerPercent + "%" + System.Environment.NewLine +
                 @"" + System.Environment.NewLine +
-                @"" + System.Environment.NewLine +
-                @"********************PAYOUT TASKS - Longest Run Time First********************" + System.Environment.NewLine);
-            //select taskindex+1 as TaskNumber,TaskId,ElapsedTime from runlist where RunListNoRoot=15289990769180000 and TaskId is not null order by elapsedtime desc
-            foreach (var t in taskNumberArray)
-            {
-                benchmarkRichTextBox.Text +=  System.Environment.NewLine + t;
-            }
+                @"" + System.Environment.NewLine
+                //+@"********************PAYOUT TASKS - Longest Run Time First********************" + System.Environment.NewLine
+                );
+
+
+            //foreach (var a in array)
+            //{
+            //    benchmarkRichTextBox.Text +=  a;
+            //}
 
             //conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
