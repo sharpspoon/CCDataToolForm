@@ -1689,20 +1689,24 @@ namespace DataAnalysisTool
             {
                 using (TextWriter tw = new StreamWriter(fs))
                 {
-                    tw.WriteLine(benchmarkRichTextBox.Text);
-                    if (databaseSelect4.Text != "")
+                    for (int i = 0; i < benchmarkRichTextBox.Lines.Length; i++)
                     {
-                        try
-                        {
-                            tw.WriteLine("");
-                            tw.WriteLine("****************************************************");
-                            tw.WriteLine("********************PAYOUT STATS********************");
-                            tw.WriteLine("****************************************************");
-                            tw.WriteLine("");
-                            tw.WriteLine("Average payout time for the " + payoutTypeSelect.Text + " payout: ");
-                        }
-                        catch { return; }
+                        tw.WriteLine(benchmarkRichTextBox.Lines[i]);
                     }
+                    // setup for export
+                    benchmarkDataGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+                    benchmarkDataGridView.SelectAll();
+                    // hiding row headers to avoid extra \t in exported text
+                    var rowHeaders = benchmarkDataGridView.RowHeadersVisible;
+                    benchmarkDataGridView.RowHeadersVisible = false;
+
+                    // ! creating text from grid values
+                    string content = benchmarkDataGridView.GetClipboardContent().GetText();
+
+                    // restoring grid state
+                    benchmarkDataGridView.ClearSelection();
+                    benchmarkDataGridView.RowHeadersVisible = rowHeaders;
+                    tw.WriteLine(content);
                     tw.WriteLine("EOF.");
                 }
             }
