@@ -67,7 +67,6 @@ namespace DataAnalysisTool
                         toolStripStatusLabel4.Text = importedfileDataGridView[0, importedfileDataGridView.Rows.Count - 1].Value.ToString();
                         systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading XML: " + ofd.FileName + "...Done.");
                         toolStripStatusLabel2.Visible = true;
-                        toolStripStatusLabel3.Visible = true;
                         toolStripStatusLabel4.Visible = true;
                         toolStripStatusLabel5.Visible = true;
                     }
@@ -242,7 +241,6 @@ namespace DataAnalysisTool
                         toolStripStatusLabel13.Visible = true;
                         toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
                         toolStripStatusLabel2.Visible = true;
-                        toolStripStatusLabel3.Visible = true;
                         toolStripStatusLabel4.Visible = true;
                         toolStripStatusLabel5.Visible = true;
                         toolStripStatusLabel12.Visible = true;
@@ -508,7 +506,7 @@ namespace DataAnalysisTool
                     for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
                     {
                         var value = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex].Value.ToString();
-                        if (checkBox1.Checked)
+                        if (dateCheckerFindNullCheckbox.Checked)
                         {
                             if (value == " " || value == "" || value == null)
                             {
@@ -839,7 +837,7 @@ namespace DataAnalysisTool
         private void groupBox1_MouseHover(object sender, EventArgs e)
         {
             System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.groupBox1, "Select your required Import Format fields.");
+            ToolTip2.SetToolTip(this.importFormatSelectRequiredFieldsGroupBox, "Select your required Import Format fields.");
         }
 
         private void dateListBox_MouseEnter(object sender, EventArgs e)
@@ -881,7 +879,7 @@ namespace DataAnalysisTool
         private void checkBox2_MouseEnter(object sender, EventArgs e)
         {
             System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.checkBox2, "Do you want to find NULLs in the date column?");
+            ToolTip2.SetToolTip(this.importFormatFindNullCheckbox, "Do you want to find NULLs in the date column?");
         }
 
         private void button6_MouseEnter(object sender, EventArgs e)
@@ -976,7 +974,6 @@ namespace DataAnalysisTool
                         toolStripStatusLabel13.Visible = true;
                         toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
                         toolStripStatusLabel2.Visible = true;
-                        toolStripStatusLabel3.Visible = true;
                         toolStripStatusLabel4.Visible = true;
                         toolStripStatusLabel5.Visible = true;
                         toolStripStatusLabel12.Visible = true;
@@ -1024,11 +1021,14 @@ namespace DataAnalysisTool
                         toolStripStatusLabel13.Visible = true;
                         toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
                         toolStripStatusLabel2.Visible = true;
-                        toolStripStatusLabel3.Visible = true;
                         toolStripStatusLabel4.Visible = true;
                         toolStripStatusLabel5.Visible = true;
                         toolStripStatusLabel12.Visible = true;
                         systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading TXT: " + ofd.FileName + "...Done.");
+                    }
+                    else
+                    {
+                        importFormatProgressBar.Value = 0;
                     }
                 }
             }
@@ -1049,7 +1049,7 @@ namespace DataAnalysisTool
 
             var lines = File.ReadAllLines(fileName);
 
-            if (checkBox5.Checked == false)
+            if (importformatIncludeHeaderRowButton.Checked == false)
             {
                 importFormatProgressBar.Value = 50;
                 if (lines.Count() > 0)
@@ -1424,93 +1424,6 @@ namespace DataAnalysisTool
             }
         }
 
-        private void reportRadio_CheckedChanged(object sender, EventArgs e)
-        {
-            if (databaseSelect3.Text != "")
-            {
-
-                int value = databaseSelect3.SelectedIndex;
-                databaseSelect3.SelectedIndex = -1;
-                databaseSelect3.SelectedIndex = value;
-            }
-        }
-
-        private void statementRadio_CheckedChanged(object sender, EventArgs e)
-        {
-            if (databaseSelect3.Text != "")
-            {
-
-                int value = databaseSelect3.SelectedIndex;
-                databaseSelect3.SelectedIndex = -1;
-                databaseSelect3.SelectedIndex = value;
-            }
-        }
-
-        private void button26_Click(SqlBytes binary, SqlString path, SqlBoolean append)
-        {
-            try
-            {
-                System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\Reports_Statements");
-                if (!binary.IsNull && !path.IsNull && !append.IsNull)
-                {
-                    var dir = Path.GetDirectoryName(path.Value);
-                    if (!Directory.Exists(dir))
-                        Directory.CreateDirectory(dir);
-                    using (var fs = new FileStream(path.Value, append ? FileMode.Append : FileMode.OpenOrCreate))
-                    {
-                        byte[] byteArr = binary.Value;
-                        for (int i = 0; i < byteArr.Length; i++)
-                        {
-                            fs.WriteByte(byteArr[i]);
-                        };
-                    }
-                    return;
-                }
-                else
-                {
-                    return;
-                }
-            }
-            catch (Exception ex)
-            {
-                return;
-            }
-        }
-
-        private void button26_Click(object sender, EventArgs e)
-        {
-            if (reportStatementSelect.Text==null || reportStatementSelect.Text == "")
-            {
-                MessageBox.Show("Please select a statement or report to extract!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                return;
-            }
-            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect3.Text + "; Initial Catalog = master; Integrated Security = True");
-            conn.Open();
-            var selectClientName = "USE " + databaseSelect3.Text + " select  compiledreport from jasperreport where ReportId='"+reportStatementSelect.Text+"'";
-            var dataAdapter7 = new SqlDataAdapter(selectClientName, conn);
-            var ds7 = new DataSet();
-            dataAdapter7.Fill(ds7);
-            stagedDataGridView.DataSource = ds7.Tables[0];
-            var blob = stagedDataGridView.Rows[0].Cells[0];
-            //byte[] bytes = Encoding.ASCII.GetBytes(blob);
-            {
-                System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\test");
-                string path = Application.UserAppDataPath + @"\test\DataAnalysisTool_IFEF_Data_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
-                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
-                {
-                    using (TextWriter tw = new StreamWriter(fs))
-                    {
-                        try
-                        {
-                                tw.WriteLine(blob);
-                        }
-                        catch { return; }
-                    }
-                }
-                Process.Start(path);
-            }
-        }
-
         private void payoutBenchmarkButton_Click(object sender, EventArgs e)
         {
 
@@ -1638,15 +1551,6 @@ namespace DataAnalysisTool
             var ds8 = new DataSet();
             dataAdapter8.Fill(ds8);
             benchmarkDataGridView.DataSource = ds8.Tables[0];
-            //var array = new object[benchmarkDataGridView.RowCount, benchmarkDataGridView.ColumnCount];
-            //foreach (DataGridViewRow i in benchmarkDataGridView.Rows)
-            //{
-            //    if (i.IsNewRow) continue;
-            //    foreach (DataGridViewCell j in i.Cells)
-            //    {
-            //        array[j.RowIndex, j.ColumnIndex] = System.Environment.NewLine + j.Value;
-            //    }
-            //}
 
             benchmarkRichTextBox.Text = benchmarkRichTextBox.Text.Insert(0, Environment.NewLine +
                 @"###########################################################################################" + System.Environment.NewLine +
@@ -1657,7 +1561,7 @@ namespace DataAnalysisTool
                 @"Database: " +databaseSelect4.Text + System.Environment.NewLine +
                 @"Payout Type: " +payoutTypeSelect.Text + System.Environment.NewLine +
                 @"RunListNoRoot: " +runListNo +
-                @"" + System.Environment.NewLine+
+                @"" + System.Environment.NewLine +
                 @"" + System.Environment.NewLine +
                 @"****************************************************" +  System.Environment.NewLine +
                 @"********************PAYOUT STATS********************" +  System.Environment.NewLine +
@@ -1667,22 +1571,18 @@ namespace DataAnalysisTool
                 @"Percent " + fasterSlower + " than the payout average: " + fasterSlowerPercent + "%" + System.Environment.NewLine +
                 @"" + System.Environment.NewLine +
                 @"" + System.Environment.NewLine
-                //+@"********************PAYOUT TASKS - Longest Run Time First********************" + System.Environment.NewLine
                 );
-
-
-            //foreach (var a in array)
-            //{
-            //    benchmarkRichTextBox.Text +=  a;
-            //}
-
-            //conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
             benchmarkProgressBar.Value = 100;
         }
 
         private void benchmarkExportResults_Click(object sender, EventArgs e)
         {
+            if(benchmarkRichTextBox.Text == null || benchmarkRichTextBox.Text == "")
+            {
+                MessageBox.Show("There are no results to export!", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
             System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\Payout_Benchmarks");
             string path = Application.UserAppDataPath + @"\Payout_Benchmarks\DataAnalysisTool_PB_Data_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
@@ -1842,6 +1742,60 @@ namespace DataAnalysisTool
         Loading loading = new Loading();
         private void button27_Click(object sender, EventArgs e)
         {
+            SqlConnection pubsConn = new SqlConnection(@"Data Source = " + serverSelect5.Text + "; Initial Catalog = master; Integrated Security = True");
+            SqlCommand logoCMD = new SqlCommand(" USE " + databaseSelect5.Text + " select content from outfile where runlistno =15408457951330000", pubsConn);
+
+            FileStream fs;                          // Writes the BLOB to a file (*.bmp).
+            BinaryWriter bw;                        // Streams the BLOB to the FileStream object.
+
+            int bufferSize = 100;                   // Size of the BLOB buffer.
+            byte[] outbyte = new byte[bufferSize];  // The BLOB byte[] buffer to be filled by GetBytes.
+            long retval;                            // The bytes returned from GetBytes.
+            long startIndex = 0;                    // The starting position in the BLOB output.
+
+            string pub_id = "";                     // The publisher id to use in the file name.
+
+            // Open the connection and read data into the DataReader.
+            pubsConn.Open();
+            SqlDataReader myReader = logoCMD.ExecuteReader(CommandBehavior.SequentialAccess);
+
+            while (myReader.Read())
+            {
+                // Get the publisher id, which must occur before getting the logo.
+                // Create a file to hold the output.
+                fs = new FileStream("icmlog" + pub_id + ".log", FileMode.OpenOrCreate, FileAccess.Write);
+                bw = new BinaryWriter(fs);
+                // Reset the starting byte for the new BLOB.
+                MessageBox.Show(""+startIndex);
+                startIndex = 0;
+                // Read the bytes into outbyte[] and retain the number of bytes returned.
+                MessageBox.Show("outbyte" + outbyte);
+                MessageBox.Show("buffersize" + bufferSize);
+                retval = myReader.GetBytes(1, startIndex, outbyte, 0, bufferSize);//fails
+                MessageBox.Show("1859");
+                // Continue reading and writing while there are bytes beyond the size of the buffer.
+                while (retval == bufferSize)
+                {
+                    bw.Write(outbyte);
+                    bw.Flush();
+
+                    // Reposition the start index to the end of the last buffer and fill the buffer.
+                    startIndex += bufferSize;
+                    retval = myReader.GetBytes(1, startIndex, outbyte, 0, bufferSize);
+                }
+
+                // Write the remaining buffer.
+                bw.Write(outbyte, 0, (int)retval - 1);
+                bw.Flush();
+
+                // Close the output file.
+                bw.Close();
+                fs.Close();
+            }
+
+            // Close the reader and the connection.
+            myReader.Close();
+            pubsConn.Close();
         }
 
         private void button28_Click(object sender, EventArgs e)
@@ -1852,6 +1806,17 @@ namespace DataAnalysisTool
         private void benchmarkClearResults_Click(object sender, EventArgs e)
         {
             benchmarkRichTextBox.Clear();
+        }
+
+        private void legendButton_Click(object sender, EventArgs e)
+        {
+            DataGridViewLegend legend = new DataGridViewLegend();
+
+            while (Application.OpenForms.Count > 1)
+            {
+                Application.OpenForms[Application.OpenForms.Count - 1].Close();
+            }
+            legend.ShowDialog();
         }
 
 

@@ -445,7 +445,7 @@ namespace DataAnalysisTool
                                         {
                                             var value = importedfileDataGridView.Rows[i].Cells[dateCurIndex].Value.ToString();
 
-                                            if ((checkBox2.Checked) & (value == "" || value == null || value == " "))
+                                            if ((importFormatFindNullCheckbox.Checked) & (value == "" || value == null || value == " "))
                                             {
                                                 tw.WriteLine("NULL at line " + (i + 1) + ".");
                                             }

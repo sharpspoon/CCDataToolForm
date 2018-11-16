@@ -87,41 +87,6 @@ namespace DataAnalysisTool
             sqlQueryProgressBar.Value = 100;
         }
 
-        private void serverSelect3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-            importFormatProgressBar.Value = 0;
-            progressBar1.MarqueeAnimationSpeed = 1;
-            importFormatProgressBar.Value = 20;
-            importFormatProgressBar.Value = 40;
-            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect3.Text + "; Initial Catalog = master; Integrated Security = True");
-            try
-            {
-                conn.Open();
-                SqlCommand sc = new SqlCommand("SELECT name FROM [master].[sys].[databases] where name <> 'master' and name <> 'tempdb' and name <> 'model' and name <> 'msdb' and name <> 'DBAtools'", conn);
-                SqlDataReader reader;
-                reader = sc.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Columns.Add("name", typeof(string));
-                dt.Load(reader);
-                databaseSelect3.DataSource = dt;
-                databaseSelect3.DisplayMember = "name";
-                conn.Close();
-                connectionStatus.Visible = true;
-                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect3.Text + "...Done.");
-            }
-            catch
-            {
-                conn.Close();
-                MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                progressBar1.MarqueeAnimationSpeed = 0;
-                importFormatProgressBar.Value = 0;
-                return;
-            }
-            progressBar1.MarqueeAnimationSpeed = 0;
-            importFormatProgressBar.Value = 100;
-        }
-
 
 
         private void serverSelect4_SelectedIndexChanged(object sender, EventArgs e)
@@ -162,10 +127,10 @@ namespace DataAnalysisTool
         private void serverSelect5_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            importFormatProgressBar.Value = 0;
+            apiReadinessProgressBar.Value = 0;
             progressBar1.MarqueeAnimationSpeed = 1;
-            importFormatProgressBar.Value = 20;
-            importFormatProgressBar.Value = 40;
+            apiReadinessProgressBar.Value = 20;
+            apiReadinessProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect5.Text + "; Initial Catalog = master; Integrated Security = True");
             try
             {
@@ -187,11 +152,11 @@ namespace DataAnalysisTool
                 conn.Close();
                 MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
-                importFormatProgressBar.Value = 0;
+                apiReadinessProgressBar.Value = 0;
                 return;
             }
             progressBar1.MarqueeAnimationSpeed = 0;
-            importFormatProgressBar.Value = 100;
+            apiReadinessProgressBar.Value = 100;
         }
 
         private void runquery_Click(object sender, EventArgs e)
@@ -295,50 +260,7 @@ namespace DataAnalysisTool
         }
 
         //databaseSelect2 not used right now
-
-        private void databaseSelect3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            progressBar1.MarqueeAnimationSpeed = 1;
-            importFormatProgressBar.Value = 20;
-            importFormatProgressBar.Value = 40;
-            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect3.Text + "; Initial Catalog = master; Integrated Security = True");
-            conn.Open();
-            SqlCommand sc = new SqlCommand("use " + databaseSelect3.Text + " SELECT reportid as name FROM jasperreport  order by name", conn);
-            SqlCommand sc2 = new SqlCommand("use " + databaseSelect3.Text + " SELECT statementtemplateid AS name FROM statementtemplate order by name", conn);
-            
-            SqlDataReader reader;
-
-            try
-            {
-                if (reportRadio.Checked == true)
-                {
-                    reader = sc.ExecuteReader();
-                }
-                else
-                {
-                    reader = sc2.ExecuteReader();
-                }
-                DataTable dt = new DataTable();
-                dt.Columns.Add("name", typeof(string));
-                dt.Load(reader);
-                reportStatementSelect.DataSource = dt;
-                reportStatementSelect.DisplayMember = "name";
-                conn.Close();
-                connectionStatus.Visible = true;
-                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
-                toolStripStatusLabel5.Visible = true;
-                toolStripStatusLabel6.Visible = true;
-                toolStripStatusLabel7.Visible = true;
-            }
-            catch
-            {
-                return;
-            }
-
-            conn.Close();
-            progressBar1.MarqueeAnimationSpeed = 0;
-            importFormatProgressBar.Value = 100;
-        }
+        //databaseSelect3 not used right now
 
         private void databaseSelect4_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -501,7 +423,7 @@ namespace DataAnalysisTool
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc;
-            if (checkBox4.Checked == true)
+            if (importFormatShowOpenImportFormatsButton.Checked == true)
             {
                 sc = new SqlCommand("use " + databaseSelect.Text + " select importformatid as name from ImportFormat", conn);
             }
@@ -577,277 +499,277 @@ namespace DataAnalysisTool
                 if (inEntNameVar == "InAddress")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InAdjustmentHis")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InAssignment")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBroker")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerAdj")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerContract")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerCustomer")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerDetail")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerHierarchy")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerHold")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerLicense")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerReserveHis")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerRoleBroker")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerVendor")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCarrier")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCertificate")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCertificateDet")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCmsMarx")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCmsMmr")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCmsTrr")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCodSet")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCustomer")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCustomerApplication")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCustomerMatch")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCustPolicy")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InEducation")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InEntityRef")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InExtCrossRef")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InFile")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InFileImportFile")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InFileImportParm")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InFileImportRequest")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InFileRunList")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InIdentSet")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InMatchRule")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InPerfHis")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InPrepayBalanceAdjustment")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProAppointment")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProAppointmentDet")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProBackground")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProContract")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProContractDet")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProducer")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProducts")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProductsLicense")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProInsurance")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProLicense")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProLicenseDet")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InterestDetail")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InterestSet")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InTimeSheet")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InTranDefault")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InTranHead")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InVendor")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InVoucher")
                 {
                     label9.Text = inEntNameVar;
-                    checkBox3.Visible = true;
+                    importFormatDatabaseCheck1Button.Visible = true;
                 }
 
                 reqListBox.Items.Clear();
