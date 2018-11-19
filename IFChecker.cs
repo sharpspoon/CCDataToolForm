@@ -153,7 +153,7 @@ namespace DataAnalysisTool
             int[] intMaxLengthFieldArrayValue = Array.ConvertAll(maxLengthFieldArrayValue, s => int.Parse(s));
 
 
-            toolStripStatusLabel10.Text = importformatDataGridView.Rows.Count.ToString();
+            importFormatRowCountToolStripStatusLabel.Text = importformatDataGridView.Rows.Count.ToString();
             toolStripStatusLabel7.Text = stagedDataGridView.Rows.Count.ToString();
             
 
@@ -689,7 +689,7 @@ namespace DataAnalysisTool
                                     }
                                 }
                                 tw.WriteLine("");
-                                toolStripStatusLabel10.Text = importformatDataGridView.Rows.Count.ToString();
+                                importFormatRowCountToolStripStatusLabel.Text = importformatDataGridView.Rows.Count.ToString();
                                 toolStripStatusLabel7.Text = stagedDataGridView.Rows.Count.ToString();
                                 conn.Close();
                             }

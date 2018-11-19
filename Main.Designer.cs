@@ -81,61 +81,61 @@
             this.toolStripMenuItemMaximize = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemMinimize = new System.Windows.Forms.ToolStripMenuItem();
             this.dateCheckerGoButton = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkToolsDateCheckerGroupBox = new System.Windows.Forms.GroupBox();
             this.clearAllDateCheckerButton = new System.Windows.Forms.Button();
             this.selectAllDateCheckerButton = new System.Windows.Forms.Button();
             this.dateCheckerListBox = new System.Windows.Forms.ListBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.checkToolsSelectColumnsLabel = new System.Windows.Forms.Label();
             this.dateCheckerFindNullCheckbox = new System.Windows.Forms.CheckBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkToolsCellLengthCheckerGroupBox = new System.Windows.Forms.GroupBox();
             this.clearAllCellLengthChecker = new System.Windows.Forms.Button();
             this.selectAllCellLengthChecker = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.checkToolsMaxLengthLabel = new System.Windows.Forms.Label();
+            this.checkToolsMaxLengthTextBox = new System.Windows.Forms.TextBox();
             this.cellLengthCheckerListBox = new System.Windows.Forms.ListBox();
             this.cellLengthCheckerGoButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkToolsCellLengthLabel = new System.Windows.Forms.Label();
+            this.checkToolsSpecialCharacterCheckerGroupBox = new System.Windows.Forms.GroupBox();
             this.clearAllSpecialCharacterCheckerButton = new System.Windows.Forms.Button();
             this.selectAllSpecialCharacterCheckerButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkToolsSpecialCharacterTextBox = new System.Windows.Forms.TextBox();
             this.specialCharacterCheckerListBox = new System.Windows.Forms.ListBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.checkToolsSpecialCharsLabel = new System.Windows.Forms.Label();
+            this.checkToolsSelectColumnLabel = new System.Windows.Forms.Label();
             this.specialCharacterCheckerGoButton = new System.Windows.Forms.Button();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.checkToolsNullCheckerGroupBox = new System.Windows.Forms.GroupBox();
             this.clearAllNullCheckerButton = new System.Windows.Forms.Button();
             this.selectAllNullCheckerButton = new System.Windows.Forms.Button();
             this.nullCheckerListBox = new System.Windows.Forms.ListBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.checkToolsNullCheckerLabel = new System.Windows.Forms.Label();
             this.nullCheckerGoButton = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitRequiredImportFormat_ImportedFile = new System.Windows.Forms.SplitContainer();
             this.importformatDataGridView = new System.Windows.Forms.DataGridView();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.importFormatJumpToRowGroupBox = new System.Windows.Forms.GroupBox();
             this.importFormatJumpToRowButton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.importFormatJumpToRowTextBox = new System.Windows.Forms.TextBox();
+            this.importFormatReferenceTableGroupBox = new System.Windows.Forms.GroupBox();
+            this.importFormatTableSelectPictureBox = new System.Windows.Forms.PictureBox();
             this.tableSelect = new System.Windows.Forms.ComboBox();
             this.spDTAgetdatabasetableidsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.systemLogTextBox = new System.Windows.Forms.RichTextBox();
             this.pictureBoxLoading = new System.Windows.Forms.PictureBox();
             this.stagedDataGridView = new System.Windows.Forms.DataGridView();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.importFormatDatabasePictureBox = new System.Windows.Forms.PictureBox();
             this.launchSsmsButton = new System.Windows.Forms.Button();
             this.ifSelect = new System.Windows.Forms.ComboBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.importFormatServerSelectGroupBox = new System.Windows.Forms.GroupBox();
             this.icmVersion = new System.Windows.Forms.Label();
             this.importFormatShowOpenImportFormatsButton = new System.Windows.Forms.CheckBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.importFormatInTableLabel = new System.Windows.Forms.Label();
+            this.importFormatSelectPictureBox = new System.Windows.Forms.PictureBox();
+            this.importFormatServerPictureBox = new System.Windows.Forms.PictureBox();
             this.serverSelect = new System.Windows.Forms.ComboBox();
             this.databaseSelect = new System.Windows.Forms.ComboBox();
             this.masterDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -145,23 +145,23 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.progressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.connectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel16 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.unableToRegUserToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.seperator4ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.seperator3ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.seperator2ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel11 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel12 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel13 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.importFormatRowCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.seperator1ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.importFormatFileNameToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.importFormatActualFileNameToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel14 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel17 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel18 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel20 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.seperator5ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel19 = new System.Windows.Forms.ToolStripStatusLabel();
             this.importFormatGoButton = new System.Windows.Forms.Button();
             this.maintabControl = new System.Windows.Forms.TabControl();
@@ -177,9 +177,9 @@
             this.openXlsButton = new System.Windows.Forms.Button();
             this.openCsvButton = new System.Windows.Forms.Button();
             this.importFormatProgressBar = new System.Windows.Forms.ProgressBar();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.importFormatDatabaseChecksGroupBox = new System.Windows.Forms.GroupBox();
             this.importFormatDatabaseCheck1Button = new System.Windows.Forms.CheckBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.importFormatSelectDateGroupBox = new System.Windows.Forms.GroupBox();
             this.importFormatFindNullCheckbox = new System.Windows.Forms.CheckBox();
             this.dateListBox = new System.Windows.Forms.ListBox();
             this.dateFormat = new System.Windows.Forms.Label();
@@ -194,9 +194,9 @@
             this.sqlQuery = new System.Windows.Forms.TabPage();
             this.sqlQueryDataGridView = new System.Windows.Forms.DataGridView();
             this.sqlQueryProgressBar = new System.Windows.Forms.ProgressBar();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.sqlDatabasePictureBox = new System.Windows.Forms.PictureBox();
             this.executeQueryButton = new System.Windows.Forms.Button();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.sqlQueryServerPictureBox = new System.Windows.Forms.PictureBox();
             this.databaseSelect2 = new System.Windows.Forms.ComboBox();
             this.serverSelect2 = new System.Windows.Forms.ComboBox();
             this.queryWindow = new System.Windows.Forms.RichTextBox();
@@ -208,28 +208,28 @@
             this.benchmarkClearResults = new System.Windows.Forms.Button();
             this.benchmarkExportResults = new System.Windows.Forms.Button();
             this.benchmarkProgressBar = new System.Windows.Forms.ProgressBar();
-            this.payoutStatusGroupBox = new System.Windows.Forms.GroupBox();
+            this.payoutBenchmarkPayoutStatusGroupBox = new System.Windows.Forms.GroupBox();
             this.reversedRadioButton = new System.Windows.Forms.RadioButton();
             this.finalizedRadioButton = new System.Windows.Forms.RadioButton();
             this.pendingRadioButton = new System.Windows.Forms.RadioButton();
             this.payoutBenchmarkButton = new System.Windows.Forms.Button();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.payoutBenchmarkServerSelectGroupBox = new System.Windows.Forms.GroupBox();
             this.payoutTimeSelect = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.payoutTimerPictureBox = new System.Windows.Forms.PictureBox();
+            this.payoutSelectPictureBox = new System.Windows.Forms.PictureBox();
             this.payoutSelect = new System.Windows.Forms.ComboBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.payoutTypePictureBox = new System.Windows.Forms.PictureBox();
+            this.payoutDatabasePictureBox = new System.Windows.Forms.PictureBox();
+            this.payoutServerPictureBox = new System.Windows.Forms.PictureBox();
             this.payoutTypeSelect = new System.Windows.Forms.ComboBox();
             this.serverSelect4 = new System.Windows.Forms.ComboBox();
             this.databaseSelect4 = new System.Windows.Forms.ComboBox();
             this.api = new System.Windows.Forms.TabPage();
             this.apiReadinessProgressBar = new System.Windows.Forms.ProgressBar();
             this.apiReadinessCheckGoButton = new System.Windows.Forms.Button();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.apiReadinessServerSelectGroupBox = new System.Windows.Forms.GroupBox();
+            this.apiDatabasePictureBox = new System.Windows.Forms.PictureBox();
+            this.apiServerPictureBox = new System.Windows.Forms.PictureBox();
             this.serverSelect5 = new System.Windows.Forms.ComboBox();
             this.databaseSelect5 = new System.Windows.Forms.ComboBox();
             this.stagedData = new System.Windows.Forms.TabPage();
@@ -239,10 +239,10 @@
             this.mainLogSplitContainer = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.checkToolsDateCheckerGroupBox.SuspendLayout();
+            this.checkToolsCellLengthCheckerGroupBox.SuspendLayout();
+            this.checkToolsSpecialCharacterCheckerGroupBox.SuspendLayout();
+            this.checkToolsNullCheckerGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -252,17 +252,17 @@
             this.splitRequiredImportFormat_ImportedFile.Panel2.SuspendLayout();
             this.splitRequiredImportFormat_ImportedFile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.importformatDataGridView)).BeginInit();
-            this.groupBox10.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.importFormatJumpToRowGroupBox.SuspendLayout();
+            this.importFormatReferenceTableGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.importFormatTableSelectPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stagedDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.importFormatDatabasePictureBox)).BeginInit();
+            this.importFormatServerSelectGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.importFormatSelectPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.importFormatServerPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).BeginInit();
@@ -270,31 +270,31 @@
             this.statusStrip1.SuspendLayout();
             this.maintabControl.SuspendLayout();
             this.importFormat.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            this.importFormatDatabaseChecksGroupBox.SuspendLayout();
+            this.importFormatSelectDateGroupBox.SuspendLayout();
             this.importFormatSelectRequiredFieldsGroupBox.SuspendLayout();
             this.checkTools.SuspendLayout();
             this.sqlQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sqlQueryDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqlDatabasePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqlQueryServerPictureBox)).BeginInit();
             this.benchmark.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.benchmarkSplitContainer)).BeginInit();
             this.benchmarkSplitContainer.Panel1.SuspendLayout();
             this.benchmarkSplitContainer.Panel2.SuspendLayout();
             this.benchmarkSplitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.benchmarkDataGridView)).BeginInit();
-            this.payoutStatusGroupBox.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            this.payoutBenchmarkPayoutStatusGroupBox.SuspendLayout();
+            this.payoutBenchmarkServerSelectGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.payoutTimerPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payoutSelectPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payoutTypePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payoutDatabasePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payoutServerPictureBox)).BeginInit();
             this.api.SuspendLayout();
-            this.groupBox14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            this.apiReadinessServerSelectGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.apiDatabasePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apiServerPictureBox)).BeginInit();
             this.stagedData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainLogSplitContainer)).BeginInit();
             this.mainLogSplitContainer.Panel1.SuspendLayout();
@@ -631,21 +631,21 @@
             this.dateCheckerGoButton.UseVisualStyleBackColor = false;
             this.dateCheckerGoButton.Click += new System.EventHandler(this.dateConvert_Click1);
             // 
-            // groupBox2
+            // checkToolsDateCheckerGroupBox
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.AliceBlue;
-            this.groupBox2.Controls.Add(this.clearAllDateCheckerButton);
-            this.groupBox2.Controls.Add(this.selectAllDateCheckerButton);
-            this.groupBox2.Controls.Add(this.dateCheckerListBox);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.dateCheckerFindNullCheckbox);
-            this.groupBox2.Controls.Add(this.dateCheckerGoButton);
-            this.groupBox2.Location = new System.Drawing.Point(6, 1);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(216, 103);
-            this.groupBox2.TabIndex = 23;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Date Checker:";
+            this.checkToolsDateCheckerGroupBox.BackColor = System.Drawing.Color.AliceBlue;
+            this.checkToolsDateCheckerGroupBox.Controls.Add(this.clearAllDateCheckerButton);
+            this.checkToolsDateCheckerGroupBox.Controls.Add(this.selectAllDateCheckerButton);
+            this.checkToolsDateCheckerGroupBox.Controls.Add(this.dateCheckerListBox);
+            this.checkToolsDateCheckerGroupBox.Controls.Add(this.checkToolsSelectColumnsLabel);
+            this.checkToolsDateCheckerGroupBox.Controls.Add(this.dateCheckerFindNullCheckbox);
+            this.checkToolsDateCheckerGroupBox.Controls.Add(this.dateCheckerGoButton);
+            this.checkToolsDateCheckerGroupBox.Location = new System.Drawing.Point(6, 1);
+            this.checkToolsDateCheckerGroupBox.Name = "checkToolsDateCheckerGroupBox";
+            this.checkToolsDateCheckerGroupBox.Size = new System.Drawing.Size(216, 103);
+            this.checkToolsDateCheckerGroupBox.TabIndex = 23;
+            this.checkToolsDateCheckerGroupBox.TabStop = false;
+            this.checkToolsDateCheckerGroupBox.Text = "Date Checker:";
             // 
             // clearAllDateCheckerButton
             // 
@@ -678,14 +678,14 @@
             this.dateCheckerListBox.Size = new System.Drawing.Size(117, 82);
             this.dateCheckerListBox.TabIndex = 28;
             // 
-            // label4
+            // checkToolsSelectColumnsLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Select Column(s):";
+            this.checkToolsSelectColumnsLabel.AutoSize = true;
+            this.checkToolsSelectColumnsLabel.Location = new System.Drawing.Point(6, 14);
+            this.checkToolsSelectColumnsLabel.Name = "checkToolsSelectColumnsLabel";
+            this.checkToolsSelectColumnsLabel.Size = new System.Drawing.Size(89, 13);
+            this.checkToolsSelectColumnsLabel.TabIndex = 25;
+            this.checkToolsSelectColumnsLabel.Text = "Select Column(s):";
             // 
             // dateCheckerFindNullCheckbox
             // 
@@ -698,22 +698,22 @@
             this.dateCheckerFindNullCheckbox.Text = "Find NULL?";
             this.dateCheckerFindNullCheckbox.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // checkToolsCellLengthCheckerGroupBox
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.AliceBlue;
-            this.groupBox3.Controls.Add(this.clearAllCellLengthChecker);
-            this.groupBox3.Controls.Add(this.selectAllCellLengthChecker);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Controls.Add(this.cellLengthCheckerListBox);
-            this.groupBox3.Controls.Add(this.cellLengthCheckerGoButton);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Location = new System.Drawing.Point(673, 1);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(216, 103);
-            this.groupBox3.TabIndex = 24;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Cell Length Checker:";
+            this.checkToolsCellLengthCheckerGroupBox.BackColor = System.Drawing.Color.AliceBlue;
+            this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.clearAllCellLengthChecker);
+            this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.selectAllCellLengthChecker);
+            this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.checkToolsMaxLengthLabel);
+            this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.checkToolsMaxLengthTextBox);
+            this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.cellLengthCheckerListBox);
+            this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.cellLengthCheckerGoButton);
+            this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.checkToolsCellLengthLabel);
+            this.checkToolsCellLengthCheckerGroupBox.Location = new System.Drawing.Point(673, 1);
+            this.checkToolsCellLengthCheckerGroupBox.Name = "checkToolsCellLengthCheckerGroupBox";
+            this.checkToolsCellLengthCheckerGroupBox.Size = new System.Drawing.Size(216, 103);
+            this.checkToolsCellLengthCheckerGroupBox.TabIndex = 24;
+            this.checkToolsCellLengthCheckerGroupBox.TabStop = false;
+            this.checkToolsCellLengthCheckerGroupBox.Text = "Cell Length Checker:";
             // 
             // clearAllCellLengthChecker
             // 
@@ -737,23 +737,23 @@
             this.selectAllCellLengthChecker.UseVisualStyleBackColor = true;
             this.selectAllCellLengthChecker.Click += new System.EventHandler(this.button20_Click);
             // 
-            // label3
+            // checkToolsMaxLengthLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Max length:";
+            this.checkToolsMaxLengthLabel.AutoSize = true;
+            this.checkToolsMaxLengthLabel.Location = new System.Drawing.Point(7, 29);
+            this.checkToolsMaxLengthLabel.Name = "checkToolsMaxLengthLabel";
+            this.checkToolsMaxLengthLabel.Size = new System.Drawing.Size(62, 13);
+            this.checkToolsMaxLengthLabel.TabIndex = 24;
+            this.checkToolsMaxLengthLabel.Text = "Max length:";
             // 
-            // textBox4
+            // checkToolsMaxLengthTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(68, 27);
-            this.textBox4.MaxLength = 3;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(24, 20);
-            this.textBox4.TabIndex = 23;
-            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
+            this.checkToolsMaxLengthTextBox.Location = new System.Drawing.Point(68, 27);
+            this.checkToolsMaxLengthTextBox.MaxLength = 3;
+            this.checkToolsMaxLengthTextBox.Name = "checkToolsMaxLengthTextBox";
+            this.checkToolsMaxLengthTextBox.Size = new System.Drawing.Size(24, 20);
+            this.checkToolsMaxLengthTextBox.TabIndex = 23;
+            this.checkToolsMaxLengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // cellLengthCheckerListBox
             // 
@@ -783,31 +783,31 @@
             this.cellLengthCheckerGoButton.UseVisualStyleBackColor = false;
             this.cellLengthCheckerGoButton.Click += new System.EventHandler(this.cellLength_Click);
             // 
-            // label2
+            // checkToolsCellLengthLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Select Column(s):";
+            this.checkToolsCellLengthLabel.AutoSize = true;
+            this.checkToolsCellLengthLabel.Location = new System.Drawing.Point(6, 14);
+            this.checkToolsCellLengthLabel.Name = "checkToolsCellLengthLabel";
+            this.checkToolsCellLengthLabel.Size = new System.Drawing.Size(89, 13);
+            this.checkToolsCellLengthLabel.TabIndex = 22;
+            this.checkToolsCellLengthLabel.Text = "Select Column(s):";
             // 
-            // groupBox4
+            // checkToolsSpecialCharacterCheckerGroupBox
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.AliceBlue;
-            this.groupBox4.Controls.Add(this.clearAllSpecialCharacterCheckerButton);
-            this.groupBox4.Controls.Add(this.selectAllSpecialCharacterCheckerButton);
-            this.groupBox4.Controls.Add(this.textBox1);
-            this.groupBox4.Controls.Add(this.specialCharacterCheckerListBox);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.specialCharacterCheckerGoButton);
-            this.groupBox4.Location = new System.Drawing.Point(228, 1);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(216, 103);
-            this.groupBox4.TabIndex = 26;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Special Character Checker:";
+            this.checkToolsSpecialCharacterCheckerGroupBox.BackColor = System.Drawing.Color.AliceBlue;
+            this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.clearAllSpecialCharacterCheckerButton);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.selectAllSpecialCharacterCheckerButton);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.checkToolsSpecialCharacterTextBox);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.specialCharacterCheckerListBox);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.checkToolsSpecialCharsLabel);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.checkToolsSelectColumnLabel);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.specialCharacterCheckerGoButton);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Location = new System.Drawing.Point(228, 1);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Name = "checkToolsSpecialCharacterCheckerGroupBox";
+            this.checkToolsSpecialCharacterCheckerGroupBox.Size = new System.Drawing.Size(216, 103);
+            this.checkToolsSpecialCharacterCheckerGroupBox.TabIndex = 26;
+            this.checkToolsSpecialCharacterCheckerGroupBox.TabStop = false;
+            this.checkToolsSpecialCharacterCheckerGroupBox.Text = "Special Character Checker:";
             // 
             // clearAllSpecialCharacterCheckerButton
             // 
@@ -831,13 +831,13 @@
             this.selectAllSpecialCharacterCheckerButton.UseVisualStyleBackColor = true;
             this.selectAllSpecialCharacterCheckerButton.Click += new System.EventHandler(this.button18_Click);
             // 
-            // textBox1
+            // checkToolsSpecialCharacterTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 27);
-            this.textBox1.MaxLength = 1;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(16, 20);
-            this.textBox1.TabIndex = 30;
+            this.checkToolsSpecialCharacterTextBox.Location = new System.Drawing.Point(72, 27);
+            this.checkToolsSpecialCharacterTextBox.MaxLength = 1;
+            this.checkToolsSpecialCharacterTextBox.Name = "checkToolsSpecialCharacterTextBox";
+            this.checkToolsSpecialCharacterTextBox.Size = new System.Drawing.Size(16, 20);
+            this.checkToolsSpecialCharacterTextBox.TabIndex = 30;
             // 
             // specialCharacterCheckerListBox
             // 
@@ -848,23 +848,23 @@
             this.specialCharacterCheckerListBox.Size = new System.Drawing.Size(117, 82);
             this.specialCharacterCheckerListBox.TabIndex = 31;
             // 
-            // label7
+            // checkToolsSpecialCharsLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 29);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 13);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Special char:";
+            this.checkToolsSpecialCharsLabel.AutoSize = true;
+            this.checkToolsSpecialCharsLabel.Location = new System.Drawing.Point(7, 29);
+            this.checkToolsSpecialCharsLabel.Name = "checkToolsSpecialCharsLabel";
+            this.checkToolsSpecialCharsLabel.Size = new System.Drawing.Size(69, 13);
+            this.checkToolsSpecialCharsLabel.TabIndex = 30;
+            this.checkToolsSpecialCharsLabel.Text = "Special char:";
             // 
-            // label5
+            // checkToolsSelectColumnLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 13);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Select Column(s):";
+            this.checkToolsSelectColumnLabel.AutoSize = true;
+            this.checkToolsSelectColumnLabel.Location = new System.Drawing.Point(6, 14);
+            this.checkToolsSelectColumnLabel.Name = "checkToolsSelectColumnLabel";
+            this.checkToolsSelectColumnLabel.Size = new System.Drawing.Size(89, 13);
+            this.checkToolsSelectColumnLabel.TabIndex = 25;
+            this.checkToolsSelectColumnLabel.Text = "Select Column(s):";
             // 
             // specialCharacterCheckerGoButton
             // 
@@ -904,20 +904,20 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // groupBox5
+            // checkToolsNullCheckerGroupBox
             // 
-            this.groupBox5.BackColor = System.Drawing.Color.AliceBlue;
-            this.groupBox5.Controls.Add(this.clearAllNullCheckerButton);
-            this.groupBox5.Controls.Add(this.selectAllNullCheckerButton);
-            this.groupBox5.Controls.Add(this.nullCheckerListBox);
-            this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Controls.Add(this.nullCheckerGoButton);
-            this.groupBox5.Location = new System.Drawing.Point(452, 1);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(216, 103);
-            this.groupBox5.TabIndex = 27;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "NULL Checker:";
+            this.checkToolsNullCheckerGroupBox.BackColor = System.Drawing.Color.AliceBlue;
+            this.checkToolsNullCheckerGroupBox.Controls.Add(this.clearAllNullCheckerButton);
+            this.checkToolsNullCheckerGroupBox.Controls.Add(this.selectAllNullCheckerButton);
+            this.checkToolsNullCheckerGroupBox.Controls.Add(this.nullCheckerListBox);
+            this.checkToolsNullCheckerGroupBox.Controls.Add(this.checkToolsNullCheckerLabel);
+            this.checkToolsNullCheckerGroupBox.Controls.Add(this.nullCheckerGoButton);
+            this.checkToolsNullCheckerGroupBox.Location = new System.Drawing.Point(452, 1);
+            this.checkToolsNullCheckerGroupBox.Name = "checkToolsNullCheckerGroupBox";
+            this.checkToolsNullCheckerGroupBox.Size = new System.Drawing.Size(216, 103);
+            this.checkToolsNullCheckerGroupBox.TabIndex = 27;
+            this.checkToolsNullCheckerGroupBox.TabStop = false;
+            this.checkToolsNullCheckerGroupBox.Text = "NULL Checker:";
             // 
             // clearAllNullCheckerButton
             // 
@@ -950,14 +950,14 @@
             this.nullCheckerListBox.Size = new System.Drawing.Size(117, 82);
             this.nullCheckerListBox.TabIndex = 32;
             // 
-            // label6
+            // checkToolsNullCheckerLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 14);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 13);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Select Column(s):";
+            this.checkToolsNullCheckerLabel.AutoSize = true;
+            this.checkToolsNullCheckerLabel.Location = new System.Drawing.Point(6, 14);
+            this.checkToolsNullCheckerLabel.Name = "checkToolsNullCheckerLabel";
+            this.checkToolsNullCheckerLabel.Size = new System.Drawing.Size(89, 13);
+            this.checkToolsNullCheckerLabel.TabIndex = 25;
+            this.checkToolsNullCheckerLabel.Text = "Select Column(s):";
             // 
             // nullCheckerGoButton
             // 
@@ -1000,7 +1000,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox8);
+            this.splitContainer1.Panel2.Controls.Add(this.importFormatReferenceTableGroupBox);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
             this.splitContainer1.Size = new System.Drawing.Size(1494, 579);
@@ -1022,7 +1022,7 @@
             // 
             // splitRequiredImportFormat_ImportedFile.Panel2
             // 
-            this.splitRequiredImportFormat_ImportedFile.Panel2.Controls.Add(this.groupBox10);
+            this.splitRequiredImportFormat_ImportedFile.Panel2.Controls.Add(this.importFormatJumpToRowGroupBox);
             this.splitRequiredImportFormat_ImportedFile.Panel2.Controls.Add(this.importedfileDataGridView);
             this.splitRequiredImportFormat_ImportedFile.Size = new System.Drawing.Size(1036, 579);
             this.splitRequiredImportFormat_ImportedFile.SplitterDistance = 363;
@@ -1066,17 +1066,17 @@
             this.importformatDataGridView.TabIndex = 0;
             this.importformatDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
-            // groupBox10
+            // importFormatJumpToRowGroupBox
             // 
-            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox10.Controls.Add(this.importFormatJumpToRowButton);
-            this.groupBox10.Controls.Add(this.textBox2);
-            this.groupBox10.Location = new System.Drawing.Point(3, 94);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(170, 38);
-            this.groupBox10.TabIndex = 36;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Jump to row:";
+            this.importFormatJumpToRowGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowButton);
+            this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowTextBox);
+            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(3, 91);
+            this.importFormatJumpToRowGroupBox.Name = "importFormatJumpToRowGroupBox";
+            this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(170, 38);
+            this.importFormatJumpToRowGroupBox.TabIndex = 36;
+            this.importFormatJumpToRowGroupBox.TabStop = false;
+            this.importFormatJumpToRowGroupBox.Text = "Jump to row:";
             // 
             // importFormatJumpToRowButton
             // 
@@ -1098,36 +1098,36 @@
             this.importFormatJumpToRowButton.UseVisualStyleBackColor = false;
             this.importFormatJumpToRowButton.Click += new System.EventHandler(this.button25_Click);
             // 
-            // textBox2
+            // importFormatJumpToRowTextBox
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(7, 15);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(48, 20);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
+            this.importFormatJumpToRowTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.importFormatJumpToRowTextBox.Location = new System.Drawing.Point(7, 15);
+            this.importFormatJumpToRowTextBox.Name = "importFormatJumpToRowTextBox";
+            this.importFormatJumpToRowTextBox.Size = new System.Drawing.Size(48, 20);
+            this.importFormatJumpToRowTextBox.TabIndex = 0;
+            this.importFormatJumpToRowTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
-            // groupBox8
+            // importFormatReferenceTableGroupBox
             // 
-            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox8.BackColor = System.Drawing.Color.AliceBlue;
-            this.groupBox8.Controls.Add(this.pictureBox5);
-            this.groupBox8.Controls.Add(this.tableSelect);
-            this.groupBox8.Location = new System.Drawing.Point(3, 540);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(169, 36);
-            this.groupBox8.TabIndex = 33;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Select Table to Reference";
+            this.importFormatReferenceTableGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.importFormatReferenceTableGroupBox.BackColor = System.Drawing.Color.AliceBlue;
+            this.importFormatReferenceTableGroupBox.Controls.Add(this.importFormatTableSelectPictureBox);
+            this.importFormatReferenceTableGroupBox.Controls.Add(this.tableSelect);
+            this.importFormatReferenceTableGroupBox.Location = new System.Drawing.Point(3, 540);
+            this.importFormatReferenceTableGroupBox.Name = "importFormatReferenceTableGroupBox";
+            this.importFormatReferenceTableGroupBox.Size = new System.Drawing.Size(169, 36);
+            this.importFormatReferenceTableGroupBox.TabIndex = 33;
+            this.importFormatReferenceTableGroupBox.TabStop = false;
+            this.importFormatReferenceTableGroupBox.Text = "Select Table to Reference";
             // 
-            // pictureBox5
+            // importFormatTableSelectPictureBox
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(6, 15);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox5.TabIndex = 35;
-            this.pictureBox5.TabStop = false;
+            this.importFormatTableSelectPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("importFormatTableSelectPictureBox.Image")));
+            this.importFormatTableSelectPictureBox.Location = new System.Drawing.Point(6, 15);
+            this.importFormatTableSelectPictureBox.Name = "importFormatTableSelectPictureBox";
+            this.importFormatTableSelectPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.importFormatTableSelectPictureBox.TabIndex = 35;
+            this.importFormatTableSelectPictureBox.TabStop = false;
             // 
             // tableSelect
             // 
@@ -1245,14 +1245,14 @@
             this.stagedDataGridView.TabIndex = 32;
             this.stagedDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
-            // pictureBox3
+            // importFormatDatabasePictureBox
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(6, 52);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox3.TabIndex = 33;
-            this.pictureBox3.TabStop = false;
+            this.importFormatDatabasePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("importFormatDatabasePictureBox.Image")));
+            this.importFormatDatabasePictureBox.Location = new System.Drawing.Point(6, 52);
+            this.importFormatDatabasePictureBox.Name = "importFormatDatabasePictureBox";
+            this.importFormatDatabasePictureBox.Size = new System.Drawing.Size(16, 16);
+            this.importFormatDatabasePictureBox.TabIndex = 33;
+            this.importFormatDatabasePictureBox.TabStop = false;
             // 
             // launchSsmsButton
             // 
@@ -1289,25 +1289,25 @@
             this.ifSelect.SelectedIndexChanged += new System.EventHandler(this.ifSelect_SelectedIndexChanged);
             this.ifSelect.MouseEnter += new System.EventHandler(this.ifSelect_MouseHover);
             // 
-            // groupBox7
+            // importFormatServerSelectGroupBox
             // 
-            this.groupBox7.BackColor = System.Drawing.Color.AliceBlue;
-            this.groupBox7.Controls.Add(this.icmVersion);
-            this.groupBox7.Controls.Add(this.importFormatShowOpenImportFormatsButton);
-            this.groupBox7.Controls.Add(this.label9);
-            this.groupBox7.Controls.Add(this.pictureBox4);
-            this.groupBox7.Controls.Add(this.pictureBox3);
-            this.groupBox7.Controls.Add(this.pictureBox2);
-            this.groupBox7.Controls.Add(this.ifSelect);
-            this.groupBox7.Controls.Add(this.serverSelect);
-            this.groupBox7.Controls.Add(this.databaseSelect);
-            this.groupBox7.Location = new System.Drawing.Point(464, 6);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(222, 112);
-            this.groupBox7.TabIndex = 26;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Select Server/Database/Import Format:";
-            this.groupBox7.MouseHover += new System.EventHandler(this.groupBox7_MouseHover);
+            this.importFormatServerSelectGroupBox.BackColor = System.Drawing.Color.AliceBlue;
+            this.importFormatServerSelectGroupBox.Controls.Add(this.icmVersion);
+            this.importFormatServerSelectGroupBox.Controls.Add(this.importFormatShowOpenImportFormatsButton);
+            this.importFormatServerSelectGroupBox.Controls.Add(this.importFormatInTableLabel);
+            this.importFormatServerSelectGroupBox.Controls.Add(this.importFormatSelectPictureBox);
+            this.importFormatServerSelectGroupBox.Controls.Add(this.importFormatDatabasePictureBox);
+            this.importFormatServerSelectGroupBox.Controls.Add(this.importFormatServerPictureBox);
+            this.importFormatServerSelectGroupBox.Controls.Add(this.ifSelect);
+            this.importFormatServerSelectGroupBox.Controls.Add(this.serverSelect);
+            this.importFormatServerSelectGroupBox.Controls.Add(this.databaseSelect);
+            this.importFormatServerSelectGroupBox.Location = new System.Drawing.Point(464, 6);
+            this.importFormatServerSelectGroupBox.Name = "importFormatServerSelectGroupBox";
+            this.importFormatServerSelectGroupBox.Size = new System.Drawing.Size(222, 112);
+            this.importFormatServerSelectGroupBox.TabIndex = 26;
+            this.importFormatServerSelectGroupBox.TabStop = false;
+            this.importFormatServerSelectGroupBox.Text = "Select Server/Database/Import Format:";
+            this.importFormatServerSelectGroupBox.MouseHover += new System.EventHandler(this.groupBox7_MouseHover);
             // 
             // icmVersion
             // 
@@ -1331,33 +1331,33 @@
             this.importFormatShowOpenImportFormatsButton.UseVisualStyleBackColor = true;
             this.importFormatShowOpenImportFormatsButton.Click += new System.EventHandler(this.checkBox4_Click);
             // 
-            // label9
+            // importFormatInTableLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(53, 94);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 13);
-            this.label9.TabIndex = 42;
-            this.label9.Text = "inTable";
+            this.importFormatInTableLabel.AutoSize = true;
+            this.importFormatInTableLabel.Location = new System.Drawing.Point(53, 94);
+            this.importFormatInTableLabel.Name = "importFormatInTableLabel";
+            this.importFormatInTableLabel.Size = new System.Drawing.Size(42, 13);
+            this.importFormatInTableLabel.TabIndex = 42;
+            this.importFormatInTableLabel.Text = "inTable";
             // 
-            // pictureBox4
+            // importFormatSelectPictureBox
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(6, 72);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox4.TabIndex = 34;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.MouseEnter += new System.EventHandler(this.ifSelect_MouseHover);
+            this.importFormatSelectPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("importFormatSelectPictureBox.Image")));
+            this.importFormatSelectPictureBox.Location = new System.Drawing.Point(6, 72);
+            this.importFormatSelectPictureBox.Name = "importFormatSelectPictureBox";
+            this.importFormatSelectPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.importFormatSelectPictureBox.TabIndex = 34;
+            this.importFormatSelectPictureBox.TabStop = false;
+            this.importFormatSelectPictureBox.MouseEnter += new System.EventHandler(this.ifSelect_MouseHover);
             // 
-            // pictureBox2
+            // importFormatServerPictureBox
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(6, 32);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
+            this.importFormatServerPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("importFormatServerPictureBox.Image")));
+            this.importFormatServerPictureBox.Location = new System.Drawing.Point(6, 32);
+            this.importFormatServerPictureBox.Name = "importFormatServerPictureBox";
+            this.importFormatServerPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.importFormatServerPictureBox.TabIndex = 6;
+            this.importFormatServerPictureBox.TabStop = false;
             // 
             // serverSelect
             // 
@@ -1407,23 +1407,23 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.progressBar1,
             this.connectionStatus,
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel16,
+            this.unableToRegUserToolStripStatusLabel,
+            this.seperator4ToolStripStatusLabel,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel4,
-            this.toolStripStatusLabel5,
+            this.seperator3ToolStripStatusLabel,
             this.toolStripStatusLabel6,
             this.toolStripStatusLabel7,
-            this.toolStripStatusLabel8,
+            this.seperator2ToolStripStatusLabel,
             this.toolStripStatusLabel9,
-            this.toolStripStatusLabel10,
-            this.toolStripStatusLabel11,
-            this.toolStripStatusLabel12,
-            this.toolStripStatusLabel13,
+            this.importFormatRowCountToolStripStatusLabel,
+            this.seperator1ToolStripStatusLabel,
+            this.importFormatFileNameToolStripStatusLabel,
+            this.importFormatActualFileNameToolStripStatusLabel,
             this.toolStripStatusLabel14,
             this.toolStripStatusLabel17,
             this.toolStripStatusLabel18,
-            this.toolStripStatusLabel20,
+            this.seperator5ToolStripStatusLabel,
             this.toolStripStatusLabel19});
             this.statusStrip1.Location = new System.Drawing.Point(0, 856);
             this.statusStrip1.Name = "statusStrip1";
@@ -1449,20 +1449,20 @@
             this.connectionStatus.Visible = false;
             this.connectionStatus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // toolStripStatusLabel1
+            // unableToRegUserToolStripStatusLabel
             // 
-            this.toolStripStatusLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel1.Image")));
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(137, 17);
-            this.toolStripStatusLabel1.Text = "Unable to Register User";
-            this.toolStripStatusLabel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.unableToRegUserToolStripStatusLabel.Image = ((System.Drawing.Image)(resources.GetObject("unableToRegUserToolStripStatusLabel.Image")));
+            this.unableToRegUserToolStripStatusLabel.Name = "unableToRegUserToolStripStatusLabel";
+            this.unableToRegUserToolStripStatusLabel.Size = new System.Drawing.Size(137, 17);
+            this.unableToRegUserToolStripStatusLabel.Text = "Unable to Register User";
+            this.unableToRegUserToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // toolStripStatusLabel16
+            // seperator4ToolStripStatusLabel
             // 
-            this.toolStripStatusLabel16.Name = "toolStripStatusLabel16";
-            this.toolStripStatusLabel16.Size = new System.Drawing.Size(11, 17);
-            this.toolStripStatusLabel16.Text = "|";
-            this.toolStripStatusLabel16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.seperator4ToolStripStatusLabel.Name = "seperator4ToolStripStatusLabel";
+            this.seperator4ToolStripStatusLabel.Size = new System.Drawing.Size(11, 17);
+            this.seperator4ToolStripStatusLabel.Text = "|";
+            this.seperator4ToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel2
             // 
@@ -1481,13 +1481,13 @@
             this.toolStripStatusLabel4.Click += new System.EventHandler(this.toolStripStatusLabel4_Click);
             this.toolStripStatusLabel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // toolStripStatusLabel5
+            // seperator3ToolStripStatusLabel
             // 
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(11, 17);
-            this.toolStripStatusLabel5.Text = "|";
-            this.toolStripStatusLabel5.Visible = false;
-            this.toolStripStatusLabel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.seperator3ToolStripStatusLabel.Name = "seperator3ToolStripStatusLabel";
+            this.seperator3ToolStripStatusLabel.Size = new System.Drawing.Size(11, 17);
+            this.seperator3ToolStripStatusLabel.Text = "|";
+            this.seperator3ToolStripStatusLabel.Visible = false;
+            this.seperator3ToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel6
             // 
@@ -1505,13 +1505,13 @@
             this.toolStripStatusLabel7.Visible = false;
             this.toolStripStatusLabel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // toolStripStatusLabel8
+            // seperator2ToolStripStatusLabel
             // 
-            this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(11, 17);
-            this.toolStripStatusLabel8.Text = "|";
-            this.toolStripStatusLabel8.Visible = false;
-            this.toolStripStatusLabel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.seperator2ToolStripStatusLabel.Name = "seperator2ToolStripStatusLabel";
+            this.seperator2ToolStripStatusLabel.Size = new System.Drawing.Size(11, 17);
+            this.seperator2ToolStripStatusLabel.Text = "|";
+            this.seperator2ToolStripStatusLabel.Visible = false;
+            this.seperator2ToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel9
             // 
@@ -1521,38 +1521,38 @@
             this.toolStripStatusLabel9.Visible = false;
             this.toolStripStatusLabel9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // toolStripStatusLabel10
+            // importFormatRowCountToolStripStatusLabel
             // 
-            this.toolStripStatusLabel10.Name = "toolStripStatusLabel10";
-            this.toolStripStatusLabel10.Size = new System.Drawing.Size(13, 17);
-            this.toolStripStatusLabel10.Text = "0";
-            this.toolStripStatusLabel10.Visible = false;
-            this.toolStripStatusLabel10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.importFormatRowCountToolStripStatusLabel.Name = "importFormatRowCountToolStripStatusLabel";
+            this.importFormatRowCountToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.importFormatRowCountToolStripStatusLabel.Text = "0";
+            this.importFormatRowCountToolStripStatusLabel.Visible = false;
+            this.importFormatRowCountToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // toolStripStatusLabel11
+            // seperator1ToolStripStatusLabel
             // 
-            this.toolStripStatusLabel11.Name = "toolStripStatusLabel11";
-            this.toolStripStatusLabel11.Size = new System.Drawing.Size(11, 17);
-            this.toolStripStatusLabel11.Text = "|";
-            this.toolStripStatusLabel11.Visible = false;
-            this.toolStripStatusLabel11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.seperator1ToolStripStatusLabel.Name = "seperator1ToolStripStatusLabel";
+            this.seperator1ToolStripStatusLabel.Size = new System.Drawing.Size(11, 17);
+            this.seperator1ToolStripStatusLabel.Text = "|";
+            this.seperator1ToolStripStatusLabel.Visible = false;
+            this.seperator1ToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // toolStripStatusLabel12
+            // importFormatFileNameToolStripStatusLabel
             // 
-            this.toolStripStatusLabel12.Name = "toolStripStatusLabel12";
-            this.toolStripStatusLabel12.Size = new System.Drawing.Size(104, 17);
-            this.toolStripStatusLabel12.Text = "Imported File Name:";
-            this.toolStripStatusLabel12.Visible = false;
-            this.toolStripStatusLabel12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.importFormatFileNameToolStripStatusLabel.Name = "importFormatFileNameToolStripStatusLabel";
+            this.importFormatFileNameToolStripStatusLabel.Size = new System.Drawing.Size(104, 17);
+            this.importFormatFileNameToolStripStatusLabel.Text = "Imported File Name:";
+            this.importFormatFileNameToolStripStatusLabel.Visible = false;
+            this.importFormatFileNameToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // toolStripStatusLabel13
+            // importFormatActualFileNameToolStripStatusLabel
             // 
-            this.toolStripStatusLabel13.Name = "toolStripStatusLabel13";
-            this.toolStripStatusLabel13.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabel13.Size = new System.Drawing.Size(31, 17);
-            this.toolStripStatusLabel13.Text = "NULL";
-            this.toolStripStatusLabel13.Visible = false;
-            this.toolStripStatusLabel13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.importFormatActualFileNameToolStripStatusLabel.Name = "importFormatActualFileNameToolStripStatusLabel";
+            this.importFormatActualFileNameToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.importFormatActualFileNameToolStripStatusLabel.Size = new System.Drawing.Size(31, 17);
+            this.importFormatActualFileNameToolStripStatusLabel.Text = "NULL";
+            this.importFormatActualFileNameToolStripStatusLabel.Visible = false;
+            this.importFormatActualFileNameToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // toolStripStatusLabel14
             // 
@@ -1580,11 +1580,11 @@
             this.toolStripStatusLabel18.Text = "SAP";
             this.toolStripStatusLabel18.Click += new System.EventHandler(this.toolStripStatusLabel18_Click);
             // 
-            // toolStripStatusLabel20
+            // seperator5ToolStripStatusLabel
             // 
-            this.toolStripStatusLabel20.Name = "toolStripStatusLabel20";
-            this.toolStripStatusLabel20.Size = new System.Drawing.Size(11, 17);
-            this.toolStripStatusLabel20.Text = "|";
+            this.seperator5ToolStripStatusLabel.Name = "seperator5ToolStripStatusLabel";
+            this.seperator5ToolStripStatusLabel.Size = new System.Drawing.Size(11, 17);
+            this.seperator5ToolStripStatusLabel.Text = "|";
             // 
             // toolStripStatusLabel19
             // 
@@ -1648,11 +1648,11 @@
             this.importFormat.Controls.Add(this.openXlsButton);
             this.importFormat.Controls.Add(this.openCsvButton);
             this.importFormat.Controls.Add(this.importFormatProgressBar);
-            this.importFormat.Controls.Add(this.groupBox9);
+            this.importFormat.Controls.Add(this.importFormatDatabaseChecksGroupBox);
             this.importFormat.Controls.Add(this.splitContainer1);
-            this.importFormat.Controls.Add(this.groupBox6);
+            this.importFormat.Controls.Add(this.importFormatSelectDateGroupBox);
             this.importFormat.Controls.Add(this.importFormatSelectRequiredFieldsGroupBox);
-            this.importFormat.Controls.Add(this.groupBox7);
+            this.importFormat.Controls.Add(this.importFormatServerSelectGroupBox);
             this.importFormat.Controls.Add(this.importFormatGoButton);
             this.importFormat.ForeColor = System.Drawing.SystemColors.ControlText;
             this.importFormat.Location = new System.Drawing.Point(4, 22);
@@ -1837,15 +1837,15 @@
             this.importFormatProgressBar.TabIndex = 7;
             this.importFormatProgressBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // groupBox9
+            // importFormatDatabaseChecksGroupBox
             // 
-            this.groupBox9.Controls.Add(this.importFormatDatabaseCheck1Button);
-            this.groupBox9.Location = new System.Drawing.Point(1249, 6);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(177, 40);
-            this.groupBox9.TabIndex = 6;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Database Checks";
+            this.importFormatDatabaseChecksGroupBox.Controls.Add(this.importFormatDatabaseCheck1Button);
+            this.importFormatDatabaseChecksGroupBox.Location = new System.Drawing.Point(1249, 6);
+            this.importFormatDatabaseChecksGroupBox.Name = "importFormatDatabaseChecksGroupBox";
+            this.importFormatDatabaseChecksGroupBox.Size = new System.Drawing.Size(177, 40);
+            this.importFormatDatabaseChecksGroupBox.TabIndex = 6;
+            this.importFormatDatabaseChecksGroupBox.TabStop = false;
+            this.importFormatDatabaseChecksGroupBox.Text = "Database Checks";
             // 
             // importFormatDatabaseCheck1Button
             // 
@@ -1859,21 +1859,21 @@
             this.importFormatDatabaseCheck1Button.UseVisualStyleBackColor = true;
             this.importFormatDatabaseCheck1Button.Visible = false;
             // 
-            // groupBox6
+            // importFormatSelectDateGroupBox
             // 
-            this.groupBox6.Controls.Add(this.importFormatFindNullCheckbox);
-            this.groupBox6.Controls.Add(this.dateListBox);
-            this.groupBox6.Controls.Add(this.dateFormat);
-            this.groupBox6.Controls.Add(this.dateComboBoxSeperator);
-            this.groupBox6.Controls.Add(this.dateComboBox3);
-            this.groupBox6.Controls.Add(this.dateComboBox2);
-            this.groupBox6.Controls.Add(this.dateComboBox1);
-            this.groupBox6.Location = new System.Drawing.Point(831, 6);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(412, 112);
-            this.groupBox6.TabIndex = 41;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Select Date Format and Date Columns";
+            this.importFormatSelectDateGroupBox.Controls.Add(this.importFormatFindNullCheckbox);
+            this.importFormatSelectDateGroupBox.Controls.Add(this.dateListBox);
+            this.importFormatSelectDateGroupBox.Controls.Add(this.dateFormat);
+            this.importFormatSelectDateGroupBox.Controls.Add(this.dateComboBoxSeperator);
+            this.importFormatSelectDateGroupBox.Controls.Add(this.dateComboBox3);
+            this.importFormatSelectDateGroupBox.Controls.Add(this.dateComboBox2);
+            this.importFormatSelectDateGroupBox.Controls.Add(this.dateComboBox1);
+            this.importFormatSelectDateGroupBox.Location = new System.Drawing.Point(831, 6);
+            this.importFormatSelectDateGroupBox.Name = "importFormatSelectDateGroupBox";
+            this.importFormatSelectDateGroupBox.Size = new System.Drawing.Size(412, 112);
+            this.importFormatSelectDateGroupBox.TabIndex = 41;
+            this.importFormatSelectDateGroupBox.TabStop = false;
+            this.importFormatSelectDateGroupBox.Text = "Select Date Format and Date Columns";
             // 
             // importFormatFindNullCheckbox
             // 
@@ -2031,10 +2031,10 @@
             // 
             this.checkTools.BackColor = System.Drawing.Color.AliceBlue;
             this.checkTools.Controls.Add(this.checkToolsProgressBar);
-            this.checkTools.Controls.Add(this.groupBox2);
-            this.checkTools.Controls.Add(this.groupBox3);
-            this.checkTools.Controls.Add(this.groupBox4);
-            this.checkTools.Controls.Add(this.groupBox5);
+            this.checkTools.Controls.Add(this.checkToolsDateCheckerGroupBox);
+            this.checkTools.Controls.Add(this.checkToolsCellLengthCheckerGroupBox);
+            this.checkTools.Controls.Add(this.checkToolsSpecialCharacterCheckerGroupBox);
+            this.checkTools.Controls.Add(this.checkToolsNullCheckerGroupBox);
             this.checkTools.Location = new System.Drawing.Point(4, 22);
             this.checkTools.Name = "checkTools";
             this.checkTools.Padding = new System.Windows.Forms.Padding(3);
@@ -2060,9 +2060,9 @@
             this.sqlQuery.BackColor = System.Drawing.Color.AliceBlue;
             this.sqlQuery.Controls.Add(this.sqlQueryDataGridView);
             this.sqlQuery.Controls.Add(this.sqlQueryProgressBar);
-            this.sqlQuery.Controls.Add(this.pictureBox8);
+            this.sqlQuery.Controls.Add(this.sqlDatabasePictureBox);
             this.sqlQuery.Controls.Add(this.executeQueryButton);
-            this.sqlQuery.Controls.Add(this.pictureBox7);
+            this.sqlQuery.Controls.Add(this.sqlQueryServerPictureBox);
             this.sqlQuery.Controls.Add(this.databaseSelect2);
             this.sqlQuery.Controls.Add(this.serverSelect2);
             this.sqlQuery.Controls.Add(this.queryWindow);
@@ -2123,14 +2123,14 @@
             this.sqlQueryProgressBar.Size = new System.Drawing.Size(1667, 21);
             this.sqlQueryProgressBar.TabIndex = 44;
             // 
-            // pictureBox8
+            // sqlDatabasePictureBox
             // 
-            this.pictureBox8.Image = global::DataAnalysisTool.Properties.Resources.database_16xLG;
-            this.pictureBox8.Location = new System.Drawing.Point(3, 29);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox8.TabIndex = 43;
-            this.pictureBox8.TabStop = false;
+            this.sqlDatabasePictureBox.Image = global::DataAnalysisTool.Properties.Resources.database_16xLG;
+            this.sqlDatabasePictureBox.Location = new System.Drawing.Point(3, 29);
+            this.sqlDatabasePictureBox.Name = "sqlDatabasePictureBox";
+            this.sqlDatabasePictureBox.Size = new System.Drawing.Size(16, 16);
+            this.sqlDatabasePictureBox.TabIndex = 43;
+            this.sqlDatabasePictureBox.TabStop = false;
             // 
             // executeQueryButton
             // 
@@ -2153,14 +2153,14 @@
             this.executeQueryButton.UseVisualStyleBackColor = false;
             this.executeQueryButton.Click += new System.EventHandler(this.runquery_Click);
             // 
-            // pictureBox7
+            // sqlQueryServerPictureBox
             // 
-            this.pictureBox7.Image = global::DataAnalysisTool.Properties.Resources.DatabaseOptions_12882;
-            this.pictureBox7.Location = new System.Drawing.Point(3, 7);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox7.TabIndex = 43;
-            this.pictureBox7.TabStop = false;
+            this.sqlQueryServerPictureBox.Image = global::DataAnalysisTool.Properties.Resources.DatabaseOptions_12882;
+            this.sqlQueryServerPictureBox.Location = new System.Drawing.Point(3, 7);
+            this.sqlQueryServerPictureBox.Name = "sqlQueryServerPictureBox";
+            this.sqlQueryServerPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.sqlQueryServerPictureBox.TabIndex = 43;
+            this.sqlQueryServerPictureBox.TabStop = false;
             // 
             // databaseSelect2
             // 
@@ -2212,9 +2212,9 @@
             this.benchmark.Controls.Add(this.benchmarkClearResults);
             this.benchmark.Controls.Add(this.benchmarkExportResults);
             this.benchmark.Controls.Add(this.benchmarkProgressBar);
-            this.benchmark.Controls.Add(this.payoutStatusGroupBox);
+            this.benchmark.Controls.Add(this.payoutBenchmarkPayoutStatusGroupBox);
             this.benchmark.Controls.Add(this.payoutBenchmarkButton);
-            this.benchmark.Controls.Add(this.groupBox12);
+            this.benchmark.Controls.Add(this.payoutBenchmarkServerSelectGroupBox);
             this.benchmark.Location = new System.Drawing.Point(4, 22);
             this.benchmark.Name = "benchmark";
             this.benchmark.Size = new System.Drawing.Size(1502, 736);
@@ -2340,18 +2340,18 @@
             this.benchmarkProgressBar.Size = new System.Drawing.Size(1667, 21);
             this.benchmarkProgressBar.TabIndex = 40;
             // 
-            // payoutStatusGroupBox
+            // payoutBenchmarkPayoutStatusGroupBox
             // 
-            this.payoutStatusGroupBox.BackColor = System.Drawing.Color.AliceBlue;
-            this.payoutStatusGroupBox.Controls.Add(this.reversedRadioButton);
-            this.payoutStatusGroupBox.Controls.Add(this.finalizedRadioButton);
-            this.payoutStatusGroupBox.Controls.Add(this.pendingRadioButton);
-            this.payoutStatusGroupBox.Location = new System.Drawing.Point(236, 6);
-            this.payoutStatusGroupBox.Name = "payoutStatusGroupBox";
-            this.payoutStatusGroupBox.Size = new System.Drawing.Size(218, 40);
-            this.payoutStatusGroupBox.TabIndex = 37;
-            this.payoutStatusGroupBox.TabStop = false;
-            this.payoutStatusGroupBox.Text = "Payout Status";
+            this.payoutBenchmarkPayoutStatusGroupBox.BackColor = System.Drawing.Color.AliceBlue;
+            this.payoutBenchmarkPayoutStatusGroupBox.Controls.Add(this.reversedRadioButton);
+            this.payoutBenchmarkPayoutStatusGroupBox.Controls.Add(this.finalizedRadioButton);
+            this.payoutBenchmarkPayoutStatusGroupBox.Controls.Add(this.pendingRadioButton);
+            this.payoutBenchmarkPayoutStatusGroupBox.Location = new System.Drawing.Point(236, 6);
+            this.payoutBenchmarkPayoutStatusGroupBox.Name = "payoutBenchmarkPayoutStatusGroupBox";
+            this.payoutBenchmarkPayoutStatusGroupBox.Size = new System.Drawing.Size(218, 40);
+            this.payoutBenchmarkPayoutStatusGroupBox.TabIndex = 37;
+            this.payoutBenchmarkPayoutStatusGroupBox.TabStop = false;
+            this.payoutBenchmarkPayoutStatusGroupBox.Text = "Payout Status";
             // 
             // reversedRadioButton
             // 
@@ -2409,25 +2409,25 @@
             this.payoutBenchmarkButton.UseVisualStyleBackColor = false;
             this.payoutBenchmarkButton.Click += new System.EventHandler(this.payoutBenchmarkButton_Click);
             // 
-            // groupBox12
+            // payoutBenchmarkServerSelectGroupBox
             // 
-            this.groupBox12.BackColor = System.Drawing.Color.AliceBlue;
-            this.groupBox12.Controls.Add(this.payoutTimeSelect);
-            this.groupBox12.Controls.Add(this.pictureBox1);
-            this.groupBox12.Controls.Add(this.pictureBox15);
-            this.groupBox12.Controls.Add(this.payoutSelect);
-            this.groupBox12.Controls.Add(this.pictureBox12);
-            this.groupBox12.Controls.Add(this.pictureBox13);
-            this.groupBox12.Controls.Add(this.pictureBox14);
-            this.groupBox12.Controls.Add(this.payoutTypeSelect);
-            this.groupBox12.Controls.Add(this.serverSelect4);
-            this.groupBox12.Controls.Add(this.databaseSelect4);
-            this.groupBox12.Location = new System.Drawing.Point(8, 6);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(222, 112);
-            this.groupBox12.TabIndex = 28;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Select Server/Database/Payout";
+            this.payoutBenchmarkServerSelectGroupBox.BackColor = System.Drawing.Color.AliceBlue;
+            this.payoutBenchmarkServerSelectGroupBox.Controls.Add(this.payoutTimeSelect);
+            this.payoutBenchmarkServerSelectGroupBox.Controls.Add(this.payoutTimerPictureBox);
+            this.payoutBenchmarkServerSelectGroupBox.Controls.Add(this.payoutSelectPictureBox);
+            this.payoutBenchmarkServerSelectGroupBox.Controls.Add(this.payoutSelect);
+            this.payoutBenchmarkServerSelectGroupBox.Controls.Add(this.payoutTypePictureBox);
+            this.payoutBenchmarkServerSelectGroupBox.Controls.Add(this.payoutDatabasePictureBox);
+            this.payoutBenchmarkServerSelectGroupBox.Controls.Add(this.payoutServerPictureBox);
+            this.payoutBenchmarkServerSelectGroupBox.Controls.Add(this.payoutTypeSelect);
+            this.payoutBenchmarkServerSelectGroupBox.Controls.Add(this.serverSelect4);
+            this.payoutBenchmarkServerSelectGroupBox.Controls.Add(this.databaseSelect4);
+            this.payoutBenchmarkServerSelectGroupBox.Location = new System.Drawing.Point(8, 6);
+            this.payoutBenchmarkServerSelectGroupBox.Name = "payoutBenchmarkServerSelectGroupBox";
+            this.payoutBenchmarkServerSelectGroupBox.Size = new System.Drawing.Size(222, 112);
+            this.payoutBenchmarkServerSelectGroupBox.TabIndex = 28;
+            this.payoutBenchmarkServerSelectGroupBox.TabStop = false;
+            this.payoutBenchmarkServerSelectGroupBox.Text = "Select Server/Database/Payout";
             // 
             // payoutTimeSelect
             // 
@@ -2442,23 +2442,23 @@
             this.payoutTimeSelect.Size = new System.Drawing.Size(90, 21);
             this.payoutTimeSelect.TabIndex = 37;
             // 
-            // pictureBox1
+            // payoutTimerPictureBox
             // 
-            this.pictureBox1.Image = global::DataAnalysisTool.Properties.Resources.timer_16xLG;
-            this.pictureBox1.Location = new System.Drawing.Point(107, 85);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.TabIndex = 37;
-            this.pictureBox1.TabStop = false;
+            this.payoutTimerPictureBox.Image = global::DataAnalysisTool.Properties.Resources.timer_16xLG;
+            this.payoutTimerPictureBox.Location = new System.Drawing.Point(107, 85);
+            this.payoutTimerPictureBox.Name = "payoutTimerPictureBox";
+            this.payoutTimerPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.payoutTimerPictureBox.TabIndex = 37;
+            this.payoutTimerPictureBox.TabStop = false;
             // 
-            // pictureBox15
+            // payoutSelectPictureBox
             // 
-            this.pictureBox15.Image = global::DataAnalysisTool.Properties.Resources.calendar_16xLG;
-            this.pictureBox15.Location = new System.Drawing.Point(6, 85);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox15.TabIndex = 36;
-            this.pictureBox15.TabStop = false;
+            this.payoutSelectPictureBox.Image = global::DataAnalysisTool.Properties.Resources.calendar_16xLG;
+            this.payoutSelectPictureBox.Location = new System.Drawing.Point(6, 85);
+            this.payoutSelectPictureBox.Name = "payoutSelectPictureBox";
+            this.payoutSelectPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.payoutSelectPictureBox.TabIndex = 36;
+            this.payoutSelectPictureBox.TabStop = false;
             // 
             // payoutSelect
             // 
@@ -2474,32 +2474,32 @@
             this.payoutSelect.TabIndex = 35;
             this.payoutSelect.SelectedIndexChanged += new System.EventHandler(this.payoutSelect_SelectedIndexChanged);
             // 
-            // pictureBox12
+            // payoutTypePictureBox
             // 
-            this.pictureBox12.Image = global::DataAnalysisTool.Properties.Resources.Money_16xMD;
-            this.pictureBox12.Location = new System.Drawing.Point(6, 63);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox12.TabIndex = 34;
-            this.pictureBox12.TabStop = false;
+            this.payoutTypePictureBox.Image = global::DataAnalysisTool.Properties.Resources.Money_16xMD;
+            this.payoutTypePictureBox.Location = new System.Drawing.Point(6, 63);
+            this.payoutTypePictureBox.Name = "payoutTypePictureBox";
+            this.payoutTypePictureBox.Size = new System.Drawing.Size(16, 16);
+            this.payoutTypePictureBox.TabIndex = 34;
+            this.payoutTypePictureBox.TabStop = false;
             // 
-            // pictureBox13
+            // payoutDatabasePictureBox
             // 
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(6, 41);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox13.TabIndex = 33;
-            this.pictureBox13.TabStop = false;
+            this.payoutDatabasePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("payoutDatabasePictureBox.Image")));
+            this.payoutDatabasePictureBox.Location = new System.Drawing.Point(6, 41);
+            this.payoutDatabasePictureBox.Name = "payoutDatabasePictureBox";
+            this.payoutDatabasePictureBox.Size = new System.Drawing.Size(16, 16);
+            this.payoutDatabasePictureBox.TabIndex = 33;
+            this.payoutDatabasePictureBox.TabStop = false;
             // 
-            // pictureBox14
+            // payoutServerPictureBox
             // 
-            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox14.TabIndex = 6;
-            this.pictureBox14.TabStop = false;
+            this.payoutServerPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("payoutServerPictureBox.Image")));
+            this.payoutServerPictureBox.Location = new System.Drawing.Point(6, 19);
+            this.payoutServerPictureBox.Name = "payoutServerPictureBox";
+            this.payoutServerPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.payoutServerPictureBox.TabIndex = 6;
+            this.payoutServerPictureBox.TabStop = false;
             // 
             // payoutTypeSelect
             // 
@@ -2552,7 +2552,7 @@
             this.api.BackColor = System.Drawing.Color.AliceBlue;
             this.api.Controls.Add(this.apiReadinessProgressBar);
             this.api.Controls.Add(this.apiReadinessCheckGoButton);
-            this.api.Controls.Add(this.groupBox14);
+            this.api.Controls.Add(this.apiReadinessServerSelectGroupBox);
             this.api.Location = new System.Drawing.Point(4, 22);
             this.api.Name = "api";
             this.api.Size = new System.Drawing.Size(1502, 736);
@@ -2592,37 +2592,37 @@
             this.apiReadinessCheckGoButton.UseVisualStyleBackColor = false;
             this.apiReadinessCheckGoButton.Click += new System.EventHandler(this.apiReadinessCheckButton_Click);
             // 
-            // groupBox14
+            // apiReadinessServerSelectGroupBox
             // 
-            this.groupBox14.BackColor = System.Drawing.Color.AliceBlue;
-            this.groupBox14.Controls.Add(this.pictureBox18);
-            this.groupBox14.Controls.Add(this.pictureBox19);
-            this.groupBox14.Controls.Add(this.serverSelect5);
-            this.groupBox14.Controls.Add(this.databaseSelect5);
-            this.groupBox14.Location = new System.Drawing.Point(8, 6);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(222, 112);
-            this.groupBox14.TabIndex = 29;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "Select Server/Database";
+            this.apiReadinessServerSelectGroupBox.BackColor = System.Drawing.Color.AliceBlue;
+            this.apiReadinessServerSelectGroupBox.Controls.Add(this.apiDatabasePictureBox);
+            this.apiReadinessServerSelectGroupBox.Controls.Add(this.apiServerPictureBox);
+            this.apiReadinessServerSelectGroupBox.Controls.Add(this.serverSelect5);
+            this.apiReadinessServerSelectGroupBox.Controls.Add(this.databaseSelect5);
+            this.apiReadinessServerSelectGroupBox.Location = new System.Drawing.Point(8, 6);
+            this.apiReadinessServerSelectGroupBox.Name = "apiReadinessServerSelectGroupBox";
+            this.apiReadinessServerSelectGroupBox.Size = new System.Drawing.Size(222, 112);
+            this.apiReadinessServerSelectGroupBox.TabIndex = 29;
+            this.apiReadinessServerSelectGroupBox.TabStop = false;
+            this.apiReadinessServerSelectGroupBox.Text = "Select Server/Database";
             // 
-            // pictureBox18
+            // apiDatabasePictureBox
             // 
-            this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
-            this.pictureBox18.Location = new System.Drawing.Point(6, 41);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox18.TabIndex = 33;
-            this.pictureBox18.TabStop = false;
+            this.apiDatabasePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("apiDatabasePictureBox.Image")));
+            this.apiDatabasePictureBox.Location = new System.Drawing.Point(6, 41);
+            this.apiDatabasePictureBox.Name = "apiDatabasePictureBox";
+            this.apiDatabasePictureBox.Size = new System.Drawing.Size(16, 16);
+            this.apiDatabasePictureBox.TabIndex = 33;
+            this.apiDatabasePictureBox.TabStop = false;
             // 
-            // pictureBox19
+            // apiServerPictureBox
             // 
-            this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
-            this.pictureBox19.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox19.TabIndex = 6;
-            this.pictureBox19.TabStop = false;
+            this.apiServerPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("apiServerPictureBox.Image")));
+            this.apiServerPictureBox.Location = new System.Drawing.Point(6, 19);
+            this.apiServerPictureBox.Name = "apiServerPictureBox";
+            this.apiServerPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.apiServerPictureBox.TabIndex = 6;
+            this.apiServerPictureBox.TabStop = false;
             // 
             // serverSelect5
             // 
@@ -2732,14 +2732,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.checkToolsDateCheckerGroupBox.ResumeLayout(false);
+            this.checkToolsDateCheckerGroupBox.PerformLayout();
+            this.checkToolsCellLengthCheckerGroupBox.ResumeLayout(false);
+            this.checkToolsCellLengthCheckerGroupBox.PerformLayout();
+            this.checkToolsSpecialCharacterCheckerGroupBox.ResumeLayout(false);
+            this.checkToolsSpecialCharacterCheckerGroupBox.PerformLayout();
+            this.checkToolsNullCheckerGroupBox.ResumeLayout(false);
+            this.checkToolsNullCheckerGroupBox.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -2749,19 +2749,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitRequiredImportFormat_ImportedFile)).EndInit();
             this.splitRequiredImportFormat_ImportedFile.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.importformatDataGridView)).EndInit();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.importFormatJumpToRowGroupBox.ResumeLayout(false);
+            this.importFormatJumpToRowGroupBox.PerformLayout();
+            this.importFormatReferenceTableGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.importFormatTableSelectPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stagedDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.importFormatDatabasePictureBox)).EndInit();
+            this.importFormatServerSelectGroupBox.ResumeLayout(false);
+            this.importFormatServerSelectGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.importFormatSelectPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.importFormatServerPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qBQueryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSetBindingSource)).EndInit();
@@ -2771,16 +2771,16 @@
             this.maintabControl.ResumeLayout(false);
             this.importFormat.ResumeLayout(false);
             this.importFormat.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.importFormatDatabaseChecksGroupBox.ResumeLayout(false);
+            this.importFormatDatabaseChecksGroupBox.PerformLayout();
+            this.importFormatSelectDateGroupBox.ResumeLayout(false);
+            this.importFormatSelectDateGroupBox.PerformLayout();
             this.importFormatSelectRequiredFieldsGroupBox.ResumeLayout(false);
             this.checkTools.ResumeLayout(false);
             this.sqlQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sqlQueryDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqlDatabasePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqlQueryServerPictureBox)).EndInit();
             this.benchmark.ResumeLayout(false);
             this.benchmarkSplitContainer.Panel1.ResumeLayout(false);
             this.benchmarkSplitContainer.Panel2.ResumeLayout(false);
@@ -2788,18 +2788,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.benchmarkSplitContainer)).EndInit();
             this.benchmarkSplitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.benchmarkDataGridView)).EndInit();
-            this.payoutStatusGroupBox.ResumeLayout(false);
-            this.payoutStatusGroupBox.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            this.payoutBenchmarkPayoutStatusGroupBox.ResumeLayout(false);
+            this.payoutBenchmarkPayoutStatusGroupBox.PerformLayout();
+            this.payoutBenchmarkServerSelectGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.payoutTimerPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payoutSelectPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payoutTypePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payoutDatabasePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payoutServerPictureBox)).EndInit();
             this.api.ResumeLayout(false);
-            this.groupBox14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            this.apiReadinessServerSelectGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.apiDatabasePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apiServerPictureBox)).EndInit();
             this.stagedData.ResumeLayout(false);
             this.stagedData.PerformLayout();
             this.mainLogSplitContainer.Panel1.ResumeLayout(false);
@@ -2826,28 +2826,28 @@
         private System.Windows.Forms.ToolStripMenuItem cSVToolStripMenuItem1;
         private System.Windows.Forms.Button dateCheckerGoButton;
         private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox checkToolsDateCheckerGroupBox;
+        private System.Windows.Forms.GroupBox checkToolsCellLengthCheckerGroupBox;
+        private System.Windows.Forms.Label checkToolsCellLengthLabel;
         private System.Windows.Forms.Button cellLengthCheckerGoButton;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label checkToolsMaxLengthLabel;
+        private System.Windows.Forms.TextBox checkToolsMaxLengthTextBox;
+        private System.Windows.Forms.Label checkToolsSelectColumnsLabel;
         private System.Windows.Forms.ToolStripMenuItem xLSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xLSToolStripMenuItem1;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox checkToolsSpecialCharacterCheckerGroupBox;
+        private System.Windows.Forms.Label checkToolsSelectColumnLabel;
         private System.Windows.Forms.Button specialCharacterCheckerGoButton;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox checkToolsNullCheckerGroupBox;
+        private System.Windows.Forms.Label checkToolsNullCheckerLabel;
         private System.Windows.Forms.Button nullCheckerGoButton;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label checkToolsSpecialCharsLabel;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource qBQueryBindingSource;
         private System.Windows.Forms.ComboBox databaseSelect;
@@ -2856,25 +2856,25 @@
         private System.Windows.Forms.BindingSource masterDataSet1BindingSource;
         private System.Windows.Forms.BindingSource databaseFileSizeBindingSource;
         private System.Windows.Forms.ComboBox serverSelect;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox importFormatServerSelectGroupBox;
+        private System.Windows.Forms.GroupBox importFormatReferenceTableGroupBox;
         private System.Windows.Forms.ComboBox tableSelect;
         private System.Windows.Forms.Button launchSsmsButton;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ComboBox ifSelect;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel unableToRegUserToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
+        private System.Windows.Forms.ToolStripStatusLabel seperator3ToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
+        private System.Windows.Forms.ToolStripStatusLabel seperator2ToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel10;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel11;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel12;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel13;
+        private System.Windows.Forms.ToolStripStatusLabel importFormatRowCountToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel seperator1ToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel importFormatFileNameToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel importFormatActualFileNameToolStripStatusLabel;
         private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
@@ -2883,10 +2883,10 @@
         public System.Windows.Forms.DataGridView importformatDataGridView;
         public System.Windows.Forms.SplitContainer splitRequiredImportFormat_ImportedFile;
         public System.Windows.Forms.DataGridView importedfileDataGridView;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox importFormatServerPictureBox;
+        private System.Windows.Forms.PictureBox importFormatDatabasePictureBox;
+        private System.Windows.Forms.PictureBox importFormatTableSelectPictureBox;
+        private System.Windows.Forms.PictureBox importFormatSelectPictureBox;
         private System.Windows.Forms.RichTextBox systemLogTextBox;
         private System.Windows.Forms.CheckBox dateCheckerFindNullCheckbox;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClose;
@@ -2895,7 +2895,7 @@
         private System.Windows.Forms.ToolStripMenuItem cCDataToolLogToolStripMenuItem;
         private System.Windows.Forms.DataGridView stagedDataGridView;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel14;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel16;
+        private System.Windows.Forms.ToolStripStatusLabel seperator4ToolStripStatusLabel;
         private System.Windows.Forms.ToolStripMenuItem tXTToolStripMenuItem;
         private System.Windows.Forms.TabControl maintabControl;
         private System.Windows.Forms.TabPage importFormat;
@@ -2905,7 +2905,7 @@
         private System.Windows.Forms.ComboBox dateComboBox1;
         private System.Windows.Forms.ListBox reqListBox;
         private System.Windows.Forms.GroupBox importFormatSelectRequiredFieldsGroupBox;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox importFormatSelectDateGroupBox;
         private System.Windows.Forms.ComboBox dateComboBox3;
         private System.Windows.Forms.ComboBox dateComboBox2;
         private System.Windows.Forms.ToolStripMenuItem commaToolStripMenuItem;
@@ -2918,7 +2918,7 @@
         private System.Windows.Forms.ListBox specialCharacterCheckerListBox;
         private System.Windows.Forms.CheckBox importFormatFindNullCheckbox;
         private System.Windows.Forms.ListBox nullCheckerListBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox checkToolsSpecialCharacterTextBox;
         private System.Windows.Forms.ListBox cellLengthCheckerListBox;
         private System.Windows.Forms.Button selectAllDateCheckerButton;
         private System.Windows.Forms.Button selectAllCellLengthChecker;
@@ -2929,15 +2929,15 @@
         private System.Windows.Forms.Button clearAllSpecialCharacterCheckerButton;
         private System.Windows.Forms.Button clearAllNullCheckerButton;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.GroupBox importFormatDatabaseChecksGroupBox;
         private System.Windows.Forms.CheckBox importFormatDatabaseCheck1Button;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel17;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel18;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel19;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel20;
-        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.ToolStripStatusLabel seperator5ToolStripStatusLabel;
+        private System.Windows.Forms.GroupBox importFormatJumpToRowGroupBox;
         private System.Windows.Forms.Button importFormatJumpToRowButton;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox importFormatJumpToRowTextBox;
         private System.Windows.Forms.CheckBox importFormatShowOpenImportFormatsButton;
         private System.Windows.Forms.Label icmVersion;
         private System.Windows.Forms.TabPage sqlQuery;
@@ -2946,30 +2946,30 @@
         private System.Windows.Forms.ComboBox databaseSelect2;
         private System.Windows.Forms.ComboBox serverSelect2;
         private System.Windows.Forms.ToolStripStatusLabel connectionStatus;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label importFormatInTableLabel;
+        private System.Windows.Forms.PictureBox sqlDatabasePictureBox;
+        private System.Windows.Forms.PictureBox sqlQueryServerPictureBox;
         private System.Windows.Forms.TabPage benchmark;
-        private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.GroupBox payoutBenchmarkServerSelectGroupBox;
+        private System.Windows.Forms.PictureBox payoutTypePictureBox;
+        private System.Windows.Forms.PictureBox payoutDatabasePictureBox;
+        private System.Windows.Forms.PictureBox payoutServerPictureBox;
         private System.Windows.Forms.ComboBox payoutTypeSelect;
         private System.Windows.Forms.ComboBox serverSelect4;
         private System.Windows.Forms.ComboBox databaseSelect4;
         private System.Windows.Forms.ComboBox payoutSelect;
-        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox payoutSelectPictureBox;
         private System.Windows.Forms.Button payoutBenchmarkButton;
-        private System.Windows.Forms.GroupBox payoutStatusGroupBox;
+        private System.Windows.Forms.GroupBox payoutBenchmarkPayoutStatusGroupBox;
         private System.Windows.Forms.TextBox stagedTextBox;
         private System.Windows.Forms.RadioButton reversedRadioButton;
         private System.Windows.Forms.RadioButton finalizedRadioButton;
         private System.Windows.Forms.RadioButton pendingRadioButton;
         private System.Windows.Forms.TabPage api;
         private System.Windows.Forms.Button apiReadinessCheckGoButton;
-        private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.PictureBox pictureBox18;
-        private System.Windows.Forms.PictureBox pictureBox19;
+        private System.Windows.Forms.GroupBox apiReadinessServerSelectGroupBox;
+        private System.Windows.Forms.PictureBox apiDatabasePictureBox;
+        private System.Windows.Forms.PictureBox apiServerPictureBox;
         private System.Windows.Forms.ComboBox serverSelect5;
         private System.Windows.Forms.ComboBox databaseSelect5;
         private System.Windows.Forms.Button testButton;
@@ -2993,7 +2993,7 @@
         private System.Windows.Forms.SplitContainer mainLogSplitContainer;
         private System.Windows.Forms.RichTextBox benchmarkRichTextBox;
         private System.Windows.Forms.Button benchmarkExportResults;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox payoutTimerPictureBox;
         private System.Windows.Forms.ComboBox payoutTimeSelect;
         private System.Windows.Forms.Button benchmarkClearResults;
         private System.Windows.Forms.DataGridView benchmarkDataGridView;

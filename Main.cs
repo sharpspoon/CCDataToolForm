@@ -63,12 +63,12 @@ namespace DataAnalysisTool
                         dataSet.ReadXml(ofd.FileName);
                         importedfileDataGridView.DataSource = dataSet.Tables[0];
 
-                        toolStripStatusLabel13.Text = ofd.FileName;
+                        importFormatActualFileNameToolStripStatusLabel.Text = ofd.FileName;
                         toolStripStatusLabel4.Text = importedfileDataGridView[0, importedfileDataGridView.Rows.Count - 1].Value.ToString();
                         systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading XML: " + ofd.FileName + "...Done.");
                         toolStripStatusLabel2.Visible = true;
                         toolStripStatusLabel4.Visible = true;
-                        toolStripStatusLabel5.Visible = true;
+                        seperator3ToolStripStatusLabel.Visible = true;
                     }
                 }
             }
@@ -101,10 +101,10 @@ namespace DataAnalysisTool
                 OpenFileDialog openfile1 = new OpenFileDialog();
                 if (openfile1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    this.toolStripStatusLabel13.Text = openfile1.FileName;
+                    this.importFormatActualFileNameToolStripStatusLabel.Text = openfile1.FileName;
                 }
                 {
-                    string pathconn = "Provider = Microsoft.jet.OLEDB.4.0; Data source=" + toolStripStatusLabel13.Text + ";Extended Properties=\"Excel 8.0;HDR= yes;\";";
+                    string pathconn = "Provider = Microsoft.jet.OLEDB.4.0; Data source=" + importFormatActualFileNameToolStripStatusLabel.Text + ";Extended Properties=\"Excel 8.0;HDR= yes;\";";
                     OleDbConnection conn = new OleDbConnection(pathconn);
                     OleDbDataAdapter MyDataAdapter = new OleDbDataAdapter("Select * from [Sheet1$]", conn);
                     DataTable dt = new DataTable();
@@ -237,13 +237,13 @@ namespace DataAnalysisTool
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
                         importedfileDataGridView.DataSource = ReadCsv(ofd.FileName);
-                        toolStripStatusLabel13.Text = ofd.FileName;
-                        toolStripStatusLabel13.Visible = true;
+                        importFormatActualFileNameToolStripStatusLabel.Text = ofd.FileName;
+                        importFormatActualFileNameToolStripStatusLabel.Visible = true;
                         toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
                         toolStripStatusLabel2.Visible = true;
                         toolStripStatusLabel4.Visible = true;
-                        toolStripStatusLabel5.Visible = true;
-                        toolStripStatusLabel12.Visible = true;
+                        seperator3ToolStripStatusLabel.Visible = true;
+                        importFormatFileNameToolStripStatusLabel.Visible = true;
                         systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading CSV: " + ofd.FileName + "...Done.");
                     }
                 }
@@ -652,12 +652,12 @@ namespace DataAnalysisTool
         {
             int a = 0;
             String reqItem;
-            if (textBox4.Text.Length == 0)
+            if (checkToolsMaxLengthTextBox.Text.Length == 0)
             {
                 MessageBox.Show("You did not enter a length!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
-            int length = int.Parse(textBox4.Text);
+            int length = int.Parse(checkToolsMaxLengthTextBox.Text);
             importFormatProgressBar.Value = 50;
             foreach (Object selecteditem in cellLengthCheckerListBox.SelectedItems)
             {
@@ -701,8 +701,8 @@ namespace DataAnalysisTool
 
             int a = 0;
             String reqItem;
-            String specialChar = textBox1.Text;
-            if (textBox1.Text.Length == 0)
+            String specialChar = checkToolsSpecialCharacterTextBox.Text;
+            if (checkToolsSpecialCharacterTextBox.Text.Length == 0)
             {
                 MessageBox.Show("You did not enter a special character!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
@@ -761,7 +761,7 @@ namespace DataAnalysisTool
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = @"TALLYCENTRAL\"+Environment.UserName;
+            unableToRegUserToolStripStatusLabel.Text = @"TALLYCENTRAL\"+Environment.UserName;
         }
 
         //------------------FORM DRAG LOGIC START------------------------------------------------------
@@ -825,7 +825,7 @@ namespace DataAnalysisTool
         private void groupBox7_MouseHover(object sender, EventArgs e)
         {
             System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.groupBox7, "Select your Server/Database/Import Format.");
+            ToolTip2.SetToolTip(this.importFormatServerSelectGroupBox, "Select your Server/Database/Import Format.");
         }
 
         private void reqListBox_MouseEnter(object sender, EventArgs e)
@@ -970,13 +970,13 @@ namespace DataAnalysisTool
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
                         importedfileDataGridView.DataSource = ReadTxtComma(ofd.FileName);
-                        toolStripStatusLabel13.Text = ofd.FileName;
-                        toolStripStatusLabel13.Visible = true;
+                        importFormatActualFileNameToolStripStatusLabel.Text = ofd.FileName;
+                        importFormatActualFileNameToolStripStatusLabel.Visible = true;
                         toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
                         toolStripStatusLabel2.Visible = true;
                         toolStripStatusLabel4.Visible = true;
-                        toolStripStatusLabel5.Visible = true;
-                        toolStripStatusLabel12.Visible = true;
+                        seperator3ToolStripStatusLabel.Visible = true;
+                        importFormatFileNameToolStripStatusLabel.Visible = true;
                         systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading TXT: " + ofd.FileName + "...Done.");
                     }
                 }
@@ -1017,13 +1017,13 @@ namespace DataAnalysisTool
                     {
                         importFormatProgressBar.Value = 20;
                         importedfileDataGridView.DataSource = ReadTxtPipe(ofd.FileName);
-                        toolStripStatusLabel13.Text = ofd.FileName;
-                        toolStripStatusLabel13.Visible = true;
+                        importFormatActualFileNameToolStripStatusLabel.Text = ofd.FileName;
+                        importFormatActualFileNameToolStripStatusLabel.Visible = true;
                         toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
                         toolStripStatusLabel2.Visible = true;
                         toolStripStatusLabel4.Visible = true;
-                        toolStripStatusLabel5.Visible = true;
-                        toolStripStatusLabel12.Visible = true;
+                        seperator3ToolStripStatusLabel.Visible = true;
+                        importFormatFileNameToolStripStatusLabel.Visible = true;
                         systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading TXT: " + ofd.FileName + "...Done.");
                     }
                     else
@@ -1406,7 +1406,7 @@ namespace DataAnalysisTool
         {
             try
             {
-                int length = int.Parse(textBox2.Text);
+                int length = int.Parse(importFormatJumpToRowTextBox.Text);
                 importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[length - 1].Cells[0];
                 importedfileDataGridView.Rows[length - 1].Selected = true;
             }

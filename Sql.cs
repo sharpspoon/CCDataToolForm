@@ -245,7 +245,7 @@ namespace DataAnalysisTool
                 conn.Close();
                 connectionStatus.Visible = true;
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
-                toolStripStatusLabel5.Visible = true;
+                seperator3ToolStripStatusLabel.Visible = true;
                 toolStripStatusLabel6.Visible = true;
                 toolStripStatusLabel7.Visible = true;
             }
@@ -286,7 +286,7 @@ namespace DataAnalysisTool
                 conn.Close();
                 connectionStatus.Visible = true;
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
-                toolStripStatusLabel5.Visible = true;
+                seperator3ToolStripStatusLabel.Visible = true;
                 toolStripStatusLabel6.Visible = true;
                 toolStripStatusLabel7.Visible = true;
             }
@@ -342,7 +342,7 @@ namespace DataAnalysisTool
                 conn.Close();
                 connectionStatus.Visible = true;
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading payouts: " + payoutTypeSelect.Text + "...Done.");
-                toolStripStatusLabel5.Visible = true;
+                seperator3ToolStripStatusLabel.Visible = true;
                 toolStripStatusLabel6.Visible = true;
                 toolStripStatusLabel7.Visible = true;
             }
@@ -398,7 +398,7 @@ namespace DataAnalysisTool
                 conn.Close();
                 connectionStatus.Visible = true;
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading payouts: " + payoutTypeSelect.Text + "...Done.");
-                toolStripStatusLabel5.Visible = true;
+                seperator3ToolStripStatusLabel.Visible = true;
                 toolStripStatusLabel6.Visible = true;
                 toolStripStatusLabel7.Visible = true;
             }
@@ -498,277 +498,277 @@ namespace DataAnalysisTool
 
                 if (inEntNameVar == "InAddress")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InAdjustmentHis")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InAssignment")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBroker")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerAdj")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerContract")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerCustomer")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerDetail")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerHierarchy")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerHold")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerLicense")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerReserveHis")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerRoleBroker")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InBrokerVendor")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCarrier")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCertificate")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCertificateDet")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCmsMarx")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCmsMmr")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCmsTrr")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCodSet")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCustomer")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCustomerApplication")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCustomerMatch")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InCustPolicy")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InEducation")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InEntityRef")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InExtCrossRef")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InFile")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InFileImportFile")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InFileImportParm")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InFileImportRequest")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InFileRunList")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InIdentSet")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InMatchRule")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InPerfHis")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InPrepayBalanceAdjustment")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProAppointment")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProAppointmentDet")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProBackground")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProContract")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProContractDet")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProducer")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProducts")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProductsLicense")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProInsurance")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProLicense")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InProLicenseDet")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InterestDetail")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InterestSet")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InTimeSheet")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InTranDefault")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InTranHead")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InVendor")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
                 if (inEntNameVar == "InVoucher")
                 {
-                    label9.Text = inEntNameVar;
+                    importFormatInTableLabel.Text = inEntNameVar;
                     importFormatDatabaseCheck1Button.Visible = true;
                 }
 
@@ -791,11 +791,11 @@ namespace DataAnalysisTool
                 conn.Close();
 
                 toolStripStatusLabel7.Text = dataGridView2.Rows.Count.ToString();
-                toolStripStatusLabel10.Text = importformatDataGridView.Rows.Count.ToString();
+                importFormatRowCountToolStripStatusLabel.Text = importformatDataGridView.Rows.Count.ToString();
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading import format: " + ifSelect.Text + "...Done.");
-                toolStripStatusLabel8.Visible = true;
+                seperator2ToolStripStatusLabel.Visible = true;
                 toolStripStatusLabel9.Visible = true;
-                toolStripStatusLabel10.Visible = true;
+                importFormatRowCountToolStripStatusLabel.Visible = true;
             }
             catch
             {
