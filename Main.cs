@@ -64,10 +64,10 @@ namespace DataAnalysisTool
                         importedfileDataGridView.DataSource = dataSet.Tables[0];
 
                         importFormatActualFileNameToolStripStatusLabel.Text = ofd.FileName;
-                        toolStripStatusLabel4.Text = importedfileDataGridView[0, importedfileDataGridView.Rows.Count - 1].Value.ToString();
+                        ifRowCounterToolStripStatusLabel.Text = importedfileDataGridView[0, importedfileDataGridView.Rows.Count - 1].Value.ToString();
                         systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading XML: " + ofd.FileName + "...Done.");
-                        toolStripStatusLabel2.Visible = true;
-                        toolStripStatusLabel4.Visible = true;
+                        ifRowCountLabelToolStripStatusLabel.Visible = true;
+                        ifRowCounterToolStripStatusLabel.Visible = true;
                         seperator3ToolStripStatusLabel.Visible = true;
                     }
                 }
@@ -239,9 +239,9 @@ namespace DataAnalysisTool
                         importedfileDataGridView.DataSource = ReadCsv(ofd.FileName);
                         importFormatActualFileNameToolStripStatusLabel.Text = ofd.FileName;
                         importFormatActualFileNameToolStripStatusLabel.Visible = true;
-                        toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
-                        toolStripStatusLabel2.Visible = true;
-                        toolStripStatusLabel4.Visible = true;
+                        ifRowCounterToolStripStatusLabel.Text = importedfileDataGridView.Rows.Count.ToString();
+                        ifRowCountLabelToolStripStatusLabel.Visible = true;
+                        ifRowCounterToolStripStatusLabel.Visible = true;
                         seperator3ToolStripStatusLabel.Visible = true;
                         importFormatFileNameToolStripStatusLabel.Visible = true;
                         systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading CSV: " + ofd.FileName + "...Done.");
@@ -928,7 +928,7 @@ namespace DataAnalysisTool
 
         private void toolStripStatusLabel4_Click(object sender, EventArgs e)
         {
-            toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
+            ifRowCounterToolStripStatusLabel.Text = importedfileDataGridView.Rows.Count.ToString();
         }
         private void ssms_Click(object sender, EventArgs e)
         {
@@ -972,9 +972,9 @@ namespace DataAnalysisTool
                         importedfileDataGridView.DataSource = ReadTxtComma(ofd.FileName);
                         importFormatActualFileNameToolStripStatusLabel.Text = ofd.FileName;
                         importFormatActualFileNameToolStripStatusLabel.Visible = true;
-                        toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
-                        toolStripStatusLabel2.Visible = true;
-                        toolStripStatusLabel4.Visible = true;
+                        ifRowCounterToolStripStatusLabel.Text = importedfileDataGridView.Rows.Count.ToString();
+                        ifRowCountLabelToolStripStatusLabel.Visible = true;
+                        ifRowCounterToolStripStatusLabel.Visible = true;
                         seperator3ToolStripStatusLabel.Visible = true;
                         importFormatFileNameToolStripStatusLabel.Visible = true;
                         systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading TXT: " + ofd.FileName + "...Done.");
@@ -1019,9 +1019,9 @@ namespace DataAnalysisTool
                         importedfileDataGridView.DataSource = ReadTxtPipe(ofd.FileName);
                         importFormatActualFileNameToolStripStatusLabel.Text = ofd.FileName;
                         importFormatActualFileNameToolStripStatusLabel.Visible = true;
-                        toolStripStatusLabel4.Text = importedfileDataGridView.Rows.Count.ToString();
-                        toolStripStatusLabel2.Visible = true;
-                        toolStripStatusLabel4.Visible = true;
+                        ifRowCounterToolStripStatusLabel.Text = importedfileDataGridView.Rows.Count.ToString();
+                        ifRowCountLabelToolStripStatusLabel.Visible = true;
+                        ifRowCounterToolStripStatusLabel.Visible = true;
                         seperator3ToolStripStatusLabel.Visible = true;
                         importFormatFileNameToolStripStatusLabel.Visible = true;
                         systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading TXT: " + ofd.FileName + "...Done.");

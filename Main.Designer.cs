@@ -147,22 +147,22 @@
             this.connectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.unableToRegUserToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.seperator4ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ifRowCountLabelToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ifRowCounterToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.seperator3ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.sqlRowCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.sqlCounterToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.seperator2ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ifRowCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.importFormatRowCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.seperator1ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.importFormatFileNameToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.importFormatActualFileNameToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel14 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel17 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel18 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.blankSpaceToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.sapLinkToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.seperator5ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel19 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ccLinkToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.importFormatGoButton = new System.Windows.Forms.Button();
             this.maintabControl = new System.Windows.Forms.TabControl();
             this.importFormat = new System.Windows.Forms.TabPage();
@@ -615,7 +615,7 @@
             // 
             this.dateCheckerGoButton.BackColor = System.Drawing.Color.Honeydew;
             this.dateCheckerGoButton.CausesValidation = false;
-            this.dateCheckerGoButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dateCheckerGoButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateCheckerGoButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.dateCheckerGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
             this.dateCheckerGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
@@ -649,6 +649,7 @@
             // 
             // clearAllDateCheckerButton
             // 
+            this.clearAllDateCheckerButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearAllDateCheckerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearAllDateCheckerButton.Location = new System.Drawing.Point(47, 46);
             this.clearAllDateCheckerButton.Name = "clearAllDateCheckerButton";
@@ -660,6 +661,7 @@
             // 
             // selectAllDateCheckerButton
             // 
+            this.selectAllDateCheckerButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.selectAllDateCheckerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.selectAllDateCheckerButton.Location = new System.Drawing.Point(6, 46);
             this.selectAllDateCheckerButton.Name = "selectAllDateCheckerButton";
@@ -717,6 +719,7 @@
             // 
             // clearAllCellLengthChecker
             // 
+            this.clearAllCellLengthChecker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearAllCellLengthChecker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearAllCellLengthChecker.Location = new System.Drawing.Point(47, 46);
             this.clearAllCellLengthChecker.Name = "clearAllCellLengthChecker";
@@ -728,6 +731,7 @@
             // 
             // selectAllCellLengthChecker
             // 
+            this.selectAllCellLengthChecker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.selectAllCellLengthChecker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.selectAllCellLengthChecker.Location = new System.Drawing.Point(6, 46);
             this.selectAllCellLengthChecker.Name = "selectAllCellLengthChecker";
@@ -767,7 +771,7 @@
             // cellLengthCheckerGoButton
             // 
             this.cellLengthCheckerGoButton.BackColor = System.Drawing.Color.Honeydew;
-            this.cellLengthCheckerGoButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cellLengthCheckerGoButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cellLengthCheckerGoButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.cellLengthCheckerGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
             this.cellLengthCheckerGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
@@ -811,6 +815,7 @@
             // 
             // clearAllSpecialCharacterCheckerButton
             // 
+            this.clearAllSpecialCharacterCheckerButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearAllSpecialCharacterCheckerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearAllSpecialCharacterCheckerButton.Location = new System.Drawing.Point(47, 46);
             this.clearAllSpecialCharacterCheckerButton.Name = "clearAllSpecialCharacterCheckerButton";
@@ -822,6 +827,7 @@
             // 
             // selectAllSpecialCharacterCheckerButton
             // 
+            this.selectAllSpecialCharacterCheckerButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.selectAllSpecialCharacterCheckerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.selectAllSpecialCharacterCheckerButton.Location = new System.Drawing.Point(6, 46);
             this.selectAllSpecialCharacterCheckerButton.Name = "selectAllSpecialCharacterCheckerButton";
@@ -869,7 +875,7 @@
             // specialCharacterCheckerGoButton
             // 
             this.specialCharacterCheckerGoButton.BackColor = System.Drawing.Color.Honeydew;
-            this.specialCharacterCheckerGoButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.specialCharacterCheckerGoButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.specialCharacterCheckerGoButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.specialCharacterCheckerGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
             this.specialCharacterCheckerGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
@@ -921,6 +927,7 @@
             // 
             // clearAllNullCheckerButton
             // 
+            this.clearAllNullCheckerButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearAllNullCheckerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearAllNullCheckerButton.Location = new System.Drawing.Point(47, 46);
             this.clearAllNullCheckerButton.Name = "clearAllNullCheckerButton";
@@ -932,6 +939,7 @@
             // 
             // selectAllNullCheckerButton
             // 
+            this.selectAllNullCheckerButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.selectAllNullCheckerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.selectAllNullCheckerButton.Location = new System.Drawing.Point(6, 46);
             this.selectAllNullCheckerButton.Name = "selectAllNullCheckerButton";
@@ -962,7 +970,7 @@
             // nullCheckerGoButton
             // 
             this.nullCheckerGoButton.BackColor = System.Drawing.Color.Honeydew;
-            this.nullCheckerGoButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.nullCheckerGoButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nullCheckerGoButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.nullCheckerGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
             this.nullCheckerGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
@@ -1409,22 +1417,22 @@
             this.connectionStatus,
             this.unableToRegUserToolStripStatusLabel,
             this.seperator4ToolStripStatusLabel,
-            this.toolStripStatusLabel2,
-            this.toolStripStatusLabel4,
+            this.ifRowCountLabelToolStripStatusLabel,
+            this.ifRowCounterToolStripStatusLabel,
             this.seperator3ToolStripStatusLabel,
-            this.toolStripStatusLabel6,
-            this.toolStripStatusLabel7,
+            this.sqlRowCountToolStripStatusLabel,
+            this.sqlCounterToolStripStatusLabel,
             this.seperator2ToolStripStatusLabel,
-            this.toolStripStatusLabel9,
+            this.ifRowCountToolStripStatusLabel,
             this.importFormatRowCountToolStripStatusLabel,
             this.seperator1ToolStripStatusLabel,
             this.importFormatFileNameToolStripStatusLabel,
             this.importFormatActualFileNameToolStripStatusLabel,
             this.toolStripStatusLabel14,
-            this.toolStripStatusLabel17,
-            this.toolStripStatusLabel18,
+            this.blankSpaceToolStripStatusLabel,
+            this.sapLinkToolStripStatusLabel,
             this.seperator5ToolStripStatusLabel,
-            this.toolStripStatusLabel19});
+            this.ccLinkToolStripStatusLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 856);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1510, 22);
@@ -1464,22 +1472,22 @@
             this.seperator4ToolStripStatusLabel.Text = "|";
             this.seperator4ToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // toolStripStatusLabel2
+            // ifRowCountLabelToolStripStatusLabel
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(130, 17);
-            this.toolStripStatusLabel2.Text = "Imported File Row Count:";
-            this.toolStripStatusLabel2.Visible = false;
-            this.toolStripStatusLabel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.ifRowCountLabelToolStripStatusLabel.Name = "ifRowCountLabelToolStripStatusLabel";
+            this.ifRowCountLabelToolStripStatusLabel.Size = new System.Drawing.Size(130, 17);
+            this.ifRowCountLabelToolStripStatusLabel.Text = "Imported File Row Count:";
+            this.ifRowCountLabelToolStripStatusLabel.Visible = false;
+            this.ifRowCountLabelToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // toolStripStatusLabel4
+            // ifRowCounterToolStripStatusLabel
             // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(13, 17);
-            this.toolStripStatusLabel4.Text = "0";
-            this.toolStripStatusLabel4.Visible = false;
-            this.toolStripStatusLabel4.Click += new System.EventHandler(this.toolStripStatusLabel4_Click);
-            this.toolStripStatusLabel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.ifRowCounterToolStripStatusLabel.Name = "ifRowCounterToolStripStatusLabel";
+            this.ifRowCounterToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.ifRowCounterToolStripStatusLabel.Text = "0";
+            this.ifRowCounterToolStripStatusLabel.Visible = false;
+            this.ifRowCounterToolStripStatusLabel.Click += new System.EventHandler(this.toolStripStatusLabel4_Click);
+            this.ifRowCounterToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // seperator3ToolStripStatusLabel
             // 
@@ -1489,21 +1497,21 @@
             this.seperator3ToolStripStatusLabel.Visible = false;
             this.seperator3ToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // toolStripStatusLabel6
+            // sqlRowCountToolStripStatusLabel
             // 
-            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(86, 17);
-            this.toolStripStatusLabel6.Text = "SQL Row Count:";
-            this.toolStripStatusLabel6.Visible = false;
-            this.toolStripStatusLabel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.sqlRowCountToolStripStatusLabel.Name = "sqlRowCountToolStripStatusLabel";
+            this.sqlRowCountToolStripStatusLabel.Size = new System.Drawing.Size(86, 17);
+            this.sqlRowCountToolStripStatusLabel.Text = "SQL Row Count:";
+            this.sqlRowCountToolStripStatusLabel.Visible = false;
+            this.sqlRowCountToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // toolStripStatusLabel7
+            // sqlCounterToolStripStatusLabel
             // 
-            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(13, 17);
-            this.toolStripStatusLabel7.Text = "0";
-            this.toolStripStatusLabel7.Visible = false;
-            this.toolStripStatusLabel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.sqlCounterToolStripStatusLabel.Name = "sqlCounterToolStripStatusLabel";
+            this.sqlCounterToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.sqlCounterToolStripStatusLabel.Text = "0";
+            this.sqlCounterToolStripStatusLabel.Visible = false;
+            this.sqlCounterToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // seperator2ToolStripStatusLabel
             // 
@@ -1513,13 +1521,13 @@
             this.seperator2ToolStripStatusLabel.Visible = false;
             this.seperator2ToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // toolStripStatusLabel9
+            // ifRowCountToolStripStatusLabel
             // 
-            this.toolStripStatusLabel9.Name = "toolStripStatusLabel9";
-            this.toolStripStatusLabel9.Size = new System.Drawing.Size(136, 17);
-            this.toolStripStatusLabel9.Text = "Import Format Row Count:";
-            this.toolStripStatusLabel9.Visible = false;
-            this.toolStripStatusLabel9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.ifRowCountToolStripStatusLabel.Name = "ifRowCountToolStripStatusLabel";
+            this.ifRowCountToolStripStatusLabel.Size = new System.Drawing.Size(136, 17);
+            this.ifRowCountToolStripStatusLabel.Text = "Import Format Row Count:";
+            this.ifRowCountToolStripStatusLabel.Visible = false;
+            this.ifRowCountToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // importFormatRowCountToolStripStatusLabel
             // 
@@ -1562,23 +1570,23 @@
             this.toolStripStatusLabel14.Size = new System.Drawing.Size(0, 17);
             this.toolStripStatusLabel14.Text = "toolStripStatusLabel14";
             // 
-            // toolStripStatusLabel17
+            // blankSpaceToolStripStatusLabel
             // 
-            this.toolStripStatusLabel17.Name = "toolStripStatusLabel17";
-            this.toolStripStatusLabel17.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabel17.Size = new System.Drawing.Size(1138, 17);
-            this.toolStripStatusLabel17.Spring = true;
-            this.toolStripStatusLabel17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolStripStatusLabel17.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.blankSpaceToolStripStatusLabel.Name = "blankSpaceToolStripStatusLabel";
+            this.blankSpaceToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.blankSpaceToolStripStatusLabel.Size = new System.Drawing.Size(473, 17);
+            this.blankSpaceToolStripStatusLabel.Spring = true;
+            this.blankSpaceToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.blankSpaceToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // toolStripStatusLabel18
+            // sapLinkToolStripStatusLabel
             // 
-            this.toolStripStatusLabel18.IsLink = true;
-            this.toolStripStatusLabel18.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.toolStripStatusLabel18.Name = "toolStripStatusLabel18";
-            this.toolStripStatusLabel18.Size = new System.Drawing.Size(26, 17);
-            this.toolStripStatusLabel18.Text = "SAP";
-            this.toolStripStatusLabel18.Click += new System.EventHandler(this.toolStripStatusLabel18_Click);
+            this.sapLinkToolStripStatusLabel.IsLink = true;
+            this.sapLinkToolStripStatusLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.sapLinkToolStripStatusLabel.Name = "sapLinkToolStripStatusLabel";
+            this.sapLinkToolStripStatusLabel.Size = new System.Drawing.Size(26, 17);
+            this.sapLinkToolStripStatusLabel.Text = "SAP";
+            this.sapLinkToolStripStatusLabel.Click += new System.EventHandler(this.toolStripStatusLabel18_Click);
             // 
             // seperator5ToolStripStatusLabel
             // 
@@ -1586,14 +1594,14 @@
             this.seperator5ToolStripStatusLabel.Size = new System.Drawing.Size(11, 17);
             this.seperator5ToolStripStatusLabel.Text = "|";
             // 
-            // toolStripStatusLabel19
+            // ccLinkToolStripStatusLabel
             // 
-            this.toolStripStatusLabel19.IsLink = true;
-            this.toolStripStatusLabel19.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.toolStripStatusLabel19.Name = "toolStripStatusLabel19";
-            this.toolStripStatusLabel19.Size = new System.Drawing.Size(70, 17);
-            this.toolStripStatusLabel19.Text = "CallidusCloud";
-            this.toolStripStatusLabel19.Click += new System.EventHandler(this.toolStripStatusLabel19_Click);
+            this.ccLinkToolStripStatusLabel.IsLink = true;
+            this.ccLinkToolStripStatusLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.ccLinkToolStripStatusLabel.Name = "ccLinkToolStripStatusLabel";
+            this.ccLinkToolStripStatusLabel.Size = new System.Drawing.Size(70, 17);
+            this.ccLinkToolStripStatusLabel.Text = "CallidusCloud";
+            this.ccLinkToolStripStatusLabel.Click += new System.EventHandler(this.toolStripStatusLabel19_Click);
             // 
             // importFormatGoButton
             // 
@@ -2305,6 +2313,7 @@
             // benchmarkClearResults
             // 
             this.benchmarkClearResults.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.benchmarkClearResults.Cursor = System.Windows.Forms.Cursors.Hand;
             this.benchmarkClearResults.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.benchmarkClearResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.benchmarkClearResults.Location = new System.Drawing.Point(236, 52);
@@ -2318,6 +2327,7 @@
             // benchmarkExportResults
             // 
             this.benchmarkExportResults.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.benchmarkExportResults.Cursor = System.Windows.Forms.Cursors.Hand;
             this.benchmarkExportResults.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.benchmarkExportResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.benchmarkExportResults.Location = new System.Drawing.Point(345, 52);
@@ -2575,7 +2585,7 @@
             // 
             this.apiReadinessCheckGoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.apiReadinessCheckGoButton.BackColor = System.Drawing.Color.Honeydew;
-            this.apiReadinessCheckGoButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.apiReadinessCheckGoButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.apiReadinessCheckGoButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.apiReadinessCheckGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
             this.apiReadinessCheckGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
@@ -2864,13 +2874,13 @@
         private System.Windows.Forms.ComboBox ifSelect;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel unableToRegUserToolStripStatusLabel;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.ToolStripStatusLabel ifRowCountLabelToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel ifRowCounterToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel seperator3ToolStripStatusLabel;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
+        private System.Windows.Forms.ToolStripStatusLabel sqlRowCountToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel sqlCounterToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel seperator2ToolStripStatusLabel;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
+        private System.Windows.Forms.ToolStripStatusLabel ifRowCountToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel importFormatRowCountToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel seperator1ToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel importFormatFileNameToolStripStatusLabel;
@@ -2931,9 +2941,9 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.GroupBox importFormatDatabaseChecksGroupBox;
         private System.Windows.Forms.CheckBox importFormatDatabaseCheck1Button;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel17;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel18;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel19;
+        private System.Windows.Forms.ToolStripStatusLabel blankSpaceToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel sapLinkToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel ccLinkToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel seperator5ToolStripStatusLabel;
         private System.Windows.Forms.GroupBox importFormatJumpToRowGroupBox;
         private System.Windows.Forms.Button importFormatJumpToRowButton;

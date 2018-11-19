@@ -246,8 +246,8 @@ namespace DataAnalysisTool
                 connectionStatus.Visible = true;
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
                 seperator3ToolStripStatusLabel.Visible = true;
-                toolStripStatusLabel6.Visible = true;
-                toolStripStatusLabel7.Visible = true;
+                sqlRowCountToolStripStatusLabel.Visible = true;
+                sqlCounterToolStripStatusLabel.Visible = true;
             }
             catch
             {
@@ -287,8 +287,8 @@ namespace DataAnalysisTool
                 connectionStatus.Visible = true;
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
                 seperator3ToolStripStatusLabel.Visible = true;
-                toolStripStatusLabel6.Visible = true;
-                toolStripStatusLabel7.Visible = true;
+                sqlRowCountToolStripStatusLabel.Visible = true;
+                sqlCounterToolStripStatusLabel.Visible = true;
             }
             catch
             {
@@ -343,8 +343,8 @@ namespace DataAnalysisTool
                 connectionStatus.Visible = true;
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading payouts: " + payoutTypeSelect.Text + "...Done.");
                 seperator3ToolStripStatusLabel.Visible = true;
-                toolStripStatusLabel6.Visible = true;
-                toolStripStatusLabel7.Visible = true;
+                sqlRowCountToolStripStatusLabel.Visible = true;
+                sqlCounterToolStripStatusLabel.Visible = true;
             }
             catch
             {
@@ -399,8 +399,8 @@ namespace DataAnalysisTool
                 connectionStatus.Visible = true;
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading payouts: " + payoutTypeSelect.Text + "...Done.");
                 seperator3ToolStripStatusLabel.Visible = true;
-                toolStripStatusLabel6.Visible = true;
-                toolStripStatusLabel7.Visible = true;
+                sqlRowCountToolStripStatusLabel.Visible = true;
+                sqlCounterToolStripStatusLabel.Visible = true;
             }
             catch
             {
@@ -443,7 +443,7 @@ namespace DataAnalysisTool
                 dataAdapter.Fill(ds);
                 dataGridView2.ReadOnly = true;
                 dataGridView2.DataSource = ds.Tables[0];
-                toolStripStatusLabel7.Text = dataGridView2.Rows.Count.ToString();
+                sqlCounterToolStripStatusLabel.Text = dataGridView2.Rows.Count.ToString();
 
                 reader = sc.ExecuteReader();
                 DataTable dt = new DataTable();
@@ -790,11 +790,11 @@ namespace DataAnalysisTool
                 }
                 conn.Close();
 
-                toolStripStatusLabel7.Text = dataGridView2.Rows.Count.ToString();
+                sqlCounterToolStripStatusLabel.Text = dataGridView2.Rows.Count.ToString();
                 importFormatRowCountToolStripStatusLabel.Text = importformatDataGridView.Rows.Count.ToString();
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading import format: " + ifSelect.Text + "...Done.");
                 seperator2ToolStripStatusLabel.Visible = true;
-                toolStripStatusLabel9.Visible = true;
+                ifRowCountToolStripStatusLabel.Visible = true;
                 importFormatRowCountToolStripStatusLabel.Visible = true;
             }
             catch

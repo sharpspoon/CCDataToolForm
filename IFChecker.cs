@@ -154,7 +154,7 @@ namespace DataAnalysisTool
 
 
             importFormatRowCountToolStripStatusLabel.Text = importformatDataGridView.Rows.Count.ToString();
-            toolStripStatusLabel7.Text = stagedDataGridView.Rows.Count.ToString();
+            sqlCounterToolStripStatusLabel.Text = stagedDataGridView.Rows.Count.ToString();
             
 
             {
@@ -690,7 +690,7 @@ namespace DataAnalysisTool
                                 }
                                 tw.WriteLine("");
                                 importFormatRowCountToolStripStatusLabel.Text = importformatDataGridView.Rows.Count.ToString();
-                                toolStripStatusLabel7.Text = stagedDataGridView.Rows.Count.ToString();
+                                sqlCounterToolStripStatusLabel.Text = stagedDataGridView.Rows.Count.ToString();
                                 conn.Close();
                             }
                             catch { return; }
