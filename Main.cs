@@ -1690,7 +1690,23 @@ namespace DataAnalysisTool
 
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
-            importFormatProgressBar.Value = 100;
+            
+            apiRichTextBox.Text = apiRichTextBox.Text.Insert(0, Environment.NewLine +
+                @"###########################################################################################" + System.Environment.NewLine +
+                @"########################DataAnalysisTool - API Readiness###################################" + System.Environment.NewLine +
+                @"###########################################################################################" + System.Environment.NewLine +
+                @"Current Date: " + DateTime.Now + System.Environment.NewLine +
+                @"Server: " + serverSelect5.Text + System.Environment.NewLine +
+                @"Database: " + databaseSelect5.Text + System.Environment.NewLine +
+                @"" + System.Environment.NewLine +
+                @"" + System.Environment.NewLine +
+                @"****************************************************" + System.Environment.NewLine +
+                @"********************RUN RESULTS*********************" + System.Environment.NewLine +
+                @"****************************************************" + System.Environment.NewLine +
+                @"" + System.Environment.NewLine +
+                @"" + System.Environment.NewLine
+                );
+            apiReadinessProgressBar.Value = 100;
 
 
             {
@@ -1740,6 +1756,75 @@ namespace DataAnalysisTool
             }
         }
         Loading loading = new Loading();
+
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            Process.Start(Application.UserAppDataPath + @"\Payout_Benchmarks");
+        }
+
+        private void benchmarkClearResults_Click(object sender, EventArgs e)
+        {
+            benchmarkRichTextBox.Clear();
+        }
+
+        private void legendButton_Click(object sender, EventArgs e)
+        {
+            DataGridViewLegend legend = new DataGridViewLegend();
+
+            while (Application.OpenForms.Count > 1)
+            {
+                Application.OpenForms[Application.OpenForms.Count - 1].Close();
+            }
+            legend.ShowDialog();
+        }
+
+        private void apiExportResultsButton_Click(object sender, EventArgs e)
+        {
+            if (apiRichTextBox.Text == null || apiRichTextBox.Text == "")
+            {
+                MessageBox.Show("There are no results to export!", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\API_Readiness_Check");
+            string path = Application.UserAppDataPath + @"\API_Readiness_Check\DataAnalysisTool_API_Check_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                using (TextWriter tw = new StreamWriter(fs))
+                {
+                    for (int i = 0; i < apiRichTextBox.Lines.Length; i++)
+                    {
+                        tw.WriteLine(apiRichTextBox.Lines[i]);
+                    }
+                    tw.WriteLine("EOF.");
+                }
+            }
+            apiReadinessProgressBar.Value = 90;
+            apiReadinessProgressBar.Value = 100;
+            MessageBox.Show("API Readiness file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            progressBar1.MarqueeAnimationSpeed = 0;
+            Process.Start(path);
+        }
+
+        private void apiClearResultsButton_Click(object sender, EventArgs e)
+        {
+            apiRichTextBox.Clear();
+        }
+
+
+
+
+
+
+        //------------------EXIT APP ACTION END------------------------------------------------------
+        /*
+         * ############################################################################################   
+         * ############################################################################################
+         * ####################PRODUCTION CODE END#####################################################
+         * ############################################################################################
+         * ############################################################################################
+        */
+
         private void button27_Click(object sender, EventArgs e)
         {
             SqlConnection pubsConn = new SqlConnection(@"Data Source = " + serverSelect5.Text + "; Initial Catalog = master; Integrated Security = True");
@@ -1766,7 +1851,7 @@ namespace DataAnalysisTool
                 fs = new FileStream("icmlog" + pub_id + ".log", FileMode.OpenOrCreate, FileAccess.Write);
                 bw = new BinaryWriter(fs);
                 // Reset the starting byte for the new BLOB.
-                MessageBox.Show(""+startIndex);
+                MessageBox.Show("" + startIndex);
                 startIndex = 0;
                 // Read the bytes into outbyte[] and retain the number of bytes returned.
                 MessageBox.Show("outbyte" + outbyte);
@@ -1797,43 +1882,6 @@ namespace DataAnalysisTool
             myReader.Close();
             pubsConn.Close();
         }
-
-        private void button28_Click(object sender, EventArgs e)
-        {
-            Process.Start(Application.UserAppDataPath + @"\Payout_Benchmarks");
-        }
-
-        private void benchmarkClearResults_Click(object sender, EventArgs e)
-        {
-            benchmarkRichTextBox.Clear();
-        }
-
-        private void legendButton_Click(object sender, EventArgs e)
-        {
-            DataGridViewLegend legend = new DataGridViewLegend();
-
-            while (Application.OpenForms.Count > 1)
-            {
-                Application.OpenForms[Application.OpenForms.Count - 1].Close();
-            }
-            legend.ShowDialog();
-        }
-
-
-
-
-
-
-        //------------------EXIT APP ACTION END------------------------------------------------------
-        /*
-         * ############################################################################################   
-         * ############################################################################################
-         * ####################PRODUCTION CODE END#####################################################
-         * ############################################################################################
-         * ############################################################################################
-        */
-
-
 
 
     }
