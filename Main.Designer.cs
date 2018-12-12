@@ -1082,7 +1082,7 @@
             this.importFormatJumpToRowGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowButton);
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowTextBox);
-            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -6);
+            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -9);
             this.importFormatJumpToRowGroupBox.Name = "importFormatJumpToRowGroupBox";
             this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(170, 38);
             this.importFormatJumpToRowGroupBox.TabIndex = 36;
@@ -1350,6 +1350,7 @@
             this.importFormatInTableLabel.Size = new System.Drawing.Size(42, 13);
             this.importFormatInTableLabel.TabIndex = 42;
             this.importFormatInTableLabel.Text = "inTable";
+            this.importFormatInTableLabel.Visible = false;
             // 
             // importFormatSelectPictureBox
             // 
@@ -1686,6 +1687,7 @@
             this.ifDocumentation.TabIndex = 54;
             this.ifDocumentation.Text = "Save Documentation";
             this.ifDocumentation.UseVisualStyleBackColor = false;
+            this.ifDocumentation.Visible = false;
             // 
             // legendButton
             // 

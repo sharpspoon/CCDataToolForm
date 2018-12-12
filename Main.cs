@@ -1657,7 +1657,6 @@ namespace DataAnalysisTool
             //global vars
             progressBar1.MarqueeAnimationSpeed = 10;
             if (databaseSelect5.Text == "")
-
             {
                 DialogResult result = MessageBox.Show("No database selected. \nPlease make sure you are connected to ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 progressBar1.MarqueeAnimationSpeed = 0;
@@ -1707,8 +1706,6 @@ namespace DataAnalysisTool
                 @"" + System.Environment.NewLine
                 );
             apiReadinessProgressBar.Value = 100;
-
-
             {
                 System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\API_Readiness_Check");
                 string path = Application.UserAppDataPath + @"\API_Readiness_Check\DataAnalysisTool_API_Check_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
@@ -1810,12 +1807,6 @@ namespace DataAnalysisTool
         {
             apiRichTextBox.Clear();
         }
-
-
-
-
-
-
         //------------------EXIT APP ACTION END------------------------------------------------------
         /*
          * ############################################################################################   
@@ -1882,7 +1873,5 @@ namespace DataAnalysisTool
             myReader.Close();
             pubsConn.Close();
         }
-
-
     }
 }

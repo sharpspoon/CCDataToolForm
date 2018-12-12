@@ -75,6 +75,10 @@ namespace DataAnalysisTool
             {
                 dataAdapter1.Fill(ds);
             }
+            if (icmVersion.Text == "v.2018")
+            {
+                dataAdapter22.Fill(ds);
+            }
             else
             {
                 dataAdapter22.Fill(ds);
@@ -136,17 +140,36 @@ namespace DataAnalysisTool
 
             ArrayList codeValueArray = new ArrayList();
             //this foreach gets the values for all of the codes
-            foreach (var s in codeArray)
+            if (icmVersion.Text == "v.7.0")
             {
-                var select2 = "USE " + databaseSelect.Text + "  select recval from codset where rectype=" + "'" + s + "'";
-                var dataAdapter2 = new SqlDataAdapter(select2, conn);
-                var ds2 = new DataSet();
-                dataAdapter2.Fill(ds2);
-                stagedDataGridView.DataSource = ds2.Tables[0];
-
-                foreach (DataGridViewRow dr in stagedDataGridView.Rows)
+                foreach (var s in codeArray)
                 {
-                    codeValueArray.Add(dr.Cells[0].Value);
+                    var select2 = "USE " + databaseSelect.Text + "  select recval from codset where rectype=" + "'" + s + "'";
+                    var dataAdapter2 = new SqlDataAdapter(select2, conn);
+                    var ds2 = new DataSet();
+                    dataAdapter2.Fill(ds2);
+                    stagedDataGridView.DataSource = ds2.Tables[0];
+
+                    foreach (DataGridViewRow dr in stagedDataGridView.Rows)
+                    {
+                        codeValueArray.Add(dr.Cells[0].Value);
+                    }
+                }
+            }
+            else
+            {
+                foreach (var s in codeArray)
+                {
+                    var select2 = "USE " + databaseSelect.Text + "   select cv.storedvalue from codevalue cv inner join CodeType ct on ct.CodeTypeNo=cv.CodeTypeNo where ct.CodeTypeId=" + "'" + s + "'";
+                    var dataAdapter2 = new SqlDataAdapter(select2, conn);
+                    var ds2 = new DataSet();
+                    dataAdapter2.Fill(ds2);
+                    stagedDataGridView.DataSource = ds2.Tables[0];
+
+                    foreach (DataGridViewRow dr in stagedDataGridView.Rows)
+                    {
+                        codeValueArray.Add(dr.Cells[0].Value);
+                    }
                 }
             }
             var intersect = fieldsThatAreCodesArray.Intersect(seqArray);
@@ -298,19 +321,38 @@ namespace DataAnalysisTool
                             try
                             {
 
-                                
-                                //this foreach gets the values for all of the codes
-                                foreach (var s in codeArray)
-                                {
-                                    var select2 = "USE " + databaseSelect.Text + "  select recval from codset where rectype="+"'"+s+"'";
-                                    var dataAdapter2 = new SqlDataAdapter(select2, conn);
-                                    var ds2 = new DataSet();
-                                    dataAdapter2.Fill(ds2);
-                                    stagedDataGridView.DataSource = ds2.Tables[0];
 
-                                    foreach (DataGridViewRow dr in stagedDataGridView.Rows)
+                                //this foreach gets the values for all of the codes
+                                if (icmVersion.Text == "v.7.0")
+                                {
+                                    foreach (var s in codeArray)
                                     {
-                                        codeValueArray.Add(dr.Cells[0].Value);
+                                        var select2 = "USE " + databaseSelect.Text + "  select recval from codset where rectype=" + "'" + s + "'";
+                                        var dataAdapter2 = new SqlDataAdapter(select2, conn);
+                                        var ds2 = new DataSet();
+                                        dataAdapter2.Fill(ds2);
+                                        stagedDataGridView.DataSource = ds2.Tables[0];
+
+                                        foreach (DataGridViewRow dr in stagedDataGridView.Rows)
+                                        {
+                                            codeValueArray.Add(dr.Cells[0].Value);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    foreach (var s in codeArray)
+                                    {
+                                        var select2 = "USE " + databaseSelect.Text + "   select cv.storedvalue from codevalue cv inner join CodeType ct on ct.CodeTypeNo=cv.CodeTypeNo where ct.CodeTypeId=" + "'" + s + "'";
+                                        var dataAdapter2 = new SqlDataAdapter(select2, conn);
+                                        var ds2 = new DataSet();
+                                        dataAdapter2.Fill(ds2);
+                                        stagedDataGridView.DataSource = ds2.Tables[0];
+
+                                        foreach (DataGridViewRow dr in stagedDataGridView.Rows)
+                                        {
+                                            codeValueArray.Add(dr.Cells[0].Value);
+                                        }
                                     }
                                 }
 
