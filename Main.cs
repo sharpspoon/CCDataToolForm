@@ -1678,18 +1678,28 @@ namespace DataAnalysisTool
 
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect5.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
-
             var apiEnabled = " USE " + databaseSelect5.Text + " select case when enabled=1 then 'Yes' else 'No' end as 'Enabled' from feature where FeatureId='System API''s'";
             var dataAdapter3 = new SqlDataAdapter(apiEnabled, conn);
             var ds3 = new DataSet();
             dataAdapter3.Fill(ds3);
             stagedDataGridView.DataSource = ds3.Tables[0];
-            var apiEnabledArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+            var apiEnabledFinal = stagedDataGridView.Rows[0].Cells[0].Value;
+
+            //var apiEnabled = " USE " + databaseSelect5.Text + " select case when enabled=1 then 'Yes' else 'No' end as 'Enabled' from feature where FeatureId='System API''s'";
+            //var dataAdapter3 = new SqlDataAdapter(apiEnabled, conn);
+            //var ds3 = new DataSet();
+            //dataAdapter3.Fill(ds3);
+            //stagedDataGridView.DataSource = ds3.Tables[0];
+            //var apiEnabledArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+            //        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
 
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
-            
+
+            apiRichTextBox.Text = apiRichTextBox.Text.Insert(0, Environment.NewLine +
+                @"" + System.Environment.NewLine + "API enabled?:" + apiEnabledFinal
+                );
+
             apiRichTextBox.Text = apiRichTextBox.Text.Insert(0, Environment.NewLine +
                 @"###########################################################################################" + System.Environment.NewLine +
                 @"########################DataAnalysisTool - API Readiness###################################" + System.Environment.NewLine +
@@ -1701,56 +1711,53 @@ namespace DataAnalysisTool
                 @"" + System.Environment.NewLine +
                 @"****************************************************" + System.Environment.NewLine +
                 @"********************RUN RESULTS*********************" + System.Environment.NewLine +
-                @"****************************************************" + System.Environment.NewLine +
-                @"" + System.Environment.NewLine +
-                @"" + System.Environment.NewLine
+                @"****************************************************" + System.Environment.NewLine
                 );
-            apiReadinessProgressBar.Value = 100;
+            if (apiEnabledFinal.Equals("Yes"))
             {
-                System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\API_Readiness_Check");
-                string path = Application.UserAppDataPath + @"\API_Readiness_Check\DataAnalysisTool_API_Check_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
-                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
-                {
-                    using (TextWriter tw = new StreamWriter(fs))
-                    {
-                        tw.WriteLine("###########################################################################################");
-                        tw.WriteLine("########################DataAnalysisTool - API Readiness Check##############################");
-                        tw.WriteLine("###########################################################################################");
-                        tw.WriteLine("Current Date: " + DateTime.Now);
-                        tw.WriteLine("Server: " + serverSelect5.Text);
-                        tw.WriteLine("Database: " + databaseSelect5.Text);
-                        tw.WriteLine("");
-                        foreach (var api in apiEnabledArray)
-                        {
-                            tw.WriteLine("API Enabled?: " + api);
-                            if (api == "No")
-                            {
-                                tw.WriteLine("Please enable API access. You can do this in the Global Featues section within ICM.");
-                                return;
-                            }
-                        }
-                        if (databaseSelect4.Text != "")
-                        {
-                            try
-                            {
-                                tw.WriteLine("");
-                                tw.WriteLine("****************************************************");
-                                tw.WriteLine("********************PAYOUT STATS********************");
-                                tw.WriteLine("****************************************************");
-                                tw.WriteLine("");
-                                tw.WriteLine("Average payout time for the " + payoutTypeSelect.Text + " payout: ");
-                            }
-                            catch { return; }
-                        }
-                        tw.WriteLine("EOF.");
-                    }
-                }
-                importFormatProgressBar.Value = 90;
-                importFormatProgressBar.Value = 100;
-                MessageBox.Show("Payout Benchmark file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                progressBar1.MarqueeAnimationSpeed = 0;
-                Process.Start(path);
+                apiPictureBox.Image = Properties.Resources.greenCheck;
             }
+            
+
+            apiReadinessProgressBar.Value = 100;
+            //{
+            //    System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\API_Readiness_Check");
+            //    string path = Application.UserAppDataPath + @"\API_Readiness_Check\DataAnalysisTool_API_Check_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+            //    using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            //    {
+            //        using (TextWriter tw = new StreamWriter(fs))
+            //        {
+            //            foreach (var api in apiEnabledArray)
+            //            {
+            //                tw.WriteLine("API Enabled?: " + api);
+            //                if (api == "No")
+            //                {
+            //                    tw.WriteLine("Please enable API access. You can do this in the Global Featues section within ICM.");
+            //                    return;
+            //                }
+            //            }
+            //            if (databaseSelect4.Text != "")
+            //            {
+            //                try
+            //                {
+            //                    tw.WriteLine("");
+            //                    tw.WriteLine("****************************************************");
+            //                    tw.WriteLine("********************PAYOUT STATS********************");
+            //                    tw.WriteLine("****************************************************");
+            //                    tw.WriteLine("");
+            //                    tw.WriteLine("Average payout time for the " + payoutTypeSelect.Text + " payout: ");
+            //                }
+            //                catch { return; }
+            //            }
+            //            tw.WriteLine("EOF.");
+            //        }
+            //    }
+            //    importFormatProgressBar.Value = 90;
+            //    importFormatProgressBar.Value = 100;
+            //    MessageBox.Show("Payout Benchmark file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            //    progressBar1.MarqueeAnimationSpeed = 0;
+            //    Process.Start(path);
+            //}
         }
         Loading loading = new Loading();
 
@@ -1872,6 +1879,32 @@ namespace DataAnalysisTool
             // Close the reader and the connection.
             myReader.Close();
             pubsConn.Close();
+        }
+
+
+
+        private void copyAlltoClipboard()
+        {
+            importedfileDataGridView.SelectAll();
+            DataObject dataObj = importedfileDataGridView.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
+        }
+
+        private void openInExcel_Click(object sender, EventArgs e)
+        {
+            copyAlltoClipboard();
+            Microsoft.Office.Interop.Excel.Application xlexcel;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlexcel = new Microsoft.Office.Interop.Excel.Application();
+            xlexcel.Visible = true;
+            xlWorkBook = xlexcel.Workbooks.Add(misValue);
+            xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
+            CR.Select();
+            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
         }
     }
 }

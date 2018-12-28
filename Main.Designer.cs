@@ -166,6 +166,7 @@
             this.importFormatGoButton = new System.Windows.Forms.Button();
             this.maintabControl = new System.Windows.Forms.TabControl();
             this.importFormat = new System.Windows.Forms.TabPage();
+            this.openInExcel = new System.Windows.Forms.Button();
             this.ifDocumentation = new System.Windows.Forms.Button();
             this.legendButton = new System.Windows.Forms.Button();
             this.importformatIncludeHeaderRowButton = new System.Windows.Forms.CheckBox();
@@ -225,9 +226,11 @@
             this.serverSelect4 = new System.Windows.Forms.ComboBox();
             this.databaseSelect4 = new System.Windows.Forms.ComboBox();
             this.api = new System.Windows.Forms.TabPage();
+            this.apiSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.apiRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.apiPictureBox = new System.Windows.Forms.PictureBox();
             this.apiClearResultsButton = new System.Windows.Forms.Button();
             this.apiExportResultsButton = new System.Windows.Forms.Button();
-            this.apiRichTextBox = new System.Windows.Forms.RichTextBox();
             this.apiReadinessProgressBar = new System.Windows.Forms.ProgressBar();
             this.apiReadinessCheckGoButton = new System.Windows.Forms.Button();
             this.apiReadinessServerSelectGroupBox = new System.Windows.Forms.GroupBox();
@@ -295,6 +298,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.payoutDatabasePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payoutServerPictureBox)).BeginInit();
             this.api.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.apiSplitContainer)).BeginInit();
+            this.apiSplitContainer.Panel1.SuspendLayout();
+            this.apiSplitContainer.Panel2.SuspendLayout();
+            this.apiSplitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.apiPictureBox)).BeginInit();
             this.apiReadinessServerSelectGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.apiDatabasePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.apiServerPictureBox)).BeginInit();
@@ -1082,7 +1090,7 @@
             this.importFormatJumpToRowGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowButton);
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowTextBox);
-            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -9);
+            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -21);
             this.importFormatJumpToRowGroupBox.Name = "importFormatJumpToRowGroupBox";
             this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(170, 38);
             this.importFormatJumpToRowGroupBox.TabIndex = 36;
@@ -1649,6 +1657,7 @@
             // importFormat
             // 
             this.importFormat.BackColor = System.Drawing.Color.AliceBlue;
+            this.importFormat.Controls.Add(this.openInExcel);
             this.importFormat.Controls.Add(this.ifDocumentation);
             this.importFormat.Controls.Add(this.legendButton);
             this.importFormat.Controls.Add(this.importformatIncludeHeaderRowButton);
@@ -1675,6 +1684,22 @@
             this.importFormat.Text = "Import Format";
             this.importFormat.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
+            // openInExcel
+            // 
+            this.openInExcel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.openInExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.openInExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openInExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openInExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.openInExcel.Location = new System.Drawing.Point(260, 100);
+            this.openInExcel.Name = "openInExcel";
+            this.openInExcel.Size = new System.Drawing.Size(97, 22);
+            this.openInExcel.TabIndex = 55;
+            this.openInExcel.Text = "Open in Excel";
+            this.openInExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.openInExcel.UseVisualStyleBackColor = false;
+            this.openInExcel.Click += new System.EventHandler(this.openInExcel_Click);
+            // 
             // ifDocumentation
             // 
             this.ifDocumentation.BackColor = System.Drawing.Color.Lavender;
@@ -1695,9 +1720,9 @@
             this.legendButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.legendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.legendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.legendButton.Location = new System.Drawing.Point(344, 100);
+            this.legendButton.Location = new System.Drawing.Point(363, 100);
             this.legendButton.Name = "legendButton";
-            this.legendButton.Size = new System.Drawing.Size(114, 23);
+            this.legendButton.Size = new System.Drawing.Size(95, 23);
             this.legendButton.TabIndex = 34;
             this.legendButton.Text = "Table Legend";
             this.legendButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1830,7 +1855,7 @@
             this.openCsvButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.openCsvButton.Location = new System.Drawing.Point(15, 8);
             this.openCsvButton.Name = "openCsvButton";
-            this.openCsvButton.Size = new System.Drawing.Size(54, 89);
+            this.openCsvButton.Size = new System.Drawing.Size(55, 89);
             this.openCsvButton.TabIndex = 43;
             this.openCsvButton.Text = "Open CSV";
             this.openCsvButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -2568,9 +2593,9 @@
             // api
             // 
             this.api.BackColor = System.Drawing.Color.AliceBlue;
+            this.api.Controls.Add(this.apiSplitContainer);
             this.api.Controls.Add(this.apiClearResultsButton);
             this.api.Controls.Add(this.apiExportResultsButton);
-            this.api.Controls.Add(this.apiRichTextBox);
             this.api.Controls.Add(this.apiReadinessProgressBar);
             this.api.Controls.Add(this.apiReadinessCheckGoButton);
             this.api.Controls.Add(this.apiReadinessServerSelectGroupBox);
@@ -2578,8 +2603,47 @@
             this.api.Name = "api";
             this.api.Size = new System.Drawing.Size(1502, 736);
             this.api.TabIndex = 6;
-            this.api.Text = "API Readiness Check (ALPHA)";
+            this.api.Text = "API Readiness Check";
             this.api.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // apiSplitContainer
+            // 
+            this.apiSplitContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.apiSplitContainer.Location = new System.Drawing.Point(6, 161);
+            this.apiSplitContainer.Name = "apiSplitContainer";
+            // 
+            // apiSplitContainer.Panel1
+            // 
+            this.apiSplitContainer.Panel1.Controls.Add(this.apiRichTextBox);
+            // 
+            // apiSplitContainer.Panel2
+            // 
+            this.apiSplitContainer.Panel2.Controls.Add(this.apiPictureBox);
+            this.apiSplitContainer.Size = new System.Drawing.Size(1488, 572);
+            this.apiSplitContainer.SplitterDistance = 912;
+            this.apiSplitContainer.TabIndex = 46;
+            // 
+            // apiRichTextBox
+            // 
+            this.apiRichTextBox.BackColor = System.Drawing.Color.Azure;
+            this.apiRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.apiRichTextBox.Location = new System.Drawing.Point(0, 0);
+            this.apiRichTextBox.Name = "apiRichTextBox";
+            this.apiRichTextBox.ReadOnly = true;
+            this.apiRichTextBox.Size = new System.Drawing.Size(912, 572);
+            this.apiRichTextBox.TabIndex = 38;
+            this.apiRichTextBox.Text = "";
+            // 
+            // apiPictureBox
+            // 
+            this.apiPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.apiPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.apiPictureBox.Name = "apiPictureBox";
+            this.apiPictureBox.Size = new System.Drawing.Size(572, 572);
+            this.apiPictureBox.TabIndex = 0;
+            this.apiPictureBox.TabStop = false;
             // 
             // apiClearResultsButton
             // 
@@ -2608,19 +2672,6 @@
             this.apiExportResultsButton.Text = "Export Results";
             this.apiExportResultsButton.UseVisualStyleBackColor = false;
             this.apiExportResultsButton.Click += new System.EventHandler(this.apiExportResultsButton_Click);
-            // 
-            // apiRichTextBox
-            // 
-            this.apiRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.apiRichTextBox.BackColor = System.Drawing.Color.Azure;
-            this.apiRichTextBox.Location = new System.Drawing.Point(3, 151);
-            this.apiRichTextBox.Name = "apiRichTextBox";
-            this.apiRichTextBox.ReadOnly = true;
-            this.apiRichTextBox.Size = new System.Drawing.Size(1497, 582);
-            this.apiRichTextBox.TabIndex = 38;
-            this.apiRichTextBox.Text = "";
             // 
             // apiReadinessProgressBar
             // 
@@ -2861,6 +2912,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.payoutDatabasePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payoutServerPictureBox)).EndInit();
             this.api.ResumeLayout(false);
+            this.apiSplitContainer.Panel1.ResumeLayout(false);
+            this.apiSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.apiSplitContainer)).EndInit();
+            this.apiSplitContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.apiPictureBox)).EndInit();
             this.apiReadinessServerSelectGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.apiDatabasePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.apiServerPictureBox)).EndInit();
@@ -3068,6 +3124,9 @@
         private System.Windows.Forms.RichTextBox apiRichTextBox;
         private System.Windows.Forms.Button apiClearResultsButton;
         private System.Windows.Forms.Button apiExportResultsButton;
+        private System.Windows.Forms.Button openInExcel;
+        private System.Windows.Forms.SplitContainer apiSplitContainer;
+        private System.Windows.Forms.PictureBox apiPictureBox;
     }
 }
 
