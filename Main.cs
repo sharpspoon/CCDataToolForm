@@ -1651,6 +1651,7 @@ namespace DataAnalysisTool
 
         private void apiReadinessCheckButton_Click(object sender, EventArgs e)
         {
+            apiRichTextBox.Clear();
             importFormatProgressBar.Value = 0;
             importFormatProgressBar.Value = 10;
 
@@ -1712,7 +1713,9 @@ namespace DataAnalysisTool
                 @"****************************************************" + System.Environment.NewLine
                 );
 
-            apiRichTextBox.AppendText(Environment.NewLine + @"" + System.Environment.NewLine + "API enabled?: " + apiEnabledFinal);
+            apiRichTextBox.AppendText(@"" + System.Environment.NewLine + "API enabled: " + System.Environment.NewLine + apiEnabledFinal);
+
+            apiRichTextBox.AppendText(@"" + System.Environment.NewLine);
 
             if (apiEnabledFinal.Equals("Yes"))
             {
