@@ -325,6 +325,9 @@
   <data name="timer_16xLG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\timer_16xLG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="global" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\global.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="greenCheck" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\greenCheck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

@@ -1678,6 +1678,15 @@ namespace DataAnalysisTool
 
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect5.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
+
+            var secGroups = " USE " + databaseSelect5.Text + " select SecGroupId from secgroup where portalid=6 and prosta=1";
+            var dataAdapter = new SqlDataAdapter(secGroups, conn);
+            var ds = new DataSet();
+            dataAdapter.Fill(ds);
+            stagedDataGridView.DataSource = ds.Tables[0];
+            var secGroupsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
             var apiEnabled = " USE " + databaseSelect5.Text + " select case when enabled=1 then 'Yes' else 'No' end as 'Enabled' from feature where FeatureId='System API''s'";
             var dataAdapter3 = new SqlDataAdapter(apiEnabled, conn);
             var ds3 = new DataSet();
@@ -1685,22 +1694,11 @@ namespace DataAnalysisTool
             stagedDataGridView.DataSource = ds3.Tables[0];
             var apiEnabledFinal = stagedDataGridView.Rows[0].Cells[0].Value;
 
-            //var apiEnabled = " USE " + databaseSelect5.Text + " select case when enabled=1 then 'Yes' else 'No' end as 'Enabled' from feature where FeatureId='System API''s'";
-            //var dataAdapter3 = new SqlDataAdapter(apiEnabled, conn);
-            //var ds3 = new DataSet();
-            //dataAdapter3.Fill(ds3);
-            //stagedDataGridView.DataSource = ds3.Tables[0];
-            //var apiEnabledArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-            //        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-
             conn.Close();
+
             progressBar1.MarqueeAnimationSpeed = 0;
 
-            apiRichTextBox.Text = apiRichTextBox.Text.Insert(0, Environment.NewLine +
-                @"" + System.Environment.NewLine + "API enabled?:" + apiEnabledFinal
-                );
-
-            apiRichTextBox.Text = apiRichTextBox.Text.Insert(0, Environment.NewLine +
+            apiRichTextBox.AppendText(Environment.NewLine +
                 @"###########################################################################################" + System.Environment.NewLine +
                 @"########################DataAnalysisTool - API Readiness###################################" + System.Environment.NewLine +
                 @"###########################################################################################" + System.Environment.NewLine +
@@ -1713,51 +1711,30 @@ namespace DataAnalysisTool
                 @"********************RUN RESULTS*********************" + System.Environment.NewLine +
                 @"****************************************************" + System.Environment.NewLine
                 );
+
+            apiRichTextBox.AppendText(Environment.NewLine + @"" + System.Environment.NewLine + "API enabled?: " + apiEnabledFinal);
+
             if (apiEnabledFinal.Equals("Yes"))
             {
                 apiPictureBox.Image = Properties.Resources.greenCheck;
             }
-            
+            else
+            {
+                apiRichTextBox.AppendText(Environment.NewLine + @"Please enable API's within the Global Features.");
+                apiPictureBox.Image = Properties.Resources.global;
+                return;
+            }
+
+            apiRichTextBox.AppendText(Environment.NewLine + @"API Security Groups:");
+            foreach (var sec in secGroupsArray)
+            {
+                apiRichTextBox.AppendText(Environment.NewLine +
+                    @"" + System.Environment.NewLine + sec
+                    );
+            }
+
 
             apiReadinessProgressBar.Value = 100;
-            //{
-            //    System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\API_Readiness_Check");
-            //    string path = Application.UserAppDataPath + @"\API_Readiness_Check\DataAnalysisTool_API_Check_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
-            //    using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
-            //    {
-            //        using (TextWriter tw = new StreamWriter(fs))
-            //        {
-            //            foreach (var api in apiEnabledArray)
-            //            {
-            //                tw.WriteLine("API Enabled?: " + api);
-            //                if (api == "No")
-            //                {
-            //                    tw.WriteLine("Please enable API access. You can do this in the Global Featues section within ICM.");
-            //                    return;
-            //                }
-            //            }
-            //            if (databaseSelect4.Text != "")
-            //            {
-            //                try
-            //                {
-            //                    tw.WriteLine("");
-            //                    tw.WriteLine("****************************************************");
-            //                    tw.WriteLine("********************PAYOUT STATS********************");
-            //                    tw.WriteLine("****************************************************");
-            //                    tw.WriteLine("");
-            //                    tw.WriteLine("Average payout time for the " + payoutTypeSelect.Text + " payout: ");
-            //                }
-            //                catch { return; }
-            //            }
-            //            tw.WriteLine("EOF.");
-            //        }
-            //    }
-            //    importFormatProgressBar.Value = 90;
-            //    importFormatProgressBar.Value = 100;
-            //    MessageBox.Show("Payout Benchmark file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            //    progressBar1.MarqueeAnimationSpeed = 0;
-            //    Process.Start(path);
-            //}
         }
         Loading loading = new Loading();
 
