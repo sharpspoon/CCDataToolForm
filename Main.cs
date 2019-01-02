@@ -1651,7 +1651,7 @@ namespace DataAnalysisTool
 
         private void apiReadinessCheckButton_Click(object sender, EventArgs e)
         {
-            apiRichTextBox.Clear();
+            
             importFormatProgressBar.Value = 0;
             importFormatProgressBar.Value = 10;
 
@@ -1676,6 +1676,8 @@ namespace DataAnalysisTool
                     return;
                 }
             }
+
+            apiRichTextBox.Clear();
 
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect5.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
@@ -1728,14 +1730,25 @@ namespace DataAnalysisTool
                 return;
             }
 
+            if( secGroupsArray.Length == 0)
+            {
+                apiRichTextBox.AppendText(Environment.NewLine + @"Please enable API's within the Global Features.");
+                apiPictureBox.Image = Properties.Resources.sec;
+                return;
+            }
+
             apiRichTextBox.AppendText(Environment.NewLine + @"API Security Groups:");
             foreach (var sec in secGroupsArray)
             {
-                apiRichTextBox.AppendText(Environment.NewLine +
-                    @"" + System.Environment.NewLine + sec
-                    );
+                apiRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
             }
 
+            apiRichTextBox.AppendText(Environment.NewLine + @"");
+
+            apiRichTextBox.AppendText(Environment.NewLine + @"Optionally, configure the system.api.ip.whitelist to restrict access to a range of client IP addresses. 
+(Admin > Configuration > Options) E.g. restrict access to internal IP addresses. Note that if this option
+is not configured, the System API's may be accessed from any IP address. This may be considered a security 
+risk if your ICM instance is externally accessible.");
 
             apiReadinessProgressBar.Value = 100;
         }
