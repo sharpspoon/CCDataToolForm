@@ -1801,33 +1801,35 @@ risk if your ICM instance is externally accessible.");
                 apiPictureBox.Image = Properties.Resources.apiuser;
                 return;
             }
-
+            apiRichTextBox.AppendText(Environment.NewLine + @"");
             apiReadinessProgressBar.Value = 100;
         }
-        Loading loading = new Loading();
 
-
-
-
-        private void button28_Click(object sender, EventArgs e)
+        private void apiCallButton_Click(object sender, EventArgs e)
         {
-            Process.Start(Application.UserAppDataPath + @"\Payout_Benchmarks");
-        }
-
-        private void benchmarkClearResults_Click(object sender, EventArgs e)
-        {
-            benchmarkRichTextBox.Clear();
-        }
-
-        private void legendButton_Click(object sender, EventArgs e)
-        {
-            DataGridViewLegend legend = new DataGridViewLegend();
-
-            while (Application.OpenForms.Count > 1)
+            apiRichTextBox.Clear();
+            using (var client = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate }))
             {
-                Application.OpenForms[Application.OpenForms.Count - 1].Close();
+                apiRichTextBox.AppendText(Environment.NewLine +
+                    @"###########################################################################################" + System.Environment.NewLine +
+                    @"########################DataAnalysisTool - API Readiness###################################" + System.Environment.NewLine +
+                    @"###########################################################################################" + System.Environment.NewLine +
+                    @"Current Date: " + DateTime.Now + System.Environment.NewLine +
+                    @"Server: " + serverSelect5.Text + System.Environment.NewLine +
+                    @"Database: " + databaseSelect5.Text + System.Environment.NewLine +
+                    @"" + System.Environment.NewLine +
+                    @"" + System.Environment.NewLine +
+                    @"****************************************************" + System.Environment.NewLine +
+                    @"********************API CALL RESULTS****************" + System.Environment.NewLine +
+                    @"****************************************************" + System.Environment.NewLine
+                    );
+                client.BaseAddress = new Uri("https://welltest2.callidusinsurance.net/ICM/REST/auth/login?u=" + apiUsersComboBox.Text + "&p=" + apiUsersPasswordTextBox.Text);
+                HttpResponseMessage response = client.GetAsync("").Result;
+                response.EnsureSuccessStatusCode();
+                string result = response.Content.ReadAsStringAsync().Result;
+                Console.WriteLine("Result: " + result);
+                apiRichTextBox.AppendText(@"" + System.Environment.NewLine + result);
             }
-            legend.ShowDialog();
         }
 
         private void apiExportResultsButton_Click(object sender, EventArgs e)
@@ -1856,6 +1858,34 @@ risk if your ICM instance is externally accessible.");
             progressBar1.MarqueeAnimationSpeed = 0;
             Process.Start(path);
         }
+
+        Loading loading = new Loading();
+
+
+
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            Process.Start(Application.UserAppDataPath + @"\Payout_Benchmarks");
+        }
+
+        private void benchmarkClearResults_Click(object sender, EventArgs e)
+        {
+            benchmarkRichTextBox.Clear();
+        }
+
+        private void legendButton_Click(object sender, EventArgs e)
+        {
+            DataGridViewLegend legend = new DataGridViewLegend();
+
+            while (Application.OpenForms.Count > 1)
+            {
+                Application.OpenForms[Application.OpenForms.Count - 1].Close();
+            }
+            legend.ShowDialog();
+        }
+
+
 
         private void apiClearResultsButton_Click(object sender, EventArgs e)
         {
@@ -1954,19 +1984,6 @@ risk if your ICM instance is externally accessible.");
             xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
         }
 
-        private void apiCallButton_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("Making API Call...");
-            using (var client = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate }))
-            {
-                client.BaseAddress = new Uri("https://welltest2.callidusinsurance.net/ICM/REST/auth/login?u=ROWARDAPI&p=Actek1!");
-                HttpResponseMessage response = client.GetAsync("").Result;
-                response.EnsureSuccessStatusCode();
-                string result = response.Content.ReadAsStringAsync().Result;
-                Console.WriteLine("Result: " + result);
-                apiRichTextBox.AppendText(@"" + System.Environment.NewLine + result);
-            }
-            Console.ReadLine();
-        }
+
     }
 }
