@@ -1682,6 +1682,12 @@ namespace DataAnalysisTool
                 }
             }
 
+            apiUsersComboBox.Items.Clear();
+            apiCallButton.Visible = false;
+            apiUsersComboBox.Visible = false;
+            apiUsersPictureBox.Visible = false;
+            apiUsersPasswordPictureBox.Visible = false;
+            apiUsersPasswordTextBox.Visible = false;
             apiRichTextBox.Clear();
 
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect5.Text + "; Initial Catalog = master; Integrated Security = True");
