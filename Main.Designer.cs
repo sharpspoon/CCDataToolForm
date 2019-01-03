@@ -226,9 +226,14 @@
             this.serverSelect4 = new System.Windows.Forms.ComboBox();
             this.databaseSelect4 = new System.Windows.Forms.ComboBox();
             this.api = new System.Windows.Forms.TabPage();
+            this.apiUsersPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.apiUsersPasswordPictureBox = new System.Windows.Forms.PictureBox();
+            this.apiCallButton = new System.Windows.Forms.Button();
             this.apiSplitContainer = new System.Windows.Forms.SplitContainer();
             this.apiRichTextBox = new System.Windows.Forms.RichTextBox();
             this.apiPictureBox = new System.Windows.Forms.PictureBox();
+            this.apiUsersComboBox = new System.Windows.Forms.ComboBox();
+            this.apiUsersPictureBox = new System.Windows.Forms.PictureBox();
             this.apiClearResultsButton = new System.Windows.Forms.Button();
             this.apiExportResultsButton = new System.Windows.Forms.Button();
             this.apiReadinessProgressBar = new System.Windows.Forms.ProgressBar();
@@ -298,11 +303,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.payoutDatabasePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payoutServerPictureBox)).BeginInit();
             this.api.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.apiUsersPasswordPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.apiSplitContainer)).BeginInit();
             this.apiSplitContainer.Panel1.SuspendLayout();
             this.apiSplitContainer.Panel2.SuspendLayout();
             this.apiSplitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.apiPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apiUsersPictureBox)).BeginInit();
             this.apiReadinessServerSelectGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.apiDatabasePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.apiServerPictureBox)).BeginInit();
@@ -1090,7 +1097,7 @@
             this.importFormatJumpToRowGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowButton);
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowTextBox);
-            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -21);
+            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -36);
             this.importFormatJumpToRowGroupBox.Name = "importFormatJumpToRowGroupBox";
             this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(170, 38);
             this.importFormatJumpToRowGroupBox.TabIndex = 36;
@@ -2593,7 +2600,12 @@
             // api
             // 
             this.api.BackColor = System.Drawing.Color.AliceBlue;
+            this.api.Controls.Add(this.apiUsersPasswordTextBox);
+            this.api.Controls.Add(this.apiUsersPasswordPictureBox);
+            this.api.Controls.Add(this.apiCallButton);
             this.api.Controls.Add(this.apiSplitContainer);
+            this.api.Controls.Add(this.apiUsersComboBox);
+            this.api.Controls.Add(this.apiUsersPictureBox);
             this.api.Controls.Add(this.apiClearResultsButton);
             this.api.Controls.Add(this.apiExportResultsButton);
             this.api.Controls.Add(this.apiReadinessProgressBar);
@@ -2605,6 +2617,39 @@
             this.api.TabIndex = 6;
             this.api.Text = "API Readiness Check";
             this.api.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // apiUsersPasswordTextBox
+            // 
+            this.apiUsersPasswordTextBox.Location = new System.Drawing.Point(482, 74);
+            this.apiUsersPasswordTextBox.Name = "apiUsersPasswordTextBox";
+            this.apiUsersPasswordTextBox.Size = new System.Drawing.Size(143, 20);
+            this.apiUsersPasswordTextBox.TabIndex = 49;
+            this.apiUsersPasswordTextBox.UseSystemPasswordChar = true;
+            this.apiUsersPasswordTextBox.Visible = false;
+            // 
+            // apiUsersPasswordPictureBox
+            // 
+            this.apiUsersPasswordPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("apiUsersPasswordPictureBox.Image")));
+            this.apiUsersPasswordPictureBox.Location = new System.Drawing.Point(460, 74);
+            this.apiUsersPasswordPictureBox.Name = "apiUsersPasswordPictureBox";
+            this.apiUsersPasswordPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.apiUsersPasswordPictureBox.TabIndex = 48;
+            this.apiUsersPasswordPictureBox.TabStop = false;
+            this.apiUsersPasswordPictureBox.Visible = false;
+            // 
+            // apiCallButton
+            // 
+            this.apiCallButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.apiCallButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.apiCallButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.apiCallButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apiCallButton.Location = new System.Drawing.Point(482, 97);
+            this.apiCallButton.Name = "apiCallButton";
+            this.apiCallButton.Size = new System.Drawing.Size(143, 21);
+            this.apiCallButton.TabIndex = 47;
+            this.apiCallButton.Text = "Test API Call";
+            this.apiCallButton.UseVisualStyleBackColor = false;
+            this.apiCallButton.Click += new System.EventHandler(this.apiCallButton_Click);
             // 
             // apiSplitContainer
             // 
@@ -2644,6 +2689,29 @@
             this.apiPictureBox.Size = new System.Drawing.Size(572, 572);
             this.apiPictureBox.TabIndex = 0;
             this.apiPictureBox.TabStop = false;
+            // 
+            // apiUsersComboBox
+            // 
+            this.apiUsersComboBox.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.apiUsersComboBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.apiUsersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.apiUsersComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.apiUsersComboBox.FormattingEnabled = true;
+            this.apiUsersComboBox.Location = new System.Drawing.Point(482, 52);
+            this.apiUsersComboBox.Name = "apiUsersComboBox";
+            this.apiUsersComboBox.Size = new System.Drawing.Size(143, 21);
+            this.apiUsersComboBox.TabIndex = 34;
+            this.apiUsersComboBox.Visible = false;
+            // 
+            // apiUsersPictureBox
+            // 
+            this.apiUsersPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("apiUsersPictureBox.Image")));
+            this.apiUsersPictureBox.Location = new System.Drawing.Point(460, 52);
+            this.apiUsersPictureBox.Name = "apiUsersPictureBox";
+            this.apiUsersPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.apiUsersPictureBox.TabIndex = 35;
+            this.apiUsersPictureBox.TabStop = false;
+            this.apiUsersPictureBox.Visible = false;
             // 
             // apiClearResultsButton
             // 
@@ -2912,11 +2980,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.payoutDatabasePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payoutServerPictureBox)).EndInit();
             this.api.ResumeLayout(false);
+            this.api.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.apiUsersPasswordPictureBox)).EndInit();
             this.apiSplitContainer.Panel1.ResumeLayout(false);
             this.apiSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.apiSplitContainer)).EndInit();
             this.apiSplitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.apiPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apiUsersPictureBox)).EndInit();
             this.apiReadinessServerSelectGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.apiDatabasePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.apiServerPictureBox)).EndInit();
@@ -3127,6 +3198,11 @@
         private System.Windows.Forms.Button openInExcel;
         private System.Windows.Forms.SplitContainer apiSplitContainer;
         private System.Windows.Forms.PictureBox apiPictureBox;
+        private System.Windows.Forms.PictureBox apiUsersPictureBox;
+        private System.Windows.Forms.ComboBox apiUsersComboBox;
+        private System.Windows.Forms.Button apiCallButton;
+        private System.Windows.Forms.TextBox apiUsersPasswordTextBox;
+        private System.Windows.Forms.PictureBox apiUsersPasswordPictureBox;
     }
 }
 

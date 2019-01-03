@@ -15,6 +15,11 @@ using System.Data.SqlTypes;
 using System.Collections;
 using System.Text;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using RestSharp;
+using RestSharp.Authenticators;
+using System.Net;
 
 namespace DataAnalysisTool
 {
@@ -1690,6 +1695,14 @@ namespace DataAnalysisTool
             var secGroupsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
                     .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
 
+            var apiUsers = " USE " + databaseSelect5.Text + " select us.userid from UsrPortal up inner join UsrSet us on up.userno=us.userno where up.ProSta=1 and up.SecGroupNo in (select SecGroupNo from secgroup where portalid=6 and prosta=1)";
+            var dataAdapter2 = new SqlDataAdapter(apiUsers, conn);
+            var ds2 = new DataSet();
+            dataAdapter2.Fill(ds2);
+            stagedDataGridView.DataSource = ds2.Tables[0];
+            var apiUsersArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
             var apiEnabled = " USE " + databaseSelect5.Text + " select case when enabled=1 then 'Yes' else 'No' end as 'Enabled' from feature where FeatureId='System API''s'";
             var dataAdapter3 = new SqlDataAdapter(apiEnabled, conn);
             var ds3 = new DataSet();
@@ -1732,9 +1745,13 @@ namespace DataAnalysisTool
 
             if( secGroupsArray.Length == 0)
             {
-                apiRichTextBox.AppendText(Environment.NewLine + @"Please enable API's within the Global Features.");
+                apiRichTextBox.AppendText(Environment.NewLine + @"Please enable or create an API security group.");
                 apiPictureBox.Image = Properties.Resources.sec;
                 return;
+            }
+            else
+            {
+                apiPictureBox.Image = Properties.Resources.greenCheck;
             }
 
             apiRichTextBox.AppendText(Environment.NewLine + @"API Security Groups:");
@@ -1750,9 +1767,40 @@ namespace DataAnalysisTool
 is not configured, the System API's may be accessed from any IP address. This may be considered a security 
 risk if your ICM instance is externally accessible.");
 
+            apiRichTextBox.AppendText(Environment.NewLine + @"");
+            apiRichTextBox.AppendText(Environment.NewLine + @"API Users:");
+            
+            if (apiUsersArray.Length >=1)
+            {
+                foreach (var api in apiUsersArray)
+                {
+                    apiRichTextBox.AppendText(@"" + System.Environment.NewLine + api);
+                }
+                apiCallButton.Visible = true;
+                apiUsersComboBox.Visible = true;
+                apiUsersPictureBox.Visible = true;
+                apiUsersPasswordPictureBox.Visible = true;
+                apiUsersPasswordTextBox.Visible = true;
+                for (int i =0; i < apiUsersArray.Length; i++)
+                {
+                    apiUsersComboBox.Items.Add(apiUsersArray[i]);
+                }
+                apiRichTextBox.AppendText(Environment.NewLine + @"");
+                apiRichTextBox.AppendText(Environment.NewLine + @"It looks like this environment is ready to test an API call. If you would like to do this, please select a user above, type the password, then click Test Call");
+
+            }
+            else
+            {
+                apiRichTextBox.AppendText(Environment.NewLine + @"No API users found. Define one or more Users with access to the '''System API's''' AppArea. (Admin > Security > Users).");
+                apiPictureBox.Image = Properties.Resources.apiuser;
+                return;
+            }
+
             apiReadinessProgressBar.Value = 100;
         }
         Loading loading = new Loading();
+
+
 
 
         private void button28_Click(object sender, EventArgs e)
@@ -1898,6 +1946,21 @@ risk if your ICM instance is externally accessible.");
             Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
             CR.Select();
             xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+        }
+
+        private void apiCallButton_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Making API Call...");
+            using (var client = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate }))
+            {
+                client.BaseAddress = new Uri("https://welltest2.callidusinsurance.net/ICM/REST/auth/login?u=ROWARDAPI&p=Actek1!");
+                HttpResponseMessage response = client.GetAsync("").Result;
+                response.EnsureSuccessStatusCode();
+                string result = response.Content.ReadAsStringAsync().Result;
+                Console.WriteLine("Result: " + result);
+                apiRichTextBox.AppendText(@"" + System.Environment.NewLine + result);
+            }
+            Console.ReadLine();
         }
     }
 }

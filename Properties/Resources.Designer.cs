@@ -83,9 +83,9 @@ namespace DataAnalysisTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arrow_Up_16xLG {
+        internal static System.Drawing.Bitmap apiuser {
             get {
-                object obj = ResourceManager.GetObject("arrow_Up_16xLG", resourceCulture);
+                object obj = ResourceManager.GetObject("apiuser", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace DataAnalysisTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap big_loading_gif {
+        internal static System.Drawing.Bitmap arrow_Up_16xLG {
             get {
-                object obj = ResourceManager.GetObject("big-loading-gif", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_Up_16xLG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
