@@ -1,24 +1,13 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.OleDb;
 using System.IO;
-using System.IO.Compression;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 using System.Linq;
-using System.Security.Principal;
-using System.Data.SqlTypes;
-using System.Collections;
-using System.Text;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using RestSharp;
-using RestSharp.Authenticators;
 using System.Net;
 
 namespace DataAnalysisTool
@@ -33,6 +22,184 @@ namespace DataAnalysisTool
          * ############################################################################################
          * ############################################################################################
         */
+
+        //*********************************************************************************************
+        //*********************************GLOBAL******************************************************
+        //*********************************************************************************************
+        public DataAnalysisTool()
+        {
+            InitializeComponent();
+            dateComboBox1.SelectedIndex = 12;
+            dateComboBox2.SelectedIndex = 5;
+            dateComboBox3.SelectedIndex = 1;
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            unableToRegUserToolStripStatusLabel.Text = @"TALLYCENTRAL\" + Environment.UserName;
+        }
+
+        Loading loading = new Loading();
+
+        //------------------FORM DRAG LOGIC START------------------------------------------------------
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+        private void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        //------------------FORM DRAG LOGIC END------------------------------------------------------
+
+        //------------------CROW NUMBER LOGIC START------------------------------------------------------
+        private void dgvUserDetails_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using (SolidBrush b = new SolidBrush(importedfileDataGridView.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
+            }
+        }
+        //------------------CROW NUMBER LOGIC END------------------------------------------------------
+
+        private void Form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        //------------------TOOLTIP LOGIC START------------------------------------------------------
+
+        ToolTip tt = new ToolTip();
+
+        private void serverSelect_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.serverSelect, "Select your ICM server.");
+        }
+
+        private void databaseSelect_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.databaseSelect, "Select your ICM database.");
+        }
+
+        private void ifSelect_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.ifSelect, "Select your Import Format.");
+
+        }
+
+        private void groupBox7_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.importFormatServerSelectGroupBox, "Select your Server/Database/Import Format.");
+        }
+
+        private void reqListBox_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.reqListBox, "Select your required Import Format fields.");
+        }
+
+        private void groupBox1_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.importFormatSelectRequiredFieldsGroupBox, "Select your required Import Format fields.");
+        }
+
+        private void dateListBox_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.dateListBox, "Select the columns your created date format should apply to.");
+        }
+
+        private void dateComboBox1_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.dateComboBox1, "Use this dropdown to build your date format.");
+        }
+
+        private void dateComboBox2_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.dateComboBox2, "Use this dropdown to build your date format.");
+        }
+
+        private void dateComboBox3_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.dateComboBox3, "Use this dropdown to build your date format.");
+        }
+
+        private void dateComboBoxSeperator_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.dateComboBoxSeperator, "Do you want to use a seperator?");
+        }
+
+        private void dateFormat_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.dateFormat, "This is the current date format you built");
+        }
+
+        private void checkBox2_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.importFormatFindNullCheckbox, "Do you want to find NULLs in the date column?");
+        }
+
+        private void button6_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.importFormatGoButton, "Run the tool!");
+        }
+
+        private void tableSelect_MouseEnter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.tableSelect, "Use this dropdown to check any table within your selected database.");
+        }
+
+        //------------------TOOLTIP LOGIC END------------------------------------------------------
+
+        private void toolStripStatusLabel18_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.sap.com/index.html");
+        }
+
+        private void toolStripStatusLabel19_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.calliduscloud.com/");
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+    (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        //*********************************************************************************************
+        //*********************************/GLOBAL*****************************************************
+        //*********************************************************************************************
 
         //*********************************************************************************************
         //*********************************HEADER MENU*************************************************
@@ -401,15 +568,6 @@ namespace DataAnalysisTool
         }
         //------------------EXIT APP ACTION END------------------------------------------------------
 
-
-        //*********************************************************************************************
-        //*********************************/HEADER MENU************************************************
-        //*********************************************************************************************
-
-        //*********************************************************************************************
-        //*********************************SHORTCUT TAB************************************************
-        //*********************************************************************************************
-
         //------------------ACKTEKSOFT LOGIN START------------------------------------------------------
         private void acteksoft_Click(object sender, EventArgs e)
         {
@@ -426,12 +584,81 @@ namespace DataAnalysisTool
         }
         //------------------ACKTEKSOFT LOGIN END------------------------------------------------------
 
+
         //*********************************************************************************************
-        //*********************************/SHORTCUT TAB***********************************************
+        //*********************************/HEADER MENU************************************************
         //*********************************************************************************************
 
         //*********************************************************************************************
-        //*********************************CELL CHECK TAB**********************************************
+        //*********************************IMPORT FORMAT TAB*******************************************
+        //*********************************************************************************************
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Process.Start(Application.UserAppDataPath + @"\IF_Error_Files");
+        }
+
+        private void tXTToolStripMenuItemComma_Click(object sender, EventArgs e)
+        {
+            progressBar1.MarqueeAnimationSpeed = 1;
+            try
+            {
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "TXT | *.txt", ValidateNames = true, Multiselect = false })
+                {
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        importedfileDataGridView.DataSource = ReadTxtComma(ofd.FileName);
+                        importFormatActualFileNameToolStripStatusLabel.Text = ofd.FileName;
+                        importFormatActualFileNameToolStripStatusLabel.Visible = true;
+                        ifRowCounterToolStripStatusLabel.Text = importedfileDataGridView.Rows.Count.ToString();
+                        ifRowCountLabelToolStripStatusLabel.Visible = true;
+                        ifRowCounterToolStripStatusLabel.Visible = true;
+                        seperator3ToolStripStatusLabel.Visible = true;
+                        importFormatFileNameToolStripStatusLabel.Visible = true;
+                        systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading TXT: " + ofd.FileName + "...Done.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            progressBar1.MarqueeAnimationSpeed = 0;
+        }
+
+        private void legendButton_Click(object sender, EventArgs e)
+        {
+            DataGridViewLegend legend = new DataGridViewLegend();
+
+            while (Application.OpenForms.Count > 1)
+            {
+                Application.OpenForms[Application.OpenForms.Count - 1].Close();
+            }
+            legend.ShowDialog();
+        }
+
+        private void openInExcel_Click(object sender, EventArgs e)
+        {
+            copyAlltoClipboard();
+            Microsoft.Office.Interop.Excel.Application xlexcel;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlexcel = new Microsoft.Office.Interop.Excel.Application();
+            xlexcel.Visible = true;
+            xlWorkBook = xlexcel.Workbooks.Add(misValue);
+            xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
+            CR.Select();
+            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+        }
+
+        //*********************************************************************************************
+        //*********************************/IMPORT FORMAT TAB******************************************
+        //*********************************************************************************************
+
+        //*********************************************************************************************
+        //*********************************CHECK TOOLS TAB*********************************************
         //*********************************************************************************************
 
         //------------------SELECT/CLEAR LIST BOX START------------------------------------------------------
@@ -751,183 +978,481 @@ namespace DataAnalysisTool
         //------------------SPECIAL CHARACTER CHECKER END------------------------------------------------------
 
         //*********************************************************************************************
-        //*********************************/CELL CHECK TAB*********************************************
+        //*********************************/CHECK TOOLS TAB********************************************
         //*********************************************************************************************
 
         //*********************************************************************************************
-        //*********************************GLOBAL******************************************************
+        //*********************************SQL QUERY TAB**********************************************
         //*********************************************************************************************
-        public DataAnalysisTool()
-        {
-            InitializeComponent();
-            dateComboBox1.SelectedIndex = 12;
-            dateComboBox2.SelectedIndex = 5;
-            dateComboBox3.SelectedIndex = 1;
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            unableToRegUserToolStripStatusLabel.Text = @"TALLYCENTRAL\"+Environment.UserName;
-        }
-
-        //------------------FORM DRAG LOGIC START------------------------------------------------------
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
-        private void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-        //------------------FORM DRAG LOGIC END------------------------------------------------------
-
-        //------------------CROW NUMBER LOGIC START------------------------------------------------------
-        private void dgvUserDetails_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            using (SolidBrush b = new SolidBrush(importedfileDataGridView.RowHeadersDefaultCellStyle.ForeColor))
-            {
-                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
-            }
-        }
-        //------------------CROW NUMBER LOGIC END------------------------------------------------------
-
-        private void Form_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-            {
-                this.Close();
-            }
-        }
-
-        //------------------TOOLTIP LOGIC START------------------------------------------------------
-
-        ToolTip tt = new ToolTip();
-
-        private void serverSelect_MouseHover(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
-            ToolTip1.SetToolTip(this.serverSelect, "Select your ICM server.");
-        }
-
-        private void databaseSelect_MouseHover(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.databaseSelect, "Select your ICM database.");
-        }
-
-        private void ifSelect_MouseHover(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.ifSelect, "Select your Import Format.");
-
-        }
-
-        private void groupBox7_MouseHover(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.importFormatServerSelectGroupBox, "Select your Server/Database/Import Format.");
-        }
-
-        private void reqListBox_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.reqListBox, "Select your required Import Format fields.");
-        }
-
-        private void groupBox1_MouseHover(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.importFormatSelectRequiredFieldsGroupBox, "Select your required Import Format fields.");
-        }
-
-        private void dateListBox_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.dateListBox, "Select the columns your created date format should apply to.");
-        }
-
-        private void dateComboBox1_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.dateComboBox1, "Use this dropdown to build your date format.");
-        }
-
-        private void dateComboBox2_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.dateComboBox2, "Use this dropdown to build your date format.");
-        }
-
-        private void dateComboBox3_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.dateComboBox3, "Use this dropdown to build your date format.");
-        }
-
-        private void dateComboBoxSeperator_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.dateComboBoxSeperator, "Do you want to use a seperator?");
-        }
-
-        private void dateFormat_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.dateFormat, "This is the current date format you built");
-        }
-
-        private void checkBox2_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.importFormatFindNullCheckbox, "Do you want to find NULLs in the date column?");
-        }
-
-        private void button6_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.importFormatGoButton, "Run the tool!");
-        }
-
-        private void tableSelect_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.tableSelect, "Use this dropdown to check any table within your selected database.");
-        }
-
-        //------------------TOOLTIP LOGIC END------------------------------------------------------
-
-        private void toolStripStatusLabel18_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://www.sap.com/index.html");
-        }
-
-        private void toolStripStatusLabel19_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://www.calliduscloud.com/");
-        }
-
-        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-    (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-        }
 
         //*********************************************************************************************
-        //*********************************/GLOBAL*****************************************************
+        //*********************************/SQL QUERY TAB**********************************************
+        //*********************************************************************************************
+
+        //*********************************************************************************************
+        //*********************************PAYOUT BENCHMARK TAB****************************************
+        //*********************************************************************************************
+
+        private void pendingRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (payoutTypeSelect.Text != "")
+            {
+                int value = payoutTypeSelect.SelectedIndex;
+                payoutTypeSelect.SelectedIndex = -1;
+                payoutTypeSelect.SelectedIndex = value;
+            }
+        }
+
+        private void finalizedRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (payoutTypeSelect.Text != "")
+            {
+
+                int value = payoutTypeSelect.SelectedIndex;
+                payoutTypeSelect.SelectedIndex = -1;
+                payoutTypeSelect.SelectedIndex = value;
+            }
+        }
+
+        private void reversedRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (payoutTypeSelect.Text != "")
+            {
+
+                int value = payoutTypeSelect.SelectedIndex;
+                payoutTypeSelect.SelectedIndex = -1;
+                payoutTypeSelect.SelectedIndex = value;
+            }
+        }
+
+        private void payoutBenchmarkButton_Click(object sender, EventArgs e)
+        {
+
+            benchmarkProgressBar.Value = 0;
+            benchmarkProgressBar.Value = 10;
+
+            //global vars
+            progressBar1.MarqueeAnimationSpeed = 1;
+            if (serverSelect4.Text == "")
+
+            {
+                DialogResult result = MessageBox.Show("No server selected. \nPlease make sure you are connected to ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                progressBar1.MarqueeAnimationSpeed = 0;
+                benchmarkProgressBar.Value = 0;
+                return;
+            }
+
+            if (payoutTypeSelect.Text != "")
+            {
+
+                DialogResult result2 = MessageBox.Show("The DAT will check against the " + payoutTypeSelect.Text + " payout.\nContinue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result2 == DialogResult.No)
+                {
+                    progressBar1.MarqueeAnimationSpeed = 0;
+                    benchmarkProgressBar.Value = 0;
+                    return;
+                }
+            }
+
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+
+            //runlistnoroot
+            var runListNoRoot = "";
+            if (pendingRadioButton.Checked == true)
+            {
+                runListNoRoot = " USE " + databaseSelect4.Text + " select distinct rl.runlistnoroot from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "') and rl.DatFrom = '" + payoutSelect.Text + "' and rl.finalizestatus='p'";
+            }
+            else if (finalizedRadioButton.Checked == true)
+            {
+                runListNoRoot = " USE " + databaseSelect4.Text + " select distinct rl.runlistnoroot from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "') and rl.DatFrom = '" + payoutSelect.Text + "' and rl.finalizestatus='f'";
+            }
+            else if (reversedRadioButton.Checked == true)
+            {
+                runListNoRoot = " USE " + databaseSelect4.Text + " select distinct rl.runlistnoroot from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "') and rl.DatFrom = '" + payoutSelect.Text + "' and rl.finalizestatus='r'";
+            }
+            var dataAdapter3 = new SqlDataAdapter(runListNoRoot, conn);
+            var ds3 = new DataSet();
+            dataAdapter3.Fill(ds3);
+            stagedDataGridView.DataSource = ds3.Tables[0];
+            var runListNo = stagedDataGridView.Rows[0].Cells[0].Value;
+
+            //elapsed time
+            var elapsedTime = " USE " + databaseSelect4.Text + " select distinct (elapsedtime / 1000) / 60 as name from RunList  where RunListNo = " + runListNo;
+            var dataAdapter4 = new SqlDataAdapter(elapsedTime, conn);
+            var ds4 = new DataSet();
+            dataAdapter4.Fill(ds4);
+            stagedDataGridView.DataSource = ds4.Tables[0];
+            var elapsedTimeActual = stagedDataGridView.Rows[0].Cells[0].Value;
+
+            //elapsed time average
+            var elapsedTimeAverage = "";
+            if (pendingRadioButton.Checked == true)
+            {
+                elapsedTimeAverage = " USE " + databaseSelect4.Text + " select ((sum(elapsedtime)/COUNT(*))/1000) / 60 as name from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "')  and rl.finalizestatus='p'";
+            }
+            else if (finalizedRadioButton.Checked == true)
+            {
+                elapsedTimeAverage = " USE " + databaseSelect4.Text + " select ((sum(elapsedtime)/COUNT(*))/1000) / 60 as name from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "')  and rl.finalizestatus='f'";
+            }
+            else if (reversedRadioButton.Checked == true)
+            {
+                elapsedTimeAverage = " USE " + databaseSelect4.Text + " select ((sum(elapsedtime)/COUNT(*))/1000) / 60 as name from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "')  and rl.finalizestatus='r'";
+            }
+            var dataAdapter5 = new SqlDataAdapter(elapsedTimeAverage, conn);
+            var ds5 = new DataSet();
+            dataAdapter5.Fill(ds5);
+            stagedDataGridView.DataSource = ds5.Tables[0];
+            var elapsedTimeAverageActual = stagedDataGridView.Rows[0].Cells[0].Value;
+
+            //fasterslower
+            var fasterSlower = "";
+            if (Convert.ToInt32(elapsedTimeActual) < Convert.ToInt32(elapsedTimeAverageActual))
+            {
+                fasterSlower = "faster";
+            }
+            else
+            {
+                fasterSlower = "slower";
+            }
+
+            //fasterslowerpercent
+            decimal fasterSlowerPercent = 0;
+            if (Convert.ToInt32(elapsedTimeActual) < Convert.ToInt32(elapsedTimeAverageActual))
+            {
+                fasterSlowerPercent = ((Convert.ToDecimal(elapsedTimeAverageActual) / Convert.ToDecimal(elapsedTimeActual)) - 1) * 100;
+            }
+            else
+            {
+                fasterSlowerPercent = fasterSlowerPercent = ((Convert.ToDecimal(elapsedTimeActual) / Convert.ToDecimal(elapsedTimeAverageActual)) - 1) * 100;
+            }
+
+            //task numbers
+            var taskNumber = " USE " + databaseSelect4.Text + " select taskindex+1 as TaskNumber from runlist where RunListNoRoot=" + runListNo + " and TaskId is not null order by elapsedtime desc";
+            var dataAdapter6 = new SqlDataAdapter(taskNumber, conn);
+            var ds6 = new DataSet();
+            dataAdapter6.Fill(ds6);
+            stagedDataGridView.DataSource = ds6.Tables[0];
+            var taskNumberArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
+            //task ids
+            var taskIds = " USE " + databaseSelect4.Text + " select taskid from runlist where RunListNoRoot=" + runListNo + " and TaskId is not null order by elapsedtime desc";
+            var dataAdapter7 = new SqlDataAdapter(taskIds, conn);
+            var ds7 = new DataSet();
+            dataAdapter7.Fill(ds7);
+            stagedDataGridView.DataSource = ds7.Tables[0];
+            var taskIdsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
+
+
+            var tasks = " USE " + databaseSelect4.Text + " select taskindex+1 as 'Task #',TaskId as 'Task Name',((sum(elapsedtime)/COUNT(*))/1000) / 60 as 'Task Run Time in Minutes' from runlist where RunListNoRoot=" + runListNo + " and TaskId is not null group by taskid, TaskIndex, ElapsedTime order by elapsedtime desc";
+            var dataAdapter8 = new SqlDataAdapter(tasks, conn);
+            var ds8 = new DataSet();
+            dataAdapter8.Fill(ds8);
+            benchmarkDataGridView.DataSource = ds8.Tables[0];
+
+            benchmarkRichTextBox.Text = benchmarkRichTextBox.Text.Insert(0, Environment.NewLine +
+                @"###########################################################################################" + System.Environment.NewLine +
+                @"########################DataAnalysisTool - Payout Benchmark################################" + System.Environment.NewLine +
+                @"###########################################################################################" + System.Environment.NewLine +
+                @"Current Date: " + DateTime.Now + System.Environment.NewLine +
+                @"Server: " + serverSelect4.Text + System.Environment.NewLine +
+                @"Database: " + databaseSelect4.Text + System.Environment.NewLine +
+                @"Payout Type: " + payoutTypeSelect.Text + System.Environment.NewLine +
+                @"RunListNoRoot: " + runListNo +
+                @"" + System.Environment.NewLine +
+                @"" + System.Environment.NewLine +
+                @"****************************************************" + System.Environment.NewLine +
+                @"********************PAYOUT STATS********************" + System.Environment.NewLine +
+                @"****************************************************" + System.Environment.NewLine +
+                @"Elapsed time: " + elapsedTimeActual + " Minutes" + System.Environment.NewLine +
+                @"Average payout time for the " + payoutTypeSelect.Text + " payout: " + elapsedTimeAverageActual + " Minutes" + System.Environment.NewLine +
+                @"Percent " + fasterSlower + " than the payout average: " + fasterSlowerPercent + "%" + System.Environment.NewLine +
+                @"" + System.Environment.NewLine +
+                @"" + System.Environment.NewLine
+                );
+            progressBar1.MarqueeAnimationSpeed = 0;
+            benchmarkProgressBar.Value = 100;
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            Process.Start(Application.UserAppDataPath + @"\Payout_Benchmarks");
+        }
+
+        private void benchmarkClearResults_Click(object sender, EventArgs e)
+        {
+            benchmarkRichTextBox.Clear();
+        }
+
+        private void benchmarkExportResults_Click(object sender, EventArgs e)
+        {
+            if (benchmarkRichTextBox.Text == null || benchmarkRichTextBox.Text == "")
+            {
+                MessageBox.Show("There are no results to export!", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\Payout_Benchmarks");
+            string path = Application.UserAppDataPath + @"\Payout_Benchmarks\DataAnalysisTool_PB_Data_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                using (TextWriter tw = new StreamWriter(fs))
+                {
+                    for (int i = 0; i < benchmarkRichTextBox.Lines.Length; i++)
+                    {
+                        tw.WriteLine(benchmarkRichTextBox.Lines[i]);
+                    }
+                    // setup for export
+                    benchmarkDataGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+                    benchmarkDataGridView.SelectAll();
+                    // hiding row headers to avoid extra \t in exported text
+                    var rowHeaders = benchmarkDataGridView.RowHeadersVisible;
+                    benchmarkDataGridView.RowHeadersVisible = false;
+
+                    // ! creating text from grid values
+                    string content = benchmarkDataGridView.GetClipboardContent().GetText();
+
+                    // restoring grid state
+                    benchmarkDataGridView.ClearSelection();
+                    benchmarkDataGridView.RowHeadersVisible = rowHeaders;
+                    tw.WriteLine(content);
+                    tw.WriteLine("EOF.");
+                }
+            }
+            importFormatProgressBar.Value = 90;
+            importFormatProgressBar.Value = 100;
+            MessageBox.Show("Payout Benchmark file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            progressBar1.MarqueeAnimationSpeed = 0;
+            Process.Start(path);
+        }
+
+        //*********************************************************************************************
+        //*********************************/PAYOUT BENCHMARK TAB****************************************
+        //*********************************************************************************************
+
+        //*********************************************************************************************
+        //*********************************API READINESS TAB*******************************************
+        //*********************************************************************************************
+
+        private void apiReadinessCheckButton_Click(object sender, EventArgs e)
+        {
+
+            apiReadinessProgressBar.Value = 0;
+            apiReadinessProgressBar.Value = 10;
+
+            //global vars
+            progressBar1.MarqueeAnimationSpeed = 10;
+            if (databaseSelect5.Text == "")
+            {
+                DialogResult result = MessageBox.Show("No database selected. \nPlease make sure you are connected to ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                progressBar1.MarqueeAnimationSpeed = 0;
+                importFormatProgressBar.Value = 0;
+                return;
+            }
+
+            if (databaseSelect5.Text != "")
+            {
+
+                DialogResult result2 = MessageBox.Show("The DAT will check against the " + databaseSelect5.Text + " database.\nContinue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result2 == DialogResult.No)
+                {
+                    progressBar1.MarqueeAnimationSpeed = 0;
+                    importFormatProgressBar.Value = 0;
+                    return;
+                }
+            }
+
+            apiUsersComboBox.Items.Clear();
+            apiCallButton.Visible = false;
+            apiUsersComboBox.Visible = false;
+            apiUsersPictureBox.Visible = false;
+            apiUsersPasswordPictureBox.Visible = false;
+            apiUsersPasswordTextBox.Visible = false;
+            apiRichTextBox.Clear();
+
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect5.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+
+            var secGroups = " USE " + databaseSelect5.Text + " select SecGroupId from secgroup where portalid=6 and prosta=1";
+            var dataAdapter = new SqlDataAdapter(secGroups, conn);
+            var ds = new DataSet();
+            dataAdapter.Fill(ds);
+            stagedDataGridView.DataSource = ds.Tables[0];
+            var secGroupsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
+            var apiUsers = " USE " + databaseSelect5.Text + " select us.userid from UsrPortal up inner join UsrSet us on up.userno=us.userno where up.ProSta=1 and up.SecGroupNo in (select SecGroupNo from secgroup where portalid=6 and prosta=1)";
+            var dataAdapter2 = new SqlDataAdapter(apiUsers, conn);
+            var ds2 = new DataSet();
+            dataAdapter2.Fill(ds2);
+            stagedDataGridView.DataSource = ds2.Tables[0];
+            var apiUsersArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+
+            var apiEnabled = " USE " + databaseSelect5.Text + " select case when enabled=1 then 'Yes' else 'No' end as 'Enabled' from feature where FeatureId='System API''s'";
+            var dataAdapter3 = new SqlDataAdapter(apiEnabled, conn);
+            var ds3 = new DataSet();
+            dataAdapter3.Fill(ds3);
+            stagedDataGridView.DataSource = ds3.Tables[0];
+            var apiEnabledFinal = stagedDataGridView.Rows[0].Cells[0].Value;
+
+            conn.Close();
+
+            progressBar1.MarqueeAnimationSpeed = 0;
+
+            apiRichTextBox.AppendText(Environment.NewLine +
+                @"###########################################################################################" + System.Environment.NewLine +
+                @"########################DataAnalysisTool - API Readiness###################################" + System.Environment.NewLine +
+                @"###########################################################################################" + System.Environment.NewLine +
+                @"Current Date: " + DateTime.Now + System.Environment.NewLine +
+                @"Server: " + serverSelect5.Text + System.Environment.NewLine +
+                @"Database: " + databaseSelect5.Text + System.Environment.NewLine +
+                @"" + System.Environment.NewLine +
+                @"" + System.Environment.NewLine +
+                @"****************************************************" + System.Environment.NewLine +
+                @"********************RUN RESULTS*********************" + System.Environment.NewLine +
+                @"****************************************************" + System.Environment.NewLine
+                );
+
+            apiRichTextBox.AppendText(@"" + System.Environment.NewLine + "API enabled: " + System.Environment.NewLine + apiEnabledFinal);
+
+            apiRichTextBox.AppendText(@"" + System.Environment.NewLine);
+
+            if (apiEnabledFinal.Equals("Yes"))
+            {
+                apiPictureBox.Image = Properties.Resources.greenCheck;
+            }
+            else
+            {
+                apiRichTextBox.AppendText(Environment.NewLine + @"Please enable API's within the Global Features.");
+                apiPictureBox.Image = Properties.Resources.global;
+                return;
+            }
+
+            if (secGroupsArray.Length == 0)
+            {
+                apiRichTextBox.AppendText(Environment.NewLine + @"Please enable or create an API security group.");
+                apiPictureBox.Image = Properties.Resources.sec;
+                return;
+            }
+            else
+            {
+                apiPictureBox.Image = Properties.Resources.greenCheck;
+            }
+
+            apiRichTextBox.AppendText(Environment.NewLine + @"API Security Groups:");
+            foreach (var sec in secGroupsArray)
+            {
+                apiRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
+            }
+
+            apiRichTextBox.AppendText(Environment.NewLine + @"");
+
+            apiRichTextBox.AppendText(Environment.NewLine + @"Optionally, configure the system.api.ip.whitelist to restrict access to a range of client IP addresses. 
+(Admin > Configuration > Options) E.g. restrict access to internal IP addresses. Note that if this option
+is not configured, the System API's may be accessed from any IP address. This may be considered a security 
+risk if your ICM instance is externally accessible.");
+
+            apiRichTextBox.AppendText(Environment.NewLine + @"");
+            apiRichTextBox.AppendText(Environment.NewLine + @"API Users:");
+
+            if (apiUsersArray.Length >= 1)
+            {
+                foreach (var api in apiUsersArray)
+                {
+                    apiRichTextBox.AppendText(@"" + System.Environment.NewLine + api);
+                }
+                apiCallButton.Visible = true;
+                apiUsersComboBox.Visible = true;
+                apiUsersPictureBox.Visible = true;
+                apiUsersPasswordPictureBox.Visible = true;
+                apiUsersPasswordTextBox.Visible = true;
+                for (int i = 0; i < apiUsersArray.Length; i++)
+                {
+                    apiUsersComboBox.Items.Add(apiUsersArray[i]);
+                }
+                apiRichTextBox.AppendText(Environment.NewLine + @"");
+                apiRichTextBox.AppendText(Environment.NewLine + @"It looks like this environment is ready to test an API call. If you would like to do this, please select a user above, type the password, then click Test Call");
+                apiCallButton.Visible = true;
+            }
+            else
+            {
+                apiRichTextBox.AppendText(Environment.NewLine + @"No API users found. Define one or more Users with access to the '''System API's''' AppArea. (Admin > Security > Users).");
+                apiPictureBox.Image = Properties.Resources.apiuser;
+                return;
+            }
+            apiRichTextBox.AppendText(Environment.NewLine + @"");
+            apiReadinessProgressBar.Value = 100;
+        }
+
+        private void apiCallButton_Click(object sender, EventArgs e)
+        {
+            apiRichTextBox.Clear();
+            using (var client = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate }))
+            {
+                apiRichTextBox.AppendText(Environment.NewLine +
+                    @"###########################################################################################" + System.Environment.NewLine +
+                    @"########################DataAnalysisTool - API Readiness###################################" + System.Environment.NewLine +
+                    @"###########################################################################################" + System.Environment.NewLine +
+                    @"Current Date: " + DateTime.Now + System.Environment.NewLine +
+                    @"Server: " + serverSelect5.Text + System.Environment.NewLine +
+                    @"Database: " + databaseSelect5.Text + System.Environment.NewLine +
+                    @"" + System.Environment.NewLine +
+                    @"" + System.Environment.NewLine +
+                    @"****************************************************" + System.Environment.NewLine +
+                    @"********************API CALL RESULTS****************" + System.Environment.NewLine +
+                    @"****************************************************" + System.Environment.NewLine
+                    );
+                client.BaseAddress = new Uri("https://welltest2.callidusinsurance.net/ICM/REST/auth/login?u=" + apiUsersComboBox.Text + "&p=" + apiUsersPasswordTextBox.Text);
+                HttpResponseMessage response = client.GetAsync("").Result;
+                response.EnsureSuccessStatusCode();
+                string result = response.Content.ReadAsStringAsync().Result;
+                Console.WriteLine("Result: " + result);
+                apiRichTextBox.AppendText(@"" + System.Environment.NewLine + result);
+            }
+        }
+
+        private void apiExportResultsButton_Click(object sender, EventArgs e)
+        {
+            if (apiRichTextBox.Text == null || apiRichTextBox.Text == "")
+            {
+                MessageBox.Show("There are no results to export!", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\API_Readiness_Check");
+            string path = Application.UserAppDataPath + @"\API_Readiness_Check\DataAnalysisTool_API_Check_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                using (TextWriter tw = new StreamWriter(fs))
+                {
+                    for (int i = 0; i < apiRichTextBox.Lines.Length; i++)
+                    {
+                        tw.WriteLine(apiRichTextBox.Lines[i]);
+                    }
+                    tw.WriteLine("EOF.");
+                }
+            }
+            apiReadinessProgressBar.Value = 90;
+            apiReadinessProgressBar.Value = 100;
+            MessageBox.Show("API Readiness file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            progressBar1.MarqueeAnimationSpeed = 0;
+            Process.Start(path);
+        }
+
+        private void apiClearResultsButton_Click(object sender, EventArgs e)
+        {
+            apiRichTextBox.Clear();
+        }
+
+        private void aPILogFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(Application.UserAppDataPath + @"\API_Readiness_Check");
+        }
+
+        //*********************************************************************************************
+        //*********************************/API READINESS TAB*******************************************
         //*********************************************************************************************
 
 
@@ -956,41 +1481,6 @@ namespace DataAnalysisTool
                 Application.OpenForms[Application.OpenForms.Count - 1].Close();
             }
             legend.ShowDialog();
-        }
-
-
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Process.Start(Application.UserAppDataPath + @"\IF_Error_Files");
-        }
-
-        private void tXTToolStripMenuItemComma_Click(object sender, EventArgs e)
-        {
-            progressBar1.MarqueeAnimationSpeed = 1;
-            try
-            {
-                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "TXT | *.txt", ValidateNames = true, Multiselect = false })
-                {
-                    if (ofd.ShowDialog() == DialogResult.OK)
-                    {
-                        importedfileDataGridView.DataSource = ReadTxtComma(ofd.FileName);
-                        importFormatActualFileNameToolStripStatusLabel.Text = ofd.FileName;
-                        importFormatActualFileNameToolStripStatusLabel.Visible = true;
-                        ifRowCounterToolStripStatusLabel.Text = importedfileDataGridView.Rows.Count.ToString();
-                        ifRowCountLabelToolStripStatusLabel.Visible = true;
-                        ifRowCounterToolStripStatusLabel.Visible = true;
-                        seperator3ToolStripStatusLabel.Visible = true;
-                        importFormatFileNameToolStripStatusLabel.Visible = true;
-                        systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading TXT: " + ofd.FileName + "...Done.");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            progressBar1.MarqueeAnimationSpeed = 0;
         }
 
         public DataTable ReadTxtComma(string fileName)
@@ -1429,468 +1919,6 @@ namespace DataAnalysisTool
             }
         }
 
-        private void payoutBenchmarkButton_Click(object sender, EventArgs e)
-        {
-
-            benchmarkProgressBar.Value = 0;
-            benchmarkProgressBar.Value = 10;
-
-            //global vars
-            progressBar1.MarqueeAnimationSpeed = 1;
-            if (serverSelect4.Text == "")
-
-            {
-                DialogResult result = MessageBox.Show("No server selected. \nPlease make sure you are connected to ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                progressBar1.MarqueeAnimationSpeed = 0;
-                benchmarkProgressBar.Value = 0;
-                return;
-            }
-
-            if (payoutTypeSelect.Text != "")
-            {
-
-                DialogResult result2 = MessageBox.Show("The DAT will check against the " + payoutTypeSelect.Text + " payout.\nContinue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                if (result2 == DialogResult.No)
-                {
-                    progressBar1.MarqueeAnimationSpeed = 0;
-                    benchmarkProgressBar.Value = 0;
-                    return;
-                }
-            }
-
-            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
-            conn.Open();
-
-            //runlistnoroot
-            var runListNoRoot = "";
-            if (pendingRadioButton.Checked == true)
-            {
-                runListNoRoot = " USE " + databaseSelect4.Text + " select distinct rl.runlistnoroot from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "') and rl.DatFrom = '" + payoutSelect.Text + "' and rl.finalizestatus='p'";
-            }
-            else if (finalizedRadioButton.Checked == true)
-            {
-                runListNoRoot = " USE " + databaseSelect4.Text + " select distinct rl.runlistnoroot from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "') and rl.DatFrom = '" + payoutSelect.Text + "' and rl.finalizestatus='f'";
-            }
-            else if (reversedRadioButton.Checked == true)
-            {
-                runListNoRoot = " USE " + databaseSelect4.Text + " select distinct rl.runlistnoroot from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "') and rl.DatFrom = '" + payoutSelect.Text + "' and rl.finalizestatus='r'";
-            }
-            var dataAdapter3 = new SqlDataAdapter(runListNoRoot, conn);
-            var ds3 = new DataSet();
-            dataAdapter3.Fill(ds3);
-            stagedDataGridView.DataSource = ds3.Tables[0];
-            var runListNo = stagedDataGridView.Rows[0].Cells[0].Value;
-
-            //elapsed time
-            var elapsedTime = " USE " + databaseSelect4.Text + " select distinct (elapsedtime / 1000) / 60 as name from RunList  where RunListNo = " + runListNo;
-            var dataAdapter4 = new SqlDataAdapter(elapsedTime, conn);
-            var ds4 = new DataSet();
-            dataAdapter4.Fill(ds4);
-            stagedDataGridView.DataSource = ds4.Tables[0];
-            var elapsedTimeActual = stagedDataGridView.Rows[0].Cells[0].Value;
-
-            //elapsed time average
-            var elapsedTimeAverage = "";
-            if (pendingRadioButton.Checked == true)
-            {
-                elapsedTimeAverage = " USE " + databaseSelect4.Text + " select ((sum(elapsedtime)/COUNT(*))/1000) / 60 as name from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "')  and rl.finalizestatus='p'";
-            }
-            else if (finalizedRadioButton.Checked == true)
-            {
-                elapsedTimeAverage = " USE " + databaseSelect4.Text + " select ((sum(elapsedtime)/COUNT(*))/1000) / 60 as name from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "')  and rl.finalizestatus='f'";
-            }
-            else if (reversedRadioButton.Checked == true)
-            {
-                elapsedTimeAverage = " USE " + databaseSelect4.Text + " select ((sum(elapsedtime)/COUNT(*))/1000) / 60 as name from RunList rl left join rundet rd on rd.runlistno = rl.runlistno where rl.rectype='pay' and rd.ItemName = 'PayoutTypeNo' and rd.ItemValue = (select payouttypeno from PayoutType where payouttypeid = '" + payoutTypeSelect.Text + "')  and rl.finalizestatus='r'";
-            }
-            var dataAdapter5 = new SqlDataAdapter(elapsedTimeAverage, conn);
-            var ds5 = new DataSet();
-            dataAdapter5.Fill(ds5);
-            stagedDataGridView.DataSource = ds5.Tables[0];
-            var elapsedTimeAverageActual = stagedDataGridView.Rows[0].Cells[0].Value;
-
-            //fasterslower
-            var fasterSlower = "";
-            if(Convert.ToInt32(elapsedTimeActual) < Convert.ToInt32(elapsedTimeAverageActual))
-            {
-                fasterSlower = "faster";
-            }
-            else
-            {
-                fasterSlower = "slower";
-            }
-
-            //fasterslowerpercent
-            decimal fasterSlowerPercent = 0;
-            if (Convert.ToInt32(elapsedTimeActual) < Convert.ToInt32(elapsedTimeAverageActual))
-            {
-                fasterSlowerPercent = ((Convert.ToDecimal(elapsedTimeAverageActual) / Convert.ToDecimal(elapsedTimeActual))-1) * 100;
-            }
-            else
-            {
-                fasterSlowerPercent = fasterSlowerPercent = ((Convert.ToDecimal(elapsedTimeActual) / Convert.ToDecimal(elapsedTimeAverageActual)) - 1) * 100;
-            }
-
-            //task numbers
-            var taskNumber = " USE " + databaseSelect4.Text + " select taskindex+1 as TaskNumber from runlist where RunListNoRoot=" +runListNo+ " and TaskId is not null order by elapsedtime desc";
-            var dataAdapter6 = new SqlDataAdapter(taskNumber, conn);
-            var ds6 = new DataSet();
-            dataAdapter6.Fill(ds6);
-            stagedDataGridView.DataSource = ds6.Tables[0];
-            var taskNumberArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-
-            //task ids
-            var taskIds = " USE " + databaseSelect4.Text + " select taskid from runlist where RunListNoRoot=" + runListNo + " and TaskId is not null order by elapsedtime desc";
-            var dataAdapter7 = new SqlDataAdapter(taskIds, conn);
-            var ds7 = new DataSet();
-            dataAdapter7.Fill(ds7);
-            stagedDataGridView.DataSource = ds7.Tables[0];
-            var taskIdsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-            
-
-
-            var tasks = " USE " + databaseSelect4.Text + " select taskindex+1 as 'Task #',TaskId as 'Task Name',((sum(elapsedtime)/COUNT(*))/1000) / 60 as 'Task Run Time in Minutes' from runlist where RunListNoRoot=" + runListNo + " and TaskId is not null group by taskid, TaskIndex, ElapsedTime order by elapsedtime desc";
-            var dataAdapter8 = new SqlDataAdapter(tasks, conn);
-            var ds8 = new DataSet();
-            dataAdapter8.Fill(ds8);
-            benchmarkDataGridView.DataSource = ds8.Tables[0];
-
-            benchmarkRichTextBox.Text = benchmarkRichTextBox.Text.Insert(0, Environment.NewLine +
-                @"###########################################################################################" + System.Environment.NewLine +
-                @"########################DataAnalysisTool - Payout Benchmark################################" + System.Environment.NewLine +
-                @"###########################################################################################" + System.Environment.NewLine +
-                @"Current Date: " + DateTime.Now + System.Environment.NewLine +
-                @"Server: "+serverSelect4.Text+ System.Environment.NewLine +
-                @"Database: " +databaseSelect4.Text + System.Environment.NewLine +
-                @"Payout Type: " +payoutTypeSelect.Text + System.Environment.NewLine +
-                @"RunListNoRoot: " +runListNo +
-                @"" + System.Environment.NewLine +
-                @"" + System.Environment.NewLine +
-                @"****************************************************" +  System.Environment.NewLine +
-                @"********************PAYOUT STATS********************" +  System.Environment.NewLine +
-                @"****************************************************" +  System.Environment.NewLine +
-                @"Elapsed time: " + elapsedTimeActual + " Minutes" + System.Environment.NewLine +
-                @"Average payout time for the " + payoutTypeSelect.Text + " payout: "+elapsedTimeAverageActual+" Minutes" + System.Environment.NewLine +
-                @"Percent " + fasterSlower + " than the payout average: " + fasterSlowerPercent + "%" + System.Environment.NewLine +
-                @"" + System.Environment.NewLine +
-                @"" + System.Environment.NewLine
-                );
-            progressBar1.MarqueeAnimationSpeed = 0;
-            benchmarkProgressBar.Value = 100;
-        }
-
-        private void benchmarkExportResults_Click(object sender, EventArgs e)
-        {
-            if(benchmarkRichTextBox.Text == null || benchmarkRichTextBox.Text == "")
-            {
-                MessageBox.Show("There are no results to export!", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                return;
-            }
-            System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\Payout_Benchmarks");
-            string path = Application.UserAppDataPath + @"\Payout_Benchmarks\DataAnalysisTool_PB_Data_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
-            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
-            {
-                using (TextWriter tw = new StreamWriter(fs))
-                {
-                    for (int i = 0; i < benchmarkRichTextBox.Lines.Length; i++)
-                    {
-                        tw.WriteLine(benchmarkRichTextBox.Lines[i]);
-                    }
-                    // setup for export
-                    benchmarkDataGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-                    benchmarkDataGridView.SelectAll();
-                    // hiding row headers to avoid extra \t in exported text
-                    var rowHeaders = benchmarkDataGridView.RowHeadersVisible;
-                    benchmarkDataGridView.RowHeadersVisible = false;
-
-                    // ! creating text from grid values
-                    string content = benchmarkDataGridView.GetClipboardContent().GetText();
-
-                    // restoring grid state
-                    benchmarkDataGridView.ClearSelection();
-                    benchmarkDataGridView.RowHeadersVisible = rowHeaders;
-                    tw.WriteLine(content);
-                    tw.WriteLine("EOF.");
-                }
-            }
-            importFormatProgressBar.Value = 90;
-            importFormatProgressBar.Value = 100;
-            MessageBox.Show("Payout Benchmark file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            progressBar1.MarqueeAnimationSpeed = 0;
-            Process.Start(path);
-        }
-
-        private void pendingRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (payoutTypeSelect.Text != "")
-            {
-                int value = payoutTypeSelect.SelectedIndex;
-                payoutTypeSelect.SelectedIndex = -1;
-                payoutTypeSelect.SelectedIndex = value;
-            }
-        }
-
-        private void finalizedRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (payoutTypeSelect.Text != "")
-            {
-
-                int value = payoutTypeSelect.SelectedIndex;
-                payoutTypeSelect.SelectedIndex = -1;
-                payoutTypeSelect.SelectedIndex = value;
-            }
-        }
-
-        private void reversedRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (payoutTypeSelect.Text != "")
-            {
-
-                int value = payoutTypeSelect.SelectedIndex;
-                payoutTypeSelect.SelectedIndex = -1;
-                payoutTypeSelect.SelectedIndex = value;
-            }
-        }
-
-        private void apiReadinessCheckButton_Click(object sender, EventArgs e)
-        {
-            
-            importFormatProgressBar.Value = 0;
-            importFormatProgressBar.Value = 10;
-
-            //global vars
-            progressBar1.MarqueeAnimationSpeed = 10;
-            if (databaseSelect5.Text == "")
-            {
-                DialogResult result = MessageBox.Show("No database selected. \nPlease make sure you are connected to ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                progressBar1.MarqueeAnimationSpeed = 0;
-                importFormatProgressBar.Value = 0;
-                return;
-            }
-
-            if (databaseSelect5.Text != "")
-            {
-
-                DialogResult result2 = MessageBox.Show("The DAT will check against the " + databaseSelect5.Text + " database.\nContinue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                if (result2 == DialogResult.No)
-                {
-                    progressBar1.MarqueeAnimationSpeed = 0;
-                    importFormatProgressBar.Value = 0;
-                    return;
-                }
-            }
-
-            apiUsersComboBox.Items.Clear();
-            apiCallButton.Visible = false;
-            apiUsersComboBox.Visible = false;
-            apiUsersPictureBox.Visible = false;
-            apiUsersPasswordPictureBox.Visible = false;
-            apiUsersPasswordTextBox.Visible = false;
-            apiRichTextBox.Clear();
-
-            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect5.Text + "; Initial Catalog = master; Integrated Security = True");
-            conn.Open();
-
-            var secGroups = " USE " + databaseSelect5.Text + " select SecGroupId from secgroup where portalid=6 and prosta=1";
-            var dataAdapter = new SqlDataAdapter(secGroups, conn);
-            var ds = new DataSet();
-            dataAdapter.Fill(ds);
-            stagedDataGridView.DataSource = ds.Tables[0];
-            var secGroupsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-
-            var apiUsers = " USE " + databaseSelect5.Text + " select us.userid from UsrPortal up inner join UsrSet us on up.userno=us.userno where up.ProSta=1 and up.SecGroupNo in (select SecGroupNo from secgroup where portalid=6 and prosta=1)";
-            var dataAdapter2 = new SqlDataAdapter(apiUsers, conn);
-            var ds2 = new DataSet();
-            dataAdapter2.Fill(ds2);
-            stagedDataGridView.DataSource = ds2.Tables[0];
-            var apiUsersArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                    .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-
-            var apiEnabled = " USE " + databaseSelect5.Text + " select case when enabled=1 then 'Yes' else 'No' end as 'Enabled' from feature where FeatureId='System API''s'";
-            var dataAdapter3 = new SqlDataAdapter(apiEnabled, conn);
-            var ds3 = new DataSet();
-            dataAdapter3.Fill(ds3);
-            stagedDataGridView.DataSource = ds3.Tables[0];
-            var apiEnabledFinal = stagedDataGridView.Rows[0].Cells[0].Value;
-
-            conn.Close();
-
-            progressBar1.MarqueeAnimationSpeed = 0;
-
-            apiRichTextBox.AppendText(Environment.NewLine +
-                @"###########################################################################################" + System.Environment.NewLine +
-                @"########################DataAnalysisTool - API Readiness###################################" + System.Environment.NewLine +
-                @"###########################################################################################" + System.Environment.NewLine +
-                @"Current Date: " + DateTime.Now + System.Environment.NewLine +
-                @"Server: " + serverSelect5.Text + System.Environment.NewLine +
-                @"Database: " + databaseSelect5.Text + System.Environment.NewLine +
-                @"" + System.Environment.NewLine +
-                @"" + System.Environment.NewLine +
-                @"****************************************************" + System.Environment.NewLine +
-                @"********************RUN RESULTS*********************" + System.Environment.NewLine +
-                @"****************************************************" + System.Environment.NewLine
-                );
-
-            apiRichTextBox.AppendText(@"" + System.Environment.NewLine + "API enabled: " + System.Environment.NewLine + apiEnabledFinal);
-
-            apiRichTextBox.AppendText(@"" + System.Environment.NewLine);
-
-            if (apiEnabledFinal.Equals("Yes"))
-            {
-                apiPictureBox.Image = Properties.Resources.greenCheck;
-            }
-            else
-            {
-                apiRichTextBox.AppendText(Environment.NewLine + @"Please enable API's within the Global Features.");
-                apiPictureBox.Image = Properties.Resources.global;
-                return;
-            }
-
-            if( secGroupsArray.Length == 0)
-            {
-                apiRichTextBox.AppendText(Environment.NewLine + @"Please enable or create an API security group.");
-                apiPictureBox.Image = Properties.Resources.sec;
-                return;
-            }
-            else
-            {
-                apiPictureBox.Image = Properties.Resources.greenCheck;
-            }
-
-            apiRichTextBox.AppendText(Environment.NewLine + @"API Security Groups:");
-            foreach (var sec in secGroupsArray)
-            {
-                apiRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
-            }
-
-            apiRichTextBox.AppendText(Environment.NewLine + @"");
-
-            apiRichTextBox.AppendText(Environment.NewLine + @"Optionally, configure the system.api.ip.whitelist to restrict access to a range of client IP addresses. 
-(Admin > Configuration > Options) E.g. restrict access to internal IP addresses. Note that if this option
-is not configured, the System API's may be accessed from any IP address. This may be considered a security 
-risk if your ICM instance is externally accessible.");
-
-            apiRichTextBox.AppendText(Environment.NewLine + @"");
-            apiRichTextBox.AppendText(Environment.NewLine + @"API Users:");
-            
-            if (apiUsersArray.Length >=1)
-            {
-                foreach (var api in apiUsersArray)
-                {
-                    apiRichTextBox.AppendText(@"" + System.Environment.NewLine + api);
-                }
-                apiCallButton.Visible = true;
-                apiUsersComboBox.Visible = true;
-                apiUsersPictureBox.Visible = true;
-                apiUsersPasswordPictureBox.Visible = true;
-                apiUsersPasswordTextBox.Visible = true;
-                for (int i =0; i < apiUsersArray.Length; i++)
-                {
-                    apiUsersComboBox.Items.Add(apiUsersArray[i]);
-                }
-                apiRichTextBox.AppendText(Environment.NewLine + @"");
-                apiRichTextBox.AppendText(Environment.NewLine + @"It looks like this environment is ready to test an API call. If you would like to do this, please select a user above, type the password, then click Test Call");
-
-            }
-            else
-            {
-                apiRichTextBox.AppendText(Environment.NewLine + @"No API users found. Define one or more Users with access to the '''System API's''' AppArea. (Admin > Security > Users).");
-                apiPictureBox.Image = Properties.Resources.apiuser;
-                return;
-            }
-            apiRichTextBox.AppendText(Environment.NewLine + @"");
-            apiReadinessProgressBar.Value = 100;
-        }
-
-        private void apiCallButton_Click(object sender, EventArgs e)
-        {
-            apiRichTextBox.Clear();
-            using (var client = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate }))
-            {
-                apiRichTextBox.AppendText(Environment.NewLine +
-                    @"###########################################################################################" + System.Environment.NewLine +
-                    @"########################DataAnalysisTool - API Readiness###################################" + System.Environment.NewLine +
-                    @"###########################################################################################" + System.Environment.NewLine +
-                    @"Current Date: " + DateTime.Now + System.Environment.NewLine +
-                    @"Server: " + serverSelect5.Text + System.Environment.NewLine +
-                    @"Database: " + databaseSelect5.Text + System.Environment.NewLine +
-                    @"" + System.Environment.NewLine +
-                    @"" + System.Environment.NewLine +
-                    @"****************************************************" + System.Environment.NewLine +
-                    @"********************API CALL RESULTS****************" + System.Environment.NewLine +
-                    @"****************************************************" + System.Environment.NewLine
-                    );
-                client.BaseAddress = new Uri("https://welltest2.callidusinsurance.net/ICM/REST/auth/login?u=" + apiUsersComboBox.Text + "&p=" + apiUsersPasswordTextBox.Text);
-                HttpResponseMessage response = client.GetAsync("").Result;
-                response.EnsureSuccessStatusCode();
-                string result = response.Content.ReadAsStringAsync().Result;
-                Console.WriteLine("Result: " + result);
-                apiRichTextBox.AppendText(@"" + System.Environment.NewLine + result);
-            }
-        }
-
-        private void apiExportResultsButton_Click(object sender, EventArgs e)
-        {
-            if (apiRichTextBox.Text == null || apiRichTextBox.Text == "")
-            {
-                MessageBox.Show("There are no results to export!", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                return;
-            }
-            System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\API_Readiness_Check");
-            string path = Application.UserAppDataPath + @"\API_Readiness_Check\DataAnalysisTool_API_Check_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
-            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
-            {
-                using (TextWriter tw = new StreamWriter(fs))
-                {
-                    for (int i = 0; i < apiRichTextBox.Lines.Length; i++)
-                    {
-                        tw.WriteLine(apiRichTextBox.Lines[i]);
-                    }
-                    tw.WriteLine("EOF.");
-                }
-            }
-            apiReadinessProgressBar.Value = 90;
-            apiReadinessProgressBar.Value = 100;
-            MessageBox.Show("API Readiness file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            progressBar1.MarqueeAnimationSpeed = 0;
-            Process.Start(path);
-        }
-
-        Loading loading = new Loading();
-
-
-
-
-        private void button28_Click(object sender, EventArgs e)
-        {
-            Process.Start(Application.UserAppDataPath + @"\Payout_Benchmarks");
-        }
-
-        private void benchmarkClearResults_Click(object sender, EventArgs e)
-        {
-            benchmarkRichTextBox.Clear();
-        }
-
-        private void legendButton_Click(object sender, EventArgs e)
-        {
-            DataGridViewLegend legend = new DataGridViewLegend();
-
-            while (Application.OpenForms.Count > 1)
-            {
-                Application.OpenForms[Application.OpenForms.Count - 1].Close();
-            }
-            legend.ShowDialog();
-        }
-
-
-
-        private void apiClearResultsButton_Click(object sender, EventArgs e)
-        {
-            apiRichTextBox.Clear();
-        }
         //------------------EXIT APP ACTION END------------------------------------------------------
         /*
          * ############################################################################################   
@@ -1968,21 +1996,7 @@ risk if your ICM instance is externally accessible.");
                 Clipboard.SetDataObject(dataObj);
         }
 
-        private void openInExcel_Click(object sender, EventArgs e)
-        {
-            copyAlltoClipboard();
-            Microsoft.Office.Interop.Excel.Application xlexcel;
-            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
-            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
-            object misValue = System.Reflection.Missing.Value;
-            xlexcel = new Microsoft.Office.Interop.Excel.Application();
-            xlexcel.Visible = true;
-            xlWorkBook = xlexcel.Workbooks.Add(misValue);
-            xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-            Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
-            CR.Select();
-            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
-        }
+
 
 
     }
