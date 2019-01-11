@@ -1369,6 +1369,9 @@ risk if your ICM instance is externally accessible.");
                 apiUsersPictureBox.Visible = true;
                 apiUsersPasswordPictureBox.Visible = true;
                 apiUsersPasswordTextBox.Visible = true;
+                apiEnvLabel1.Visible = true;
+                apiEnvLabel2.Visible = true;
+                apiEnvLabelMain.Visible = true;
                 for (int i = 0; i < apiUsersArray.Length; i++)
                 {
                     apiUsersComboBox.Items.Add(apiUsersArray[i]);
@@ -1996,8 +1999,34 @@ risk if your ICM instance is externally accessible.");
                 Clipboard.SetDataObject(dataObj);
         }
 
+        private void eZIReport451ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult iReportInstall = MessageBox.Show("The DAT Tool will install iReport 4.5.1. Continue?", "DataAnalysisTool", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+
+            if (iReportInstall == DialogResult.Yes)
+            {
+                var processdir = Environment.CurrentDirectory;
+                System.IO.Directory.CreateDirectory(processdir + @"\ReportInstall");
+                string path = processdir + @"\ReportInstall\ReportInstall.cmd";
+                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                {
+                    using (TextWriter tw = new StreamWriter(fs))
+                    {
+                        tw.WriteLine(@"mkdir " + @"""C:\Program Files (x86)\Java\jre1.7.0_25""");
+                        tw.WriteLine(@"mkdir " + @"""C:\Program Files (x86)\Jaspersoft\iReport-4.5.1""");
+                        tw.WriteLine(@"robocopy \\FS-CorpFileAL\Public\ReportInstall\jre1.7.0_25 " + @"""C:\Program Files (x86)\Java\jre1.7.0_25""" + @" /E");
+                        tw.WriteLine(@"robocopy \\FS-CorpFileAL\Public\ReportInstall\iReport-4.5.1 " + @"""C:\Program Files (x86)\Jaspersoft\iReport-4.5.1""" + " /E");
+                        tw.WriteLine("pause");
+                    }
+                    System.Diagnostics.Process.Start(path);
+                }
+            }
+            else
+            {
+                return;
+            }
 
 
-
+        }
     }
 }

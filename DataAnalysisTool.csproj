@@ -27,13 +27,13 @@
     <SupportUrl>http://calliduscloud.com</SupportUrl>
     <ErrorReportUrl>http://calliduscloud.com</ErrorReportUrl>
     <ProductName>Data Analysis Tool</ProductName>
-    <PublisherName>CallidusCloud</PublisherName>
-    <SuiteName>CallidusCloud</SuiteName>
+    <PublisherName>SAP</PublisherName>
+    <SuiteName>SAP</SuiteName>
     <MinimumRequiredVersion>1.0.0.22</MinimumRequiredVersion>
     <WebPage>README.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -82,7 +82,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <TargetZone>Custom</TargetZone>
+    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
@@ -101,6 +101,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO.Compression.FileSystem" />
@@ -110,6 +111,7 @@
     </Reference>
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
       <Private>True</Private>
