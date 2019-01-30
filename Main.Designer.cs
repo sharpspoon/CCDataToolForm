@@ -61,6 +61,7 @@
             this.aPILogFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aCTEKLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eZIReport451ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +71,6 @@
             this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemMaximize = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemMinimize = new System.Windows.Forms.ToolStripMenuItem();
-            this.eZIReport451ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateCheckerGoButton = new System.Windows.Forms.Button();
             this.checkToolsDateCheckerGroupBox = new System.Windows.Forms.GroupBox();
             this.clearAllDateCheckerButton = new System.Windows.Forms.Button();
@@ -244,6 +244,13 @@
             this.stagedTextBox = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.mainLogSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.envChanges = new System.Windows.Forms.TabPage();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.serverSelect6 = new System.Windows.Forms.ComboBox();
+            this.databaseSelect6 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.checkToolsDateCheckerGroupBox.SuspendLayout();
@@ -314,6 +321,10 @@
             this.mainLogSplitContainer.Panel1.SuspendLayout();
             this.mainLogSplitContainer.Panel2.SuspendLayout();
             this.mainLogSplitContainer.SuspendLayout();
+            this.envChanges.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -458,6 +469,14 @@
             this.aCTEKLoginToolStripMenuItem.Text = "ACTEK Login";
             this.aCTEKLoginToolStripMenuItem.Click += new System.EventHandler(this.acteksoft_Click);
             // 
+            // eZIReport451ToolStripMenuItem
+            // 
+            this.eZIReport451ToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.ExcelWorksheetView_11748;
+            this.eZIReport451ToolStripMenuItem.Name = "eZIReport451ToolStripMenuItem";
+            this.eZIReport451ToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
+            this.eZIReport451ToolStripMenuItem.Text = "EZ iReport 4.5.1 Install";
+            this.eZIReport451ToolStripMenuItem.Click += new System.EventHandler(this.eZIReport451ToolStripMenuItem_Click);
+            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -537,14 +556,6 @@
             this.toolStripMenuItemMinimize.Size = new System.Drawing.Size(28, 20);
             this.toolStripMenuItemMinimize.Text = "Minimize";
             this.toolStripMenuItemMinimize.Click += new System.EventHandler(this.toolStripMenuItemMinimize_Click);
-            // 
-            // eZIReport451ToolStripMenuItem
-            // 
-            this.eZIReport451ToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.ExcelWorksheetView_11748;
-            this.eZIReport451ToolStripMenuItem.Name = "eZIReport451ToolStripMenuItem";
-            this.eZIReport451ToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
-            this.eZIReport451ToolStripMenuItem.Text = "EZ iReport 4.5.1 Install";
-            this.eZIReport451ToolStripMenuItem.Click += new System.EventHandler(this.eZIReport451ToolStripMenuItem_Click);
             // 
             // dateCheckerGoButton
             // 
@@ -1014,7 +1025,7 @@
             this.importFormatJumpToRowGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowButton);
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowTextBox);
-            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -54);
+            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -57);
             this.importFormatJumpToRowGroupBox.Name = "importFormatJumpToRowGroupBox";
             this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(170, 38);
             this.importFormatJumpToRowGroupBox.TabIndex = 36;
@@ -1568,6 +1579,7 @@
             this.maintabControl.Controls.Add(this.sqlQuery);
             this.maintabControl.Controls.Add(this.benchmark);
             this.maintabControl.Controls.Add(this.api);
+            this.maintabControl.Controls.Add(this.envChanges);
             this.maintabControl.Controls.Add(this.stagedData);
             this.maintabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.maintabControl.Location = new System.Drawing.Point(0, 0);
@@ -2866,6 +2878,91 @@
             this.mainLogSplitContainer.SplitterDistance = 762;
             this.mainLogSplitContainer.TabIndex = 33;
             // 
+            // envChanges
+            // 
+            this.envChanges.BackColor = System.Drawing.Color.AliceBlue;
+            this.envChanges.Controls.Add(this.groupBox1);
+            this.envChanges.Controls.Add(this.progressBar2);
+            this.envChanges.Location = new System.Drawing.Point(4, 22);
+            this.envChanges.Name = "envChanges";
+            this.envChanges.Size = new System.Drawing.Size(1502, 736);
+            this.envChanges.TabIndex = 7;
+            this.envChanges.Text = "Enviornment Changes";
+            // 
+            // progressBar2
+            // 
+            this.progressBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar2.BackColor = System.Drawing.Color.AliceBlue;
+            this.progressBar2.ForeColor = System.Drawing.Color.DarkRed;
+            this.progressBar2.Location = new System.Drawing.Point(6, 124);
+            this.progressBar2.MarqueeAnimationSpeed = 1;
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(2104, 21);
+            this.progressBar2.TabIndex = 8;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.AliceBlue;
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.serverSelect6);
+            this.groupBox1.Controls.Add(this.databaseSelect6);
+            this.groupBox1.Location = new System.Drawing.Point(8, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(222, 112);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Select Server/Database";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(6, 41);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(6, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
+            // serverSelect6
+            // 
+            this.serverSelect6.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.serverSelect6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.serverSelect6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.serverSelect6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.serverSelect6.FormattingEnabled = true;
+            this.serverSelect6.Items.AddRange(new object[] {
+            "IcmTstDb1.cci.caldsaas.local\\tst1",
+            "IcmTstDb2.cci.caldsaas.local\\tst2",
+            "IcmTstDb3.cci.caldsaas.local\\tst3",
+            "IcmImpDb1.cci.caldsaas.local\\Imp1"});
+            this.serverSelect6.Location = new System.Drawing.Point(28, 19);
+            this.serverSelect6.Name = "serverSelect6";
+            this.serverSelect6.Size = new System.Drawing.Size(188, 21);
+            this.serverSelect6.TabIndex = 32;
+            // 
+            // databaseSelect6
+            // 
+            this.databaseSelect6.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.databaseSelect6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.databaseSelect6.DataSource = this.spDTAgetdatabasetableidsBindingSource;
+            this.databaseSelect6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.databaseSelect6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.databaseSelect6.FormattingEnabled = true;
+            this.databaseSelect6.Location = new System.Drawing.Point(28, 41);
+            this.databaseSelect6.Name = "databaseSelect6";
+            this.databaseSelect6.Size = new System.Drawing.Size(188, 21);
+            this.databaseSelect6.TabIndex = 31;
+            // 
             // DataAnalysisTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2972,6 +3069,10 @@
             this.mainLogSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainLogSplitContainer)).EndInit();
             this.mainLogSplitContainer.ResumeLayout(false);
+            this.envChanges.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3174,6 +3275,13 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label apiEnvLabel1;
         private System.Windows.Forms.ToolStripMenuItem eZIReport451ToolStripMenuItem;
+        private System.Windows.Forms.TabPage envChanges;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ComboBox serverSelect6;
+        private System.Windows.Forms.ComboBox databaseSelect6;
+        private System.Windows.Forms.ProgressBar progressBar2;
     }
 }
 
