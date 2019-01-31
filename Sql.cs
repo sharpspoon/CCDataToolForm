@@ -158,6 +158,39 @@ namespace DataAnalysisTool
             progressBar1.MarqueeAnimationSpeed = 0;
             apiReadinessProgressBar.Value = 100;
         }
+        private void serverSelect6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            envChangesProgressBar.Value = 0;
+            progressBar1.MarqueeAnimationSpeed = 1;
+            envChangesProgressBar.Value = 20;
+            envChangesProgressBar.Value = 40;
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect6.Text + "; Initial Catalog = master; Integrated Security = True");
+            try
+            {
+                conn.Open();
+                SqlCommand sc = new SqlCommand("SELECT name FROM [master].[sys].[databases] where name <> 'master' and name <> 'tempdb' and name <> 'model' and name <> 'msdb' and name <> 'DBAtools'", conn);
+                SqlDataReader reader;
+                reader = sc.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                dt.Load(reader);
+                databaseSelect6.DataSource = dt;
+                databaseSelect6.DisplayMember = "name";
+                conn.Close();
+                connectionStatus.Visible = true;
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect6.Text + "...Done.");
+            }
+            catch
+            {
+                conn.Close();
+                MessageBox.Show("Unable to connect to the server. Ensure you are connected with ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                progressBar1.MarqueeAnimationSpeed = 0;
+                envChangesProgressBar.Value = 0;
+                return;
+            }
+            progressBar1.MarqueeAnimationSpeed = 0;
+            envChangesProgressBar.Value = 100;
+        }
 
         private void runquery_Click(object sender, EventArgs e)
         {
@@ -301,6 +334,7 @@ namespace DataAnalysisTool
             progressBar1.MarqueeAnimationSpeed = 0;
             benchmarkProgressBar.Value = 100;
         }
+
 
         private void payoutTypeSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
