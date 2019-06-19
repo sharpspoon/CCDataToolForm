@@ -2029,199 +2029,9 @@ risk if your ICM instance is externally accessible.");
 
         }
 
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            dateRangeLabel.Text = "Date Range: " + dateComboBox4.Text + "/" + dateComboBox5.Text + "/" + dateComboBox6.Text + " - " + dateComboBox7.Text + "/" + dateComboBox8.Text + "/" + dateComboBox9.Text;
-        }
-
-        private void dateComboBox5_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dateRangeLabel.Text = "Date Range: " + dateComboBox4.Text + "/" + dateComboBox5.Text + "/" + dateComboBox6.Text + " - " + dateComboBox7.Text + "/" + dateComboBox8.Text + "/" + dateComboBox9.Text;
-        }
-
-        private void dateComboBox6_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dateRangeLabel.Text = "Date Range: " + dateComboBox4.Text + "/" + dateComboBox5.Text + "/" + dateComboBox6.Text + " - " + dateComboBox7.Text + "/" + dateComboBox8.Text + "/" + dateComboBox9.Text;
-        }
-
-        private void dateComboBox7_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dateRangeLabel.Text = "Date Range: " + dateComboBox4.Text + "/" + dateComboBox5.Text + "/" + dateComboBox6.Text + " - " + dateComboBox7.Text + "/" + dateComboBox8.Text + "/" + dateComboBox9.Text;
-        }
-
-        private void dateComboBox8_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dateRangeLabel.Text = "Date Range: " + dateComboBox4.Text + "/" + dateComboBox5.Text + "/" + dateComboBox6.Text + " - " + dateComboBox7.Text + "/" + dateComboBox8.Text + "/" + dateComboBox9.Text;
-        }
-
-        private void dateComboBox9_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dateRangeLabel.Text = "Date Range: " + dateComboBox4.Text + "/" + dateComboBox5.Text + "/" + dateComboBox6.Text + " - " + dateComboBox7.Text + "/" + dateComboBox8.Text + "/" + dateComboBox9.Text;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            envChangesProgressBar.Value = 0;
-            envChangesProgressBar.Value = 10;
 
-            //global vars
-            progressBar1.MarqueeAnimationSpeed = 10;
-            if (databaseSelect6.Text == "")
-            {
-                DialogResult result = MessageBox.Show("No database selected. \nPlease make sure you are connected to ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                progressBar1.MarqueeAnimationSpeed = 0;
-                envChangesProgressBar.Value = 0;
-                return;
-            }
-
-            if (userIDTextBox.Text == "")
-            {
-                DialogResult result = MessageBox.Show("No UserID entered. \nPlease enter a UserID", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                progressBar1.MarqueeAnimationSpeed = 0;
-                envChangesProgressBar.Value = 0;
-                return;
-            }
-
-            if (databaseSelect6.Text != "")
-            {
-
-                DialogResult result2 = MessageBox.Show("The DAT will check against the " + databaseSelect6.Text + " database.\nContinue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                if (result2 == DialogResult.No)
-                {
-                    progressBar1.MarqueeAnimationSpeed = 0;
-                    envChangesProgressBar.Value = 0;
-                    return;
-                }
-            }
-            envChangesRichTextBox.Clear();
-
-            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect6.Text + "; Initial Catalog = master; Integrated Security = True");
-            conn.Open();
-
-            conn.Close();
-
-            progressBar1.MarqueeAnimationSpeed = 0;
-
-            envChangesRichTextBox.AppendText(Environment.NewLine +
-                @"###########################################################################################" + System.Environment.NewLine +
-                @"########################DataAnalysisTool - Environment Changes#############################" + System.Environment.NewLine +
-                @"###########################################################################################" + System.Environment.NewLine +
-                @"Current Date: " + DateTime.Now + System.Environment.NewLine +
-                @"Server: " + serverSelect6.Text + System.Environment.NewLine +
-                @"Database: " + databaseSelect6.Text + System.Environment.NewLine +
-                @"User: " + userIDTextBox.Text + System.Environment.NewLine +
-                @""+dateRangeLabel.Text + System.Environment.NewLine +
-                @"" + System.Environment.NewLine +
-                @"" + System.Environment.NewLine +
-                @"****************************************************" + System.Environment.NewLine +
-                @"********************RUN RESULTS*********************" + System.Environment.NewLine +
-                @"****************************************************" + System.Environment.NewLine
-                );
-            
-
-            apiRichTextBox.AppendText(@"" + System.Environment.NewLine);
-
-            if (envChangesCheckBox1.Checked == true)
-            {
-                var changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'";
-                var dataAdapter = new SqlDataAdapter(changedImportformats, conn);
-                var ds = new DataSet();
-                dataAdapter.Fill(ds);
-                stagedDataGridView.DataSource = ds.Tables[0];
-                var changedImportFormatsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Import Formats:");
-                foreach (var sec in changedImportFormatsArray)
-                {
-                    envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
-                }
-            }
-            envChangesRichTextBox.AppendText(Environment.NewLine + @"");
-            if (envChangesCheckBox2.Checked == true)
-            {
-                var changedExpressions = " USE " + databaseSelect6.Text + " select expressionid from expression where lstuser=" + "'" + userIDTextBox.Text + "'";
-                var dataAdapter = new SqlDataAdapter(changedExpressions, conn);
-                var ds = new DataSet();
-                dataAdapter.Fill(ds);
-                stagedDataGridView.DataSource = ds.Tables[0];
-                var changedExpressionsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Expressions:");
-                foreach (var sec in changedExpressionsArray)
-                {
-                    envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
-                }
-            }
-            envChangesRichTextBox.AppendText(Environment.NewLine + @"");
-            if (envChangesCheckBox3.Checked == true)
-            {
-                var changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'";
-                var dataAdapter = new SqlDataAdapter(changedImportformats, conn);
-                var ds = new DataSet();
-                dataAdapter.Fill(ds);
-                stagedDataGridView.DataSource = ds.Tables[0];
-                var changedImportFormatsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Import Formats:");
-                foreach (var sec in changedImportFormatsArray)
-                {
-                    envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
-                }
-            }
-            envChangesRichTextBox.AppendText(Environment.NewLine + @"");
-            if (envChangesCheckBox4.Checked == true)
-            {
-                var changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'";
-                var dataAdapter = new SqlDataAdapter(changedImportformats, conn);
-                var ds = new DataSet();
-                dataAdapter.Fill(ds);
-                stagedDataGridView.DataSource = ds.Tables[0];
-                var changedImportFormatsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Import Formats:");
-                foreach (var sec in changedImportFormatsArray)
-                {
-                    envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
-                }
-            }
-            envChangesRichTextBox.AppendText(Environment.NewLine + @"");
-            if (envChangesCheckBox5.Checked == true)
-            {
-                var changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'";
-                var dataAdapter = new SqlDataAdapter(changedImportformats, conn);
-                var ds = new DataSet();
-                dataAdapter.Fill(ds);
-                stagedDataGridView.DataSource = ds.Tables[0];
-                var changedImportFormatsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Import Formats:");
-                foreach (var sec in changedImportFormatsArray)
-                {
-                    envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
-                }
-            }
-            envChangesRichTextBox.AppendText(Environment.NewLine + @"");
-            if (envChangesCheckBox6.Checked == true)
-            {
-                var changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'";
-                var dataAdapter = new SqlDataAdapter(changedImportformats, conn);
-                var ds = new DataSet();
-                dataAdapter.Fill(ds);
-                stagedDataGridView.DataSource = ds.Tables[0];
-                var changedImportFormatsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
-                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Import Formats:");
-                foreach (var sec in changedImportFormatsArray)
-                {
-                    envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
-                }
-            }
-
-
-
-            envChangesRichTextBox.AppendText(Environment.NewLine + @"");
-            envChangesProgressBar.Value = 100;
         }
 
         private void goButtonPictureBox_MouseEnter(object sender, EventArgs e)
@@ -2446,6 +2256,265 @@ risk if your ICM instance is externally accessible.");
             this.exportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
             System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
             ToolTip.SetToolTip(this.exportResultsPictureBox, "Export the results.");
+        }
+
+        private void fromDateEnableCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (fromDateEnableCheckBox.Checked == true)
+            {
+                dateYearFromTextBox.ReadOnly = false;
+                dateMonthFromTextBox.ReadOnly = false;
+                dateDayFromTextBox.ReadOnly = false;
+            }
+
+            else
+            {
+                dateYearFromTextBox.ReadOnly = true;
+                dateMonthFromTextBox.ReadOnly = true;
+                dateDayFromTextBox.ReadOnly = true;
+            }
+        }
+
+        private void toDateEnableCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (toDateEnableCheckBox.Checked == true)
+            {
+                dateYearToTextBox.ReadOnly = false;
+                dateMonthToTextBox.ReadOnly = false;
+                dateDayToTextBox.ReadOnly = false;
+            }
+
+            else
+            {
+                dateYearToTextBox.ReadOnly = true;
+                dateMonthToTextBox.ReadOnly = true;
+                dateDayToTextBox.ReadOnly = true;
+            }
+        }
+
+        private void dateTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            dateRangeLabel.Text = "Date Range: " + dateYearFromTextBox.Text + dateMonthFromTextBox.Text + dateDayFromTextBox.Text + " - " + dateYearToTextBox.Text + dateMonthToTextBox.Text + dateDayToTextBox.Text;
+        }
+
+        private void envChangesGoPictureBox_Click(object sender, EventArgs e)
+        {
+            envChangesProgressBar.Value = 0;
+            envChangesProgressBar.Value = 10;
+
+            //global vars
+            progressBar1.MarqueeAnimationSpeed = 10;
+
+
+            if (databaseSelect6.Text == "")
+            {
+                DialogResult result = MessageBox.Show("No database selected. \nPlease make sure you are connected to ACTEK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                progressBar1.MarqueeAnimationSpeed = 0;
+                envChangesProgressBar.Value = 0;
+                return;
+            }
+
+            if (userIDTextBox.Text == "")
+            {
+                DialogResult result = MessageBox.Show("No UserID entered. \nPlease enter a UserID", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                progressBar1.MarqueeAnimationSpeed = 0;
+                envChangesProgressBar.Value = 0;
+                return;
+            }
+
+            if (databaseSelect6.Text != "")
+            {
+
+                DialogResult result = MessageBox.Show("The DAT will check against the " + databaseSelect6.Text + " database.\nContinue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result == DialogResult.No)
+                {
+                    progressBar1.MarqueeAnimationSpeed = 0;
+                    envChangesProgressBar.Value = 0;
+                    return;
+                }
+            }
+            var fromDate = dateYearFromTextBox.Text + dateMonthFromTextBox.Text + dateDayFromTextBox.Text;
+            var toDate = dateYearToTextBox.Text + dateMonthToTextBox.Text + dateDayToTextBox.Text;
+            if (fromDateEnableCheckBox.Checked == true && fromDate.Length != 8)
+            {
+                MessageBox.Show("Incorrect date format on the From Section. \nPlease make sure you are using YYYYMMDD", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                progressBar1.MarqueeAnimationSpeed = 0;
+                envChangesProgressBar.Value = 0;
+                return;
+            }
+            if (toDateEnableCheckBox.Checked == true && toDate.Length != 8)
+            {
+                MessageBox.Show("Incorrect date format on the From Section. \nPlease make sure you are using YYYYMMDD", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                progressBar1.MarqueeAnimationSpeed = 0;
+                envChangesProgressBar.Value = 0;
+                return;
+            }
+            envChangesRichTextBox.Clear();
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect6.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+            conn.Close();
+            progressBar1.MarqueeAnimationSpeed = 0;
+            envChangesRichTextBox.AppendText(Environment.NewLine +
+                @"###########################################################################################" + System.Environment.NewLine +
+                @"########################DataAnalysisTool - Environment Changes#############################" + System.Environment.NewLine +
+                @"###########################################################################################" + System.Environment.NewLine +
+                @"Current Date: " + DateTime.Now + System.Environment.NewLine +
+                @"Server: " + serverSelect6.Text + System.Environment.NewLine +
+                @"Database: " + databaseSelect6.Text + System.Environment.NewLine +
+                @"User: " + userIDTextBox.Text + System.Environment.NewLine +
+                @"" + dateRangeLabel.Text + System.Environment.NewLine +
+                @"" + System.Environment.NewLine +
+                @"" + System.Environment.NewLine +
+                @"****************************************************" + System.Environment.NewLine +
+                @"********************RUN RESULTS*********************" + System.Environment.NewLine +
+                @"****************************************************" + System.Environment.NewLine
+                );
+
+
+            apiRichTextBox.AppendText(@"" + System.Environment.NewLine);
+            if (envChangesCheckBox1.Checked == true)
+            {
+                var changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'";
+                var dataAdapter = new SqlDataAdapter(changedImportformats, conn);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                stagedDataGridView.DataSource = ds.Tables[0];
+                var changedImportFormatsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Import Formats:");
+                foreach (var sec in changedImportFormatsArray)
+                {
+                    envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
+                }
+            }
+            envChangesRichTextBox.AppendText(Environment.NewLine + @"");
+            if (envChangesCheckBox2.Checked == true)
+            {
+                var changedExpressions = " USE " + databaseSelect6.Text + " select expressionid from expression where lstuser=" + "'" + userIDTextBox.Text + "'";
+                var dataAdapter = new SqlDataAdapter(changedExpressions, conn);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                stagedDataGridView.DataSource = ds.Tables[0];
+                var changedExpressionsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Expressions:");
+                foreach (var sec in changedExpressionsArray)
+                {
+                    envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
+                }
+            }
+            //QBQ
+            envChangesRichTextBox.AppendText(Environment.NewLine + @"");
+            if (envChangesCheckBox3.Checked == true)
+            {
+                var changedQBQ = "";
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8 && toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedQBQ = " USE " + databaseSelect6.Text + " select QBQueryId from QBQuery where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >"+fromDate+" and lstdate < "+toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8)
+                {
+                    changedQBQ = " USE " + databaseSelect6.Text + " select QBQueryId from QBQuery where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate;
+                }
+                if (toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedQBQ = " USE " + databaseSelect6.Text + " select QBQueryId from QBQuery where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == false && toDateEnableCheckBox.Checked == false)
+                {
+                    changedQBQ = " USE " + databaseSelect6.Text + " select QBQueryId from QBQuery where LstUser=" + "'" + userIDTextBox.Text + "'";
+                }
+                
+                var dataAdapter = new SqlDataAdapter(changedQBQ, conn);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                stagedDataGridView.DataSource = ds.Tables[0];
+                var changedQBQArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed QBQ:");
+                foreach (var sec in changedQBQArray)
+                {
+                    envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
+                }
+            }
+            envChangesRichTextBox.AppendText(Environment.NewLine + @"");
+            if (envChangesCheckBox4.Checked == true)
+            {
+                var changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'";
+                var dataAdapter = new SqlDataAdapter(changedImportformats, conn);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                stagedDataGridView.DataSource = ds.Tables[0];
+                var changedImportFormatsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Import Formats:");
+                foreach (var sec in changedImportFormatsArray)
+                {
+                    envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
+                }
+            }
+            envChangesRichTextBox.AppendText(Environment.NewLine + @"");
+            if (envChangesCheckBox5.Checked == true)
+            {
+                var changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'";
+                var dataAdapter = new SqlDataAdapter(changedImportformats, conn);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                stagedDataGridView.DataSource = ds.Tables[0];
+                var changedImportFormatsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Import Formats:");
+                foreach (var sec in changedImportFormatsArray)
+                {
+                    envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
+                }
+            }
+            envChangesRichTextBox.AppendText(Environment.NewLine + @"");
+            if (envChangesCheckBox6.Checked == true)
+            {
+                var changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'";
+                var dataAdapter = new SqlDataAdapter(changedImportformats, conn);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                stagedDataGridView.DataSource = ds.Tables[0];
+                var changedImportFormatsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Import Formats:");
+                foreach (var sec in changedImportFormatsArray)
+                {
+                    envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
+                }
+            }
+            envChangesRichTextBox.AppendText(Environment.NewLine + @"");
+            envChangesProgressBar.Value = 100;
+        }
+
+        private void envChangesGoPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.envChangesGoPictureBox, "Run the tool!");
+        }
+
+        private void envChangesGoPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.envChangesGoPictureBox, "Run the tool!");
+        }
+
+        private void envChangesGoPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.envChangesGoPictureBox, "Run the tool!");
+        }
+
+        private void envChangesGoPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.envChangesGoPictureBox, "Run the tool!");
         }
     }
 }
