@@ -13,6 +13,9 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>P:\DataAnalysisTool\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -39,9 +42,6 @@
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -287,6 +287,27 @@
     <None Include="Resources\button_go.png" />
     <None Include="Resources\button_go%281%29.png" />
     <None Include="Resources\button_go%282%29.png" />
+    <None Include="Resources\button_xml%282%29.png" />
+    <None Include="Resources\button_xml%281%29.png" />
+    <None Include="Resources\button_xml.png" />
+    <None Include="Resources\button_xls%282%29.png" />
+    <None Include="Resources\button_xls%281%29.png" />
+    <None Include="Resources\button_xls.png" />
+    <None Include="Resources\button_txt-pipe%282%29.png" />
+    <None Include="Resources\button_txt-pipe%281%29.png" />
+    <None Include="Resources\button_txt-pipe.png" />
+    <None Include="Resources\button_txt-comma%282%29.png" />
+    <None Include="Resources\button_txt-comma%281%29.png" />
+    <None Include="Resources\button_txt-comma.png" />
+    <None Include="Resources\button_csv%282%29.png" />
+    <None Include="Resources\button_csv%281%29.png" />
+    <None Include="Resources\button_csv.png" />
+    <None Include="Resources\button_export-results%282%29.png" />
+    <None Include="Resources\button_export-results%281%29.png" />
+    <None Include="Resources\button_export-results.png" />
+    <None Include="Resources\button_clear-results%282%29.png" />
+    <None Include="Resources\button_clear-results%281%29.png" />
+    <None Include="Resources\button_clear-results.png" />
     <Content Include="sap_32_hsh_icon.ico" />
     <Content Include="sap_32_jqX_icon.ico" />
     <None Include="Resources\Login_6031_32x.png" />
