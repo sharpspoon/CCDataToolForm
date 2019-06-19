@@ -9,6 +9,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net;
+using System.Text;
+using PgpCore;
 
 namespace DataAnalysisTool
 {
@@ -156,12 +158,6 @@ namespace DataAnalysisTool
         {
             System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
             ToolTip2.SetToolTip(this.importFormatFindNullCheckbox, "Do you want to find NULLs in the date column?");
-        }
-
-        private void button6_MouseEnter(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip2.SetToolTip(this.importFormatGoButton, "Run the tool!");
         }
 
         private void tableSelect_MouseEnter(object sender, EventArgs e)
@@ -742,7 +738,7 @@ namespace DataAnalysisTool
                         {
                             if (value == " " || value == "" || value == null)
                             {
-                            importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
                                 importFormatProgressBar.Value = 100;
                                 MessageBox.Show("NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyymmdd");
@@ -810,7 +806,7 @@ namespace DataAnalysisTool
                                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The value has characters that are not numbers.\r\nMake sure that the date is in the format: yyyymmdd");
                                 return;
                             }
-                            }
+                        }
                         else
                         {
                             if (value.Length > 0)
@@ -825,7 +821,7 @@ namespace DataAnalysisTool
                     }
                 }
             }
-            if (a == 0){
+            if (a == 0) {
                 importFormatProgressBar.Value = 0;
                 MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
@@ -921,7 +917,7 @@ namespace DataAnalysisTool
             }
             importFormatProgressBar.Value = 100;
             MessageBox.Show("All columns/rows are under " + length, "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            
+
         }
 
         //------------------CELL LENGTH CHECKER END------------------------------------------------------
@@ -942,7 +938,7 @@ namespace DataAnalysisTool
             importFormatProgressBar.Value = 50;
             foreach (Object selecteditem in specialCharacterCheckerListBox.SelectedItems)
             {
-                
+
                 a++;
                 reqItem = selecteditem as String;
                 int specialCharacterCurIndex = specialCharacterCheckerListBox.Items.IndexOf(reqItem);
@@ -972,7 +968,7 @@ namespace DataAnalysisTool
             }
             importFormatProgressBar.Value = 100;
             MessageBox.Show("'" + specialChar + "'" + " WAS NOT FOUND!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            
+
         }
 
         //------------------SPECIAL CHARACTER CHECKER END------------------------------------------------------
@@ -1456,6 +1452,16 @@ risk if your ICM instance is externally accessible.");
 
         //*********************************************************************************************
         //*********************************/API READINESS TAB*******************************************
+        //*********************************************************************************************
+
+        //*********************************************************************************************
+        //*********************************PGP TAB*****************************************************
+        //*********************************************************************************************
+        
+
+
+        //*********************************************************************************************
+        //*********************************/PGP TAB****************************************************
         //*********************************************************************************************
 
 
@@ -2216,6 +2222,28 @@ risk if your ICM instance is externally accessible.");
 
             envChangesRichTextBox.AppendText(Environment.NewLine + @"");
             envChangesProgressBar.Value = 100;
+        }
+
+        private void goButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip2.SetToolTip(this.goButtonPictureBox, "Run the tool!");
+        }
+
+        private void goButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+        }
+
+        private void goButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
+        }
+
+        private void goButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
         }
     }
 }

@@ -152,9 +152,9 @@
             this.toolStripStatusLabel14 = new System.Windows.Forms.ToolStripStatusLabel();
             this.blankSpaceToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.sapLinkToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.importFormatGoButton = new System.Windows.Forms.Button();
             this.maintabControl = new System.Windows.Forms.TabControl();
             this.importFormat = new System.Windows.Forms.TabPage();
+            this.goButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.printButton = new System.Windows.Forms.Button();
             this.openInExcel = new System.Windows.Forms.Button();
             this.ifDocumentation = new System.Windows.Forms.Button();
@@ -274,7 +274,6 @@
             this.stagedTextBox = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.mainLogSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.pGP = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.checkToolsDateCheckerGroupBox.SuspendLayout();
@@ -308,6 +307,7 @@
             this.statusStrip1.SuspendLayout();
             this.maintabControl.SuspendLayout();
             this.importFormat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.goButtonPictureBox)).BeginInit();
             this.importFormatDatabaseChecksGroupBox.SuspendLayout();
             this.importFormatSelectDateGroupBox.SuspendLayout();
             this.importFormatSelectRequiredFieldsGroupBox.SuspendLayout();
@@ -1051,7 +1051,7 @@
             this.importFormatJumpToRowGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowButton);
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowTextBox);
-            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -96);
+            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -126);
             this.importFormatJumpToRowGroupBox.Name = "importFormatJumpToRowGroupBox";
             this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(170, 38);
             this.importFormatJumpToRowGroupBox.TabIndex = 36;
@@ -1559,28 +1559,6 @@
             this.sapLinkToolStripStatusLabel.Text = "SAP";
             this.sapLinkToolStripStatusLabel.Click += new System.EventHandler(this.toolStripStatusLabel18_Click);
             // 
-            // importFormatGoButton
-            // 
-            this.importFormatGoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.importFormatGoButton.BackColor = System.Drawing.Color.Honeydew;
-            this.importFormatGoButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.importFormatGoButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.importFormatGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
-            this.importFormatGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.importFormatGoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.importFormatGoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.importFormatGoButton.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xLG_color;
-            this.importFormatGoButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.importFormatGoButton.Location = new System.Drawing.Point(1446, 3);
-            this.importFormatGoButton.Name = "importFormatGoButton";
-            this.importFormatGoButton.Size = new System.Drawing.Size(54, 115);
-            this.importFormatGoButton.TabIndex = 26;
-            this.importFormatGoButton.Text = "GO";
-            this.importFormatGoButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.importFormatGoButton.UseVisualStyleBackColor = false;
-            this.importFormatGoButton.Click += new System.EventHandler(this.groupByErrorToolStripMenuItem_Click);
-            this.importFormatGoButton.MouseEnter += new System.EventHandler(this.button6_MouseEnter);
-            // 
             // maintabControl
             // 
             this.maintabControl.Controls.Add(this.importFormat);
@@ -1590,7 +1568,6 @@
             this.maintabControl.Controls.Add(this.api);
             this.maintabControl.Controls.Add(this.envChanges);
             this.maintabControl.Controls.Add(this.stagedData);
-            this.maintabControl.Controls.Add(this.pGP);
             this.maintabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.maintabControl.Location = new System.Drawing.Point(0, 0);
             this.maintabControl.Multiline = true;
@@ -1603,6 +1580,7 @@
             // importFormat
             // 
             this.importFormat.BackColor = System.Drawing.Color.AliceBlue;
+            this.importFormat.Controls.Add(this.goButtonPictureBox);
             this.importFormat.Controls.Add(this.printButton);
             this.importFormat.Controls.Add(this.openInExcel);
             this.importFormat.Controls.Add(this.ifDocumentation);
@@ -1621,7 +1599,6 @@
             this.importFormat.Controls.Add(this.importFormatSelectDateGroupBox);
             this.importFormat.Controls.Add(this.importFormatSelectRequiredFieldsGroupBox);
             this.importFormat.Controls.Add(this.importFormatServerSelectGroupBox);
-            this.importFormat.Controls.Add(this.importFormatGoButton);
             this.importFormat.ForeColor = System.Drawing.SystemColors.ControlText;
             this.importFormat.Location = new System.Drawing.Point(4, 22);
             this.importFormat.Name = "importFormat";
@@ -1630,6 +1607,21 @@
             this.importFormat.TabIndex = 0;
             this.importFormat.Text = "Import Format";
             this.importFormat.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // goButtonPictureBox
+            // 
+            this.goButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.goButtonPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_go;
+            this.goButtonPictureBox.Location = new System.Drawing.Point(1431, 52);
+            this.goButtonPictureBox.Name = "goButtonPictureBox";
+            this.goButtonPictureBox.Size = new System.Drawing.Size(63, 42);
+            this.goButtonPictureBox.TabIndex = 57;
+            this.goButtonPictureBox.TabStop = false;
+            this.goButtonPictureBox.Click += new System.EventHandler(this.groupByErrorToolStripMenuItem_Click);
+            this.goButtonPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.goButtonPictureBox_MouseDown);
+            this.goButtonPictureBox.MouseEnter += new System.EventHandler(this.goButtonPictureBox_MouseEnter);
+            this.goButtonPictureBox.MouseLeave += new System.EventHandler(this.goButtonPictureBox_MouseLeave);
+            this.goButtonPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.goButtonPictureBox_MouseUp);
             // 
             // printButton
             // 
@@ -1832,7 +1824,7 @@
             this.importFormatProgressBar.Location = new System.Drawing.Point(6, 124);
             this.importFormatProgressBar.MarqueeAnimationSpeed = 1;
             this.importFormatProgressBar.Name = "importFormatProgressBar";
-            this.importFormatProgressBar.Size = new System.Drawing.Size(2104, 21);
+            this.importFormatProgressBar.Size = new System.Drawing.Size(1488, 21);
             this.importFormatProgressBar.TabIndex = 7;
             this.importFormatProgressBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
@@ -2051,7 +2043,7 @@
             this.checkToolsProgressBar.Location = new System.Drawing.Point(6, 124);
             this.checkToolsProgressBar.MarqueeAnimationSpeed = 1;
             this.checkToolsProgressBar.Name = "checkToolsProgressBar";
-            this.checkToolsProgressBar.Size = new System.Drawing.Size(1667, 21);
+            this.checkToolsProgressBar.Size = new System.Drawing.Size(1488, 21);
             this.checkToolsProgressBar.TabIndex = 28;
             this.checkToolsProgressBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
@@ -2120,7 +2112,7 @@
             this.sqlQueryProgressBar.Location = new System.Drawing.Point(6, 124);
             this.sqlQueryProgressBar.MarqueeAnimationSpeed = 1;
             this.sqlQueryProgressBar.Name = "sqlQueryProgressBar";
-            this.sqlQueryProgressBar.Size = new System.Drawing.Size(1667, 21);
+            this.sqlQueryProgressBar.Size = new System.Drawing.Size(1488, 21);
             this.sqlQueryProgressBar.TabIndex = 44;
             this.sqlQueryProgressBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
@@ -2340,7 +2332,7 @@
             this.benchmarkProgressBar.Location = new System.Drawing.Point(6, 124);
             this.benchmarkProgressBar.MarqueeAnimationSpeed = 1;
             this.benchmarkProgressBar.Name = "benchmarkProgressBar";
-            this.benchmarkProgressBar.Size = new System.Drawing.Size(1667, 21);
+            this.benchmarkProgressBar.Size = new System.Drawing.Size(1488, 21);
             this.benchmarkProgressBar.TabIndex = 40;
             this.benchmarkProgressBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
@@ -2747,7 +2739,7 @@
             this.apiReadinessProgressBar.Location = new System.Drawing.Point(6, 124);
             this.apiReadinessProgressBar.MarqueeAnimationSpeed = 1;
             this.apiReadinessProgressBar.Name = "apiReadinessProgressBar";
-            this.apiReadinessProgressBar.Size = new System.Drawing.Size(1667, 21);
+            this.apiReadinessProgressBar.Size = new System.Drawing.Size(1488, 21);
             this.apiReadinessProgressBar.TabIndex = 37;
             this.apiReadinessProgressBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
@@ -3334,7 +3326,7 @@
             this.envChangesProgressBar.Location = new System.Drawing.Point(6, 124);
             this.envChangesProgressBar.MarqueeAnimationSpeed = 1;
             this.envChangesProgressBar.Name = "envChangesProgressBar";
-            this.envChangesProgressBar.Size = new System.Drawing.Size(2104, 21);
+            this.envChangesProgressBar.Size = new System.Drawing.Size(1488, 21);
             this.envChangesProgressBar.TabIndex = 8;
             // 
             // stagedData
@@ -3389,15 +3381,6 @@
             this.mainLogSplitContainer.Size = new System.Drawing.Size(1510, 832);
             this.mainLogSplitContainer.SplitterDistance = 762;
             this.mainLogSplitContainer.TabIndex = 33;
-            // 
-            // pGP
-            // 
-            this.pGP.Location = new System.Drawing.Point(4, 22);
-            this.pGP.Name = "pGP";
-            this.pGP.Size = new System.Drawing.Size(1502, 736);
-            this.pGP.TabIndex = 8;
-            this.pGP.Text = "PGP";
-            this.pGP.UseVisualStyleBackColor = true;
             // 
             // DataAnalysisTool
             // 
@@ -3462,6 +3445,7 @@
             this.maintabControl.ResumeLayout(false);
             this.importFormat.ResumeLayout(false);
             this.importFormat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.goButtonPictureBox)).EndInit();
             this.importFormatDatabaseChecksGroupBox.ResumeLayout(false);
             this.importFormatDatabaseChecksGroupBox.PerformLayout();
             this.importFormatSelectDateGroupBox.ResumeLayout(false);
@@ -3578,7 +3562,6 @@
         private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
-        private System.Windows.Forms.Button importFormatGoButton;
         public System.Windows.Forms.SplitContainer splitContainer1;
         public System.Windows.Forms.DataGridView importformatDataGridView;
         public System.Windows.Forms.SplitContainer splitRequiredImportFormat_ImportedFile;
@@ -3746,7 +3729,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TabPage pGP;
+        private System.Windows.Forms.PictureBox goButtonPictureBox;
     }
 }
 
