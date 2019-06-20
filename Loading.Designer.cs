@@ -1,4 +1,4 @@
-﻿namespace DataAnalysisTool
+﻿namespace SAPDataAnalysisTool
 {
     partial class Loading
     {
@@ -34,7 +34,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::DataAnalysisTool.Properties.Resources.preload_waiting;
+            this.pictureBox1.Image = global::SAPDataAnalysisTool.Properties.Resources.preload_waiting;
             this.pictureBox1.Location = new System.Drawing.Point(7, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(335, 329);

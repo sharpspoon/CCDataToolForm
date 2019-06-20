@@ -1,4 +1,4 @@
-﻿namespace DataAnalysisTool
+﻿namespace SAPDataAnalysisTool
 {
     partial class acteksoft
     {
@@ -74,7 +74,7 @@
             this.button8.Cursor = System.Windows.Forms.Cursors.Default;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Complete_and_ok_32xLG_color;
+            this.button8.Image = global::SAPDataAnalysisTool.Properties.Resources.StatusAnnotations_Complete_and_ok_32xLG_color;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button8.Location = new System.Drawing.Point(196, 229);
             this.button8.Name = "button8";
@@ -134,7 +134,7 @@
             // 
             this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::DataAnalysisTool.Properties.Resources.Clearallrequests_8816;
+            this.toolStripButton1.Image = global::SAPDataAnalysisTool.Properties.Resources.Clearallrequests_8816;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);

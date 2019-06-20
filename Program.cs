@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DataAnalysisTool
+namespace SAPDataAnalysisTool
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace DataAnalysisTool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DataAnalysisTool());
+            Application.Run(new SAPDataAnalysisTool());
         }
     }
 }

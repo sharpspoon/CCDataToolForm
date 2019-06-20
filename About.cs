@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DataAnalysisTool
+namespace SAPDataAnalysisTool
 {
     partial class About : Form
     {

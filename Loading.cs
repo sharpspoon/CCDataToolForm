@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DataAnalysisTool
+namespace SAPDataAnalysisTool
 {
     public partial class Loading : Form
     {

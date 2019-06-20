@@ -1,6 +1,6 @@
-﻿namespace DataAnalysisTool
+﻿namespace SAPDataAnalysisTool
 {
-    partial class DataAnalysisTool
+    partial class SAPDataAnalysisTool
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataAnalysisTool));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SAPDataAnalysisTool));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -470,7 +470,7 @@
             // 
             // cCDataToolLogToolStripMenuItem
             // 
-            this.cCDataToolLogToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
+            this.cCDataToolLogToolStripMenuItem.Image = global::SAPDataAnalysisTool.Properties.Resources.Open_6529;
             this.cCDataToolLogToolStripMenuItem.Name = "cCDataToolLogToolStripMenuItem";
             this.cCDataToolLogToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.cCDataToolLogToolStripMenuItem.Text = "DAT Log Folder";
@@ -478,7 +478,7 @@
             // 
             // iFLogToolStripMenuItem
             // 
-            this.iFLogToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
+            this.iFLogToolStripMenuItem.Image = global::SAPDataAnalysisTool.Properties.Resources.Open_6529;
             this.iFLogToolStripMenuItem.Name = "iFLogToolStripMenuItem";
             this.iFLogToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.iFLogToolStripMenuItem.Text = "IF Log Folder";
@@ -486,7 +486,7 @@
             // 
             // benchmarksFolderToolStripMenuItem
             // 
-            this.benchmarksFolderToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
+            this.benchmarksFolderToolStripMenuItem.Image = global::SAPDataAnalysisTool.Properties.Resources.Open_6529;
             this.benchmarksFolderToolStripMenuItem.Name = "benchmarksFolderToolStripMenuItem";
             this.benchmarksFolderToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.benchmarksFolderToolStripMenuItem.Text = "Benchmarks Folder";
@@ -494,7 +494,7 @@
             // 
             // aPILogFolderToolStripMenuItem
             // 
-            this.aPILogFolderToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Open_6529;
+            this.aPILogFolderToolStripMenuItem.Image = global::SAPDataAnalysisTool.Properties.Resources.Open_6529;
             this.aPILogFolderToolStripMenuItem.Name = "aPILogFolderToolStripMenuItem";
             this.aPILogFolderToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.aPILogFolderToolStripMenuItem.Text = "API Log Folder";
@@ -502,7 +502,7 @@
             // 
             // printToolStripMenuItem
             // 
-            this.printToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Print_11009;
+            this.printToolStripMenuItem.Image = global::SAPDataAnalysisTool.Properties.Resources.Print_11009;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.printToolStripMenuItem.Text = "Print";
@@ -518,7 +518,7 @@
             // 
             // aCTEKLoginToolStripMenuItem
             // 
-            this.aCTEKLoginToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Login_6031_32x;
+            this.aCTEKLoginToolStripMenuItem.Image = global::SAPDataAnalysisTool.Properties.Resources.Login_6031_32x;
             this.aCTEKLoginToolStripMenuItem.Name = "aCTEKLoginToolStripMenuItem";
             this.aCTEKLoginToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
             this.aCTEKLoginToolStripMenuItem.Text = "ACTEK Login";
@@ -526,7 +526,7 @@
             // 
             // eZIReport451ToolStripMenuItem
             // 
-            this.eZIReport451ToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.ExcelWorksheetView_11748;
+            this.eZIReport451ToolStripMenuItem.Image = global::SAPDataAnalysisTool.Properties.Resources.ExcelWorksheetView_11748;
             this.eZIReport451ToolStripMenuItem.Name = "eZIReport451ToolStripMenuItem";
             this.eZIReport451ToolStripMenuItem.Size = new System.Drawing.Size(150, 20);
             this.eZIReport451ToolStripMenuItem.Text = "EZ iReport 4.5.1 Install";
@@ -587,7 +587,7 @@
             // toolStripMenuItemClose
             // 
             this.toolStripMenuItemClose.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripMenuItemClose.Image = global::DataAnalysisTool.Properties.Resources.Clearallrequests_88161;
+            this.toolStripMenuItemClose.Image = global::SAPDataAnalysisTool.Properties.Resources.Clearallrequests_88161;
             this.toolStripMenuItemClose.Name = "toolStripMenuItemClose";
             this.toolStripMenuItemClose.Size = new System.Drawing.Size(28, 20);
             this.toolStripMenuItemClose.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
@@ -595,7 +595,7 @@
             // toolStripMenuItemMaximize
             // 
             this.toolStripMenuItemMaximize.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripMenuItemMaximize.Image = global::DataAnalysisTool.Properties.Resources.Larger_225;
+            this.toolStripMenuItemMaximize.Image = global::SAPDataAnalysisTool.Properties.Resources.Larger_225;
             this.toolStripMenuItemMaximize.Name = "toolStripMenuItemMaximize";
             this.toolStripMenuItemMaximize.Size = new System.Drawing.Size(28, 20);
             this.toolStripMenuItemMaximize.Click += new System.EventHandler(this.toolStripMenuItemMaximize_Click);
@@ -605,7 +605,7 @@
             this.toolStripMenuItemMinimize.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripMenuItemMinimize.AutoToolTip = true;
             this.toolStripMenuItemMinimize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripMenuItemMinimize.Image = global::DataAnalysisTool.Properties.Resources.Larger_2301;
+            this.toolStripMenuItemMinimize.Image = global::SAPDataAnalysisTool.Properties.Resources.Larger_2301;
             this.toolStripMenuItemMinimize.Name = "toolStripMenuItemMinimize";
             this.toolStripMenuItemMinimize.ShortcutKeyDisplayString = "";
             this.toolStripMenuItemMinimize.Size = new System.Drawing.Size(28, 20);
@@ -621,7 +621,7 @@
             this.dateCheckerGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
             this.dateCheckerGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.dateCheckerGoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dateCheckerGoButton.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
+            this.dateCheckerGoButton.Image = global::SAPDataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
             this.dateCheckerGoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.dateCheckerGoButton.Location = new System.Drawing.Point(6, 71);
             this.dateCheckerGoButton.Name = "dateCheckerGoButton";
@@ -777,7 +777,7 @@
             this.cellLengthCheckerGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
             this.cellLengthCheckerGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.cellLengthCheckerGoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cellLengthCheckerGoButton.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
+            this.cellLengthCheckerGoButton.Image = global::SAPDataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
             this.cellLengthCheckerGoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cellLengthCheckerGoButton.Location = new System.Drawing.Point(6, 71);
             this.cellLengthCheckerGoButton.Name = "cellLengthCheckerGoButton";
@@ -881,7 +881,7 @@
             this.specialCharacterCheckerGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
             this.specialCharacterCheckerGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.specialCharacterCheckerGoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.specialCharacterCheckerGoButton.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
+            this.specialCharacterCheckerGoButton.Image = global::SAPDataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
             this.specialCharacterCheckerGoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.specialCharacterCheckerGoButton.Location = new System.Drawing.Point(6, 71);
             this.specialCharacterCheckerGoButton.Name = "specialCharacterCheckerGoButton";
@@ -976,7 +976,7 @@
             this.nullCheckerGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
             this.nullCheckerGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.nullCheckerGoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nullCheckerGoButton.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
+            this.nullCheckerGoButton.Image = global::SAPDataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
             this.nullCheckerGoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.nullCheckerGoButton.Location = new System.Drawing.Point(6, 71);
             this.nullCheckerGoButton.Name = "nullCheckerGoButton";
@@ -1096,7 +1096,7 @@
             this.importFormatJumpToRowButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
             this.importFormatJumpToRowButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.importFormatJumpToRowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.importFormatJumpToRowButton.Image = global::DataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
+            this.importFormatJumpToRowButton.Image = global::SAPDataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
             this.importFormatJumpToRowButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.importFormatJumpToRowButton.Location = new System.Drawing.Point(61, 13);
             this.importFormatJumpToRowButton.Name = "importFormatJumpToRowButton";
@@ -1209,7 +1209,7 @@
             // 
             // pictureBoxLoading
             // 
-            this.pictureBoxLoading.Image = global::DataAnalysisTool.Properties.Resources.preload_waiting;
+            this.pictureBoxLoading.Image = global::SAPDataAnalysisTool.Properties.Resources.preload_waiting;
             this.pictureBoxLoading.Location = new System.Drawing.Point(966, 64);
             this.pictureBoxLoading.Name = "pictureBoxLoading";
             this.pictureBoxLoading.Size = new System.Drawing.Size(57, 26);
@@ -1271,7 +1271,7 @@
             this.launchSsmsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
             this.launchSsmsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
             this.launchSsmsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.launchSsmsButton.Image = global::DataAnalysisTool.Properties.Resources.DatabaseProject_7342_32x;
+            this.launchSsmsButton.Image = global::SAPDataAnalysisTool.Properties.Resources.DatabaseProject_7342_32x;
             this.launchSsmsButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.launchSsmsButton.Location = new System.Drawing.Point(896, 6);
             this.launchSsmsButton.Name = "launchSsmsButton";
@@ -1663,7 +1663,7 @@
             // 
             this.csvButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.csvButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.csvButtonPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_csv;
+            this.csvButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_csv;
             this.csvButtonPictureBox.Location = new System.Drawing.Point(59, 6);
             this.csvButtonPictureBox.Name = "csvButtonPictureBox";
             this.csvButtonPictureBox.Size = new System.Drawing.Size(70, 42);
@@ -1679,7 +1679,7 @@
             // 
             this.txtCommaButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.txtCommaButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtCommaButtonPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_txt_comma;
+            this.txtCommaButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_txt_comma;
             this.txtCommaButtonPictureBox.Location = new System.Drawing.Point(8, 54);
             this.txtCommaButtonPictureBox.Name = "txtCommaButtonPictureBox";
             this.txtCommaButtonPictureBox.Size = new System.Drawing.Size(151, 42);
@@ -1695,7 +1695,7 @@
             // 
             this.xmlButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.xmlButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.xmlButtonPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_xml;
+            this.xmlButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_xml;
             this.xmlButtonPictureBox.Location = new System.Drawing.Point(135, 6);
             this.xmlButtonPictureBox.Name = "xmlButtonPictureBox";
             this.xmlButtonPictureBox.Size = new System.Drawing.Size(76, 42);
@@ -1711,7 +1711,7 @@
             // 
             this.xlsButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.xlsButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.xlsButtonPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_xls;
+            this.xlsButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_xls;
             this.xlsButtonPictureBox.Location = new System.Drawing.Point(217, 6);
             this.xlsButtonPictureBox.Name = "xlsButtonPictureBox";
             this.xlsButtonPictureBox.Size = new System.Drawing.Size(66, 42);
@@ -1727,7 +1727,7 @@
             // 
             this.txtPipePictureBox.BackColor = System.Drawing.Color.Transparent;
             this.txtPipePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtPipePictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_txt_pipe;
+            this.txtPipePictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_txt_pipe;
             this.txtPipePictureBox.Location = new System.Drawing.Point(165, 54);
             this.txtPipePictureBox.Name = "txtPipePictureBox";
             this.txtPipePictureBox.Size = new System.Drawing.Size(118, 42);
@@ -1774,7 +1774,7 @@
             // 
             this.goButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.goButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.goButtonPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_go;
+            this.goButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_go;
             this.goButtonPictureBox.Location = new System.Drawing.Point(1431, 76);
             this.goButtonPictureBox.Name = "goButtonPictureBox";
             this.goButtonPictureBox.Size = new System.Drawing.Size(63, 42);
@@ -1808,7 +1808,7 @@
             this.saveAsCsvButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
             this.saveAsCsvButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveAsCsvButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveAsCsvButton.Image = global::DataAnalysisTool.Properties.Resources.XMLFile_828_32x;
+            this.saveAsCsvButton.Image = global::SAPDataAnalysisTool.Properties.Resources.XMLFile_828_32x;
             this.saveAsCsvButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.saveAsCsvButton.Location = new System.Drawing.Point(289, 6);
             this.saveAsCsvButton.Name = "saveAsCsvButton";
@@ -1827,7 +1827,7 @@
             this.saveAsXmlButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
             this.saveAsXmlButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveAsXmlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveAsXmlButton.Image = global::DataAnalysisTool.Properties.Resources.XMLFile_828_32x;
+            this.saveAsXmlButton.Image = global::SAPDataAnalysisTool.Properties.Resources.XMLFile_828_32x;
             this.saveAsXmlButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.saveAsXmlButton.Location = new System.Drawing.Point(349, 7);
             this.saveAsXmlButton.Name = "saveAsXmlButton";
@@ -2092,7 +2092,7 @@
             // 
             this.sqlQueryGoPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.sqlQueryGoPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sqlQueryGoPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_go;
+            this.sqlQueryGoPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_go;
             this.sqlQueryGoPictureBox.Location = new System.Drawing.Point(1431, 76);
             this.sqlQueryGoPictureBox.Name = "sqlQueryGoPictureBox";
             this.sqlQueryGoPictureBox.Size = new System.Drawing.Size(63, 42);
@@ -2157,7 +2157,7 @@
             // 
             // sqlDatabasePictureBox
             // 
-            this.sqlDatabasePictureBox.Image = global::DataAnalysisTool.Properties.Resources.database_16xLG;
+            this.sqlDatabasePictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.database_16xLG;
             this.sqlDatabasePictureBox.Location = new System.Drawing.Point(3, 29);
             this.sqlDatabasePictureBox.Name = "sqlDatabasePictureBox";
             this.sqlDatabasePictureBox.Size = new System.Drawing.Size(16, 16);
@@ -2166,7 +2166,7 @@
             // 
             // sqlQueryServerPictureBox
             // 
-            this.sqlQueryServerPictureBox.Image = global::DataAnalysisTool.Properties.Resources.DatabaseOptions_12882;
+            this.sqlQueryServerPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.DatabaseOptions_12882;
             this.sqlQueryServerPictureBox.Location = new System.Drawing.Point(3, 7);
             this.sqlQueryServerPictureBox.Name = "sqlQueryServerPictureBox";
             this.sqlQueryServerPictureBox.Size = new System.Drawing.Size(16, 16);
@@ -2237,7 +2237,7 @@
             // 
             this.benchmarkGoPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.benchmarkGoPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.benchmarkGoPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_go;
+            this.benchmarkGoPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_go;
             this.benchmarkGoPictureBox.Location = new System.Drawing.Point(1431, 76);
             this.benchmarkGoPictureBox.Name = "benchmarkGoPictureBox";
             this.benchmarkGoPictureBox.Size = new System.Drawing.Size(63, 42);
@@ -2253,7 +2253,7 @@
             // 
             this.benchmarkExportResultsPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.benchmarkExportResultsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.benchmarkExportResultsPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_export_results;
+            this.benchmarkExportResultsPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_export_results;
             this.benchmarkExportResultsPictureBox.Location = new System.Drawing.Point(1251, 76);
             this.benchmarkExportResultsPictureBox.Name = "benchmarkExportResultsPictureBox";
             this.benchmarkExportResultsPictureBox.Size = new System.Drawing.Size(174, 42);
@@ -2269,7 +2269,7 @@
             // 
             this.benchmarkClearResultsPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.benchmarkClearResultsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.benchmarkClearResultsPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_clear_results;
+            this.benchmarkClearResultsPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_clear_results;
             this.benchmarkClearResultsPictureBox.Location = new System.Drawing.Point(1084, 76);
             this.benchmarkClearResultsPictureBox.Name = "benchmarkClearResultsPictureBox";
             this.benchmarkClearResultsPictureBox.Size = new System.Drawing.Size(161, 42);
@@ -2457,7 +2457,7 @@
             // 
             // payoutTimerPictureBox
             // 
-            this.payoutTimerPictureBox.Image = global::DataAnalysisTool.Properties.Resources.timer_16xLG;
+            this.payoutTimerPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.timer_16xLG;
             this.payoutTimerPictureBox.Location = new System.Drawing.Point(107, 85);
             this.payoutTimerPictureBox.Name = "payoutTimerPictureBox";
             this.payoutTimerPictureBox.Size = new System.Drawing.Size(16, 16);
@@ -2466,7 +2466,7 @@
             // 
             // payoutSelectPictureBox
             // 
-            this.payoutSelectPictureBox.Image = global::DataAnalysisTool.Properties.Resources.calendar_16xLG;
+            this.payoutSelectPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.calendar_16xLG;
             this.payoutSelectPictureBox.Location = new System.Drawing.Point(6, 85);
             this.payoutSelectPictureBox.Name = "payoutSelectPictureBox";
             this.payoutSelectPictureBox.Size = new System.Drawing.Size(16, 16);
@@ -2489,7 +2489,7 @@
             // 
             // payoutTypePictureBox
             // 
-            this.payoutTypePictureBox.Image = global::DataAnalysisTool.Properties.Resources.Money_16xMD;
+            this.payoutTypePictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.Money_16xMD;
             this.payoutTypePictureBox.Location = new System.Drawing.Point(6, 63);
             this.payoutTypePictureBox.Name = "payoutTypePictureBox";
             this.payoutTypePictureBox.Size = new System.Drawing.Size(16, 16);
@@ -2589,7 +2589,7 @@
             // 
             this.apiGoPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.apiGoPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.apiGoPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_go;
+            this.apiGoPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_go;
             this.apiGoPictureBox.Location = new System.Drawing.Point(1431, 76);
             this.apiGoPictureBox.Name = "apiGoPictureBox";
             this.apiGoPictureBox.Size = new System.Drawing.Size(63, 42);
@@ -2605,7 +2605,7 @@
             // 
             this.apiExportResultsPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.apiExportResultsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.apiExportResultsPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_export_results;
+            this.apiExportResultsPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_export_results;
             this.apiExportResultsPictureBox.Location = new System.Drawing.Point(1251, 76);
             this.apiExportResultsPictureBox.Name = "apiExportResultsPictureBox";
             this.apiExportResultsPictureBox.Size = new System.Drawing.Size(174, 42);
@@ -2621,7 +2621,7 @@
             // 
             this.apiClearResultsPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.apiClearResultsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.apiClearResultsPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_clear_results;
+            this.apiClearResultsPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_clear_results;
             this.apiClearResultsPictureBox.Location = new System.Drawing.Point(1084, 76);
             this.apiClearResultsPictureBox.Name = "apiClearResultsPictureBox";
             this.apiClearResultsPictureBox.Size = new System.Drawing.Size(161, 42);
@@ -2865,7 +2865,7 @@
             // 
             this.envChangesGoPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.envChangesGoPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.envChangesGoPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_go;
+            this.envChangesGoPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_go;
             this.envChangesGoPictureBox.Location = new System.Drawing.Point(1431, 76);
             this.envChangesGoPictureBox.Name = "envChangesGoPictureBox";
             this.envChangesGoPictureBox.Size = new System.Drawing.Size(63, 42);
@@ -2881,7 +2881,7 @@
             // 
             this.clearResultsPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.clearResultsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.clearResultsPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_clear_results;
+            this.clearResultsPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_clear_results;
             this.clearResultsPictureBox.Location = new System.Drawing.Point(1084, 76);
             this.clearResultsPictureBox.Name = "clearResultsPictureBox";
             this.clearResultsPictureBox.Size = new System.Drawing.Size(161, 42);
@@ -2897,7 +2897,7 @@
             // 
             this.exportResultsPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.exportResultsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exportResultsPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_export_results;
+            this.exportResultsPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_export_results;
             this.exportResultsPictureBox.Location = new System.Drawing.Point(1251, 76);
             this.exportResultsPictureBox.Name = "exportResultsPictureBox";
             this.exportResultsPictureBox.Size = new System.Drawing.Size(174, 42);

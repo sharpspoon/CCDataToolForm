@@ -10,9 +10,9 @@ using System.IO.Compression;
 using System.Linq;
 using System.Threading;
 
-namespace DataAnalysisTool
+namespace SAPDataAnalysisTool
 {
-    public partial class DataAnalysisTool
+    public partial class SAPDataAnalysisTool
     {
         Importformat imp = new Importformat();
         //------------------SQL LOADER START------------------------------------------------------

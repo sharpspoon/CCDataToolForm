@@ -1,4 +1,4 @@
-﻿namespace DataAnalysisTool
+﻿namespace SAPDataAnalysisTool
 {
     partial class Importformat
     {
@@ -47,7 +47,7 @@
             // 
             // cCDataToolBindingSource
             // 
-            this.cCDataToolBindingSource.DataSource = typeof(DataAnalysisTool);
+            this.cCDataToolBindingSource.DataSource = typeof(SAPDataAnalysisTool);
             // 
             // Importformat
             // 

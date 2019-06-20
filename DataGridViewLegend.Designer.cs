@@ -1,4 +1,4 @@
-﻿namespace DataAnalysisTool
+﻿namespace SAPDataAnalysisTool
 {
     partial class DataGridViewLegend
     {
@@ -55,7 +55,7 @@
             this.button8.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = global::DataAnalysisTool.Properties.Resources.error_red_32x32;
+            this.button8.Image = global::SAPDataAnalysisTool.Properties.Resources.error_red_32x32;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button8.Location = new System.Drawing.Point(136, 331);
             this.button8.Name = "button8";

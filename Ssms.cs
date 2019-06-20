@@ -16,7 +16,7 @@ using System.IO;
 using System.DirectoryServices.ActiveDirectory;
 using System.Web;
 
-namespace DataAnalysisTool
+namespace SAPDataAnalysisTool
 {
     public partial class Ssms : Form
     {

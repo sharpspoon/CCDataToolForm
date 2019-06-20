@@ -12,10 +12,10 @@ using System.Net;
 using System.Text;
 using PgpCore;
 
-namespace DataAnalysisTool
+namespace SAPDataAnalysisTool
 {
 
-    public partial class DataAnalysisTool : Form
+    public partial class SAPDataAnalysisTool : Form
     {
         /*
          * ############################################################################################   
@@ -28,7 +28,7 @@ namespace DataAnalysisTool
         //*********************************************************************************************
         //*********************************GLOBAL******************************************************
         //*********************************************************************************************
-        public DataAnalysisTool()
+        public SAPDataAnalysisTool()
         {
             InitializeComponent();
             dateComboBox1.SelectedIndex = 12;

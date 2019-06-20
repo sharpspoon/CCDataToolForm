@@ -14,9 +14,9 @@ using System.Web;
 using System.Diagnostics;
 using System.Collections.Generic;
 
-namespace DataAnalysisTool
+namespace SAPDataAnalysisTool
 {
-    public partial class DataAnalysisTool
+    public partial class SAPDataAnalysisTool
     {
 
         private void groupByErrorToolStripMenuItem_Click(object sender, EventArgs e)

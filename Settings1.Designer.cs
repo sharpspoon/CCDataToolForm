@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DataAnalysisTool {
+namespace SAPDataAnalysisTool {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
