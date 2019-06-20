@@ -1413,38 +1413,6 @@ risk if your ICM instance is externally accessible.");
             }
         }
 
-        private void apiExportResultsButton_Click(object sender, EventArgs e)
-        {
-            if (apiRichTextBox.Text == null || apiRichTextBox.Text == "")
-            {
-                MessageBox.Show("There are no results to export!", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                return;
-            }
-            System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\API_Readiness_Check");
-            string path = Application.UserAppDataPath + @"\API_Readiness_Check\DataAnalysisTool_API_Check_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
-            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
-            {
-                using (TextWriter tw = new StreamWriter(fs))
-                {
-                    for (int i = 0; i < apiRichTextBox.Lines.Length; i++)
-                    {
-                        tw.WriteLine(apiRichTextBox.Lines[i]);
-                    }
-                    tw.WriteLine("EOF.");
-                }
-            }
-            apiReadinessProgressBar.Value = 90;
-            apiReadinessProgressBar.Value = 100;
-            MessageBox.Show("API Readiness file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            progressBar1.MarqueeAnimationSpeed = 0;
-            Process.Start(path);
-        }
-
-        private void apiClearResultsButton_Click(object sender, EventArgs e)
-        {
-            apiRichTextBox.Clear();
-        }
-
         private void aPILogFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start(Application.UserAppDataPath + @"\API_Readiness_Check");
@@ -1479,11 +1447,6 @@ risk if your ICM instance is externally accessible.");
             }
             ssms.ShowDialog();
             progressBar1.MarqueeAnimationSpeed = 0;
-        }
-
-        private void toolStripStatusLabel15_Click(object sender, EventArgs e)
-        {
-
         }
 
         public DataTable ReadTxtComma(string fileName)
@@ -2370,11 +2333,27 @@ risk if your ICM instance is externally accessible.");
                 @"****************************************************" + System.Environment.NewLine
                 );
 
-
-            apiRichTextBox.AppendText(@"" + System.Environment.NewLine);
+            //Import Formats
+            envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine);
             if (envChangesCheckBox1.Checked == true)
             {
-                var changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'";
+                var changedImportformats = "";
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8 && toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8)
+                {
+                    changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate;
+                }
+                if (toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'" + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == false && toDateEnableCheckBox.Checked == false)
+                {
+                    changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'";
+                }
                 var dataAdapter = new SqlDataAdapter(changedImportformats, conn);
                 var ds = new DataSet();
                 dataAdapter.Fill(ds);
@@ -2387,10 +2366,27 @@ risk if your ICM instance is externally accessible.");
                     envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
                 }
             }
+            //Expressions
             envChangesRichTextBox.AppendText(Environment.NewLine + @"");
             if (envChangesCheckBox2.Checked == true)
             {
-                var changedExpressions = " USE " + databaseSelect6.Text + " select expressionid from expression where lstuser=" + "'" + userIDTextBox.Text + "'";
+                var changedExpressions = "";
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8 && toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedExpressions = " USE " + databaseSelect6.Text + " select expressionid from expression where lstuser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8)
+                {
+                    changedExpressions = " USE " + databaseSelect6.Text + " select expressionid from expression where lstuser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate;
+                }
+                if (toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedExpressions = " USE " + databaseSelect6.Text + " select expressionid from expression where lstuser=" + "'" + userIDTextBox.Text + "'" + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == false && toDateEnableCheckBox.Checked == false)
+                {
+                    changedExpressions = " USE " + databaseSelect6.Text + " select expressionid from expression where lstuser=" + "'" + userIDTextBox.Text + "'";
+                }
                 var dataAdapter = new SqlDataAdapter(changedExpressions, conn);
                 var ds = new DataSet();
                 dataAdapter.Fill(ds);
@@ -2437,49 +2433,166 @@ risk if your ICM instance is externally accessible.");
                     envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
                 }
             }
+            //Xref
             envChangesRichTextBox.AppendText(Environment.NewLine + @"");
             if (envChangesCheckBox4.Checked == true)
             {
-                var changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'";
-                var dataAdapter = new SqlDataAdapter(changedImportformats, conn);
+                var changedXref = "";
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8 && toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedXref = " USE " + databaseSelect6.Text + " select ExtCrossRefTypeId from ExtCrossRefType where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8)
+                {
+                    changedXref = " USE " + databaseSelect6.Text + " select ExtCrossRefTypeId from ExtCrossRefType where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate;
+                }
+                if (toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedXref = " USE " + databaseSelect6.Text + " select ExtCrossRefTypeId from ExtCrossRefType where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == false && toDateEnableCheckBox.Checked == false)
+                {
+                    changedXref = " USE " + databaseSelect6.Text + " select ExtCrossRefTypeId from ExtCrossRefType where LstUser=" + "'" + userIDTextBox.Text + "'";
+                }
+                var dataAdapter = new SqlDataAdapter(changedXref, conn);
                 var ds = new DataSet();
                 dataAdapter.Fill(ds);
                 stagedDataGridView.DataSource = ds.Tables[0];
                 var changedImportFormatsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
                         .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Import Formats:");
+                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Cross-Refs:");
                 foreach (var sec in changedImportFormatsArray)
                 {
                     envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
                 }
             }
+            //Field Default
             envChangesRichTextBox.AppendText(Environment.NewLine + @"");
             if (envChangesCheckBox5.Checked == true)
             {
-                var changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'";
-                var dataAdapter = new SqlDataAdapter(changedImportformats, conn);
+                var changedFieldDefault = "";
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8 && toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedFieldDefault = " USE " + databaseSelect6.Text + " select 'EntName: '+EntName+' FldName: '+FldName from FieldDefault where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8)
+                {
+                    changedFieldDefault = " USE " + databaseSelect6.Text + " select 'EntName: '+EntName+' FldName: '+FldName from FieldDefault where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate;
+                }
+                if (toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedFieldDefault = " USE " + databaseSelect6.Text + " select 'EntName: '+EntName+' FldName: '+FldName from FieldDefault where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == false && toDateEnableCheckBox.Checked == false)
+                {
+                    changedFieldDefault = " USE " + databaseSelect6.Text + " select 'EntName: '+EntName+' FldName: '+FldName from FieldDefault where LstUser=" + "'" + userIDTextBox.Text + "'";
+                }
+                var dataAdapter = new SqlDataAdapter(changedFieldDefault, conn);
                 var ds = new DataSet();
                 dataAdapter.Fill(ds);
                 stagedDataGridView.DataSource = ds.Tables[0];
                 var changedImportFormatsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
                         .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Import Formats:");
+                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Field Defaults:");
                 foreach (var sec in changedImportFormatsArray)
                 {
                     envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
                 }
             }
+            //BEU
             envChangesRichTextBox.AppendText(Environment.NewLine + @"");
             if (envChangesCheckBox6.Checked == true)
             {
-                var changedImportformats = " USE " + databaseSelect6.Text + " select importformatid from importformat where lstuser=" + "'" + userIDTextBox.Text + "'";
-                var dataAdapter = new SqlDataAdapter(changedImportformats, conn);
+                var changedBEU = "";
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8 && toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedBEU = " USE " + databaseSelect6.Text + " select BatchEntityUpdateId from BatchEntityUpdate where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8)
+                {
+                    changedBEU = " USE " + databaseSelect6.Text + " select BatchEntityUpdateId from BatchEntityUpdate where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate;
+                }
+                if (toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedBEU = " USE " + databaseSelect6.Text + " select BatchEntityUpdateId from BatchEntityUpdate where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == false && toDateEnableCheckBox.Checked == false)
+                {
+                    changedBEU = " USE " + databaseSelect6.Text + " select BatchEntityUpdateId from BatchEntityUpdate where LstUser=" + "'" + userIDTextBox.Text + "'";
+                }
+                var dataAdapter = new SqlDataAdapter(changedBEU, conn);
                 var ds = new DataSet();
                 dataAdapter.Fill(ds);
                 stagedDataGridView.DataSource = ds.Tables[0];
                 var changedImportFormatsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
                         .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
-                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Import Formats:");
+                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed BEUs:");
+                foreach (var sec in changedImportFormatsArray)
+                {
+                    envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
+                }
+            }
+            //Report Forms
+            envChangesRichTextBox.AppendText(Environment.NewLine + @"");
+            if (envChangesCheckBox6.Checked == true)
+            {
+                var changedReportForms = "";
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8 && toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedReportForms = " USE " + databaseSelect6.Text + " select Name from ReportForm where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8)
+                {
+                    changedReportForms = " USE " + databaseSelect6.Text + " select Name from ReportForm where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate;
+                }
+                if (toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedReportForms = " USE " + databaseSelect6.Text + " select Name from ReportForm where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == false && toDateEnableCheckBox.Checked == false)
+                {
+                    changedReportForms = " USE " + databaseSelect6.Text + " select Name from ReportForm where LstUser=" + "'" + userIDTextBox.Text + "'";
+                }
+                var dataAdapter = new SqlDataAdapter(changedReportForms, conn);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                stagedDataGridView.DataSource = ds.Tables[0];
+                var changedImportFormatsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Report Forms:");
+                foreach (var sec in changedImportFormatsArray)
+                {
+                    envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
+                }
+            }
+            //Report Templates
+            envChangesRichTextBox.AppendText(Environment.NewLine + @"");
+            if (envChangesCheckBox6.Checked == true)
+            {
+                var changedReportTemplates = "";
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8 && toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedReportTemplates = " USE " + databaseSelect6.Text + " select ReportId from JasperReport where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == true && fromDate.Length == 8)
+                {
+                    changedReportTemplates = " USE " + databaseSelect6.Text + " select ReportId from JasperReport where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate >" + fromDate;
+                }
+                if (toDateEnableCheckBox.Checked == true && toDate.Length == 8)
+                {
+                    changedReportTemplates = " USE " + databaseSelect6.Text + " select ReportId from JasperReport where LstUser=" + "'" + userIDTextBox.Text + "'" + " and lstdate < " + toDate;
+                }
+                if (fromDateEnableCheckBox.Checked == false && toDateEnableCheckBox.Checked == false)
+                {
+                    changedReportTemplates = " USE " + databaseSelect6.Text + " select ReportId from JasperReport where LstUser=" + "'" + userIDTextBox.Text + "'";
+                }
+                var dataAdapter = new SqlDataAdapter(changedReportTemplates, conn);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                stagedDataGridView.DataSource = ds.Tables[0];
+                var changedImportFormatsArray = stagedDataGridView.Rows.Cast<DataGridViewRow>()
+                        .Select(x => x.Cells[0].Value.ToString().Trim()).ToArray();
+                envChangesRichTextBox.AppendText(Environment.NewLine + @"Changed Report Templates:");
                 foreach (var sec in changedImportFormatsArray)
                 {
                     envChangesRichTextBox.AppendText(@"" + System.Environment.NewLine + sec);
@@ -2515,6 +2628,285 @@ risk if your ICM instance is externally accessible.");
             this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
             System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
             ToolTip.SetToolTip(this.envChangesGoPictureBox, "Run the tool!");
+        }
+
+        private void clearResultsPictureBox_Click(object sender, EventArgs e)
+        {
+            envChangesRichTextBox.Clear();
+        }
+
+        private void apiGoPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.apiGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiGoPictureBox, "Run the tool!");
+        }
+
+        private void apiGoPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.apiGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiGoPictureBox, "Run the tool!");
+        }
+
+        private void apiGoPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.apiGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiGoPictureBox, "Run the tool!");
+        }
+
+        private void apiGoPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.apiGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiGoPictureBox, "Run the tool!");
+        }
+
+        private void apiExportResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results3));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiExportResultsPictureBox, "Run the tool!");
+        }
+
+        private void apiExportResultsPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiExportResultsPictureBox, "Run the tool!");
+        }
+
+        private void apiExportResultsPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiExportResultsPictureBox, "Run the tool!");
+        }
+
+        private void apiExportResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiExportResultsPictureBox, "Run the tool!");
+        }
+
+        private void apiClearResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results3));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiClearResultsPictureBox, "Run the tool!");
+        }
+
+        private void apiClearResultsPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiClearResultsPictureBox, "Run the tool!");
+        }
+
+        private void apiClearResultsPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiClearResultsPictureBox, "Run the tool!");
+        }
+
+        private void apiClearResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiClearResultsPictureBox, "Run the tool!");
+        }
+
+        private void benchmarkExportResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results3));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkExportResultsPictureBox, "Run the tool!");
+        }
+
+        private void benchmarkExportResultsPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkExportResultsPictureBox, "Run the tool!");
+        }
+
+        private void benchmarkExportResultsPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkExportResultsPictureBox, "Run the tool!");
+        }
+
+        private void benchmarkExportResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkExportResultsPictureBox, "Run the tool!");
+        }
+
+        private void benchmarkClearResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results3));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkClearResultsPictureBox, "Run the tool!");
+        }
+
+        private void benchmarkClearResultsPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkClearResultsPictureBox, "Run the tool!");
+        }
+
+        private void benchmarkClearResultsPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkClearResultsPictureBox, "Run the tool!");
+        }
+
+        private void benchmarkClearResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkClearResultsPictureBox, "Run the tool!");
+        }
+
+        private void benchmarkGoPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.benchmarkGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkGoPictureBox, "Run the tool!");
+        }
+
+        private void benchmarkGoPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.benchmarkGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkGoPictureBox, "Run the tool!");
+        }
+
+        private void benchmarkGoPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.benchmarkGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkGoPictureBox, "Run the tool!");
+        }
+
+        private void benchmarkGoPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.benchmarkGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkGoPictureBox, "Run the tool!");
+        }
+
+        private void apiExportResultsPictureBox_Click(object sender, EventArgs e)
+        {
+            if (apiRichTextBox.Text == null || apiRichTextBox.Text == "")
+            {
+                MessageBox.Show("There are no results to export!", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\API_Readiness_Check");
+            string path = Application.UserAppDataPath + @"\API_Readiness_Check\DataAnalysisTool_API_Check_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                using (TextWriter tw = new StreamWriter(fs))
+                {
+                    for (int i = 0; i < apiRichTextBox.Lines.Length; i++)
+                    {
+                        tw.WriteLine(apiRichTextBox.Lines[i]);
+                    }
+                    tw.WriteLine("EOF.");
+                }
+            }
+            apiReadinessProgressBar.Value = 90;
+            apiReadinessProgressBar.Value = 100;
+            MessageBox.Show("API Readiness file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            progressBar1.MarqueeAnimationSpeed = 0;
+            Process.Start(path);
+        }
+
+        private void apiClearResultsPictureBox_Click(object sender, EventArgs e)
+        {
+            apiRichTextBox.Clear();
+        }
+
+        private void benchmarkExportResultsPictureBox_Click(object sender, EventArgs e)
+        {
+            if (benchmarkRichTextBox.Text == null || benchmarkRichTextBox.Text == "")
+            {
+                MessageBox.Show("There are no results to export!", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\Payout_Benchmarks");
+            string path = Application.UserAppDataPath + @"\Payout_Benchmarks\DataAnalysisTool_PB_Data_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                using (TextWriter tw = new StreamWriter(fs))
+                {
+                    for (int i = 0; i < benchmarkRichTextBox.Lines.Length; i++)
+                    {
+                        tw.WriteLine(benchmarkRichTextBox.Lines[i]);
+                    }
+                    // setup for export
+                    benchmarkDataGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+                    benchmarkDataGridView.SelectAll();
+                    // hiding row headers to avoid extra \t in exported text
+                    var rowHeaders = benchmarkDataGridView.RowHeadersVisible;
+                    benchmarkDataGridView.RowHeadersVisible = false;
+
+                    // ! creating text from grid values
+                    string content = benchmarkDataGridView.GetClipboardContent().GetText();
+
+                    // restoring grid state
+                    benchmarkDataGridView.ClearSelection();
+                    benchmarkDataGridView.RowHeadersVisible = rowHeaders;
+                    tw.WriteLine(content);
+                    tw.WriteLine("EOF.");
+                }
+            }
+            importFormatProgressBar.Value = 90;
+            importFormatProgressBar.Value = 100;
+            MessageBox.Show("Payout Benchmark file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            progressBar1.MarqueeAnimationSpeed = 0;
+            Process.Start(path);
+        }
+
+        private void benchmarkClearResultsPictureBox_Click(object sender, EventArgs e)
+        {
+            benchmarkRichTextBox.Clear();
+        }
+
+        private void sqlQueryGoPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.sqlQueryGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.sqlQueryGoPictureBox, "Run the tool!");
+        }
+
+        private void sqlQueryGoPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.sqlQueryGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.sqlQueryGoPictureBox, "Run the tool!");
+        }
+
+        private void sqlQueryGoPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.sqlQueryGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.sqlQueryGoPictureBox, "Run the tool!");
+        }
+
+        private void sqlQueryGoPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.sqlQueryGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.sqlQueryGoPictureBox, "Run the tool!");
         }
     }
 }
