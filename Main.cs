@@ -1992,11 +1992,6 @@ risk if your ICM instance is externally accessible.");
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void goButtonPictureBox_MouseEnter(object sender, EventArgs e)
         {
             this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
@@ -2014,29 +2009,21 @@ risk if your ICM instance is externally accessible.");
         private void goButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.goButtonPictureBox, "Run the tool!");
         }
 
         private void goButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.goButtonPictureBox, "Run the tool!");
         }
 
         private void csvButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.csvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.csvButtonPictureBox, "Open a CSV file.");
         }
 
         private void csvButtonPictureBox_MouseEnter(object sender, EventArgs e)
         {
             this.csvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.csvButtonPictureBox, "Open a CSV file.");
         }
 
         private void csvButtonPictureBox_MouseLeave(object sender, EventArgs e)
@@ -2049,15 +2036,11 @@ risk if your ICM instance is externally accessible.");
         private void csvButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.csvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.csvButtonPictureBox, "Open a CSV file.");
         }
 
         private void xmlButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.xmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.xmlButtonPictureBox, "Open an XML file.");
         }
 
         private void xmlButtonPictureBox_MouseEnter(object sender, EventArgs e)
@@ -2077,15 +2060,11 @@ risk if your ICM instance is externally accessible.");
         private void xmlButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.xmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.xmlButtonPictureBox, "Open an XML file.");
         }
 
         private void txtCommaButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.txtCommaButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_comma3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.txtCommaButtonPictureBox, "Open a Text Comma file.");
         }
 
         private void txtCommaButtonPictureBox_MouseEnter(object sender, EventArgs e)
@@ -2105,15 +2084,11 @@ risk if your ICM instance is externally accessible.");
         private void txtCommaButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.txtCommaButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_comma));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.txtCommaButtonPictureBox, "Open a Text Comma file.");
         }
 
         private void xlsButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.xlsButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xls3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.xlsButtonPictureBox, "Open an XLS file.");
         }
 
         private void xlsButtonPictureBox_MouseEnter(object sender, EventArgs e)
@@ -2133,15 +2108,11 @@ risk if your ICM instance is externally accessible.");
         private void xlsButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.xlsButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xls));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.xlsButtonPictureBox, "Open an XLS file.");
         }
 
         private void txtPipePictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.txtPipePictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_pipe3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.txtPipePictureBox, "Open a Text Pipe file.");
         }
 
         private void txtPipePictureBox_MouseEnter(object sender, EventArgs e)
@@ -2161,15 +2132,11 @@ risk if your ICM instance is externally accessible.");
         private void txtPipePictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.txtPipePictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_pipe));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.txtPipePictureBox, "Open a Text Pipe file.");
         }
 
         private void clearResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.clearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.clearResultsPictureBox, "Clear the results.");
         }
 
         private void clearResultsPictureBox_MouseEnter(object sender, EventArgs e)
@@ -2189,15 +2156,11 @@ risk if your ICM instance is externally accessible.");
         private void clearResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.clearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.clearResultsPictureBox, "Clear the results.");
         }
 
         private void exportResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.exportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.exportResultsPictureBox, "Export the results.");
         }
 
         private void exportResultsPictureBox_MouseEnter(object sender, EventArgs e)
@@ -2217,8 +2180,6 @@ risk if your ICM instance is externally accessible.");
         private void exportResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.exportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.exportResultsPictureBox, "Export the results.");
         }
 
         private void fromDateEnableCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -2605,8 +2566,6 @@ risk if your ICM instance is externally accessible.");
         private void envChangesGoPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.envChangesGoPictureBox, "Run the tool!");
         }
 
         private void envChangesGoPictureBox_MouseEnter(object sender, EventArgs e)
@@ -2626,8 +2585,6 @@ risk if your ICM instance is externally accessible.");
         private void envChangesGoPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.envChangesGoPictureBox, "Run the tool!");
         }
 
         private void clearResultsPictureBox_Click(object sender, EventArgs e)
@@ -2638,8 +2595,6 @@ risk if your ICM instance is externally accessible.");
         private void apiGoPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.apiGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiGoPictureBox, "Run the tool!");
         }
 
         private void apiGoPictureBox_MouseEnter(object sender, EventArgs e)
@@ -2659,127 +2614,107 @@ risk if your ICM instance is externally accessible.");
         private void apiGoPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.apiGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiGoPictureBox, "Run the tool!");
         }
 
         private void apiExportResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiExportResultsPictureBox, "Run the tool!");
         }
 
         private void apiExportResultsPictureBox_MouseEnter(object sender, EventArgs e)
         {
             this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results2));
             System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiExportResultsPictureBox, "Run the tool!");
+            ToolTip.SetToolTip(this.apiExportResultsPictureBox, "Export the results.");
         }
 
         private void apiExportResultsPictureBox_MouseLeave(object sender, EventArgs e)
         {
             this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
             System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiExportResultsPictureBox, "Run the tool!");
+            ToolTip.SetToolTip(this.apiExportResultsPictureBox, "Export the results.");
         }
 
         private void apiExportResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiExportResultsPictureBox, "Run the tool!");
         }
 
         private void apiClearResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiClearResultsPictureBox, "Run the tool!");
         }
 
         private void apiClearResultsPictureBox_MouseEnter(object sender, EventArgs e)
         {
             this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results2));
             System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiClearResultsPictureBox, "Run the tool!");
+            ToolTip.SetToolTip(this.apiClearResultsPictureBox, "Clear the results.");
         }
 
         private void apiClearResultsPictureBox_MouseLeave(object sender, EventArgs e)
         {
             this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
             System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiClearResultsPictureBox, "Run the tool!");
+            ToolTip.SetToolTip(this.apiClearResultsPictureBox, "Clear the results.");
         }
 
         private void apiClearResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiClearResultsPictureBox, "Run the tool!");
         }
 
         private void benchmarkExportResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkExportResultsPictureBox, "Run the tool!");
         }
 
         private void benchmarkExportResultsPictureBox_MouseEnter(object sender, EventArgs e)
         {
             this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results2));
             System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkExportResultsPictureBox, "Run the tool!");
+            ToolTip.SetToolTip(this.benchmarkExportResultsPictureBox, "Export the results.");
         }
 
         private void benchmarkExportResultsPictureBox_MouseLeave(object sender, EventArgs e)
         {
             this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
             System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkExportResultsPictureBox, "Run the tool!");
+            ToolTip.SetToolTip(this.benchmarkExportResultsPictureBox, "Export the results.");
         }
 
         private void benchmarkExportResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkExportResultsPictureBox, "Run the tool!");
         }
 
         private void benchmarkClearResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkClearResultsPictureBox, "Run the tool!");
         }
 
         private void benchmarkClearResultsPictureBox_MouseEnter(object sender, EventArgs e)
         {
             this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results2));
             System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkClearResultsPictureBox, "Run the tool!");
+            ToolTip.SetToolTip(this.benchmarkClearResultsPictureBox, "Clear the results.");
         }
 
         private void benchmarkClearResultsPictureBox_MouseLeave(object sender, EventArgs e)
         {
             this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
             System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkClearResultsPictureBox, "Run the tool!");
+            ToolTip.SetToolTip(this.benchmarkClearResultsPictureBox, "Clear the results.");
         }
 
         private void benchmarkClearResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkClearResultsPictureBox, "Run the tool!");
         }
 
         private void benchmarkGoPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.benchmarkGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkGoPictureBox, "Run the tool!");
         }
 
         private void benchmarkGoPictureBox_MouseEnter(object sender, EventArgs e)
@@ -2799,8 +2734,6 @@ risk if your ICM instance is externally accessible.");
         private void benchmarkGoPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.benchmarkGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkGoPictureBox, "Run the tool!");
         }
 
         private void apiExportResultsPictureBox_Click(object sender, EventArgs e)
@@ -2884,8 +2817,6 @@ risk if your ICM instance is externally accessible.");
         private void sqlQueryGoPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             this.sqlQueryGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.sqlQueryGoPictureBox, "Run the tool!");
         }
 
         private void sqlQueryGoPictureBox_MouseEnter(object sender, EventArgs e)
@@ -2905,8 +2836,6 @@ risk if your ICM instance is externally accessible.");
         private void sqlQueryGoPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.sqlQueryGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.sqlQueryGoPictureBox, "Run the tool!");
         }
     }
 }

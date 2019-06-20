@@ -59,6 +59,7 @@
             this.iFLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.benchmarksFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aPILogFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aCTEKLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eZIReport451ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -164,7 +165,6 @@
             this.legendButton = new System.Windows.Forms.Button();
             this.openInExcel = new System.Windows.Forms.Button();
             this.goButtonPictureBox = new System.Windows.Forms.PictureBox();
-            this.printButton = new System.Windows.Forms.Button();
             this.ifDocumentation = new System.Windows.Forms.Button();
             this.saveAsCsvButton = new System.Windows.Forms.Button();
             this.saveAsXmlButton = new System.Windows.Forms.Button();
@@ -448,6 +448,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
+            this.printToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -497,6 +498,14 @@
             this.aPILogFolderToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.aPILogFolderToolStripMenuItem.Text = "API Log Folder";
             this.aPILogFolderToolStripMenuItem.Click += new System.EventHandler(this.aPILogFolderToolStripMenuItem_Click);
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Image = global::DataAnalysisTool.Properties.Resources.Print_11009;
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.printToolStripMenuItem.Text = "Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -1070,7 +1079,7 @@
             this.importFormatJumpToRowGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowButton);
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowTextBox);
-            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -204);
+            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -210);
             this.importFormatJumpToRowGroupBox.Name = "importFormatJumpToRowGroupBox";
             this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(170, 38);
             this.importFormatJumpToRowGroupBox.TabIndex = 36;
@@ -1609,7 +1618,6 @@
             this.importFormat.Controls.Add(this.legendButton);
             this.importFormat.Controls.Add(this.openInExcel);
             this.importFormat.Controls.Add(this.goButtonPictureBox);
-            this.importFormat.Controls.Add(this.printButton);
             this.importFormat.Controls.Add(this.ifDocumentation);
             this.importFormat.Controls.Add(this.saveAsCsvButton);
             this.importFormat.Controls.Add(this.saveAsXmlButton);
@@ -1765,7 +1773,7 @@
             this.goButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.goButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.goButtonPictureBox.Image = global::DataAnalysisTool.Properties.Resources.button_go;
-            this.goButtonPictureBox.Location = new System.Drawing.Point(1431, 52);
+            this.goButtonPictureBox.Location = new System.Drawing.Point(1431, 76);
             this.goButtonPictureBox.Name = "goButtonPictureBox";
             this.goButtonPictureBox.Size = new System.Drawing.Size(63, 42);
             this.goButtonPictureBox.TabIndex = 57;
@@ -1775,20 +1783,6 @@
             this.goButtonPictureBox.MouseEnter += new System.EventHandler(this.goButtonPictureBox_MouseEnter);
             this.goButtonPictureBox.MouseLeave += new System.EventHandler(this.goButtonPictureBox_MouseLeave);
             this.goButtonPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.goButtonPictureBox_MouseUp);
-            // 
-            // printButton
-            // 
-            this.printButton.BackColor = System.Drawing.Color.Lavender;
-            this.printButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.printButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.printButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.printButton.Location = new System.Drawing.Point(1249, 52);
-            this.printButton.Name = "printButton";
-            this.printButton.Size = new System.Drawing.Size(177, 22);
-            this.printButton.TabIndex = 56;
-            this.printButton.Text = "Print";
-            this.printButton.UseVisualStyleBackColor = false;
-            this.printButton.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // ifDocumentation
             // 
@@ -3634,7 +3628,6 @@
         private System.Windows.Forms.TextBox apiUsersPasswordTextBox;
         private System.Windows.Forms.PictureBox apiUsersPasswordPictureBox;
         private System.Windows.Forms.ToolStripMenuItem aPILogFolderToolStripMenuItem;
-        private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.Label apiEnvLabel2;
         private System.Windows.Forms.Label apiEnvLabelMain;
         private System.Windows.Forms.TextBox textBox1;
@@ -3689,6 +3682,7 @@
         private System.Windows.Forms.PictureBox apiGoPictureBox;
         private System.Windows.Forms.PictureBox apiExportResultsPictureBox;
         private System.Windows.Forms.PictureBox apiClearResultsPictureBox;
+        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
     }
 }
 
