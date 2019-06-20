@@ -157,9 +157,6 @@
   <data name="StatusAnnotations_Play_32xMD_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StatusAnnotations_Play_32xMD_color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CallidusCloud_Logo62" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CallidusCloud_Logo-62.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="global" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\global.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -168,9 +165,6 @@
   </data>
   <data name="Money_16xMD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Money_16xMD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CallidusCloud_Company_Logoflip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CallidusCloud_Company_Logoflip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="preload_waiting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\preload_waiting1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

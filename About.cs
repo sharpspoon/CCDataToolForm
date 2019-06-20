@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Deployment.Application;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -17,7 +18,6 @@ namespace DataAnalysisTool
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;
@@ -42,21 +42,6 @@ namespace DataAnalysisTool
             }
         }
 
-        public string AssemblyVersion
-        {
-            get
-            {
-                if (ApplicationDeployment.IsNetworkDeployed)
-                {
-                    return ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
-                }
-                else
-                {
-                    return Assembly.GetExecutingAssembly().GetName().Version.ToString();
-                }
-            }
-        }
-
         public string AssemblyDescription
         {
             get
@@ -66,7 +51,7 @@ namespace DataAnalysisTool
                 {
                     return "";
                 }
-                return ((AssemblyDescriptionAttribute)attributes[0]).Description+ "For enhancement requests:\r\nRobin Ward: roward@calliduscloud.com\r\nAnuradha Kotwal:  akotwal@calliduscloud.com";
+                return ((AssemblyDescriptionAttribute)attributes[0]).Description+ "For enhancement requests:\r\nRobin Ward: robin.ward01@sap.com";
             }
         }
 
