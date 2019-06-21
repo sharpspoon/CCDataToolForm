@@ -36,7 +36,7 @@
     <WebPage>README.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>19</ApplicationRevision>
+    <ApplicationRevision>20</ApplicationRevision>
     <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -332,6 +332,9 @@
     <None Include="Resources\button_xml%282%29.png" />
     <None Include="Resources\button_xml%281%29.png" />
     <None Include="Resources\button_xml.png" />
+    <None Include="Resources\2button_go%282%29.png" />
+    <None Include="Resources\2button_go%281%29.png" />
+    <None Include="Resources\2button_go.png" />
     <Content Include="sap_32_hsh_icon.ico" />
     <Content Include="sap_32_jqX_icon.ico" />
     <None Include="Resources\Login_6031_32x.png" />

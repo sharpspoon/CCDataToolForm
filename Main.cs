@@ -578,318 +578,25 @@ namespace SAPDataAnalysisTool
         //*********************************************************************************************
 
         //------------------SELECT/CLEAR LIST BOX START------------------------------------------------------
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < dateCheckerListBox.Items.Count; i++)
-            {
-                dateCheckerListBox.SetSelected(i, true);
-            }
-        }
-        private void button18_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < specialCharacterCheckerListBox.Items.Count; i++)
-            {
-                specialCharacterCheckerListBox.SetSelected(i, true);
-            }
-        }
-        private void button19_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < nullCheckerListBox.Items.Count; i++)
-            {
-                nullCheckerListBox.SetSelected(i, true);
-            }
-        }
-        private void button20_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < cellLengthCheckerListBox.Items.Count; i++)
-            {
-                cellLengthCheckerListBox.SetSelected(i, true);
-            }
-        }
-        private void button21_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < dateCheckerListBox.Items.Count; i++)
-            {
-                dateCheckerListBox.SetSelected(i, false);
-            }
-        }
-        private void button24_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < specialCharacterCheckerListBox.Items.Count; i++)
-            {
-                specialCharacterCheckerListBox.SetSelected(i, false);
-            }
-        }
-        private void button23_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < nullCheckerListBox.Items.Count; i++)
-            {
-                nullCheckerListBox.SetSelected(i, false);
-            }
-        }
-        private void button22_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < cellLengthCheckerListBox.Items.Count; i++)
-            {
-                cellLengthCheckerListBox.SetSelected(i, false);
-            }
-        }
+        
 
         //------------------SELECT/CLEAR LIST BOX END------------------------------------------------------
 
         //------------------DATE CONVERTER START------------------------------------------------------
-        private void dateConvert_Click1(object sender, EventArgs e)
-        {
-            int a = 0;
-            String reqItem;
-            importFormatProgressBar.Value = 50;
-            foreach (Object selecteditem in dateCheckerListBox.SelectedItems)
-            {
-                a++;
-                reqItem = selecteditem as String;
-                int dateFormatCurIndex = dateCheckerListBox.Items.IndexOf(reqItem);
-                if (dateFormatCurIndex >= 0)
-                {
-                    for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
-                    {
-                        var value = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex].Value.ToString();
-                        if (dateCheckerFindNullCheckbox.Checked)
-                        {
-                            if (value == " " || value == "" || value == null)
-                            {
-                                importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                importFormatProgressBar.Value = 100;
-                                MessageBox.Show("NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyymmdd");
-                                return;
-                            }
-                        }
 
-                        if (value.Length == 8)
-                        {
-                            try {
-
-                                int year = int.Parse(value.Substring(0, 4));
-                                int month = int.Parse(value.Substring(4, 2));
-                                int day = int.Parse(value.Substring(6, 2));
-
-                                if (year > 2200)
-                                {
-                                    importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                    importFormatProgressBar.Value = 100;
-                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                                    systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyymmdd");
-                                    return;
-                                }
-
-                                if (month > 12)
-                                {
-                                    importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                    importFormatProgressBar.Value = 100;
-                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                                    systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyymmdd");
-                                    return;
-                                }
-
-                                if (month < 01)
-                                {
-                                    importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                    importFormatProgressBar.Value = 100;
-                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                                    systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyymmdd");
-                                    return;
-                                }
-
-                                if (day > 31)
-                                {
-                                    importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                    importFormatProgressBar.Value = 100;
-                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                                    systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyymmdd");
-                                    return;
-                                }
-
-                                if (day < 01)
-                                {
-                                    importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                    importFormatProgressBar.Value = 100;
-                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                                    systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyymmdd");
-                                    return;
-                                }
-                            }
-                            catch {
-                                importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                importFormatProgressBar.Value = 100;
-                                MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The value has characters that are not numbers.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The value has characters that are not numbers.\r\nMake sure that the date is in the format: yyyymmdd");
-                                return;
-                            }
-                        }
-                        else
-                        {
-                            if (value.Length > 0)
-                            {
-                                importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
-                                importFormatProgressBar.Value = 100;
-                                MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyymmdd");
-                                return;
-                            }
-                        }
-                    }
-                }
-            }
-            if (a == 0) {
-                importFormatProgressBar.Value = 0;
-                MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                return;
-            }
-            MessageBox.Show("Dates are OK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            importFormatProgressBar.Value = 100;
-            systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Dates are OK");
-            return;
-        }
         //------------------DATE CONVERTER END------------------------------------------------------
 
         //------------------NULL CHECKER START------------------------------------------------------
-
-        private void nullChecker_Click(object sender, EventArgs e)
-        {
-            int a = 0;
-            String reqItem;
-            importFormatProgressBar.Value = 50;
-            foreach (Object selecteditem in nullCheckerListBox.SelectedItems)
-            {
-                a++;
-                reqItem = selecteditem as String;
-                int nullCheckCurIndex = nullCheckerListBox.Items.IndexOf(reqItem);
-                if (nullCheckCurIndex >= 0)
-                {
-
-                    for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
-                    {
-
-                        var value = importedfileDataGridView.Rows[i].Cells[nullCheckCurIndex].Value.ToString();
-                        if (string.IsNullOrWhiteSpace(value))
-                        {
-                            importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[nullCheckCurIndex];
-                            importFormatProgressBar.Value = 100;
-                            MessageBox.Show("NULL value found in column " + "'" + reqItem + "'" + " at line " + (i + 1), "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                            return;
-                        }
-                    }
-                }
-            }
-            if (a == 0)
-            {
-                importFormatProgressBar.Value = 0;
-                MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                return;
-            }
-            importFormatProgressBar.Value = 100;
-            MessageBox.Show("no NULL value!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-        }
+        
         //------------------NULL CHECKER END------------------------------------------------------
 
         //------------------CELL LENGTH CHECKER START------------------------------------------------------
-
-        private void cellLength_Click(object sender, EventArgs e)
-        {
-            int a = 0;
-            String reqItem;
-            if (checkToolsMaxLengthTextBox.Text.Length == 0)
-            {
-                MessageBox.Show("You did not enter a length!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                return;
-            }
-            int length = int.Parse(checkToolsMaxLengthTextBox.Text);
-            importFormatProgressBar.Value = 50;
-            foreach (Object selecteditem in cellLengthCheckerListBox.SelectedItems)
-            {
-                a++;
-                reqItem = selecteditem as String;
-                int lengthCharacterCurIndex = cellLengthCheckerListBox.Items.IndexOf(reqItem);
-                if (lengthCharacterCurIndex >= 0)
-                {
-
-                    for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
-                    {
-
-                        var value = importedfileDataGridView.Rows[i].Cells[lengthCharacterCurIndex].Value.ToString();
-                        //MessageBox.Show("value "+value+"reqitem "+reqItem);
-                        if (value.Length > length)
-                        {
-                            importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[lengthCharacterCurIndex];
-                            importFormatProgressBar.Value = 100;
-                            MessageBox.Show("The value '" + value + "'" + " in column " + selecteditem + ", line " + (i + 1) + " is too long", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            return;
-                        }
-                    }
-                }
-            }
-            if (a == 0)
-            {
-                MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                return;
-            }
-            importFormatProgressBar.Value = 100;
-            MessageBox.Show("All columns/rows are under " + length, "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-        }
+        
 
         //------------------CELL LENGTH CHECKER END------------------------------------------------------
 
         //------------------SPECIAL CHARACTER CHECKER START------------------------------------------------------
-
-        private void specialCharacter_Click(object sender, EventArgs e)
-        {
-
-            int a = 0;
-            String reqItem;
-            String specialChar = checkToolsSpecialCharacterTextBox.Text;
-            if (checkToolsSpecialCharacterTextBox.Text.Length == 0)
-            {
-                MessageBox.Show("You did not enter a special character!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                return;
-            }
-            importFormatProgressBar.Value = 50;
-            foreach (Object selecteditem in specialCharacterCheckerListBox.SelectedItems)
-            {
-
-                a++;
-                reqItem = selecteditem as String;
-                int specialCharacterCurIndex = specialCharacterCheckerListBox.Items.IndexOf(reqItem);
-                if (specialCharacterCurIndex >= 0)
-                {
-
-                    for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
-                    {
-
-                        var value = importedfileDataGridView.Rows[i].Cells[specialCharacterCurIndex].Value.ToString();
-                        if (value.Contains(specialChar) == true)
-                        {
-                            importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[specialCharacterCurIndex];
-                            importFormatProgressBar.Value = 100;
-                            MessageBox.Show("'" + specialChar + "'" + " WAS found in the column " + "'" + selecteditem + "'" + " at line " + (i + 1), "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                            return;
-                        }
-                    }
-                }
-            }
-            if (a == 0)
-            {
-                MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                importFormatProgressBar.Value = 0;
-                return;
-            }
-            importFormatProgressBar.Value = 100;
-            MessageBox.Show("'" + specialChar + "'" + " WAS NOT FOUND!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-
-        }
+        
 
         //------------------SPECIAL CHARACTER CHECKER END------------------------------------------------------
 
@@ -2897,5 +2604,336 @@ risk if your ICM instance is externally accessible.");
         {
             this.saveAsXmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml_save));
         }
+
+        private void benchmarkGoPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.benchmarkGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
+        }
+
+        private void benchmarkGoPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.benchmarkGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkGoPictureBox, "Run the tool!");
+        }
+
+        private void benchmarkGoPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.benchmarkGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkGoPictureBox, "Run the tool!");
+        }
+
+        private void benchmarkGoPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.benchmarkGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+        }
+
+        private void selectAllCellLengthCheckerPictureBox_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < cellLengthCheckerListBox.Items.Count; i++)
+            {
+                cellLengthCheckerListBox.SetSelected(i, true);
+            }
+        }
+
+        private void clearAllCellLengthCheckerPictureBox_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < cellLengthCheckerListBox.Items.Count; i++)
+            {
+                cellLengthCheckerListBox.SetSelected(i, false);
+            }
+        }
+
+        private void cellLengthCheckerGoButtonPictureBox_Click(object sender, EventArgs e)
+        {
+            int a = 0;
+            String reqItem;
+            if (checkToolsMaxLengthTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("You did not enter a length!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            int length = int.Parse(checkToolsMaxLengthTextBox.Text);
+            importFormatProgressBar.Value = 50;
+            foreach (Object selecteditem in cellLengthCheckerListBox.SelectedItems)
+            {
+                a++;
+                reqItem = selecteditem as String;
+                int lengthCharacterCurIndex = cellLengthCheckerListBox.Items.IndexOf(reqItem);
+                if (lengthCharacterCurIndex >= 0)
+                {
+
+                    for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
+                    {
+
+                        var value = importedfileDataGridView.Rows[i].Cells[lengthCharacterCurIndex].Value.ToString();
+                        //MessageBox.Show("value "+value+"reqitem "+reqItem);
+                        if (value.Length > length)
+                        {
+                            importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[lengthCharacterCurIndex];
+                            importFormatProgressBar.Value = 100;
+                            MessageBox.Show("The value '" + value + "'" + " in column " + selecteditem + ", line " + (i + 1) + " is too long", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            return;
+                        }
+                    }
+                }
+            }
+            if (a == 0)
+            {
+                MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            importFormatProgressBar.Value = 100;
+            MessageBox.Show("All columns/rows are under " + length, "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+        }
+
+        private void clearAllNullCheckerButtonPictureBox_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < nullCheckerListBox.Items.Count; i++)
+            {
+                nullCheckerListBox.SetSelected(i, false);
+            }
+        }
+
+        private void selectAllNullCheckerButtonPictureBox_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < nullCheckerListBox.Items.Count; i++)
+            {
+                nullCheckerListBox.SetSelected(i, true);
+            }
+        }
+
+        private void nullCheckerGoButtonPictureBox_Click(object sender, EventArgs e)
+        {
+            int a = 0;
+            String reqItem;
+            importFormatProgressBar.Value = 50;
+            foreach (Object selecteditem in nullCheckerListBox.SelectedItems)
+            {
+                a++;
+                reqItem = selecteditem as String;
+                int nullCheckCurIndex = nullCheckerListBox.Items.IndexOf(reqItem);
+                if (nullCheckCurIndex >= 0)
+                {
+
+                    for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
+                    {
+
+                        var value = importedfileDataGridView.Rows[i].Cells[nullCheckCurIndex].Value.ToString();
+                        if (string.IsNullOrWhiteSpace(value))
+                        {
+                            importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[nullCheckCurIndex];
+                            importFormatProgressBar.Value = 100;
+                            MessageBox.Show("NULL value found in column " + "'" + reqItem + "'" + " at line " + (i + 1), "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            return;
+                        }
+                    }
+                }
+            }
+            if (a == 0)
+            {
+                importFormatProgressBar.Value = 0;
+                MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            importFormatProgressBar.Value = 100;
+            MessageBox.Show("no NULL value!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        }
+
+        private void clearAllSpecialCharacterCheckerButtonPictureBox_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < specialCharacterCheckerListBox.Items.Count; i++)
+            {
+                specialCharacterCheckerListBox.SetSelected(i, false);
+            }
+        }
+
+        private void selectAllSpecialCharacterCheckerButtonPictureBox_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < specialCharacterCheckerListBox.Items.Count; i++)
+            {
+                specialCharacterCheckerListBox.SetSelected(i, true);
+            }
+        }
+
+        private void specialCharacterCheckerGoButtonPictureBox_Click(object sender, EventArgs e)
+        {
+            int a = 0;
+            String reqItem;
+            String specialChar = checkToolsSpecialCharacterTextBox.Text;
+            if (checkToolsSpecialCharacterTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("You did not enter a special character!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            importFormatProgressBar.Value = 50;
+            foreach (Object selecteditem in specialCharacterCheckerListBox.SelectedItems)
+            {
+
+                a++;
+                reqItem = selecteditem as String;
+                int specialCharacterCurIndex = specialCharacterCheckerListBox.Items.IndexOf(reqItem);
+                if (specialCharacterCurIndex >= 0)
+                {
+
+                    for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
+                    {
+
+                        var value = importedfileDataGridView.Rows[i].Cells[specialCharacterCurIndex].Value.ToString();
+                        if (value.Contains(specialChar) == true)
+                        {
+                            importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[specialCharacterCurIndex];
+                            importFormatProgressBar.Value = 100;
+                            MessageBox.Show("'" + specialChar + "'" + " WAS found in the column " + "'" + selecteditem + "'" + " at line " + (i + 1), "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            return;
+                        }
+                    }
+                }
+            }
+            if (a == 0)
+            {
+                MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                importFormatProgressBar.Value = 0;
+                return;
+            }
+            importFormatProgressBar.Value = 100;
+            MessageBox.Show("'" + specialChar + "'" + " WAS NOT FOUND!", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        }
+
+        private void clearAllDateCheckerButtonPictureBox_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dateCheckerListBox.Items.Count; i++)
+            {
+                dateCheckerListBox.SetSelected(i, false);
+            }
+        }
+
+        private void selectAllDateCheckerButtonPictureBox_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dateCheckerListBox.Items.Count; i++)
+            {
+                dateCheckerListBox.SetSelected(i, true);
+            }
+        }
+
+        private void dateCheckerGoButtonPictureBox_Click(object sender, EventArgs e)
+        {
+            int a = 0;
+            String reqItem;
+            importFormatProgressBar.Value = 50;
+            foreach (Object selecteditem in dateCheckerListBox.SelectedItems)
+            {
+                a++;
+                reqItem = selecteditem as String;
+                int dateFormatCurIndex = dateCheckerListBox.Items.IndexOf(reqItem);
+                if (dateFormatCurIndex >= 0)
+                {
+                    for (int i = 0; i < importedfileDataGridView.Rows.Count; i++)
+                    {
+                        var value = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex].Value.ToString();
+                        if (dateCheckerFindNullCheckbox.Checked)
+                        {
+                            if (value == " " || value == "" || value == null)
+                            {
+                                importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                importFormatProgressBar.Value = 100;
+                                MessageBox.Show("NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   NULL at line " + (i + 1) + "\r\nMake sure that the date is in the format: yyyymmdd");
+                                return;
+                            }
+                        }
+
+                        if (value.Length == 8)
+                        {
+                            try
+                            {
+
+                                int year = int.Parse(value.Substring(0, 4));
+                                int month = int.Parse(value.Substring(4, 2));
+                                int day = int.Parse(value.Substring(6, 2));
+
+                                if (year > 2200)
+                                {
+                                    importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                    importFormatProgressBar.Value = 100;
+                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                    systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is " + year + ", which is greater than 2200.\r\nMake sure that the date is in the format: yyyymmdd");
+                                    return;
+                                }
+
+                                if (month > 12)
+                                {
+                                    importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                    importFormatProgressBar.Value = 100;
+                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                    systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is greater than 12.\r\nMake sure that the date is in the format: yyyymmdd");
+                                    return;
+                                }
+
+                                if (month < 01)
+                                {
+                                    importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                    importFormatProgressBar.Value = 100;
+                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                    systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The month is " + month + ", which is less than 1.\r\nMake sure that the date is in the format: yyyymmdd");
+                                    return;
+                                }
+
+                                if (day > 31)
+                                {
+                                    importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                    importFormatProgressBar.Value = 100;
+                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                    systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is greater than 31.\r\nMake sure that the date is in the format: yyyymmdd");
+                                    return;
+                                }
+
+                                if (day < 01)
+                                {
+                                    importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                    importFormatProgressBar.Value = 100;
+                                    MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                    systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The day is " + day + ", which is less than 01.\r\nMake sure that the date is in the format: yyyymmdd");
+                                    return;
+                                }
+                            }
+                            catch
+                            {
+                                importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                importFormatProgressBar.Value = 100;
+                                MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The value has characters that are not numbers.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The value has characters that are not numbers.\r\nMake sure that the date is in the format: yyyymmdd");
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            if (value.Length > 0)
+                            {
+                                importedfileDataGridView.CurrentCell = importedfileDataGridView.Rows[i].Cells[dateFormatCurIndex];
+                                importFormatProgressBar.Value = 100;
+                                MessageBox.Show("Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyymmdd", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Error at line " + (i + 1) + "\r\n" + "The year is not 8 digits.\r\nMake sure that the date is in the format: yyyymmdd");
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+            if (a == 0)
+            {
+                importFormatProgressBar.Value = 0;
+                MessageBox.Show("You did not select a column!\r\nThe operation will now cancel.", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            MessageBox.Show("Dates are OK", "Data Analysis Tool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            importFormatProgressBar.Value = 100;
+            systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Dates are OK");
+            return;
+        }
     }
+    
 }

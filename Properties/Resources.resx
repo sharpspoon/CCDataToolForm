@@ -463,4 +463,13 @@
   <data name="button_xml_save3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_xml(5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_2button_go" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2button_go.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2button_go_1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2button_go(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2button_go_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2button_go(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -71,38 +71,38 @@
             this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemMaximize = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemMinimize = new System.Windows.Forms.ToolStripMenuItem();
-            this.dateCheckerGoButton = new System.Windows.Forms.Button();
             this.checkToolsDateCheckerGroupBox = new System.Windows.Forms.GroupBox();
-            this.clearAllDateCheckerButton = new System.Windows.Forms.Button();
-            this.selectAllDateCheckerButton = new System.Windows.Forms.Button();
+            this.dateCheckerGoButtonPictureBox = new System.Windows.Forms.PictureBox();
+            this.selectAllDateCheckerButtonPictureBox = new System.Windows.Forms.PictureBox();
+            this.clearAllDateCheckerButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.dateCheckerListBox = new System.Windows.Forms.ListBox();
             this.checkToolsSelectColumnsLabel = new System.Windows.Forms.Label();
             this.dateCheckerFindNullCheckbox = new System.Windows.Forms.CheckBox();
             this.checkToolsCellLengthCheckerGroupBox = new System.Windows.Forms.GroupBox();
-            this.clearAllCellLengthChecker = new System.Windows.Forms.Button();
-            this.selectAllCellLengthChecker = new System.Windows.Forms.Button();
+            this.clearAllCellLengthCheckerPictureBox = new System.Windows.Forms.PictureBox();
+            this.selectAllCellLengthCheckerPictureBox = new System.Windows.Forms.PictureBox();
             this.checkToolsMaxLengthLabel = new System.Windows.Forms.Label();
             this.checkToolsMaxLengthTextBox = new System.Windows.Forms.TextBox();
+            this.cellLengthCheckerGoButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.cellLengthCheckerListBox = new System.Windows.Forms.ListBox();
-            this.cellLengthCheckerGoButton = new System.Windows.Forms.Button();
             this.checkToolsCellLengthLabel = new System.Windows.Forms.Label();
             this.checkToolsSpecialCharacterCheckerGroupBox = new System.Windows.Forms.GroupBox();
-            this.clearAllSpecialCharacterCheckerButton = new System.Windows.Forms.Button();
-            this.selectAllSpecialCharacterCheckerButton = new System.Windows.Forms.Button();
+            this.specialCharacterCheckerGoButtonPictureBox = new System.Windows.Forms.PictureBox();
+            this.selectAllSpecialCharacterCheckerButtonPictureBox = new System.Windows.Forms.PictureBox();
+            this.clearAllSpecialCharacterCheckerButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.checkToolsSpecialCharacterTextBox = new System.Windows.Forms.TextBox();
             this.specialCharacterCheckerListBox = new System.Windows.Forms.ListBox();
             this.checkToolsSpecialCharsLabel = new System.Windows.Forms.Label();
             this.checkToolsSelectColumnLabel = new System.Windows.Forms.Label();
-            this.specialCharacterCheckerGoButton = new System.Windows.Forms.Button();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.checkToolsNullCheckerGroupBox = new System.Windows.Forms.GroupBox();
-            this.clearAllNullCheckerButton = new System.Windows.Forms.Button();
-            this.selectAllNullCheckerButton = new System.Windows.Forms.Button();
+            this.nullCheckerGoButtonPictureBox = new System.Windows.Forms.PictureBox();
+            this.selectAllNullCheckerButtonPictureBox = new System.Windows.Forms.PictureBox();
+            this.clearAllNullCheckerButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.nullCheckerListBox = new System.Windows.Forms.ListBox();
             this.checkToolsNullCheckerLabel = new System.Windows.Forms.Label();
-            this.nullCheckerGoButton = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitRequiredImportFormat_ImportedFile = new System.Windows.Forms.SplitContainer();
@@ -153,18 +153,19 @@
             this.versionToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.maintabControl = new System.Windows.Forms.TabControl();
             this.importFormat = new System.Windows.Forms.TabPage();
-            this.saveAsXmlButtonPictureBox = new System.Windows.Forms.PictureBox();
-            this.legendButtonPictureBox = new System.Windows.Forms.PictureBox();
-            this.openInExcelPictureBox = new System.Windows.Forms.PictureBox();
+            this.saveAsGroupBox = new System.Windows.Forms.GroupBox();
             this.saveAsCsvButtonPictureBox = new System.Windows.Forms.PictureBox();
-            this.importformatIncludeHeaderRowButton = new System.Windows.Forms.CheckBox();
+            this.saveAsXmlButtonPictureBox = new System.Windows.Forms.PictureBox();
+            this.openFileGroupBox = new System.Windows.Forms.GroupBox();
             this.csvButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.txtCommaButtonPictureBox = new System.Windows.Forms.PictureBox();
+            this.txtPipePictureBox = new System.Windows.Forms.PictureBox();
             this.xmlButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.xlsButtonPictureBox = new System.Windows.Forms.PictureBox();
-            this.txtPipePictureBox = new System.Windows.Forms.PictureBox();
+            this.importformatIncludeHeaderRowButton = new System.Windows.Forms.CheckBox();
+            this.legendButtonPictureBox = new System.Windows.Forms.PictureBox();
+            this.openInExcelPictureBox = new System.Windows.Forms.PictureBox();
             this.goButtonPictureBox = new System.Windows.Forms.PictureBox();
-            this.ifDocumentation = new System.Windows.Forms.Button();
             this.importFormatProgressBar = new System.Windows.Forms.ProgressBar();
             this.importFormatDatabaseChecksGroupBox = new System.Windows.Forms.GroupBox();
             this.importFormatDatabaseCheck1Button = new System.Windows.Forms.CheckBox();
@@ -275,14 +276,24 @@
             this.stagedTextBox = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.mainLogSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.openFileGroupBox = new System.Windows.Forms.GroupBox();
-            this.saveAsGroupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.checkToolsDateCheckerGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateCheckerGoButtonPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectAllDateCheckerButtonPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clearAllDateCheckerButtonPictureBox)).BeginInit();
             this.checkToolsCellLengthCheckerGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clearAllCellLengthCheckerPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectAllCellLengthCheckerPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellLengthCheckerGoButtonPictureBox)).BeginInit();
             this.checkToolsSpecialCharacterCheckerGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.specialCharacterCheckerGoButtonPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectAllSpecialCharacterCheckerButtonPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clearAllSpecialCharacterCheckerButtonPictureBox)).BeginInit();
             this.checkToolsNullCheckerGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullCheckerGoButtonPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectAllNullCheckerButtonPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clearAllNullCheckerButtonPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -309,15 +320,17 @@
             this.statusStrip1.SuspendLayout();
             this.maintabControl.SuspendLayout();
             this.importFormat.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.saveAsXmlButtonPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.legendButtonPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.openInExcelPictureBox)).BeginInit();
+            this.saveAsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.saveAsCsvButtonPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveAsXmlButtonPictureBox)).BeginInit();
+            this.openFileGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csvButtonPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCommaButtonPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPipePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xmlButtonPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xlsButtonPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPipePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.legendButtonPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openInExcelPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goButtonPictureBox)).BeginInit();
             this.importFormatDatabaseChecksGroupBox.SuspendLayout();
             this.importFormatSelectDateGroupBox.SuspendLayout();
@@ -372,8 +385,6 @@
             this.mainLogSplitContainer.Panel1.SuspendLayout();
             this.mainLogSplitContainer.Panel2.SuspendLayout();
             this.mainLogSplitContainer.SuspendLayout();
-            this.openFileGroupBox.SuspendLayout();
-            this.saveAsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -606,73 +617,65 @@
             this.toolStripMenuItemMinimize.Text = "Minimize";
             this.toolStripMenuItemMinimize.Click += new System.EventHandler(this.toolStripMenuItemMinimize_Click);
             // 
-            // dateCheckerGoButton
-            // 
-            this.dateCheckerGoButton.BackColor = System.Drawing.Color.Honeydew;
-            this.dateCheckerGoButton.CausesValidation = false;
-            this.dateCheckerGoButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateCheckerGoButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.dateCheckerGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
-            this.dateCheckerGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.dateCheckerGoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dateCheckerGoButton.Image = global::SAPDataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
-            this.dateCheckerGoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dateCheckerGoButton.Location = new System.Drawing.Point(6, 71);
-            this.dateCheckerGoButton.Name = "dateCheckerGoButton";
-            this.dateCheckerGoButton.Size = new System.Drawing.Size(82, 23);
-            this.dateCheckerGoButton.TabIndex = 21;
-            this.dateCheckerGoButton.Text = "GO";
-            this.dateCheckerGoButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dateCheckerGoButton.UseVisualStyleBackColor = false;
-            this.dateCheckerGoButton.Click += new System.EventHandler(this.dateConvert_Click1);
-            // 
             // checkToolsDateCheckerGroupBox
             // 
             this.checkToolsDateCheckerGroupBox.BackColor = System.Drawing.Color.AliceBlue;
-            this.checkToolsDateCheckerGroupBox.Controls.Add(this.clearAllDateCheckerButton);
-            this.checkToolsDateCheckerGroupBox.Controls.Add(this.selectAllDateCheckerButton);
+            this.checkToolsDateCheckerGroupBox.Controls.Add(this.dateCheckerGoButtonPictureBox);
+            this.checkToolsDateCheckerGroupBox.Controls.Add(this.selectAllDateCheckerButtonPictureBox);
+            this.checkToolsDateCheckerGroupBox.Controls.Add(this.clearAllDateCheckerButtonPictureBox);
             this.checkToolsDateCheckerGroupBox.Controls.Add(this.dateCheckerListBox);
             this.checkToolsDateCheckerGroupBox.Controls.Add(this.checkToolsSelectColumnsLabel);
             this.checkToolsDateCheckerGroupBox.Controls.Add(this.dateCheckerFindNullCheckbox);
-            this.checkToolsDateCheckerGroupBox.Controls.Add(this.dateCheckerGoButton);
             this.checkToolsDateCheckerGroupBox.Location = new System.Drawing.Point(6, 1);
             this.checkToolsDateCheckerGroupBox.Name = "checkToolsDateCheckerGroupBox";
-            this.checkToolsDateCheckerGroupBox.Size = new System.Drawing.Size(216, 103);
+            this.checkToolsDateCheckerGroupBox.Size = new System.Drawing.Size(301, 117);
             this.checkToolsDateCheckerGroupBox.TabIndex = 23;
             this.checkToolsDateCheckerGroupBox.TabStop = false;
             this.checkToolsDateCheckerGroupBox.Text = "Date Checker:";
             // 
-            // clearAllDateCheckerButton
+            // dateCheckerGoButtonPictureBox
             // 
-            this.clearAllDateCheckerButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.clearAllDateCheckerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearAllDateCheckerButton.Location = new System.Drawing.Point(47, 46);
-            this.clearAllDateCheckerButton.Name = "clearAllDateCheckerButton";
-            this.clearAllDateCheckerButton.Size = new System.Drawing.Size(41, 23);
-            this.clearAllDateCheckerButton.TabIndex = 40;
-            this.clearAllDateCheckerButton.Text = "Clear";
-            this.clearAllDateCheckerButton.UseVisualStyleBackColor = true;
-            this.clearAllDateCheckerButton.Click += new System.EventHandler(this.button21_Click);
+            this.dateCheckerGoButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.dateCheckerGoButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dateCheckerGoButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources._2button_go;
+            this.dateCheckerGoButtonPictureBox.Location = new System.Drawing.Point(71, 83);
+            this.dateCheckerGoButtonPictureBox.Name = "dateCheckerGoButtonPictureBox";
+            this.dateCheckerGoButtonPictureBox.Size = new System.Drawing.Size(43, 27);
+            this.dateCheckerGoButtonPictureBox.TabIndex = 71;
+            this.dateCheckerGoButtonPictureBox.TabStop = false;
+            this.dateCheckerGoButtonPictureBox.Click += new System.EventHandler(this.dateCheckerGoButtonPictureBox_Click);
             // 
-            // selectAllDateCheckerButton
+            // selectAllDateCheckerButtonPictureBox
             // 
-            this.selectAllDateCheckerButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.selectAllDateCheckerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.selectAllDateCheckerButton.Location = new System.Drawing.Point(6, 46);
-            this.selectAllDateCheckerButton.Name = "selectAllDateCheckerButton";
-            this.selectAllDateCheckerButton.Size = new System.Drawing.Size(41, 23);
-            this.selectAllDateCheckerButton.TabIndex = 1;
-            this.selectAllDateCheckerButton.Text = "ALL";
-            this.selectAllDateCheckerButton.UseVisualStyleBackColor = true;
-            this.selectAllDateCheckerButton.Click += new System.EventHandler(this.button17_Click);
+            this.selectAllDateCheckerButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.selectAllDateCheckerButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.selectAllDateCheckerButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_all;
+            this.selectAllDateCheckerButtonPictureBox.Location = new System.Drawing.Point(6, 50);
+            this.selectAllDateCheckerButtonPictureBox.Name = "selectAllDateCheckerButtonPictureBox";
+            this.selectAllDateCheckerButtonPictureBox.Size = new System.Drawing.Size(38, 27);
+            this.selectAllDateCheckerButtonPictureBox.TabIndex = 72;
+            this.selectAllDateCheckerButtonPictureBox.TabStop = false;
+            this.selectAllDateCheckerButtonPictureBox.Click += new System.EventHandler(this.selectAllDateCheckerButtonPictureBox_Click);
+            // 
+            // clearAllDateCheckerButtonPictureBox
+            // 
+            this.clearAllDateCheckerButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.clearAllDateCheckerButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearAllDateCheckerButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_clear;
+            this.clearAllDateCheckerButtonPictureBox.Location = new System.Drawing.Point(50, 50);
+            this.clearAllDateCheckerButtonPictureBox.Name = "clearAllDateCheckerButtonPictureBox";
+            this.clearAllDateCheckerButtonPictureBox.Size = new System.Drawing.Size(64, 27);
+            this.clearAllDateCheckerButtonPictureBox.TabIndex = 68;
+            this.clearAllDateCheckerButtonPictureBox.TabStop = false;
+            this.clearAllDateCheckerButtonPictureBox.Click += new System.EventHandler(this.clearAllDateCheckerButtonPictureBox_Click);
             // 
             // dateCheckerListBox
             // 
             this.dateCheckerListBox.FormattingEnabled = true;
-            this.dateCheckerListBox.Location = new System.Drawing.Point(94, 14);
+            this.dateCheckerListBox.Location = new System.Drawing.Point(120, 12);
             this.dateCheckerListBox.Name = "dateCheckerListBox";
             this.dateCheckerListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.dateCheckerListBox.Size = new System.Drawing.Size(117, 82);
+            this.dateCheckerListBox.Size = new System.Drawing.Size(175, 95);
             this.dateCheckerListBox.TabIndex = 28;
             // 
             // checkToolsSelectColumnsLabel
@@ -698,43 +701,43 @@
             // checkToolsCellLengthCheckerGroupBox
             // 
             this.checkToolsCellLengthCheckerGroupBox.BackColor = System.Drawing.Color.AliceBlue;
-            this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.clearAllCellLengthChecker);
-            this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.selectAllCellLengthChecker);
+            this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.clearAllCellLengthCheckerPictureBox);
+            this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.selectAllCellLengthCheckerPictureBox);
             this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.checkToolsMaxLengthLabel);
             this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.checkToolsMaxLengthTextBox);
+            this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.cellLengthCheckerGoButtonPictureBox);
             this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.cellLengthCheckerListBox);
-            this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.cellLengthCheckerGoButton);
             this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.checkToolsCellLengthLabel);
-            this.checkToolsCellLengthCheckerGroupBox.Location = new System.Drawing.Point(673, 1);
+            this.checkToolsCellLengthCheckerGroupBox.Location = new System.Drawing.Point(919, 1);
             this.checkToolsCellLengthCheckerGroupBox.Name = "checkToolsCellLengthCheckerGroupBox";
-            this.checkToolsCellLengthCheckerGroupBox.Size = new System.Drawing.Size(216, 103);
+            this.checkToolsCellLengthCheckerGroupBox.Size = new System.Drawing.Size(275, 117);
             this.checkToolsCellLengthCheckerGroupBox.TabIndex = 24;
             this.checkToolsCellLengthCheckerGroupBox.TabStop = false;
             this.checkToolsCellLengthCheckerGroupBox.Text = "Cell Length Checker:";
             // 
-            // clearAllCellLengthChecker
+            // clearAllCellLengthCheckerPictureBox
             // 
-            this.clearAllCellLengthChecker.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.clearAllCellLengthChecker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearAllCellLengthChecker.Location = new System.Drawing.Point(47, 46);
-            this.clearAllCellLengthChecker.Name = "clearAllCellLengthChecker";
-            this.clearAllCellLengthChecker.Size = new System.Drawing.Size(41, 23);
-            this.clearAllCellLengthChecker.TabIndex = 41;
-            this.clearAllCellLengthChecker.Text = "Clear";
-            this.clearAllCellLengthChecker.UseVisualStyleBackColor = true;
-            this.clearAllCellLengthChecker.Click += new System.EventHandler(this.button22_Click);
+            this.clearAllCellLengthCheckerPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.clearAllCellLengthCheckerPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearAllCellLengthCheckerPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_clear;
+            this.clearAllCellLengthCheckerPictureBox.Location = new System.Drawing.Point(50, 50);
+            this.clearAllCellLengthCheckerPictureBox.Name = "clearAllCellLengthCheckerPictureBox";
+            this.clearAllCellLengthCheckerPictureBox.Size = new System.Drawing.Size(64, 27);
+            this.clearAllCellLengthCheckerPictureBox.TabIndex = 60;
+            this.clearAllCellLengthCheckerPictureBox.TabStop = false;
+            this.clearAllCellLengthCheckerPictureBox.Click += new System.EventHandler(this.clearAllCellLengthCheckerPictureBox_Click);
             // 
-            // selectAllCellLengthChecker
+            // selectAllCellLengthCheckerPictureBox
             // 
-            this.selectAllCellLengthChecker.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.selectAllCellLengthChecker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.selectAllCellLengthChecker.Location = new System.Drawing.Point(6, 46);
-            this.selectAllCellLengthChecker.Name = "selectAllCellLengthChecker";
-            this.selectAllCellLengthChecker.Size = new System.Drawing.Size(41, 23);
-            this.selectAllCellLengthChecker.TabIndex = 42;
-            this.selectAllCellLengthChecker.Text = "ALL";
-            this.selectAllCellLengthChecker.UseVisualStyleBackColor = true;
-            this.selectAllCellLengthChecker.Click += new System.EventHandler(this.button20_Click);
+            this.selectAllCellLengthCheckerPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.selectAllCellLengthCheckerPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.selectAllCellLengthCheckerPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_all;
+            this.selectAllCellLengthCheckerPictureBox.Location = new System.Drawing.Point(6, 50);
+            this.selectAllCellLengthCheckerPictureBox.Name = "selectAllCellLengthCheckerPictureBox";
+            this.selectAllCellLengthCheckerPictureBox.Size = new System.Drawing.Size(38, 27);
+            this.selectAllCellLengthCheckerPictureBox.TabIndex = 59;
+            this.selectAllCellLengthCheckerPictureBox.TabStop = false;
+            this.selectAllCellLengthCheckerPictureBox.Click += new System.EventHandler(this.selectAllCellLengthCheckerPictureBox_Click);
             // 
             // checkToolsMaxLengthLabel
             // 
@@ -747,40 +750,33 @@
             // 
             // checkToolsMaxLengthTextBox
             // 
-            this.checkToolsMaxLengthTextBox.Location = new System.Drawing.Point(68, 27);
+            this.checkToolsMaxLengthTextBox.Location = new System.Drawing.Point(72, 27);
             this.checkToolsMaxLengthTextBox.MaxLength = 3;
             this.checkToolsMaxLengthTextBox.Name = "checkToolsMaxLengthTextBox";
             this.checkToolsMaxLengthTextBox.Size = new System.Drawing.Size(24, 20);
             this.checkToolsMaxLengthTextBox.TabIndex = 23;
             this.checkToolsMaxLengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
+            // cellLengthCheckerGoButtonPictureBox
+            // 
+            this.cellLengthCheckerGoButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.cellLengthCheckerGoButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cellLengthCheckerGoButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources._2button_go;
+            this.cellLengthCheckerGoButtonPictureBox.Location = new System.Drawing.Point(71, 83);
+            this.cellLengthCheckerGoButtonPictureBox.Name = "cellLengthCheckerGoButtonPictureBox";
+            this.cellLengthCheckerGoButtonPictureBox.Size = new System.Drawing.Size(43, 27);
+            this.cellLengthCheckerGoButtonPictureBox.TabIndex = 62;
+            this.cellLengthCheckerGoButtonPictureBox.TabStop = false;
+            this.cellLengthCheckerGoButtonPictureBox.Click += new System.EventHandler(this.cellLengthCheckerGoButtonPictureBox_Click);
+            // 
             // cellLengthCheckerListBox
             // 
             this.cellLengthCheckerListBox.FormattingEnabled = true;
-            this.cellLengthCheckerListBox.Location = new System.Drawing.Point(94, 14);
+            this.cellLengthCheckerListBox.Location = new System.Drawing.Point(120, 14);
             this.cellLengthCheckerListBox.Name = "cellLengthCheckerListBox";
             this.cellLengthCheckerListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.cellLengthCheckerListBox.Size = new System.Drawing.Size(117, 82);
+            this.cellLengthCheckerListBox.Size = new System.Drawing.Size(149, 95);
             this.cellLengthCheckerListBox.TabIndex = 33;
-            // 
-            // cellLengthCheckerGoButton
-            // 
-            this.cellLengthCheckerGoButton.BackColor = System.Drawing.Color.Honeydew;
-            this.cellLengthCheckerGoButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cellLengthCheckerGoButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.cellLengthCheckerGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
-            this.cellLengthCheckerGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.cellLengthCheckerGoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cellLengthCheckerGoButton.Image = global::SAPDataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
-            this.cellLengthCheckerGoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cellLengthCheckerGoButton.Location = new System.Drawing.Point(6, 71);
-            this.cellLengthCheckerGoButton.Name = "cellLengthCheckerGoButton";
-            this.cellLengthCheckerGoButton.Size = new System.Drawing.Size(82, 23);
-            this.cellLengthCheckerGoButton.TabIndex = 22;
-            this.cellLengthCheckerGoButton.Text = "GO";
-            this.cellLengthCheckerGoButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cellLengthCheckerGoButton.UseVisualStyleBackColor = false;
-            this.cellLengthCheckerGoButton.Click += new System.EventHandler(this.cellLength_Click);
             // 
             // checkToolsCellLengthLabel
             // 
@@ -794,43 +790,55 @@
             // checkToolsSpecialCharacterCheckerGroupBox
             // 
             this.checkToolsSpecialCharacterCheckerGroupBox.BackColor = System.Drawing.Color.AliceBlue;
-            this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.clearAllSpecialCharacterCheckerButton);
-            this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.selectAllSpecialCharacterCheckerButton);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.specialCharacterCheckerGoButtonPictureBox);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.selectAllSpecialCharacterCheckerButtonPictureBox);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.clearAllSpecialCharacterCheckerButtonPictureBox);
             this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.checkToolsSpecialCharacterTextBox);
             this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.specialCharacterCheckerListBox);
             this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.checkToolsSpecialCharsLabel);
             this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.checkToolsSelectColumnLabel);
-            this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.specialCharacterCheckerGoButton);
-            this.checkToolsSpecialCharacterCheckerGroupBox.Location = new System.Drawing.Point(228, 1);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Location = new System.Drawing.Point(313, 1);
             this.checkToolsSpecialCharacterCheckerGroupBox.Name = "checkToolsSpecialCharacterCheckerGroupBox";
-            this.checkToolsSpecialCharacterCheckerGroupBox.Size = new System.Drawing.Size(216, 103);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Size = new System.Drawing.Size(295, 117);
             this.checkToolsSpecialCharacterCheckerGroupBox.TabIndex = 26;
             this.checkToolsSpecialCharacterCheckerGroupBox.TabStop = false;
             this.checkToolsSpecialCharacterCheckerGroupBox.Text = "Special Character Checker:";
             // 
-            // clearAllSpecialCharacterCheckerButton
+            // specialCharacterCheckerGoButtonPictureBox
             // 
-            this.clearAllSpecialCharacterCheckerButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.clearAllSpecialCharacterCheckerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearAllSpecialCharacterCheckerButton.Location = new System.Drawing.Point(47, 46);
-            this.clearAllSpecialCharacterCheckerButton.Name = "clearAllSpecialCharacterCheckerButton";
-            this.clearAllSpecialCharacterCheckerButton.Size = new System.Drawing.Size(41, 23);
-            this.clearAllSpecialCharacterCheckerButton.TabIndex = 43;
-            this.clearAllSpecialCharacterCheckerButton.Text = "Clear";
-            this.clearAllSpecialCharacterCheckerButton.UseVisualStyleBackColor = true;
-            this.clearAllSpecialCharacterCheckerButton.Click += new System.EventHandler(this.button24_Click);
+            this.specialCharacterCheckerGoButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.specialCharacterCheckerGoButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.specialCharacterCheckerGoButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources._2button_go;
+            this.specialCharacterCheckerGoButtonPictureBox.Location = new System.Drawing.Point(71, 83);
+            this.specialCharacterCheckerGoButtonPictureBox.Name = "specialCharacterCheckerGoButtonPictureBox";
+            this.specialCharacterCheckerGoButtonPictureBox.Size = new System.Drawing.Size(43, 27);
+            this.specialCharacterCheckerGoButtonPictureBox.TabIndex = 63;
+            this.specialCharacterCheckerGoButtonPictureBox.TabStop = false;
+            this.specialCharacterCheckerGoButtonPictureBox.Click += new System.EventHandler(this.specialCharacterCheckerGoButtonPictureBox_Click);
             // 
-            // selectAllSpecialCharacterCheckerButton
+            // selectAllSpecialCharacterCheckerButtonPictureBox
             // 
-            this.selectAllSpecialCharacterCheckerButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.selectAllSpecialCharacterCheckerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.selectAllSpecialCharacterCheckerButton.Location = new System.Drawing.Point(6, 46);
-            this.selectAllSpecialCharacterCheckerButton.Name = "selectAllSpecialCharacterCheckerButton";
-            this.selectAllSpecialCharacterCheckerButton.Size = new System.Drawing.Size(41, 23);
-            this.selectAllSpecialCharacterCheckerButton.TabIndex = 40;
-            this.selectAllSpecialCharacterCheckerButton.Text = "ALL";
-            this.selectAllSpecialCharacterCheckerButton.UseVisualStyleBackColor = true;
-            this.selectAllSpecialCharacterCheckerButton.Click += new System.EventHandler(this.button18_Click);
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_all;
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.Location = new System.Drawing.Point(6, 53);
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.Name = "selectAllSpecialCharacterCheckerButtonPictureBox";
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.Size = new System.Drawing.Size(38, 27);
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.TabIndex = 71;
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.TabStop = false;
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.Click += new System.EventHandler(this.selectAllSpecialCharacterCheckerButtonPictureBox_Click);
+            // 
+            // clearAllSpecialCharacterCheckerButtonPictureBox
+            // 
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_clear;
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.Location = new System.Drawing.Point(50, 53);
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.Name = "clearAllSpecialCharacterCheckerButtonPictureBox";
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.Size = new System.Drawing.Size(64, 27);
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.TabIndex = 69;
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.TabStop = false;
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.Click += new System.EventHandler(this.clearAllSpecialCharacterCheckerButtonPictureBox_Click);
             // 
             // checkToolsSpecialCharacterTextBox
             // 
@@ -843,10 +851,10 @@
             // specialCharacterCheckerListBox
             // 
             this.specialCharacterCheckerListBox.FormattingEnabled = true;
-            this.specialCharacterCheckerListBox.Location = new System.Drawing.Point(94, 14);
+            this.specialCharacterCheckerListBox.Location = new System.Drawing.Point(120, 14);
             this.specialCharacterCheckerListBox.Name = "specialCharacterCheckerListBox";
             this.specialCharacterCheckerListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.specialCharacterCheckerListBox.Size = new System.Drawing.Size(117, 82);
+            this.specialCharacterCheckerListBox.Size = new System.Drawing.Size(169, 95);
             this.specialCharacterCheckerListBox.TabIndex = 31;
             // 
             // checkToolsSpecialCharsLabel
@@ -866,25 +874,6 @@
             this.checkToolsSelectColumnLabel.Size = new System.Drawing.Size(89, 13);
             this.checkToolsSelectColumnLabel.TabIndex = 25;
             this.checkToolsSelectColumnLabel.Text = "Select Column(s):";
-            // 
-            // specialCharacterCheckerGoButton
-            // 
-            this.specialCharacterCheckerGoButton.BackColor = System.Drawing.Color.Honeydew;
-            this.specialCharacterCheckerGoButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.specialCharacterCheckerGoButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.specialCharacterCheckerGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
-            this.specialCharacterCheckerGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.specialCharacterCheckerGoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.specialCharacterCheckerGoButton.Image = global::SAPDataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
-            this.specialCharacterCheckerGoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.specialCharacterCheckerGoButton.Location = new System.Drawing.Point(6, 71);
-            this.specialCharacterCheckerGoButton.Name = "specialCharacterCheckerGoButton";
-            this.specialCharacterCheckerGoButton.Size = new System.Drawing.Size(82, 23);
-            this.specialCharacterCheckerGoButton.TabIndex = 21;
-            this.specialCharacterCheckerGoButton.Text = "GO";
-            this.specialCharacterCheckerGoButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.specialCharacterCheckerGoButton.UseVisualStyleBackColor = false;
-            this.specialCharacterCheckerGoButton.Click += new System.EventHandler(this.specialCharacter_Click);
             // 
             // printDialog1
             // 
@@ -908,49 +897,61 @@
             // checkToolsNullCheckerGroupBox
             // 
             this.checkToolsNullCheckerGroupBox.BackColor = System.Drawing.Color.AliceBlue;
-            this.checkToolsNullCheckerGroupBox.Controls.Add(this.clearAllNullCheckerButton);
-            this.checkToolsNullCheckerGroupBox.Controls.Add(this.selectAllNullCheckerButton);
+            this.checkToolsNullCheckerGroupBox.Controls.Add(this.nullCheckerGoButtonPictureBox);
+            this.checkToolsNullCheckerGroupBox.Controls.Add(this.selectAllNullCheckerButtonPictureBox);
+            this.checkToolsNullCheckerGroupBox.Controls.Add(this.clearAllNullCheckerButtonPictureBox);
             this.checkToolsNullCheckerGroupBox.Controls.Add(this.nullCheckerListBox);
             this.checkToolsNullCheckerGroupBox.Controls.Add(this.checkToolsNullCheckerLabel);
-            this.checkToolsNullCheckerGroupBox.Controls.Add(this.nullCheckerGoButton);
-            this.checkToolsNullCheckerGroupBox.Location = new System.Drawing.Point(452, 1);
+            this.checkToolsNullCheckerGroupBox.Location = new System.Drawing.Point(614, 1);
             this.checkToolsNullCheckerGroupBox.Name = "checkToolsNullCheckerGroupBox";
-            this.checkToolsNullCheckerGroupBox.Size = new System.Drawing.Size(216, 103);
+            this.checkToolsNullCheckerGroupBox.Size = new System.Drawing.Size(299, 117);
             this.checkToolsNullCheckerGroupBox.TabIndex = 27;
             this.checkToolsNullCheckerGroupBox.TabStop = false;
             this.checkToolsNullCheckerGroupBox.Text = "NULL Checker:";
             // 
-            // clearAllNullCheckerButton
+            // nullCheckerGoButtonPictureBox
             // 
-            this.clearAllNullCheckerButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.clearAllNullCheckerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearAllNullCheckerButton.Location = new System.Drawing.Point(47, 46);
-            this.clearAllNullCheckerButton.Name = "clearAllNullCheckerButton";
-            this.clearAllNullCheckerButton.Size = new System.Drawing.Size(41, 23);
-            this.clearAllNullCheckerButton.TabIndex = 42;
-            this.clearAllNullCheckerButton.Text = "Clear";
-            this.clearAllNullCheckerButton.UseVisualStyleBackColor = true;
-            this.clearAllNullCheckerButton.Click += new System.EventHandler(this.button23_Click);
+            this.nullCheckerGoButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.nullCheckerGoButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nullCheckerGoButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources._2button_go;
+            this.nullCheckerGoButtonPictureBox.Location = new System.Drawing.Point(71, 83);
+            this.nullCheckerGoButtonPictureBox.Name = "nullCheckerGoButtonPictureBox";
+            this.nullCheckerGoButtonPictureBox.Size = new System.Drawing.Size(43, 27);
+            this.nullCheckerGoButtonPictureBox.TabIndex = 63;
+            this.nullCheckerGoButtonPictureBox.TabStop = false;
+            this.nullCheckerGoButtonPictureBox.Click += new System.EventHandler(this.nullCheckerGoButtonPictureBox_Click);
             // 
-            // selectAllNullCheckerButton
+            // selectAllNullCheckerButtonPictureBox
             // 
-            this.selectAllNullCheckerButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.selectAllNullCheckerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.selectAllNullCheckerButton.Location = new System.Drawing.Point(6, 46);
-            this.selectAllNullCheckerButton.Name = "selectAllNullCheckerButton";
-            this.selectAllNullCheckerButton.Size = new System.Drawing.Size(41, 23);
-            this.selectAllNullCheckerButton.TabIndex = 41;
-            this.selectAllNullCheckerButton.Text = "ALL";
-            this.selectAllNullCheckerButton.UseVisualStyleBackColor = true;
-            this.selectAllNullCheckerButton.Click += new System.EventHandler(this.button19_Click);
+            this.selectAllNullCheckerButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.selectAllNullCheckerButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.selectAllNullCheckerButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_all;
+            this.selectAllNullCheckerButtonPictureBox.Location = new System.Drawing.Point(6, 50);
+            this.selectAllNullCheckerButtonPictureBox.Name = "selectAllNullCheckerButtonPictureBox";
+            this.selectAllNullCheckerButtonPictureBox.Size = new System.Drawing.Size(38, 27);
+            this.selectAllNullCheckerButtonPictureBox.TabIndex = 63;
+            this.selectAllNullCheckerButtonPictureBox.TabStop = false;
+            this.selectAllNullCheckerButtonPictureBox.Click += new System.EventHandler(this.selectAllNullCheckerButtonPictureBox_Click);
+            // 
+            // clearAllNullCheckerButtonPictureBox
+            // 
+            this.clearAllNullCheckerButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.clearAllNullCheckerButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearAllNullCheckerButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_clear;
+            this.clearAllNullCheckerButtonPictureBox.Location = new System.Drawing.Point(50, 50);
+            this.clearAllNullCheckerButtonPictureBox.Name = "clearAllNullCheckerButtonPictureBox";
+            this.clearAllNullCheckerButtonPictureBox.Size = new System.Drawing.Size(64, 27);
+            this.clearAllNullCheckerButtonPictureBox.TabIndex = 70;
+            this.clearAllNullCheckerButtonPictureBox.TabStop = false;
+            this.clearAllNullCheckerButtonPictureBox.Click += new System.EventHandler(this.clearAllNullCheckerButtonPictureBox_Click);
             // 
             // nullCheckerListBox
             // 
             this.nullCheckerListBox.FormattingEnabled = true;
-            this.nullCheckerListBox.Location = new System.Drawing.Point(94, 14);
+            this.nullCheckerListBox.Location = new System.Drawing.Point(120, 14);
             this.nullCheckerListBox.Name = "nullCheckerListBox";
             this.nullCheckerListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.nullCheckerListBox.Size = new System.Drawing.Size(117, 82);
+            this.nullCheckerListBox.Size = new System.Drawing.Size(173, 95);
             this.nullCheckerListBox.TabIndex = 32;
             // 
             // checkToolsNullCheckerLabel
@@ -961,25 +962,6 @@
             this.checkToolsNullCheckerLabel.Size = new System.Drawing.Size(89, 13);
             this.checkToolsNullCheckerLabel.TabIndex = 25;
             this.checkToolsNullCheckerLabel.Text = "Select Column(s):";
-            // 
-            // nullCheckerGoButton
-            // 
-            this.nullCheckerGoButton.BackColor = System.Drawing.Color.Honeydew;
-            this.nullCheckerGoButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nullCheckerGoButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.nullCheckerGoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
-            this.nullCheckerGoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.nullCheckerGoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nullCheckerGoButton.Image = global::SAPDataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
-            this.nullCheckerGoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.nullCheckerGoButton.Location = new System.Drawing.Point(6, 71);
-            this.nullCheckerGoButton.Name = "nullCheckerGoButton";
-            this.nullCheckerGoButton.Size = new System.Drawing.Size(82, 23);
-            this.nullCheckerGoButton.TabIndex = 21;
-            this.nullCheckerGoButton.Text = "GO";
-            this.nullCheckerGoButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.nullCheckerGoButton.UseVisualStyleBackColor = false;
-            this.nullCheckerGoButton.Click += new System.EventHandler(this.nullChecker_Click);
             // 
             // notifyIcon1
             // 
@@ -1074,7 +1056,7 @@
             this.importFormatJumpToRowGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowButton);
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowTextBox);
-            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -270);
+            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -351);
             this.importFormatJumpToRowGroupBox.Name = "importFormatJumpToRowGroupBox";
             this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(170, 38);
             this.importFormatJumpToRowGroupBox.TabIndex = 36;
@@ -1585,7 +1567,6 @@
             this.importFormat.Controls.Add(this.legendButtonPictureBox);
             this.importFormat.Controls.Add(this.openInExcelPictureBox);
             this.importFormat.Controls.Add(this.goButtonPictureBox);
-            this.importFormat.Controls.Add(this.ifDocumentation);
             this.importFormat.Controls.Add(this.importFormatProgressBar);
             this.importFormat.Controls.Add(this.importFormatDatabaseChecksGroupBox);
             this.importFormat.Controls.Add(this.splitContainer1);
@@ -1601,53 +1582,16 @@
             this.importFormat.Text = "Import Format";
             this.importFormat.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // saveAsXmlButtonPictureBox
+            // saveAsGroupBox
             // 
-            this.saveAsXmlButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.saveAsXmlButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveAsXmlButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_xml_save;
-            this.saveAsXmlButtonPictureBox.Location = new System.Drawing.Point(62, 19);
-            this.saveAsXmlButtonPictureBox.Name = "saveAsXmlButtonPictureBox";
-            this.saveAsXmlButtonPictureBox.Size = new System.Drawing.Size(56, 27);
-            this.saveAsXmlButtonPictureBox.TabIndex = 67;
-            this.saveAsXmlButtonPictureBox.TabStop = false;
-            this.saveAsXmlButtonPictureBox.Click += new System.EventHandler(this.saveAsXmlButtonPictureBox_Click);
-            this.saveAsXmlButtonPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.saveAsXmlButtonPictureBox_MouseDown);
-            this.saveAsXmlButtonPictureBox.MouseEnter += new System.EventHandler(this.saveAsXmlButtonPictureBox_MouseEnter);
-            this.saveAsXmlButtonPictureBox.MouseLeave += new System.EventHandler(this.saveAsXmlButtonPictureBox_MouseLeave);
-            this.saveAsXmlButtonPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.saveAsXmlButtonPictureBox_MouseUp);
-            // 
-            // legendButtonPictureBox
-            // 
-            this.legendButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.legendButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.legendButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_table_legend;
-            this.legendButtonPictureBox.Location = new System.Drawing.Point(258, 63);
-            this.legendButtonPictureBox.Name = "legendButtonPictureBox";
-            this.legendButtonPictureBox.Size = new System.Drawing.Size(142, 27);
-            this.legendButtonPictureBox.TabIndex = 66;
-            this.legendButtonPictureBox.TabStop = false;
-            this.legendButtonPictureBox.Click += new System.EventHandler(this.legendButtonPictureBox_Click);
-            this.legendButtonPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.legendButtonPictureBox_MouseDown);
-            this.legendButtonPictureBox.MouseEnter += new System.EventHandler(this.legendButtonPictureBox_MouseEnter);
-            this.legendButtonPictureBox.MouseLeave += new System.EventHandler(this.legendButtonPictureBox_MouseLeave);
-            this.legendButtonPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.legendButtonPictureBox_MouseUp);
-            // 
-            // openInExcelPictureBox
-            // 
-            this.openInExcelPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.openInExcelPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.openInExcelPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_open_in_excel;
-            this.openInExcelPictureBox.Location = new System.Drawing.Point(258, 93);
-            this.openInExcelPictureBox.Name = "openInExcelPictureBox";
-            this.openInExcelPictureBox.Size = new System.Drawing.Size(145, 27);
-            this.openInExcelPictureBox.TabIndex = 65;
-            this.openInExcelPictureBox.TabStop = false;
-            this.openInExcelPictureBox.Click += new System.EventHandler(this.openInExcelPictureBox_Click);
-            this.openInExcelPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.openInExcelPictureBox_MouseDown);
-            this.openInExcelPictureBox.MouseEnter += new System.EventHandler(this.openInExcelPictureBox_MouseEnter);
-            this.openInExcelPictureBox.MouseLeave += new System.EventHandler(this.openInExcelPictureBox_MouseLeave);
-            this.openInExcelPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.openInExcelPictureBox_MouseUp);
+            this.saveAsGroupBox.Controls.Add(this.saveAsCsvButtonPictureBox);
+            this.saveAsGroupBox.Controls.Add(this.saveAsXmlButtonPictureBox);
+            this.saveAsGroupBox.Location = new System.Drawing.Point(258, 8);
+            this.saveAsGroupBox.Name = "saveAsGroupBox";
+            this.saveAsGroupBox.Size = new System.Drawing.Size(200, 112);
+            this.saveAsGroupBox.TabIndex = 67;
+            this.saveAsGroupBox.TabStop = false;
+            this.saveAsGroupBox.Text = "Save As";
             // 
             // saveAsCsvButtonPictureBox
             // 
@@ -1665,15 +1609,36 @@
             this.saveAsCsvButtonPictureBox.MouseLeave += new System.EventHandler(this.saveAsCsvButtonPictureBox_MouseLeave);
             this.saveAsCsvButtonPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.saveAsCsvButtonPictureBox_MouseUp);
             // 
-            // importformatIncludeHeaderRowButton
+            // saveAsXmlButtonPictureBox
             // 
-            this.importformatIncludeHeaderRowButton.AutoSize = true;
-            this.importformatIncludeHeaderRowButton.Location = new System.Drawing.Point(6, 85);
-            this.importformatIncludeHeaderRowButton.Name = "importformatIncludeHeaderRowButton";
-            this.importformatIncludeHeaderRowButton.Size = new System.Drawing.Size(220, 17);
-            this.importformatIncludeHeaderRowButton.TabIndex = 53;
-            this.importformatIncludeHeaderRowButton.Text = "Include Header Row when Opening Files";
-            this.importformatIncludeHeaderRowButton.UseVisualStyleBackColor = true;
+            this.saveAsXmlButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.saveAsXmlButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveAsXmlButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_xml_save;
+            this.saveAsXmlButtonPictureBox.Location = new System.Drawing.Point(62, 19);
+            this.saveAsXmlButtonPictureBox.Name = "saveAsXmlButtonPictureBox";
+            this.saveAsXmlButtonPictureBox.Size = new System.Drawing.Size(56, 27);
+            this.saveAsXmlButtonPictureBox.TabIndex = 67;
+            this.saveAsXmlButtonPictureBox.TabStop = false;
+            this.saveAsXmlButtonPictureBox.Click += new System.EventHandler(this.saveAsXmlButtonPictureBox_Click);
+            this.saveAsXmlButtonPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.saveAsXmlButtonPictureBox_MouseDown);
+            this.saveAsXmlButtonPictureBox.MouseEnter += new System.EventHandler(this.saveAsXmlButtonPictureBox_MouseEnter);
+            this.saveAsXmlButtonPictureBox.MouseLeave += new System.EventHandler(this.saveAsXmlButtonPictureBox_MouseLeave);
+            this.saveAsXmlButtonPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.saveAsXmlButtonPictureBox_MouseUp);
+            // 
+            // openFileGroupBox
+            // 
+            this.openFileGroupBox.Controls.Add(this.csvButtonPictureBox);
+            this.openFileGroupBox.Controls.Add(this.txtCommaButtonPictureBox);
+            this.openFileGroupBox.Controls.Add(this.txtPipePictureBox);
+            this.openFileGroupBox.Controls.Add(this.xmlButtonPictureBox);
+            this.openFileGroupBox.Controls.Add(this.xlsButtonPictureBox);
+            this.openFileGroupBox.Controls.Add(this.importformatIncludeHeaderRowButton);
+            this.openFileGroupBox.Location = new System.Drawing.Point(6, 8);
+            this.openFileGroupBox.Name = "openFileGroupBox";
+            this.openFileGroupBox.Size = new System.Drawing.Size(246, 112);
+            this.openFileGroupBox.TabIndex = 68;
+            this.openFileGroupBox.TabStop = false;
+            this.openFileGroupBox.Text = "Open File";
             // 
             // csvButtonPictureBox
             // 
@@ -1707,6 +1672,22 @@
             this.txtCommaButtonPictureBox.MouseLeave += new System.EventHandler(this.txtCommaButtonPictureBox_MouseLeave);
             this.txtCommaButtonPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtCommaButtonPictureBox_MouseUp);
             // 
+            // txtPipePictureBox
+            // 
+            this.txtPipePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.txtPipePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtPipePictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_txt_pipe;
+            this.txtPipePictureBox.Location = new System.Drawing.Point(143, 52);
+            this.txtPipePictureBox.Name = "txtPipePictureBox";
+            this.txtPipePictureBox.Size = new System.Drawing.Size(98, 27);
+            this.txtPipePictureBox.TabIndex = 60;
+            this.txtPipePictureBox.TabStop = false;
+            this.txtPipePictureBox.Click += new System.EventHandler(this.pipeToolStripMenuItem_Click);
+            this.txtPipePictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPipePictureBox_MouseDown);
+            this.txtPipePictureBox.MouseEnter += new System.EventHandler(this.txtPipePictureBox_MouseEnter);
+            this.txtPipePictureBox.MouseLeave += new System.EventHandler(this.txtPipePictureBox_MouseLeave);
+            this.txtPipePictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtPipePictureBox_MouseUp);
+            // 
             // xmlButtonPictureBox
             // 
             this.xmlButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
@@ -1739,21 +1720,47 @@
             this.xlsButtonPictureBox.MouseLeave += new System.EventHandler(this.xlsButtonPictureBox_MouseLeave);
             this.xlsButtonPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.xlsButtonPictureBox_MouseUp);
             // 
-            // txtPipePictureBox
+            // importformatIncludeHeaderRowButton
             // 
-            this.txtPipePictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.txtPipePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtPipePictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_txt_pipe;
-            this.txtPipePictureBox.Location = new System.Drawing.Point(143, 52);
-            this.txtPipePictureBox.Name = "txtPipePictureBox";
-            this.txtPipePictureBox.Size = new System.Drawing.Size(98, 27);
-            this.txtPipePictureBox.TabIndex = 60;
-            this.txtPipePictureBox.TabStop = false;
-            this.txtPipePictureBox.Click += new System.EventHandler(this.pipeToolStripMenuItem_Click);
-            this.txtPipePictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPipePictureBox_MouseDown);
-            this.txtPipePictureBox.MouseEnter += new System.EventHandler(this.txtPipePictureBox_MouseEnter);
-            this.txtPipePictureBox.MouseLeave += new System.EventHandler(this.txtPipePictureBox_MouseLeave);
-            this.txtPipePictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtPipePictureBox_MouseUp);
+            this.importformatIncludeHeaderRowButton.AutoSize = true;
+            this.importformatIncludeHeaderRowButton.Location = new System.Drawing.Point(6, 85);
+            this.importformatIncludeHeaderRowButton.Name = "importformatIncludeHeaderRowButton";
+            this.importformatIncludeHeaderRowButton.Size = new System.Drawing.Size(220, 17);
+            this.importformatIncludeHeaderRowButton.TabIndex = 53;
+            this.importformatIncludeHeaderRowButton.Text = "Include Header Row when Opening Files";
+            this.importformatIncludeHeaderRowButton.UseVisualStyleBackColor = true;
+            // 
+            // legendButtonPictureBox
+            // 
+            this.legendButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.legendButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.legendButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_table_legend;
+            this.legendButtonPictureBox.Location = new System.Drawing.Point(1249, 52);
+            this.legendButtonPictureBox.Name = "legendButtonPictureBox";
+            this.legendButtonPictureBox.Size = new System.Drawing.Size(142, 27);
+            this.legendButtonPictureBox.TabIndex = 66;
+            this.legendButtonPictureBox.TabStop = false;
+            this.legendButtonPictureBox.Click += new System.EventHandler(this.legendButtonPictureBox_Click);
+            this.legendButtonPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.legendButtonPictureBox_MouseDown);
+            this.legendButtonPictureBox.MouseEnter += new System.EventHandler(this.legendButtonPictureBox_MouseEnter);
+            this.legendButtonPictureBox.MouseLeave += new System.EventHandler(this.legendButtonPictureBox_MouseLeave);
+            this.legendButtonPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.legendButtonPictureBox_MouseUp);
+            // 
+            // openInExcelPictureBox
+            // 
+            this.openInExcelPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.openInExcelPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.openInExcelPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_open_in_excel;
+            this.openInExcelPictureBox.Location = new System.Drawing.Point(1249, 85);
+            this.openInExcelPictureBox.Name = "openInExcelPictureBox";
+            this.openInExcelPictureBox.Size = new System.Drawing.Size(145, 27);
+            this.openInExcelPictureBox.TabIndex = 65;
+            this.openInExcelPictureBox.TabStop = false;
+            this.openInExcelPictureBox.Click += new System.EventHandler(this.openInExcelPictureBox_Click);
+            this.openInExcelPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.openInExcelPictureBox_MouseDown);
+            this.openInExcelPictureBox.MouseEnter += new System.EventHandler(this.openInExcelPictureBox_MouseEnter);
+            this.openInExcelPictureBox.MouseLeave += new System.EventHandler(this.openInExcelPictureBox_MouseLeave);
+            this.openInExcelPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.openInExcelPictureBox_MouseUp);
             // 
             // goButtonPictureBox
             // 
@@ -1770,20 +1777,6 @@
             this.goButtonPictureBox.MouseEnter += new System.EventHandler(this.goButtonPictureBox_MouseEnter);
             this.goButtonPictureBox.MouseLeave += new System.EventHandler(this.goButtonPictureBox_MouseLeave);
             this.goButtonPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.goButtonPictureBox_MouseUp);
-            // 
-            // ifDocumentation
-            // 
-            this.ifDocumentation.BackColor = System.Drawing.Color.Lavender;
-            this.ifDocumentation.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ifDocumentation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ifDocumentation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ifDocumentation.Location = new System.Drawing.Point(1249, 80);
-            this.ifDocumentation.Name = "ifDocumentation";
-            this.ifDocumentation.Size = new System.Drawing.Size(177, 22);
-            this.ifDocumentation.TabIndex = 54;
-            this.ifDocumentation.Text = "Save Documentation";
-            this.ifDocumentation.UseVisualStyleBackColor = false;
-            this.ifDocumentation.Visible = false;
             // 
             // importFormatProgressBar
             // 
@@ -3264,32 +3257,6 @@
             this.mainLogSplitContainer.SplitterDistance = 762;
             this.mainLogSplitContainer.TabIndex = 33;
             // 
-            // openFileGroupBox
-            // 
-            this.openFileGroupBox.Controls.Add(this.csvButtonPictureBox);
-            this.openFileGroupBox.Controls.Add(this.txtCommaButtonPictureBox);
-            this.openFileGroupBox.Controls.Add(this.txtPipePictureBox);
-            this.openFileGroupBox.Controls.Add(this.xmlButtonPictureBox);
-            this.openFileGroupBox.Controls.Add(this.xlsButtonPictureBox);
-            this.openFileGroupBox.Controls.Add(this.importformatIncludeHeaderRowButton);
-            this.openFileGroupBox.Location = new System.Drawing.Point(6, 8);
-            this.openFileGroupBox.Name = "openFileGroupBox";
-            this.openFileGroupBox.Size = new System.Drawing.Size(246, 112);
-            this.openFileGroupBox.TabIndex = 68;
-            this.openFileGroupBox.TabStop = false;
-            this.openFileGroupBox.Text = "Open File";
-            // 
-            // saveAsGroupBox
-            // 
-            this.saveAsGroupBox.Controls.Add(this.saveAsCsvButtonPictureBox);
-            this.saveAsGroupBox.Controls.Add(this.saveAsXmlButtonPictureBox);
-            this.saveAsGroupBox.Location = new System.Drawing.Point(258, 8);
-            this.saveAsGroupBox.Name = "saveAsGroupBox";
-            this.saveAsGroupBox.Size = new System.Drawing.Size(200, 53);
-            this.saveAsGroupBox.TabIndex = 67;
-            this.saveAsGroupBox.TabStop = false;
-            this.saveAsGroupBox.Text = "Save As";
-            // 
             // SAPDataAnalysisTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3316,12 +3283,24 @@
             this.menuStrip1.PerformLayout();
             this.checkToolsDateCheckerGroupBox.ResumeLayout(false);
             this.checkToolsDateCheckerGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateCheckerGoButtonPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectAllDateCheckerButtonPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clearAllDateCheckerButtonPictureBox)).EndInit();
             this.checkToolsCellLengthCheckerGroupBox.ResumeLayout(false);
             this.checkToolsCellLengthCheckerGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clearAllCellLengthCheckerPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectAllCellLengthCheckerPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cellLengthCheckerGoButtonPictureBox)).EndInit();
             this.checkToolsSpecialCharacterCheckerGroupBox.ResumeLayout(false);
             this.checkToolsSpecialCharacterCheckerGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.specialCharacterCheckerGoButtonPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectAllSpecialCharacterCheckerButtonPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clearAllSpecialCharacterCheckerButtonPictureBox)).EndInit();
             this.checkToolsNullCheckerGroupBox.ResumeLayout(false);
             this.checkToolsNullCheckerGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullCheckerGoButtonPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectAllNullCheckerButtonPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clearAllNullCheckerButtonPictureBox)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -3351,15 +3330,18 @@
             this.statusStrip1.PerformLayout();
             this.maintabControl.ResumeLayout(false);
             this.importFormat.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.saveAsXmlButtonPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.legendButtonPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.openInExcelPictureBox)).EndInit();
+            this.saveAsGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.saveAsCsvButtonPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveAsXmlButtonPictureBox)).EndInit();
+            this.openFileGroupBox.ResumeLayout(false);
+            this.openFileGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csvButtonPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCommaButtonPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPipePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xmlButtonPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xlsButtonPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPipePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.legendButtonPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openInExcelPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goButtonPictureBox)).EndInit();
             this.importFormatDatabaseChecksGroupBox.ResumeLayout(false);
             this.importFormatDatabaseChecksGroupBox.PerformLayout();
@@ -3423,9 +3405,6 @@
             this.mainLogSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainLogSplitContainer)).EndInit();
             this.mainLogSplitContainer.ResumeLayout(false);
-            this.openFileGroupBox.ResumeLayout(false);
-            this.openFileGroupBox.PerformLayout();
-            this.saveAsGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3440,24 +3419,20 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.Button dateCheckerGoButton;
         private System.Windows.Forms.GroupBox checkToolsDateCheckerGroupBox;
         private System.Windows.Forms.GroupBox checkToolsCellLengthCheckerGroupBox;
         private System.Windows.Forms.Label checkToolsCellLengthLabel;
-        private System.Windows.Forms.Button cellLengthCheckerGoButton;
         private System.Windows.Forms.Label checkToolsMaxLengthLabel;
         private System.Windows.Forms.TextBox checkToolsMaxLengthTextBox;
         private System.Windows.Forms.Label checkToolsSelectColumnsLabel;
         private System.Windows.Forms.GroupBox checkToolsSpecialCharacterCheckerGroupBox;
         private System.Windows.Forms.Label checkToolsSelectColumnLabel;
-        private System.Windows.Forms.Button specialCharacterCheckerGoButton;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.GroupBox checkToolsNullCheckerGroupBox;
         private System.Windows.Forms.Label checkToolsNullCheckerLabel;
-        private System.Windows.Forms.Button nullCheckerGoButton;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label checkToolsSpecialCharsLabel;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -3527,14 +3502,6 @@
         private System.Windows.Forms.ListBox nullCheckerListBox;
         private System.Windows.Forms.TextBox checkToolsSpecialCharacterTextBox;
         private System.Windows.Forms.ListBox cellLengthCheckerListBox;
-        private System.Windows.Forms.Button selectAllDateCheckerButton;
-        private System.Windows.Forms.Button selectAllCellLengthChecker;
-        private System.Windows.Forms.Button selectAllSpecialCharacterCheckerButton;
-        private System.Windows.Forms.Button selectAllNullCheckerButton;
-        private System.Windows.Forms.Button clearAllDateCheckerButton;
-        private System.Windows.Forms.Button clearAllCellLengthChecker;
-        private System.Windows.Forms.Button clearAllSpecialCharacterCheckerButton;
-        private System.Windows.Forms.Button clearAllNullCheckerButton;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.GroupBox importFormatDatabaseChecksGroupBox;
         private System.Windows.Forms.CheckBox importFormatDatabaseCheck1Button;
@@ -3591,7 +3558,6 @@
         private System.Windows.Forms.DataGridView benchmarkDataGridView;
         private System.Windows.Forms.SplitContainer benchmarkSplitContainer;
         private System.Windows.Forms.Label benchmarkDataGridViewLabel;
-        private System.Windows.Forms.Button ifDocumentation;
         private System.Windows.Forms.RichTextBox apiRichTextBox;
         private System.Windows.Forms.SplitContainer apiSplitContainer;
         private System.Windows.Forms.PictureBox apiPictureBox;
@@ -3661,6 +3627,18 @@
         private System.Windows.Forms.PictureBox saveAsXmlButtonPictureBox;
         private System.Windows.Forms.GroupBox openFileGroupBox;
         private System.Windows.Forms.GroupBox saveAsGroupBox;
+        private System.Windows.Forms.PictureBox selectAllCellLengthCheckerPictureBox;
+        private System.Windows.Forms.PictureBox clearAllCellLengthCheckerPictureBox;
+        private System.Windows.Forms.PictureBox clearAllNullCheckerButtonPictureBox;
+        private System.Windows.Forms.PictureBox clearAllSpecialCharacterCheckerButtonPictureBox;
+        private System.Windows.Forms.PictureBox clearAllDateCheckerButtonPictureBox;
+        private System.Windows.Forms.PictureBox cellLengthCheckerGoButtonPictureBox;
+        private System.Windows.Forms.PictureBox selectAllNullCheckerButtonPictureBox;
+        private System.Windows.Forms.PictureBox nullCheckerGoButtonPictureBox;
+        private System.Windows.Forms.PictureBox selectAllSpecialCharacterCheckerButtonPictureBox;
+        private System.Windows.Forms.PictureBox specialCharacterCheckerGoButtonPictureBox;
+        private System.Windows.Forms.PictureBox selectAllDateCheckerButtonPictureBox;
+        private System.Windows.Forms.PictureBox dateCheckerGoButtonPictureBox;
     }
 }
 
