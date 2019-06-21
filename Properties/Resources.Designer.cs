@@ -73,9 +73,9 @@ namespace SAPDataAnalysisTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2button_go_1_ {
+        internal static System.Drawing.Bitmap _2button_go2 {
             get {
-                object obj = ResourceManager.GetObject("_2button_go_1_", resourceCulture);
+                object obj = ResourceManager.GetObject("_2button_go2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace SAPDataAnalysisTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2button_go_2_ {
+        internal static System.Drawing.Bitmap _2button_go3 {
             get {
-                object obj = ResourceManager.GetObject("_2button_go_2_", resourceCulture);
+                object obj = ResourceManager.GetObject("_2button_go3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
