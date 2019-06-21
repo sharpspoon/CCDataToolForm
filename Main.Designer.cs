@@ -30,24 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SAPDataAnalysisTool));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.importedfileDataGridView = new System.Windows.Forms.DataGridView();
@@ -62,7 +62,6 @@
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aCTEKLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eZIReport451ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,10 +116,8 @@
             this.spDTAgetdatabasetableidsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.systemLogTextBox = new System.Windows.Forms.RichTextBox();
-            this.pictureBoxLoading = new System.Windows.Forms.PictureBox();
             this.stagedDataGridView = new System.Windows.Forms.DataGridView();
             this.importFormatDatabasePictureBox = new System.Windows.Forms.PictureBox();
-            this.launchSsmsButton = new System.Windows.Forms.Button();
             this.ifSelect = new System.Windows.Forms.ComboBox();
             this.importFormatServerSelectGroupBox = new System.Windows.Forms.GroupBox();
             this.icmVersion = new System.Windows.Forms.Label();
@@ -153,21 +150,21 @@
             this.toolStripStatusLabel14 = new System.Windows.Forms.ToolStripStatusLabel();
             this.blankSpaceToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.sapLinkToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.versionToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.maintabControl = new System.Windows.Forms.TabControl();
             this.importFormat = new System.Windows.Forms.TabPage();
-            this.openFileLabel = new System.Windows.Forms.Label();
+            this.saveAsXmlButtonPictureBox = new System.Windows.Forms.PictureBox();
+            this.legendButtonPictureBox = new System.Windows.Forms.PictureBox();
+            this.openInExcelPictureBox = new System.Windows.Forms.PictureBox();
+            this.saveAsCsvButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.importformatIncludeHeaderRowButton = new System.Windows.Forms.CheckBox();
             this.csvButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.txtCommaButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.xmlButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.xlsButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.txtPipePictureBox = new System.Windows.Forms.PictureBox();
-            this.legendButton = new System.Windows.Forms.Button();
-            this.openInExcel = new System.Windows.Forms.Button();
             this.goButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.ifDocumentation = new System.Windows.Forms.Button();
-            this.saveAsCsvButton = new System.Windows.Forms.Button();
-            this.saveAsXmlButton = new System.Windows.Forms.Button();
             this.importFormatProgressBar = new System.Windows.Forms.ProgressBar();
             this.importFormatDatabaseChecksGroupBox = new System.Windows.Forms.GroupBox();
             this.importFormatDatabaseCheck1Button = new System.Windows.Forms.CheckBox();
@@ -278,7 +275,8 @@
             this.stagedTextBox = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.mainLogSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.versionToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.openFileGroupBox = new System.Windows.Forms.GroupBox();
+            this.saveAsGroupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.checkToolsDateCheckerGroupBox.SuspendLayout();
@@ -299,7 +297,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.importFormatTableSelectPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stagedDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.importFormatDatabasePictureBox)).BeginInit();
             this.importFormatServerSelectGroupBox.SuspendLayout();
@@ -312,6 +309,10 @@
             this.statusStrip1.SuspendLayout();
             this.maintabControl.SuspendLayout();
             this.importFormat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.saveAsXmlButtonPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.legendButtonPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openInExcelPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveAsCsvButtonPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.csvButtonPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCommaButtonPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xmlButtonPictureBox)).BeginInit();
@@ -371,6 +372,8 @@
             this.mainLogSplitContainer.Panel1.SuspendLayout();
             this.mainLogSplitContainer.Panel2.SuspendLayout();
             this.mainLogSplitContainer.SuspendLayout();
+            this.openFileGroupBox.SuspendLayout();
+            this.saveAsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -390,34 +393,34 @@
             // 
             this.importedfileDataGridView.AllowUserToAddRows = false;
             this.importedfileDataGridView.BackgroundColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.importedfileDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.importedfileDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.importedfileDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.importedfileDataGridView.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.importedfileDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.importedfileDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.importedfileDataGridView.Location = new System.Drawing.Point(0, 0);
             this.importedfileDataGridView.Name = "importedfileDataGridView";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.importedfileDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.importedfileDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.importedfileDataGridView.Size = new System.Drawing.Size(1036, 209);
             this.importedfileDataGridView.TabIndex = 5;
             this.importedfileDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
@@ -432,7 +435,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.aCTEKLoginToolStripMenuItem,
-            this.eZIReport451ToolStripMenuItem,
             this.editToolStripMenuItem,
             this.helpToolStripMenuItem,
             this.toolStripMenuItemClose,
@@ -523,14 +525,6 @@
             this.aCTEKLoginToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
             this.aCTEKLoginToolStripMenuItem.Text = "ACTEK Login";
             this.aCTEKLoginToolStripMenuItem.Click += new System.EventHandler(this.acteksoft_Click);
-            // 
-            // eZIReport451ToolStripMenuItem
-            // 
-            this.eZIReport451ToolStripMenuItem.Image = global::SAPDataAnalysisTool.Properties.Resources.ExcelWorksheetView_11748;
-            this.eZIReport451ToolStripMenuItem.Name = "eZIReport451ToolStripMenuItem";
-            this.eZIReport451ToolStripMenuItem.Size = new System.Drawing.Size(150, 20);
-            this.eZIReport451ToolStripMenuItem.Text = "EZ iReport 4.5.1 Install";
-            this.eZIReport451ToolStripMenuItem.Click += new System.EventHandler(this.eZIReport451ToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -1042,35 +1036,35 @@
             // 
             this.importformatDataGridView.AllowUserToAddRows = false;
             this.importformatDataGridView.BackgroundColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.importformatDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.importformatDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.importformatDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.importformatDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.importformatDataGridView.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.importformatDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.importformatDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.importformatDataGridView.Location = new System.Drawing.Point(0, 0);
             this.importformatDataGridView.Name = "importformatDataGridView";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.importformatDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.importformatDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.importformatDataGridView.Size = new System.Drawing.Size(1036, 363);
             this.importformatDataGridView.TabIndex = 0;
             this.importformatDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
@@ -1080,7 +1074,7 @@
             this.importFormatJumpToRowGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowButton);
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowTextBox);
-            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -213);
+            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -270);
             this.importFormatJumpToRowGroupBox.Name = "importFormatJumpToRowGroupBox";
             this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(170, 38);
             this.importFormatJumpToRowGroupBox.TabIndex = 36;
@@ -1163,36 +1157,36 @@
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView2.Size = new System.Drawing.Size(451, 579);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
@@ -1207,49 +1201,39 @@
             this.systemLogTextBox.TabIndex = 32;
             this.systemLogTextBox.Text = "";
             // 
-            // pictureBoxLoading
-            // 
-            this.pictureBoxLoading.Image = global::SAPDataAnalysisTool.Properties.Resources.preload_waiting;
-            this.pictureBoxLoading.Location = new System.Drawing.Point(966, 64);
-            this.pictureBoxLoading.Name = "pictureBoxLoading";
-            this.pictureBoxLoading.Size = new System.Drawing.Size(57, 26);
-            this.pictureBoxLoading.TabIndex = 37;
-            this.pictureBoxLoading.TabStop = false;
-            this.pictureBoxLoading.Visible = false;
-            // 
             // stagedDataGridView
             // 
             this.stagedDataGridView.AllowUserToAddRows = false;
             this.stagedDataGridView.BackgroundColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.stagedDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.stagedDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.stagedDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stagedDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.stagedDataGridView.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.stagedDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
             this.stagedDataGridView.Location = new System.Drawing.Point(287, 177);
             this.stagedDataGridView.Name = "stagedDataGridView";
             this.stagedDataGridView.ReadOnly = true;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.stagedDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.stagedDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.stagedDataGridView.Size = new System.Drawing.Size(881, 399);
             this.stagedDataGridView.TabIndex = 32;
             this.stagedDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
@@ -1262,26 +1246,6 @@
             this.importFormatDatabasePictureBox.Size = new System.Drawing.Size(16, 16);
             this.importFormatDatabasePictureBox.TabIndex = 33;
             this.importFormatDatabasePictureBox.TabStop = false;
-            // 
-            // launchSsmsButton
-            // 
-            this.launchSsmsButton.BackColor = System.Drawing.Color.MistyRose;
-            this.launchSsmsButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.launchSsmsButton.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.launchSsmsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon;
-            this.launchSsmsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tomato;
-            this.launchSsmsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.launchSsmsButton.Image = global::SAPDataAnalysisTool.Properties.Resources.DatabaseProject_7342_32x;
-            this.launchSsmsButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.launchSsmsButton.Location = new System.Drawing.Point(896, 6);
-            this.launchSsmsButton.Name = "launchSsmsButton";
-            this.launchSsmsButton.Size = new System.Drawing.Size(54, 72);
-            this.launchSsmsButton.TabIndex = 38;
-            this.launchSsmsButton.Text = "Launch SSMS";
-            this.launchSsmsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.launchSsmsButton.UseVisualStyleBackColor = false;
-            this.launchSsmsButton.Visible = false;
-            this.launchSsmsButton.Click += new System.EventHandler(this.ssms_Click);
             // 
             // ifSelect
             // 
@@ -1575,7 +1539,7 @@
             // 
             this.blankSpaceToolStripStatusLabel.Name = "blankSpaceToolStripStatusLabel";
             this.blankSpaceToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.blankSpaceToolStripStatusLabel.Size = new System.Drawing.Size(376, 17);
+            this.blankSpaceToolStripStatusLabel.Size = new System.Drawing.Size(1164, 17);
             this.blankSpaceToolStripStatusLabel.Spring = true;
             this.blankSpaceToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.blankSpaceToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1588,6 +1552,12 @@
             this.sapLinkToolStripStatusLabel.Size = new System.Drawing.Size(28, 17);
             this.sapLinkToolStripStatusLabel.Text = "SAP";
             this.sapLinkToolStripStatusLabel.Click += new System.EventHandler(this.toolStripStatusLabel18_Click);
+            // 
+            // versionToolStripStatusLabel
+            // 
+            this.versionToolStripStatusLabel.Name = "versionToolStripStatusLabel";
+            this.versionToolStripStatusLabel.Size = new System.Drawing.Size(46, 17);
+            this.versionToolStripStatusLabel.Text = "1.1.1.16";
             // 
             // maintabControl
             // 
@@ -1610,19 +1580,12 @@
             // importFormat
             // 
             this.importFormat.BackColor = System.Drawing.Color.AliceBlue;
-            this.importFormat.Controls.Add(this.openFileLabel);
-            this.importFormat.Controls.Add(this.importformatIncludeHeaderRowButton);
-            this.importFormat.Controls.Add(this.csvButtonPictureBox);
-            this.importFormat.Controls.Add(this.txtCommaButtonPictureBox);
-            this.importFormat.Controls.Add(this.xmlButtonPictureBox);
-            this.importFormat.Controls.Add(this.xlsButtonPictureBox);
-            this.importFormat.Controls.Add(this.txtPipePictureBox);
-            this.importFormat.Controls.Add(this.legendButton);
-            this.importFormat.Controls.Add(this.openInExcel);
+            this.importFormat.Controls.Add(this.saveAsGroupBox);
+            this.importFormat.Controls.Add(this.openFileGroupBox);
+            this.importFormat.Controls.Add(this.legendButtonPictureBox);
+            this.importFormat.Controls.Add(this.openInExcelPictureBox);
             this.importFormat.Controls.Add(this.goButtonPictureBox);
             this.importFormat.Controls.Add(this.ifDocumentation);
-            this.importFormat.Controls.Add(this.saveAsCsvButton);
-            this.importFormat.Controls.Add(this.saveAsXmlButton);
             this.importFormat.Controls.Add(this.importFormatProgressBar);
             this.importFormat.Controls.Add(this.importFormatDatabaseChecksGroupBox);
             this.importFormat.Controls.Add(this.splitContainer1);
@@ -1638,21 +1601,74 @@
             this.importFormat.Text = "Import Format";
             this.importFormat.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
-            // openFileLabel
+            // saveAsXmlButtonPictureBox
             // 
-            this.openFileLabel.AutoSize = true;
-            this.openFileLabel.BackColor = System.Drawing.Color.Transparent;
-            this.openFileLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openFileLabel.Location = new System.Drawing.Point(8, 6);
-            this.openFileLabel.Name = "openFileLabel";
-            this.openFileLabel.Size = new System.Drawing.Size(48, 40);
-            this.openFileLabel.TabIndex = 63;
-            this.openFileLabel.Text = "Open\r\nFile";
+            this.saveAsXmlButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.saveAsXmlButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveAsXmlButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_xml_save;
+            this.saveAsXmlButtonPictureBox.Location = new System.Drawing.Point(62, 19);
+            this.saveAsXmlButtonPictureBox.Name = "saveAsXmlButtonPictureBox";
+            this.saveAsXmlButtonPictureBox.Size = new System.Drawing.Size(56, 27);
+            this.saveAsXmlButtonPictureBox.TabIndex = 67;
+            this.saveAsXmlButtonPictureBox.TabStop = false;
+            this.saveAsXmlButtonPictureBox.Click += new System.EventHandler(this.saveAsXmlButtonPictureBox_Click);
+            this.saveAsXmlButtonPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.saveAsXmlButtonPictureBox_MouseDown);
+            this.saveAsXmlButtonPictureBox.MouseEnter += new System.EventHandler(this.saveAsXmlButtonPictureBox_MouseEnter);
+            this.saveAsXmlButtonPictureBox.MouseLeave += new System.EventHandler(this.saveAsXmlButtonPictureBox_MouseLeave);
+            this.saveAsXmlButtonPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.saveAsXmlButtonPictureBox_MouseUp);
+            // 
+            // legendButtonPictureBox
+            // 
+            this.legendButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.legendButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.legendButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_table_legend;
+            this.legendButtonPictureBox.Location = new System.Drawing.Point(258, 63);
+            this.legendButtonPictureBox.Name = "legendButtonPictureBox";
+            this.legendButtonPictureBox.Size = new System.Drawing.Size(142, 27);
+            this.legendButtonPictureBox.TabIndex = 66;
+            this.legendButtonPictureBox.TabStop = false;
+            this.legendButtonPictureBox.Click += new System.EventHandler(this.legendButtonPictureBox_Click);
+            this.legendButtonPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.legendButtonPictureBox_MouseDown);
+            this.legendButtonPictureBox.MouseEnter += new System.EventHandler(this.legendButtonPictureBox_MouseEnter);
+            this.legendButtonPictureBox.MouseLeave += new System.EventHandler(this.legendButtonPictureBox_MouseLeave);
+            this.legendButtonPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.legendButtonPictureBox_MouseUp);
+            // 
+            // openInExcelPictureBox
+            // 
+            this.openInExcelPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.openInExcelPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.openInExcelPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_open_in_excel;
+            this.openInExcelPictureBox.Location = new System.Drawing.Point(258, 93);
+            this.openInExcelPictureBox.Name = "openInExcelPictureBox";
+            this.openInExcelPictureBox.Size = new System.Drawing.Size(145, 27);
+            this.openInExcelPictureBox.TabIndex = 65;
+            this.openInExcelPictureBox.TabStop = false;
+            this.openInExcelPictureBox.Click += new System.EventHandler(this.openInExcelPictureBox_Click);
+            this.openInExcelPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.openInExcelPictureBox_MouseDown);
+            this.openInExcelPictureBox.MouseEnter += new System.EventHandler(this.openInExcelPictureBox_MouseEnter);
+            this.openInExcelPictureBox.MouseLeave += new System.EventHandler(this.openInExcelPictureBox_MouseLeave);
+            this.openInExcelPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.openInExcelPictureBox_MouseUp);
+            // 
+            // saveAsCsvButtonPictureBox
+            // 
+            this.saveAsCsvButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.saveAsCsvButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveAsCsvButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_csv_save;
+            this.saveAsCsvButtonPictureBox.Location = new System.Drawing.Point(6, 19);
+            this.saveAsCsvButtonPictureBox.Name = "saveAsCsvButtonPictureBox";
+            this.saveAsCsvButtonPictureBox.Size = new System.Drawing.Size(50, 27);
+            this.saveAsCsvButtonPictureBox.TabIndex = 64;
+            this.saveAsCsvButtonPictureBox.TabStop = false;
+            this.saveAsCsvButtonPictureBox.Click += new System.EventHandler(this.saveAsCsvButtonPictureBox_Click);
+            this.saveAsCsvButtonPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.saveAsCsvButtonPictureBox_MouseDown);
+            this.saveAsCsvButtonPictureBox.MouseEnter += new System.EventHandler(this.saveAsCsvButtonPictureBox_MouseEnter);
+            this.saveAsCsvButtonPictureBox.MouseLeave += new System.EventHandler(this.saveAsCsvButtonPictureBox_MouseLeave);
+            this.saveAsCsvButtonPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.saveAsCsvButtonPictureBox_MouseUp);
             // 
             // importformatIncludeHeaderRowButton
             // 
             this.importformatIncludeHeaderRowButton.AutoSize = true;
-            this.importformatIncludeHeaderRowButton.Location = new System.Drawing.Point(8, 102);
+            this.importformatIncludeHeaderRowButton.Location = new System.Drawing.Point(6, 85);
             this.importformatIncludeHeaderRowButton.Name = "importformatIncludeHeaderRowButton";
             this.importformatIncludeHeaderRowButton.Size = new System.Drawing.Size(220, 17);
             this.importformatIncludeHeaderRowButton.TabIndex = 53;
@@ -1664,9 +1680,9 @@
             this.csvButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.csvButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.csvButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_csv;
-            this.csvButtonPictureBox.Location = new System.Drawing.Point(59, 6);
+            this.csvButtonPictureBox.Location = new System.Drawing.Point(6, 19);
             this.csvButtonPictureBox.Name = "csvButtonPictureBox";
-            this.csvButtonPictureBox.Size = new System.Drawing.Size(70, 42);
+            this.csvButtonPictureBox.Size = new System.Drawing.Size(50, 27);
             this.csvButtonPictureBox.TabIndex = 58;
             this.csvButtonPictureBox.TabStop = false;
             this.csvButtonPictureBox.Click += new System.EventHandler(this.menu_Open_Csv_Click);
@@ -1680,9 +1696,9 @@
             this.txtCommaButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.txtCommaButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtCommaButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_txt_comma;
-            this.txtCommaButtonPictureBox.Location = new System.Drawing.Point(8, 54);
+            this.txtCommaButtonPictureBox.Location = new System.Drawing.Point(6, 52);
             this.txtCommaButtonPictureBox.Name = "txtCommaButtonPictureBox";
-            this.txtCommaButtonPictureBox.Size = new System.Drawing.Size(151, 42);
+            this.txtCommaButtonPictureBox.Size = new System.Drawing.Size(131, 27);
             this.txtCommaButtonPictureBox.TabIndex = 59;
             this.txtCommaButtonPictureBox.TabStop = false;
             this.txtCommaButtonPictureBox.Click += new System.EventHandler(this.tXTToolStripMenuItemComma_Click);
@@ -1696,9 +1712,9 @@
             this.xmlButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.xmlButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.xmlButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_xml;
-            this.xmlButtonPictureBox.Location = new System.Drawing.Point(135, 6);
+            this.xmlButtonPictureBox.Location = new System.Drawing.Point(62, 19);
             this.xmlButtonPictureBox.Name = "xmlButtonPictureBox";
-            this.xmlButtonPictureBox.Size = new System.Drawing.Size(76, 42);
+            this.xmlButtonPictureBox.Size = new System.Drawing.Size(56, 27);
             this.xmlButtonPictureBox.TabIndex = 62;
             this.xmlButtonPictureBox.TabStop = false;
             this.xmlButtonPictureBox.Click += new System.EventHandler(this.menu_Open_Xml_Click);
@@ -1712,9 +1728,9 @@
             this.xlsButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.xlsButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.xlsButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_xls;
-            this.xlsButtonPictureBox.Location = new System.Drawing.Point(217, 6);
+            this.xlsButtonPictureBox.Location = new System.Drawing.Point(124, 19);
             this.xlsButtonPictureBox.Name = "xlsButtonPictureBox";
-            this.xlsButtonPictureBox.Size = new System.Drawing.Size(66, 42);
+            this.xlsButtonPictureBox.Size = new System.Drawing.Size(46, 27);
             this.xlsButtonPictureBox.TabIndex = 61;
             this.xlsButtonPictureBox.TabStop = false;
             this.xlsButtonPictureBox.Click += new System.EventHandler(this.menu_Open_Xls_Click);
@@ -1728,9 +1744,9 @@
             this.txtPipePictureBox.BackColor = System.Drawing.Color.Transparent;
             this.txtPipePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtPipePictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_txt_pipe;
-            this.txtPipePictureBox.Location = new System.Drawing.Point(165, 54);
+            this.txtPipePictureBox.Location = new System.Drawing.Point(143, 52);
             this.txtPipePictureBox.Name = "txtPipePictureBox";
-            this.txtPipePictureBox.Size = new System.Drawing.Size(118, 42);
+            this.txtPipePictureBox.Size = new System.Drawing.Size(98, 27);
             this.txtPipePictureBox.TabIndex = 60;
             this.txtPipePictureBox.TabStop = false;
             this.txtPipePictureBox.Click += new System.EventHandler(this.pipeToolStripMenuItem_Click);
@@ -1738,37 +1754,6 @@
             this.txtPipePictureBox.MouseEnter += new System.EventHandler(this.txtPipePictureBox_MouseEnter);
             this.txtPipePictureBox.MouseLeave += new System.EventHandler(this.txtPipePictureBox_MouseLeave);
             this.txtPipePictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtPipePictureBox_MouseUp);
-            // 
-            // legendButton
-            // 
-            this.legendButton.BackColor = System.Drawing.Color.SeaShell;
-            this.legendButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.legendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.legendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.legendButton.Location = new System.Drawing.Point(337, 98);
-            this.legendButton.Name = "legendButton";
-            this.legendButton.Size = new System.Drawing.Size(95, 23);
-            this.legendButton.TabIndex = 34;
-            this.legendButton.Text = "Table Legend";
-            this.legendButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.legendButton.UseVisualStyleBackColor = false;
-            this.legendButton.Click += new System.EventHandler(this.legendButton_Click);
-            // 
-            // openInExcel
-            // 
-            this.openInExcel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.openInExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.openInExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.openInExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openInExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.openInExcel.Location = new System.Drawing.Point(234, 99);
-            this.openInExcel.Name = "openInExcel";
-            this.openInExcel.Size = new System.Drawing.Size(97, 22);
-            this.openInExcel.TabIndex = 55;
-            this.openInExcel.Text = "Open in Excel";
-            this.openInExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.openInExcel.UseVisualStyleBackColor = false;
-            this.openInExcel.Click += new System.EventHandler(this.openInExcel_Click);
             // 
             // goButtonPictureBox
             // 
@@ -1799,44 +1784,6 @@
             this.ifDocumentation.Text = "Save Documentation";
             this.ifDocumentation.UseVisualStyleBackColor = false;
             this.ifDocumentation.Visible = false;
-            // 
-            // saveAsCsvButton
-            // 
-            this.saveAsCsvButton.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.saveAsCsvButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveAsCsvButton.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
-            this.saveAsCsvButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.saveAsCsvButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveAsCsvButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveAsCsvButton.Image = global::SAPDataAnalysisTool.Properties.Resources.XMLFile_828_32x;
-            this.saveAsCsvButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.saveAsCsvButton.Location = new System.Drawing.Point(289, 6);
-            this.saveAsCsvButton.Name = "saveAsCsvButton";
-            this.saveAsCsvButton.Size = new System.Drawing.Size(54, 89);
-            this.saveAsCsvButton.TabIndex = 51;
-            this.saveAsCsvButton.Text = "Save As CSV";
-            this.saveAsCsvButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.saveAsCsvButton.UseVisualStyleBackColor = false;
-            this.saveAsCsvButton.Click += new System.EventHandler(this.menu_Save_Csv_Click);
-            // 
-            // saveAsXmlButton
-            // 
-            this.saveAsXmlButton.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.saveAsXmlButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveAsXmlButton.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
-            this.saveAsXmlButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.saveAsXmlButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveAsXmlButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveAsXmlButton.Image = global::SAPDataAnalysisTool.Properties.Resources.XMLFile_828_32x;
-            this.saveAsXmlButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.saveAsXmlButton.Location = new System.Drawing.Point(349, 7);
-            this.saveAsXmlButton.Name = "saveAsXmlButton";
-            this.saveAsXmlButton.Size = new System.Drawing.Size(54, 89);
-            this.saveAsXmlButton.TabIndex = 52;
-            this.saveAsXmlButton.Text = "Save As XML";
-            this.saveAsXmlButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.saveAsXmlButton.UseVisualStyleBackColor = false;
-            this.saveAsXmlButton.Click += new System.EventHandler(this.menu_Save_Xml_Click);
             // 
             // importFormatProgressBar
             // 
@@ -2111,34 +2058,34 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sqlQueryDataGridView.BackgroundColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.sqlQueryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.sqlQueryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.sqlQueryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqlQueryDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.sqlQueryDataGridView.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.sqlQueryDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
             this.sqlQueryDataGridView.Location = new System.Drawing.Point(3, 151);
             this.sqlQueryDataGridView.Name = "sqlQueryDataGridView";
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.sqlQueryDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.sqlQueryDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.sqlQueryDataGridView.Size = new System.Drawing.Size(1497, 582);
             this.sqlQueryDataGridView.TabIndex = 45;
             // 
@@ -2329,35 +2276,35 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.benchmarkDataGridView.BackgroundColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.benchmarkDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.benchmarkDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.benchmarkDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.benchmarkDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.benchmarkDataGridView.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.benchmarkDataGridView.DefaultCellStyle = dataGridViewCellStyle17;
             this.benchmarkDataGridView.Location = new System.Drawing.Point(2, 32);
             this.benchmarkDataGridView.Name = "benchmarkDataGridView";
             this.benchmarkDataGridView.ReadOnly = true;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.benchmarkDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.benchmarkDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.benchmarkDataGridView.Size = new System.Drawing.Size(458, 547);
             this.benchmarkDataGridView.TabIndex = 44;
             // 
@@ -2903,6 +2850,7 @@
             this.exportResultsPictureBox.Size = new System.Drawing.Size(174, 42);
             this.exportResultsPictureBox.TabIndex = 59;
             this.exportResultsPictureBox.TabStop = false;
+            this.exportResultsPictureBox.Click += new System.EventHandler(this.exportResultsPictureBox_Click);
             this.exportResultsPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.exportResultsPictureBox_MouseDown);
             this.exportResultsPictureBox.MouseEnter += new System.EventHandler(this.exportResultsPictureBox_MouseEnter);
             this.exportResultsPictureBox.MouseLeave += new System.EventHandler(this.exportResultsPictureBox_MouseLeave);
@@ -3268,11 +3216,9 @@
             // stagedData
             // 
             this.stagedData.BackColor = System.Drawing.Color.AliceBlue;
-            this.stagedData.Controls.Add(this.pictureBoxLoading);
             this.stagedData.Controls.Add(this.testButton);
             this.stagedData.Controls.Add(this.stagedTextBox);
             this.stagedData.Controls.Add(this.stagedDataGridView);
-            this.stagedData.Controls.Add(this.launchSsmsButton);
             this.stagedData.Location = new System.Drawing.Point(4, 22);
             this.stagedData.Name = "stagedData";
             this.stagedData.Padding = new System.Windows.Forms.Padding(3);
@@ -3318,13 +3264,33 @@
             this.mainLogSplitContainer.SplitterDistance = 762;
             this.mainLogSplitContainer.TabIndex = 33;
             // 
-            // versionToolStripStatusLabel
+            // openFileGroupBox
             // 
-            this.versionToolStripStatusLabel.Name = "versionToolStripStatusLabel";
-            this.versionToolStripStatusLabel.Size = new System.Drawing.Size(46, 17);
-            this.versionToolStripStatusLabel.Text = "1.1.1.16";
+            this.openFileGroupBox.Controls.Add(this.csvButtonPictureBox);
+            this.openFileGroupBox.Controls.Add(this.txtCommaButtonPictureBox);
+            this.openFileGroupBox.Controls.Add(this.txtPipePictureBox);
+            this.openFileGroupBox.Controls.Add(this.xmlButtonPictureBox);
+            this.openFileGroupBox.Controls.Add(this.xlsButtonPictureBox);
+            this.openFileGroupBox.Controls.Add(this.importformatIncludeHeaderRowButton);
+            this.openFileGroupBox.Location = new System.Drawing.Point(6, 8);
+            this.openFileGroupBox.Name = "openFileGroupBox";
+            this.openFileGroupBox.Size = new System.Drawing.Size(246, 112);
+            this.openFileGroupBox.TabIndex = 68;
+            this.openFileGroupBox.TabStop = false;
+            this.openFileGroupBox.Text = "Open File";
             // 
-            // DataAnalysisTool
+            // saveAsGroupBox
+            // 
+            this.saveAsGroupBox.Controls.Add(this.saveAsCsvButtonPictureBox);
+            this.saveAsGroupBox.Controls.Add(this.saveAsXmlButtonPictureBox);
+            this.saveAsGroupBox.Location = new System.Drawing.Point(258, 8);
+            this.saveAsGroupBox.Name = "saveAsGroupBox";
+            this.saveAsGroupBox.Size = new System.Drawing.Size(200, 53);
+            this.saveAsGroupBox.TabIndex = 67;
+            this.saveAsGroupBox.TabStop = false;
+            this.saveAsGroupBox.Text = "Save As";
+            // 
+            // SAPDataAnalysisTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -3338,7 +3304,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "DataAnalysisTool";
+            this.Name = "SAPDataAnalysisTool";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -3371,7 +3337,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.importFormatTableSelectPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDTAgetdatabasetableidsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stagedDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.importFormatDatabasePictureBox)).EndInit();
             this.importFormatServerSelectGroupBox.ResumeLayout(false);
@@ -3386,7 +3351,10 @@
             this.statusStrip1.PerformLayout();
             this.maintabControl.ResumeLayout(false);
             this.importFormat.ResumeLayout(false);
-            this.importFormat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.saveAsXmlButtonPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.legendButtonPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openInExcelPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveAsCsvButtonPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.csvButtonPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCommaButtonPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xmlButtonPictureBox)).EndInit();
@@ -3455,6 +3423,9 @@
             this.mainLogSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainLogSplitContainer)).EndInit();
             this.mainLogSplitContainer.ResumeLayout(false);
+            this.openFileGroupBox.ResumeLayout(false);
+            this.openFileGroupBox.PerformLayout();
+            this.saveAsGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3500,7 +3471,6 @@
         private System.Windows.Forms.GroupBox importFormatServerSelectGroupBox;
         private System.Windows.Forms.GroupBox importFormatReferenceTableGroupBox;
         private System.Windows.Forms.ComboBox tableSelect;
-        private System.Windows.Forms.Button launchSsmsButton;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ComboBox ifSelect;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -3605,11 +3575,8 @@
         private System.Windows.Forms.ComboBox serverSelect5;
         private System.Windows.Forms.ComboBox databaseSelect5;
         private System.Windows.Forms.Button testButton;
-        private System.Windows.Forms.PictureBox pictureBoxLoading;
         private System.Windows.Forms.ToolStripProgressBar progressBar1;
         private System.Windows.Forms.ToolStripMenuItem aCTEKLoginToolStripMenuItem;
-        private System.Windows.Forms.Button saveAsXmlButton;
-        private System.Windows.Forms.Button saveAsCsvButton;
         private System.Windows.Forms.ToolStripMenuItem benchmarksFolderToolStripMenuItem;
         private System.Windows.Forms.CheckBox importformatIncludeHeaderRowButton;
         private System.Windows.Forms.ProgressBar checkToolsProgressBar;
@@ -3624,10 +3591,8 @@
         private System.Windows.Forms.DataGridView benchmarkDataGridView;
         private System.Windows.Forms.SplitContainer benchmarkSplitContainer;
         private System.Windows.Forms.Label benchmarkDataGridViewLabel;
-        private System.Windows.Forms.Button legendButton;
         private System.Windows.Forms.Button ifDocumentation;
         private System.Windows.Forms.RichTextBox apiRichTextBox;
-        private System.Windows.Forms.Button openInExcel;
         private System.Windows.Forms.SplitContainer apiSplitContainer;
         private System.Windows.Forms.PictureBox apiPictureBox;
         private System.Windows.Forms.PictureBox apiUsersPictureBox;
@@ -3640,7 +3605,6 @@
         private System.Windows.Forms.Label apiEnvLabelMain;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label apiEnvLabel1;
-        private System.Windows.Forms.ToolStripMenuItem eZIReport451ToolStripMenuItem;
         private System.Windows.Forms.TabPage envChanges;
         private System.Windows.Forms.GroupBox envChangesServerSelectGroupBox;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -3670,7 +3634,6 @@
         private System.Windows.Forms.PictureBox txtPipePictureBox;
         private System.Windows.Forms.PictureBox xlsButtonPictureBox;
         private System.Windows.Forms.PictureBox xmlButtonPictureBox;
-        private System.Windows.Forms.Label openFileLabel;
         private System.Windows.Forms.PictureBox clearResultsPictureBox;
         private System.Windows.Forms.PictureBox exportResultsPictureBox;
         private System.Windows.Forms.TextBox dateYearFromTextBox;
@@ -3692,6 +3655,12 @@
         private System.Windows.Forms.PictureBox apiClearResultsPictureBox;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel versionToolStripStatusLabel;
+        private System.Windows.Forms.PictureBox saveAsCsvButtonPictureBox;
+        private System.Windows.Forms.PictureBox openInExcelPictureBox;
+        private System.Windows.Forms.PictureBox legendButtonPictureBox;
+        private System.Windows.Forms.PictureBox saveAsXmlButtonPictureBox;
+        private System.Windows.Forms.GroupBox openFileGroupBox;
+        private System.Windows.Forms.GroupBox saveAsGroupBox;
     }
 }
 

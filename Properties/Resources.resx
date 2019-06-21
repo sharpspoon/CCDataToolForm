@@ -400,4 +400,67 @@
   <data name="button_xml3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_xml(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="button_all" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_all.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_all2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_all(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_all3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_all(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_clear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_clear2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_clear(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_clear3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_clear(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_csv_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_csv(3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_csv_save2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_csv(4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_csv_save3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_csv(5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_open_in_excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_open-in-excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_open_in_excel2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_open-in-excel(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_open_in_excel3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_open-in-excel(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_table_legend" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_table-legend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_table_legend2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_table-legend(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_table_legend3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_table-legend(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_test_api_call" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_test-api-call.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_test_api_call2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_test-api-call(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_test_api_call3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_test-api-call(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_xml_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_xml(3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_xml_save2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_xml(4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_xml_save3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_xml(5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

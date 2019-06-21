@@ -246,17 +246,6 @@ namespace SAPDataAnalysisTool
             }
             progressBar1.MarqueeAnimationSpeed = 0;
         }
-        private void menu_Save_Xml_Click(object sender, EventArgs e)
-        {
-            progressBar1.MarqueeAnimationSpeed = 1;
-            saveFileDialog1.Filter = "XML|*.xml";
-            if (this.saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                DataTable dt = (DataTable)this.importedfileDataGridView.DataSource;
-                dt.WriteXml(this.saveFileDialog1.FileName, XmlWriteMode.WriteSchema);
-            }
-            progressBar1.MarqueeAnimationSpeed = 0;
-        }
         //------------------OPEN/SAVE XML END------------------------------------------------------
 
         //------------------OPEN/SAVE XLS START------------------------------------------------------
@@ -464,48 +453,6 @@ namespace SAPDataAnalysisTool
             importFormatProgressBar.Value = 100;
             return dt;
         }
-        protected void menu_Save_Csv_Click(object sender, EventArgs e)
-        {
-            progressBar1.MarqueeAnimationSpeed = 1;
-            saveFileDialog1.Filter = "CSV|*.csv";
-            if (this.saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                // create one file gridview.csv in writing mode using streamwriter
-                StreamWriter sw = new StreamWriter("c:\\gridview.csv");
-                // now add the gridview header in csv file suffix with "," delimeter except last one
-                for (int i = 0; i < importedfileDataGridView.Columns.Count; i++)
-                {
-                    sw.Write(importedfileDataGridView.Columns[i].HeaderText);
-                    if (i != importedfileDataGridView.Columns.Count)
-                    {
-                        sw.Write(",");
-                    }
-                }
-                // add new line
-                sw.Write(sw.NewLine);
-                // iterate through all the rows within the gridview
-                foreach (DataGridViewRow dr in importedfileDataGridView.Rows)
-                {
-                    // iterate through all colums of specific row
-                    for (int i = 0; i < importedfileDataGridView.Columns.Count; i++)
-                    {
-                        // write particular cell to csv file
-                        sw.Write(dr.Cells[i]);
-                        if (i != importedfileDataGridView.Columns.Count)
-                        {
-                            sw.Write(",");
-                        }
-                    }
-                    // write new line
-                    sw.Write(sw.NewLine);
-                }
-                // flush from the buffers.
-                sw.Flush();
-                // closes the file
-                sw.Close();
-            }
-            progressBar1.MarqueeAnimationSpeed = 0;
-        }
         //------------------OPEN/SAVE CSV END------------------------------------------------------
 
         //------------------ABOUT START------------------------------------------------------
@@ -620,33 +567,6 @@ namespace SAPDataAnalysisTool
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             progressBar1.MarqueeAnimationSpeed = 0;
-        }
-
-        private void legendButton_Click(object sender, EventArgs e)
-        {
-            DataGridViewLegend legend = new DataGridViewLegend();
-
-            while (Application.OpenForms.Count > 1)
-            {
-                Application.OpenForms[Application.OpenForms.Count - 1].Close();
-            }
-            legend.ShowDialog();
-        }
-
-        private void openInExcel_Click(object sender, EventArgs e)
-        {
-            copyAlltoClipboard();
-            Microsoft.Office.Interop.Excel.Application xlexcel;
-            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
-            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
-            object misValue = System.Reflection.Missing.Value;
-            xlexcel = new Microsoft.Office.Interop.Excel.Application();
-            xlexcel.Visible = true;
-            xlWorkBook = xlexcel.Workbooks.Add(misValue);
-            xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-            Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
-            CR.Select();
-            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
         }
 
         //*********************************************************************************************
@@ -1437,17 +1357,6 @@ risk if your ICM instance is externally accessible.");
         {
             ifRowCounterToolStripStatusLabel.Text = importedfileDataGridView.Rows.Count.ToString();
         }
-        private void ssms_Click(object sender, EventArgs e)
-        {
-            progressBar1.MarqueeAnimationSpeed = 1;
-            Ssms ssms = new Ssms();
-            while (Application.OpenForms.Count > 1)
-            {
-                Application.OpenForms[Application.OpenForms.Count - 1].Close();
-            }
-            ssms.ShowDialog();
-            progressBar1.MarqueeAnimationSpeed = 0;
-        }
 
         public DataTable ReadTxtComma(string fileName)
         {
@@ -1960,36 +1869,6 @@ risk if your ICM instance is externally accessible.");
             DataObject dataObj = importedfileDataGridView.GetClipboardContent();
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
-        }
-
-        private void eZIReport451ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult iReportInstall = MessageBox.Show("The DAT Tool will install iReport 4.5.1. Continue?", "DataAnalysisTool", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-
-            if (iReportInstall == DialogResult.Yes)
-            {
-                var processdir = Environment.CurrentDirectory;
-                System.IO.Directory.CreateDirectory(processdir + @"\ReportInstall");
-                string path = processdir + @"\ReportInstall\ReportInstall.cmd";
-                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
-                {
-                    using (TextWriter tw = new StreamWriter(fs))
-                    {
-                        tw.WriteLine(@"mkdir " + @"""C:\Program Files (x86)\Java\jre1.7.0_25""");
-                        tw.WriteLine(@"mkdir " + @"""C:\Program Files (x86)\Jaspersoft\iReport-4.5.1""");
-                        tw.WriteLine(@"robocopy \\FS-CorpFileAL\Public\ReportInstall\jre1.7.0_25 " + @"""C:\Program Files (x86)\Java\jre1.7.0_25""" + @" /E");
-                        tw.WriteLine(@"robocopy \\FS-CorpFileAL\Public\ReportInstall\iReport-4.5.1 " + @"""C:\Program Files (x86)\Jaspersoft\iReport-4.5.1""" + " /E");
-                        tw.WriteLine("pause");
-                    }
-                    System.Diagnostics.Process.Start(path);
-                }
-            }
-            else
-            {
-                return;
-            }
-
-
         }
 
         private void goButtonPictureBox_MouseEnter(object sender, EventArgs e)
@@ -2712,30 +2591,6 @@ risk if your ICM instance is externally accessible.");
             this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
         }
 
-        private void benchmarkGoPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.benchmarkGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
-        }
-
-        private void benchmarkGoPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.benchmarkGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkGoPictureBox, "Run the tool!");
-        }
-
-        private void benchmarkGoPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.benchmarkGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkGoPictureBox, "Run the tool!");
-        }
-
-        private void benchmarkGoPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.benchmarkGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-        }
-
         private void apiExportResultsPictureBox_Click(object sender, EventArgs e)
         {
             if (apiRichTextBox.Text == null || apiRichTextBox.Text == "")
@@ -2836,6 +2691,211 @@ risk if your ICM instance is externally accessible.");
         private void sqlQueryGoPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.sqlQueryGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+        }
+
+        private void exportResultsPictureBox_Click(object sender, EventArgs e)
+        {
+            if (envChangesRichTextBox.Text == null || apiRichTextBox.Text == "")
+            {
+                MessageBox.Show("There are no results to export!", "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            System.IO.Directory.CreateDirectory(Application.UserAppDataPath + @"\API_Readiness_Check");
+            string path = Application.UserAppDataPath + @"\API_Readiness_Check\DataAnalysisTool_API_Check_" + DateTime.Now.ToString("MM_dd_yyyy_HHmmss") + ".txt";
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                using (TextWriter tw = new StreamWriter(fs))
+                {
+                    for (int i = 0; i < apiRichTextBox.Lines.Length; i++)
+                    {
+                        tw.WriteLine(apiRichTextBox.Lines[i]);
+                    }
+                    tw.WriteLine("EOF.");
+                }
+            }
+            apiReadinessProgressBar.Value = 90;
+            apiReadinessProgressBar.Value = 100;
+            MessageBox.Show("Environment changes file has been created. \nLocation: " + path, "DataAnalysisTool", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            progressBar1.MarqueeAnimationSpeed = 0;
+            Process.Start(path);
+        }
+
+        private void openInExcelPictureBox_Click(object sender, EventArgs e)
+        {
+            copyAlltoClipboard();
+            Microsoft.Office.Interop.Excel.Application xlexcel;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlexcel = new Microsoft.Office.Interop.Excel.Application();
+            xlexcel.Visible = true;
+            xlWorkBook = xlexcel.Workbooks.Add(misValue);
+            xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
+            CR.Select();
+            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+        }
+
+        private void openInExcelPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.openInExcelPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_open_in_excel3));
+        }
+
+        private void openInExcelPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.openInExcelPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_open_in_excel2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.openInExcelPictureBox, "Open the table in Excel.");
+        }
+
+        private void openInExcelPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.openInExcelPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_open_in_excel));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.openInExcelPictureBox, "Open the table in Excel.");
+        }
+
+        private void openInExcelPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.openInExcelPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_open_in_excel));
+        }
+
+        private void legendButtonPictureBox_Click(object sender, EventArgs e)
+        {
+            DataGridViewLegend legend = new DataGridViewLegend();
+
+            while (Application.OpenForms.Count > 1)
+            {
+                Application.OpenForms[Application.OpenForms.Count - 1].Close();
+            }
+            legend.ShowDialog();
+        }
+
+        private void legendButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.legendButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_table_legend3));
+        }
+
+        private void legendButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.legendButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_table_legend2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.legendButtonPictureBox, "Show the table legend.");
+        }
+
+        private void legendButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.legendButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_table_legend));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.legendButtonPictureBox, "Show the table legend.");
+        }
+
+        private void legendButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.legendButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_table_legend));
+        }
+
+        private void saveAsCsvButtonPictureBox_Click(object sender, EventArgs e)
+        {
+            progressBar1.MarqueeAnimationSpeed = 1;
+            saveFileDialog1.Filter = "CSV|*.csv";
+            if (this.saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                // create one file gridview.csv in writing mode using streamwriter
+                StreamWriter sw = new StreamWriter("c:\\gridview.csv");
+                // now add the gridview header in csv file suffix with "," delimeter except last one
+                for (int i = 0; i < importedfileDataGridView.Columns.Count; i++)
+                {
+                    sw.Write(importedfileDataGridView.Columns[i].HeaderText);
+                    if (i != importedfileDataGridView.Columns.Count)
+                    {
+                        sw.Write(",");
+                    }
+                }
+                // add new line
+                sw.Write(sw.NewLine);
+                // iterate through all the rows within the gridview
+                foreach (DataGridViewRow dr in importedfileDataGridView.Rows)
+                {
+                    // iterate through all colums of specific row
+                    for (int i = 0; i < importedfileDataGridView.Columns.Count; i++)
+                    {
+                        // write particular cell to csv file
+                        sw.Write(dr.Cells[i]);
+                        if (i != importedfileDataGridView.Columns.Count)
+                        {
+                            sw.Write(",");
+                        }
+                    }
+                    // write new line
+                    sw.Write(sw.NewLine);
+                }
+                // flush from the buffers.
+                sw.Flush();
+                // closes the file
+                sw.Close();
+            }
+            progressBar1.MarqueeAnimationSpeed = 0;
+        }
+
+        private void saveAsCsvButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.saveAsCsvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv_save3));
+        }
+
+        private void saveAsCsvButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.saveAsCsvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv_save2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.saveAsCsvButtonPictureBox, "Save as a CSV file.");
+        }
+
+        private void saveAsCsvButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.saveAsCsvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv_save));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.saveAsCsvButtonPictureBox, "Save as a CSV file.");
+        }
+
+        private void saveAsCsvButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.saveAsCsvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv_save));
+        }
+
+        private void saveAsXmlButtonPictureBox_Click(object sender, EventArgs e)
+        {
+            progressBar1.MarqueeAnimationSpeed = 1;
+            saveFileDialog1.Filter = "XML|*.xml";
+            if (this.saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                DataTable dt = (DataTable)this.importedfileDataGridView.DataSource;
+                dt.WriteXml(this.saveFileDialog1.FileName, XmlWriteMode.WriteSchema);
+            }
+            progressBar1.MarqueeAnimationSpeed = 0;
+        }
+
+        private void saveAsXmlButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.saveAsXmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml_save3));
+        }
+
+        private void saveAsXmlButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.saveAsXmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml_save2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.saveAsXmlButtonPictureBox, "Save as an XML file.");
+        }
+
+        private void saveAsXmlButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.saveAsXmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml_save));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.saveAsXmlButtonPictureBox, "Save as an XML file.");
+        }
+
+        private void saveAsXmlButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.saveAsXmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml_save));
         }
     }
 }

@@ -16,9 +16,9 @@
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>P:\DataAnalysisTool\</PublishUrl>
+    <PublishUrl>\\USPHLG104.phl.global.corp.sap\BHMSpecialProjects\SAPDataAnalysisTool\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
+    <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -26,7 +26,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>\\FS-CorpFileAL\Public\DataAnalysisTool\</UpdateUrl>
+    <UpdateUrl>\\USPHLG104.phl.global.corp.sap\BHMSpecialProjects\SAPDataAnalysisTool\</UpdateUrl>
     <SupportUrl>http://calliduscloud.com</SupportUrl>
     <ErrorReportUrl>http://calliduscloud.com</ErrorReportUrl>
     <ProductName>Data Analysis Tool</ProductName>
@@ -36,7 +36,7 @@
     <WebPage>README.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationRevision>19</ApplicationRevision>
     <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -188,6 +188,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings1.settings</DependentUpon>
     </Compile>
+    <Compile Include="Buttons.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Sql.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,27 +290,48 @@
     <None Include="Resources\button_go.png" />
     <None Include="Resources\button_go%281%29.png" />
     <None Include="Resources\button_go%282%29.png" />
-    <None Include="Resources\button_xml%282%29.png" />
-    <None Include="Resources\button_xml%281%29.png" />
-    <None Include="Resources\button_xml.png" />
-    <None Include="Resources\button_xls%282%29.png" />
-    <None Include="Resources\button_xls%281%29.png" />
-    <None Include="Resources\button_xls.png" />
-    <None Include="Resources\button_txt-pipe%282%29.png" />
-    <None Include="Resources\button_txt-pipe%281%29.png" />
-    <None Include="Resources\button_txt-pipe.png" />
-    <None Include="Resources\button_txt-comma%282%29.png" />
-    <None Include="Resources\button_txt-comma%281%29.png" />
-    <None Include="Resources\button_txt-comma.png" />
-    <None Include="Resources\button_csv%282%29.png" />
-    <None Include="Resources\button_csv%281%29.png" />
-    <None Include="Resources\button_csv.png" />
     <None Include="Resources\button_export-results%282%29.png" />
     <None Include="Resources\button_export-results%281%29.png" />
     <None Include="Resources\button_export-results.png" />
     <None Include="Resources\button_clear-results%282%29.png" />
     <None Include="Resources\button_clear-results%281%29.png" />
     <None Include="Resources\button_clear-results.png" />
+    <None Include="Resources\button_test-api-call%282%29.png" />
+    <None Include="Resources\button_test-api-call%281%29.png" />
+    <None Include="Resources\button_test-api-call.png" />
+    <None Include="Resources\button_clear%282%29.png" />
+    <None Include="Resources\button_clear%281%29.png" />
+    <None Include="Resources\button_clear.png" />
+    <None Include="Resources\button_all%282%29.png" />
+    <None Include="Resources\button_all%281%29.png" />
+    <None Include="Resources\button_all.png" />
+    <None Include="Resources\button_table-legend%282%29.png" />
+    <None Include="Resources\button_table-legend%281%29.png" />
+    <None Include="Resources\button_table-legend.png" />
+    <None Include="Resources\button_open-in-excel%282%29.png" />
+    <None Include="Resources\button_open-in-excel%281%29.png" />
+    <None Include="Resources\button_open-in-excel.png" />
+    <None Include="Resources\button_xml%285%29.png" />
+    <None Include="Resources\button_xml%284%29.png" />
+    <None Include="Resources\button_xml%283%29.png" />
+    <None Include="Resources\button_csv%285%29.png" />
+    <None Include="Resources\button_csv%284%29.png" />
+    <None Include="Resources\button_csv%283%29.png" />
+    <None Include="Resources\button_txt-pipe%282%29.png" />
+    <None Include="Resources\button_txt-pipe%281%29.png" />
+    <None Include="Resources\button_txt-pipe.png" />
+    <None Include="Resources\button_txt-comma%282%29.png" />
+    <None Include="Resources\button_txt-comma%281%29.png" />
+    <None Include="Resources\button_txt-comma.png" />
+    <None Include="Resources\button_xls%282%29.png" />
+    <None Include="Resources\button_xls%281%29.png" />
+    <None Include="Resources\button_xls.png" />
+    <None Include="Resources\button_csv%282%29.png" />
+    <None Include="Resources\button_csv%281%29.png" />
+    <None Include="Resources\button_csv.png" />
+    <None Include="Resources\button_xml%282%29.png" />
+    <None Include="Resources\button_xml%281%29.png" />
+    <None Include="Resources\button_xml.png" />
     <Content Include="sap_32_hsh_icon.ico" />
     <Content Include="sap_32_jqX_icon.ico" />
     <None Include="Resources\Login_6031_32x.png" />

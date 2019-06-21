@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Deployment.Application;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SAPDataAnalysisTool
@@ -106,11 +99,6 @@ namespace SAPDataAnalysisTool
         }
 
         private void About_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelVersion_Click(object sender, EventArgs e)
         {
 
         }
