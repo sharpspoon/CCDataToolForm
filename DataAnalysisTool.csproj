@@ -335,6 +335,12 @@
     <None Include="Resources\2button_go%282%29.png" />
     <None Include="Resources\2button_go%281%29.png" />
     <None Include="Resources\2button_go.png" />
+    <None Include="Resources\button_upload-file %282%29.png" />
+    <None Include="Resources\button_upload-file %281%29.png" />
+    <None Include="Resources\button_upload-file.png" />
+    <None Include="Resources\button_upload-files %282%29.png" />
+    <None Include="Resources\button_upload-files %281%29.png" />
+    <None Include="Resources\button_upload-files.png" />
     <Content Include="sap_32_hsh_icon.ico" />
     <Content Include="sap_32_jqX_icon.ico" />
     <None Include="Resources\Login_6031_32x.png" />

@@ -48,6 +48,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.importedfileDataGridView = new System.Windows.Forms.DataGridView();
@@ -271,11 +277,20 @@
             this.serverSelect6 = new System.Windows.Forms.ComboBox();
             this.databaseSelect6 = new System.Windows.Forms.ComboBox();
             this.envChangesProgressBar = new System.Windows.Forms.ProgressBar();
+            this.fileSweep = new System.Windows.Forms.TabPage();
+            this.fileSweepGoPictureBox = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.fileSweepUploadFilesPictureBox = new System.Windows.Forms.PictureBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.fileSweepProgressBar = new System.Windows.Forms.ProgressBar();
             this.stagedData = new System.Windows.Forms.TabPage();
             this.testButton = new System.Windows.Forms.Button();
             this.stagedTextBox = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.mainLogSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.fileSweepDataGridView2 = new System.Windows.Forms.DataGridView();
+            this.fileSweepDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.checkToolsDateCheckerGroupBox.SuspendLayout();
@@ -380,11 +395,21 @@
             this.envChangesServerSelectGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.fileSweep.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSweepGoPictureBox)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSweepUploadFilesPictureBox)).BeginInit();
             this.stagedData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainLogSplitContainer)).BeginInit();
             this.mainLogSplitContainer.Panel1.SuspendLayout();
             this.mainLogSplitContainer.Panel2.SuspendLayout();
             this.mainLogSplitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSweepDataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSweepDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -1104,7 +1129,7 @@
             this.importFormatJumpToRowGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowButton);
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowTextBox);
-            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -354);
+            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -369);
             this.importFormatJumpToRowGroupBox.Name = "importFormatJumpToRowGroupBox";
             this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(170, 38);
             this.importFormatJumpToRowGroupBox.TabIndex = 36;
@@ -1597,6 +1622,7 @@
             this.maintabControl.Controls.Add(this.benchmark);
             this.maintabControl.Controls.Add(this.api);
             this.maintabControl.Controls.Add(this.envChanges);
+            this.maintabControl.Controls.Add(this.fileSweep);
             this.maintabControl.Controls.Add(this.stagedData);
             this.maintabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.maintabControl.Location = new System.Drawing.Point(0, 0);
@@ -3254,6 +3280,82 @@
             this.envChangesProgressBar.Size = new System.Drawing.Size(1488, 21);
             this.envChangesProgressBar.TabIndex = 8;
             // 
+            // fileSweep
+            // 
+            this.fileSweep.Controls.Add(this.splitContainer2);
+            this.fileSweep.Controls.Add(this.fileSweepGoPictureBox);
+            this.fileSweep.Controls.Add(this.groupBox1);
+            this.fileSweep.Controls.Add(this.fileSweepProgressBar);
+            this.fileSweep.Location = new System.Drawing.Point(4, 22);
+            this.fileSweep.Name = "fileSweep";
+            this.fileSweep.Size = new System.Drawing.Size(1502, 736);
+            this.fileSweep.TabIndex = 8;
+            this.fileSweep.Text = "File Sweep";
+            this.fileSweep.UseVisualStyleBackColor = true;
+            // 
+            // fileSweepGoPictureBox
+            // 
+            this.fileSweepGoPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.fileSweepGoPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fileSweepGoPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_go;
+            this.fileSweepGoPictureBox.Location = new System.Drawing.Point(1431, 76);
+            this.fileSweepGoPictureBox.Name = "fileSweepGoPictureBox";
+            this.fileSweepGoPictureBox.Size = new System.Drawing.Size(63, 42);
+            this.fileSweepGoPictureBox.TabIndex = 70;
+            this.fileSweepGoPictureBox.TabStop = false;
+            this.fileSweepGoPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.fileSweepGoPictureBox_MouseDown);
+            this.fileSweepGoPictureBox.MouseEnter += new System.EventHandler(this.fileSweepGoPictureBox_MouseEnter);
+            this.fileSweepGoPictureBox.MouseLeave += new System.EventHandler(this.fileSweepGoPictureBox_MouseLeave);
+            this.fileSweepGoPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.fileSweepGoPictureBox_MouseUp);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.fileSweepUploadFilesPictureBox);
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Location = new System.Drawing.Point(6, 8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(246, 112);
+            this.groupBox1.TabIndex = 69;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Open File";
+            // 
+            // fileSweepUploadFilesPictureBox
+            // 
+            this.fileSweepUploadFilesPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.fileSweepUploadFilesPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fileSweepUploadFilesPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_upload_files;
+            this.fileSweepUploadFilesPictureBox.Location = new System.Drawing.Point(6, 19);
+            this.fileSweepUploadFilesPictureBox.Name = "fileSweepUploadFilesPictureBox";
+            this.fileSweepUploadFilesPictureBox.Size = new System.Drawing.Size(133, 27);
+            this.fileSweepUploadFilesPictureBox.TabIndex = 61;
+            this.fileSweepUploadFilesPictureBox.TabStop = false;
+            this.fileSweepUploadFilesPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.fileSweepUploadFilesPictureBox_MouseDown);
+            this.fileSweepUploadFilesPictureBox.MouseEnter += new System.EventHandler(this.fileSweepUploadFilesPictureBox_MouseEnter);
+            this.fileSweepUploadFilesPictureBox.MouseLeave += new System.EventHandler(this.fileSweepUploadFilesPictureBox_MouseLeave);
+            this.fileSweepUploadFilesPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.fileSweepUploadFilesPictureBox_MouseUp);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 85);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(220, 17);
+            this.checkBox1.TabIndex = 53;
+            this.checkBox1.Text = "Include Header Row when Opening Files";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // fileSweepProgressBar
+            // 
+            this.fileSweepProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fileSweepProgressBar.BackColor = System.Drawing.Color.AliceBlue;
+            this.fileSweepProgressBar.ForeColor = System.Drawing.Color.DarkRed;
+            this.fileSweepProgressBar.Location = new System.Drawing.Point(6, 124);
+            this.fileSweepProgressBar.MarqueeAnimationSpeed = 1;
+            this.fileSweepProgressBar.Name = "fileSweepProgressBar";
+            this.fileSweepProgressBar.Size = new System.Drawing.Size(1488, 21);
+            this.fileSweepProgressBar.TabIndex = 8;
+            // 
             // stagedData
             // 
             this.stagedData.BackColor = System.Drawing.Color.AliceBlue;
@@ -3304,6 +3406,103 @@
             this.mainLogSplitContainer.Size = new System.Drawing.Size(1510, 832);
             this.mainLogSplitContainer.SplitterDistance = 762;
             this.mainLogSplitContainer.TabIndex = 33;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer2.BackColor = System.Drawing.Color.AliceBlue;
+            this.splitContainer2.Location = new System.Drawing.Point(6, 151);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.fileSweepDataGridView);
+            this.splitContainer2.Panel1.Cursor = System.Windows.Forms.Cursors.VSplit;
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.fileSweepDataGridView2);
+            this.splitContainer2.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
+            this.splitContainer2.Size = new System.Drawing.Size(1494, 579);
+            this.splitContainer2.SplitterDistance = 582;
+            this.splitContainer2.SplitterWidth = 7;
+            this.splitContainer2.TabIndex = 71;
+            // 
+            // fileSweepDataGridView2
+            // 
+            this.fileSweepDataGridView2.AllowUserToAddRows = false;
+            this.fileSweepDataGridView2.BackgroundColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fileSweepDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            this.fileSweepDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.fileSweepDataGridView2.Cursor = System.Windows.Forms.Cursors.Cross;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.fileSweepDataGridView2.DefaultCellStyle = dataGridViewCellStyle23;
+            this.fileSweepDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fileSweepDataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.fileSweepDataGridView2.Name = "fileSweepDataGridView2";
+            this.fileSweepDataGridView2.ReadOnly = true;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fileSweepDataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            this.fileSweepDataGridView2.Size = new System.Drawing.Size(905, 579);
+            this.fileSweepDataGridView2.TabIndex = 31;
+            // 
+            // fileSweepDataGridView
+            // 
+            this.fileSweepDataGridView.AllowUserToAddRows = false;
+            this.fileSweepDataGridView.BackgroundColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fileSweepDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.fileSweepDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.fileSweepDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.fileSweepDataGridView.DefaultCellStyle = dataGridViewCellStyle20;
+            this.fileSweepDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fileSweepDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.fileSweepDataGridView.Name = "fileSweepDataGridView";
+            this.fileSweepDataGridView.ReadOnly = true;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fileSweepDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            this.fileSweepDataGridView.Size = new System.Drawing.Size(582, 579);
+            this.fileSweepDataGridView.TabIndex = 32;
             // 
             // SAPDataAnalysisTool
             // 
@@ -3447,12 +3646,23 @@
             this.envChangesServerSelectGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.fileSweep.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fileSweepGoPictureBox)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSweepUploadFilesPictureBox)).EndInit();
             this.stagedData.ResumeLayout(false);
             this.stagedData.PerformLayout();
             this.mainLogSplitContainer.Panel1.ResumeLayout(false);
             this.mainLogSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainLogSplitContainer)).EndInit();
             this.mainLogSplitContainer.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fileSweepDataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSweepDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3687,6 +3897,15 @@
         private System.Windows.Forms.PictureBox specialCharacterCheckerGoButtonPictureBox;
         private System.Windows.Forms.PictureBox selectAllDateCheckerButtonPictureBox;
         private System.Windows.Forms.PictureBox dateCheckerGoButtonPictureBox;
+        private System.Windows.Forms.TabPage fileSweep;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox fileSweepUploadFilesPictureBox;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ProgressBar fileSweepProgressBar;
+        private System.Windows.Forms.PictureBox fileSweepGoPictureBox;
+        public System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.DataGridView fileSweepDataGridView;
+        private System.Windows.Forms.DataGridView fileSweepDataGridView2;
     }
 }
 

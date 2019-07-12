@@ -665,18 +665,6 @@ namespace SAPDataAnalysisTool
                 return;
             }
 
-            if (payoutTypeSelect.Text != "")
-            {
-
-                DialogResult result2 = MessageBox.Show("The DAT will check against the " + payoutTypeSelect.Text + " payout.\nContinue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                if (result2 == DialogResult.No)
-                {
-                    progressBar1.MarqueeAnimationSpeed = 0;
-                    benchmarkProgressBar.Value = 0;
-                    return;
-                }
-            }
-
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect4.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
 
@@ -1830,18 +1818,6 @@ risk if your ICM instance is externally accessible.");
                 progressBar1.MarqueeAnimationSpeed = 0;
                 envChangesProgressBar.Value = 0;
                 return;
-            }
-
-            if (databaseSelect6.Text != "")
-            {
-
-                DialogResult result = MessageBox.Show("The DAT will check against the " + databaseSelect6.Text + " database.\nContinue?", "Data Analysis Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                if (result == DialogResult.No)
-                {
-                    progressBar1.MarqueeAnimationSpeed = 0;
-                    envChangesProgressBar.Value = 0;
-                    return;
-                }
             }
             var fromDate = dateYearFromTextBox.Text + dateMonthFromTextBox.Text + dateDayFromTextBox.Text;
             var toDate = dateYearToTextBox.Text + dateMonthToTextBox.Text + dateDayToTextBox.Text;
@@ -3221,6 +3197,59 @@ risk if your ICM instance is externally accessible.");
         private void selectAllDateCheckerButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             this.selectAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
+        }
+
+        private void fileSweepUploadFilesPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.fileSweepUploadFilesPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_upload_files3));
+        }
+
+        private void fileSweepUploadFilesPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.fileSweepUploadFilesPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_upload_files2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.fileSweepUploadFilesPictureBox, "Upload file(s).");
+        }
+
+        private void fileSweepUploadFilesPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.fileSweepUploadFilesPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_upload_files));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.fileSweepUploadFilesPictureBox, "Upload file(s).");
+        }
+
+        private void fileSweepUploadFilesPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.fileSweepUploadFilesPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_upload_files));
+        }
+
+        private void fileSweepGoPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.fileSweepGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
+        }
+
+        private void fileSweepGoPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.fileSweepGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.fileSweepGoPictureBox, "Run the tool!");
+        }
+
+        private void fileSweepGoPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.fileSweepGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.fileSweepGoPictureBox, "Run the tool!");
+        }
+
+        private void fileSweepGoPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.fileSweepGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+        }
+
+        private void tableSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
