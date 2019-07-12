@@ -341,6 +341,12 @@
     <None Include="Resources\button_upload-files %282%29.png" />
     <None Include="Resources\button_upload-files %281%29.png" />
     <None Include="Resources\button_upload-files.png" />
+    <None Include="Resources\button_move-down %282%29.png" />
+    <None Include="Resources\button_move-down %281%29.png" />
+    <None Include="Resources\button_move-down.png" />
+    <None Include="Resources\button_move-up %282%29.png" />
+    <None Include="Resources\button_move-up %281%29.png" />
+    <None Include="Resources\button_move-up.png" />
     <Content Include="sap_32_hsh_icon.ico" />
     <Content Include="sap_32_jqX_icon.ico" />
     <None Include="Resources\Login_6031_32x.png" />
