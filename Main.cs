@@ -29,6 +29,398 @@ namespace SAPDataAnalysisTool
         //*********************************************************************************************
         //*********************************GLOBAL******************************************************
         //*********************************************************************************************
+
+        //------------------BUTTON LOGIC START------------------------------------------------------
+
+        private void moveUpPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.moveUpPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_up3));
+        }
+
+        private void moveUpPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.moveUpPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_up2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.moveUpPictureBox, "Run the tool!");
+        }
+
+        private void moveUpPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.moveUpPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_up));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.moveUpPictureBox, "Run the tool!");
+        }
+
+        private void moveUpPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.moveUpPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_up));
+        }
+
+        private void moveDownPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.moveDownPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_down3));
+        }
+
+        private void moveDownPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.moveDownPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_down2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.moveDownPictureBox, "Run the tool!");
+        }
+
+        private void moveDownPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.moveDownPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_down));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.moveDownPictureBox, "Run the tool!");
+        }
+
+        private void moveDownPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.moveDownPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_down));
+        }
+
+        private void goButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.goButtonPictureBox, "Run the tool!");
+        }
+
+        private void goButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.goButtonPictureBox, "Run the tool!");
+        }
+
+        private void goButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
+        }
+
+        private void goButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+        }
+
+        private void csvButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.csvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv3));
+        }
+
+        private void csvButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.csvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv2));
+        }
+
+        private void csvButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.csvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.csvButtonPictureBox, "Open a CSV file.");
+        }
+
+        private void csvButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.csvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv));
+        }
+
+        private void xmlButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.xmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml3));
+        }
+
+        private void xmlButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.xmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.xmlButtonPictureBox, "Open an XML file.");
+        }
+
+        private void xmlButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.xmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.xmlButtonPictureBox, "Open an XML file.");
+        }
+
+        private void xmlButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.xmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml));
+        }
+
+        private void txtCommaButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.txtCommaButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_comma3));
+        }
+
+        private void txtCommaButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.txtCommaButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_comma2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.txtCommaButtonPictureBox, "Open a Text Comma file.");
+        }
+
+        private void txtCommaButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.txtCommaButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_comma));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.txtCommaButtonPictureBox, "Open a Text Comma file.");
+        }
+
+        private void txtCommaButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.txtCommaButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_comma));
+        }
+
+        private void xlsButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.xlsButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xls3));
+        }
+
+        private void xlsButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.xlsButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xls2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.xlsButtonPictureBox, "Open an XLS file.");
+        }
+
+        private void xlsButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.xlsButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xls));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.xlsButtonPictureBox, "Open an XLS file.");
+        }
+
+        private void xlsButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.xlsButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xls));
+        }
+
+        private void txtPipePictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.txtPipePictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_pipe3));
+        }
+
+        private void txtPipePictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.txtPipePictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_pipe2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.txtPipePictureBox, "Open a Text Pipe file.");
+        }
+
+        private void txtPipePictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.txtPipePictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_pipe));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.txtPipePictureBox, "Open a Text Pipe file.");
+        }
+
+        private void txtPipePictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.txtPipePictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_pipe));
+        }
+
+        private void clearResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.clearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results3));
+        }
+
+        private void clearResultsPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.clearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.clearResultsPictureBox, "Clear the results.");
+        }
+
+        private void clearResultsPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.clearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.clearResultsPictureBox, "Clear the results.");
+        }
+
+        private void clearResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.clearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
+        }
+
+        private void exportResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.exportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results3));
+        }
+
+        private void exportResultsPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.exportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.exportResultsPictureBox, "Export the results.");
+        }
+
+        private void exportResultsPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.exportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.exportResultsPictureBox, "Export the results.");
+        }
+
+        private void exportResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.exportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
+        }
+
+        private void envChangesGoPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
+        }
+
+        private void envChangesGoPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.envChangesGoPictureBox, "Run the tool!");
+        }
+
+        private void envChangesGoPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.envChangesGoPictureBox, "Run the tool!");
+        }
+
+        private void envChangesGoPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+        }
+
+        private void clearResultsPictureBox_Click(object sender, EventArgs e)
+        {
+            envChangesRichTextBox.Clear();
+        }
+
+        private void apiGoPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.apiGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
+        }
+
+        private void apiGoPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.apiGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiGoPictureBox, "Run the tool!");
+        }
+
+        private void apiGoPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.apiGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiGoPictureBox, "Run the tool!");
+        }
+
+        private void apiGoPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.apiGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+        }
+
+        private void apiExportResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results3));
+        }
+
+        private void apiExportResultsPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiExportResultsPictureBox, "Export the results.");
+        }
+
+        private void apiExportResultsPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiExportResultsPictureBox, "Export the results.");
+        }
+
+        private void apiExportResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
+        }
+
+        private void apiClearResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results3));
+        }
+
+        private void apiClearResultsPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiClearResultsPictureBox, "Clear the results.");
+        }
+
+        private void apiClearResultsPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.apiClearResultsPictureBox, "Clear the results.");
+        }
+
+        private void apiClearResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
+        }
+
+        private void benchmarkExportResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results3));
+        }
+
+        private void benchmarkExportResultsPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkExportResultsPictureBox, "Export the results.");
+        }
+
+        private void benchmarkExportResultsPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkExportResultsPictureBox, "Export the results.");
+        }
+
+        private void benchmarkExportResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
+        }
+
+        private void benchmarkClearResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results3));
+        }
+
+        private void benchmarkClearResultsPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkClearResultsPictureBox, "Clear the results.");
+        }
+
+        private void benchmarkClearResultsPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.benchmarkClearResultsPictureBox, "Clear the results.");
+        }
+
+        private void benchmarkClearResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
+        }
+
+        //------------------BUTTON LOGIC END------------------------------------------------------
+
         public SAPDataAnalysisTool()
         {
             InitializeComponent();
@@ -174,11 +566,6 @@ namespace SAPDataAnalysisTool
             System.Diagnostics.Process.Start("https://www.sap.com/index.html");
         }
 
-        private void toolStripStatusLabel19_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://www.calliduscloud.com/");
-        }
-
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -202,7 +589,7 @@ namespace SAPDataAnalysisTool
         //*********************************HEADER MENU*************************************************
         //*********************************************************************************************
 
-        //------------------CC LOG OPEN START------------------------------------------------------
+        //------------------SAP LOG OPEN START------------------------------------------------------
         private void cCDataToolLogToolStripMenuItem_Click(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
@@ -216,7 +603,7 @@ namespace SAPDataAnalysisTool
                 progressBar1.MarqueeAnimationSpeed = 0;
             }
         }
-        //------------------CC LOG OPEN END------------------------------------------------------
+        //------------------SAP LOG OPEN END------------------------------------------------------
 
         //------------------OPEN/SAVE XML START------------------------------------------------------
         private void menu_Open_Xml_Click(object sender, EventArgs e)
@@ -403,9 +790,6 @@ namespace SAPDataAnalysisTool
             }
             var importedFileArray = importedfileDataGridView.Columns.Cast<DataGridViewColumn>()
                 .Select(x => x.HeaderCell.Value.ToString().Trim()).ToArray();
-
-
-
             dateCheckerListBox.Items.Clear();
             specialCharacterCheckerListBox.Items.Clear();
             nullCheckerListBox.Items.Clear();
@@ -420,7 +804,6 @@ namespace SAPDataAnalysisTool
                 nullCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
                 cellLengthCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
             }
-
             progressBar1.MarqueeAnimationSpeed = 0;
         }
         public DataTable ReadCsv(string fileName)
@@ -507,9 +890,7 @@ namespace SAPDataAnalysisTool
         private void acteksoft_Click(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 10;
-
             acteksoft actek = new acteksoft();
-
             while (Application.OpenForms.Count > 1)
             {
                 Application.OpenForms[Application.OpenForms.Count - 1].Close();
@@ -1028,18 +1409,6 @@ risk if your ICM instance is externally accessible.");
         //*********************************************************************************************
         //*********************************/API READINESS TAB*******************************************
         //*********************************************************************************************
-
-        //*********************************************************************************************
-        //*********************************PGP TAB*****************************************************
-        //*********************************************************************************************
-        
-
-
-        //*********************************************************************************************
-        //*********************************/PGP TAB****************************************************
-        //*********************************************************************************************
-
-
         private void toolStripStatusLabel4_Click(object sender, EventArgs e)
         {
             ifRowCounterToolStripStatusLabel.Text = importedfileDataGridView.Rows.Count.ToString();
@@ -1558,195 +1927,7 @@ risk if your ICM instance is externally accessible.");
                 Clipboard.SetDataObject(dataObj);
         }
 
-        private void goButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.goButtonPictureBox, "Run the tool!");
-        }
 
-        private void goButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.goButtonPictureBox, "Run the tool!");
-        }
-
-        private void goButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
-        }
-
-        private void goButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.goButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-        }
-
-        private void csvButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.csvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv3));
-        }
-
-        private void csvButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.csvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv2));
-        }
-
-        private void csvButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.csvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.csvButtonPictureBox, "Open a CSV file.");
-        }
-
-        private void csvButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.csvButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_csv));
-        }
-
-        private void xmlButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.xmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml3));
-        }
-
-        private void xmlButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.xmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.xmlButtonPictureBox, "Open an XML file.");
-        }
-
-        private void xmlButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.xmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.xmlButtonPictureBox, "Open an XML file.");
-        }
-
-        private void xmlButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.xmlButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xml));
-        }
-
-        private void txtCommaButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.txtCommaButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_comma3));
-        }
-
-        private void txtCommaButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.txtCommaButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_comma2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.txtCommaButtonPictureBox, "Open a Text Comma file.");
-        }
-
-        private void txtCommaButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.txtCommaButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_comma));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.txtCommaButtonPictureBox, "Open a Text Comma file.");
-        }
-
-        private void txtCommaButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.txtCommaButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_comma));
-        }
-
-        private void xlsButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.xlsButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xls3));
-        }
-
-        private void xlsButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.xlsButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xls2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.xlsButtonPictureBox, "Open an XLS file.");
-        }
-
-        private void xlsButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.xlsButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xls));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.xlsButtonPictureBox, "Open an XLS file.");
-        }
-
-        private void xlsButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.xlsButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_xls));
-        }
-
-        private void txtPipePictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.txtPipePictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_pipe3));
-        }
-
-        private void txtPipePictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.txtPipePictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_pipe2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.txtPipePictureBox, "Open a Text Pipe file.");
-        }
-
-        private void txtPipePictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.txtPipePictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_pipe));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.txtPipePictureBox, "Open a Text Pipe file.");
-        }
-
-        private void txtPipePictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.txtPipePictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_txt_pipe));
-        }
-
-        private void clearResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.clearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results3));
-        }
-
-        private void clearResultsPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.clearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.clearResultsPictureBox, "Clear the results.");
-        }
-
-        private void clearResultsPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.clearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.clearResultsPictureBox, "Clear the results.");
-        }
-
-        private void clearResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.clearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
-        }
-
-        private void exportResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.exportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results3));
-        }
-
-        private void exportResultsPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.exportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.exportResultsPictureBox, "Export the results.");
-        }
-
-        private void exportResultsPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.exportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.exportResultsPictureBox, "Export the results.");
-        }
-
-        private void exportResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.exportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
-        }
 
         private void fromDateEnableCheckBox_CheckedChanged(object sender, EventArgs e)
         {
@@ -2117,154 +2298,7 @@ risk if your ICM instance is externally accessible.");
             envChangesProgressBar.Value = 100;
         }
 
-        private void envChangesGoPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
-        }
 
-        private void envChangesGoPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.envChangesGoPictureBox, "Run the tool!");
-        }
-
-        private void envChangesGoPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.envChangesGoPictureBox, "Run the tool!");
-        }
-
-        private void envChangesGoPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.envChangesGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-        }
-
-        private void clearResultsPictureBox_Click(object sender, EventArgs e)
-        {
-            envChangesRichTextBox.Clear();
-        }
-
-        private void apiGoPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.apiGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
-        }
-
-        private void apiGoPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.apiGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiGoPictureBox, "Run the tool!");
-        }
-
-        private void apiGoPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.apiGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiGoPictureBox, "Run the tool!");
-        }
-
-        private void apiGoPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.apiGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-        }
-
-        private void apiExportResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results3));
-        }
-
-        private void apiExportResultsPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiExportResultsPictureBox, "Export the results.");
-        }
-
-        private void apiExportResultsPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiExportResultsPictureBox, "Export the results.");
-        }
-
-        private void apiExportResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.apiExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
-        }
-
-        private void apiClearResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results3));
-        }
-
-        private void apiClearResultsPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiClearResultsPictureBox, "Clear the results.");
-        }
-
-        private void apiClearResultsPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.apiClearResultsPictureBox, "Clear the results.");
-        }
-
-        private void apiClearResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.apiClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
-        }
-
-        private void benchmarkExportResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results3));
-        }
-
-        private void benchmarkExportResultsPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkExportResultsPictureBox, "Export the results.");
-        }
-
-        private void benchmarkExportResultsPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkExportResultsPictureBox, "Export the results.");
-        }
-
-        private void benchmarkExportResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.benchmarkExportResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_export_results));
-        }
-
-        private void benchmarkClearResultsPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results3));
-        }
-
-        private void benchmarkClearResultsPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkClearResultsPictureBox, "Clear the results.");
-        }
-
-        private void benchmarkClearResultsPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.benchmarkClearResultsPictureBox, "Clear the results.");
-        }
-
-        private void benchmarkClearResultsPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
-        }
 
         private void apiExportResultsPictureBox_Click(object sender, EventArgs e)
         {
@@ -3249,13 +3283,24 @@ risk if your ICM instance is externally accessible.");
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
+                        fileSweepDataGridView.Columns.Clear();
+                        fileSweepDataGridView.Rows.Clear();
                         fileSweepDataGridView.Columns.Add("FileName", "File Name");
-                        DataGridViewColumn columnWidth = fileSweepDataGridView.Columns[0];
-                        columnWidth.Width = 200;
+                        fileSweepDataGridView.Columns.Add("FileSweep", "File Sweep");
+                        DataGridViewColumn columnWidth0 = fileSweepDataGridView.Columns[0];
+                        columnWidth0.Width = 200;
+                        DataGridViewColumn columnWidth1 = fileSweepDataGridView.Columns[1];
+                        columnWidth1.Width = 200;
+                        
                         foreach (String file in ofd.SafeFileNames)
                         {
                             fileSweepDataGridView.Rows.Add(file);
                         }
+                        for (int i = -1; i <= ofd.FileNames.Count(); i++)
+                        {
+                        }
+
+
                         //ofd.FileNames gets the entire path and file
                         foreach (DataGridViewColumn column in fileSweepDataGridView.Columns)
                         {
@@ -3333,60 +3378,12 @@ risk if your ICM instance is externally accessible.");
             catch { }
         }
 
-        private void moveUpPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.moveUpPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_up3));
-        }
-
-        private void moveUpPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.moveUpPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_up2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.moveUpPictureBox, "Run the tool!");
-        }
-
-        private void moveUpPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.moveUpPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_up));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.moveUpPictureBox, "Run the tool!");
-        }
-
-        private void moveUpPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.moveUpPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_up));
-        }
-
-        private void moveDownPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.moveDownPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_down3));
-        }
-
-        private void moveDownPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.moveDownPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_down2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.moveDownPictureBox, "Run the tool!");
-        }
-
-        private void moveDownPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.moveDownPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_down));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.moveDownPictureBox, "Run the tool!");
-        }
-
-        private void moveDownPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.moveDownPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_move_down));
-        }
-
         private void serverSelect7_SelectedIndexChanged(object sender, EventArgs e)
         {
             fileSweepProgressBar.Value = 0;
             progressBar1.MarqueeAnimationSpeed = 1;
             fileSweepProgressBar.Value = 40;
-            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect6.Text + "; Initial Catalog = master; Integrated Security = True");
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect7.Text + "; Initial Catalog = master; Integrated Security = True");
             try
             {
                 conn.Open();
@@ -3400,7 +3397,7 @@ risk if your ICM instance is externally accessible.");
                 fileSweepDatabaseComboBox.DisplayMember = "name";
                 conn.Close();
                 connectionStatus.Visible = true;
-                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + fileSweepDatabaseComboBox.Text + "...Done.");
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading SQL server: " + serverSelect7.Text + "...Done.");
             }
             catch
             {
@@ -3420,7 +3417,7 @@ risk if your ICM instance is externally accessible.");
             benchmarkProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect7.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
-            SqlCommand sc = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " SELECT payouttypeid as name FROM payouttype  order by name", conn);
+            SqlCommand sc = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " SELECT filesweepid as name FROM filesweep  order by name", conn);
             SqlDataReader reader;
 
             try
@@ -3429,30 +3426,22 @@ risk if your ICM instance is externally accessible.");
                 DataTable dt = new DataTable();
                 dt.Columns.Add("name", typeof(string));
                 dt.Load(reader);
-                payoutTypeSelect.DataSource = dt;
-                payoutTypeSelect.DisplayMember = "name";
+                fileSweepComboBox.DataSource = dt;
+                fileSweepComboBox.DisplayMember = "name";
                 conn.Close();
                 connectionStatus.Visible = true;
-                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + databaseSelect.Text + "...Done.");
-                seperator3ToolStripStatusLabel.Visible = true;
-                sqlRowCountToolStripStatusLabel.Visible = true;
-                sqlCounterToolStripStatusLabel.Visible = true;
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + fileSweepDatabaseComboBox.Text + "...Done.");
             }
             catch
             {
                 conn.Close();
                 progressBar1.MarqueeAnimationSpeed = 0;
-                benchmarkProgressBar.Value = 0;
+                fileSweepProgressBar.Value = 0;
                 return;
             }
             conn.Close();
             progressBar1.MarqueeAnimationSpeed = 0;
-            benchmarkProgressBar.Value = 100;
-        }
-
-        private void fileSweepComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            fileSweepProgressBar.Value = 100;
         }
 
         //------------------SQL LOADER START------------------------------------------------------
