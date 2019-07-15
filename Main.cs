@@ -3288,66 +3288,16 @@ risk if your ICM instance is externally accessible.");
                         fileSweepDataGridView.Columns.Clear();
                         fileSweepDataGridView.Rows.Clear();
                         fileSweepDataGridView.Columns.Add("FileName", "File Name");
-                        DataGridViewComboBoxColumn fileSweep = new DataGridViewComboBoxColumn();
-                        fileSweepDataGridView.Columns.Add(fileSweep);
-                        //fileSweepDataGridView.Columns.Add("FileSweep", "File Sweep");
 
                         DataGridViewColumn columnWidth0 = fileSweepDataGridView.Columns[0];
                         columnWidth0.Width = 200;
-                        DataGridViewColumn columnWidth1 = fileSweepDataGridView.Columns[1];
-                        columnWidth1.Width = 200;
+
                         foreach (String file in ofd.SafeFileNames)
                         {
                             fileSweepDataGridView.Rows.Add(file);
                         }
-                        var fileSweepList = new List<string>() { "a", "b" };
-                        fileSweep.DataSource = fileSweepList;
-                        fileSweep.HeaderText = "File Sweep";
-                        fileSweep.DataSource = fileSweepList;
-                        //fileSweepDataGridView.AutoGenerateColumns = false;
-                        //DataTable dt = new DataTable();
-                        //dt.Columns.Add("FileName", typeof(String));
-                        //dt.Columns.Add("FileSweep", typeof(String));
-                        //DataGridViewComboBoxColumn fileSweep = new DataGridViewComboBoxColumn();
-                        //var fileSweepList = new List<string>() { "a", "b" };
-                        //fileSweep.DataSource = fileSweepList;
-                        //fileSweep.HeaderText = "File Sweep";
-
-                        //DataGridViewTextBoxColumn fileName = new DataGridViewTextBoxColumn();
-                        //fileName.HeaderText = "File Name";
-                        //fileName.DataPropertyName = "FileName";
-                        //for (int i =0; i <ofd.FileNames.Count(); i++)
-                        //{
-                        //    fileSweepDataGridView[0, i].Value = ofd.FileName;
-                        //}
-                        //fileSweepDataGridView.DataSource = dt;
-                        //fileSweepDataGridView.Columns.AddRange(fileName, fileSweep);
-                        //fileSweepDataGridView.Columns.Clear();
-                        //fileSweepDataGridView.Rows.Clear();
-                        //fileSweepDataGridView.Columns.Add("FileName", "File Name");
-                        //DataGridViewComboBoxColumn fileSweep = new DataGridViewComboBoxColumn();
-                        //fileSweepDataGridView.Columns.Add(fileSweep);
-                        ////fileSweepDataGridView.Columns.Add("FileSweep", "File Sweep");
-                        //DataGridViewColumn columnWidth0 = fileSweepDataGridView.Columns[0];
-                        //columnWidth0.Width = 200;
-                        //DataGridViewColumn columnWidth1 = fileSweepDataGridView.Columns[1];
-                        //columnWidth1.Width = 200;
-
-                        ////foreach (String file in ofd.SafeFileNames)
-                        ////{
-                        ////    fileSweepDataGridView.Rows.Add(file);
-                        ////}
-                        //for (int i = 0; i < ofd.FileNames.Count(); i++)
-                        //{
-                        //    fileSweepDataGridView[1, i].Value = "asdf";
-                        //}
-
-
-                        ////ofd.FileNames gets the entire path and file
-                        //foreach (DataGridViewColumn column in fileSweepDataGridView.Columns)
-                        //{
-                        //    column.SortMode = DataGridViewColumnSortMode.Automatic;
-                        //}
+                        serverSelect7.Enabled = true;
+                        fileSweepDatabaseComboBox.Enabled = true;
                     }
                 }
             }
@@ -3448,8 +3398,15 @@ risk if your ICM instance is externally accessible.");
                 DataTable dt = new DataTable();
                 dt.Columns.Add("name", typeof(string));
                 dt.Load(reader);
+                DataGridViewComboBoxColumn col = new DataGridViewComboBoxColumn();
+                fileSweepDataGridView.Columns.Add(col);
+                col.DataSource = dt;
                 fileSweepComboBox.DataSource = dt;
                 fileSweepComboBox.DisplayMember = "name";
+                foreach (DataGridViewRow row in fileSweepDataGridView.Rows)
+                {
+                    fileSweepDataGridView.Columns
+                }
                 conn.Close();
                 connectionStatus.Visible = true;
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + fileSweepDatabaseComboBox.Text + "...Done.");
