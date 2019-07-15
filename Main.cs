@@ -12,6 +12,7 @@ using System.Net;
 using System.Text;
 using PgpCore;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace SAPDataAnalysisTool
 {
@@ -3281,31 +3282,72 @@ risk if your ICM instance is externally accessible.");
             {
                 using (OpenFileDialog ofd = new OpenFileDialog() { ValidateNames = true, Multiselect = true })
                 {
+
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
                         fileSweepDataGridView.Columns.Clear();
                         fileSweepDataGridView.Rows.Clear();
                         fileSweepDataGridView.Columns.Add("FileName", "File Name");
-                        fileSweepDataGridView.Columns.Add("FileSweep", "File Sweep");
+                        DataGridViewComboBoxColumn fileSweep = new DataGridViewComboBoxColumn();
+                        fileSweepDataGridView.Columns.Add(fileSweep);
+                        //fileSweepDataGridView.Columns.Add("FileSweep", "File Sweep");
+
                         DataGridViewColumn columnWidth0 = fileSweepDataGridView.Columns[0];
                         columnWidth0.Width = 200;
                         DataGridViewColumn columnWidth1 = fileSweepDataGridView.Columns[1];
                         columnWidth1.Width = 200;
-                        
                         foreach (String file in ofd.SafeFileNames)
                         {
                             fileSweepDataGridView.Rows.Add(file);
                         }
-                        for (int i = -1; i <= ofd.FileNames.Count(); i++)
-                        {
-                        }
+                        var fileSweepList = new List<string>() { "a", "b" };
+                        fileSweep.DataSource = fileSweepList;
+                        fileSweep.HeaderText = "File Sweep";
+                        fileSweep.DataSource = fileSweepList;
+                        //fileSweepDataGridView.AutoGenerateColumns = false;
+                        //DataTable dt = new DataTable();
+                        //dt.Columns.Add("FileName", typeof(String));
+                        //dt.Columns.Add("FileSweep", typeof(String));
+                        //DataGridViewComboBoxColumn fileSweep = new DataGridViewComboBoxColumn();
+                        //var fileSweepList = new List<string>() { "a", "b" };
+                        //fileSweep.DataSource = fileSweepList;
+                        //fileSweep.HeaderText = "File Sweep";
+
+                        //DataGridViewTextBoxColumn fileName = new DataGridViewTextBoxColumn();
+                        //fileName.HeaderText = "File Name";
+                        //fileName.DataPropertyName = "FileName";
+                        //for (int i =0; i <ofd.FileNames.Count(); i++)
+                        //{
+                        //    fileSweepDataGridView[0, i].Value = ofd.FileName;
+                        //}
+                        //fileSweepDataGridView.DataSource = dt;
+                        //fileSweepDataGridView.Columns.AddRange(fileName, fileSweep);
+                        //fileSweepDataGridView.Columns.Clear();
+                        //fileSweepDataGridView.Rows.Clear();
+                        //fileSweepDataGridView.Columns.Add("FileName", "File Name");
+                        //DataGridViewComboBoxColumn fileSweep = new DataGridViewComboBoxColumn();
+                        //fileSweepDataGridView.Columns.Add(fileSweep);
+                        ////fileSweepDataGridView.Columns.Add("FileSweep", "File Sweep");
+                        //DataGridViewColumn columnWidth0 = fileSweepDataGridView.Columns[0];
+                        //columnWidth0.Width = 200;
+                        //DataGridViewColumn columnWidth1 = fileSweepDataGridView.Columns[1];
+                        //columnWidth1.Width = 200;
+
+                        ////foreach (String file in ofd.SafeFileNames)
+                        ////{
+                        ////    fileSweepDataGridView.Rows.Add(file);
+                        ////}
+                        //for (int i = 0; i < ofd.FileNames.Count(); i++)
+                        //{
+                        //    fileSweepDataGridView[1, i].Value = "asdf";
+                        //}
 
 
-                        //ofd.FileNames gets the entire path and file
-                        foreach (DataGridViewColumn column in fileSweepDataGridView.Columns)
-                        {
-                            column.SortMode = DataGridViewColumnSortMode.Automatic;
-                        }
+                        ////ofd.FileNames gets the entire path and file
+                        //foreach (DataGridViewColumn column in fileSweepDataGridView.Columns)
+                        //{
+                        //    column.SortMode = DataGridViewColumnSortMode.Automatic;
+                        //}
                     }
                 }
             }
@@ -3313,26 +3355,6 @@ risk if your ICM instance is externally accessible.");
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            var importedFileArray = importedfileDataGridView.Columns.Cast<DataGridViewColumn>()
-                .Select(x => x.HeaderCell.Value.ToString().Trim()).ToArray();
-
-
-
-            dateCheckerListBox.Items.Clear();
-            specialCharacterCheckerListBox.Items.Clear();
-            nullCheckerListBox.Items.Clear();
-            cellLengthCheckerListBox.Items.Clear();
-            int a = 0;
-            for (int i = 0; i < importedFileArray.Length; i++)
-            {
-                a++;
-
-                specialCharacterCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
-                dateCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
-                nullCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
-                cellLengthCheckerListBox.Items.Add(a + ". " + importedFileArray[i].ToString());
-            }
-
             progressBar1.MarqueeAnimationSpeed = 0;
         }
 

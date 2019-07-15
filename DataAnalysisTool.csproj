@@ -36,7 +36,7 @@
     <WebPage>README.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>23</ApplicationRevision>
+    <ApplicationRevision>24</ApplicationRevision>
     <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -75,7 +75,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>sap_32_jqX_icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\sap_32_jqX_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -259,7 +259,6 @@
     <None Include="Resources\CallidusCloud_Logo-300.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="download_BmO_icon.ico" />
     <Content Include="favicon.ico" />
     <None Include="Resources\folder_Open_32xLG1.png" />
     <None Include="Resources\big-loading-gif.gif" />
@@ -332,8 +331,8 @@
     <None Include="Resources\button_move-up %282%29.png" />
     <None Include="Resources\button_move-up %281%29.png" />
     <None Include="Resources\button_move-up.png" />
-    <Content Include="sap_32_hsh_icon.ico" />
-    <Content Include="sap_32_jqX_icon.ico" />
+    <Content Include="Resources\sap_32_hsh_icon.ico" />
+    <Content Include="Resources\sap_32_jqX_icon.ico" />
     <None Include="Resources\Login_6031_32x.png" />
     <None Include="Resources\DatabaseProject_7342_32x.png" />
     <None Include="Resources\column_16xLG.png" />
