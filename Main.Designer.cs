@@ -279,10 +279,8 @@
             this.envChangesProgressBar = new System.Windows.Forms.ProgressBar();
             this.fileSweep = new System.Windows.Forms.TabPage();
             this.fileSweepGroupBox = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.fileSweepComboBox = new System.Windows.Forms.ComboBox();
             this.serverSelect7 = new System.Windows.Forms.ComboBox();
             this.fileSweepDatabaseComboBox = new System.Windows.Forms.ComboBox();
             this.fileSweepUploadFilesPictureBox = new System.Windows.Forms.PictureBox();
@@ -404,7 +402,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.fileSweep.SuspendLayout();
             this.fileSweepGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSweepUploadFilesPictureBox)).BeginInit();
@@ -1141,7 +1138,7 @@
             this.importFormatJumpToRowGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowButton);
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowTextBox);
-            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -399);
+            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -402);
             this.importFormatJumpToRowGroupBox.Name = "importFormatJumpToRowGroupBox";
             this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(170, 38);
             this.importFormatJumpToRowGroupBox.TabIndex = 36;
@@ -3322,27 +3319,16 @@
             // fileSweepGroupBox
             // 
             this.fileSweepGroupBox.BackColor = System.Drawing.Color.AliceBlue;
-            this.fileSweepGroupBox.Controls.Add(this.pictureBox3);
             this.fileSweepGroupBox.Controls.Add(this.pictureBox4);
             this.fileSweepGroupBox.Controls.Add(this.pictureBox5);
-            this.fileSweepGroupBox.Controls.Add(this.fileSweepComboBox);
             this.fileSweepGroupBox.Controls.Add(this.serverSelect7);
             this.fileSweepGroupBox.Controls.Add(this.fileSweepDatabaseComboBox);
-            this.fileSweepGroupBox.Location = new System.Drawing.Point(6, 3);
+            this.fileSweepGroupBox.Location = new System.Drawing.Point(6, 16);
             this.fileSweepGroupBox.Name = "fileSweepGroupBox";
-            this.fileSweepGroupBox.Size = new System.Drawing.Size(222, 89);
+            this.fileSweepGroupBox.Size = new System.Drawing.Size(222, 72);
             this.fileSweepGroupBox.TabIndex = 72;
             this.fileSweepGroupBox.TabStop = false;
             this.fileSweepGroupBox.Text = "Select Server/Database/File Sweep:";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(6, 68);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox3.TabIndex = 34;
-            this.pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
@@ -3361,20 +3347,6 @@
             this.pictureBox5.Size = new System.Drawing.Size(16, 16);
             this.pictureBox5.TabIndex = 6;
             this.pictureBox5.TabStop = false;
-            // 
-            // fileSweepComboBox
-            // 
-            this.fileSweepComboBox.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.fileSweepComboBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.fileSweepComboBox.DataSource = this.spDTAgetdatabasetableidsBindingSource;
-            this.fileSweepComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.fileSweepComboBox.Enabled = false;
-            this.fileSweepComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fileSweepComboBox.FormattingEnabled = true;
-            this.fileSweepComboBox.Location = new System.Drawing.Point(28, 67);
-            this.fileSweepComboBox.Name = "fileSweepComboBox";
-            this.fileSweepComboBox.Size = new System.Drawing.Size(188, 21);
-            this.fileSweepComboBox.TabIndex = 32;
             // 
             // serverSelect7
             // 
@@ -3494,7 +3466,7 @@
             dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.fileSweepDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.fileSweepDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.fileSweepDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.fileSweepDataGridView.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3504,6 +3476,7 @@
             dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.fileSweepDataGridView.DefaultCellStyle = dataGridViewCellStyle20;
             this.fileSweepDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fileSweepDataGridView.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.fileSweepDataGridView.Location = new System.Drawing.Point(0, 0);
             this.fileSweepDataGridView.Name = "fileSweepDataGridView";
             dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3777,7 +3750,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.fileSweep.ResumeLayout(false);
             this.fileSweepGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSweepUploadFilesPictureBox)).EndInit();
@@ -4040,10 +4012,8 @@
         private System.Windows.Forms.PictureBox moveDownPictureBox;
         private System.Windows.Forms.PictureBox moveUpPictureBox;
         private System.Windows.Forms.GroupBox fileSweepGroupBox;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.ComboBox fileSweepComboBox;
         private System.Windows.Forms.ComboBox serverSelect7;
         private System.Windows.Forms.ComboBox fileSweepDatabaseComboBox;
     }

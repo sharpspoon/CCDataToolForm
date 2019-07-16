@@ -3401,11 +3401,16 @@ risk if your ICM instance is externally accessible.");
                 DataGridViewComboBoxColumn col = new DataGridViewComboBoxColumn();
                 fileSweepDataGridView.Columns.Add(col);
                 col.DataSource = dt;
-                fileSweepComboBox.DataSource = dt;
-                fileSweepComboBox.DisplayMember = "name";
-                foreach (DataGridViewRow row in fileSweepDataGridView.Rows)
+                for (int i = 0; i < fileSweepDataGridView.RowCount; i++)
                 {
-                    fileSweepDataGridView.Columns
+                    fileSweepDataGridView.Rows[i].Cells[1].Value = null;
+                    DataGridViewComboBoxCell c = new DataGridViewComboBoxCell();
+                    c.DataSource = dt;
+                    c.DisplayMember = "name";
+                    fileSweepDataGridView.Rows[i].Cells[1] = c;
+                    fileSweepDataGridView.Columns[1].HeaderText = "File Sweep";
+                    DataGridViewColumn columnWidth1 = fileSweepDataGridView.Columns[1];
+                    columnWidth1.Width = 200;
                 }
                 conn.Close();
                 connectionStatus.Visible = true;
