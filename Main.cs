@@ -3391,7 +3391,7 @@ risk if your ICM instance is externally accessible.");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " SELECT filesweepid as name FROM filesweep  order by name", conn);
             SqlDataReader reader;
-
+            
             try
             {
                 reader = sc.ExecuteReader();
@@ -3411,6 +3411,7 @@ risk if your ICM instance is externally accessible.");
                     fileSweepDataGridView.Columns[1].HeaderText = "File Sweep";
                     DataGridViewColumn columnWidth1 = fileSweepDataGridView.Columns[1];
                     columnWidth1.Width = 200;
+                    
                 }
                 conn.Close();
                 connectionStatus.Visible = true;
@@ -4985,6 +4986,19 @@ risk if your ICM instance is externally accessible.");
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + @">>>   Import Format error file has been created. Location: C:\Program Files (x86)\DataAnalysisTool\Import Format Error Files");
                 progressBar1.MarqueeAnimationSpeed = 0;
                 Process.Start(path);
+            }
+        }
+
+        private void fileSweepGoPictureBox_Click(object sender, EventArgs e)
+        {
+            var localFilePath = @"C:\Users\I868538\Desktop\test6um.xlsx";
+            var ftpUsername = "robwar31";
+            var ftpPassword = "pass";
+            using (WebClient client = new WebClient())
+            {
+                client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                var path = Path.Combine("ftp.steelcitysites.net/", "favicon.png");
+                client.UploadFile("ftp://ftp.steelcitysites.net/test6um.xlsx", WebRequestMethods.Ftp.UploadFile, localFilePath);
             }
         }
     }
