@@ -31,7 +31,7 @@ namespace SAPDataAnalysisTool
         //*********************************GLOBAL******************************************************
         //*********************************************************************************************
 
-        //------------------BUTTON LOGIC START------------------------------------------------------
+        //------------------BUTTON MOUSE LOGIC START------------------------------------------------------
 
         private void moveUpPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
@@ -420,7 +420,343 @@ namespace SAPDataAnalysisTool
             this.benchmarkClearResultsPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear_results));
         }
 
-        //------------------BUTTON LOGIC END------------------------------------------------------
+        private void cellLengthCheckerGoButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.cellLengthCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go3));
+        }
+
+        private void cellLengthCheckerGoButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.cellLengthCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.cellLengthCheckerGoButtonPictureBox, "Run the check.");
+        }
+
+        private void cellLengthCheckerGoButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.cellLengthCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.cellLengthCheckerGoButtonPictureBox, "Run the check.");
+        }
+
+        private void cellLengthCheckerGoButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.cellLengthCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
+        }
+
+        private void clearAllCellLengthCheckerPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.clearAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear3));
+        }
+
+        private void clearAllCellLengthCheckerPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.clearAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.clearAllCellLengthCheckerPictureBox, "Clear all.");
+        }
+
+        private void clearAllCellLengthCheckerPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.clearAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.clearAllCellLengthCheckerPictureBox, "Clear all.");
+        }
+
+        private void clearAllCellLengthCheckerPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.clearAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
+        }
+
+        private void selectAllCellLengthCheckerPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.selectAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all3));
+        }
+
+        private void selectAllCellLengthCheckerPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.selectAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.selectAllCellLengthCheckerPictureBox, "Select all.");
+        }
+
+        private void selectAllCellLengthCheckerPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.selectAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.selectAllCellLengthCheckerPictureBox, "Select all.");
+        }
+
+        private void selectAllCellLengthCheckerPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.selectAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
+        }
+
+        private void nullCheckerGoButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.nullCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go3));
+        }
+
+        private void nullCheckerGoButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.nullCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.nullCheckerGoButtonPictureBox, "Run the check.");
+        }
+
+        private void nullCheckerGoButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.nullCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.nullCheckerGoButtonPictureBox, "Run the check.");
+        }
+
+        private void nullCheckerGoButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.nullCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
+        }
+
+        private void clearAllNullCheckerButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.clearAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear3));
+        }
+
+        private void clearAllNullCheckerButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.clearAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.clearAllNullCheckerButtonPictureBox, "Clear all.");
+        }
+
+        private void clearAllNullCheckerButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.clearAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.clearAllNullCheckerButtonPictureBox, "Clear all.");
+        }
+
+        private void clearAllNullCheckerButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.clearAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
+        }
+
+        private void selectAllNullCheckerButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.selectAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all3));
+        }
+
+        private void selectAllNullCheckerButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.selectAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.selectAllNullCheckerButtonPictureBox, "Select all.");
+        }
+
+        private void selectAllNullCheckerButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.selectAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.selectAllNullCheckerButtonPictureBox, "Select all.");
+        }
+
+        private void selectAllNullCheckerButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.selectAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
+        }
+
+        private void specialCharacterCheckerGoButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.specialCharacterCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go3));
+        }
+
+        private void specialCharacterCheckerGoButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.specialCharacterCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.specialCharacterCheckerGoButtonPictureBox, "Run the check.");
+        }
+
+        private void specialCharacterCheckerGoButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.specialCharacterCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.specialCharacterCheckerGoButtonPictureBox, "Run the check.");
+        }
+
+        private void specialCharacterCheckerGoButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.specialCharacterCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
+        }
+
+        private void clearAllSpecialCharacterCheckerButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear3));
+        }
+
+        private void clearAllSpecialCharacterCheckerButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.clearAllSpecialCharacterCheckerButtonPictureBox, "Clear all.");
+        }
+
+        private void clearAllSpecialCharacterCheckerButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.clearAllSpecialCharacterCheckerButtonPictureBox, "Clear all.");
+        }
+
+        private void clearAllSpecialCharacterCheckerButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
+        }
+
+        private void selectAllSpecialCharacterCheckerButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all3));
+        }
+
+        private void selectAllSpecialCharacterCheckerButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.selectAllSpecialCharacterCheckerButtonPictureBox, "Select all.");
+        }
+
+        private void selectAllSpecialCharacterCheckerButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.selectAllSpecialCharacterCheckerButtonPictureBox, "Select all.");
+        }
+
+        private void selectAllSpecialCharacterCheckerButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
+        }
+
+        private void dateCheckerGoButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.dateCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go3));
+        }
+
+        private void dateCheckerGoButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.dateCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.dateCheckerGoButtonPictureBox, "Run the check.");
+        }
+
+        private void dateCheckerGoButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.dateCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.dateCheckerGoButtonPictureBox, "Run the check.");
+        }
+
+        private void dateCheckerGoButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.dateCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
+        }
+
+        private void clearAllDateCheckerButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.clearAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear3));
+        }
+
+        private void clearAllDateCheckerButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.clearAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.clearAllDateCheckerButtonPictureBox, "Clear all.");
+        }
+
+        private void clearAllDateCheckerButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.clearAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.clearAllDateCheckerButtonPictureBox, "Clear all.");
+        }
+
+        private void clearAllDateCheckerButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.clearAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
+        }
+
+        private void selectAllDateCheckerButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.selectAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all3));
+        }
+
+        private void selectAllDateCheckerButtonPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.selectAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.selectAllDateCheckerButtonPictureBox, "Select all.");
+        }
+
+        private void selectAllDateCheckerButtonPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.selectAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.selectAllDateCheckerButtonPictureBox, "Select all.");
+        }
+
+        private void selectAllDateCheckerButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.selectAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
+        }
+
+        private void fileSweepUploadFilesPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.fileSweepUploadFilesPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_upload_files3));
+        }
+
+        private void fileSweepUploadFilesPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.fileSweepUploadFilesPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_upload_files2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.fileSweepUploadFilesPictureBox, "Upload file(s).");
+        }
+
+        private void fileSweepUploadFilesPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.fileSweepUploadFilesPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_upload_files));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.fileSweepUploadFilesPictureBox, "Upload file(s).");
+        }
+
+        private void fileSweepUploadFilesPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.fileSweepUploadFilesPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_upload_files));
+        }
+
+        private void fileSweepGoPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.fileSweepGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
+        }
+
+        private void fileSweepGoPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.fileSweepGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.fileSweepGoPictureBox, "Run the tool!");
+        }
+
+        private void fileSweepGoPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.fileSweepGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.fileSweepGoPictureBox, "Run the tool!");
+        }
+
+        private void fileSweepGoPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.fileSweepGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
+        }
+
+        //------------------BUTTON MOUSE LOGIC END------------------------------------------------------
 
         public SAPDataAnalysisTool()
         {
@@ -2938,342 +3274,6 @@ risk if your ICM instance is externally accessible.");
             return;
         }
 
-        private void cellLengthCheckerGoButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.cellLengthCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go3));
-        }
-
-        private void cellLengthCheckerGoButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.cellLengthCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.cellLengthCheckerGoButtonPictureBox, "Run the check.");
-        }
-
-        private void cellLengthCheckerGoButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.cellLengthCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.cellLengthCheckerGoButtonPictureBox, "Run the check.");
-        }
-
-        private void cellLengthCheckerGoButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.cellLengthCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
-        }
-
-        private void clearAllCellLengthCheckerPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.clearAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear3));
-        }
-
-        private void clearAllCellLengthCheckerPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.clearAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.clearAllCellLengthCheckerPictureBox, "Clear all.");
-        }
-
-        private void clearAllCellLengthCheckerPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.clearAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.clearAllCellLengthCheckerPictureBox, "Clear all.");
-        }
-
-        private void clearAllCellLengthCheckerPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.clearAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
-        }
-
-        private void selectAllCellLengthCheckerPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.selectAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all3));
-        }
-
-        private void selectAllCellLengthCheckerPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.selectAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.selectAllCellLengthCheckerPictureBox, "Select all.");
-        }
-
-        private void selectAllCellLengthCheckerPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.selectAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.selectAllCellLengthCheckerPictureBox, "Select all.");
-        }
-
-        private void selectAllCellLengthCheckerPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.selectAllCellLengthCheckerPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
-        }
-
-        private void nullCheckerGoButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.nullCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go3));
-        }
-
-        private void nullCheckerGoButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.nullCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.nullCheckerGoButtonPictureBox, "Run the check.");
-        }
-
-        private void nullCheckerGoButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.nullCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.nullCheckerGoButtonPictureBox, "Run the check.");
-        }
-
-        private void nullCheckerGoButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.nullCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
-        }
-
-        private void clearAllNullCheckerButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.clearAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear3));
-        }
-
-        private void clearAllNullCheckerButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.clearAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.clearAllNullCheckerButtonPictureBox, "Clear all.");
-        }
-
-        private void clearAllNullCheckerButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.clearAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.clearAllNullCheckerButtonPictureBox, "Clear all.");
-        }
-
-        private void clearAllNullCheckerButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.clearAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
-        }
-
-        private void selectAllNullCheckerButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.selectAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all3));
-        }
-
-        private void selectAllNullCheckerButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.selectAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.selectAllNullCheckerButtonPictureBox, "Select all.");
-        }
-
-        private void selectAllNullCheckerButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.selectAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.selectAllNullCheckerButtonPictureBox, "Select all.");
-        }
-
-        private void selectAllNullCheckerButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.selectAllNullCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
-        }
-
-        private void specialCharacterCheckerGoButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.specialCharacterCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go3));
-        }
-
-        private void specialCharacterCheckerGoButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.specialCharacterCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.specialCharacterCheckerGoButtonPictureBox, "Run the check.");
-        }
-
-        private void specialCharacterCheckerGoButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.specialCharacterCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.specialCharacterCheckerGoButtonPictureBox, "Run the check.");
-        }
-
-        private void specialCharacterCheckerGoButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.specialCharacterCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
-        }
-
-        private void clearAllSpecialCharacterCheckerButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.clearAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear3));
-        }
-
-        private void clearAllSpecialCharacterCheckerButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.clearAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.clearAllSpecialCharacterCheckerButtonPictureBox, "Clear all.");
-        }
-
-        private void clearAllSpecialCharacterCheckerButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.clearAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.clearAllSpecialCharacterCheckerButtonPictureBox, "Clear all.");
-        }
-
-        private void clearAllSpecialCharacterCheckerButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.clearAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
-        }
-
-        private void selectAllSpecialCharacterCheckerButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.selectAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all3));
-        }
-
-        private void selectAllSpecialCharacterCheckerButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.selectAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.selectAllSpecialCharacterCheckerButtonPictureBox, "Select all.");
-        }
-
-        private void selectAllSpecialCharacterCheckerButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.selectAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.selectAllSpecialCharacterCheckerButtonPictureBox, "Select all.");
-        }
-
-        private void selectAllSpecialCharacterCheckerButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.selectAllSpecialCharacterCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
-        }
-
-        private void dateCheckerGoButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.dateCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go3));
-        }
-
-        private void dateCheckerGoButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.dateCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.dateCheckerGoButtonPictureBox, "Run the check.");
-        }
-
-        private void dateCheckerGoButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.dateCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.dateCheckerGoButtonPictureBox, "Run the check.");
-        }
-
-        private void dateCheckerGoButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.dateCheckerGoButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources._2button_go));
-        }
-
-        private void clearAllDateCheckerButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.clearAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear3));
-        }
-
-        private void clearAllDateCheckerButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.clearAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.clearAllDateCheckerButtonPictureBox, "Clear all.");
-        }
-
-        private void clearAllDateCheckerButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.clearAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.clearAllDateCheckerButtonPictureBox, "Clear all.");
-        }
-
-        private void clearAllDateCheckerButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.clearAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_clear));
-        }
-
-        private void selectAllDateCheckerButtonPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.selectAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all3));
-        }
-
-        private void selectAllDateCheckerButtonPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.selectAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.selectAllDateCheckerButtonPictureBox, "Select all.");
-        }
-
-        private void selectAllDateCheckerButtonPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.selectAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.selectAllDateCheckerButtonPictureBox, "Select all.");
-        }
-
-        private void selectAllDateCheckerButtonPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.selectAllDateCheckerButtonPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_all));
-        }
-
-        private void fileSweepUploadFilesPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.fileSweepUploadFilesPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_upload_files3));
-        }
-
-        private void fileSweepUploadFilesPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.fileSweepUploadFilesPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_upload_files2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.fileSweepUploadFilesPictureBox, "Upload file(s).");
-        }
-
-        private void fileSweepUploadFilesPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.fileSweepUploadFilesPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_upload_files));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.fileSweepUploadFilesPictureBox, "Upload file(s).");
-        }
-
-        private void fileSweepUploadFilesPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.fileSweepUploadFilesPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_upload_files));
-        }
-
-        private void fileSweepGoPictureBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.fileSweepGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go3));
-        }
-
-        private void fileSweepGoPictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            this.fileSweepGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go2));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.fileSweepGoPictureBox, "Run the tool!");
-        }
-
-        private void fileSweepGoPictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            this.fileSweepGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
-            ToolTip.SetToolTip(this.fileSweepGoPictureBox, "Run the tool!");
-        }
-
-        private void fileSweepGoPictureBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.fileSweepGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
-        }
-
         private void fileSweepUploadFilesPictureBox_Click(object sender, EventArgs e)
         {
             progressBar1.MarqueeAnimationSpeed = 1;
@@ -3385,15 +3385,24 @@ risk if your ICM instance is externally accessible.");
 
         private void fileSweepDatabaseComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                fileSweepDataGridView.Columns.Remove("FileSweep");
+            }
+            catch { }
+            
             progressBar1.MarqueeAnimationSpeed = 1;
             benchmarkProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect7.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
-            SqlCommand sc = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " SELECT filesweepid as name FROM filesweep  order by name", conn);
+            SqlCommand sc = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " SELECT filesweepid as name FROM filesweep order by name", conn);
             SqlDataReader reader;
-            
+            SqlCommand sc1 = new SqlCommand("use " + databaseSelect4.Text + " select distinct timefrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and rl.rectype='pay' and DatFrom='" + payoutSelect.Text + "' and rl.finalizestatus='p' order by 1 desc", conn);
+
             try
             {
+                fileSweepGoPictureBox.Visible = true;
+                fileSweepGoPictureBox.Enabled = true;
                 reader = sc.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Columns.Add("name", typeof(string));
@@ -3408,6 +3417,7 @@ risk if your ICM instance is externally accessible.");
                     c.DataSource = dt;
                     c.DisplayMember = "name";
                     fileSweepDataGridView.Rows[i].Cells[1] = c;
+                    fileSweepDataGridView.Columns[1].Name = "FileSweep";
                     fileSweepDataGridView.Columns[1].HeaderText = "File Sweep";
                     DataGridViewColumn columnWidth1 = fileSweepDataGridView.Columns[1];
                     columnWidth1.Width = 200;
@@ -4991,15 +5001,39 @@ risk if your ICM instance is externally accessible.");
 
         private void fileSweepGoPictureBox_Click(object sender, EventArgs e)
         {
-            var localFilePath = @"C:\Users\I868538\Desktop\test6um.xlsx";
-            var ftpUsername = "robwar31";
-            var ftpPassword = "pass";
-            using (WebClient client = new WebClient())
+            fileSweepProgressBar.Value = 0;
+            fileSweepGoPictureBox.Enabled = false;
+            fileSweepRichTextBox.Clear();
+            fileSweepRichTextBox.AppendText(Environment.NewLine +
+            @"###########################################################################################" + Environment.NewLine +
+            @"########################DataAnalysisTool - FileSweep Progress###############################################" + Environment.NewLine +
+            @"###########################################################################################" + Environment.NewLine +
+            @"Current Date: " + DateTime.Now + System.Environment.NewLine +
+            @"Server: " + serverSelect7.Text + System.Environment.NewLine +
+            @"Database: " + fileSweepDatabaseComboBox.Text + System.Environment.NewLine +
+            @"" + System.Environment.NewLine +
+            @"" + System.Environment.NewLine +
+            @"NOTE: This will only bring back in file patterns with an FTP server!" + System.Environment.NewLine +
+            @"*****************************************************************" + System.Environment.NewLine +
+            @"********************RUN PROGRESS********************" + System.Environment.NewLine +
+            @"*****************************************************************" + System.Environment.NewLine
+            );
+            for (int i = 0; i < fileSweepDataGridView.RowCount; i++)
             {
-                client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
-                var path = Path.Combine("ftp.steelcitysites.net/", "favicon.png");
-                client.UploadFile("ftp://ftp.steelcitysites.net/test6um.xlsx", WebRequestMethods.Ftp.UploadFile, localFilePath);
+                fileSweepRichTextBox.AppendText((i+1)+". FILE SWEEP: "+ fileSweepDataGridView.Rows[i].Cells[1].Value+"         FILE: "+fileSweepDataGridView.Rows[i].Cells[0].Value + Environment.NewLine);
+
             }
+            //var localFilePath = @"C:\Users\I868538\Desktop\test6um.xlsx";
+            //var ftpUsername = "robwar31";
+            //var ftpPassword = "pass";
+            //using (WebClient client = new WebClient())
+            //{
+            //    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+            //    var path = Path.Combine("ftp.steelcitysites.net/", "favicon.png");
+            //    client.UploadFile("ftp://ftp.steelcitysites.net/test6um.xlsx", WebRequestMethods.Ftp.UploadFile, localFilePath);
+            //}
+            fileSweepGoPictureBox.Enabled = true;
+            fileSweepProgressBar.Value = 100;
         }
     }
 }
