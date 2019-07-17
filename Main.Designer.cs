@@ -275,6 +275,10 @@
             this.databaseSelect6 = new System.Windows.Forms.ComboBox();
             this.envChangesProgressBar = new System.Windows.Forms.ProgressBar();
             this.fileSweep = new System.Windows.Forms.TabPage();
+            this.fileSweepGroupBox2 = new System.Windows.Forms.GroupBox();
+            this.fileSweepErrorBehaviorGroupBox = new System.Windows.Forms.GroupBox();
+            this.haltRadioButton = new System.Windows.Forms.RadioButton();
+            this.continueRadioButton = new System.Windows.Forms.RadioButton();
             this.fileSweepGroupBox = new System.Windows.Forms.GroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -285,6 +289,7 @@
             this.moveUpPictureBox = new System.Windows.Forms.PictureBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.fileSweepDataGridView = new System.Windows.Forms.DataGridView();
+            this.fileSweepRichTextBox = new System.Windows.Forms.RichTextBox();
             this.fileSweepGoPictureBox = new System.Windows.Forms.PictureBox();
             this.fileSweepProgressBar = new System.Windows.Forms.ProgressBar();
             this.stagedData = new System.Windows.Forms.TabPage();
@@ -292,11 +297,8 @@
             this.stagedTextBox = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.mainLogSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.fileSweepErrorBehaviorGroupBox = new System.Windows.Forms.GroupBox();
-            this.continueRadioButton = new System.Windows.Forms.RadioButton();
-            this.haltRadioButton = new System.Windows.Forms.RadioButton();
-            this.fileSweepGroupBox2 = new System.Windows.Forms.GroupBox();
-            this.fileSweepRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.ftpServerComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.checkToolsDateCheckerGroupBox.SuspendLayout();
@@ -402,6 +404,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.fileSweep.SuspendLayout();
+            this.fileSweepGroupBox2.SuspendLayout();
+            this.fileSweepErrorBehaviorGroupBox.SuspendLayout();
             this.fileSweepGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -419,7 +423,7 @@
             this.mainLogSplitContainer.Panel1.SuspendLayout();
             this.mainLogSplitContainer.Panel2.SuspendLayout();
             this.mainLogSplitContainer.SuspendLayout();
-            this.fileSweepErrorBehaviorGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -1139,7 +1143,7 @@
             this.importFormatJumpToRowGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowButton);
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowTextBox);
-            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -402);
+            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -405);
             this.importFormatJumpToRowGroupBox.Name = "importFormatJumpToRowGroupBox";
             this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(170, 38);
             this.importFormatJumpToRowGroupBox.TabIndex = 36;
@@ -3319,6 +3323,52 @@
             this.fileSweep.Text = "File Sweep";
             this.fileSweep.UseVisualStyleBackColor = true;
             // 
+            // fileSweepGroupBox2
+            // 
+            this.fileSweepGroupBox2.BackColor = System.Drawing.Color.AliceBlue;
+            this.fileSweepGroupBox2.Controls.Add(this.pictureBox3);
+            this.fileSweepGroupBox2.Controls.Add(this.ftpServerComboBox);
+            this.fileSweepGroupBox2.Location = new System.Drawing.Point(234, 3);
+            this.fileSweepGroupBox2.Name = "fileSweepGroupBox2";
+            this.fileSweepGroupBox2.Size = new System.Drawing.Size(222, 85);
+            this.fileSweepGroupBox2.TabIndex = 73;
+            this.fileSweepGroupBox2.TabStop = false;
+            this.fileSweepGroupBox2.Text = "FTP Server";
+            // 
+            // fileSweepErrorBehaviorGroupBox
+            // 
+            this.fileSweepErrorBehaviorGroupBox.BackColor = System.Drawing.Color.AliceBlue;
+            this.fileSweepErrorBehaviorGroupBox.Controls.Add(this.haltRadioButton);
+            this.fileSweepErrorBehaviorGroupBox.Controls.Add(this.continueRadioButton);
+            this.fileSweepErrorBehaviorGroupBox.Location = new System.Drawing.Point(462, 3);
+            this.fileSweepErrorBehaviorGroupBox.Name = "fileSweepErrorBehaviorGroupBox";
+            this.fileSweepErrorBehaviorGroupBox.Size = new System.Drawing.Size(149, 85);
+            this.fileSweepErrorBehaviorGroupBox.TabIndex = 34;
+            this.fileSweepErrorBehaviorGroupBox.TabStop = false;
+            this.fileSweepErrorBehaviorGroupBox.Text = "Select Error Behavior";
+            // 
+            // haltRadioButton
+            // 
+            this.haltRadioButton.AutoSize = true;
+            this.haltRadioButton.Location = new System.Drawing.Point(6, 39);
+            this.haltRadioButton.Name = "haltRadioButton";
+            this.haltRadioButton.Size = new System.Drawing.Size(44, 17);
+            this.haltRadioButton.TabIndex = 1;
+            this.haltRadioButton.Text = "Halt";
+            this.haltRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // continueRadioButton
+            // 
+            this.continueRadioButton.AutoSize = true;
+            this.continueRadioButton.Checked = true;
+            this.continueRadioButton.Location = new System.Drawing.Point(6, 16);
+            this.continueRadioButton.Name = "continueRadioButton";
+            this.continueRadioButton.Size = new System.Drawing.Size(67, 17);
+            this.continueRadioButton.TabIndex = 0;
+            this.continueRadioButton.TabStop = true;
+            this.continueRadioButton.Text = "Continue";
+            this.continueRadioButton.UseVisualStyleBackColor = true;
+            // 
             // fileSweepGroupBox
             // 
             this.fileSweepGroupBox.BackColor = System.Drawing.Color.AliceBlue;
@@ -3326,9 +3376,9 @@
             this.fileSweepGroupBox.Controls.Add(this.pictureBox5);
             this.fileSweepGroupBox.Controls.Add(this.serverSelect7);
             this.fileSweepGroupBox.Controls.Add(this.fileSweepDatabaseComboBox);
-            this.fileSweepGroupBox.Location = new System.Drawing.Point(6, 16);
+            this.fileSweepGroupBox.Location = new System.Drawing.Point(6, 3);
             this.fileSweepGroupBox.Name = "fileSweepGroupBox";
-            this.fileSweepGroupBox.Size = new System.Drawing.Size(222, 72);
+            this.fileSweepGroupBox.Size = new System.Drawing.Size(222, 85);
             this.fileSweepGroupBox.TabIndex = 72;
             this.fileSweepGroupBox.TabStop = false;
             this.fileSweepGroupBox.Text = "Select Server/Database";
@@ -3493,6 +3543,17 @@
             this.fileSweepDataGridView.Size = new System.Drawing.Size(490, 579);
             this.fileSweepDataGridView.TabIndex = 32;
             // 
+            // fileSweepRichTextBox
+            // 
+            this.fileSweepRichTextBox.BackColor = System.Drawing.Color.Azure;
+            this.fileSweepRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fileSweepRichTextBox.Location = new System.Drawing.Point(0, 0);
+            this.fileSweepRichTextBox.Name = "fileSweepRichTextBox";
+            this.fileSweepRichTextBox.ReadOnly = true;
+            this.fileSweepRichTextBox.Size = new System.Drawing.Size(997, 579);
+            this.fileSweepRichTextBox.TabIndex = 34;
+            this.fileSweepRichTextBox.Text = "";
+            // 
             // fileSweepGoPictureBox
             // 
             this.fileSweepGoPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -3575,60 +3636,32 @@
             this.mainLogSplitContainer.SplitterDistance = 762;
             this.mainLogSplitContainer.TabIndex = 33;
             // 
-            // fileSweepErrorBehaviorGroupBox
+            // pictureBox3
             // 
-            this.fileSweepErrorBehaviorGroupBox.BackColor = System.Drawing.Color.AliceBlue;
-            this.fileSweepErrorBehaviorGroupBox.Controls.Add(this.haltRadioButton);
-            this.fileSweepErrorBehaviorGroupBox.Controls.Add(this.continueRadioButton);
-            this.fileSweepErrorBehaviorGroupBox.Location = new System.Drawing.Point(462, 16);
-            this.fileSweepErrorBehaviorGroupBox.Name = "fileSweepErrorBehaviorGroupBox";
-            this.fileSweepErrorBehaviorGroupBox.Size = new System.Drawing.Size(149, 72);
-            this.fileSweepErrorBehaviorGroupBox.TabIndex = 34;
-            this.fileSweepErrorBehaviorGroupBox.TabStop = false;
-            this.fileSweepErrorBehaviorGroupBox.Text = "Select Error Behavior";
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(6, 20);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox3.TabIndex = 33;
+            this.pictureBox3.TabStop = false;
             // 
-            // continueRadioButton
+            // ftpServerComboBox
             // 
-            this.continueRadioButton.AutoSize = true;
-            this.continueRadioButton.Checked = true;
-            this.continueRadioButton.Location = new System.Drawing.Point(6, 16);
-            this.continueRadioButton.Name = "continueRadioButton";
-            this.continueRadioButton.Size = new System.Drawing.Size(67, 17);
-            this.continueRadioButton.TabIndex = 0;
-            this.continueRadioButton.TabStop = true;
-            this.continueRadioButton.Text = "Continue";
-            this.continueRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // haltRadioButton
-            // 
-            this.haltRadioButton.AutoSize = true;
-            this.haltRadioButton.Location = new System.Drawing.Point(6, 39);
-            this.haltRadioButton.Name = "haltRadioButton";
-            this.haltRadioButton.Size = new System.Drawing.Size(44, 17);
-            this.haltRadioButton.TabIndex = 1;
-            this.haltRadioButton.Text = "Halt";
-            this.haltRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // fileSweepGroupBox2
-            // 
-            this.fileSweepGroupBox2.BackColor = System.Drawing.Color.AliceBlue;
-            this.fileSweepGroupBox2.Location = new System.Drawing.Point(234, 16);
-            this.fileSweepGroupBox2.Name = "fileSweepGroupBox2";
-            this.fileSweepGroupBox2.Size = new System.Drawing.Size(222, 72);
-            this.fileSweepGroupBox2.TabIndex = 73;
-            this.fileSweepGroupBox2.TabStop = false;
-            this.fileSweepGroupBox2.Text = "FTP Server";
-            // 
-            // fileSweepRichTextBox
-            // 
-            this.fileSweepRichTextBox.BackColor = System.Drawing.Color.Azure;
-            this.fileSweepRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fileSweepRichTextBox.Location = new System.Drawing.Point(0, 0);
-            this.fileSweepRichTextBox.Name = "fileSweepRichTextBox";
-            this.fileSweepRichTextBox.ReadOnly = true;
-            this.fileSweepRichTextBox.Size = new System.Drawing.Size(997, 579);
-            this.fileSweepRichTextBox.TabIndex = 34;
-            this.fileSweepRichTextBox.Text = "";
+            this.ftpServerComboBox.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.ftpServerComboBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ftpServerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ftpServerComboBox.Enabled = false;
+            this.ftpServerComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ftpServerComboBox.FormattingEnabled = true;
+            this.ftpServerComboBox.Items.AddRange(new object[] {
+            "IcmTstDb1.cci.caldsaas.local\\tst1",
+            "IcmTstDb2.cci.caldsaas.local\\tst2",
+            "IcmTstDb3.cci.caldsaas.local\\tst3",
+            "IcmImpDb1.cci.caldsaas.local\\Imp1"});
+            this.ftpServerComboBox.Location = new System.Drawing.Point(28, 15);
+            this.ftpServerComboBox.Name = "ftpServerComboBox";
+            this.ftpServerComboBox.Size = new System.Drawing.Size(188, 21);
+            this.ftpServerComboBox.TabIndex = 34;
             // 
             // SAPDataAnalysisTool
             // 
@@ -3773,6 +3806,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.fileSweep.ResumeLayout(false);
+            this.fileSweepGroupBox2.ResumeLayout(false);
+            this.fileSweepErrorBehaviorGroupBox.ResumeLayout(false);
+            this.fileSweepErrorBehaviorGroupBox.PerformLayout();
             this.fileSweepGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -3791,8 +3827,7 @@
             this.mainLogSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainLogSplitContainer)).EndInit();
             this.mainLogSplitContainer.ResumeLayout(false);
-            this.fileSweepErrorBehaviorGroupBox.ResumeLayout(false);
-            this.fileSweepErrorBehaviorGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4045,6 +4080,8 @@
         private System.Windows.Forms.RadioButton continueRadioButton;
         private System.Windows.Forms.GroupBox fileSweepGroupBox2;
         private System.Windows.Forms.RichTextBox fileSweepRichTextBox;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.ComboBox ftpServerComboBox;
     }
 }
 

@@ -3397,7 +3397,20 @@ risk if your ICM instance is externally accessible.");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " SELECT filesweepid as name FROM filesweep order by name", conn);
             SqlDataReader reader;
-            SqlCommand sc1 = new SqlCommand("use " + databaseSelect4.Text + " select distinct timefrom as name from RunList rl inner join rundet rd on rd.runlistno=rl.runlistno where rd.ItemName='PayoutTypeNo' and rd.ItemValue=(select payouttypeno from PayoutType where payouttypeid='" + payoutTypeSelect.Text + "') and rl.rectype='pay' and DatFrom='" + payoutSelect.Text + "' and rl.finalizestatus='p' order by 1 desc", conn);
+            SqlCommand sc1 = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " select distinct URL as name from FTPServer", conn);
+
+            try
+            {
+                reader = sc1.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                dt.Load(reader);
+                ftpServerComboBox.DataSource = dt;
+                ftpServerComboBox.DisplayMember = "name";
+                ftpServerComboBox.Enabled = true;
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading FTP server list: " + ftpServerComboBox.Text + "...Done.");
+            }
+            catch { }
 
             try
             {
@@ -3421,7 +3434,6 @@ risk if your ICM instance is externally accessible.");
                     fileSweepDataGridView.Columns[1].HeaderText = "File Sweep";
                     DataGridViewColumn columnWidth1 = fileSweepDataGridView.Columns[1];
                     columnWidth1.Width = 200;
-                    
                 }
                 conn.Close();
                 connectionStatus.Visible = true;
