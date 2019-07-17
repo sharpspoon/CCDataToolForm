@@ -3399,6 +3399,8 @@ risk if your ICM instance is externally accessible.");
             SqlDataReader reader;
             SqlCommand sc1 = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " select distinct URL as name from FTPServer", conn);
 
+
+
             try
             {
                 reader = sc1.ExecuteReader();
@@ -3408,6 +3410,11 @@ risk if your ICM instance is externally accessible.");
                 ftpServerComboBox.DataSource = dt;
                 ftpServerComboBox.DisplayMember = "name";
                 ftpServerComboBox.Enabled = true;
+                
+                var url = new Uri("http://google.com/asdf");
+                var host = url.Authority;
+                label2.Text = host.ToString();
+
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading FTP server list: " + ftpServerComboBox.Text + "...Done.");
             }
             catch { }
@@ -5046,6 +5053,11 @@ risk if your ICM instance is externally accessible.");
             //}
             fileSweepGoPictureBox.Enabled = true;
             fileSweepProgressBar.Value = 100;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
