@@ -3410,10 +3410,17 @@ risk if your ICM instance is externally accessible.");
                 ftpServerComboBox.DataSource = dt;
                 ftpServerComboBox.DisplayMember = "name";
                 ftpServerComboBox.Enabled = true;
-                
-                var url = new Uri("http://google.com/asdf");
-                var host = url.Authority;
-                label2.Text = host.ToString();
+
+                for (int i = 0; i < ftpServerComboBox.Items.Count; i++)
+                {
+                    MessageBox.Show("");
+                    string newValue = ftpServerComboBox.GetItemText(ftpServerComboBox.Items[i]);
+                    var url = new Uri(newValue);
+                    string host = url.Authority;
+                    MessageBox.Show("" + host);
+                }
+
+
 
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading FTP server list: " + ftpServerComboBox.Text + "...Done.");
             }
@@ -5057,7 +5064,9 @@ risk if your ICM instance is externally accessible.");
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            var url = new Uri("http://google.com/asdf");
+            var host = url.Authority;
+            label2.Text = host.ToString();
         }
     }
 }
