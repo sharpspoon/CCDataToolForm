@@ -334,6 +334,7 @@
     <None Include="Resources\button_connect %282%29.png" />
     <None Include="Resources\button_connect %281%29.png" />
     <None Include="Resources\button_connect.png" />
+    <None Include="Resources\button_ftp-connected.png" />
     <Content Include="Resources\sap_32_hsh_icon.ico" />
     <Content Include="Resources\sap_32_jqX_icon.ico" />
     <None Include="Resources\Login_6031_32x.png" />

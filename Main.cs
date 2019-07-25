@@ -5091,14 +5091,26 @@ risk if your ICM instance is externally accessible.");
 
         private void ftpConnectPictureBox_Click(object sender, EventArgs e)
         {
-            var localFilePath = @"C:\Users\I868538\Desktop\test6um.xlsx";
-            var ftpUsername = "robwar31";
-            var ftpPassword = "pass";
-            using (WebClient client = new WebClient())
+            ftpConnectedPictureBox.Visible = false;
+            try
             {
-                client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
-                var path = Path.Combine("ftp.steelcitysites.net/", "favicon.png");
-                client.UploadFile("ftp://ftp.steelcitysites.net/test6um.xlsx", WebRequestMethods.Ftp.UploadFile, localFilePath);
+                var localFilePath = @"C:\Users\I868538\Desktop\test6um.xlsx";
+                var ftpUsername = "robwar31";
+                var ftpPassword = ftpPasswordTextBox.Text;
+                using (WebClient client = new WebClient())
+                {
+                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                    var path = Path.Combine("ftp.steelcitysites.net/", "favicon.png");
+                    client.UploadFile("ftp://ftp.steelcitysites.net/test6um.xlsx", WebRequestMethods.Ftp.UploadFile, localFilePath);
+                }
+                ftpConnectedPictureBox.Visible = true;
+                return;
+            }
+            catch
+            {
+                MessageBox.Show("Ftp connection fail");
+                ftpConnectedPictureBox.Visible = false;
+                return;
             }
         }
     }

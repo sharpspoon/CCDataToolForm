@@ -304,6 +304,7 @@
             this.stagedTextBox = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.mainLogSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.ftpConnectedPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.checkToolsDateCheckerGroupBox.SuspendLayout();
@@ -431,6 +432,7 @@
             this.mainLogSplitContainer.Panel1.SuspendLayout();
             this.mainLogSplitContainer.Panel2.SuspendLayout();
             this.mainLogSplitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ftpConnectedPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -1150,7 +1152,7 @@
             this.importFormatJumpToRowGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowButton);
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowTextBox);
-            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -417);
+            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -420);
             this.importFormatJumpToRowGroupBox.Name = "importFormatJumpToRowGroupBox";
             this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(170, 38);
             this.importFormatJumpToRowGroupBox.TabIndex = 36;
@@ -3315,6 +3317,7 @@
             // fileSweep
             // 
             this.fileSweep.BackColor = System.Drawing.Color.Azure;
+            this.fileSweep.Controls.Add(this.ftpConnectedPictureBox);
             this.fileSweep.Controls.Add(this.fileSweepGroupBox2);
             this.fileSweep.Controls.Add(this.fileSweepErrorBehaviorGroupBox);
             this.fileSweep.Controls.Add(this.fileSweepGroupBox);
@@ -3736,6 +3739,18 @@
             this.mainLogSplitContainer.SplitterDistance = 762;
             this.mainLogSplitContainer.TabIndex = 33;
             // 
+            // ftpConnectedPictureBox
+            // 
+            this.ftpConnectedPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.ftpConnectedPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ftpConnectedPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_ftp_connected;
+            this.ftpConnectedPictureBox.Location = new System.Drawing.Point(389, 102);
+            this.ftpConnectedPictureBox.Name = "ftpConnectedPictureBox";
+            this.ftpConnectedPictureBox.Size = new System.Drawing.Size(115, 19);
+            this.ftpConnectedPictureBox.TabIndex = 76;
+            this.ftpConnectedPictureBox.TabStop = false;
+            this.ftpConnectedPictureBox.Visible = false;
+            // 
             // SAPDataAnalysisTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3904,6 +3919,7 @@
             this.mainLogSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainLogSplitContainer)).EndInit();
             this.mainLogSplitContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ftpConnectedPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4163,6 +4179,7 @@
         private System.Windows.Forms.TextBox ftpPasswordTextBox;
         private System.Windows.Forms.Label ftpPasswordLabel;
         private System.Windows.Forms.PictureBox ftpConnectPictureBox;
+        private System.Windows.Forms.PictureBox ftpConnectedPictureBox;
     }
 }
 

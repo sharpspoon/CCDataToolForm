@@ -343,6 +343,16 @@ namespace SAPDataAnalysisTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap button_ftp_connected {
+            get {
+                object obj = ResourceManager.GetObject("button_ftp_connected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_go {
             get {
                 object obj = ResourceManager.GetObject("button_go", resourceCulture);
