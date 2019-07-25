@@ -4984,6 +4984,7 @@ risk if your ICM instance is externally accessible.");
             SqlCommand sc = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " SELECT filesweepid as name FROM filesweep order by name", conn);
             SqlDataReader reader;
             SqlCommand sc1 = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " select distinct URL as name from FTPServer", conn);
+            SqlCommand sc2 = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " select distinct userid as name from FTPServer", conn);
 
             try
             {
@@ -4994,7 +4995,7 @@ risk if your ICM instance is externally accessible.");
                 //ftpServerComboBox.DataSource = dt;
                 //ftpServerComboBox.DisplayMember = "name";
                 ftpServerComboBox.Enabled = true;
-
+                ftpServerComboBox.Items.Clear();
                 foreach (DataRow row in dt.Rows)
                 {
                     foreach (var item in row.ItemArray)
@@ -5020,6 +5021,20 @@ risk if your ICM instance is externally accessible.");
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading FTP server list: " + ftpServerComboBox.Text + "...Done.");
             }
             catch { }
+
+            try
+            {
+                reader = sc2.ExecuteReader();
+                DataTable dt2 = new DataTable();
+                dt2.Columns.Add("name", typeof(string));
+                dt2.Load(reader);
+                ftpUserComboBox.DataSource = dt2;
+                ftpUserComboBox.DisplayMember = "name";
+                ftpUserComboBox.Enabled = true;
+            }
+            catch
+            {
+            }
 
             try
             {
