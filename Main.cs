@@ -756,6 +756,30 @@ namespace SAPDataAnalysisTool
             this.fileSweepGoPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_go));
         }
 
+        private void ftpConnectPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.ftpConnectPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_connect3));
+        }
+
+        private void ftpConnectPictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            this.ftpConnectPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_connect2));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.ftpConnectPictureBox, "Connect to the FTP server.");
+        }
+
+        private void ftpConnectPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            this.ftpConnectPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_connect));
+            System.Windows.Forms.ToolTip ToolTip = new System.Windows.Forms.ToolTip();
+            ToolTip.SetToolTip(this.ftpConnectPictureBox, "Connect to the FTP server.");
+        }
+
+        private void ftpConnectPictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.ftpConnectPictureBox.Image = ((System.Drawing.Image)(Properties.Resources.button_connect));
+        }
+
         //------------------BUTTON MOUSE LOGIC END------------------------------------------------------
 
         public SAPDataAnalysisTool()
@@ -3383,87 +3407,7 @@ risk if your ICM instance is externally accessible.");
             fileSweepProgressBar.Value = 100;
         }
 
-        private void fileSweepDatabaseComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                fileSweepDataGridView.Columns.Remove("FileSweep");
-            }
-            catch { }
-            
-            progressBar1.MarqueeAnimationSpeed = 1;
-            benchmarkProgressBar.Value = 40;
-            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect7.Text + "; Initial Catalog = master; Integrated Security = True");
-            conn.Open();
-            SqlCommand sc = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " SELECT filesweepid as name FROM filesweep order by name", conn);
-            SqlDataReader reader;
-            SqlCommand sc1 = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " select distinct URL as name from FTPServer", conn);
 
-
-
-            try
-            {
-                reader = sc1.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Columns.Add("name", typeof(string));
-                dt.Load(reader);
-                ftpServerComboBox.DataSource = dt;
-                ftpServerComboBox.DisplayMember = "name";
-                ftpServerComboBox.Enabled = true;
-
-                for (int i = 0; i < ftpServerComboBox.Items.Count; i++)
-                {
-                    MessageBox.Show("");
-                    string newValue = ftpServerComboBox.GetItemText(ftpServerComboBox.Items[i]);
-                    var url = new Uri(newValue);
-                    string host = url.Authority;
-                    MessageBox.Show("" + host);
-                }
-
-
-
-                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading FTP server list: " + ftpServerComboBox.Text + "...Done.");
-            }
-            catch { }
-
-            try
-            {
-                fileSweepGoPictureBox.Visible = true;
-                fileSweepGoPictureBox.Enabled = true;
-                reader = sc.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Columns.Add("name", typeof(string));
-                dt.Load(reader);
-                DataGridViewComboBoxColumn col = new DataGridViewComboBoxColumn();
-                fileSweepDataGridView.Columns.Add(col);
-                col.DataSource = dt;
-                for (int i = 0; i < fileSweepDataGridView.RowCount; i++)
-                {
-                    fileSweepDataGridView.Rows[i].Cells[1].Value = null;
-                    DataGridViewComboBoxCell c = new DataGridViewComboBoxCell();
-                    c.DataSource = dt;
-                    c.DisplayMember = "name";
-                    fileSweepDataGridView.Rows[i].Cells[1] = c;
-                    fileSweepDataGridView.Columns[1].Name = "FileSweep";
-                    fileSweepDataGridView.Columns[1].HeaderText = "File Sweep";
-                    DataGridViewColumn columnWidth1 = fileSweepDataGridView.Columns[1];
-                    columnWidth1.Width = 200;
-                }
-                conn.Close();
-                connectionStatus.Visible = true;
-                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + fileSweepDatabaseComboBox.Text + "...Done.");
-            }
-            catch
-            {
-                conn.Close();
-                progressBar1.MarqueeAnimationSpeed = 0;
-                fileSweepProgressBar.Value = 0;
-                return;
-            }
-            conn.Close();
-            progressBar1.MarqueeAnimationSpeed = 0;
-            fileSweepProgressBar.Value = 100;
-        }
 
         //------------------SQL LOADER START------------------------------------------------------
 
@@ -5025,6 +4969,97 @@ risk if your ICM instance is externally accessible.");
             }
         }
 
+        private void fileSweepDatabaseComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                fileSweepDataGridView.Columns.Remove("FileSweep");
+            }
+            catch { }
+
+            progressBar1.MarqueeAnimationSpeed = 1;
+            benchmarkProgressBar.Value = 40;
+            SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect7.Text + "; Initial Catalog = master; Integrated Security = True");
+            conn.Open();
+            SqlCommand sc = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " SELECT filesweepid as name FROM filesweep order by name", conn);
+            SqlDataReader reader;
+            SqlCommand sc1 = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " select distinct URL as name from FTPServer", conn);
+
+            try
+            {
+                reader = sc1.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                dt.Load(reader);
+                //ftpServerComboBox.DataSource = dt;
+                //ftpServerComboBox.DisplayMember = "name";
+                ftpServerComboBox.Enabled = true;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    foreach (var item in row.ItemArray)
+                    {
+                        string newValue = item.ToString();
+                        var url = new Uri("ftp://"+newValue);
+                        string host = url.Authority;
+                        ftpServerComboBox.Items.Add(host);
+                    }
+                }
+
+                //for (int i = 0; i < dt.Rows.Count; i++)
+                //{
+                //    MessageBox.Show("inside loop");
+                //    string newValue = ftpServerComboBox.GetItemText(ftpServerComboBox.Items[i]);
+                //    string newValue = dt.Rows[1].ToString();
+                //    MessageBox.Show("newValue=" + newValue);
+                //    var url = new Uri(newValue);
+                //    string host = url.Authority;
+                //    MessageBox.Show("" + host);
+                //}
+
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading FTP server list: " + ftpServerComboBox.Text + "...Done.");
+            }
+            catch { }
+
+            try
+            {
+                fileSweepGoPictureBox.Visible = true;
+                fileSweepGoPictureBox.Enabled = true;
+                reader = sc.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("name", typeof(string));
+                dt.Load(reader);
+                DataGridViewComboBoxColumn col = new DataGridViewComboBoxColumn();
+                fileSweepDataGridView.Columns.Add(col);
+                col.DataSource = dt;
+                for (int i = 0; i < fileSweepDataGridView.RowCount; i++)
+                {
+                    fileSweepDataGridView.Rows[i].Cells[1].Value = null;
+                    DataGridViewComboBoxCell c = new DataGridViewComboBoxCell();
+                    c.DataSource = dt;
+                    c.DisplayMember = "name";
+                    fileSweepDataGridView.Rows[i].Cells[1] = c;
+                    fileSweepDataGridView.Columns[1].Name = "FileSweep";
+                    fileSweepDataGridView.Columns[1].HeaderText = "File Sweep";
+                    DataGridViewColumn columnWidth1 = fileSweepDataGridView.Columns[1];
+                    columnWidth1.Width = 200;
+                }
+                conn.Close();
+                connectionStatus.Visible = true;
+                systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading database: " + fileSweepDatabaseComboBox.Text + "...Done.");
+            }
+            catch
+            {
+                conn.Close();
+                progressBar1.MarqueeAnimationSpeed = 0;
+                fileSweepProgressBar.Value = 0;
+                return;
+            }
+            conn.Close();
+            progressBar1.MarqueeAnimationSpeed = 0;
+            fileSweepProgressBar.Value = 100;
+        }
+
         private void fileSweepGoPictureBox_Click(object sender, EventArgs e)
         {
             fileSweepProgressBar.Value = 0;
@@ -5049,24 +5084,22 @@ risk if your ICM instance is externally accessible.");
                 fileSweepRichTextBox.AppendText((i+1)+". FILE SWEEP: "+ fileSweepDataGridView.Rows[i].Cells[1].Value+"         FILE: "+fileSweepDataGridView.Rows[i].Cells[0].Value + Environment.NewLine);
 
             }
-            //var localFilePath = @"C:\Users\I868538\Desktop\test6um.xlsx";
-            //var ftpUsername = "robwar31";
-            //var ftpPassword = "pass";
-            //using (WebClient client = new WebClient())
-            //{
-            //    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
-            //    var path = Path.Combine("ftp.steelcitysites.net/", "favicon.png");
-            //    client.UploadFile("ftp://ftp.steelcitysites.net/test6um.xlsx", WebRequestMethods.Ftp.UploadFile, localFilePath);
-            //}
+
             fileSweepGoPictureBox.Enabled = true;
             fileSweepProgressBar.Value = 100;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ftpConnectPictureBox_Click(object sender, EventArgs e)
         {
-            var url = new Uri("http://google.com/asdf");
-            var host = url.Authority;
-            label2.Text = host.ToString();
+            var localFilePath = @"C:\Users\I868538\Desktop\test6um.xlsx";
+            var ftpUsername = "robwar31";
+            var ftpPassword = "pass";
+            using (WebClient client = new WebClient())
+            {
+                client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                var path = Path.Combine("ftp.steelcitysites.net/", "favicon.png");
+                client.UploadFile("ftp://ftp.steelcitysites.net/test6um.xlsx", WebRequestMethods.Ftp.UploadFile, localFilePath);
+            }
         }
     }
 }
