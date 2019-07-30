@@ -9,10 +9,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net;
-using System.Text;
-using PgpCore;
 using System.Collections;
-using System.Collections.Generic;
+using Renci.SshNet;
+using WinSCP;
+using System.Configuration;
 
 namespace SAPDataAnalysisTool
 {
@@ -5107,26 +5107,101 @@ risk if your ICM instance is externally accessible.");
         private void ftpConnectPictureBox_Click(object sender, EventArgs e)
         {
             ftpConnectedPictureBox.Visible = false;
+            UploadFile();
+
+        }
+
+        private static bool UploadFile()
+        {
+            bool success = false;
+            string sourcefilepath = @"C:\Users\I868538\Desktop\test.txt";
             try
             {
-                var localFilePath = @"C:\Users\I868538\Desktop\test6um.xlsx";
-                var ftpUsername = "robwar31";
-                var ftpPassword = ftpPasswordTextBox.Text;
-                using (WebClient client = new WebClient())
+                string ftpurl = "sftp01.callidusondemand.com";
+                string ftpusername = "uhcftp";
+                string ftppassword = "hmE5s!85SpQ3T#";
+                //string ftpSSHFingerPrint = "SSHFingerPrint";
+
+                string ftpfilepath = "/TEST/Test10/toICM/DataToolTest/";
+
+
+                
+                using (WinSCP.Session session = new WinSCP.Session())
                 {
-                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
-                    var path = Path.Combine("ftp.steelcitysites.net/", "favicon.png");
-                    client.UploadFile("ftp://ftp.steelcitysites.net/test6um.xlsx", WebRequestMethods.Ftp.UploadFile, localFilePath);
+                    SessionOptions sessionOptions = new SessionOptions
+                    {
+                        GiveUpSecurityAndAcceptAnySshHostKey = true,
+                        //GiveUpSecurityAndAcceptAnyTlsHostCertificate = true,
+                        Protocol = Protocol.Sftp,
+                        HostName = ftpurl,
+                        UserName = ftpusername,
+                        Password = ftppassword
+                        //SshHostKeyFingerprint = ftpSSHFingerPrint
+                    };
+
+                    string filename = Path.GetFileName(sourcefilepath);
+                    string ftpfullpath = ftpurl + "/" + filename;
+
+                    // Connect
+                    session.Open(sessionOptions);
+                    MessageBox.Show("connected");
+                    // Upload files
+                    TransferOptions transferOptions = new TransferOptions();
+                    transferOptions.TransferMode = TransferMode.Binary;
+
+                    TransferOperationResult transferResult = session.PutFiles(sourcefilepath, ftpfilepath, false, transferOptions);
+
+                    // Throw on any error
+                    transferResult.Check();
+
+                    // Print results
+                    foreach (TransferEventArgs transfer in transferResult.Transfers)
+                    {
+                        success = true;
+                    }
                 }
-                ftpConnectedPictureBox.Visible = true;
-                return;
+
+                // Delete the file after uploading
+                if (File.Exists(sourcefilepath))
+                {
+                    File.Delete(sourcefilepath);
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Ftp connection fail");
-                ftpConnectedPictureBox.Visible = false;
-                return;
             }
+            return success;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UploadFile();
+        }
+
+
+        //private void ftpConnectPictureBox_Click(object sender, EventArgs e)
+        //{
+        //    ftpConnectedPictureBox.Visible = false;
+        //    try
+        //    {
+        //        var localFilePath = @"C:\Users\I868538\Desktop\test6um.xlsx";
+        //        var ftpUsername = "robwar31";
+        //        var ftpPassword = ftpPasswordTextBox.Text;
+        //        using (WebClient client = new WebClient())
+        //        {
+        //            client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+        //            var path = Path.Combine("ftp.steelcitysites.net/", "favicon.png");
+        //            client.UploadFile("ftp://ftp.steelcitysites.net/test6um.xlsx", WebRequestMethods.Ftp.UploadFile, localFilePath);
+        //        }
+        //        ftpConnectedPictureBox.Visible = true;
+        //        return;
+        //    }
+        //    catch
+        //    {
+        //        MessageBox.Show("Ftp connection fail");
+        //        ftpConnectedPictureBox.Visible = false;
+        //        return;
+        //    }
+        //}
     }
 }
