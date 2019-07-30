@@ -5111,9 +5111,8 @@ risk if your ICM instance is externally accessible.");
 
         }
 
-        private static bool UploadFile()
+        private void UploadFile()
         {
-            bool success = false;
             string sourcefilepath = @"C:\Users\I868538\Desktop\test.txt";
             try
             {
@@ -5157,20 +5156,20 @@ risk if your ICM instance is externally accessible.");
                     // Print results
                     foreach (TransferEventArgs transfer in transferResult.Transfers)
                     {
-                        success = true;
+                        //success = true;
                     }
                 }
 
                 // Delete the file after uploading
-                if (File.Exists(sourcefilepath))
-                {
-                    File.Delete(sourcefilepath);
-                }
+                //if (File.Exists(sourcefilepath))
+                //{
+                //    File.Delete(sourcefilepath);
+                //}
             }
             catch (Exception ex)
             {
             }
-            return success;
+            return;
         }
 
         private void button1_Click(object sender, EventArgs e)
