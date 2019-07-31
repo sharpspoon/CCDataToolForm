@@ -13,6 +13,7 @@ using System.Collections;
 using Renci.SshNet;
 using WinSCP;
 using System.Configuration;
+using System.Deployment.Application;
 
 namespace SAPDataAnalysisTool
 {
@@ -4985,6 +4986,7 @@ risk if your ICM instance is externally accessible.");
             SqlDataReader reader;
             SqlCommand sc1 = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " select distinct URL as name from FTPServer", conn);
             SqlCommand sc2 = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " select distinct userid as name from FTPServer", conn);
+            SqlCommand sc3 = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " select fs.FileSweepId, fsif.ProcessSeq, fsif.InFileIdPattern from FileSweep fs inner join  FileSweepInFile fsif on fs.FileSweepNo=fsif.FileSweepNo order by fs.FileSweepId, fsif.ProcessSeq", conn);
 
             try
             {
@@ -5021,6 +5023,18 @@ risk if your ICM instance is externally accessible.");
                 systemLogTextBox.Text = systemLogTextBox.Text.Insert(0, Environment.NewLine + DateTime.Now + ">>>   Loading FTP server list: " + ftpServerComboBox.Text + "...Done.");
             }
             catch { }
+
+            try
+            {
+                reader = sc3.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                fileSweepPatternDataGridView.DataSource = dt;
+                //fileSweepPatternDataGridView.DisplayMember = "name";
+            }
+            catch
+            {
+            }
 
             try
             {
@@ -5116,15 +5130,13 @@ risk if your ICM instance is externally accessible.");
             string sourcefilepath = @"C:\Users\I868538\Desktop\test.txt";
             try
             {
-                string ftpurl = "sftp01.callidusondemand.com";
-                string ftpusername = "uhcftp";
+                string ftpurl = ftpServerComboBox.Text;
+                string ftpusername = ftpUserComboBox.Text;
                 string ftppassword = "hmE5s!85SpQ3T#";
                 //string ftpSSHFingerPrint = "SSHFingerPrint";
 
                 string ftpfilepath = "/TEST/Test10/toICM/DataToolTest/";
 
-
-                
                 using (WinSCP.Session session = new WinSCP.Session())
                 {
                     SessionOptions sessionOptions = new SessionOptions
@@ -5143,7 +5155,7 @@ risk if your ICM instance is externally accessible.");
 
                     // Connect
                     session.Open(sessionOptions);
-                    MessageBox.Show("connected");
+                    ftpConnectedPictureBox.Visible = true;
                     // Upload files
                     TransferOptions transferOptions = new TransferOptions();
                     transferOptions.TransferMode = TransferMode.Binary;
@@ -5168,13 +5180,9 @@ risk if your ICM instance is externally accessible.");
             }
             catch (Exception ex)
             {
+                ftpConnectedPictureBox.Visible = false;
             }
             return;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            UploadFile();
         }
 
 
