@@ -5030,10 +5030,10 @@ risk if your ICM instance is externally accessible.");
                 DataTable dt = new DataTable();
                 dt.Load(reader);
                 fileSweepPatternDataGridView.DataSource = dt;
-                //fileSweepPatternDataGridView.DisplayMember = "name";
             }
             catch
             {
+                MessageBox.Show("failed to load in file patterns");
             }
 
             try
@@ -5048,6 +5048,7 @@ risk if your ICM instance is externally accessible.");
             }
             catch
             {
+                MessageBox.Show("failed to load ftp users");
             }
 
             try
