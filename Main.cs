@@ -3299,40 +3299,6 @@ risk if your ICM instance is externally accessible.");
             return;
         }
 
-        private void fileSweepUploadFilesPictureBox_Click(object sender, EventArgs e)
-        {
-            progressBar1.MarqueeAnimationSpeed = 1;
-
-            try
-            {
-                using (OpenFileDialog ofd = new OpenFileDialog() { ValidateNames = true, Multiselect = true })
-                {
-
-                    if (ofd.ShowDialog() == DialogResult.OK)
-                    {
-                        fileSweepDataGridView.Columns.Clear();
-                        fileSweepDataGridView.Rows.Clear();
-                        fileSweepDataGridView.Columns.Add("FileName", "File Name");
-
-                        DataGridViewColumn columnWidth0 = fileSweepDataGridView.Columns[0];
-                        columnWidth0.Width = 200;
-
-                        foreach (String file in ofd.SafeFileNames)
-                        {
-                            fileSweepDataGridView.Rows.Add(file);
-                        }
-                        serverSelect7.Enabled = true;
-                        fileSweepDatabaseComboBox.Enabled = true;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            progressBar1.MarqueeAnimationSpeed = 0;
-        }
-
         private void btnUp_Click(object sender, EventArgs e)
         {
             DataGridView dgv = fileSweepDataGridView;
@@ -4968,6 +4934,48 @@ risk if your ICM instance is externally accessible.");
                 progressBar1.MarqueeAnimationSpeed = 0;
                 Process.Start(path);
             }
+        }
+
+        private void fileSweepUploadFilesPictureBox_Click(object sender, EventArgs e)
+        {
+            progressBar1.MarqueeAnimationSpeed = 1;
+
+            try
+            {
+                using (OpenFileDialog ofd = new OpenFileDialog() { ValidateNames = true, Multiselect = true })
+                {
+
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        fileSweepDataGridView.Columns.Clear();
+                        fileSweepDataGridView.Rows.Clear();
+                        fileSweepDataGridView.Columns.Add("FileName", "File Name");
+
+                        fileSweepFilePathDataGridView.Columns.Clear();
+                        fileSweepFilePathDataGridView.Rows.Clear();
+                        fileSweepFilePathDataGridView.Columns.Add("FilePath", "File Path");
+
+                        DataGridViewColumn columnWidth0 = fileSweepDataGridView.Columns[0];
+                        columnWidth0.Width = 200;
+
+                        foreach (String file in ofd.SafeFileNames)
+                        {
+                            fileSweepDataGridView.Rows.Add(file);
+                        }
+                        foreach (String filePath in ofd.FileNames)
+                        {
+                            fileSweepFilePathDataGridView.Rows.Add(filePath);
+                        }
+                        serverSelect7.Enabled = true;
+                        fileSweepDatabaseComboBox.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            progressBar1.MarqueeAnimationSpeed = 0;
         }
 
         private void fileSweepDatabaseComboBox_SelectedIndexChanged(object sender, EventArgs e)
