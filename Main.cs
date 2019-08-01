@@ -5041,7 +5041,6 @@ risk if your ICM instance is externally accessible.");
             }
             catch
             {
-                MessageBox.Show("failed to load in file patterns");
             }
 
             try
@@ -5056,7 +5055,6 @@ risk if your ICM instance is externally accessible.");
             }
             catch
             {
-                MessageBox.Show("failed to load ftp users");
             }
 
             try
@@ -5117,10 +5115,17 @@ risk if your ICM instance is externally accessible.");
             @"********************RUN PROGRESS********************" + System.Environment.NewLine +
             @"*****************************************************************" + System.Environment.NewLine
             );
-            for (int i = 0; i < fileSweepDataGridView.RowCount; i++)
-            {
-                fileSweepRichTextBox.AppendText((i+1)+". FILE SWEEP: "+ fileSweepDataGridView.Rows[i].Cells[1].Value+"         FILE: "+fileSweepDataGridView.Rows[i].Cells[0].Value + Environment.NewLine);
 
+            string ftpUrl = ftpServerComboBox.Text;
+            string ftpUserName = ftpUserComboBox.Text;
+            string ftpPassword = "hmE5s!85SpQ3T#";
+            string ftpSourceFilePath = "";
+
+            for (int i = 0; i < fileSweepFilePathDataGridView.RowCount; i++)
+            {
+                ftpSourceFilePath = fileSweepFilePathDataGridView.Rows[i].Cells[0].Value.ToString();
+                UploadFile(ref ftpUrl, ref ftpUserName, ref ftpPassword, ref ftpSourceFilePath);
+                fileSweepRichTextBox.AppendText((i + 1) + ". FILE SWEEP: " + fileSweepDataGridView.Rows[i].Cells[1].Value + "         UPLOADING FILE: " + fileSweepDataGridView.Rows[i].Cells[0].Value +"...Done."+ Environment.NewLine);
             }
 
             fileSweepGoPictureBox.Enabled = true;
@@ -5149,8 +5154,6 @@ risk if your ICM instance is externally accessible.");
                     // Connect
                     session.Open(sessionOptions);
                     ftpConnectedPictureBox.Visible = true;
-                    string ftpurl2 = ftpServerComboBox.Text;
-                    UploadFile(ref ftpurl2);
                 }
             }
             catch
@@ -5162,14 +5165,14 @@ risk if your ICM instance is externally accessible.");
 
         }
 
-        private void UploadFile(ref string ftpurl)
+        private void UploadFile(ref string ftpUrlRef, ref string ftpUserNameRef, ref string ftpPasswordRef, ref string ftpSourceFilePathRef)
         {
-            string sourcefilepath = @"C:\Users\I868538\Desktop\test.txt";
+            //string sourcefilepath = @"C:\Users\I868538\Desktop\test.txt";
             try
             {
                 //string ftpurl = ftpServerComboBox.Text;
-                string ftpusername = ftpUserComboBox.Text;
-                string ftppassword = "hmE5s!85SpQ3T#";
+                //string ftpusername = ftpUserComboBox.Text;
+                //string ftppassword = "hmE5s!85SpQ3T#";
                 //string ftpSSHFingerPrint = "SSHFingerPrint";
 
                 string ftpfilepath = "/TEST/Test10/toICM/DataToolTest/";
@@ -5181,14 +5184,14 @@ risk if your ICM instance is externally accessible.");
                         GiveUpSecurityAndAcceptAnySshHostKey = true,
                         //GiveUpSecurityAndAcceptAnyTlsHostCertificate = true,
                         Protocol = Protocol.Sftp,
-                        HostName = ftpurl,
-                        UserName = ftpusername,
-                        Password = ftppassword
+                        HostName = ftpUrlRef,
+                        UserName = ftpUserNameRef,
+                        Password = ftpPasswordRef
                         //SshHostKeyFingerprint = ftpSSHFingerPrint
                     };
 
-                    string filename = Path.GetFileName(sourcefilepath);
-                    string ftpfullpath = ftpurl + "/" + filename;
+                    string filename = Path.GetFileName(ftpSourceFilePathRef);
+                    string ftpfullpath = ftpUrlRef + "/" + filename;
 
                     // Connect
                     session.Open(sessionOptions);
@@ -5197,7 +5200,7 @@ risk if your ICM instance is externally accessible.");
                     TransferOptions transferOptions = new TransferOptions();
                     transferOptions.TransferMode = TransferMode.Binary;
 
-                    TransferOperationResult transferResult = session.PutFiles(sourcefilepath, ftpfilepath, false, transferOptions);
+                    TransferOperationResult transferResult = session.PutFiles(ftpSourceFilePathRef, ftpfilepath, false, transferOptions);
 
                     // Throw on any error
                     transferResult.Check();
