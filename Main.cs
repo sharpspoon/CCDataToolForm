@@ -5130,16 +5130,44 @@ risk if your ICM instance is externally accessible.");
         private void ftpConnectPictureBox_Click(object sender, EventArgs e)
         {
             ftpConnectedPictureBox.Visible = false;
-            UploadFile();
+            try
+            {
+                string ftpurl = ftpServerComboBox.Text;
+                string ftpusername = ftpUserComboBox.Text;
+                string ftppassword = "hmE5s!85SpQ3T#";
+                using (WinSCP.Session session = new WinSCP.Session())
+                {
+                    SessionOptions sessionOptions = new SessionOptions
+                    {
+                        GiveUpSecurityAndAcceptAnySshHostKey = true,
+                        Protocol = Protocol.Sftp,
+                        HostName = ftpurl,
+                        UserName = ftpusername,
+                        Password = ftppassword
+                    };
+
+                    // Connect
+                    session.Open(sessionOptions);
+                    ftpConnectedPictureBox.Visible = true;
+                    string ftpurl2 = ftpServerComboBox.Text;
+                    UploadFile(ref ftpurl2);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("failed to connect to ftp server");
+                ftpConnectedPictureBox.Visible = false;
+                return;
+            }
 
         }
 
-        private void UploadFile()
+        private void UploadFile(ref string ftpurl)
         {
             string sourcefilepath = @"C:\Users\I868538\Desktop\test.txt";
             try
             {
-                string ftpurl = ftpServerComboBox.Text;
+                //string ftpurl = ftpServerComboBox.Text;
                 string ftpusername = ftpUserComboBox.Text;
                 string ftppassword = "hmE5s!85SpQ3T#";
                 //string ftpSSHFingerPrint = "SSHFingerPrint";
