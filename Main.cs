@@ -4994,7 +4994,7 @@ risk if your ICM instance is externally accessible.");
             SqlDataReader reader;
             SqlCommand sc1 = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " select distinct URL as name from FTPServer", conn);
             SqlCommand sc2 = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " select distinct userid as name from FTPServer", conn);
-            SqlCommand sc3 = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " select fs.FileSweepId, fsif.ProcessSeq, fsif.InFileIdPattern, ftp.URL from FileSweep fs inner join  FileSweepInFile fsif on fs.FileSweepNo=fsif.FileSweepNo inner join FileSweepFileGroup fsfg on fsfg.FileSweepInFileNo=fsif.FileSweepInFileNo inner join FTPServer ftp on ftp.FTPServerNo=fsfg.FTPServerNo order by fs.FileSweepId, fsif.ProcessSeq", conn);
+            SqlCommand sc3 = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " select distinct fs.FileSweepId, fsif.ProcessSeq, fsif.InFileIdPattern, ftp.URL from FileSweep fs inner join  FileSweepInFile fsif on fs.FileSweepNo=fsif.FileSweepNo inner join FileSweepFileGroup fsfg on fsfg.FileSweepInFileNo=fsif.FileSweepInFileNo inner join FTPServer ftp on ftp.FTPServerNo=fsfg.FTPServerNo order by fs.FileSweepId, fsif.ProcessSeq", conn);
 
             try
             {
@@ -5124,6 +5124,11 @@ risk if your ICM instance is externally accessible.");
 
             for (int i = 0; i < fileSweepDataGridView.RowCount; i++)
             {
+                fileSweepProgressBar.Maximum = i;
+            }
+
+                for (int i = 0; i < fileSweepDataGridView.RowCount; i++)
+            {
                 string fileSweep1 = "";
                 string ftpFilePathRef = "";
                 try
@@ -5156,7 +5161,6 @@ risk if your ICM instance is externally accessible.");
             fileSweepRichTextBox.AppendText(Environment.NewLine);
 
             fileSweepGoPictureBox.Enabled = true;
-            fileSweepProgressBar.Value = 100;
         }
 
         private void ftpConnectPictureBox_Click(object sender, EventArgs e)
@@ -5197,6 +5201,8 @@ risk if your ICM instance is externally accessible.");
             string filename = Path.GetFileName(ftpSourceFilePathRef);
             try
             {
+                fileSweepProgressBar.Step = 1;
+                fileSweepProgressBar.PerformStep();
                 //string ftpurl = ftpServerComboBox.Text;
                 //string ftpusername = ftpUserComboBox.Text;
                 //string ftppassword = "hmE5s!85SpQ3T#";
@@ -5237,7 +5243,7 @@ risk if your ICM instance is externally accessible.");
                     {
                         //success = true;
                     }
-                    fileSweepRichTextBox.AppendText("UPLOADING FILE: " + filename + "...Done." + Environment.NewLine);
+                    fileSweepRichTextBox.AppendText("UPLOADING FILE: " + filename + "...Done." + Environment.NewLine + Environment.NewLine);
                 }
 
                 // Delete the file after uploading
@@ -5248,7 +5254,7 @@ risk if your ICM instance is externally accessible.");
             }
             catch
             {
-                fileSweepRichTextBox.AppendText("UPLOADING FILE: " + filename + "...Failed!" + Environment.NewLine);
+                fileSweepRichTextBox.AppendText("UPLOADING FILE: " + filename + "...Failed!" + Environment.NewLine + Environment.NewLine);
                 ftpConnectedPictureBox.Visible = false;
             }
             return;
