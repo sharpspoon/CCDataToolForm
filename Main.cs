@@ -4980,14 +4980,15 @@ risk if your ICM instance is externally accessible.");
 
         private void fileSweepDatabaseComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             try
             {
                 fileSweepDataGridView.Columns.Remove("FileSweep");
             }
             catch { }
-
+            fileSweepProgressBar.Maximum = 100;
             progressBar1.MarqueeAnimationSpeed = 1;
-            benchmarkProgressBar.Value = 40;
+            fileSweepProgressBar.Value = 40;
             SqlConnection conn = new SqlConnection(@"Data Source = " + serverSelect7.Text + "; Initial Catalog = master; Integrated Security = True");
             conn.Open();
             SqlCommand sc = new SqlCommand("use " + fileSweepDatabaseComboBox.Text + " SELECT filesweepid as name FROM filesweep order by name", conn);
@@ -5006,6 +5007,7 @@ risk if your ICM instance is externally accessible.");
                 //ftpServerComboBox.DisplayMember = "name";
                 ftpServerComboBox.Enabled = true;
                 ftpServerComboBox.Items.Clear();
+                //var distinctValue = dt.AsEnumerable().Select(row => row["name"].ToString().Distinct());
                 foreach (DataRow row in dt.Rows)
                 {
                     foreach (var item in row.ItemArray)
@@ -5042,6 +5044,26 @@ risk if your ICM instance is externally accessible.");
             catch
             {
             }
+
+            try
+            {
+                fileSweepPatternDataGridView.Columns.Remove("path");
+            }
+            catch { }
+
+            try
+            {
+                fileSweepPatternDataGridView.Columns.Add("path", "path");
+                for (int i = 0; i < fileSweepPatternDataGridView.RowCount; i++)
+                {
+                    string newValue = fileSweepPatternDataGridView.Rows[i].Cells[3].Value.ToString();
+                    var url = new Uri("ftp://" + newValue);
+                    string host = url.AbsolutePath;
+                    fileSweepPatternDataGridView.Rows[i].Cells["path"].Value = host;
+                }
+            }
+
+            catch { }
 
             try
             {
@@ -5134,32 +5156,30 @@ risk if your ICM instance is externally accessible.");
                 try
                 {
                     fileSweep = fileSweepDataGridView.Rows[i].Cells[1].Value.ToString();
+                    fileSweepRichTextBox.AppendText((i + 1) + ". FILE SWEEP: " + fileSweepDataGridView.Rows[i].Cells[1].Value + Environment.NewLine);
+
+                    for (int j = 0; j < fileSweepPatternDataGridView.RowCount; j++)
+                    {
+                        fileSweep1 = fileSweepPatternDataGridView.Rows[j].Cells[0].Value.ToString();
+                        if (fileSweep1 == fileSweep)
+                        {
+                            fileSweepRichTextBox.AppendText("- InFieldPattern: " + fileSweepPatternDataGridView.Rows[j].Cells[2].Value + Environment.NewLine);
+                            ftpFilePathRef = "/TEST/Test10/toICM/DataToolTest/";//fileSweepPatternDataGridView.Rows[j].Cells[3].Value.ToString();
+                        }
+                    }
+
+                    ftpSourceFilePath = fileSweepFilePathDataGridView.Rows[i].Cells[0].Value.ToString();
+                    UploadFile(ref ftpUrl, ref ftpUserName, ref ftpPassword, ref ftpSourceFilePath, ref ftpFilePathRef);
                 }
                 catch
                 {
-                    MessageBox.Show("unable to get file sweep name for file:" + fileSweepDataGridView.Rows[i].Cells[0].Value.ToString());
+                    fileSweepRichTextBox.AppendText((i + 1) + ". Unable to get File Sweep for file: " + fileSweepDataGridView.Rows[i].Cells[0].Value + Environment.NewLine);
                 }
                 
-                fileSweepRichTextBox.AppendText((i + 1) + ". FILE SWEEP: " + fileSweepDataGridView.Rows[i].Cells[1].Value + Environment.NewLine);
-                
-
-
-                for (int j = 0; j < fileSweepPatternDataGridView.RowCount; j++)
-                {
-                    fileSweep1 = fileSweepPatternDataGridView.Rows[j].Cells[0].Value.ToString();
-                    if (fileSweep1 == fileSweep)
-                    {
-                        fileSweepRichTextBox.AppendText("- InFieldPattern: " + fileSweepPatternDataGridView.Rows[j].Cells[2].Value + Environment.NewLine);
-                        ftpFilePathRef = "/TEST/Test10/toICM/DataToolTest/";//fileSweepPatternDataGridView.Rows[j].Cells[3].Value.ToString();
-                    }
-                }
-
-                ftpSourceFilePath = fileSweepFilePathDataGridView.Rows[i].Cells[0].Value.ToString();
-                UploadFile(ref ftpUrl, ref ftpUserName, ref ftpPassword, ref ftpSourceFilePath, ref ftpFilePathRef);
 
             }
             fileSweepRichTextBox.AppendText(Environment.NewLine);
-
+            fileSweepRichTextBox.AppendText("End of log.");
             fileSweepGoPictureBox.Enabled = true;
         }
 
