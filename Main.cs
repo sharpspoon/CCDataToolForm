@@ -5164,7 +5164,7 @@ risk if your ICM instance is externally accessible.");
                         if (fileSweep1 == fileSweep)
                         {
                             fileSweepRichTextBox.AppendText("- InFieldPattern: " + fileSweepPatternDataGridView.Rows[j].Cells[2].Value + Environment.NewLine);
-                            ftpFilePathRef = "/TEST/Test10/toICM/DataToolTest/";//fileSweepPatternDataGridView.Rows[j].Cells[3].Value.ToString();
+                            ftpFilePathRef = fileSweepPatternDataGridView.Rows[j].Cells[4].Value.ToString()+@"/";//"/TEST/Test10/toICM/DataToolTest/";
                         }
                     }
 
@@ -5263,7 +5263,7 @@ risk if your ICM instance is externally accessible.");
                     {
                         //success = true;
                     }
-                    fileSweepRichTextBox.AppendText("UPLOADING FILE: " + filename + "...Done." + Environment.NewLine + Environment.NewLine);
+                    fileSweepRichTextBox.AppendText("Directory: "+ftpFilePath+" UPLOADING FILE: " + filename + "...Done." + Environment.NewLine + Environment.NewLine);
                 }
 
                 // Delete the file after uploading
@@ -5274,7 +5274,7 @@ risk if your ICM instance is externally accessible.");
             }
             catch
             {
-                fileSweepRichTextBox.AppendText("UPLOADING FILE: " + filename + "...Failed!" + Environment.NewLine + Environment.NewLine);
+                fileSweepRichTextBox.AppendText("Directory: " + ftpFilePath + " UPLOADING FILE: " + filename + "...Failed!" + Environment.NewLine + Environment.NewLine);
                 ftpConnectedPictureBox.Visible = false;
             }
             return;

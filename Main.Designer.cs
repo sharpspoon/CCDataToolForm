@@ -39,24 +39,24 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.importedfileDataGridView = new System.Windows.Forms.DataGridView();
@@ -188,6 +188,8 @@
             this.importFormatSelectRequiredFieldsGroupBox = new System.Windows.Forms.GroupBox();
             this.reqListBox = new System.Windows.Forms.ListBox();
             this.checkTools = new System.Windows.Forms.TabPage();
+            this.stagedDataGridView = new System.Windows.Forms.DataGridView();
+            this.testButton = new System.Windows.Forms.Button();
             this.checkToolsProgressBar = new System.Windows.Forms.ProgressBar();
             this.sqlQuery = new System.Windows.Forms.TabPage();
             this.sqlQueryGoPictureBox = new System.Windows.Forms.PictureBox();
@@ -280,6 +282,7 @@
             this.databaseSelect6 = new System.Windows.Forms.ComboBox();
             this.envChangesProgressBar = new System.Windows.Forms.ProgressBar();
             this.fileSweep = new System.Windows.Forms.TabPage();
+            this.fileSweepFilePathDataGridView = new System.Windows.Forms.DataGridView();
             this.ftpConnectedPictureBox = new System.Windows.Forms.PictureBox();
             this.fileSweepGroupBox2 = new System.Windows.Forms.GroupBox();
             this.ftpConnectPictureBox = new System.Windows.Forms.PictureBox();
@@ -309,9 +312,6 @@
             this.fileSweepProgressBar = new System.Windows.Forms.ProgressBar();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.mainLogSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.fileSweepFilePathDataGridView = new System.Windows.Forms.DataGridView();
-            this.testButton = new System.Windows.Forms.Button();
-            this.stagedDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.importedfileDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.checkToolsDateCheckerGroupBox.SuspendLayout();
@@ -371,6 +371,7 @@
             this.importFormatSelectDateGroupBox.SuspendLayout();
             this.importFormatSelectRequiredFieldsGroupBox.SuspendLayout();
             this.checkTools.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stagedDataGridView)).BeginInit();
             this.sqlQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sqlQueryGoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sqlQueryDataGridView)).BeginInit();
@@ -416,6 +417,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.fileSweep.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSweepFilePathDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftpConnectedPictureBox)).BeginInit();
             this.fileSweepGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ftpConnectPictureBox)).BeginInit();
@@ -443,8 +445,6 @@
             this.mainLogSplitContainer.Panel1.SuspendLayout();
             this.mainLogSplitContainer.Panel2.SuspendLayout();
             this.mainLogSplitContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSweepFilePathDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stagedDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -483,6 +483,7 @@
             this.importedfileDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.importedfileDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.importedfileDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.importedfileDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importedfileDataGridView.Name = "importedfileDataGridView";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -492,7 +493,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.importedfileDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.importedfileDataGridView.Size = new System.Drawing.Size(1036, 209);
+            this.importedfileDataGridView.Size = new System.Drawing.Size(1295, 262);
             this.importedfileDataGridView.TabIndex = 5;
             this.importedfileDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -503,6 +504,7 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.AliceBlue;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.aCTEKLoginToolStripMenuItem,
@@ -513,7 +515,8 @@
             this.toolStripMenuItemMinimize});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1510, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1888, 28);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -526,7 +529,7 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
@@ -538,14 +541,14 @@
             this.aPILogFolderToolStripMenuItem});
             this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
             this.openToolStripMenuItem.Text = "Open...";
             // 
             // cCDataToolLogToolStripMenuItem
             // 
             this.cCDataToolLogToolStripMenuItem.Image = global::SAPDataAnalysisTool.Properties.Resources.Open_6529;
             this.cCDataToolLogToolStripMenuItem.Name = "cCDataToolLogToolStripMenuItem";
-            this.cCDataToolLogToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.cCDataToolLogToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.cCDataToolLogToolStripMenuItem.Text = "DAT Log Folder";
             this.cCDataToolLogToolStripMenuItem.Click += new System.EventHandler(this.cCDataToolLogToolStripMenuItem_Click);
             // 
@@ -553,7 +556,7 @@
             // 
             this.iFLogToolStripMenuItem.Image = global::SAPDataAnalysisTool.Properties.Resources.Open_6529;
             this.iFLogToolStripMenuItem.Name = "iFLogToolStripMenuItem";
-            this.iFLogToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.iFLogToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.iFLogToolStripMenuItem.Text = "IF Log Folder";
             this.iFLogToolStripMenuItem.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -561,7 +564,7 @@
             // 
             this.benchmarksFolderToolStripMenuItem.Image = global::SAPDataAnalysisTool.Properties.Resources.Open_6529;
             this.benchmarksFolderToolStripMenuItem.Name = "benchmarksFolderToolStripMenuItem";
-            this.benchmarksFolderToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.benchmarksFolderToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.benchmarksFolderToolStripMenuItem.Text = "Benchmarks Folder";
             this.benchmarksFolderToolStripMenuItem.Click += new System.EventHandler(this.button28_Click);
             // 
@@ -569,7 +572,7 @@
             // 
             this.aPILogFolderToolStripMenuItem.Image = global::SAPDataAnalysisTool.Properties.Resources.Open_6529;
             this.aPILogFolderToolStripMenuItem.Name = "aPILogFolderToolStripMenuItem";
-            this.aPILogFolderToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.aPILogFolderToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.aPILogFolderToolStripMenuItem.Text = "API Log Folder";
             this.aPILogFolderToolStripMenuItem.Click += new System.EventHandler(this.aPILogFolderToolStripMenuItem_Click);
             // 
@@ -577,7 +580,7 @@
             // 
             this.printToolStripMenuItem.Image = global::SAPDataAnalysisTool.Properties.Resources.Print_11009;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -585,7 +588,7 @@
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
             // 
@@ -593,7 +596,7 @@
             // 
             this.aCTEKLoginToolStripMenuItem.Image = global::SAPDataAnalysisTool.Properties.Resources.Login_6031_32x;
             this.aCTEKLoginToolStripMenuItem.Name = "aCTEKLoginToolStripMenuItem";
-            this.aCTEKLoginToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
+            this.aCTEKLoginToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
             this.aCTEKLoginToolStripMenuItem.Text = "ACTEK Login";
             this.aCTEKLoginToolStripMenuItem.Click += new System.EventHandler(this.acteksoft_Click);
             // 
@@ -605,14 +608,14 @@
             this.pasteToolStripMenuItem});
             this.editToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editToolStripMenuItem.Image")));
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // cutToolStripMenuItem
             // 
             this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(118, 26);
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
@@ -620,7 +623,7 @@
             // 
             this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(118, 26);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
@@ -628,7 +631,7 @@
             // 
             this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(118, 26);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
@@ -638,14 +641,14 @@
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripMenuItem.Image")));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.menu_About_Click);
             // 
@@ -654,7 +657,7 @@
             this.toolStripMenuItemClose.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripMenuItemClose.Image = global::SAPDataAnalysisTool.Properties.Resources.Clearallrequests_88161;
             this.toolStripMenuItemClose.Name = "toolStripMenuItemClose";
-            this.toolStripMenuItemClose.Size = new System.Drawing.Size(28, 20);
+            this.toolStripMenuItemClose.Size = new System.Drawing.Size(32, 24);
             this.toolStripMenuItemClose.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
             // 
             // toolStripMenuItemMaximize
@@ -662,7 +665,7 @@
             this.toolStripMenuItemMaximize.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripMenuItemMaximize.Image = global::SAPDataAnalysisTool.Properties.Resources.Larger_225;
             this.toolStripMenuItemMaximize.Name = "toolStripMenuItemMaximize";
-            this.toolStripMenuItemMaximize.Size = new System.Drawing.Size(28, 20);
+            this.toolStripMenuItemMaximize.Size = new System.Drawing.Size(32, 24);
             this.toolStripMenuItemMaximize.Click += new System.EventHandler(this.toolStripMenuItemMaximize_Click);
             // 
             // toolStripMenuItemMinimize
@@ -673,7 +676,7 @@
             this.toolStripMenuItemMinimize.Image = global::SAPDataAnalysisTool.Properties.Resources.Larger_2301;
             this.toolStripMenuItemMinimize.Name = "toolStripMenuItemMinimize";
             this.toolStripMenuItemMinimize.ShortcutKeyDisplayString = "";
-            this.toolStripMenuItemMinimize.Size = new System.Drawing.Size(28, 20);
+            this.toolStripMenuItemMinimize.Size = new System.Drawing.Size(32, 24);
             this.toolStripMenuItemMinimize.Text = "Minimize";
             this.toolStripMenuItemMinimize.Click += new System.EventHandler(this.toolStripMenuItemMinimize_Click);
             // 
@@ -686,9 +689,11 @@
             this.checkToolsDateCheckerGroupBox.Controls.Add(this.dateCheckerListBox);
             this.checkToolsDateCheckerGroupBox.Controls.Add(this.checkToolsSelectColumnsLabel);
             this.checkToolsDateCheckerGroupBox.Controls.Add(this.dateCheckerFindNullCheckbox);
-            this.checkToolsDateCheckerGroupBox.Location = new System.Drawing.Point(6, 1);
+            this.checkToolsDateCheckerGroupBox.Location = new System.Drawing.Point(8, 1);
+            this.checkToolsDateCheckerGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkToolsDateCheckerGroupBox.Name = "checkToolsDateCheckerGroupBox";
-            this.checkToolsDateCheckerGroupBox.Size = new System.Drawing.Size(301, 117);
+            this.checkToolsDateCheckerGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkToolsDateCheckerGroupBox.Size = new System.Drawing.Size(376, 146);
             this.checkToolsDateCheckerGroupBox.TabIndex = 23;
             this.checkToolsDateCheckerGroupBox.TabStop = false;
             this.checkToolsDateCheckerGroupBox.Text = "Date Checker:";
@@ -698,9 +703,10 @@
             this.dateCheckerGoButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.dateCheckerGoButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateCheckerGoButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources._2button_go;
-            this.dateCheckerGoButtonPictureBox.Location = new System.Drawing.Point(71, 83);
+            this.dateCheckerGoButtonPictureBox.Location = new System.Drawing.Point(89, 104);
+            this.dateCheckerGoButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateCheckerGoButtonPictureBox.Name = "dateCheckerGoButtonPictureBox";
-            this.dateCheckerGoButtonPictureBox.Size = new System.Drawing.Size(43, 27);
+            this.dateCheckerGoButtonPictureBox.Size = new System.Drawing.Size(54, 34);
             this.dateCheckerGoButtonPictureBox.TabIndex = 71;
             this.dateCheckerGoButtonPictureBox.TabStop = false;
             this.dateCheckerGoButtonPictureBox.Click += new System.EventHandler(this.dateCheckerGoButtonPictureBox_Click);
@@ -714,9 +720,10 @@
             this.selectAllDateCheckerButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.selectAllDateCheckerButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.selectAllDateCheckerButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_all;
-            this.selectAllDateCheckerButtonPictureBox.Location = new System.Drawing.Point(6, 50);
+            this.selectAllDateCheckerButtonPictureBox.Location = new System.Drawing.Point(8, 62);
+            this.selectAllDateCheckerButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.selectAllDateCheckerButtonPictureBox.Name = "selectAllDateCheckerButtonPictureBox";
-            this.selectAllDateCheckerButtonPictureBox.Size = new System.Drawing.Size(38, 27);
+            this.selectAllDateCheckerButtonPictureBox.Size = new System.Drawing.Size(48, 34);
             this.selectAllDateCheckerButtonPictureBox.TabIndex = 72;
             this.selectAllDateCheckerButtonPictureBox.TabStop = false;
             this.selectAllDateCheckerButtonPictureBox.Click += new System.EventHandler(this.selectAllDateCheckerButtonPictureBox_Click);
@@ -730,9 +737,10 @@
             this.clearAllDateCheckerButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.clearAllDateCheckerButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearAllDateCheckerButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_clear;
-            this.clearAllDateCheckerButtonPictureBox.Location = new System.Drawing.Point(50, 50);
+            this.clearAllDateCheckerButtonPictureBox.Location = new System.Drawing.Point(62, 62);
+            this.clearAllDateCheckerButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clearAllDateCheckerButtonPictureBox.Name = "clearAllDateCheckerButtonPictureBox";
-            this.clearAllDateCheckerButtonPictureBox.Size = new System.Drawing.Size(64, 27);
+            this.clearAllDateCheckerButtonPictureBox.Size = new System.Drawing.Size(80, 34);
             this.clearAllDateCheckerButtonPictureBox.TabIndex = 68;
             this.clearAllDateCheckerButtonPictureBox.TabStop = false;
             this.clearAllDateCheckerButtonPictureBox.Click += new System.EventHandler(this.clearAllDateCheckerButtonPictureBox_Click);
@@ -744,18 +752,21 @@
             // dateCheckerListBox
             // 
             this.dateCheckerListBox.FormattingEnabled = true;
-            this.dateCheckerListBox.Location = new System.Drawing.Point(120, 12);
+            this.dateCheckerListBox.ItemHeight = 16;
+            this.dateCheckerListBox.Location = new System.Drawing.Point(150, 15);
+            this.dateCheckerListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateCheckerListBox.Name = "dateCheckerListBox";
             this.dateCheckerListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.dateCheckerListBox.Size = new System.Drawing.Size(175, 95);
+            this.dateCheckerListBox.Size = new System.Drawing.Size(218, 116);
             this.dateCheckerListBox.TabIndex = 28;
             // 
             // checkToolsSelectColumnsLabel
             // 
             this.checkToolsSelectColumnsLabel.AutoSize = true;
-            this.checkToolsSelectColumnsLabel.Location = new System.Drawing.Point(6, 14);
+            this.checkToolsSelectColumnsLabel.Location = new System.Drawing.Point(8, 18);
+            this.checkToolsSelectColumnsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.checkToolsSelectColumnsLabel.Name = "checkToolsSelectColumnsLabel";
-            this.checkToolsSelectColumnsLabel.Size = new System.Drawing.Size(89, 13);
+            this.checkToolsSelectColumnsLabel.Size = new System.Drawing.Size(119, 17);
             this.checkToolsSelectColumnsLabel.TabIndex = 25;
             this.checkToolsSelectColumnsLabel.Text = "Select Column(s):";
             // 
@@ -763,9 +774,10 @@
             // 
             this.dateCheckerFindNullCheckbox.AutoSize = true;
             this.dateCheckerFindNullCheckbox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dateCheckerFindNullCheckbox.Location = new System.Drawing.Point(7, 29);
+            this.dateCheckerFindNullCheckbox.Location = new System.Drawing.Point(9, 36);
+            this.dateCheckerFindNullCheckbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateCheckerFindNullCheckbox.Name = "dateCheckerFindNullCheckbox";
-            this.dateCheckerFindNullCheckbox.Size = new System.Drawing.Size(80, 17);
+            this.dateCheckerFindNullCheckbox.Size = new System.Drawing.Size(101, 21);
             this.dateCheckerFindNullCheckbox.TabIndex = 39;
             this.dateCheckerFindNullCheckbox.Text = "Find NULL?";
             this.dateCheckerFindNullCheckbox.UseVisualStyleBackColor = true;
@@ -780,9 +792,11 @@
             this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.cellLengthCheckerGoButtonPictureBox);
             this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.cellLengthCheckerListBox);
             this.checkToolsCellLengthCheckerGroupBox.Controls.Add(this.checkToolsCellLengthLabel);
-            this.checkToolsCellLengthCheckerGroupBox.Location = new System.Drawing.Point(919, 1);
+            this.checkToolsCellLengthCheckerGroupBox.Location = new System.Drawing.Point(1149, 1);
+            this.checkToolsCellLengthCheckerGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkToolsCellLengthCheckerGroupBox.Name = "checkToolsCellLengthCheckerGroupBox";
-            this.checkToolsCellLengthCheckerGroupBox.Size = new System.Drawing.Size(275, 117);
+            this.checkToolsCellLengthCheckerGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkToolsCellLengthCheckerGroupBox.Size = new System.Drawing.Size(344, 146);
             this.checkToolsCellLengthCheckerGroupBox.TabIndex = 24;
             this.checkToolsCellLengthCheckerGroupBox.TabStop = false;
             this.checkToolsCellLengthCheckerGroupBox.Text = "Cell Length Checker:";
@@ -792,9 +806,10 @@
             this.clearAllCellLengthCheckerPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.clearAllCellLengthCheckerPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearAllCellLengthCheckerPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_clear;
-            this.clearAllCellLengthCheckerPictureBox.Location = new System.Drawing.Point(50, 50);
+            this.clearAllCellLengthCheckerPictureBox.Location = new System.Drawing.Point(62, 62);
+            this.clearAllCellLengthCheckerPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clearAllCellLengthCheckerPictureBox.Name = "clearAllCellLengthCheckerPictureBox";
-            this.clearAllCellLengthCheckerPictureBox.Size = new System.Drawing.Size(64, 27);
+            this.clearAllCellLengthCheckerPictureBox.Size = new System.Drawing.Size(80, 34);
             this.clearAllCellLengthCheckerPictureBox.TabIndex = 60;
             this.clearAllCellLengthCheckerPictureBox.TabStop = false;
             this.clearAllCellLengthCheckerPictureBox.Click += new System.EventHandler(this.clearAllCellLengthCheckerPictureBox_Click);
@@ -808,9 +823,10 @@
             this.selectAllCellLengthCheckerPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.selectAllCellLengthCheckerPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.selectAllCellLengthCheckerPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_all;
-            this.selectAllCellLengthCheckerPictureBox.Location = new System.Drawing.Point(6, 50);
+            this.selectAllCellLengthCheckerPictureBox.Location = new System.Drawing.Point(8, 62);
+            this.selectAllCellLengthCheckerPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.selectAllCellLengthCheckerPictureBox.Name = "selectAllCellLengthCheckerPictureBox";
-            this.selectAllCellLengthCheckerPictureBox.Size = new System.Drawing.Size(38, 27);
+            this.selectAllCellLengthCheckerPictureBox.Size = new System.Drawing.Size(48, 34);
             this.selectAllCellLengthCheckerPictureBox.TabIndex = 59;
             this.selectAllCellLengthCheckerPictureBox.TabStop = false;
             this.selectAllCellLengthCheckerPictureBox.Click += new System.EventHandler(this.selectAllCellLengthCheckerPictureBox_Click);
@@ -822,18 +838,20 @@
             // checkToolsMaxLengthLabel
             // 
             this.checkToolsMaxLengthLabel.AutoSize = true;
-            this.checkToolsMaxLengthLabel.Location = new System.Drawing.Point(7, 29);
+            this.checkToolsMaxLengthLabel.Location = new System.Drawing.Point(9, 36);
+            this.checkToolsMaxLengthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.checkToolsMaxLengthLabel.Name = "checkToolsMaxLengthLabel";
-            this.checkToolsMaxLengthLabel.Size = new System.Drawing.Size(62, 13);
+            this.checkToolsMaxLengthLabel.Size = new System.Drawing.Size(80, 17);
             this.checkToolsMaxLengthLabel.TabIndex = 24;
             this.checkToolsMaxLengthLabel.Text = "Max length:";
             // 
             // checkToolsMaxLengthTextBox
             // 
-            this.checkToolsMaxLengthTextBox.Location = new System.Drawing.Point(72, 27);
+            this.checkToolsMaxLengthTextBox.Location = new System.Drawing.Point(90, 34);
+            this.checkToolsMaxLengthTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkToolsMaxLengthTextBox.MaxLength = 3;
             this.checkToolsMaxLengthTextBox.Name = "checkToolsMaxLengthTextBox";
-            this.checkToolsMaxLengthTextBox.Size = new System.Drawing.Size(24, 20);
+            this.checkToolsMaxLengthTextBox.Size = new System.Drawing.Size(29, 22);
             this.checkToolsMaxLengthTextBox.TabIndex = 23;
             this.checkToolsMaxLengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
@@ -842,9 +860,10 @@
             this.cellLengthCheckerGoButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.cellLengthCheckerGoButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cellLengthCheckerGoButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources._2button_go;
-            this.cellLengthCheckerGoButtonPictureBox.Location = new System.Drawing.Point(71, 83);
+            this.cellLengthCheckerGoButtonPictureBox.Location = new System.Drawing.Point(89, 104);
+            this.cellLengthCheckerGoButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cellLengthCheckerGoButtonPictureBox.Name = "cellLengthCheckerGoButtonPictureBox";
-            this.cellLengthCheckerGoButtonPictureBox.Size = new System.Drawing.Size(43, 27);
+            this.cellLengthCheckerGoButtonPictureBox.Size = new System.Drawing.Size(54, 34);
             this.cellLengthCheckerGoButtonPictureBox.TabIndex = 62;
             this.cellLengthCheckerGoButtonPictureBox.TabStop = false;
             this.cellLengthCheckerGoButtonPictureBox.Click += new System.EventHandler(this.cellLengthCheckerGoButtonPictureBox_Click);
@@ -856,18 +875,21 @@
             // cellLengthCheckerListBox
             // 
             this.cellLengthCheckerListBox.FormattingEnabled = true;
-            this.cellLengthCheckerListBox.Location = new System.Drawing.Point(120, 14);
+            this.cellLengthCheckerListBox.ItemHeight = 16;
+            this.cellLengthCheckerListBox.Location = new System.Drawing.Point(150, 18);
+            this.cellLengthCheckerListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cellLengthCheckerListBox.Name = "cellLengthCheckerListBox";
             this.cellLengthCheckerListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.cellLengthCheckerListBox.Size = new System.Drawing.Size(149, 95);
+            this.cellLengthCheckerListBox.Size = new System.Drawing.Size(185, 116);
             this.cellLengthCheckerListBox.TabIndex = 33;
             // 
             // checkToolsCellLengthLabel
             // 
             this.checkToolsCellLengthLabel.AutoSize = true;
-            this.checkToolsCellLengthLabel.Location = new System.Drawing.Point(6, 14);
+            this.checkToolsCellLengthLabel.Location = new System.Drawing.Point(8, 18);
+            this.checkToolsCellLengthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.checkToolsCellLengthLabel.Name = "checkToolsCellLengthLabel";
-            this.checkToolsCellLengthLabel.Size = new System.Drawing.Size(89, 13);
+            this.checkToolsCellLengthLabel.Size = new System.Drawing.Size(119, 17);
             this.checkToolsCellLengthLabel.TabIndex = 22;
             this.checkToolsCellLengthLabel.Text = "Select Column(s):";
             // 
@@ -881,9 +903,11 @@
             this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.specialCharacterCheckerListBox);
             this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.checkToolsSpecialCharsLabel);
             this.checkToolsSpecialCharacterCheckerGroupBox.Controls.Add(this.checkToolsSelectColumnLabel);
-            this.checkToolsSpecialCharacterCheckerGroupBox.Location = new System.Drawing.Point(313, 1);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Location = new System.Drawing.Point(391, 1);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkToolsSpecialCharacterCheckerGroupBox.Name = "checkToolsSpecialCharacterCheckerGroupBox";
-            this.checkToolsSpecialCharacterCheckerGroupBox.Size = new System.Drawing.Size(295, 117);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkToolsSpecialCharacterCheckerGroupBox.Size = new System.Drawing.Size(369, 146);
             this.checkToolsSpecialCharacterCheckerGroupBox.TabIndex = 26;
             this.checkToolsSpecialCharacterCheckerGroupBox.TabStop = false;
             this.checkToolsSpecialCharacterCheckerGroupBox.Text = "Special Character Checker:";
@@ -893,9 +917,10 @@
             this.specialCharacterCheckerGoButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.specialCharacterCheckerGoButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.specialCharacterCheckerGoButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources._2button_go;
-            this.specialCharacterCheckerGoButtonPictureBox.Location = new System.Drawing.Point(71, 83);
+            this.specialCharacterCheckerGoButtonPictureBox.Location = new System.Drawing.Point(89, 104);
+            this.specialCharacterCheckerGoButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.specialCharacterCheckerGoButtonPictureBox.Name = "specialCharacterCheckerGoButtonPictureBox";
-            this.specialCharacterCheckerGoButtonPictureBox.Size = new System.Drawing.Size(43, 27);
+            this.specialCharacterCheckerGoButtonPictureBox.Size = new System.Drawing.Size(54, 34);
             this.specialCharacterCheckerGoButtonPictureBox.TabIndex = 63;
             this.specialCharacterCheckerGoButtonPictureBox.TabStop = false;
             this.specialCharacterCheckerGoButtonPictureBox.Click += new System.EventHandler(this.specialCharacterCheckerGoButtonPictureBox_Click);
@@ -909,9 +934,10 @@
             this.selectAllSpecialCharacterCheckerButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.selectAllSpecialCharacterCheckerButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.selectAllSpecialCharacterCheckerButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_all;
-            this.selectAllSpecialCharacterCheckerButtonPictureBox.Location = new System.Drawing.Point(6, 53);
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.Location = new System.Drawing.Point(8, 66);
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.selectAllSpecialCharacterCheckerButtonPictureBox.Name = "selectAllSpecialCharacterCheckerButtonPictureBox";
-            this.selectAllSpecialCharacterCheckerButtonPictureBox.Size = new System.Drawing.Size(38, 27);
+            this.selectAllSpecialCharacterCheckerButtonPictureBox.Size = new System.Drawing.Size(48, 34);
             this.selectAllSpecialCharacterCheckerButtonPictureBox.TabIndex = 71;
             this.selectAllSpecialCharacterCheckerButtonPictureBox.TabStop = false;
             this.selectAllSpecialCharacterCheckerButtonPictureBox.Click += new System.EventHandler(this.selectAllSpecialCharacterCheckerButtonPictureBox_Click);
@@ -925,9 +951,10 @@
             this.clearAllSpecialCharacterCheckerButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.clearAllSpecialCharacterCheckerButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearAllSpecialCharacterCheckerButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_clear;
-            this.clearAllSpecialCharacterCheckerButtonPictureBox.Location = new System.Drawing.Point(50, 53);
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.Location = new System.Drawing.Point(62, 66);
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clearAllSpecialCharacterCheckerButtonPictureBox.Name = "clearAllSpecialCharacterCheckerButtonPictureBox";
-            this.clearAllSpecialCharacterCheckerButtonPictureBox.Size = new System.Drawing.Size(64, 27);
+            this.clearAllSpecialCharacterCheckerButtonPictureBox.Size = new System.Drawing.Size(80, 34);
             this.clearAllSpecialCharacterCheckerButtonPictureBox.TabIndex = 69;
             this.clearAllSpecialCharacterCheckerButtonPictureBox.TabStop = false;
             this.clearAllSpecialCharacterCheckerButtonPictureBox.Click += new System.EventHandler(this.clearAllSpecialCharacterCheckerButtonPictureBox_Click);
@@ -938,36 +965,41 @@
             // 
             // checkToolsSpecialCharacterTextBox
             // 
-            this.checkToolsSpecialCharacterTextBox.Location = new System.Drawing.Point(72, 27);
+            this.checkToolsSpecialCharacterTextBox.Location = new System.Drawing.Point(90, 34);
+            this.checkToolsSpecialCharacterTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkToolsSpecialCharacterTextBox.MaxLength = 1;
             this.checkToolsSpecialCharacterTextBox.Name = "checkToolsSpecialCharacterTextBox";
-            this.checkToolsSpecialCharacterTextBox.Size = new System.Drawing.Size(16, 20);
+            this.checkToolsSpecialCharacterTextBox.Size = new System.Drawing.Size(19, 22);
             this.checkToolsSpecialCharacterTextBox.TabIndex = 30;
             // 
             // specialCharacterCheckerListBox
             // 
             this.specialCharacterCheckerListBox.FormattingEnabled = true;
-            this.specialCharacterCheckerListBox.Location = new System.Drawing.Point(120, 14);
+            this.specialCharacterCheckerListBox.ItemHeight = 16;
+            this.specialCharacterCheckerListBox.Location = new System.Drawing.Point(150, 18);
+            this.specialCharacterCheckerListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.specialCharacterCheckerListBox.Name = "specialCharacterCheckerListBox";
             this.specialCharacterCheckerListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.specialCharacterCheckerListBox.Size = new System.Drawing.Size(169, 95);
+            this.specialCharacterCheckerListBox.Size = new System.Drawing.Size(210, 116);
             this.specialCharacterCheckerListBox.TabIndex = 31;
             // 
             // checkToolsSpecialCharsLabel
             // 
             this.checkToolsSpecialCharsLabel.AutoSize = true;
-            this.checkToolsSpecialCharsLabel.Location = new System.Drawing.Point(7, 29);
+            this.checkToolsSpecialCharsLabel.Location = new System.Drawing.Point(9, 36);
+            this.checkToolsSpecialCharsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.checkToolsSpecialCharsLabel.Name = "checkToolsSpecialCharsLabel";
-            this.checkToolsSpecialCharsLabel.Size = new System.Drawing.Size(69, 13);
+            this.checkToolsSpecialCharsLabel.Size = new System.Drawing.Size(90, 17);
             this.checkToolsSpecialCharsLabel.TabIndex = 30;
             this.checkToolsSpecialCharsLabel.Text = "Special char:";
             // 
             // checkToolsSelectColumnLabel
             // 
             this.checkToolsSelectColumnLabel.AutoSize = true;
-            this.checkToolsSelectColumnLabel.Location = new System.Drawing.Point(6, 14);
+            this.checkToolsSelectColumnLabel.Location = new System.Drawing.Point(8, 18);
+            this.checkToolsSelectColumnLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.checkToolsSelectColumnLabel.Name = "checkToolsSelectColumnLabel";
-            this.checkToolsSelectColumnLabel.Size = new System.Drawing.Size(89, 13);
+            this.checkToolsSelectColumnLabel.Size = new System.Drawing.Size(119, 17);
             this.checkToolsSelectColumnLabel.TabIndex = 25;
             this.checkToolsSelectColumnLabel.Text = "Select Column(s):";
             // 
@@ -998,9 +1030,11 @@
             this.checkToolsNullCheckerGroupBox.Controls.Add(this.clearAllNullCheckerButtonPictureBox);
             this.checkToolsNullCheckerGroupBox.Controls.Add(this.nullCheckerListBox);
             this.checkToolsNullCheckerGroupBox.Controls.Add(this.checkToolsNullCheckerLabel);
-            this.checkToolsNullCheckerGroupBox.Location = new System.Drawing.Point(614, 1);
+            this.checkToolsNullCheckerGroupBox.Location = new System.Drawing.Point(768, 1);
+            this.checkToolsNullCheckerGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkToolsNullCheckerGroupBox.Name = "checkToolsNullCheckerGroupBox";
-            this.checkToolsNullCheckerGroupBox.Size = new System.Drawing.Size(299, 117);
+            this.checkToolsNullCheckerGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkToolsNullCheckerGroupBox.Size = new System.Drawing.Size(374, 146);
             this.checkToolsNullCheckerGroupBox.TabIndex = 27;
             this.checkToolsNullCheckerGroupBox.TabStop = false;
             this.checkToolsNullCheckerGroupBox.Text = "NULL Checker:";
@@ -1010,9 +1044,10 @@
             this.nullCheckerGoButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.nullCheckerGoButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nullCheckerGoButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources._2button_go;
-            this.nullCheckerGoButtonPictureBox.Location = new System.Drawing.Point(71, 83);
+            this.nullCheckerGoButtonPictureBox.Location = new System.Drawing.Point(89, 104);
+            this.nullCheckerGoButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nullCheckerGoButtonPictureBox.Name = "nullCheckerGoButtonPictureBox";
-            this.nullCheckerGoButtonPictureBox.Size = new System.Drawing.Size(43, 27);
+            this.nullCheckerGoButtonPictureBox.Size = new System.Drawing.Size(54, 34);
             this.nullCheckerGoButtonPictureBox.TabIndex = 63;
             this.nullCheckerGoButtonPictureBox.TabStop = false;
             this.nullCheckerGoButtonPictureBox.Click += new System.EventHandler(this.nullCheckerGoButtonPictureBox_Click);
@@ -1026,9 +1061,10 @@
             this.selectAllNullCheckerButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.selectAllNullCheckerButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.selectAllNullCheckerButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_all;
-            this.selectAllNullCheckerButtonPictureBox.Location = new System.Drawing.Point(6, 50);
+            this.selectAllNullCheckerButtonPictureBox.Location = new System.Drawing.Point(8, 62);
+            this.selectAllNullCheckerButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.selectAllNullCheckerButtonPictureBox.Name = "selectAllNullCheckerButtonPictureBox";
-            this.selectAllNullCheckerButtonPictureBox.Size = new System.Drawing.Size(38, 27);
+            this.selectAllNullCheckerButtonPictureBox.Size = new System.Drawing.Size(48, 34);
             this.selectAllNullCheckerButtonPictureBox.TabIndex = 63;
             this.selectAllNullCheckerButtonPictureBox.TabStop = false;
             this.selectAllNullCheckerButtonPictureBox.Click += new System.EventHandler(this.selectAllNullCheckerButtonPictureBox_Click);
@@ -1042,9 +1078,10 @@
             this.clearAllNullCheckerButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.clearAllNullCheckerButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearAllNullCheckerButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_clear;
-            this.clearAllNullCheckerButtonPictureBox.Location = new System.Drawing.Point(50, 50);
+            this.clearAllNullCheckerButtonPictureBox.Location = new System.Drawing.Point(62, 62);
+            this.clearAllNullCheckerButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clearAllNullCheckerButtonPictureBox.Name = "clearAllNullCheckerButtonPictureBox";
-            this.clearAllNullCheckerButtonPictureBox.Size = new System.Drawing.Size(64, 27);
+            this.clearAllNullCheckerButtonPictureBox.Size = new System.Drawing.Size(80, 34);
             this.clearAllNullCheckerButtonPictureBox.TabIndex = 70;
             this.clearAllNullCheckerButtonPictureBox.TabStop = false;
             this.clearAllNullCheckerButtonPictureBox.Click += new System.EventHandler(this.clearAllNullCheckerButtonPictureBox_Click);
@@ -1056,18 +1093,21 @@
             // nullCheckerListBox
             // 
             this.nullCheckerListBox.FormattingEnabled = true;
-            this.nullCheckerListBox.Location = new System.Drawing.Point(120, 14);
+            this.nullCheckerListBox.ItemHeight = 16;
+            this.nullCheckerListBox.Location = new System.Drawing.Point(150, 18);
+            this.nullCheckerListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nullCheckerListBox.Name = "nullCheckerListBox";
             this.nullCheckerListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.nullCheckerListBox.Size = new System.Drawing.Size(173, 95);
+            this.nullCheckerListBox.Size = new System.Drawing.Size(215, 116);
             this.nullCheckerListBox.TabIndex = 32;
             // 
             // checkToolsNullCheckerLabel
             // 
             this.checkToolsNullCheckerLabel.AutoSize = true;
-            this.checkToolsNullCheckerLabel.Location = new System.Drawing.Point(6, 14);
+            this.checkToolsNullCheckerLabel.Location = new System.Drawing.Point(8, 18);
+            this.checkToolsNullCheckerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.checkToolsNullCheckerLabel.Name = "checkToolsNullCheckerLabel";
-            this.checkToolsNullCheckerLabel.Size = new System.Drawing.Size(89, 13);
+            this.checkToolsNullCheckerLabel.Size = new System.Drawing.Size(119, 17);
             this.checkToolsNullCheckerLabel.TabIndex = 25;
             this.checkToolsNullCheckerLabel.Text = "Select Column(s):";
             // 
@@ -1083,7 +1123,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.BackColor = System.Drawing.Color.AliceBlue;
-            this.splitContainer1.Location = new System.Drawing.Point(6, 151);
+            this.splitContainer1.Location = new System.Drawing.Point(8, 189);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -1096,9 +1137,9 @@
             this.splitContainer1.Panel2.Controls.Add(this.importFormatReferenceTableGroupBox);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer1.Size = new System.Drawing.Size(1494, 579);
-            this.splitContainer1.SplitterDistance = 1036;
-            this.splitContainer1.SplitterWidth = 7;
+            this.splitContainer1.Size = new System.Drawing.Size(1868, 724);
+            this.splitContainer1.SplitterDistance = 1295;
+            this.splitContainer1.SplitterWidth = 9;
             this.splitContainer1.TabIndex = 22;
             // 
             // splitRequiredImportFormat_ImportedFile
@@ -1106,6 +1147,7 @@
             this.splitRequiredImportFormat_ImportedFile.Cursor = System.Windows.Forms.Cursors.HSplit;
             this.splitRequiredImportFormat_ImportedFile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitRequiredImportFormat_ImportedFile.Location = new System.Drawing.Point(0, 0);
+            this.splitRequiredImportFormat_ImportedFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitRequiredImportFormat_ImportedFile.Name = "splitRequiredImportFormat_ImportedFile";
             this.splitRequiredImportFormat_ImportedFile.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1117,9 +1159,9 @@
             // 
             this.splitRequiredImportFormat_ImportedFile.Panel2.Controls.Add(this.importFormatJumpToRowGroupBox);
             this.splitRequiredImportFormat_ImportedFile.Panel2.Controls.Add(this.importedfileDataGridView);
-            this.splitRequiredImportFormat_ImportedFile.Size = new System.Drawing.Size(1036, 579);
-            this.splitRequiredImportFormat_ImportedFile.SplitterDistance = 363;
-            this.splitRequiredImportFormat_ImportedFile.SplitterWidth = 7;
+            this.splitRequiredImportFormat_ImportedFile.Size = new System.Drawing.Size(1295, 724);
+            this.splitRequiredImportFormat_ImportedFile.SplitterDistance = 453;
+            this.splitRequiredImportFormat_ImportedFile.SplitterWidth = 9;
             this.splitRequiredImportFormat_ImportedFile.TabIndex = 6;
             // 
             // importformatDataGridView
@@ -1146,6 +1188,7 @@
             this.importformatDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.importformatDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.importformatDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.importformatDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importformatDataGridView.Name = "importformatDataGridView";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -1155,7 +1198,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.importformatDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.importformatDataGridView.Size = new System.Drawing.Size(1036, 363);
+            this.importformatDataGridView.Size = new System.Drawing.Size(1295, 453);
             this.importformatDataGridView.TabIndex = 0;
             this.importformatDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -1164,9 +1207,11 @@
             this.importFormatJumpToRowGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowButton);
             this.importFormatJumpToRowGroupBox.Controls.Add(this.importFormatJumpToRowTextBox);
-            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(863, -429);
+            this.importFormatJumpToRowGroupBox.Location = new System.Drawing.Point(1079, -539);
+            this.importFormatJumpToRowGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatJumpToRowGroupBox.Name = "importFormatJumpToRowGroupBox";
-            this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(170, 38);
+            this.importFormatJumpToRowGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.importFormatJumpToRowGroupBox.Size = new System.Drawing.Size(212, 48);
             this.importFormatJumpToRowGroupBox.TabIndex = 36;
             this.importFormatJumpToRowGroupBox.TabStop = false;
             this.importFormatJumpToRowGroupBox.Text = "Jump to row:";
@@ -1182,9 +1227,10 @@
             this.importFormatJumpToRowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.importFormatJumpToRowButton.Image = global::SAPDataAnalysisTool.Properties.Resources.StatusAnnotations_Play_32xMD_color;
             this.importFormatJumpToRowButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.importFormatJumpToRowButton.Location = new System.Drawing.Point(61, 13);
+            this.importFormatJumpToRowButton.Location = new System.Drawing.Point(76, 16);
+            this.importFormatJumpToRowButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatJumpToRowButton.Name = "importFormatJumpToRowButton";
-            this.importFormatJumpToRowButton.Size = new System.Drawing.Size(82, 22);
+            this.importFormatJumpToRowButton.Size = new System.Drawing.Size(102, 28);
             this.importFormatJumpToRowButton.TabIndex = 44;
             this.importFormatJumpToRowButton.Text = "GO";
             this.importFormatJumpToRowButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1194,9 +1240,10 @@
             // importFormatJumpToRowTextBox
             // 
             this.importFormatJumpToRowTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.importFormatJumpToRowTextBox.Location = new System.Drawing.Point(7, 15);
+            this.importFormatJumpToRowTextBox.Location = new System.Drawing.Point(9, 19);
+            this.importFormatJumpToRowTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatJumpToRowTextBox.Name = "importFormatJumpToRowTextBox";
-            this.importFormatJumpToRowTextBox.Size = new System.Drawing.Size(48, 20);
+            this.importFormatJumpToRowTextBox.Size = new System.Drawing.Size(59, 22);
             this.importFormatJumpToRowTextBox.TabIndex = 0;
             this.importFormatJumpToRowTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
@@ -1206,9 +1253,11 @@
             this.importFormatReferenceTableGroupBox.BackColor = System.Drawing.Color.AliceBlue;
             this.importFormatReferenceTableGroupBox.Controls.Add(this.importFormatTableSelectPictureBox);
             this.importFormatReferenceTableGroupBox.Controls.Add(this.tableSelect);
-            this.importFormatReferenceTableGroupBox.Location = new System.Drawing.Point(3, 540);
+            this.importFormatReferenceTableGroupBox.Location = new System.Drawing.Point(4, 675);
+            this.importFormatReferenceTableGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatReferenceTableGroupBox.Name = "importFormatReferenceTableGroupBox";
-            this.importFormatReferenceTableGroupBox.Size = new System.Drawing.Size(169, 36);
+            this.importFormatReferenceTableGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.importFormatReferenceTableGroupBox.Size = new System.Drawing.Size(211, 45);
             this.importFormatReferenceTableGroupBox.TabIndex = 33;
             this.importFormatReferenceTableGroupBox.TabStop = false;
             this.importFormatReferenceTableGroupBox.Text = "Select Table to Reference";
@@ -1216,9 +1265,10 @@
             // importFormatTableSelectPictureBox
             // 
             this.importFormatTableSelectPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("importFormatTableSelectPictureBox.Image")));
-            this.importFormatTableSelectPictureBox.Location = new System.Drawing.Point(6, 15);
+            this.importFormatTableSelectPictureBox.Location = new System.Drawing.Point(8, 19);
+            this.importFormatTableSelectPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatTableSelectPictureBox.Name = "importFormatTableSelectPictureBox";
-            this.importFormatTableSelectPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.importFormatTableSelectPictureBox.Size = new System.Drawing.Size(20, 20);
             this.importFormatTableSelectPictureBox.TabIndex = 35;
             this.importFormatTableSelectPictureBox.TabStop = false;
             // 
@@ -1232,9 +1282,10 @@
             this.tableSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tableSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tableSelect.FormattingEnabled = true;
-            this.tableSelect.Location = new System.Drawing.Point(28, 15);
+            this.tableSelect.Location = new System.Drawing.Point(35, 19);
+            this.tableSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableSelect.Name = "tableSelect";
-            this.tableSelect.Size = new System.Drawing.Size(135, 21);
+            this.tableSelect.Size = new System.Drawing.Size(168, 24);
             this.tableSelect.TabIndex = 31;
             this.tableSelect.SelectedIndexChanged += new System.EventHandler(this.tableSelect_SelectedIndexChanged);
             this.tableSelect.MouseEnter += new System.EventHandler(this.tableSelect_MouseEnter);
@@ -1267,6 +1318,7 @@
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1277,7 +1329,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView2.Size = new System.Drawing.Size(451, 579);
+            this.dataGridView2.Size = new System.Drawing.Size(564, 724);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvUserDetails_RowPostPaint);
             // 
@@ -1285,18 +1337,20 @@
             // 
             this.systemLogTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.systemLogTextBox.Location = new System.Drawing.Point(0, 0);
+            this.systemLogTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.systemLogTextBox.Name = "systemLogTextBox";
             this.systemLogTextBox.ReadOnly = true;
-            this.systemLogTextBox.Size = new System.Drawing.Size(1510, 66);
+            this.systemLogTextBox.Size = new System.Drawing.Size(1888, 83);
             this.systemLogTextBox.TabIndex = 32;
             this.systemLogTextBox.Text = "";
             // 
             // importFormatDatabasePictureBox
             // 
             this.importFormatDatabasePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("importFormatDatabasePictureBox.Image")));
-            this.importFormatDatabasePictureBox.Location = new System.Drawing.Point(6, 52);
+            this.importFormatDatabasePictureBox.Location = new System.Drawing.Point(8, 65);
+            this.importFormatDatabasePictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatDatabasePictureBox.Name = "importFormatDatabasePictureBox";
-            this.importFormatDatabasePictureBox.Size = new System.Drawing.Size(16, 16);
+            this.importFormatDatabasePictureBox.Size = new System.Drawing.Size(20, 20);
             this.importFormatDatabasePictureBox.TabIndex = 33;
             this.importFormatDatabasePictureBox.TabStop = false;
             // 
@@ -1308,9 +1362,10 @@
             this.ifSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ifSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ifSelect.FormattingEnabled = true;
-            this.ifSelect.Location = new System.Drawing.Point(28, 70);
+            this.ifSelect.Location = new System.Drawing.Point(35, 88);
+            this.ifSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ifSelect.Name = "ifSelect";
-            this.ifSelect.Size = new System.Drawing.Size(188, 21);
+            this.ifSelect.Size = new System.Drawing.Size(234, 24);
             this.ifSelect.TabIndex = 32;
             this.ifSelect.SelectedIndexChanged += new System.EventHandler(this.ifSelect_SelectedIndexChanged);
             this.ifSelect.MouseEnter += new System.EventHandler(this.ifSelect_MouseHover);
@@ -1327,9 +1382,11 @@
             this.importFormatServerSelectGroupBox.Controls.Add(this.ifSelect);
             this.importFormatServerSelectGroupBox.Controls.Add(this.serverSelect);
             this.importFormatServerSelectGroupBox.Controls.Add(this.databaseSelect);
-            this.importFormatServerSelectGroupBox.Location = new System.Drawing.Point(464, 8);
+            this.importFormatServerSelectGroupBox.Location = new System.Drawing.Point(580, 10);
+            this.importFormatServerSelectGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatServerSelectGroupBox.Name = "importFormatServerSelectGroupBox";
-            this.importFormatServerSelectGroupBox.Size = new System.Drawing.Size(367, 112);
+            this.importFormatServerSelectGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.importFormatServerSelectGroupBox.Size = new System.Drawing.Size(459, 140);
             this.importFormatServerSelectGroupBox.TabIndex = 26;
             this.importFormatServerSelectGroupBox.TabStop = false;
             this.importFormatServerSelectGroupBox.Text = "Select Server/Database/Import Format:";
@@ -1338,9 +1395,10 @@
             // icmVersion
             // 
             this.icmVersion.AutoSize = true;
-            this.icmVersion.Location = new System.Drawing.Point(6, 94);
+            this.icmVersion.Location = new System.Drawing.Point(8, 118);
+            this.icmVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.icmVersion.Name = "icmVersion";
-            this.icmVersion.Size = new System.Drawing.Size(27, 13);
+            this.icmVersion.Size = new System.Drawing.Size(35, 17);
             this.icmVersion.TabIndex = 1;
             this.icmVersion.Text = "vrsn";
             this.icmVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1349,9 +1407,10 @@
             // importFormatShowOpenImportFormatsButton
             // 
             this.importFormatShowOpenImportFormatsButton.AutoSize = true;
-            this.importFormatShowOpenImportFormatsButton.Location = new System.Drawing.Point(6, 14);
+            this.importFormatShowOpenImportFormatsButton.Location = new System.Drawing.Point(8, 18);
+            this.importFormatShowOpenImportFormatsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatShowOpenImportFormatsButton.Name = "importFormatShowOpenImportFormatsButton";
-            this.importFormatShowOpenImportFormatsButton.Size = new System.Drawing.Size(152, 17);
+            this.importFormatShowOpenImportFormatsButton.Size = new System.Drawing.Size(198, 21);
             this.importFormatShowOpenImportFormatsButton.TabIndex = 42;
             this.importFormatShowOpenImportFormatsButton.Text = "Show open Import Formats";
             this.importFormatShowOpenImportFormatsButton.UseVisualStyleBackColor = true;
@@ -1360,9 +1419,10 @@
             // importFormatInTableLabel
             // 
             this.importFormatInTableLabel.AutoSize = true;
-            this.importFormatInTableLabel.Location = new System.Drawing.Point(53, 94);
+            this.importFormatInTableLabel.Location = new System.Drawing.Point(66, 118);
+            this.importFormatInTableLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.importFormatInTableLabel.Name = "importFormatInTableLabel";
-            this.importFormatInTableLabel.Size = new System.Drawing.Size(42, 13);
+            this.importFormatInTableLabel.Size = new System.Drawing.Size(55, 17);
             this.importFormatInTableLabel.TabIndex = 42;
             this.importFormatInTableLabel.Text = "inTable";
             this.importFormatInTableLabel.Visible = false;
@@ -1370,9 +1430,10 @@
             // importFormatSelectPictureBox
             // 
             this.importFormatSelectPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("importFormatSelectPictureBox.Image")));
-            this.importFormatSelectPictureBox.Location = new System.Drawing.Point(6, 72);
+            this.importFormatSelectPictureBox.Location = new System.Drawing.Point(8, 90);
+            this.importFormatSelectPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatSelectPictureBox.Name = "importFormatSelectPictureBox";
-            this.importFormatSelectPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.importFormatSelectPictureBox.Size = new System.Drawing.Size(20, 20);
             this.importFormatSelectPictureBox.TabIndex = 34;
             this.importFormatSelectPictureBox.TabStop = false;
             this.importFormatSelectPictureBox.MouseEnter += new System.EventHandler(this.ifSelect_MouseHover);
@@ -1380,9 +1441,10 @@
             // importFormatServerPictureBox
             // 
             this.importFormatServerPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("importFormatServerPictureBox.Image")));
-            this.importFormatServerPictureBox.Location = new System.Drawing.Point(6, 32);
+            this.importFormatServerPictureBox.Location = new System.Drawing.Point(8, 40);
+            this.importFormatServerPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatServerPictureBox.Name = "importFormatServerPictureBox";
-            this.importFormatServerPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.importFormatServerPictureBox.Size = new System.Drawing.Size(20, 20);
             this.importFormatServerPictureBox.TabIndex = 6;
             this.importFormatServerPictureBox.TabStop = false;
             // 
@@ -1398,9 +1460,10 @@
             "IcmTstDb2.cci.caldsaas.local\\tst2",
             "IcmTstDb3.cci.caldsaas.local\\tst3",
             "IcmImpDb1.cci.caldsaas.local\\Imp1"});
-            this.serverSelect.Location = new System.Drawing.Point(28, 32);
+            this.serverSelect.Location = new System.Drawing.Point(35, 40);
+            this.serverSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.serverSelect.Name = "serverSelect";
-            this.serverSelect.Size = new System.Drawing.Size(188, 21);
+            this.serverSelect.Size = new System.Drawing.Size(234, 24);
             this.serverSelect.TabIndex = 32;
             this.serverSelect.SelectedIndexChanged += new System.EventHandler(this.serverSelect_SelectedIndexChanged);
             this.serverSelect.MouseEnter += new System.EventHandler(this.serverSelect_MouseHover);
@@ -1413,9 +1476,10 @@
             this.databaseSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.databaseSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.databaseSelect.FormattingEnabled = true;
-            this.databaseSelect.Location = new System.Drawing.Point(28, 52);
+            this.databaseSelect.Location = new System.Drawing.Point(35, 65);
+            this.databaseSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.databaseSelect.Name = "databaseSelect";
-            this.databaseSelect.Size = new System.Drawing.Size(188, 21);
+            this.databaseSelect.Size = new System.Drawing.Size(234, 24);
             this.databaseSelect.TabIndex = 31;
             this.databaseSelect.SelectedIndexChanged += new System.EventHandler(this.databaseSelect_SelectedIndexChanged);
             this.databaseSelect.MouseEnter += new System.EventHandler(this.databaseSelect_MouseHover);
@@ -1431,6 +1495,7 @@
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.AliceBlue;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.progressBar1,
             this.connectionStatus,
@@ -1451,9 +1516,10 @@
             this.blankSpaceToolStripStatusLabel,
             this.sapLinkToolStripStatusLabel,
             this.versionToolStripStatusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 856);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1072);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1510, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 18, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1888, 26);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 28;
             this.statusStrip1.Text = "statusStrip1";
@@ -1463,14 +1529,14 @@
             // 
             this.progressBar1.MarqueeAnimationSpeed = 0;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 16);
+            this.progressBar1.Size = new System.Drawing.Size(125, 20);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             // 
             // connectionStatus
             // 
             this.connectionStatus.Image = ((System.Drawing.Image)(resources.GetObject("connectionStatus.Image")));
             this.connectionStatus.Name = "connectionStatus";
-            this.connectionStatus.Size = new System.Drawing.Size(81, 17);
+            this.connectionStatus.Size = new System.Drawing.Size(100, 21);
             this.connectionStatus.Text = "Connected";
             this.connectionStatus.Visible = false;
             this.connectionStatus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1479,21 +1545,21 @@
             // 
             this.unableToRegUserToolStripStatusLabel.Image = ((System.Drawing.Image)(resources.GetObject("unableToRegUserToolStripStatusLabel.Image")));
             this.unableToRegUserToolStripStatusLabel.Name = "unableToRegUserToolStripStatusLabel";
-            this.unableToRegUserToolStripStatusLabel.Size = new System.Drawing.Size(145, 17);
+            this.unableToRegUserToolStripStatusLabel.Size = new System.Drawing.Size(185, 21);
             this.unableToRegUserToolStripStatusLabel.Text = "Unable to Register User";
             this.unableToRegUserToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // seperator4ToolStripStatusLabel
             // 
             this.seperator4ToolStripStatusLabel.Name = "seperator4ToolStripStatusLabel";
-            this.seperator4ToolStripStatusLabel.Size = new System.Drawing.Size(10, 17);
+            this.seperator4ToolStripStatusLabel.Size = new System.Drawing.Size(13, 21);
             this.seperator4ToolStripStatusLabel.Text = "|";
             this.seperator4ToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // ifRowCountLabelToolStripStatusLabel
             // 
             this.ifRowCountLabelToolStripStatusLabel.Name = "ifRowCountLabelToolStripStatusLabel";
-            this.ifRowCountLabelToolStripStatusLabel.Size = new System.Drawing.Size(142, 17);
+            this.ifRowCountLabelToolStripStatusLabel.Size = new System.Drawing.Size(177, 21);
             this.ifRowCountLabelToolStripStatusLabel.Text = "Imported File Row Count:";
             this.ifRowCountLabelToolStripStatusLabel.Visible = false;
             this.ifRowCountLabelToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1501,7 +1567,7 @@
             // ifRowCounterToolStripStatusLabel
             // 
             this.ifRowCounterToolStripStatusLabel.Name = "ifRowCounterToolStripStatusLabel";
-            this.ifRowCounterToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.ifRowCounterToolStripStatusLabel.Size = new System.Drawing.Size(17, 21);
             this.ifRowCounterToolStripStatusLabel.Text = "0";
             this.ifRowCounterToolStripStatusLabel.Visible = false;
             this.ifRowCounterToolStripStatusLabel.Click += new System.EventHandler(this.toolStripStatusLabel4_Click);
@@ -1510,7 +1576,7 @@
             // seperator3ToolStripStatusLabel
             // 
             this.seperator3ToolStripStatusLabel.Name = "seperator3ToolStripStatusLabel";
-            this.seperator3ToolStripStatusLabel.Size = new System.Drawing.Size(10, 17);
+            this.seperator3ToolStripStatusLabel.Size = new System.Drawing.Size(13, 21);
             this.seperator3ToolStripStatusLabel.Text = "|";
             this.seperator3ToolStripStatusLabel.Visible = false;
             this.seperator3ToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1518,7 +1584,7 @@
             // sqlRowCountToolStripStatusLabel
             // 
             this.sqlRowCountToolStripStatusLabel.Name = "sqlRowCountToolStripStatusLabel";
-            this.sqlRowCountToolStripStatusLabel.Size = new System.Drawing.Size(93, 17);
+            this.sqlRowCountToolStripStatusLabel.Size = new System.Drawing.Size(114, 21);
             this.sqlRowCountToolStripStatusLabel.Text = "SQL Row Count:";
             this.sqlRowCountToolStripStatusLabel.Visible = false;
             this.sqlRowCountToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1526,7 +1592,7 @@
             // sqlCounterToolStripStatusLabel
             // 
             this.sqlCounterToolStripStatusLabel.Name = "sqlCounterToolStripStatusLabel";
-            this.sqlCounterToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.sqlCounterToolStripStatusLabel.Size = new System.Drawing.Size(17, 21);
             this.sqlCounterToolStripStatusLabel.Text = "0";
             this.sqlCounterToolStripStatusLabel.Visible = false;
             this.sqlCounterToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1534,7 +1600,7 @@
             // seperator2ToolStripStatusLabel
             // 
             this.seperator2ToolStripStatusLabel.Name = "seperator2ToolStripStatusLabel";
-            this.seperator2ToolStripStatusLabel.Size = new System.Drawing.Size(10, 17);
+            this.seperator2ToolStripStatusLabel.Size = new System.Drawing.Size(13, 21);
             this.seperator2ToolStripStatusLabel.Text = "|";
             this.seperator2ToolStripStatusLabel.Visible = false;
             this.seperator2ToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1542,7 +1608,7 @@
             // ifRowCountToolStripStatusLabel
             // 
             this.ifRowCountToolStripStatusLabel.Name = "ifRowCountToolStripStatusLabel";
-            this.ifRowCountToolStripStatusLabel.Size = new System.Drawing.Size(149, 17);
+            this.ifRowCountToolStripStatusLabel.Size = new System.Drawing.Size(184, 21);
             this.ifRowCountToolStripStatusLabel.Text = "Import Format Row Count:";
             this.ifRowCountToolStripStatusLabel.Visible = false;
             this.ifRowCountToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1550,7 +1616,7 @@
             // importFormatRowCountToolStripStatusLabel
             // 
             this.importFormatRowCountToolStripStatusLabel.Name = "importFormatRowCountToolStripStatusLabel";
-            this.importFormatRowCountToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+            this.importFormatRowCountToolStripStatusLabel.Size = new System.Drawing.Size(17, 21);
             this.importFormatRowCountToolStripStatusLabel.Text = "0";
             this.importFormatRowCountToolStripStatusLabel.Visible = false;
             this.importFormatRowCountToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1558,7 +1624,7 @@
             // seperator1ToolStripStatusLabel
             // 
             this.seperator1ToolStripStatusLabel.Name = "seperator1ToolStripStatusLabel";
-            this.seperator1ToolStripStatusLabel.Size = new System.Drawing.Size(10, 17);
+            this.seperator1ToolStripStatusLabel.Size = new System.Drawing.Size(13, 21);
             this.seperator1ToolStripStatusLabel.Text = "|";
             this.seperator1ToolStripStatusLabel.Visible = false;
             this.seperator1ToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1566,7 +1632,7 @@
             // importFormatFileNameToolStripStatusLabel
             // 
             this.importFormatFileNameToolStripStatusLabel.Name = "importFormatFileNameToolStripStatusLabel";
-            this.importFormatFileNameToolStripStatusLabel.Size = new System.Drawing.Size(115, 17);
+            this.importFormatFileNameToolStripStatusLabel.Size = new System.Drawing.Size(145, 21);
             this.importFormatFileNameToolStripStatusLabel.Text = "Imported File Name:";
             this.importFormatFileNameToolStripStatusLabel.Visible = false;
             this.importFormatFileNameToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1575,7 +1641,7 @@
             // 
             this.importFormatActualFileNameToolStripStatusLabel.Name = "importFormatActualFileNameToolStripStatusLabel";
             this.importFormatActualFileNameToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.importFormatActualFileNameToolStripStatusLabel.Size = new System.Drawing.Size(36, 17);
+            this.importFormatActualFileNameToolStripStatusLabel.Size = new System.Drawing.Size(44, 21);
             this.importFormatActualFileNameToolStripStatusLabel.Text = "NULL";
             this.importFormatActualFileNameToolStripStatusLabel.Visible = false;
             this.importFormatActualFileNameToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1585,14 +1651,14 @@
             this.toolStripStatusLabel14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripStatusLabel14.Name = "toolStripStatusLabel14";
             this.toolStripStatusLabel14.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabel14.Size = new System.Drawing.Size(0, 17);
+            this.toolStripStatusLabel14.Size = new System.Drawing.Size(0, 21);
             this.toolStripStatusLabel14.Text = "toolStripStatusLabel14";
             // 
             // blankSpaceToolStripStatusLabel
             // 
             this.blankSpaceToolStripStatusLabel.Name = "blankSpaceToolStripStatusLabel";
             this.blankSpaceToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.blankSpaceToolStripStatusLabel.Size = new System.Drawing.Size(1164, 17);
+            this.blankSpaceToolStripStatusLabel.Size = new System.Drawing.Size(1451, 21);
             this.blankSpaceToolStripStatusLabel.Spring = true;
             this.blankSpaceToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.blankSpaceToolStripStatusLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1602,14 +1668,14 @@
             this.sapLinkToolStripStatusLabel.IsLink = true;
             this.sapLinkToolStripStatusLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.sapLinkToolStripStatusLabel.Name = "sapLinkToolStripStatusLabel";
-            this.sapLinkToolStripStatusLabel.Size = new System.Drawing.Size(28, 17);
+            this.sapLinkToolStripStatusLabel.Size = new System.Drawing.Size(35, 21);
             this.sapLinkToolStripStatusLabel.Text = "SAP";
             this.sapLinkToolStripStatusLabel.Click += new System.EventHandler(this.toolStripStatusLabel18_Click);
             // 
             // versionToolStripStatusLabel
             // 
             this.versionToolStripStatusLabel.Name = "versionToolStripStatusLabel";
-            this.versionToolStripStatusLabel.Size = new System.Drawing.Size(46, 17);
+            this.versionToolStripStatusLabel.Size = new System.Drawing.Size(58, 21);
             this.versionToolStripStatusLabel.Text = "1.1.1.20";
             // 
             // maintabControl
@@ -1623,10 +1689,11 @@
             this.maintabControl.Controls.Add(this.fileSweep);
             this.maintabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.maintabControl.Location = new System.Drawing.Point(0, 0);
+            this.maintabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.maintabControl.Multiline = true;
             this.maintabControl.Name = "maintabControl";
             this.maintabControl.SelectedIndex = 0;
-            this.maintabControl.Size = new System.Drawing.Size(1510, 762);
+            this.maintabControl.Size = new System.Drawing.Size(1888, 956);
             this.maintabControl.TabIndex = 0;
             this.maintabControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
@@ -1645,10 +1712,11 @@
             this.importFormat.Controls.Add(this.importFormatSelectRequiredFieldsGroupBox);
             this.importFormat.Controls.Add(this.importFormatServerSelectGroupBox);
             this.importFormat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.importFormat.Location = new System.Drawing.Point(4, 22);
+            this.importFormat.Location = new System.Drawing.Point(4, 25);
+            this.importFormat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormat.Name = "importFormat";
-            this.importFormat.Padding = new System.Windows.Forms.Padding(3);
-            this.importFormat.Size = new System.Drawing.Size(1502, 736);
+            this.importFormat.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.importFormat.Size = new System.Drawing.Size(1880, 927);
             this.importFormat.TabIndex = 0;
             this.importFormat.Text = "Import Format";
             this.importFormat.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -1657,9 +1725,11 @@
             // 
             this.saveAsGroupBox.Controls.Add(this.saveAsCsvButtonPictureBox);
             this.saveAsGroupBox.Controls.Add(this.saveAsXmlButtonPictureBox);
-            this.saveAsGroupBox.Location = new System.Drawing.Point(258, 8);
+            this.saveAsGroupBox.Location = new System.Drawing.Point(322, 10);
+            this.saveAsGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveAsGroupBox.Name = "saveAsGroupBox";
-            this.saveAsGroupBox.Size = new System.Drawing.Size(200, 112);
+            this.saveAsGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveAsGroupBox.Size = new System.Drawing.Size(250, 140);
             this.saveAsGroupBox.TabIndex = 67;
             this.saveAsGroupBox.TabStop = false;
             this.saveAsGroupBox.Text = "Save As";
@@ -1669,9 +1739,10 @@
             this.saveAsCsvButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.saveAsCsvButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.saveAsCsvButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_csv_save;
-            this.saveAsCsvButtonPictureBox.Location = new System.Drawing.Point(6, 19);
+            this.saveAsCsvButtonPictureBox.Location = new System.Drawing.Point(8, 24);
+            this.saveAsCsvButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveAsCsvButtonPictureBox.Name = "saveAsCsvButtonPictureBox";
-            this.saveAsCsvButtonPictureBox.Size = new System.Drawing.Size(50, 27);
+            this.saveAsCsvButtonPictureBox.Size = new System.Drawing.Size(62, 34);
             this.saveAsCsvButtonPictureBox.TabIndex = 64;
             this.saveAsCsvButtonPictureBox.TabStop = false;
             this.saveAsCsvButtonPictureBox.Click += new System.EventHandler(this.saveAsCsvButtonPictureBox_Click);
@@ -1685,9 +1756,10 @@
             this.saveAsXmlButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.saveAsXmlButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.saveAsXmlButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_xml_save;
-            this.saveAsXmlButtonPictureBox.Location = new System.Drawing.Point(62, 19);
+            this.saveAsXmlButtonPictureBox.Location = new System.Drawing.Point(78, 24);
+            this.saveAsXmlButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveAsXmlButtonPictureBox.Name = "saveAsXmlButtonPictureBox";
-            this.saveAsXmlButtonPictureBox.Size = new System.Drawing.Size(56, 27);
+            this.saveAsXmlButtonPictureBox.Size = new System.Drawing.Size(70, 34);
             this.saveAsXmlButtonPictureBox.TabIndex = 67;
             this.saveAsXmlButtonPictureBox.TabStop = false;
             this.saveAsXmlButtonPictureBox.Click += new System.EventHandler(this.saveAsXmlButtonPictureBox_Click);
@@ -1704,9 +1776,11 @@
             this.openFileGroupBox.Controls.Add(this.xmlButtonPictureBox);
             this.openFileGroupBox.Controls.Add(this.xlsButtonPictureBox);
             this.openFileGroupBox.Controls.Add(this.importformatIncludeHeaderRowButton);
-            this.openFileGroupBox.Location = new System.Drawing.Point(6, 8);
+            this.openFileGroupBox.Location = new System.Drawing.Point(8, 10);
+            this.openFileGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.openFileGroupBox.Name = "openFileGroupBox";
-            this.openFileGroupBox.Size = new System.Drawing.Size(246, 112);
+            this.openFileGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.openFileGroupBox.Size = new System.Drawing.Size(308, 140);
             this.openFileGroupBox.TabIndex = 68;
             this.openFileGroupBox.TabStop = false;
             this.openFileGroupBox.Text = "Open File";
@@ -1716,9 +1790,10 @@
             this.csvButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.csvButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.csvButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_csv;
-            this.csvButtonPictureBox.Location = new System.Drawing.Point(6, 19);
+            this.csvButtonPictureBox.Location = new System.Drawing.Point(8, 24);
+            this.csvButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.csvButtonPictureBox.Name = "csvButtonPictureBox";
-            this.csvButtonPictureBox.Size = new System.Drawing.Size(50, 27);
+            this.csvButtonPictureBox.Size = new System.Drawing.Size(62, 34);
             this.csvButtonPictureBox.TabIndex = 58;
             this.csvButtonPictureBox.TabStop = false;
             this.csvButtonPictureBox.Click += new System.EventHandler(this.menu_Open_Csv_Click);
@@ -1732,9 +1807,10 @@
             this.txtCommaButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.txtCommaButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtCommaButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_txt_comma;
-            this.txtCommaButtonPictureBox.Location = new System.Drawing.Point(6, 52);
+            this.txtCommaButtonPictureBox.Location = new System.Drawing.Point(8, 65);
+            this.txtCommaButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCommaButtonPictureBox.Name = "txtCommaButtonPictureBox";
-            this.txtCommaButtonPictureBox.Size = new System.Drawing.Size(131, 27);
+            this.txtCommaButtonPictureBox.Size = new System.Drawing.Size(164, 34);
             this.txtCommaButtonPictureBox.TabIndex = 59;
             this.txtCommaButtonPictureBox.TabStop = false;
             this.txtCommaButtonPictureBox.Click += new System.EventHandler(this.tXTToolStripMenuItemComma_Click);
@@ -1748,9 +1824,10 @@
             this.txtPipePictureBox.BackColor = System.Drawing.Color.Transparent;
             this.txtPipePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtPipePictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_txt_pipe;
-            this.txtPipePictureBox.Location = new System.Drawing.Point(143, 52);
+            this.txtPipePictureBox.Location = new System.Drawing.Point(179, 65);
+            this.txtPipePictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPipePictureBox.Name = "txtPipePictureBox";
-            this.txtPipePictureBox.Size = new System.Drawing.Size(98, 27);
+            this.txtPipePictureBox.Size = new System.Drawing.Size(122, 34);
             this.txtPipePictureBox.TabIndex = 60;
             this.txtPipePictureBox.TabStop = false;
             this.txtPipePictureBox.Click += new System.EventHandler(this.pipeToolStripMenuItem_Click);
@@ -1764,9 +1841,10 @@
             this.xmlButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.xmlButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.xmlButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_xml;
-            this.xmlButtonPictureBox.Location = new System.Drawing.Point(62, 19);
+            this.xmlButtonPictureBox.Location = new System.Drawing.Point(78, 24);
+            this.xmlButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xmlButtonPictureBox.Name = "xmlButtonPictureBox";
-            this.xmlButtonPictureBox.Size = new System.Drawing.Size(56, 27);
+            this.xmlButtonPictureBox.Size = new System.Drawing.Size(70, 34);
             this.xmlButtonPictureBox.TabIndex = 62;
             this.xmlButtonPictureBox.TabStop = false;
             this.xmlButtonPictureBox.Click += new System.EventHandler(this.menu_Open_Xml_Click);
@@ -1780,9 +1858,10 @@
             this.xlsButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.xlsButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.xlsButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_xls;
-            this.xlsButtonPictureBox.Location = new System.Drawing.Point(124, 19);
+            this.xlsButtonPictureBox.Location = new System.Drawing.Point(155, 24);
+            this.xlsButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xlsButtonPictureBox.Name = "xlsButtonPictureBox";
-            this.xlsButtonPictureBox.Size = new System.Drawing.Size(46, 27);
+            this.xlsButtonPictureBox.Size = new System.Drawing.Size(58, 34);
             this.xlsButtonPictureBox.TabIndex = 61;
             this.xlsButtonPictureBox.TabStop = false;
             this.xlsButtonPictureBox.Click += new System.EventHandler(this.menu_Open_Xls_Click);
@@ -1794,9 +1873,10 @@
             // importformatIncludeHeaderRowButton
             // 
             this.importformatIncludeHeaderRowButton.AutoSize = true;
-            this.importformatIncludeHeaderRowButton.Location = new System.Drawing.Point(6, 85);
+            this.importformatIncludeHeaderRowButton.Location = new System.Drawing.Point(8, 106);
+            this.importformatIncludeHeaderRowButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importformatIncludeHeaderRowButton.Name = "importformatIncludeHeaderRowButton";
-            this.importformatIncludeHeaderRowButton.Size = new System.Drawing.Size(220, 17);
+            this.importformatIncludeHeaderRowButton.Size = new System.Drawing.Size(285, 21);
             this.importformatIncludeHeaderRowButton.TabIndex = 53;
             this.importformatIncludeHeaderRowButton.Text = "Include Header Row when Opening Files";
             this.importformatIncludeHeaderRowButton.UseVisualStyleBackColor = true;
@@ -1806,9 +1886,10 @@
             this.legendButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.legendButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.legendButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_table_legend;
-            this.legendButtonPictureBox.Location = new System.Drawing.Point(1249, 52);
+            this.legendButtonPictureBox.Location = new System.Drawing.Point(1561, 65);
+            this.legendButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.legendButtonPictureBox.Name = "legendButtonPictureBox";
-            this.legendButtonPictureBox.Size = new System.Drawing.Size(142, 27);
+            this.legendButtonPictureBox.Size = new System.Drawing.Size(178, 34);
             this.legendButtonPictureBox.TabIndex = 66;
             this.legendButtonPictureBox.TabStop = false;
             this.legendButtonPictureBox.Click += new System.EventHandler(this.legendButtonPictureBox_Click);
@@ -1822,9 +1903,10 @@
             this.openInExcelPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.openInExcelPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.openInExcelPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_open_in_excel;
-            this.openInExcelPictureBox.Location = new System.Drawing.Point(1249, 85);
+            this.openInExcelPictureBox.Location = new System.Drawing.Point(1561, 106);
+            this.openInExcelPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.openInExcelPictureBox.Name = "openInExcelPictureBox";
-            this.openInExcelPictureBox.Size = new System.Drawing.Size(145, 27);
+            this.openInExcelPictureBox.Size = new System.Drawing.Size(181, 34);
             this.openInExcelPictureBox.TabIndex = 65;
             this.openInExcelPictureBox.TabStop = false;
             this.openInExcelPictureBox.Click += new System.EventHandler(this.openInExcelPictureBox_Click);
@@ -1839,9 +1921,10 @@
             this.goButtonPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.goButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.goButtonPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_go;
-            this.goButtonPictureBox.Location = new System.Drawing.Point(1431, 76);
+            this.goButtonPictureBox.Location = new System.Drawing.Point(1789, 95);
+            this.goButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.goButtonPictureBox.Name = "goButtonPictureBox";
-            this.goButtonPictureBox.Size = new System.Drawing.Size(63, 42);
+            this.goButtonPictureBox.Size = new System.Drawing.Size(79, 52);
             this.goButtonPictureBox.TabIndex = 57;
             this.goButtonPictureBox.TabStop = false;
             this.goButtonPictureBox.Click += new System.EventHandler(this.groupByErrorToolStripMenuItem_Click);
@@ -1856,19 +1939,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.importFormatProgressBar.BackColor = System.Drawing.Color.AliceBlue;
             this.importFormatProgressBar.ForeColor = System.Drawing.Color.DarkRed;
-            this.importFormatProgressBar.Location = new System.Drawing.Point(6, 124);
+            this.importFormatProgressBar.Location = new System.Drawing.Point(8, 155);
+            this.importFormatProgressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatProgressBar.MarqueeAnimationSpeed = 1;
             this.importFormatProgressBar.Name = "importFormatProgressBar";
-            this.importFormatProgressBar.Size = new System.Drawing.Size(1488, 21);
+            this.importFormatProgressBar.Size = new System.Drawing.Size(1860, 26);
             this.importFormatProgressBar.TabIndex = 7;
             this.importFormatProgressBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // importFormatDatabaseChecksGroupBox
             // 
             this.importFormatDatabaseChecksGroupBox.Controls.Add(this.importFormatDatabaseCheck1Button);
-            this.importFormatDatabaseChecksGroupBox.Location = new System.Drawing.Point(1249, 6);
+            this.importFormatDatabaseChecksGroupBox.Location = new System.Drawing.Point(1561, 8);
+            this.importFormatDatabaseChecksGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatDatabaseChecksGroupBox.Name = "importFormatDatabaseChecksGroupBox";
-            this.importFormatDatabaseChecksGroupBox.Size = new System.Drawing.Size(177, 40);
+            this.importFormatDatabaseChecksGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.importFormatDatabaseChecksGroupBox.Size = new System.Drawing.Size(221, 50);
             this.importFormatDatabaseChecksGroupBox.TabIndex = 6;
             this.importFormatDatabaseChecksGroupBox.TabStop = false;
             this.importFormatDatabaseChecksGroupBox.Text = "Database Checks";
@@ -1877,9 +1963,10 @@
             // 
             this.importFormatDatabaseCheck1Button.AutoSize = true;
             this.importFormatDatabaseCheck1Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.importFormatDatabaseCheck1Button.Location = new System.Drawing.Point(6, 14);
+            this.importFormatDatabaseCheck1Button.Location = new System.Drawing.Point(8, 18);
+            this.importFormatDatabaseCheck1Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatDatabaseCheck1Button.Name = "importFormatDatabaseCheck1Button";
-            this.importFormatDatabaseCheck1Button.Size = new System.Drawing.Size(167, 17);
+            this.importFormatDatabaseCheck1Button.Size = new System.Drawing.Size(218, 21);
             this.importFormatDatabaseCheck1Button.TabIndex = 44;
             this.importFormatDatabaseCheck1Button.Text = "Is the Broker in the Database?";
             this.importFormatDatabaseCheck1Button.UseVisualStyleBackColor = true;
@@ -1894,9 +1981,11 @@
             this.importFormatSelectDateGroupBox.Controls.Add(this.dateComboBox3);
             this.importFormatSelectDateGroupBox.Controls.Add(this.dateComboBox2);
             this.importFormatSelectDateGroupBox.Controls.Add(this.dateComboBox1);
-            this.importFormatSelectDateGroupBox.Location = new System.Drawing.Point(831, 6);
+            this.importFormatSelectDateGroupBox.Location = new System.Drawing.Point(1039, 8);
+            this.importFormatSelectDateGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatSelectDateGroupBox.Name = "importFormatSelectDateGroupBox";
-            this.importFormatSelectDateGroupBox.Size = new System.Drawing.Size(412, 112);
+            this.importFormatSelectDateGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.importFormatSelectDateGroupBox.Size = new System.Drawing.Size(515, 140);
             this.importFormatSelectDateGroupBox.TabIndex = 41;
             this.importFormatSelectDateGroupBox.TabStop = false;
             this.importFormatSelectDateGroupBox.Text = "Select Date Format and Date Columns";
@@ -1905,9 +1994,10 @@
             // 
             this.importFormatFindNullCheckbox.AutoSize = true;
             this.importFormatFindNullCheckbox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.importFormatFindNullCheckbox.Location = new System.Drawing.Point(10, 71);
+            this.importFormatFindNullCheckbox.Location = new System.Drawing.Point(12, 89);
+            this.importFormatFindNullCheckbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatFindNullCheckbox.Name = "importFormatFindNullCheckbox";
-            this.importFormatFindNullCheckbox.Size = new System.Drawing.Size(74, 17);
+            this.importFormatFindNullCheckbox.Size = new System.Drawing.Size(93, 21);
             this.importFormatFindNullCheckbox.TabIndex = 42;
             this.importFormatFindNullCheckbox.Text = "Find NULL";
             this.importFormatFindNullCheckbox.UseVisualStyleBackColor = true;
@@ -1916,10 +2006,12 @@
             // dateListBox
             // 
             this.dateListBox.FormattingEnabled = true;
-            this.dateListBox.Location = new System.Drawing.Point(282, 15);
+            this.dateListBox.ItemHeight = 16;
+            this.dateListBox.Location = new System.Drawing.Point(352, 19);
+            this.dateListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateListBox.Name = "dateListBox";
             this.dateListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.dateListBox.Size = new System.Drawing.Size(120, 95);
+            this.dateListBox.Size = new System.Drawing.Size(149, 116);
             this.dateListBox.TabIndex = 42;
             this.dateListBox.MouseEnter += new System.EventHandler(this.dateListBox_MouseEnter);
             // 
@@ -1927,9 +2019,10 @@
             // 
             this.dateFormat.AutoSize = true;
             this.dateFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateFormat.Location = new System.Drawing.Point(6, 43);
+            this.dateFormat.Location = new System.Drawing.Point(8, 54);
+            this.dateFormat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateFormat.Name = "dateFormat";
-            this.dateFormat.Size = new System.Drawing.Size(103, 20);
+            this.dateFormat.Size = new System.Drawing.Size(125, 25);
             this.dateFormat.TabIndex = 42;
             this.dateFormat.Text = "Date Format:";
             this.dateFormat.MouseEnter += new System.EventHandler(this.dateFormat_MouseEnter);
@@ -1944,9 +2037,10 @@
             "",
             "/",
             "-"});
-            this.dateComboBoxSeperator.Location = new System.Drawing.Point(213, 19);
+            this.dateComboBoxSeperator.Location = new System.Drawing.Point(266, 24);
+            this.dateComboBoxSeperator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateComboBoxSeperator.Name = "dateComboBoxSeperator";
-            this.dateComboBoxSeperator.Size = new System.Drawing.Size(63, 21);
+            this.dateComboBoxSeperator.Size = new System.Drawing.Size(78, 24);
             this.dateComboBoxSeperator.TabIndex = 43;
             this.dateComboBoxSeperator.SelectedIndexChanged += new System.EventHandler(this.dateComboBoxSeperator_SelectedIndexChanged);
             this.dateComboBoxSeperator.MouseEnter += new System.EventHandler(this.dateComboBoxSeperator_MouseEnter);
@@ -1971,9 +2065,10 @@
             "y",
             "yy",
             "yyyy"});
-            this.dateComboBox3.Location = new System.Drawing.Point(144, 19);
+            this.dateComboBox3.Location = new System.Drawing.Point(180, 24);
+            this.dateComboBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateComboBox3.Name = "dateComboBox3";
-            this.dateComboBox3.Size = new System.Drawing.Size(63, 21);
+            this.dateComboBox3.Size = new System.Drawing.Size(78, 24);
             this.dateComboBox3.TabIndex = 42;
             this.dateComboBox3.SelectedIndexChanged += new System.EventHandler(this.dateComboBox3_SelectedIndexChanged);
             this.dateComboBox3.MouseEnter += new System.EventHandler(this.dateComboBox3_MouseEnter);
@@ -1998,9 +2093,10 @@
             "y",
             "yy",
             "yyyy"});
-            this.dateComboBox2.Location = new System.Drawing.Point(75, 19);
+            this.dateComboBox2.Location = new System.Drawing.Point(94, 24);
+            this.dateComboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateComboBox2.Name = "dateComboBox2";
-            this.dateComboBox2.Size = new System.Drawing.Size(63, 21);
+            this.dateComboBox2.Size = new System.Drawing.Size(78, 24);
             this.dateComboBox2.TabIndex = 41;
             this.dateComboBox2.SelectedIndexChanged += new System.EventHandler(this.dateComboBox2_SelectedIndexChanged);
             this.dateComboBox2.MouseEnter += new System.EventHandler(this.dateComboBox2_MouseEnter);
@@ -2025,9 +2121,10 @@
             "y",
             "yy",
             "yyyy"});
-            this.dateComboBox1.Location = new System.Drawing.Point(6, 19);
+            this.dateComboBox1.Location = new System.Drawing.Point(8, 24);
+            this.dateComboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateComboBox1.Name = "dateComboBox1";
-            this.dateComboBox1.Size = new System.Drawing.Size(63, 21);
+            this.dateComboBox1.Size = new System.Drawing.Size(78, 24);
             this.dateComboBox1.TabIndex = 40;
             this.dateComboBox1.SelectedIndexChanged += new System.EventHandler(this.dateComboBox1_SelectedIndexChanged);
             this.dateComboBox1.MouseEnter += new System.EventHandler(this.dateComboBox1_MouseEnter);
@@ -2035,9 +2132,11 @@
             // importFormatSelectRequiredFieldsGroupBox
             // 
             this.importFormatSelectRequiredFieldsGroupBox.Controls.Add(this.reqListBox);
-            this.importFormatSelectRequiredFieldsGroupBox.Location = new System.Drawing.Point(692, 6);
+            this.importFormatSelectRequiredFieldsGroupBox.Location = new System.Drawing.Point(865, 8);
+            this.importFormatSelectRequiredFieldsGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importFormatSelectRequiredFieldsGroupBox.Name = "importFormatSelectRequiredFieldsGroupBox";
-            this.importFormatSelectRequiredFieldsGroupBox.Size = new System.Drawing.Size(133, 112);
+            this.importFormatSelectRequiredFieldsGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.importFormatSelectRequiredFieldsGroupBox.Size = new System.Drawing.Size(166, 140);
             this.importFormatSelectRequiredFieldsGroupBox.TabIndex = 36;
             this.importFormatSelectRequiredFieldsGroupBox.TabStop = false;
             this.importFormatSelectRequiredFieldsGroupBox.Text = "Select Required Fields";
@@ -2046,10 +2145,12 @@
             // reqListBox
             // 
             this.reqListBox.FormattingEnabled = true;
-            this.reqListBox.Location = new System.Drawing.Point(6, 15);
+            this.reqListBox.ItemHeight = 16;
+            this.reqListBox.Location = new System.Drawing.Point(8, 19);
+            this.reqListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reqListBox.Name = "reqListBox";
             this.reqListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.reqListBox.Size = new System.Drawing.Size(120, 95);
+            this.reqListBox.Size = new System.Drawing.Size(149, 116);
             this.reqListBox.TabIndex = 41;
             this.reqListBox.MouseEnter += new System.EventHandler(this.reqListBox_MouseEnter);
             // 
@@ -2063,13 +2164,62 @@
             this.checkTools.Controls.Add(this.checkToolsCellLengthCheckerGroupBox);
             this.checkTools.Controls.Add(this.checkToolsSpecialCharacterCheckerGroupBox);
             this.checkTools.Controls.Add(this.checkToolsNullCheckerGroupBox);
-            this.checkTools.Location = new System.Drawing.Point(4, 22);
+            this.checkTools.Location = new System.Drawing.Point(4, 25);
+            this.checkTools.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkTools.Name = "checkTools";
-            this.checkTools.Padding = new System.Windows.Forms.Padding(3);
-            this.checkTools.Size = new System.Drawing.Size(1502, 736);
+            this.checkTools.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkTools.Size = new System.Drawing.Size(1880, 923);
             this.checkTools.TabIndex = 1;
             this.checkTools.Text = "Check Tools";
             this.checkTools.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // stagedDataGridView
+            // 
+            this.stagedDataGridView.AllowUserToAddRows = false;
+            this.stagedDataGridView.BackgroundColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.stagedDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.stagedDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stagedDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.stagedDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
+            this.stagedDataGridView.Location = new System.Drawing.Point(1738, 64);
+            this.stagedDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stagedDataGridView.Name = "stagedDataGridView";
+            this.stagedDataGridView.ReadOnly = true;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.stagedDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.stagedDataGridView.Size = new System.Drawing.Size(12, 12);
+            this.stagedDataGridView.TabIndex = 52;
+            // 
+            // testButton
+            // 
+            this.testButton.Location = new System.Drawing.Point(1656, 30);
+            this.testButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.testButton.Name = "testButton";
+            this.testButton.Size = new System.Drawing.Size(94, 29);
+            this.testButton.TabIndex = 51;
+            this.testButton.Text = "testButton";
+            this.testButton.UseVisualStyleBackColor = false;
+            this.testButton.Visible = false;
             // 
             // checkToolsProgressBar
             // 
@@ -2077,10 +2227,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkToolsProgressBar.BackColor = System.Drawing.Color.AliceBlue;
             this.checkToolsProgressBar.ForeColor = System.Drawing.Color.DarkRed;
-            this.checkToolsProgressBar.Location = new System.Drawing.Point(6, 124);
+            this.checkToolsProgressBar.Location = new System.Drawing.Point(8, 155);
+            this.checkToolsProgressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkToolsProgressBar.MarqueeAnimationSpeed = 1;
             this.checkToolsProgressBar.Name = "checkToolsProgressBar";
-            this.checkToolsProgressBar.Size = new System.Drawing.Size(1488, 21);
+            this.checkToolsProgressBar.Size = new System.Drawing.Size(1860, 26);
             this.checkToolsProgressBar.TabIndex = 28;
             this.checkToolsProgressBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
@@ -2095,9 +2246,10 @@
             this.sqlQuery.Controls.Add(this.databaseSelect2);
             this.sqlQuery.Controls.Add(this.serverSelect2);
             this.sqlQuery.Controls.Add(this.queryWindow);
-            this.sqlQuery.Location = new System.Drawing.Point(4, 22);
+            this.sqlQuery.Location = new System.Drawing.Point(4, 25);
+            this.sqlQuery.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sqlQuery.Name = "sqlQuery";
-            this.sqlQuery.Size = new System.Drawing.Size(1502, 736);
+            this.sqlQuery.Size = new System.Drawing.Size(1880, 923);
             this.sqlQuery.TabIndex = 3;
             this.sqlQuery.Text = "SQL Query";
             this.sqlQuery.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -2108,9 +2260,10 @@
             this.sqlQueryGoPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.sqlQueryGoPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sqlQueryGoPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_go;
-            this.sqlQueryGoPictureBox.Location = new System.Drawing.Point(1431, 76);
+            this.sqlQueryGoPictureBox.Location = new System.Drawing.Point(1789, 95);
+            this.sqlQueryGoPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sqlQueryGoPictureBox.Name = "sqlQueryGoPictureBox";
-            this.sqlQueryGoPictureBox.Size = new System.Drawing.Size(63, 42);
+            this.sqlQueryGoPictureBox.Size = new System.Drawing.Size(79, 52);
             this.sqlQueryGoPictureBox.TabIndex = 62;
             this.sqlQueryGoPictureBox.TabStop = false;
             this.sqlQueryGoPictureBox.Click += new System.EventHandler(this.runquery_Click);
@@ -2144,7 +2297,8 @@
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.sqlQueryDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
-            this.sqlQueryDataGridView.Location = new System.Drawing.Point(3, 151);
+            this.sqlQueryDataGridView.Location = new System.Drawing.Point(4, 189);
+            this.sqlQueryDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sqlQueryDataGridView.Name = "sqlQueryDataGridView";
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
@@ -2154,7 +2308,7 @@
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.sqlQueryDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.sqlQueryDataGridView.Size = new System.Drawing.Size(1497, 582);
+            this.sqlQueryDataGridView.Size = new System.Drawing.Size(1871, 724);
             this.sqlQueryDataGridView.TabIndex = 45;
             // 
             // sqlQueryProgressBar
@@ -2163,28 +2317,31 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sqlQueryProgressBar.BackColor = System.Drawing.Color.AliceBlue;
             this.sqlQueryProgressBar.ForeColor = System.Drawing.Color.DarkRed;
-            this.sqlQueryProgressBar.Location = new System.Drawing.Point(6, 124);
+            this.sqlQueryProgressBar.Location = new System.Drawing.Point(8, 155);
+            this.sqlQueryProgressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sqlQueryProgressBar.MarqueeAnimationSpeed = 1;
             this.sqlQueryProgressBar.Name = "sqlQueryProgressBar";
-            this.sqlQueryProgressBar.Size = new System.Drawing.Size(1488, 21);
+            this.sqlQueryProgressBar.Size = new System.Drawing.Size(1860, 26);
             this.sqlQueryProgressBar.TabIndex = 44;
             this.sqlQueryProgressBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // sqlDatabasePictureBox
             // 
             this.sqlDatabasePictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.database_16xLG;
-            this.sqlDatabasePictureBox.Location = new System.Drawing.Point(3, 29);
+            this.sqlDatabasePictureBox.Location = new System.Drawing.Point(4, 36);
+            this.sqlDatabasePictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sqlDatabasePictureBox.Name = "sqlDatabasePictureBox";
-            this.sqlDatabasePictureBox.Size = new System.Drawing.Size(16, 16);
+            this.sqlDatabasePictureBox.Size = new System.Drawing.Size(20, 20);
             this.sqlDatabasePictureBox.TabIndex = 43;
             this.sqlDatabasePictureBox.TabStop = false;
             // 
             // sqlQueryServerPictureBox
             // 
             this.sqlQueryServerPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.DatabaseOptions_12882;
-            this.sqlQueryServerPictureBox.Location = new System.Drawing.Point(3, 7);
+            this.sqlQueryServerPictureBox.Location = new System.Drawing.Point(4, 9);
+            this.sqlQueryServerPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sqlQueryServerPictureBox.Name = "sqlQueryServerPictureBox";
-            this.sqlQueryServerPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.sqlQueryServerPictureBox.Size = new System.Drawing.Size(20, 20);
             this.sqlQueryServerPictureBox.TabIndex = 43;
             this.sqlQueryServerPictureBox.TabStop = false;
             // 
@@ -2196,9 +2353,10 @@
             this.databaseSelect2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.databaseSelect2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.databaseSelect2.FormattingEnabled = true;
-            this.databaseSelect2.Location = new System.Drawing.Point(25, 29);
+            this.databaseSelect2.Location = new System.Drawing.Point(31, 36);
+            this.databaseSelect2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.databaseSelect2.Name = "databaseSelect2";
-            this.databaseSelect2.Size = new System.Drawing.Size(220, 21);
+            this.databaseSelect2.Size = new System.Drawing.Size(274, 24);
             this.databaseSelect2.TabIndex = 37;
             // 
             // serverSelect2
@@ -2213,9 +2371,10 @@
             "IcmTstDb2.cci.caldsaas.local\\tst2",
             "IcmTstDb3.cci.caldsaas.local\\tst3",
             "IcmImpDb1.cci.caldsaas.local\\Imp1"});
-            this.serverSelect2.Location = new System.Drawing.Point(25, 7);
+            this.serverSelect2.Location = new System.Drawing.Point(31, 9);
+            this.serverSelect2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.serverSelect2.Name = "serverSelect2";
-            this.serverSelect2.Size = new System.Drawing.Size(220, 21);
+            this.serverSelect2.Size = new System.Drawing.Size(274, 24);
             this.serverSelect2.TabIndex = 35;
             this.serverSelect2.SelectedIndexChanged += new System.EventHandler(this.serverSelect2_SelectedIndexChanged);
             // 
@@ -2225,9 +2384,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.queryWindow.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.queryWindow.ForeColor = System.Drawing.Color.Blue;
-            this.queryWindow.Location = new System.Drawing.Point(251, 3);
+            this.queryWindow.Location = new System.Drawing.Point(314, 4);
+            this.queryWindow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.queryWindow.Name = "queryWindow";
-            this.queryWindow.Size = new System.Drawing.Size(1105, 115);
+            this.queryWindow.Size = new System.Drawing.Size(1380, 143);
             this.queryWindow.TabIndex = 33;
             this.queryWindow.Text = "";
             // 
@@ -2241,9 +2401,10 @@
             this.benchmark.Controls.Add(this.benchmarkProgressBar);
             this.benchmark.Controls.Add(this.payoutBenchmarkPayoutStatusGroupBox);
             this.benchmark.Controls.Add(this.payoutBenchmarkServerSelectGroupBox);
-            this.benchmark.Location = new System.Drawing.Point(4, 22);
+            this.benchmark.Location = new System.Drawing.Point(4, 25);
+            this.benchmark.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.benchmark.Name = "benchmark";
-            this.benchmark.Size = new System.Drawing.Size(1502, 736);
+            this.benchmark.Size = new System.Drawing.Size(1880, 923);
             this.benchmark.TabIndex = 5;
             this.benchmark.Text = "Payout Benchmark";
             this.benchmark.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -2254,9 +2415,10 @@
             this.benchmarkGoPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.benchmarkGoPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.benchmarkGoPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_go;
-            this.benchmarkGoPictureBox.Location = new System.Drawing.Point(1431, 76);
+            this.benchmarkGoPictureBox.Location = new System.Drawing.Point(1789, 95);
+            this.benchmarkGoPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.benchmarkGoPictureBox.Name = "benchmarkGoPictureBox";
-            this.benchmarkGoPictureBox.Size = new System.Drawing.Size(63, 42);
+            this.benchmarkGoPictureBox.Size = new System.Drawing.Size(79, 52);
             this.benchmarkGoPictureBox.TabIndex = 63;
             this.benchmarkGoPictureBox.TabStop = false;
             this.benchmarkGoPictureBox.Click += new System.EventHandler(this.payoutBenchmarkButton_Click);
@@ -2271,9 +2433,10 @@
             this.benchmarkExportResultsPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.benchmarkExportResultsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.benchmarkExportResultsPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_export_results;
-            this.benchmarkExportResultsPictureBox.Location = new System.Drawing.Point(1251, 76);
+            this.benchmarkExportResultsPictureBox.Location = new System.Drawing.Point(1564, 95);
+            this.benchmarkExportResultsPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.benchmarkExportResultsPictureBox.Name = "benchmarkExportResultsPictureBox";
-            this.benchmarkExportResultsPictureBox.Size = new System.Drawing.Size(174, 42);
+            this.benchmarkExportResultsPictureBox.Size = new System.Drawing.Size(218, 52);
             this.benchmarkExportResultsPictureBox.TabIndex = 62;
             this.benchmarkExportResultsPictureBox.TabStop = false;
             this.benchmarkExportResultsPictureBox.Click += new System.EventHandler(this.benchmarkExportResultsPictureBox_Click);
@@ -2288,9 +2451,10 @@
             this.benchmarkClearResultsPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.benchmarkClearResultsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.benchmarkClearResultsPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_clear_results;
-            this.benchmarkClearResultsPictureBox.Location = new System.Drawing.Point(1084, 76);
+            this.benchmarkClearResultsPictureBox.Location = new System.Drawing.Point(1355, 95);
+            this.benchmarkClearResultsPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.benchmarkClearResultsPictureBox.Name = "benchmarkClearResultsPictureBox";
-            this.benchmarkClearResultsPictureBox.Size = new System.Drawing.Size(161, 42);
+            this.benchmarkClearResultsPictureBox.Size = new System.Drawing.Size(201, 52);
             this.benchmarkClearResultsPictureBox.TabIndex = 61;
             this.benchmarkClearResultsPictureBox.TabStop = false;
             this.benchmarkClearResultsPictureBox.Click += new System.EventHandler(this.benchmarkClearResultsPictureBox_Click);
@@ -2304,7 +2468,8 @@
             this.benchmarkSplitContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.benchmarkSplitContainer.Location = new System.Drawing.Point(6, 151);
+            this.benchmarkSplitContainer.Location = new System.Drawing.Point(8, 189);
+            this.benchmarkSplitContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.benchmarkSplitContainer.Name = "benchmarkSplitContainer";
             // 
             // benchmarkSplitContainer.Panel1
@@ -2315,8 +2480,9 @@
             // 
             this.benchmarkSplitContainer.Panel2.Controls.Add(this.benchmarkDataGridViewLabel);
             this.benchmarkSplitContainer.Panel2.Controls.Add(this.benchmarkDataGridView);
-            this.benchmarkSplitContainer.Size = new System.Drawing.Size(1496, 582);
-            this.benchmarkSplitContainer.SplitterDistance = 1029;
+            this.benchmarkSplitContainer.Size = new System.Drawing.Size(1870, 724);
+            this.benchmarkSplitContainer.SplitterDistance = 1286;
+            this.benchmarkSplitContainer.SplitterWidth = 5;
             this.benchmarkSplitContainer.TabIndex = 45;
             // 
             // benchmarkRichTextBox
@@ -2324,9 +2490,10 @@
             this.benchmarkRichTextBox.BackColor = System.Drawing.Color.Azure;
             this.benchmarkRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.benchmarkRichTextBox.Location = new System.Drawing.Point(0, 0);
+            this.benchmarkRichTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.benchmarkRichTextBox.Name = "benchmarkRichTextBox";
             this.benchmarkRichTextBox.ReadOnly = true;
-            this.benchmarkRichTextBox.Size = new System.Drawing.Size(1029, 582);
+            this.benchmarkRichTextBox.Size = new System.Drawing.Size(1286, 724);
             this.benchmarkRichTextBox.TabIndex = 33;
             this.benchmarkRichTextBox.Text = "";
             // 
@@ -2334,9 +2501,10 @@
             // 
             this.benchmarkDataGridViewLabel.AutoSize = true;
             this.benchmarkDataGridViewLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.benchmarkDataGridViewLabel.Location = new System.Drawing.Point(41, 4);
+            this.benchmarkDataGridViewLabel.Location = new System.Drawing.Point(51, 5);
+            this.benchmarkDataGridViewLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.benchmarkDataGridViewLabel.Name = "benchmarkDataGridViewLabel";
-            this.benchmarkDataGridViewLabel.Size = new System.Drawing.Size(409, 25);
+            this.benchmarkDataGridViewLabel.Size = new System.Drawing.Size(505, 31);
             this.benchmarkDataGridViewLabel.TabIndex = 45;
             this.benchmarkDataGridViewLabel.Text = "Payout Tasks - Longest Running First";
             // 
@@ -2365,7 +2533,8 @@
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.benchmarkDataGridView.DefaultCellStyle = dataGridViewCellStyle17;
-            this.benchmarkDataGridView.Location = new System.Drawing.Point(2, 32);
+            this.benchmarkDataGridView.Location = new System.Drawing.Point(2, 40);
+            this.benchmarkDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.benchmarkDataGridView.Name = "benchmarkDataGridView";
             this.benchmarkDataGridView.ReadOnly = true;
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2376,7 +2545,7 @@
             dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.benchmarkDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
-            this.benchmarkDataGridView.Size = new System.Drawing.Size(458, 547);
+            this.benchmarkDataGridView.Size = new System.Drawing.Size(572, 680);
             this.benchmarkDataGridView.TabIndex = 44;
             // 
             // benchmarkProgressBar
@@ -2385,10 +2554,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.benchmarkProgressBar.BackColor = System.Drawing.Color.AliceBlue;
             this.benchmarkProgressBar.ForeColor = System.Drawing.Color.DarkRed;
-            this.benchmarkProgressBar.Location = new System.Drawing.Point(6, 124);
+            this.benchmarkProgressBar.Location = new System.Drawing.Point(8, 155);
+            this.benchmarkProgressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.benchmarkProgressBar.MarqueeAnimationSpeed = 1;
             this.benchmarkProgressBar.Name = "benchmarkProgressBar";
-            this.benchmarkProgressBar.Size = new System.Drawing.Size(1488, 21);
+            this.benchmarkProgressBar.Size = new System.Drawing.Size(1860, 26);
             this.benchmarkProgressBar.TabIndex = 40;
             this.benchmarkProgressBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
@@ -2398,9 +2568,11 @@
             this.payoutBenchmarkPayoutStatusGroupBox.Controls.Add(this.reversedRadioButton);
             this.payoutBenchmarkPayoutStatusGroupBox.Controls.Add(this.finalizedRadioButton);
             this.payoutBenchmarkPayoutStatusGroupBox.Controls.Add(this.pendingRadioButton);
-            this.payoutBenchmarkPayoutStatusGroupBox.Location = new System.Drawing.Point(236, 6);
+            this.payoutBenchmarkPayoutStatusGroupBox.Location = new System.Drawing.Point(295, 8);
+            this.payoutBenchmarkPayoutStatusGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.payoutBenchmarkPayoutStatusGroupBox.Name = "payoutBenchmarkPayoutStatusGroupBox";
-            this.payoutBenchmarkPayoutStatusGroupBox.Size = new System.Drawing.Size(218, 40);
+            this.payoutBenchmarkPayoutStatusGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.payoutBenchmarkPayoutStatusGroupBox.Size = new System.Drawing.Size(272, 50);
             this.payoutBenchmarkPayoutStatusGroupBox.TabIndex = 37;
             this.payoutBenchmarkPayoutStatusGroupBox.TabStop = false;
             this.payoutBenchmarkPayoutStatusGroupBox.Text = "Payout Status";
@@ -2408,9 +2580,10 @@
             // reversedRadioButton
             // 
             this.reversedRadioButton.AutoSize = true;
-            this.reversedRadioButton.Location = new System.Drawing.Point(140, 16);
+            this.reversedRadioButton.Location = new System.Drawing.Point(175, 20);
+            this.reversedRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reversedRadioButton.Name = "reversedRadioButton";
-            this.reversedRadioButton.Size = new System.Drawing.Size(71, 17);
+            this.reversedRadioButton.Size = new System.Drawing.Size(90, 21);
             this.reversedRadioButton.TabIndex = 2;
             this.reversedRadioButton.Text = "Reversed";
             this.reversedRadioButton.UseVisualStyleBackColor = true;
@@ -2419,9 +2592,10 @@
             // finalizedRadioButton
             // 
             this.finalizedRadioButton.AutoSize = true;
-            this.finalizedRadioButton.Location = new System.Drawing.Point(73, 16);
+            this.finalizedRadioButton.Location = new System.Drawing.Point(91, 20);
+            this.finalizedRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.finalizedRadioButton.Name = "finalizedRadioButton";
-            this.finalizedRadioButton.Size = new System.Drawing.Size(66, 17);
+            this.finalizedRadioButton.Size = new System.Drawing.Size(85, 21);
             this.finalizedRadioButton.TabIndex = 1;
             this.finalizedRadioButton.Text = "Finalized";
             this.finalizedRadioButton.UseVisualStyleBackColor = true;
@@ -2431,9 +2605,10 @@
             // 
             this.pendingRadioButton.AutoSize = true;
             this.pendingRadioButton.Checked = true;
-            this.pendingRadioButton.Location = new System.Drawing.Point(3, 16);
+            this.pendingRadioButton.Location = new System.Drawing.Point(4, 20);
+            this.pendingRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pendingRadioButton.Name = "pendingRadioButton";
-            this.pendingRadioButton.Size = new System.Drawing.Size(64, 17);
+            this.pendingRadioButton.Size = new System.Drawing.Size(81, 21);
             this.pendingRadioButton.TabIndex = 0;
             this.pendingRadioButton.TabStop = true;
             this.pendingRadioButton.Text = "Pending";
@@ -2453,9 +2628,11 @@
             this.payoutBenchmarkServerSelectGroupBox.Controls.Add(this.payoutTypeSelect);
             this.payoutBenchmarkServerSelectGroupBox.Controls.Add(this.serverSelect4);
             this.payoutBenchmarkServerSelectGroupBox.Controls.Add(this.databaseSelect4);
-            this.payoutBenchmarkServerSelectGroupBox.Location = new System.Drawing.Point(8, 6);
+            this.payoutBenchmarkServerSelectGroupBox.Location = new System.Drawing.Point(10, 8);
+            this.payoutBenchmarkServerSelectGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.payoutBenchmarkServerSelectGroupBox.Name = "payoutBenchmarkServerSelectGroupBox";
-            this.payoutBenchmarkServerSelectGroupBox.Size = new System.Drawing.Size(222, 112);
+            this.payoutBenchmarkServerSelectGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.payoutBenchmarkServerSelectGroupBox.Size = new System.Drawing.Size(278, 140);
             this.payoutBenchmarkServerSelectGroupBox.TabIndex = 28;
             this.payoutBenchmarkServerSelectGroupBox.TabStop = false;
             this.payoutBenchmarkServerSelectGroupBox.Text = "Select Server/Database/Payout";
@@ -2468,26 +2645,29 @@
             this.payoutTimeSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payoutTimeSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.payoutTimeSelect.FormattingEnabled = true;
-            this.payoutTimeSelect.Location = new System.Drawing.Point(126, 85);
+            this.payoutTimeSelect.Location = new System.Drawing.Point(158, 106);
+            this.payoutTimeSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.payoutTimeSelect.Name = "payoutTimeSelect";
-            this.payoutTimeSelect.Size = new System.Drawing.Size(90, 21);
+            this.payoutTimeSelect.Size = new System.Drawing.Size(112, 24);
             this.payoutTimeSelect.TabIndex = 37;
             // 
             // payoutTimerPictureBox
             // 
             this.payoutTimerPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.timer_16xLG;
-            this.payoutTimerPictureBox.Location = new System.Drawing.Point(107, 85);
+            this.payoutTimerPictureBox.Location = new System.Drawing.Point(134, 106);
+            this.payoutTimerPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.payoutTimerPictureBox.Name = "payoutTimerPictureBox";
-            this.payoutTimerPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.payoutTimerPictureBox.Size = new System.Drawing.Size(20, 20);
             this.payoutTimerPictureBox.TabIndex = 37;
             this.payoutTimerPictureBox.TabStop = false;
             // 
             // payoutSelectPictureBox
             // 
             this.payoutSelectPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.calendar_16xLG;
-            this.payoutSelectPictureBox.Location = new System.Drawing.Point(6, 85);
+            this.payoutSelectPictureBox.Location = new System.Drawing.Point(8, 106);
+            this.payoutSelectPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.payoutSelectPictureBox.Name = "payoutSelectPictureBox";
-            this.payoutSelectPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.payoutSelectPictureBox.Size = new System.Drawing.Size(20, 20);
             this.payoutSelectPictureBox.TabIndex = 36;
             this.payoutSelectPictureBox.TabStop = false;
             // 
@@ -2499,36 +2679,40 @@
             this.payoutSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payoutSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.payoutSelect.FormattingEnabled = true;
-            this.payoutSelect.Location = new System.Drawing.Point(28, 85);
+            this.payoutSelect.Location = new System.Drawing.Point(35, 106);
+            this.payoutSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.payoutSelect.Name = "payoutSelect";
-            this.payoutSelect.Size = new System.Drawing.Size(78, 21);
+            this.payoutSelect.Size = new System.Drawing.Size(96, 24);
             this.payoutSelect.TabIndex = 35;
             this.payoutSelect.SelectedIndexChanged += new System.EventHandler(this.payoutSelect_SelectedIndexChanged);
             // 
             // payoutTypePictureBox
             // 
             this.payoutTypePictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.Money_16xMD;
-            this.payoutTypePictureBox.Location = new System.Drawing.Point(6, 63);
+            this.payoutTypePictureBox.Location = new System.Drawing.Point(8, 79);
+            this.payoutTypePictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.payoutTypePictureBox.Name = "payoutTypePictureBox";
-            this.payoutTypePictureBox.Size = new System.Drawing.Size(16, 16);
+            this.payoutTypePictureBox.Size = new System.Drawing.Size(20, 20);
             this.payoutTypePictureBox.TabIndex = 34;
             this.payoutTypePictureBox.TabStop = false;
             // 
             // payoutDatabasePictureBox
             // 
             this.payoutDatabasePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("payoutDatabasePictureBox.Image")));
-            this.payoutDatabasePictureBox.Location = new System.Drawing.Point(6, 41);
+            this.payoutDatabasePictureBox.Location = new System.Drawing.Point(8, 51);
+            this.payoutDatabasePictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.payoutDatabasePictureBox.Name = "payoutDatabasePictureBox";
-            this.payoutDatabasePictureBox.Size = new System.Drawing.Size(16, 16);
+            this.payoutDatabasePictureBox.Size = new System.Drawing.Size(20, 20);
             this.payoutDatabasePictureBox.TabIndex = 33;
             this.payoutDatabasePictureBox.TabStop = false;
             // 
             // payoutServerPictureBox
             // 
             this.payoutServerPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("payoutServerPictureBox.Image")));
-            this.payoutServerPictureBox.Location = new System.Drawing.Point(6, 19);
+            this.payoutServerPictureBox.Location = new System.Drawing.Point(8, 24);
+            this.payoutServerPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.payoutServerPictureBox.Name = "payoutServerPictureBox";
-            this.payoutServerPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.payoutServerPictureBox.Size = new System.Drawing.Size(20, 20);
             this.payoutServerPictureBox.TabIndex = 6;
             this.payoutServerPictureBox.TabStop = false;
             // 
@@ -2540,9 +2724,10 @@
             this.payoutTypeSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payoutTypeSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.payoutTypeSelect.FormattingEnabled = true;
-            this.payoutTypeSelect.Location = new System.Drawing.Point(28, 63);
+            this.payoutTypeSelect.Location = new System.Drawing.Point(35, 79);
+            this.payoutTypeSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.payoutTypeSelect.Name = "payoutTypeSelect";
-            this.payoutTypeSelect.Size = new System.Drawing.Size(188, 21);
+            this.payoutTypeSelect.Size = new System.Drawing.Size(234, 24);
             this.payoutTypeSelect.TabIndex = 32;
             this.payoutTypeSelect.SelectedIndexChanged += new System.EventHandler(this.payoutTypeSelect_SelectedIndexChanged);
             // 
@@ -2558,9 +2743,10 @@
             "IcmTstDb2.cci.caldsaas.local\\tst2",
             "IcmTstDb3.cci.caldsaas.local\\tst3",
             "IcmImpDb1.cci.caldsaas.local\\Imp1"});
-            this.serverSelect4.Location = new System.Drawing.Point(28, 19);
+            this.serverSelect4.Location = new System.Drawing.Point(35, 24);
+            this.serverSelect4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.serverSelect4.Name = "serverSelect4";
-            this.serverSelect4.Size = new System.Drawing.Size(188, 21);
+            this.serverSelect4.Size = new System.Drawing.Size(234, 24);
             this.serverSelect4.TabIndex = 32;
             this.serverSelect4.SelectedIndexChanged += new System.EventHandler(this.serverSelect4_SelectedIndexChanged);
             // 
@@ -2572,9 +2758,10 @@
             this.databaseSelect4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.databaseSelect4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.databaseSelect4.FormattingEnabled = true;
-            this.databaseSelect4.Location = new System.Drawing.Point(28, 41);
+            this.databaseSelect4.Location = new System.Drawing.Point(35, 51);
+            this.databaseSelect4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.databaseSelect4.Name = "databaseSelect4";
-            this.databaseSelect4.Size = new System.Drawing.Size(188, 21);
+            this.databaseSelect4.Size = new System.Drawing.Size(234, 24);
             this.databaseSelect4.TabIndex = 31;
             this.databaseSelect4.SelectedIndexChanged += new System.EventHandler(this.databaseSelect4_SelectedIndexChanged);
             // 
@@ -2596,9 +2783,10 @@
             this.api.Controls.Add(this.apiUsersPictureBox);
             this.api.Controls.Add(this.apiReadinessProgressBar);
             this.api.Controls.Add(this.apiReadinessServerSelectGroupBox);
-            this.api.Location = new System.Drawing.Point(4, 22);
+            this.api.Location = new System.Drawing.Point(4, 25);
+            this.api.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.api.Name = "api";
-            this.api.Size = new System.Drawing.Size(1502, 736);
+            this.api.Size = new System.Drawing.Size(1880, 923);
             this.api.TabIndex = 6;
             this.api.Text = "API Readiness Check";
             this.api.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -2609,9 +2797,10 @@
             this.apiGoPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.apiGoPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.apiGoPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_go;
-            this.apiGoPictureBox.Location = new System.Drawing.Point(1431, 76);
+            this.apiGoPictureBox.Location = new System.Drawing.Point(1789, 95);
+            this.apiGoPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiGoPictureBox.Name = "apiGoPictureBox";
-            this.apiGoPictureBox.Size = new System.Drawing.Size(63, 42);
+            this.apiGoPictureBox.Size = new System.Drawing.Size(79, 52);
             this.apiGoPictureBox.TabIndex = 63;
             this.apiGoPictureBox.TabStop = false;
             this.apiGoPictureBox.Click += new System.EventHandler(this.apiCallButton_Click);
@@ -2626,9 +2815,10 @@
             this.apiExportResultsPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.apiExportResultsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.apiExportResultsPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_export_results;
-            this.apiExportResultsPictureBox.Location = new System.Drawing.Point(1251, 76);
+            this.apiExportResultsPictureBox.Location = new System.Drawing.Point(1564, 95);
+            this.apiExportResultsPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiExportResultsPictureBox.Name = "apiExportResultsPictureBox";
-            this.apiExportResultsPictureBox.Size = new System.Drawing.Size(174, 42);
+            this.apiExportResultsPictureBox.Size = new System.Drawing.Size(218, 52);
             this.apiExportResultsPictureBox.TabIndex = 62;
             this.apiExportResultsPictureBox.TabStop = false;
             this.apiExportResultsPictureBox.Click += new System.EventHandler(this.apiExportResultsPictureBox_Click);
@@ -2643,9 +2833,10 @@
             this.apiClearResultsPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.apiClearResultsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.apiClearResultsPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_clear_results;
-            this.apiClearResultsPictureBox.Location = new System.Drawing.Point(1084, 76);
+            this.apiClearResultsPictureBox.Location = new System.Drawing.Point(1355, 95);
+            this.apiClearResultsPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiClearResultsPictureBox.Name = "apiClearResultsPictureBox";
-            this.apiClearResultsPictureBox.Size = new System.Drawing.Size(161, 42);
+            this.apiClearResultsPictureBox.Size = new System.Drawing.Size(201, 52);
             this.apiClearResultsPictureBox.TabIndex = 61;
             this.apiClearResultsPictureBox.TabStop = false;
             this.apiClearResultsPictureBox.Click += new System.EventHandler(this.apiClearResultsPictureBox_Click);
@@ -2657,9 +2848,10 @@
             // apiEnvLabel2
             // 
             this.apiEnvLabel2.AutoSize = true;
-            this.apiEnvLabel2.Location = new System.Drawing.Point(595, 36);
+            this.apiEnvLabel2.Location = new System.Drawing.Point(744, 45);
+            this.apiEnvLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.apiEnvLabel2.Name = "apiEnvLabel2";
-            this.apiEnvLabel2.Size = new System.Drawing.Size(133, 13);
+            this.apiEnvLabel2.Size = new System.Drawing.Size(172, 17);
             this.apiEnvLabel2.TabIndex = 53;
             this.apiEnvLabel2.Text = ".callidusinsurance.net/ICM";
             this.apiEnvLabel2.Visible = false;
@@ -2667,36 +2859,40 @@
             // apiEnvLabelMain
             // 
             this.apiEnvLabelMain.AutoSize = true;
-            this.apiEnvLabelMain.Location = new System.Drawing.Point(457, 17);
+            this.apiEnvLabelMain.Location = new System.Drawing.Point(571, 21);
+            this.apiEnvLabelMain.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.apiEnvLabelMain.Name = "apiEnvLabelMain";
-            this.apiEnvLabelMain.Size = new System.Drawing.Size(91, 13);
+            this.apiEnvLabelMain.Size = new System.Drawing.Size(119, 17);
             this.apiEnvLabelMain.TabIndex = 52;
             this.apiEnvLabelMain.Text = "Environment URL";
             this.apiEnvLabelMain.Visible = false;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(497, 33);
+            this.textBox1.Location = new System.Drawing.Point(621, 41);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(124, 22);
             this.textBox1.TabIndex = 51;
             this.textBox1.Visible = false;
             // 
             // apiEnvLabel1
             // 
             this.apiEnvLabel1.AutoSize = true;
-            this.apiEnvLabel1.Location = new System.Drawing.Point(457, 36);
+            this.apiEnvLabel1.Location = new System.Drawing.Point(571, 45);
+            this.apiEnvLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.apiEnvLabel1.Name = "apiEnvLabel1";
-            this.apiEnvLabel1.Size = new System.Drawing.Size(43, 13);
+            this.apiEnvLabel1.Size = new System.Drawing.Size(51, 17);
             this.apiEnvLabel1.TabIndex = 50;
             this.apiEnvLabel1.Text = "https://";
             this.apiEnvLabel1.Visible = false;
             // 
             // apiUsersPasswordTextBox
             // 
-            this.apiUsersPasswordTextBox.Location = new System.Drawing.Point(482, 74);
+            this.apiUsersPasswordTextBox.Location = new System.Drawing.Point(602, 92);
+            this.apiUsersPasswordTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiUsersPasswordTextBox.Name = "apiUsersPasswordTextBox";
-            this.apiUsersPasswordTextBox.Size = new System.Drawing.Size(143, 20);
+            this.apiUsersPasswordTextBox.Size = new System.Drawing.Size(178, 22);
             this.apiUsersPasswordTextBox.TabIndex = 49;
             this.apiUsersPasswordTextBox.UseSystemPasswordChar = true;
             this.apiUsersPasswordTextBox.Visible = false;
@@ -2704,9 +2900,10 @@
             // apiUsersPasswordPictureBox
             // 
             this.apiUsersPasswordPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("apiUsersPasswordPictureBox.Image")));
-            this.apiUsersPasswordPictureBox.Location = new System.Drawing.Point(460, 74);
+            this.apiUsersPasswordPictureBox.Location = new System.Drawing.Point(575, 92);
+            this.apiUsersPasswordPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiUsersPasswordPictureBox.Name = "apiUsersPasswordPictureBox";
-            this.apiUsersPasswordPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.apiUsersPasswordPictureBox.Size = new System.Drawing.Size(20, 20);
             this.apiUsersPasswordPictureBox.TabIndex = 48;
             this.apiUsersPasswordPictureBox.TabStop = false;
             this.apiUsersPasswordPictureBox.Visible = false;
@@ -2717,9 +2914,10 @@
             this.apiCallButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.apiCallButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.apiCallButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apiCallButton.Location = new System.Drawing.Point(482, 97);
+            this.apiCallButton.Location = new System.Drawing.Point(602, 121);
+            this.apiCallButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiCallButton.Name = "apiCallButton";
-            this.apiCallButton.Size = new System.Drawing.Size(143, 21);
+            this.apiCallButton.Size = new System.Drawing.Size(179, 26);
             this.apiCallButton.TabIndex = 47;
             this.apiCallButton.Text = "Test API Call";
             this.apiCallButton.UseVisualStyleBackColor = false;
@@ -2731,7 +2929,8 @@
             this.apiSplitContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.apiSplitContainer.Location = new System.Drawing.Point(6, 161);
+            this.apiSplitContainer.Location = new System.Drawing.Point(8, 201);
+            this.apiSplitContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiSplitContainer.Name = "apiSplitContainer";
             // 
             // apiSplitContainer.Panel1
@@ -2741,8 +2940,9 @@
             // apiSplitContainer.Panel2
             // 
             this.apiSplitContainer.Panel2.Controls.Add(this.apiPictureBox);
-            this.apiSplitContainer.Size = new System.Drawing.Size(1488, 572);
-            this.apiSplitContainer.SplitterDistance = 912;
+            this.apiSplitContainer.Size = new System.Drawing.Size(1860, 711);
+            this.apiSplitContainer.SplitterDistance = 1140;
+            this.apiSplitContainer.SplitterWidth = 5;
             this.apiSplitContainer.TabIndex = 46;
             // 
             // apiRichTextBox
@@ -2750,9 +2950,10 @@
             this.apiRichTextBox.BackColor = System.Drawing.Color.Azure;
             this.apiRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.apiRichTextBox.Location = new System.Drawing.Point(0, 0);
+            this.apiRichTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiRichTextBox.Name = "apiRichTextBox";
             this.apiRichTextBox.ReadOnly = true;
-            this.apiRichTextBox.Size = new System.Drawing.Size(912, 572);
+            this.apiRichTextBox.Size = new System.Drawing.Size(1140, 711);
             this.apiRichTextBox.TabIndex = 38;
             this.apiRichTextBox.Text = "";
             // 
@@ -2760,8 +2961,9 @@
             // 
             this.apiPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.apiPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.apiPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiPictureBox.Name = "apiPictureBox";
-            this.apiPictureBox.Size = new System.Drawing.Size(572, 572);
+            this.apiPictureBox.Size = new System.Drawing.Size(715, 711);
             this.apiPictureBox.TabIndex = 0;
             this.apiPictureBox.TabStop = false;
             // 
@@ -2772,18 +2974,20 @@
             this.apiUsersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.apiUsersComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.apiUsersComboBox.FormattingEnabled = true;
-            this.apiUsersComboBox.Location = new System.Drawing.Point(482, 52);
+            this.apiUsersComboBox.Location = new System.Drawing.Point(602, 65);
+            this.apiUsersComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiUsersComboBox.Name = "apiUsersComboBox";
-            this.apiUsersComboBox.Size = new System.Drawing.Size(143, 21);
+            this.apiUsersComboBox.Size = new System.Drawing.Size(178, 24);
             this.apiUsersComboBox.TabIndex = 34;
             this.apiUsersComboBox.Visible = false;
             // 
             // apiUsersPictureBox
             // 
             this.apiUsersPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("apiUsersPictureBox.Image")));
-            this.apiUsersPictureBox.Location = new System.Drawing.Point(460, 52);
+            this.apiUsersPictureBox.Location = new System.Drawing.Point(575, 65);
+            this.apiUsersPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiUsersPictureBox.Name = "apiUsersPictureBox";
-            this.apiUsersPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.apiUsersPictureBox.Size = new System.Drawing.Size(20, 20);
             this.apiUsersPictureBox.TabIndex = 35;
             this.apiUsersPictureBox.TabStop = false;
             this.apiUsersPictureBox.Visible = false;
@@ -2794,10 +2998,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.apiReadinessProgressBar.BackColor = System.Drawing.Color.AliceBlue;
             this.apiReadinessProgressBar.ForeColor = System.Drawing.Color.DarkRed;
-            this.apiReadinessProgressBar.Location = new System.Drawing.Point(6, 124);
+            this.apiReadinessProgressBar.Location = new System.Drawing.Point(8, 155);
+            this.apiReadinessProgressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiReadinessProgressBar.MarqueeAnimationSpeed = 1;
             this.apiReadinessProgressBar.Name = "apiReadinessProgressBar";
-            this.apiReadinessProgressBar.Size = new System.Drawing.Size(1488, 21);
+            this.apiReadinessProgressBar.Size = new System.Drawing.Size(1860, 26);
             this.apiReadinessProgressBar.TabIndex = 37;
             this.apiReadinessProgressBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
@@ -2808,9 +3013,11 @@
             this.apiReadinessServerSelectGroupBox.Controls.Add(this.apiServerPictureBox);
             this.apiReadinessServerSelectGroupBox.Controls.Add(this.serverSelect5);
             this.apiReadinessServerSelectGroupBox.Controls.Add(this.databaseSelect5);
-            this.apiReadinessServerSelectGroupBox.Location = new System.Drawing.Point(8, 6);
+            this.apiReadinessServerSelectGroupBox.Location = new System.Drawing.Point(10, 8);
+            this.apiReadinessServerSelectGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiReadinessServerSelectGroupBox.Name = "apiReadinessServerSelectGroupBox";
-            this.apiReadinessServerSelectGroupBox.Size = new System.Drawing.Size(222, 112);
+            this.apiReadinessServerSelectGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.apiReadinessServerSelectGroupBox.Size = new System.Drawing.Size(278, 140);
             this.apiReadinessServerSelectGroupBox.TabIndex = 29;
             this.apiReadinessServerSelectGroupBox.TabStop = false;
             this.apiReadinessServerSelectGroupBox.Text = "Select Server/Database";
@@ -2818,18 +3025,20 @@
             // apiDatabasePictureBox
             // 
             this.apiDatabasePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("apiDatabasePictureBox.Image")));
-            this.apiDatabasePictureBox.Location = new System.Drawing.Point(6, 41);
+            this.apiDatabasePictureBox.Location = new System.Drawing.Point(8, 51);
+            this.apiDatabasePictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiDatabasePictureBox.Name = "apiDatabasePictureBox";
-            this.apiDatabasePictureBox.Size = new System.Drawing.Size(16, 16);
+            this.apiDatabasePictureBox.Size = new System.Drawing.Size(20, 20);
             this.apiDatabasePictureBox.TabIndex = 33;
             this.apiDatabasePictureBox.TabStop = false;
             // 
             // apiServerPictureBox
             // 
             this.apiServerPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("apiServerPictureBox.Image")));
-            this.apiServerPictureBox.Location = new System.Drawing.Point(6, 19);
+            this.apiServerPictureBox.Location = new System.Drawing.Point(8, 24);
+            this.apiServerPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apiServerPictureBox.Name = "apiServerPictureBox";
-            this.apiServerPictureBox.Size = new System.Drawing.Size(16, 16);
+            this.apiServerPictureBox.Size = new System.Drawing.Size(20, 20);
             this.apiServerPictureBox.TabIndex = 6;
             this.apiServerPictureBox.TabStop = false;
             // 
@@ -2845,9 +3054,10 @@
             "IcmTstDb2.cci.caldsaas.local\\tst2",
             "IcmTstDb3.cci.caldsaas.local\\tst3",
             "IcmImpDb1.cci.caldsaas.local\\Imp1"});
-            this.serverSelect5.Location = new System.Drawing.Point(28, 19);
+            this.serverSelect5.Location = new System.Drawing.Point(35, 24);
+            this.serverSelect5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.serverSelect5.Name = "serverSelect5";
-            this.serverSelect5.Size = new System.Drawing.Size(188, 21);
+            this.serverSelect5.Size = new System.Drawing.Size(234, 24);
             this.serverSelect5.TabIndex = 32;
             this.serverSelect5.SelectedIndexChanged += new System.EventHandler(this.serverSelect5_SelectedIndexChanged);
             // 
@@ -2859,9 +3069,10 @@
             this.databaseSelect5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.databaseSelect5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.databaseSelect5.FormattingEnabled = true;
-            this.databaseSelect5.Location = new System.Drawing.Point(28, 41);
+            this.databaseSelect5.Location = new System.Drawing.Point(35, 51);
+            this.databaseSelect5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.databaseSelect5.Name = "databaseSelect5";
-            this.databaseSelect5.Size = new System.Drawing.Size(188, 21);
+            this.databaseSelect5.Size = new System.Drawing.Size(234, 24);
             this.databaseSelect5.TabIndex = 31;
             // 
             // envChanges
@@ -2875,9 +3086,10 @@
             this.envChanges.Controls.Add(this.envChangesDateGroupBox);
             this.envChanges.Controls.Add(this.envChangesServerSelectGroupBox);
             this.envChanges.Controls.Add(this.envChangesProgressBar);
-            this.envChanges.Location = new System.Drawing.Point(4, 22);
+            this.envChanges.Location = new System.Drawing.Point(4, 25);
+            this.envChanges.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.envChanges.Name = "envChanges";
-            this.envChanges.Size = new System.Drawing.Size(1502, 736);
+            this.envChanges.Size = new System.Drawing.Size(1880, 923);
             this.envChanges.TabIndex = 7;
             this.envChanges.Text = "Enviornment Changes";
             this.envChanges.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -2888,9 +3100,10 @@
             this.envChangesGoPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.envChangesGoPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.envChangesGoPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_go;
-            this.envChangesGoPictureBox.Location = new System.Drawing.Point(1431, 76);
+            this.envChangesGoPictureBox.Location = new System.Drawing.Point(1789, 95);
+            this.envChangesGoPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.envChangesGoPictureBox.Name = "envChangesGoPictureBox";
-            this.envChangesGoPictureBox.Size = new System.Drawing.Size(63, 42);
+            this.envChangesGoPictureBox.Size = new System.Drawing.Size(79, 52);
             this.envChangesGoPictureBox.TabIndex = 61;
             this.envChangesGoPictureBox.TabStop = false;
             this.envChangesGoPictureBox.Click += new System.EventHandler(this.envChangesGoPictureBox_Click);
@@ -2905,9 +3118,10 @@
             this.clearResultsPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.clearResultsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearResultsPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_clear_results;
-            this.clearResultsPictureBox.Location = new System.Drawing.Point(1084, 76);
+            this.clearResultsPictureBox.Location = new System.Drawing.Point(1355, 95);
+            this.clearResultsPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clearResultsPictureBox.Name = "clearResultsPictureBox";
-            this.clearResultsPictureBox.Size = new System.Drawing.Size(161, 42);
+            this.clearResultsPictureBox.Size = new System.Drawing.Size(201, 52);
             this.clearResultsPictureBox.TabIndex = 60;
             this.clearResultsPictureBox.TabStop = false;
             this.clearResultsPictureBox.Click += new System.EventHandler(this.clearResultsPictureBox_Click);
@@ -2922,9 +3136,10 @@
             this.exportResultsPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.exportResultsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exportResultsPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_export_results;
-            this.exportResultsPictureBox.Location = new System.Drawing.Point(1251, 76);
+            this.exportResultsPictureBox.Location = new System.Drawing.Point(1564, 95);
+            this.exportResultsPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.exportResultsPictureBox.Name = "exportResultsPictureBox";
-            this.exportResultsPictureBox.Size = new System.Drawing.Size(174, 42);
+            this.exportResultsPictureBox.Size = new System.Drawing.Size(218, 52);
             this.exportResultsPictureBox.TabIndex = 59;
             this.exportResultsPictureBox.TabStop = false;
             this.exportResultsPictureBox.Click += new System.EventHandler(this.exportResultsPictureBox_Click);
@@ -2936,10 +3151,11 @@
             // envChangesRichTextBox
             // 
             this.envChangesRichTextBox.BackColor = System.Drawing.Color.Azure;
-            this.envChangesRichTextBox.Location = new System.Drawing.Point(6, 151);
+            this.envChangesRichTextBox.Location = new System.Drawing.Point(8, 189);
+            this.envChangesRichTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.envChangesRichTextBox.Name = "envChangesRichTextBox";
             this.envChangesRichTextBox.ReadOnly = true;
-            this.envChangesRichTextBox.Size = new System.Drawing.Size(1494, 582);
+            this.envChangesRichTextBox.Size = new System.Drawing.Size(1866, 726);
             this.envChangesRichTextBox.TabIndex = 50;
             this.envChangesRichTextBox.Text = "";
             // 
@@ -2953,9 +3169,11 @@
             this.groupBox2.Controls.Add(this.envChangesCheckBox3);
             this.groupBox2.Controls.Add(this.envChangesCheckBox2);
             this.groupBox2.Controls.Add(this.envChangesCheckBox1);
-            this.groupBox2.Location = new System.Drawing.Point(602, 6);
+            this.groupBox2.Location = new System.Drawing.Point(752, 8);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(210, 112);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(262, 140);
             this.groupBox2.TabIndex = 49;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Check for changes in:";
@@ -2965,9 +3183,10 @@
             this.envChangesCheckBox8.AutoSize = true;
             this.envChangesCheckBox8.Checked = true;
             this.envChangesCheckBox8.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.envChangesCheckBox8.Location = new System.Drawing.Point(92, 84);
+            this.envChangesCheckBox8.Location = new System.Drawing.Point(115, 105);
+            this.envChangesCheckBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.envChangesCheckBox8.Name = "envChangesCheckBox8";
-            this.envChangesCheckBox8.Size = new System.Drawing.Size(110, 17);
+            this.envChangesCheckBox8.Size = new System.Drawing.Size(143, 21);
             this.envChangesCheckBox8.TabIndex = 7;
             this.envChangesCheckBox8.Text = "Report Templates";
             this.envChangesCheckBox8.UseVisualStyleBackColor = true;
@@ -2977,9 +3196,10 @@
             this.envChangesCheckBox7.AutoSize = true;
             this.envChangesCheckBox7.Checked = true;
             this.envChangesCheckBox7.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.envChangesCheckBox7.Location = new System.Drawing.Point(92, 61);
+            this.envChangesCheckBox7.Location = new System.Drawing.Point(115, 76);
+            this.envChangesCheckBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.envChangesCheckBox7.Name = "envChangesCheckBox7";
-            this.envChangesCheckBox7.Size = new System.Drawing.Size(89, 17);
+            this.envChangesCheckBox7.Size = new System.Drawing.Size(116, 21);
             this.envChangesCheckBox7.TabIndex = 6;
             this.envChangesCheckBox7.Text = "Report Forms";
             this.envChangesCheckBox7.UseVisualStyleBackColor = true;
@@ -2989,9 +3209,10 @@
             this.envChangesCheckBox6.AutoSize = true;
             this.envChangesCheckBox6.Checked = true;
             this.envChangesCheckBox6.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.envChangesCheckBox6.Location = new System.Drawing.Point(92, 38);
+            this.envChangesCheckBox6.Location = new System.Drawing.Point(115, 48);
+            this.envChangesCheckBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.envChangesCheckBox6.Name = "envChangesCheckBox6";
-            this.envChangesCheckBox6.Size = new System.Drawing.Size(121, 17);
+            this.envChangesCheckBox6.Size = new System.Drawing.Size(155, 21);
             this.envChangesCheckBox6.TabIndex = 5;
             this.envChangesCheckBox6.Text = "Batch Entity Update";
             this.envChangesCheckBox6.UseVisualStyleBackColor = true;
@@ -3001,9 +3222,10 @@
             this.envChangesCheckBox5.AutoSize = true;
             this.envChangesCheckBox5.Checked = true;
             this.envChangesCheckBox5.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.envChangesCheckBox5.Location = new System.Drawing.Point(92, 15);
+            this.envChangesCheckBox5.Location = new System.Drawing.Point(115, 19);
+            this.envChangesCheckBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.envChangesCheckBox5.Name = "envChangesCheckBox5";
-            this.envChangesCheckBox5.Size = new System.Drawing.Size(85, 17);
+            this.envChangesCheckBox5.Size = new System.Drawing.Size(109, 21);
             this.envChangesCheckBox5.TabIndex = 4;
             this.envChangesCheckBox5.Text = "Field Default";
             this.envChangesCheckBox5.UseVisualStyleBackColor = true;
@@ -3013,9 +3235,10 @@
             this.envChangesCheckBox4.AutoSize = true;
             this.envChangesCheckBox4.Checked = true;
             this.envChangesCheckBox4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.envChangesCheckBox4.Location = new System.Drawing.Point(6, 84);
+            this.envChangesCheckBox4.Location = new System.Drawing.Point(8, 105);
+            this.envChangesCheckBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.envChangesCheckBox4.Name = "envChangesCheckBox4";
-            this.envChangesCheckBox4.Size = new System.Drawing.Size(72, 17);
+            this.envChangesCheckBox4.Size = new System.Drawing.Size(93, 21);
             this.envChangesCheckBox4.TabIndex = 3;
             this.envChangesCheckBox4.Text = "Cross-Ref";
             this.envChangesCheckBox4.UseVisualStyleBackColor = true;
@@ -3025,9 +3248,10 @@
             this.envChangesCheckBox3.AutoSize = true;
             this.envChangesCheckBox3.Checked = true;
             this.envChangesCheckBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.envChangesCheckBox3.Location = new System.Drawing.Point(6, 61);
+            this.envChangesCheckBox3.Location = new System.Drawing.Point(8, 76);
+            this.envChangesCheckBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.envChangesCheckBox3.Name = "envChangesCheckBox3";
-            this.envChangesCheckBox3.Size = new System.Drawing.Size(69, 17);
+            this.envChangesCheckBox3.Size = new System.Drawing.Size(89, 21);
             this.envChangesCheckBox3.TabIndex = 2;
             this.envChangesCheckBox3.Text = "QBQuery";
             this.envChangesCheckBox3.UseVisualStyleBackColor = true;
@@ -3037,9 +3261,10 @@
             this.envChangesCheckBox2.AutoSize = true;
             this.envChangesCheckBox2.Checked = true;
             this.envChangesCheckBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.envChangesCheckBox2.Location = new System.Drawing.Point(6, 38);
+            this.envChangesCheckBox2.Location = new System.Drawing.Point(8, 48);
+            this.envChangesCheckBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.envChangesCheckBox2.Name = "envChangesCheckBox2";
-            this.envChangesCheckBox2.Size = new System.Drawing.Size(77, 17);
+            this.envChangesCheckBox2.Size = new System.Drawing.Size(99, 21);
             this.envChangesCheckBox2.TabIndex = 1;
             this.envChangesCheckBox2.Text = "Expression";
             this.envChangesCheckBox2.UseVisualStyleBackColor = true;
@@ -3049,9 +3274,10 @@
             this.envChangesCheckBox1.AutoSize = true;
             this.envChangesCheckBox1.Checked = true;
             this.envChangesCheckBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.envChangesCheckBox1.Location = new System.Drawing.Point(6, 15);
+            this.envChangesCheckBox1.Location = new System.Drawing.Point(8, 19);
+            this.envChangesCheckBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.envChangesCheckBox1.Name = "envChangesCheckBox1";
-            this.envChangesCheckBox1.Size = new System.Drawing.Size(90, 17);
+            this.envChangesCheckBox1.Size = new System.Drawing.Size(117, 21);
             this.envChangesCheckBox1.TabIndex = 0;
             this.envChangesCheckBox1.Text = "Import Format";
             this.envChangesCheckBox1.UseVisualStyleBackColor = true;
@@ -3070,9 +3296,11 @@
             this.envChangesDateGroupBox.Controls.Add(this.dateRangeLabel);
             this.envChangesDateGroupBox.Controls.Add(this.dateToComboBox);
             this.envChangesDateGroupBox.Controls.Add(this.dateFromComboBox);
-            this.envChangesDateGroupBox.Location = new System.Drawing.Point(236, 6);
+            this.envChangesDateGroupBox.Location = new System.Drawing.Point(295, 8);
+            this.envChangesDateGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.envChangesDateGroupBox.Name = "envChangesDateGroupBox";
-            this.envChangesDateGroupBox.Size = new System.Drawing.Size(360, 112);
+            this.envChangesDateGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.envChangesDateGroupBox.Size = new System.Drawing.Size(450, 140);
             this.envChangesDateGroupBox.TabIndex = 42;
             this.envChangesDateGroupBox.TabStop = false;
             this.envChangesDateGroupBox.Text = "Select Date Format and Date Columns";
@@ -3080,9 +3308,10 @@
             // toDateEnableCheckBox
             // 
             this.toDateEnableCheckBox.AutoSize = true;
-            this.toDateEnableCheckBox.Location = new System.Drawing.Point(173, 60);
+            this.toDateEnableCheckBox.Location = new System.Drawing.Point(216, 75);
+            this.toDateEnableCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.toDateEnableCheckBox.Name = "toDateEnableCheckBox";
-            this.toDateEnableCheckBox.Size = new System.Drawing.Size(59, 17);
+            this.toDateEnableCheckBox.Size = new System.Drawing.Size(74, 21);
             this.toDateEnableCheckBox.TabIndex = 11;
             this.toDateEnableCheckBox.Text = "Enable";
             this.toDateEnableCheckBox.UseVisualStyleBackColor = true;
@@ -3091,9 +3320,10 @@
             // fromDateEnableCheckBox
             // 
             this.fromDateEnableCheckBox.AutoSize = true;
-            this.fromDateEnableCheckBox.Location = new System.Drawing.Point(173, 35);
+            this.fromDateEnableCheckBox.Location = new System.Drawing.Point(216, 44);
+            this.fromDateEnableCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fromDateEnableCheckBox.Name = "fromDateEnableCheckBox";
-            this.fromDateEnableCheckBox.Size = new System.Drawing.Size(59, 17);
+            this.fromDateEnableCheckBox.Size = new System.Drawing.Size(74, 21);
             this.fromDateEnableCheckBox.TabIndex = 7;
             this.fromDateEnableCheckBox.Text = "Enable";
             this.fromDateEnableCheckBox.UseVisualStyleBackColor = true;
@@ -3101,70 +3331,77 @@
             // 
             // dateMonthFromTextBox
             // 
-            this.dateMonthFromTextBox.Location = new System.Drawing.Point(99, 35);
+            this.dateMonthFromTextBox.Location = new System.Drawing.Point(124, 44);
+            this.dateMonthFromTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateMonthFromTextBox.MaxLength = 2;
             this.dateMonthFromTextBox.Name = "dateMonthFromTextBox";
             this.dateMonthFromTextBox.ReadOnly = true;
-            this.dateMonthFromTextBox.Size = new System.Drawing.Size(31, 20);
+            this.dateMonthFromTextBox.Size = new System.Drawing.Size(38, 22);
             this.dateMonthFromTextBox.TabIndex = 5;
             this.dateMonthFromTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dateTextBox_KeyUp);
             // 
             // dateYearToTextBox
             // 
-            this.dateYearToTextBox.Location = new System.Drawing.Point(46, 61);
+            this.dateYearToTextBox.Location = new System.Drawing.Point(58, 76);
+            this.dateYearToTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateYearToTextBox.MaxLength = 4;
             this.dateYearToTextBox.Name = "dateYearToTextBox";
             this.dateYearToTextBox.ReadOnly = true;
-            this.dateYearToTextBox.Size = new System.Drawing.Size(47, 20);
+            this.dateYearToTextBox.Size = new System.Drawing.Size(58, 22);
             this.dateYearToTextBox.TabIndex = 8;
             this.dateYearToTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dateTextBox_KeyUp);
             // 
             // dateMonthToTextBox
             // 
-            this.dateMonthToTextBox.Location = new System.Drawing.Point(99, 61);
+            this.dateMonthToTextBox.Location = new System.Drawing.Point(124, 76);
+            this.dateMonthToTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateMonthToTextBox.MaxLength = 2;
             this.dateMonthToTextBox.Name = "dateMonthToTextBox";
             this.dateMonthToTextBox.ReadOnly = true;
-            this.dateMonthToTextBox.Size = new System.Drawing.Size(31, 20);
+            this.dateMonthToTextBox.Size = new System.Drawing.Size(38, 22);
             this.dateMonthToTextBox.TabIndex = 9;
             this.dateMonthToTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dateTextBox_KeyUp);
             // 
             // dateDayToTextBox
             // 
-            this.dateDayToTextBox.Location = new System.Drawing.Point(136, 61);
+            this.dateDayToTextBox.Location = new System.Drawing.Point(170, 76);
+            this.dateDayToTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateDayToTextBox.MaxLength = 2;
             this.dateDayToTextBox.Name = "dateDayToTextBox";
             this.dateDayToTextBox.ReadOnly = true;
-            this.dateDayToTextBox.Size = new System.Drawing.Size(31, 20);
+            this.dateDayToTextBox.Size = new System.Drawing.Size(38, 22);
             this.dateDayToTextBox.TabIndex = 10;
             this.dateDayToTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dateTextBox_KeyUp);
             // 
             // dateDayFromTextBox
             // 
-            this.dateDayFromTextBox.Location = new System.Drawing.Point(136, 35);
+            this.dateDayFromTextBox.Location = new System.Drawing.Point(170, 44);
+            this.dateDayFromTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateDayFromTextBox.MaxLength = 2;
             this.dateDayFromTextBox.Name = "dateDayFromTextBox";
             this.dateDayFromTextBox.ReadOnly = true;
-            this.dateDayFromTextBox.Size = new System.Drawing.Size(31, 20);
+            this.dateDayFromTextBox.Size = new System.Drawing.Size(38, 22);
             this.dateDayFromTextBox.TabIndex = 6;
             this.dateDayFromTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dateTextBox_KeyUp);
             // 
             // dateLabal
             // 
             this.dateLabal.AutoSize = true;
-            this.dateLabal.Location = new System.Drawing.Point(7, 16);
+            this.dateLabal.Location = new System.Drawing.Point(9, 20);
+            this.dateLabal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateLabal.Name = "dateLabal";
-            this.dateLabal.Size = new System.Drawing.Size(295, 13);
+            this.dateLabal.Size = new System.Drawing.Size(392, 17);
             this.dateLabal.TabIndex = 61;
             this.dateLabal.Text = "YYYYMMDD Year-Month-Day with no separators (20090217)";
             // 
             // dateYearFromTextBox
             // 
-            this.dateYearFromTextBox.Location = new System.Drawing.Point(46, 35);
+            this.dateYearFromTextBox.Location = new System.Drawing.Point(58, 44);
+            this.dateYearFromTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateYearFromTextBox.MaxLength = 4;
             this.dateYearFromTextBox.Name = "dateYearFromTextBox";
             this.dateYearFromTextBox.ReadOnly = true;
-            this.dateYearFromTextBox.Size = new System.Drawing.Size(47, 20);
+            this.dateYearFromTextBox.Size = new System.Drawing.Size(58, 22);
             this.dateYearFromTextBox.TabIndex = 4;
             this.dateYearFromTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dateTextBox_KeyUp);
             // 
@@ -3172,27 +3409,30 @@
             // 
             this.dateRangeLabel.AutoSize = true;
             this.dateRangeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateRangeLabel.Location = new System.Drawing.Point(6, 85);
+            this.dateRangeLabel.Location = new System.Drawing.Point(8, 106);
+            this.dateRangeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateRangeLabel.Name = "dateRangeLabel";
-            this.dateRangeLabel.Size = new System.Drawing.Size(100, 20);
+            this.dateRangeLabel.Size = new System.Drawing.Size(121, 25);
             this.dateRangeLabel.TabIndex = 48;
             this.dateRangeLabel.Text = "Date Range:";
             // 
             // dateToComboBox
             // 
             this.dateToComboBox.AutoSize = true;
-            this.dateToComboBox.Location = new System.Drawing.Point(17, 60);
+            this.dateToComboBox.Location = new System.Drawing.Point(21, 75);
+            this.dateToComboBox.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateToComboBox.Name = "dateToComboBox";
-            this.dateToComboBox.Size = new System.Drawing.Size(23, 13);
+            this.dateToComboBox.Size = new System.Drawing.Size(29, 17);
             this.dateToComboBox.TabIndex = 47;
             this.dateToComboBox.Text = "To:";
             // 
             // dateFromComboBox
             // 
             this.dateFromComboBox.AutoSize = true;
-            this.dateFromComboBox.Location = new System.Drawing.Point(7, 35);
+            this.dateFromComboBox.Location = new System.Drawing.Point(9, 44);
+            this.dateFromComboBox.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateFromComboBox.Name = "dateFromComboBox";
-            this.dateFromComboBox.Size = new System.Drawing.Size(33, 13);
+            this.dateFromComboBox.Size = new System.Drawing.Size(44, 17);
             this.dateFromComboBox.TabIndex = 43;
             this.dateFromComboBox.Text = "From:";
             // 
@@ -3205,45 +3445,51 @@
             this.envChangesServerSelectGroupBox.Controls.Add(this.pictureBox2);
             this.envChangesServerSelectGroupBox.Controls.Add(this.serverSelect6);
             this.envChangesServerSelectGroupBox.Controls.Add(this.databaseSelect6);
-            this.envChangesServerSelectGroupBox.Location = new System.Drawing.Point(8, 6);
+            this.envChangesServerSelectGroupBox.Location = new System.Drawing.Point(10, 8);
+            this.envChangesServerSelectGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.envChangesServerSelectGroupBox.Name = "envChangesServerSelectGroupBox";
-            this.envChangesServerSelectGroupBox.Size = new System.Drawing.Size(222, 112);
+            this.envChangesServerSelectGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.envChangesServerSelectGroupBox.Size = new System.Drawing.Size(278, 140);
             this.envChangesServerSelectGroupBox.TabIndex = 30;
             this.envChangesServerSelectGroupBox.TabStop = false;
             this.envChangesServerSelectGroupBox.Text = "Select Server/Database/User";
             // 
             // userIDTextBox
             // 
-            this.userIDTextBox.Location = new System.Drawing.Point(66, 65);
+            this.userIDTextBox.Location = new System.Drawing.Point(82, 81);
+            this.userIDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.userIDTextBox.Name = "userIDTextBox";
-            this.userIDTextBox.Size = new System.Drawing.Size(150, 20);
+            this.userIDTextBox.Size = new System.Drawing.Size(186, 22);
             this.userIDTextBox.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 65);
+            this.label1.Location = new System.Drawing.Point(8, 81);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 20);
+            this.label1.Size = new System.Drawing.Size(78, 25);
             this.label1.TabIndex = 49;
             this.label1.Text = "UserID:";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(6, 41);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 51);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(6, 19);
+            this.pictureBox2.Location = new System.Drawing.Point(8, 24);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
@@ -3259,9 +3505,10 @@
             "IcmTstDb2.cci.caldsaas.local\\tst2",
             "IcmTstDb3.cci.caldsaas.local\\tst3",
             "IcmImpDb1.cci.caldsaas.local\\Imp1"});
-            this.serverSelect6.Location = new System.Drawing.Point(28, 19);
+            this.serverSelect6.Location = new System.Drawing.Point(35, 24);
+            this.serverSelect6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.serverSelect6.Name = "serverSelect6";
-            this.serverSelect6.Size = new System.Drawing.Size(188, 21);
+            this.serverSelect6.Size = new System.Drawing.Size(234, 24);
             this.serverSelect6.TabIndex = 1;
             this.serverSelect6.SelectedIndexChanged += new System.EventHandler(this.serverSelect6_SelectedIndexChanged);
             // 
@@ -3273,9 +3520,10 @@
             this.databaseSelect6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.databaseSelect6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.databaseSelect6.FormattingEnabled = true;
-            this.databaseSelect6.Location = new System.Drawing.Point(28, 41);
+            this.databaseSelect6.Location = new System.Drawing.Point(35, 51);
+            this.databaseSelect6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.databaseSelect6.Name = "databaseSelect6";
-            this.databaseSelect6.Size = new System.Drawing.Size(188, 21);
+            this.databaseSelect6.Size = new System.Drawing.Size(234, 24);
             this.databaseSelect6.TabIndex = 2;
             // 
             // envChangesProgressBar
@@ -3284,10 +3532,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.envChangesProgressBar.BackColor = System.Drawing.Color.AliceBlue;
             this.envChangesProgressBar.ForeColor = System.Drawing.Color.DarkRed;
-            this.envChangesProgressBar.Location = new System.Drawing.Point(6, 124);
+            this.envChangesProgressBar.Location = new System.Drawing.Point(8, 155);
+            this.envChangesProgressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.envChangesProgressBar.MarqueeAnimationSpeed = 1;
             this.envChangesProgressBar.Name = "envChangesProgressBar";
-            this.envChangesProgressBar.Size = new System.Drawing.Size(1488, 21);
+            this.envChangesProgressBar.Size = new System.Drawing.Size(1860, 26);
             this.envChangesProgressBar.TabIndex = 8;
             this.envChangesProgressBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
@@ -3305,21 +3554,60 @@
             this.fileSweep.Controls.Add(this.splitContainer2);
             this.fileSweep.Controls.Add(this.fileSweepGoPictureBox);
             this.fileSweep.Controls.Add(this.fileSweepProgressBar);
-            this.fileSweep.Location = new System.Drawing.Point(4, 22);
+            this.fileSweep.Location = new System.Drawing.Point(4, 25);
+            this.fileSweep.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileSweep.Name = "fileSweep";
-            this.fileSweep.Size = new System.Drawing.Size(1502, 736);
+            this.fileSweep.Size = new System.Drawing.Size(1880, 927);
             this.fileSweep.TabIndex = 8;
             this.fileSweep.Text = "File Sweep";
             this.fileSweep.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // fileSweepFilePathDataGridView
+            // 
+            this.fileSweepFilePathDataGridView.AllowUserToAddRows = false;
+            this.fileSweepFilePathDataGridView.BackgroundColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fileSweepFilePathDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.fileSweepFilePathDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.fileSweepFilePathDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.fileSweepFilePathDataGridView.DefaultCellStyle = dataGridViewCellStyle20;
+            this.fileSweepFilePathDataGridView.Location = new System.Drawing.Point(821, 4);
+            this.fileSweepFilePathDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fileSweepFilePathDataGridView.Name = "fileSweepFilePathDataGridView";
+            this.fileSweepFilePathDataGridView.ReadOnly = true;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fileSweepFilePathDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            this.fileSweepFilePathDataGridView.Size = new System.Drawing.Size(355, 106);
+            this.fileSweepFilePathDataGridView.TabIndex = 77;
             // 
             // ftpConnectedPictureBox
             // 
             this.ftpConnectedPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.ftpConnectedPictureBox.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ftpConnectedPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_ftp_connected;
-            this.ftpConnectedPictureBox.Location = new System.Drawing.Point(389, 102);
+            this.ftpConnectedPictureBox.Location = new System.Drawing.Point(486, 128);
+            this.ftpConnectedPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ftpConnectedPictureBox.Name = "ftpConnectedPictureBox";
-            this.ftpConnectedPictureBox.Size = new System.Drawing.Size(115, 19);
+            this.ftpConnectedPictureBox.Size = new System.Drawing.Size(144, 24);
             this.ftpConnectedPictureBox.TabIndex = 76;
             this.ftpConnectedPictureBox.TabStop = false;
             this.ftpConnectedPictureBox.Visible = false;
@@ -3334,9 +3622,11 @@
             this.fileSweepGroupBox2.Controls.Add(this.ftpUserComboBox);
             this.fileSweepGroupBox2.Controls.Add(this.pictureBox3);
             this.fileSweepGroupBox2.Controls.Add(this.ftpServerComboBox);
-            this.fileSweepGroupBox2.Location = new System.Drawing.Point(234, 3);
+            this.fileSweepGroupBox2.Location = new System.Drawing.Point(292, 4);
+            this.fileSweepGroupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileSweepGroupBox2.Name = "fileSweepGroupBox2";
-            this.fileSweepGroupBox2.Size = new System.Drawing.Size(262, 85);
+            this.fileSweepGroupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fileSweepGroupBox2.Size = new System.Drawing.Size(328, 106);
             this.fileSweepGroupBox2.TabIndex = 73;
             this.fileSweepGroupBox2.TabStop = false;
             this.fileSweepGroupBox2.Text = "FTP Server";
@@ -3346,11 +3636,13 @@
             this.ftpConnectPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.ftpConnectPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ftpConnectPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ftpConnectPictureBox.Image")));
-            this.ftpConnectPictureBox.Location = new System.Drawing.Point(188, 62);
+            this.ftpConnectPictureBox.Location = new System.Drawing.Point(235, 78);
+            this.ftpConnectPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ftpConnectPictureBox.Name = "ftpConnectPictureBox";
-            this.ftpConnectPictureBox.Size = new System.Drawing.Size(68, 20);
+            this.ftpConnectPictureBox.Size = new System.Drawing.Size(85, 25);
             this.ftpConnectPictureBox.TabIndex = 74;
             this.ftpConnectPictureBox.TabStop = false;
+            this.ftpConnectPictureBox.Visible = false;
             this.ftpConnectPictureBox.Click += new System.EventHandler(this.ftpConnectPictureBox_Click);
             this.ftpConnectPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ftpConnectPictureBox_MouseDown);
             this.ftpConnectPictureBox.MouseEnter += new System.EventHandler(this.ftpConnectPictureBox_MouseEnter);
@@ -3359,27 +3651,30 @@
             // 
             // ftpPasswordTextBox
             // 
-            this.ftpPasswordTextBox.Location = new System.Drawing.Point(28, 62);
+            this.ftpPasswordTextBox.Location = new System.Drawing.Point(35, 78);
+            this.ftpPasswordTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ftpPasswordTextBox.Name = "ftpPasswordTextBox";
-            this.ftpPasswordTextBox.Size = new System.Drawing.Size(154, 20);
+            this.ftpPasswordTextBox.Size = new System.Drawing.Size(192, 22);
             this.ftpPasswordTextBox.TabIndex = 75;
             // 
             // ftpPasswordLabel
             // 
             this.ftpPasswordLabel.AutoSize = true;
             this.ftpPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ftpPasswordLabel.Location = new System.Drawing.Point(3, 62);
+            this.ftpPasswordLabel.Location = new System.Drawing.Point(4, 78);
+            this.ftpPasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ftpPasswordLabel.Name = "ftpPasswordLabel";
-            this.ftpPasswordLabel.Size = new System.Drawing.Size(28, 16);
+            this.ftpPasswordLabel.Size = new System.Drawing.Size(35, 20);
             this.ftpPasswordLabel.TabIndex = 74;
             this.ftpPasswordLabel.Text = "pw:";
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = global::SAPDataAnalysisTool.Properties.Resources.KeyOutput_8167;
-            this.pictureBox6.Location = new System.Drawing.Point(6, 41);
+            this.pictureBox6.Location = new System.Drawing.Point(8, 51);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox6.Size = new System.Drawing.Size(20, 20);
             this.pictureBox6.TabIndex = 36;
             this.pictureBox6.TabStop = false;
             // 
@@ -3396,17 +3691,19 @@
             "IcmTstDb2.cci.caldsaas.local\\tst2",
             "IcmTstDb3.cci.caldsaas.local\\tst3",
             "IcmImpDb1.cci.caldsaas.local\\Imp1"});
-            this.ftpUserComboBox.Location = new System.Drawing.Point(28, 40);
+            this.ftpUserComboBox.Location = new System.Drawing.Point(35, 50);
+            this.ftpUserComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ftpUserComboBox.Name = "ftpUserComboBox";
-            this.ftpUserComboBox.Size = new System.Drawing.Size(228, 21);
+            this.ftpUserComboBox.Size = new System.Drawing.Size(284, 24);
             this.ftpUserComboBox.TabIndex = 35;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(6, 20);
+            this.pictureBox3.Location = new System.Drawing.Point(8, 25);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
             this.pictureBox3.TabIndex = 33;
             this.pictureBox3.TabStop = false;
             // 
@@ -3423,9 +3720,10 @@
             "IcmTstDb2.cci.caldsaas.local\\tst2",
             "IcmTstDb3.cci.caldsaas.local\\tst3",
             "IcmImpDb1.cci.caldsaas.local\\Imp1"});
-            this.ftpServerComboBox.Location = new System.Drawing.Point(28, 15);
+            this.ftpServerComboBox.Location = new System.Drawing.Point(35, 19);
+            this.ftpServerComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ftpServerComboBox.Name = "ftpServerComboBox";
-            this.ftpServerComboBox.Size = new System.Drawing.Size(228, 21);
+            this.ftpServerComboBox.Size = new System.Drawing.Size(284, 24);
             this.ftpServerComboBox.TabIndex = 34;
             // 
             // fileSweepErrorBehaviorGroupBox
@@ -3433,9 +3731,11 @@
             this.fileSweepErrorBehaviorGroupBox.BackColor = System.Drawing.Color.AliceBlue;
             this.fileSweepErrorBehaviorGroupBox.Controls.Add(this.haltRadioButton);
             this.fileSweepErrorBehaviorGroupBox.Controls.Add(this.continueRadioButton);
-            this.fileSweepErrorBehaviorGroupBox.Location = new System.Drawing.Point(502, 3);
+            this.fileSweepErrorBehaviorGroupBox.Location = new System.Drawing.Point(628, 4);
+            this.fileSweepErrorBehaviorGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileSweepErrorBehaviorGroupBox.Name = "fileSweepErrorBehaviorGroupBox";
-            this.fileSweepErrorBehaviorGroupBox.Size = new System.Drawing.Size(149, 85);
+            this.fileSweepErrorBehaviorGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fileSweepErrorBehaviorGroupBox.Size = new System.Drawing.Size(186, 106);
             this.fileSweepErrorBehaviorGroupBox.TabIndex = 34;
             this.fileSweepErrorBehaviorGroupBox.TabStop = false;
             this.fileSweepErrorBehaviorGroupBox.Text = "Select Error Behavior";
@@ -3443,9 +3743,10 @@
             // haltRadioButton
             // 
             this.haltRadioButton.AutoSize = true;
-            this.haltRadioButton.Location = new System.Drawing.Point(6, 39);
+            this.haltRadioButton.Location = new System.Drawing.Point(8, 49);
+            this.haltRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.haltRadioButton.Name = "haltRadioButton";
-            this.haltRadioButton.Size = new System.Drawing.Size(44, 17);
+            this.haltRadioButton.Size = new System.Drawing.Size(54, 21);
             this.haltRadioButton.TabIndex = 1;
             this.haltRadioButton.Text = "Halt";
             this.haltRadioButton.UseVisualStyleBackColor = true;
@@ -3454,9 +3755,10 @@
             // 
             this.continueRadioButton.AutoSize = true;
             this.continueRadioButton.Checked = true;
-            this.continueRadioButton.Location = new System.Drawing.Point(6, 16);
+            this.continueRadioButton.Location = new System.Drawing.Point(8, 20);
+            this.continueRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.continueRadioButton.Name = "continueRadioButton";
-            this.continueRadioButton.Size = new System.Drawing.Size(67, 17);
+            this.continueRadioButton.Size = new System.Drawing.Size(85, 21);
             this.continueRadioButton.TabIndex = 0;
             this.continueRadioButton.TabStop = true;
             this.continueRadioButton.Text = "Continue";
@@ -3469,9 +3771,11 @@
             this.fileSweepGroupBox.Controls.Add(this.pictureBox5);
             this.fileSweepGroupBox.Controls.Add(this.serverSelect7);
             this.fileSweepGroupBox.Controls.Add(this.fileSweepDatabaseComboBox);
-            this.fileSweepGroupBox.Location = new System.Drawing.Point(6, 3);
+            this.fileSweepGroupBox.Location = new System.Drawing.Point(8, 4);
+            this.fileSweepGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileSweepGroupBox.Name = "fileSweepGroupBox";
-            this.fileSweepGroupBox.Size = new System.Drawing.Size(222, 85);
+            this.fileSweepGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fileSweepGroupBox.Size = new System.Drawing.Size(278, 106);
             this.fileSweepGroupBox.TabIndex = 72;
             this.fileSweepGroupBox.TabStop = false;
             this.fileSweepGroupBox.Text = "Select Server/Database";
@@ -3479,18 +3783,20 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(6, 46);
+            this.pictureBox4.Location = new System.Drawing.Point(8, 58);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
             this.pictureBox4.TabIndex = 33;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(6, 24);
+            this.pictureBox5.Location = new System.Drawing.Point(8, 30);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox5.Size = new System.Drawing.Size(20, 20);
             this.pictureBox5.TabIndex = 6;
             this.pictureBox5.TabStop = false;
             // 
@@ -3508,9 +3814,10 @@
             "IcmTstDb3.cci.caldsaas.local\\tst3",
             "IcmImpDb1.cci.caldsaas.local\\Imp1",
             "IcmImpDb2.cci.caldsaas.local"});
-            this.serverSelect7.Location = new System.Drawing.Point(28, 19);
+            this.serverSelect7.Location = new System.Drawing.Point(35, 24);
+            this.serverSelect7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.serverSelect7.Name = "serverSelect7";
-            this.serverSelect7.Size = new System.Drawing.Size(188, 21);
+            this.serverSelect7.Size = new System.Drawing.Size(234, 24);
             this.serverSelect7.TabIndex = 32;
             this.serverSelect7.SelectedIndexChanged += new System.EventHandler(this.serverSelect7_SelectedIndexChanged);
             // 
@@ -3523,9 +3830,10 @@
             this.fileSweepDatabaseComboBox.Enabled = false;
             this.fileSweepDatabaseComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fileSweepDatabaseComboBox.FormattingEnabled = true;
-            this.fileSweepDatabaseComboBox.Location = new System.Drawing.Point(28, 43);
+            this.fileSweepDatabaseComboBox.Location = new System.Drawing.Point(35, 54);
+            this.fileSweepDatabaseComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileSweepDatabaseComboBox.Name = "fileSweepDatabaseComboBox";
-            this.fileSweepDatabaseComboBox.Size = new System.Drawing.Size(188, 21);
+            this.fileSweepDatabaseComboBox.Size = new System.Drawing.Size(234, 24);
             this.fileSweepDatabaseComboBox.TabIndex = 31;
             this.fileSweepDatabaseComboBox.SelectedIndexChanged += new System.EventHandler(this.fileSweepDatabaseComboBox_SelectedIndexChanged);
             // 
@@ -3534,9 +3842,10 @@
             this.fileSweepUploadFilesPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.fileSweepUploadFilesPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fileSweepUploadFilesPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_upload_files;
-            this.fileSweepUploadFilesPictureBox.Location = new System.Drawing.Point(6, 94);
+            this.fileSweepUploadFilesPictureBox.Location = new System.Drawing.Point(8, 118);
+            this.fileSweepUploadFilesPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileSweepUploadFilesPictureBox.Name = "fileSweepUploadFilesPictureBox";
-            this.fileSweepUploadFilesPictureBox.Size = new System.Drawing.Size(133, 27);
+            this.fileSweepUploadFilesPictureBox.Size = new System.Drawing.Size(166, 34);
             this.fileSweepUploadFilesPictureBox.TabIndex = 61;
             this.fileSweepUploadFilesPictureBox.TabStop = false;
             this.fileSweepUploadFilesPictureBox.Click += new System.EventHandler(this.fileSweepUploadFilesPictureBox_Click);
@@ -3550,9 +3859,10 @@
             this.moveDownPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.moveDownPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moveDownPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_move_down;
-            this.moveDownPictureBox.Location = new System.Drawing.Point(252, 94);
+            this.moveDownPictureBox.Location = new System.Drawing.Point(315, 118);
+            this.moveDownPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.moveDownPictureBox.Name = "moveDownPictureBox";
-            this.moveDownPictureBox.Size = new System.Drawing.Size(131, 27);
+            this.moveDownPictureBox.Size = new System.Drawing.Size(164, 34);
             this.moveDownPictureBox.TabIndex = 62;
             this.moveDownPictureBox.TabStop = false;
             this.moveDownPictureBox.Click += new System.EventHandler(this.btnDown_Click);
@@ -3566,9 +3876,10 @@
             this.moveUpPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.moveUpPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moveUpPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_move_up;
-            this.moveUpPictureBox.Location = new System.Drawing.Point(145, 94);
+            this.moveUpPictureBox.Location = new System.Drawing.Point(181, 118);
+            this.moveUpPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.moveUpPictureBox.Name = "moveUpPictureBox";
-            this.moveUpPictureBox.Size = new System.Drawing.Size(101, 27);
+            this.moveUpPictureBox.Size = new System.Drawing.Size(126, 34);
             this.moveUpPictureBox.TabIndex = 63;
             this.moveUpPictureBox.TabStop = false;
             this.moveUpPictureBox.Click += new System.EventHandler(this.btnUp_Click);
@@ -3583,7 +3894,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer2.BackColor = System.Drawing.Color.AliceBlue;
-            this.splitContainer2.Location = new System.Drawing.Point(6, 151);
+            this.splitContainer2.Location = new System.Drawing.Point(8, 189);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -3595,15 +3907,16 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.fileSweepRichTextBox);
             this.splitContainer2.Panel2.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer2.Size = new System.Drawing.Size(1494, 579);
-            this.splitContainer2.SplitterDistance = 803;
-            this.splitContainer2.SplitterWidth = 7;
+            this.splitContainer2.Size = new System.Drawing.Size(1868, 724);
+            this.splitContainer2.SplitterDistance = 1004;
+            this.splitContainer2.SplitterWidth = 9;
             this.splitContainer2.TabIndex = 71;
             // 
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer3.Name = "splitContainer3";
             // 
             // splitContainer3.Panel1
@@ -3613,8 +3926,9 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.fileSweepPatternDataGridView);
-            this.splitContainer3.Size = new System.Drawing.Size(803, 579);
-            this.splitContainer3.SplitterDistance = 442;
+            this.splitContainer3.Size = new System.Drawing.Size(1004, 724);
+            this.splitContainer3.SplitterDistance = 552;
+            this.splitContainer3.SplitterWidth = 5;
             this.splitContainer3.TabIndex = 33;
             // 
             // fileSweepDataGridView
@@ -3642,6 +3956,7 @@
             this.fileSweepDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fileSweepDataGridView.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.fileSweepDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.fileSweepDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileSweepDataGridView.Name = "fileSweepDataGridView";
             dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
@@ -3651,7 +3966,7 @@
             dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.fileSweepDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
-            this.fileSweepDataGridView.Size = new System.Drawing.Size(442, 579);
+            this.fileSweepDataGridView.Size = new System.Drawing.Size(552, 724);
             this.fileSweepDataGridView.TabIndex = 32;
             // 
             // fileSweepPatternDataGridView
@@ -3679,6 +3994,7 @@
             this.fileSweepPatternDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fileSweepPatternDataGridView.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.fileSweepPatternDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.fileSweepPatternDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileSweepPatternDataGridView.Name = "fileSweepPatternDataGridView";
             dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
@@ -3688,7 +4004,7 @@
             dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.fileSweepPatternDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
-            this.fileSweepPatternDataGridView.Size = new System.Drawing.Size(357, 579);
+            this.fileSweepPatternDataGridView.Size = new System.Drawing.Size(447, 724);
             this.fileSweepPatternDataGridView.TabIndex = 33;
             // 
             // fileSweepRichTextBox
@@ -3696,9 +4012,10 @@
             this.fileSweepRichTextBox.BackColor = System.Drawing.Color.Azure;
             this.fileSweepRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fileSweepRichTextBox.Location = new System.Drawing.Point(0, 0);
+            this.fileSweepRichTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileSweepRichTextBox.Name = "fileSweepRichTextBox";
             this.fileSweepRichTextBox.ReadOnly = true;
-            this.fileSweepRichTextBox.Size = new System.Drawing.Size(684, 579);
+            this.fileSweepRichTextBox.Size = new System.Drawing.Size(855, 724);
             this.fileSweepRichTextBox.TabIndex = 34;
             this.fileSweepRichTextBox.Text = "";
             // 
@@ -3709,9 +4026,10 @@
             this.fileSweepGoPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fileSweepGoPictureBox.Enabled = false;
             this.fileSweepGoPictureBox.Image = global::SAPDataAnalysisTool.Properties.Resources.button_go;
-            this.fileSweepGoPictureBox.Location = new System.Drawing.Point(1431, 76);
+            this.fileSweepGoPictureBox.Location = new System.Drawing.Point(1789, 95);
+            this.fileSweepGoPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileSweepGoPictureBox.Name = "fileSweepGoPictureBox";
-            this.fileSweepGoPictureBox.Size = new System.Drawing.Size(63, 42);
+            this.fileSweepGoPictureBox.Size = new System.Drawing.Size(79, 52);
             this.fileSweepGoPictureBox.TabIndex = 70;
             this.fileSweepGoPictureBox.TabStop = false;
             this.fileSweepGoPictureBox.Visible = false;
@@ -3727,17 +4045,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fileSweepProgressBar.BackColor = System.Drawing.Color.AliceBlue;
             this.fileSweepProgressBar.ForeColor = System.Drawing.Color.DarkRed;
-            this.fileSweepProgressBar.Location = new System.Drawing.Point(6, 124);
+            this.fileSweepProgressBar.Location = new System.Drawing.Point(8, 155);
+            this.fileSweepProgressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileSweepProgressBar.MarqueeAnimationSpeed = 1;
             this.fileSweepProgressBar.Name = "fileSweepProgressBar";
-            this.fileSweepProgressBar.Size = new System.Drawing.Size(1488, 21);
+            this.fileSweepProgressBar.Size = new System.Drawing.Size(1860, 26);
             this.fileSweepProgressBar.TabIndex = 8;
             this.fileSweepProgressBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // mainLogSplitContainer
             // 
             this.mainLogSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainLogSplitContainer.Location = new System.Drawing.Point(0, 24);
+            this.mainLogSplitContainer.Location = new System.Drawing.Point(0, 28);
+            this.mainLogSplitContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainLogSplitContainer.Name = "mainLogSplitContainer";
             this.mainLogSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -3748,99 +4068,18 @@
             // mainLogSplitContainer.Panel2
             // 
             this.mainLogSplitContainer.Panel2.Controls.Add(this.systemLogTextBox);
-            this.mainLogSplitContainer.Size = new System.Drawing.Size(1510, 832);
-            this.mainLogSplitContainer.SplitterDistance = 762;
+            this.mainLogSplitContainer.Size = new System.Drawing.Size(1888, 1044);
+            this.mainLogSplitContainer.SplitterDistance = 956;
+            this.mainLogSplitContainer.SplitterWidth = 5;
             this.mainLogSplitContainer.TabIndex = 33;
-            // 
-            // fileSweepFilePathDataGridView
-            // 
-            this.fileSweepFilePathDataGridView.AllowUserToAddRows = false;
-            this.fileSweepFilePathDataGridView.BackgroundColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.fileSweepFilePathDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            this.fileSweepFilePathDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.fileSweepFilePathDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.fileSweepFilePathDataGridView.DefaultCellStyle = dataGridViewCellStyle20;
-            this.fileSweepFilePathDataGridView.Location = new System.Drawing.Point(657, 3);
-            this.fileSweepFilePathDataGridView.Name = "fileSweepFilePathDataGridView";
-            this.fileSweepFilePathDataGridView.ReadOnly = true;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.fileSweepFilePathDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
-            this.fileSweepFilePathDataGridView.Size = new System.Drawing.Size(284, 85);
-            this.fileSweepFilePathDataGridView.TabIndex = 77;
-            // 
-            // testButton
-            // 
-            this.testButton.Location = new System.Drawing.Point(1325, 24);
-            this.testButton.Name = "testButton";
-            this.testButton.Size = new System.Drawing.Size(75, 23);
-            this.testButton.TabIndex = 51;
-            this.testButton.Text = "testButton";
-            this.testButton.UseVisualStyleBackColor = false;
-            this.testButton.Visible = false;
-            // 
-            // stagedDataGridView
-            // 
-            this.stagedDataGridView.AllowUserToAddRows = false;
-            this.stagedDataGridView.BackgroundColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.stagedDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.stagedDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.stagedDataGridView.Cursor = System.Windows.Forms.Cursors.Cross;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.stagedDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
-            this.stagedDataGridView.Location = new System.Drawing.Point(1390, 51);
-            this.stagedDataGridView.Name = "stagedDataGridView";
-            this.stagedDataGridView.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.stagedDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.stagedDataGridView.Size = new System.Drawing.Size(10, 10);
-            this.stagedDataGridView.TabIndex = 52;
             // 
             // SAPDataAnalysisTool
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1510, 878);
+            this.ClientSize = new System.Drawing.Size(1888, 1098);
             this.ControlBox = false;
             this.Controls.Add(this.mainLogSplitContainer);
             this.Controls.Add(this.statusStrip1);
@@ -3848,6 +4087,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SAPDataAnalysisTool";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -3925,6 +4165,7 @@
             this.importFormatSelectDateGroupBox.PerformLayout();
             this.importFormatSelectRequiredFieldsGroupBox.ResumeLayout(false);
             this.checkTools.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.stagedDataGridView)).EndInit();
             this.sqlQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sqlQueryGoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sqlQueryDataGridView)).EndInit();
@@ -3976,6 +4217,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.fileSweep.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fileSweepFilePathDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftpConnectedPictureBox)).EndInit();
             this.fileSweepGroupBox2.ResumeLayout(false);
             this.fileSweepGroupBox2.PerformLayout();
@@ -4005,8 +4247,6 @@
             this.mainLogSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainLogSplitContainer)).EndInit();
             this.mainLogSplitContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fileSweepFilePathDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stagedDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
